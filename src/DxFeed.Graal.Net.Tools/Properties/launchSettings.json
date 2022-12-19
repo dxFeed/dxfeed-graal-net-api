@@ -1,0 +1,14 @@
+{
+  "profiles": {
+    "Connect": {
+      "commandName": "Project",
+      "commandLineArgs": "connect demo.dxfeed.com:7300 Quote,Trade AAPL,IBM,MSFT,GOOG",
+      "nativeDebugging": true
+    },
+    "Dump": {
+      "commandName": "Project",
+      "commandLineArgs": "dump tape.csv[speed=max]",
+      "nativeDebugging": true
+    }
+  }
+}

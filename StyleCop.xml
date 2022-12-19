@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RuleSet Name="Rules for dxfeed-net-api-2.0" Description="Code analysis rules" ToolsVersion="16.0">
+  <IncludeAll Action="Warning"/>
+  <Rules AnalyzerId="Microsoft.Analyzers.ManagedCodeAnalysis" RuleNamespace="Microsoft.Rules.Managed">
+    <Rule Id="SA1200" Action="None"/><!-- UsingDirectivesMustBePlacedCorrectly -->
+    <Rule Id="SA1101" Action="None"/><!-- PrefixLocalCallsWithThis -->
+    <Rule Id="SA1309" Action="None"/><!-- FieldNamesMustNotBeginWithUnderscore -->
+    <Rule Id="SA1108" Action="None"/><!-- BlockStatementsMustNotContainEmbeddedComments -->
+    <Rule Id="SA1011" Action="None"/><!-- ClosingSquareBracketsMustBeSpacedCorrectly -->
+    <Rule Id="SA1600" Action="None"/><!-- Elements should be documented -->
+  </Rules>
+</RuleSet>
