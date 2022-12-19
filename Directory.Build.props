@@ -1,0 +1,34 @@
+<Project>
+  <PropertyGroup>
+    <!-- Project info -->
+    <Company>Devexperts</Company>
+    <Copyright>Copyright © 2022 Devexperts LLC</Copyright>
+    <Authors>dxFeed API</Authors>
+    <PackageLicenseExpression>MPL-2.0</PackageLicenseExpression>
+    <RepositoryType>git</RepositoryType>
+    <RepositoryUrl>https://github.com/dxfeed/dxfeed-graal-net-api/</RepositoryUrl>
+    <PackageReleaseNotes>https://github.com/dxfeed/dxfeed-graal-net-api/releases</PackageReleaseNotes>
+    <PackageIcon>favicon.png</PackageIcon>
+    <PackageTags>api, market data, dxfeed</PackageTags>
+    <PackageDescription>This package provides access to dxFeed(https://www.dxfeed.com/) market data.</PackageDescription>
+    <Description>This library is built as a language specific wrapper over dxFeed Java API which in turn was compiled with GraalVM Native Image.</Description>
+
+    <!-- Project setting -->
+    <TargetFramework>net6.0</TargetFramework>
+    <LangVersion>10</LangVersion>
+    <Nullable>enable</Nullable>
+    <CodeAnalysisRuleSet>../../StyleCop.xml</CodeAnalysisRuleSet>
+
+    <!-- Versioning -->
+    <!-- Assembly version (System.Reflection.Assembly.GetExecutingAssembly()) -->
+    <AssemblyVersion>0.0.1</AssemblyVersion>
+    <!-- File (dll) version -->
+    <FileVersion>0.0.1.0</FileVersion>
+    <!-- NuGet (product) version -->
+    <Version>0.0.1</Version>
+  </PropertyGroup>
+
+  <ItemGroup Label="PackageIcon">
+    <None Include="$(MSBuildThisFileDirectory)/docs/images/favicon.png" Pack="true" Visible="false" PackagePath=""/>
+  </ItemGroup>
+</Project>

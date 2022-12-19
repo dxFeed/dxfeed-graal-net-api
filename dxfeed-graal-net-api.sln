@@ -1,0 +1,46 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DxFeed.Graal.Net", "src\DxFeed.Graal.Net\DxFeed.Graal.Net.csproj", "{D61138CF-CEDB-4A2C-926F-BD4240CF6423}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DxFeed.Graal.Net.Tools", "src\DxFeed.Graal.Net.Tools\DxFeed.Graal.Net.Tools.csproj", "{1F8765D9-1ED0-40EC-8239-B3E9F7BDF38C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DxFeed.Graal.Net.Tests", "tests\DxFeed.Graal.Net.Tests\DxFeed.Graal.Net.Tests.csproj", "{7F07BB95-9DB6-4331-BCCF-FBF441F8F3E2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Samples", "Samples", "{C4490D74-2970-4A1B-8178-A724A06B140A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrintQuoteEvents", "samples\PrintQuoteEvents\PrintQuoteEvents.csproj", "{73597E04-D8A8-4991-A759-7F886CBE2A8F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventSample", "samples\EventSample\EventSample.csproj", "{2A8B6037-09FF-40DC-868F-A0ED54A46287}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D61138CF-CEDB-4A2C-926F-BD4240CF6423}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D61138CF-CEDB-4A2C-926F-BD4240CF6423}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D61138CF-CEDB-4A2C-926F-BD4240CF6423}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D61138CF-CEDB-4A2C-926F-BD4240CF6423}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1F8765D9-1ED0-40EC-8239-B3E9F7BDF38C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1F8765D9-1ED0-40EC-8239-B3E9F7BDF38C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1F8765D9-1ED0-40EC-8239-B3E9F7BDF38C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1F8765D9-1ED0-40EC-8239-B3E9F7BDF38C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7F07BB95-9DB6-4331-BCCF-FBF441F8F3E2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7F07BB95-9DB6-4331-BCCF-FBF441F8F3E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7F07BB95-9DB6-4331-BCCF-FBF441F8F3E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7F07BB95-9DB6-4331-BCCF-FBF441F8F3E2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{73597E04-D8A8-4991-A759-7F886CBE2A8F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{73597E04-D8A8-4991-A759-7F886CBE2A8F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{73597E04-D8A8-4991-A759-7F886CBE2A8F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{73597E04-D8A8-4991-A759-7F886CBE2A8F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2A8B6037-09FF-40DC-868F-A0ED54A46287}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2A8B6037-09FF-40DC-868F-A0ED54A46287}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2A8B6037-09FF-40DC-868F-A0ED54A46287}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2A8B6037-09FF-40DC-868F-A0ED54A46287}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{73597E04-D8A8-4991-A759-7F886CBE2A8F} = {C4490D74-2970-4A1B-8178-A724A06B140A}
+		{2A8B6037-09FF-40DC-868F-A0ED54A46287} = {C4490D74-2970-4A1B-8178-A724A06B140A}
+	EndGlobalSection
+EndGlobal
