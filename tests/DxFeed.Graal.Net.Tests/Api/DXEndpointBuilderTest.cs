@@ -14,6 +14,46 @@ namespace DxFeed.Graal.Net.Tests.Api;
 public class DXEndpointBuilderTest
 {
     [Test]
+    public void ThrowExceptionWhenDisposed()
+    {
+        var builder = NewBuilder();
+        builder.Dispose();
+        Assert.Throws<JavaException>(() => builder.Build());
+        Assert.Throws<JavaException>(() => builder.Build());
+    }
+
+    [Test]
+    public void MultipleDisposeNotThrowException()
+    {
+        using var builder = NewBuilder();
+        Assert.DoesNotThrow(() => builder.Dispose());
+        Assert.DoesNotThrow(() => builder.Dispose());
+    }
+
+    [Test]
+    public void DefaultEndpointRoleIsFeed() =>
+        Assert.That(NewBuilder().Build().GetRole(), Is.EqualTo(Feed));
+
+    [Test]
+    public void WithRoleMethodBuildCorrectEndpointRole() =>
+        Assert.Multiple(() =>
+        {
+            Assert.That(new Builder().WithRole(Feed).Build().GetRole(), Is.EqualTo(Feed));
+            Assert.That(new Builder().WithRole(OnDemandFeed).Build().GetRole(), Is.EqualTo(OnDemandFeed));
+            Assert.That(new Builder().WithRole(StreamFeed).Build().GetRole(), Is.EqualTo(StreamFeed));
+            Assert.That(new Builder().WithRole(Publisher).Build().GetRole(), Is.EqualTo(Publisher));
+            Assert.That(new Builder().WithRole(StreamPublisher).Build().GetRole(), Is.EqualTo(StreamPublisher));
+            Assert.That(new Builder().WithRole(LocalHub).Build().GetRole(), Is.EqualTo(LocalHub));
+        });
+
+    [Test]
+    public void UnsupportedRoleThrowException()
+    {
+        using var builder = NewBuilder();
+        Assert.Throws<JavaException>(() => builder.WithRole((Role)100500));
+    }
+
+    [Test]
     public void CheckSupportsProperty()
     {
         using var builder = NewBuilder();
@@ -51,30 +91,6 @@ public class DXEndpointBuilderTest
     }
 
     [Test]
-    public void ThrowExceptionWhenDisposed()
-    {
-        var builder = NewBuilder();
-        builder.Dispose();
-        Assert.Throws<JavaException>(() => builder.Build());
-        Assert.Throws<JavaException>(() => builder.Build());
-    }
-
-    [Test]
-    public void MultipleDisposeNotThrowException()
-    {
-        using var builder = NewBuilder();
-        Assert.DoesNotThrow(() => builder.Dispose());
-        Assert.DoesNotThrow(() => builder.Dispose());
-    }
-
-    [Test]
-    public void UnsupportedRoleThrowException()
-    {
-        using var builder = NewBuilder();
-        Assert.Throws<JavaException>(() => builder.WithRole((Role)100500));
-    }
-
-    [Test]
     public void OneBuilderInstanceCannotCreateMoreThanOneEndpoint()
     {
         using var builder = NewBuilder();
@@ -84,22 +100,6 @@ public class DXEndpointBuilderTest
             Assert.Throws<JavaException>(() => builder.Build());
         });
     }
-
-    [Test]
-    public void DefaultEndpointRoleIsFeed() =>
-        Assert.That(NewBuilder().Build().GetRole(), Is.EqualTo(Feed));
-
-    [Test]
-    public void WithRoleMethodBuildCorrectEndpointRole() =>
-        Assert.Multiple(() =>
-        {
-            Assert.That(new Builder().WithRole(Feed).Build().GetRole(), Is.EqualTo(Feed));
-            Assert.That(new Builder().WithRole(OnDemandFeed).Build().GetRole(), Is.EqualTo(OnDemandFeed));
-            Assert.That(new Builder().WithRole(StreamFeed).Build().GetRole(), Is.EqualTo(StreamFeed));
-            Assert.That(new Builder().WithRole(Publisher).Build().GetRole(), Is.EqualTo(Publisher));
-            Assert.That(new Builder().WithRole(StreamPublisher).Build().GetRole(), Is.EqualTo(StreamPublisher));
-            Assert.That(new Builder().WithRole(LocalHub).Build().GetRole(), Is.EqualTo(LocalHub));
-        });
 
     [Test]
     public void WithRoleMethodOverrideOldRole() =>
