@@ -6,7 +6,7 @@
 
 using DxFeed.Graal.Net.Api;
 
-namespace DxFeed.Graal.Net.Tests;
+namespace DxFeed.Graal.Net.Tests.Api;
 
 [TestFixture]
 public class DXEndpointTest
