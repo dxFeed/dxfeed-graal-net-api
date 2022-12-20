@@ -3,7 +3,7 @@
  <img alt="light" src="docs/images/logo_light.svg">
 </picture>
 
-This package provides access to [dxFeed market data](https://dxfeed.com/market-data/). 
+This package provides access to [dxFeed market data](https://dxfeed.com/market-data/).
 The library is built as a language-specific wrapper over
 the [dxFeed Graal Native](https://dxfeed.jfrog.io/artifactory/maven-open/com/dxfeed/graal-native-api/) library,
 which was compiled with [GraalVM Native Image](https://www.graalvm.org/latest/reference-manual/native-image/)
