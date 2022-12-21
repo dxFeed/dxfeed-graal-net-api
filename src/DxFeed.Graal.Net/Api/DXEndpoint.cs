@@ -222,9 +222,9 @@ public sealed class DXEndpoint : IDisposable
     private readonly Role _role;
 
     /// <summary>
-    /// List of set properties.
+    /// User-defined endpoint name.
     /// </summary>
-    private readonly Dictionary<string, string> _props;
+    private readonly string? _name;
 
     /// <summary>
     /// List of state change listeners.
@@ -243,7 +243,8 @@ public sealed class DXEndpoint : IDisposable
     {
         _endpointNative = endpointNative;
         _role = role;
-        _props = props;
+        props.TryGetValue(NameProperty, out var name);
+        _name = name;
         _stateChangeListenerFunc = StateChangeListenerFuncWrapper;
         _feed = new Lazy<DXFeed>(() => new DXFeed(_endpointNative.GetFeed()));
         _publisher = new Lazy<DXPublisher>(() => new DXPublisher(_endpointNative.GetPublisher()));
@@ -509,6 +510,13 @@ public sealed class DXEndpoint : IDisposable
     /// <returns>The <see cref="State"/>.</returns>
     public State GetState() =>
         EnumUtil.ValueOf<State>(_endpointNative.GetState());
+
+    /// <summary>
+    /// Gets user-defined endpoint name.
+    /// </summary>
+    /// <returns>Returns endpoint name, or <c>null</c> if name was not set.</returns>
+    public string? GetName() =>
+        _name;
 
     /// <summary>
     /// Gets a value indicating whether if this endpoint is closed.
