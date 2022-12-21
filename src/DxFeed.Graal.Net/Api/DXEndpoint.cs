@@ -16,6 +16,13 @@ namespace DxFeed.Graal.Net.Api;
 
 /// <summary>
 /// Manages network connections to <see cref="DXFeed"/> or <see cref="DXPublisher"/>.
+/// <br/>
+/// There are ready-to-use singleton instances that are available with
+/// <see cref="Instance"/> and <see cref="GetInstance"/> methods as wel as
+/// factory methods <see cref="Create()"/> and <see cref="Create(Role)"/> , and a number of configuration methods.
+/// <br/>
+/// Advanced properties can be configured with <see cref="Builder"/>(creates with <see cref="NewBuilder"/>).
+/// <br/>
 /// This class is a wrapper for <see cref="EndpointNative"/>.
 /// <br/>
 /// For more details see <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/api/DXEndpoint.html">Javadoc</a>.
@@ -37,7 +44,8 @@ public sealed class DXEndpoint : IDisposable
     /// This file must be in the <a href="https://en.wikipedia.org/wiki/.properties">Java properties file format</a>.
     /// <br/>
     /// This property can also be set using <see cref="SystemProperty.SetProperty"/>,
-    /// as the default property for all instances <see cref="DXEndpoint"/> with <see cref="Role.Feed"/> role.
+    /// as the default property for all instances <see cref="DXEndpoint"/> with <see cref="Role.Feed"/> or
+    /// or <see cref="Role.OnDemandFeed"/> role.
     /// <br/>
     /// When the path to this properties file not provided (<see cref="SystemProperty.SetProperty"/>
     /// and <see cref="Builder.WithProperty(string,string)"/>),
@@ -186,7 +194,7 @@ public sealed class DXEndpoint : IDisposable
     public const string DXSchemeEnabledPropertyPrefix = "dxscheme.enabled.";
 
     /// <summary>
-    /// List of singleton instances.
+    /// List of singleton <see cref="DXEndpoint"/> instances with different roles.
     /// </summary>
     private static readonly Dictionary<Role, DXEndpoint> Instances = new();
 
@@ -196,7 +204,8 @@ public sealed class DXEndpoint : IDisposable
     private readonly EndpointNative _endpointNative;
 
     /// <summary>
-    /// A delegate to to the endpoint state change listener.
+    /// A delegate to the endpoint state change listener.
+    /// Callback from native code.
     /// </summary>
     private readonly StateChangeListenerFunc _stateChangeListenerFunc;
 
@@ -216,24 +225,44 @@ public sealed class DXEndpoint : IDisposable
     private readonly object _listenersLock = new();
 
     /// <summary>
+    /// The endpoint role.
+    /// </summary>
+    private readonly Role _role;
+
+    /// <summary>
+    /// User-defined endpoint name.
+    /// </summary>
+    private readonly string? _name;
+
+    /// <summary>
     /// List of state change listeners.
     /// </summary>
     private volatile ImmutableList<OnStateChangeListener> _listeners = ImmutableList.Create<OnStateChangeListener>();
 
     /// <summary>
-    /// Initializes a new instance of the <see cref="DXEndpoint"/> class with specified endpoint native.
+    /// To detect redundant calls <see cref="Dispose"/>.
     /// </summary>
-    /// <param name="endpointNative">The specified endpoint native.</param>
-    private DXEndpoint(EndpointNative endpointNative)
+    private bool _disposed;
+
+    /// <summary>
+    /// Initializes a new instance of the <see cref="DXEndpoint"/>
+    /// class with specified <see cref="EndpointNative"/>, role and properties.
+    /// </summary>
+    /// <param name="endpointNative">The specified <see cref="EndpointNative"/>.</param>
+    /// <param name="role">The endpoint role.</param>
+    /// <param name="props">The endpoint properties.</param>
+    private DXEndpoint(EndpointNative endpointNative, Role role, Dictionary<string, string> props)
     {
         _endpointNative = endpointNative;
+        _role = role;
+        _name = props.TryGetValue(NameProperty, out var name) ? name : null;
         _stateChangeListenerFunc = StateChangeListenerFuncWrapper;
         _feed = new Lazy<DXFeed>(() => new DXFeed(_endpointNative.GetFeed()));
         _publisher = new Lazy<DXPublisher>(() => new DXPublisher(_endpointNative.GetPublisher()));
     }
 
     /// <summary>
-    /// Notifies of a change in the state of this endpoint.
+    /// Notifies a change in the state of this endpoint.
     /// </summary>
     /// <param name="oldState">The old state of endpoint.</param>
     /// <param name="newState">The new state of endpoint.</param>
@@ -246,8 +275,12 @@ public sealed class DXEndpoint : IDisposable
     public enum Role
     {
         /// <summary>
-        /// <c>Feed</c> endpoint connects to the remote data feed provider and is optimized for real-time or
-        /// delayed data processing (<b>this is a default role</b>).
+        /// <c>Feed</c> endpoint connects to the remote data feed provider
+        /// and is optimized for real-time or delayed data processing (<b>this is a default role</b>).
+        /// <see cref="GetFeed"/> method returns feed object that subscribes
+        /// to the remote data feed provider and receives events from it.
+        /// When event processing threads cannot keep up (don't have enough CPU time), data is dynamically conflated
+        /// to minimize latency between received events and their processing time.
         /// </summary>
         Feed,
 
@@ -260,18 +293,26 @@ public sealed class DXEndpoint : IDisposable
         /// <summary>
         /// <c>StreamFeed</c> endpoint is similar to <see cref="Feed"/>
         /// and also connects to the remote data feed provider, is designed for bulk parsing of data from files.
+        /// <see cref="GetFeed"/> method returns feed object that subscribes
+        /// to the data from the opened files and receives events from them.
+        /// Events from the files are not conflated, are not skipped, and are processed as fast as possible.
         /// </summary>
         StreamFeed,
 
         /// <summary>
         /// <c>Publisher</c> endpoint connects to the remote publisher hub (also known as multiplexor) or
         /// creates a publisher on the local host.
+        /// <see cref="GetPublisher"/> method returns a publisher object
+        /// that publishes events to all connected feeds.
         /// </summary>
         Publisher,
 
         /// <summary>
         /// <c>StreamPublisher</c> endpoint is similar to <see cref="Publisher"/>
         /// and also connects to the remote publisher hub, but is designed for bulk publishing of data.
+        /// <see cref="GetPublisher"/> method returns a publisher object that publishes events
+        /// to all connected feeds.
+        /// Published events are not conflated, are not skipped, and are processed as fast as possible.
         /// </summary>
         StreamPublisher,
 
@@ -311,6 +352,7 @@ public sealed class DXEndpoint : IDisposable
 
     /// <summary>
     /// Gets a default application-wide singleton instance of DXEndpoint with a <see cref="Role.Feed"/> role.
+    /// Most applications use only a single data-source and should rely on this method to get one.
     /// <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/api/DXEndpoint.html#getInstance--">Javadoc.</a>
     /// </summary>
     /// <returns>Returns singleton instance of <see cref="DXEndpoint"/>.</returns>
@@ -319,6 +361,7 @@ public sealed class DXEndpoint : IDisposable
 
     /// <summary>
     /// Gets a default application-wide singleton instance of DXEndpoint with a specific <see cref="Role"/>.
+    /// Most applications use only a single data-source and should rely on this method to get one.
     /// <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/api/DXEndpoint.html#getInstance-com.dxfeed.api.DXEndpoint.Role-">Javadoc.</a>
     /// </summary>
     /// <param name="role">The <see cref="Role"/>.</param>
@@ -344,7 +387,7 @@ public sealed class DXEndpoint : IDisposable
     /// all configuration properties were set.
     /// <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/api/DXEndpoint.html#newBuilder--">Javadoc.</a>
     /// </summary>
-    /// <returns>The new <see cref="Builder"/> instance.</returns>
+    /// <returns>The created <see cref="Builder"/> instance.</returns>
     public static Builder NewBuilder() =>
         new();
 
@@ -353,11 +396,8 @@ public sealed class DXEndpoint : IDisposable
     /// <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/api/DXEndpoint.html#create--">Javadoc.</a>
     /// </summary>
     /// <returns>The created <see cref="DXEndpoint"/>.</returns>
-    public static DXEndpoint Create()
-    {
-        using var builder = NewBuilder();
-        return builder.WithRole(Role.Feed).Build();
-    }
+    public static DXEndpoint Create() =>
+        Create(Role.Feed);
 
     /// <summary>
     /// Creates an endpoint with a specified <see cref="Role"/>.
@@ -373,14 +413,15 @@ public sealed class DXEndpoint : IDisposable
 
     /// <summary>
     /// Closes this endpoint. All network connection are terminated as with
-    /// <see cref="Disconnect"/> method and no further connections
-    /// can be established.
+    /// <see cref="Disconnect"/> method and no further connections can be established.
     /// The endpoint <see cref="State"/> immediately becomes <see cref="State.Closed"/>.
     /// <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/api/DXEndpoint.html#close--">Javadoc.</a>
     /// </summary>
-    // ToDo Implement feed and publisher closure.
-    public void Close() =>
+    public void Close()
+    {
         _endpointNative.Close();
+        CloseRest();
+    }
 
     /// <summary>
     /// Closes this endpoint and wait until all pending data processing tasks are completed.
@@ -390,17 +431,42 @@ public sealed class DXEndpoint : IDisposable
     /// to make sure that file was completely processed.
     /// <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/api/DXEndpoint.html#closeAndAwaitTermination--">Javadoc.</a>
     /// </summary>
-    public void CloseAndAwaitTermination() =>
+    public void CloseAndAwaitTermination()
+    {
         _endpointNative.CloseAndAwaitTermination();
+        CloseRest();
+    }
 
     /// <summary>
     /// Gets the <see cref="Role"/> of this endpoint.
     /// <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/api/DXEndpoint.html#getRole--">Javadoc.</a>
     /// </summary>
     /// <returns>The <see cref="Role"/>.</returns>
-    /// ToDo Returns role from current instance, without native code.
     public Role GetRole() =>
-        _endpointNative.GetRole();
+        _role;
+
+    /// <summary>
+    /// Gets the <see cref="State"/> of this endpoint.
+    /// <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/api/DXEndpoint.html#getState--">Javadoc.</a>
+    /// </summary>
+    /// <returns>The <see cref="State"/>.</returns>
+    public State GetState() =>
+        EnumUtil.ValueOf<State>(_endpointNative.GetState());
+
+    /// <summary>
+    /// Gets a value indicating whether if this endpoint is closed.
+    /// There is a shortcut for <c><see cref="GetState"/> == <see cref="State.Closed"/></c>.
+    /// </summary>
+    /// <returns>Returns <c>true</c> if this endpoint is closed.</returns>
+    public bool IsClosed() =>
+        GetState() == State.Closed;
+
+    /// <summary>
+    /// Gets user-defined endpoint name.
+    /// </summary>
+    /// <returns>Returns endpoint name, or <c>null</c> if name was not set.</returns>
+    public string? GetName() =>
+        _name;
 
     /// <summary>
     /// Changes user name for this endpoint.
@@ -491,17 +557,8 @@ public sealed class DXEndpoint : IDisposable
         _endpointNative.AwaitNotConnected();
 
     /// <summary>
-    /// Gets the <see cref="State"/> of this endpoint.
-    /// <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/api/DXEndpoint.html#getState--">Javadoc.</a>
-    /// </summary>
-    /// <returns>The <see cref="State"/>.</returns>
-    public State GetState() =>
-        EnumUtil.ValueOf<State>(_endpointNative.GetState());
-
-    /// <summary>
     /// Adds listener that is notified about changes in <see cref="GetState"/> property.
-    /// It removes the listener that was previously installed with
-    /// <see cref="RemoveStateChangeListener"/> method.
+    /// It removes the listener that was previously installed with <see cref="RemoveStateChangeListener"/> method.
     /// <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/api/DXEndpoint.html#addStateChangeListener-java.beans.PropertyChangeListener-">Javadoc.</a>
     /// </summary>
     /// <param name="listener">The listener to add.</param>
@@ -511,6 +568,7 @@ public sealed class DXEndpoint : IDisposable
         {
             if (_listeners.IsEmpty)
             {
+                // If this is the first listener, attach StateChangeListenerFuncWrapper.
                 _endpointNative.SetStateChangeListener(_stateChangeListenerFunc);
             }
 
@@ -520,8 +578,7 @@ public sealed class DXEndpoint : IDisposable
 
     /// <summary>
     /// Removes listener that is notified about changes in <see cref="GetState"/> property.
-    /// It removes the listener that was previously installed with
-    /// <see cref="AddStateChangeListener"/> method.
+    /// It removes the listener that was previously installed with <see cref="AddStateChangeListener"/> method.
     /// <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/api/DXEndpoint.html#removeStateChangeListener-java.beans.PropertyChangeListener-">Javadoc.</a>
     /// </summary>
     /// <param name="listener">The listener to remove.</param>
@@ -533,6 +590,7 @@ public sealed class DXEndpoint : IDisposable
 
             if (_listeners.IsEmpty)
             {
+                // If there are no more listeners left, detach StateChangeListenerFuncWrapper.
                 _endpointNative.ClearStateChangeListener();
             }
         }
@@ -555,11 +613,36 @@ public sealed class DXEndpoint : IDisposable
         _publisher.Value;
 
     /// <summary>
-    /// Releases all resources used by the current instance of the <see cref="DXEndpoint"/> class.
+    /// Closes this endpoint and releases all resources used
+    /// by the current instance of the <see cref="DXEndpoint"/> class.
     /// </summary>
-    /// ToDo Must use Close().
-    public void Dispose() =>
+    public void Dispose()
+    {
+        if (_disposed)
+        {
+            return;
+        }
+
+        Close();
         _endpointNative.Dispose();
+        _disposed = true;
+    }
+
+    /// <summary>
+    /// Closes all associated resources with this <see cref="DXEndpoint"/>.
+    /// </summary>
+    private void CloseRest()
+    {
+        if (_feed.IsValueCreated)
+        {
+            _feed.Value.Close();
+        }
+
+        if (_publisher.IsValueCreated)
+        {
+            _publisher.Value.Close();
+        }
+    }
 
     /// <summary>
     /// Wrapper function over native change state listener calls.
@@ -580,7 +663,7 @@ public sealed class DXEndpoint : IDisposable
             catch (Exception e)
             {
                 // ToDo Add log entry.
-                Console.Error.WriteLine($"Exception in {nameof(GetType)} state change listener: {e}");
+                Console.Error.WriteLine($"Exception in {_name ?? GetType().Name} state change listener: {e}");
             }
         }
     }
@@ -598,10 +681,14 @@ public sealed class DXEndpoint : IDisposable
         /// </summary>
         private readonly BuilderNative _builderNative;
 
-        // List of set properties.
+        /// <summary>
+        /// List of set properties.
+        /// </summary>
         private readonly Dictionary<string, string> _props = new();
 
-        // The current role.
+        /// <summary>
+        /// Current role for implementations of <see cref="Builder"/>.
+        /// </summary>
         private Role _role = Role.Feed;
 
         /// <summary>
@@ -631,11 +718,8 @@ public sealed class DXEndpoint : IDisposable
         /// </summary>
         /// <param name="name">The endpoint name.</param>
         /// <returns>Returns this <see cref="Builder"/>.</returns>
-        public Builder WithName(string name)
-        {
-            _builderNative.WithName(name);
-            return this;
-        }
+        public Builder WithName(string name) =>
+            WithProperty(NameProperty, name);
 
         /// <summary>
         /// Sets the specified property. Unsupported properties are ignored.
@@ -679,8 +763,6 @@ public sealed class DXEndpoint : IDisposable
             return this;
         }
 
-        // ToDo Add method for parsing properties file in *.properties format (like in Java).
-
         /// <summary>
         /// Checks if the corresponding property key is supported.
         /// <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/api/DXEndpoint.Builder.html#supportsProperty-java.lang.String-">Javadoc.</a>
@@ -698,7 +780,7 @@ public sealed class DXEndpoint : IDisposable
         public DXEndpoint Build()
         {
             LoadDefaultPropertiesFileIfExist();
-            return new(_builderNative.Build());
+            return new(_builderNative.Build(), _role, new(_props));
         }
 
         /// <summary>
@@ -708,14 +790,15 @@ public sealed class DXEndpoint : IDisposable
             _builderNative.Dispose();
 
         /// <summary>
-        /// Tries to load default properties file for <see cref="Role.Feed"/>, <see cref="Role.OnDemandFeed"/>
+        /// Tries to load the default properties file for <see cref="Role.Feed"/>, <see cref="Role.OnDemandFeed"/>
         /// and <see cref="Role.Publisher"/> role.
         /// The default properties file is loaded only if there are no system properties
         /// or user properties set with the same key.
         /// </summary>
         private void LoadDefaultPropertiesFileIfExist()
         {
-            // The default properties file is only valid for the Feed, OnDemandFeed and Publisher roles.
+            // The default properties file is only valid for the
+            // Feed, OnDemandFeed and Publisher roles.
             string propFileKey;
             switch (_role)
             {
@@ -730,14 +813,15 @@ public sealed class DXEndpoint : IDisposable
                     return;
             }
 
-            // If propFileKey was set in system properties, don't try to load the default properties file.
+            // If propFileKey was set in system properties,
+            // don't try to load the default properties file.
             if (SystemProperty.GetProperty(propFileKey) != null)
             {
                 return;
             }
 
             // If there is no propFileKey in user-set properties,
-            // try load default properties file from current runtime directory.
+            // try load default properties file from current runtime directory if file exist.
             if (!_props.ContainsKey(propFileKey) && File.Exists(propFileKey))
             {
                 // The default property file has the same value as the key.

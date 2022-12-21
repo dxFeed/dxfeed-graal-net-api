@@ -33,9 +33,6 @@ internal sealed unsafe class BuilderNative : IDisposable
     public void WithRole(DXEndpoint.Role role) =>
         BuilderImport.WithRole(GetCurrentThread(), _builderHandle, role);
 
-    public void WithName(string name) =>
-        BuilderImport.WithName(GetCurrentThread(), _builderHandle, name);
-
     public void WithProperty(string key, string value) =>
         BuilderImport.WithProperty(GetCurrentThread(), _builderHandle, key, value);
 
@@ -89,9 +86,6 @@ internal sealed unsafe class BuilderNative : IDisposable
         public static void WithRole(nint thread, BuilderHandle* builderHandle, DXEndpoint.Role role) =>
             ErrorCheck.NativeCall(thread, NativeWithRole(thread, builderHandle, (int)role));
 
-        public static void WithName(nint thread, BuilderHandle* builderHandle, string name) =>
-            ErrorCheck.NativeCall(thread, NativeWithName(thread, builderHandle, name));
-
         public static void WithProperty(nint thread, BuilderHandle* builderHandle, string key, string value) =>
             ErrorCheck.NativeCall(thread, NativeWithProperty(thread, builderHandle, key, value));
 
@@ -126,19 +120,6 @@ internal sealed unsafe class BuilderNative : IDisposable
             nint thread,
             BuilderHandle* builderHandle,
             int role);
-
-        [DllImport(
-            ImportInfo.DllName,
-            CallingConvention = CallingConvention.Cdecl,
-            CharSet = CharSet.Ansi,
-            ExactSpelling = true,
-            BestFitMapping = false,
-            ThrowOnUnmappableChar = true,
-            EntryPoint = "dxfg_DXEndpoint_Builder_withName")]
-        private static extern int NativeWithName(
-            nint thread,
-            BuilderHandle* builderHandle,
-            [MarshalAs(UnmanagedType.LPUTF8Str)] string name);
 
         [DllImport(
             ImportInfo.DllName,

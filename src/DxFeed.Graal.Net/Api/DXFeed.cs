@@ -124,4 +124,9 @@ public class DXFeed
     /// <returns>Returns the feed native associated with this feed.</returns>
     internal FeedNative GetNative() =>
         _feedNative;
+
+    internal void Close()
+    {
+        // ToDo Add implementation.
+    }
 }
