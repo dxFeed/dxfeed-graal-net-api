@@ -45,9 +45,6 @@ internal sealed unsafe class EndpointNative : IDisposable
     public void CloseAndAwaitTermination() =>
         EndpointImport.CloseAndAwaitTermination(GetCurrentThread(), _endpointHandle);
 
-    public DXEndpoint.Role GetRole() =>
-        EndpointImport.GetRole(GetCurrentThread(), _endpointHandle);
-
     public void User(string user) =>
         EndpointImport.SetUser(GetCurrentThread(), _endpointHandle, user);
 
@@ -176,9 +173,6 @@ internal sealed unsafe class EndpointNative : IDisposable
         public static void CloseAndAwaitTermination(nint thread, EndpointHandle* endpointHandle) =>
             ErrorCheck.NativeCall(thread, NativeCloseAndAwaitTermination(thread, endpointHandle));
 
-        public static DXEndpoint.Role GetRole(nint thread, EndpointHandle* endpointHandle) =>
-            (DXEndpoint.Role)ErrorCheck.NativeCall(thread, NativeGetRole(thread, endpointHandle));
-
         public static void SetUser(nint thread, EndpointHandle* endpointHandle, string user) =>
             ErrorCheck.NativeCall(thread, NativeSetUser(thread, endpointHandle, user));
 
@@ -262,15 +256,6 @@ internal sealed unsafe class EndpointNative : IDisposable
             CharSet = CharSet.Ansi,
             EntryPoint = "dxfg_DXEndpoint_closeAndAwaitTermination")]
         private static extern int NativeCloseAndAwaitTermination(
-            nint thread,
-            EndpointHandle* endpointHandle);
-
-        [DllImport(
-            ImportInfo.DllName,
-            CallingConvention = CallingConvention.Cdecl,
-            CharSet = CharSet.Ansi,
-            EntryPoint = "dxfg_DXEndpoint_getRole")]
-        private static extern int NativeGetRole(
             nint thread,
             EndpointHandle* endpointHandle);
 

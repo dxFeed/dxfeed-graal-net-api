@@ -216,17 +216,31 @@ public sealed class DXEndpoint : IDisposable
     private readonly object _listenersLock = new();
 
     /// <summary>
+    /// The endpoint role.
+    /// </summary>
+    private readonly Role _role;
+
+    /// <summary>
+    /// List of set properties.
+    /// </summary>
+    private readonly Dictionary<string, string> _props;
+
+    /// <summary>
     /// List of state change listeners.
     /// </summary>
     private volatile ImmutableList<OnStateChangeListener> _listeners = ImmutableList.Create<OnStateChangeListener>();
 
     /// <summary>
-    /// Initializes a new instance of the <see cref="DXEndpoint"/> class with specified endpoint native.
+    /// Initializes a new instance of the <see cref="DXEndpoint"/> class with specified endpoint native and role.
     /// </summary>
     /// <param name="endpointNative">The specified endpoint native.</param>
-    private DXEndpoint(EndpointNative endpointNative)
+    /// <param name="role">The endpoint role.</param>
+    /// <param name="props">The endpoint properties.</param>
+    private DXEndpoint(EndpointNative endpointNative, Role role, Dictionary<string, string> props)
     {
         _endpointNative = endpointNative;
+        _role = role;
+        _props = props;
         _stateChangeListenerFunc = StateChangeListenerFuncWrapper;
         _feed = new Lazy<DXFeed>(() => new DXFeed(_endpointNative.GetFeed()));
         _publisher = new Lazy<DXPublisher>(() => new DXPublisher(_endpointNative.GetPublisher()));
@@ -398,9 +412,8 @@ public sealed class DXEndpoint : IDisposable
     /// <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/api/DXEndpoint.html#getRole--">Javadoc.</a>
     /// </summary>
     /// <returns>The <see cref="Role"/>.</returns>
-    /// ToDo Returns role from current instance, without native code.
     public Role GetRole() =>
-        _endpointNative.GetRole();
+        _role;
 
     /// <summary>
     /// Changes user name for this endpoint.
@@ -695,7 +708,7 @@ public sealed class DXEndpoint : IDisposable
         public DXEndpoint Build()
         {
             LoadDefaultPropertiesFileIfExist();
-            return new(_builderNative.Build());
+            return new(_builderNative.Build(), _role, new(_props));
         }
 
         /// <summary>
