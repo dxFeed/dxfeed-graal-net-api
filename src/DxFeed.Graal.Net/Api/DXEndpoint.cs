@@ -617,7 +617,7 @@ public sealed class DXEndpoint : IDisposable
             catch (Exception e)
             {
                 // ToDo Add log entry.
-                Console.Error.WriteLine($"Exception in {nameof(GetType)} state change listener: {e}");
+                Console.Error.WriteLine($"Exception in {_name ?? GetType().Name} state change listener: {e}");
             }
         }
     }
