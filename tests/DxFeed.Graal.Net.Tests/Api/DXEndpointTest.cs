@@ -4,7 +4,6 @@
 // If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
 // </copyright>
 
-using System.Diagnostics.CodeAnalysis;
 using DxFeed.Graal.Net.Native.ErrorHandling;
 using static DxFeed.Graal.Net.Api.DXEndpoint;
 using static DxFeed.Graal.Net.Api.DXEndpoint.Role;
@@ -12,11 +11,8 @@ using static DxFeed.Graal.Net.Api.DXEndpoint.Role;
 namespace DxFeed.Graal.Net.Tests.Api;
 
 [TestFixture]
-[SuppressMessage("Assertion", "NUnit2045:Use Assert.Multiple")]
 public class DXEndpointTest
 {
-    private const string Port = "48756";
-
     [Test]
     public void ThrowExceptionWhenDisposed()
     {
@@ -83,118 +79,23 @@ public class DXEndpointTest
     }
 
     [Test]
-    public void StateChangeListenerNotTerminatedWhenExceptionOccurs()
+    public void CheckDisposeCallClose()
     {
-        using var publisher = Create(Publisher).Connect($":{Port}");
-        using var feed = Create(Feed);
-
-        feed.AddStateChangeListener((_, _) =>
-            throw new AssertionException("Not terminated"));
-
-        feed.CloseAndAwaitTermination();
-        Assert.That(feed.GetState(), Is.EqualTo(State.Closed));
-    }
-
-    [Test]
-    public void SimpleCheckEndpointListenerStates()
-    {
-        var timeout = new TimeSpan(0, 0, 3);
         var countdownEvent = new CountdownEvent(1);
-
-        using var publisher = Create(Publisher).Connect($":{Port}");
-        using var feed = Create(Feed);
-
-        var allExpectedState = new List<State>
+        var endpoint = Create(Feed);
+        var currentState = endpoint.GetState();
+        endpoint.AddStateChangeListener((_, newState) =>
         {
-            // First state.
-            State.NotConnected,
-
-            // Connect.
-            State.Connecting,
-            State.Connected,
-
-            // Reconnect.
-            State.Connecting,
-            State.Connected,
-
-            // Disconnect.
-            State.NotConnected,
-
-            // Connect.
-            State.Connecting,
-            State.Connected,
-
-            // Close.
-            State.Closed
-        };
-
-        var allActualStates = new List<State>();
-
-        // First state is not connected.
-        Assert.That(feed.GetState(), Is.EqualTo(State.NotConnected));
-
-        var expectedState = State.Connected;
-        feed.AddStateChangeListener((oldSate, newState) =>
-        {
-            if (allActualStates.Count == 0)
-            {
-                allActualStates.Add(oldSate);
-            }
-
-            allActualStates.Add(newState);
-
-            // ReSharper disable once AccessToModifiedClosure
-            if (expectedState == newState)
-            {
-                countdownEvent.Signal();
-            }
+            currentState = newState;
+            countdownEvent.Signal();
         });
 
-        // Wait Connected state.
-        countdownEvent.Reset();
-        expectedState = State.Connected;
-        feed.Connect($"localhost:{Port}");
-        Assert.That(countdownEvent.Wait(timeout), Is.True);
-        Assert.That(feed.GetState(), Is.EqualTo(expectedState));
+        endpoint.Dispose();
 
-        // Reconnect. Wait Connected state.
-        countdownEvent.Reset();
-        expectedState = State.Connected;
-        feed.Reconnect();
-        Assert.That(countdownEvent.Wait(timeout), Is.True);
-        Assert.That(feed.GetState(), Is.EqualTo(expectedState));
-
-
-        // Wait NotConnected state.
-        countdownEvent.Reset();
-        expectedState = State.NotConnected;
-        feed.Disconnect();
-        feed.AwaitNotConnected();
-        Assert.That(countdownEvent.Wait(timeout), Is.True);
-        Assert.That(feed.GetState(), Is.EqualTo(expectedState));
-
-        // Wait Connected state.
-        countdownEvent.Reset();
-        expectedState = State.Connected;
-        feed.Connect($"localhost:{Port}");
-        Assert.That(countdownEvent.Wait(timeout), Is.True);
-        Assert.That(feed.GetState(), Is.EqualTo(expectedState));
-
-        // Wait Close state.
-        countdownEvent.Reset();
-        expectedState = State.Closed;
-        feed.Close();
-        Assert.That(countdownEvent.Wait(timeout), Is.True);
-        Assert.That(feed.GetState(), Is.EqualTo(expectedState));
-
-        // Cannot connect after close.
-        countdownEvent.Reset();
-        expectedState = State.Connected;
-        feed.Connect($"localhost:{Port}");
-        Assert.That(countdownEvent.Wait(timeout), Is.False);
-        Assert.That(feed.GetState(), Is.EqualTo(State.Closed));
-
-        // Compare expected and actually states.
-        Assert.That(allExpectedState.SequenceEqual(allActualStates), Is.True);
+        Assert.Multiple(() =>
+        {
+            Assert.That(countdownEvent.Wait(new TimeSpan(0, 0, 3)), Is.True);
+            Assert.That(currentState, Is.EqualTo(State.Closed));
+        });
     }
 }
