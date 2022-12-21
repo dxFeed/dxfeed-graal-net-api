@@ -91,6 +91,14 @@ public class DXEndpointBuilderTest
     }
 
     [Test]
+    public void CheckWithName() =>
+        Assert.Multiple(() =>
+        {
+            Assert.That(NewBuilder().Build().GetName(), Is.Null);
+            Assert.That(NewBuilder().WithName("Test").Build().GetName(), Is.EqualTo("Test"));
+        });
+
+    [Test]
     public void OneBuilderInstanceCannotCreateMoreThanOneEndpoint()
     {
         using var builder = NewBuilder();

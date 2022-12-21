@@ -32,6 +32,7 @@ internal abstract class ConnectTool
             .NewBuilder()
             .WithRole(DXEndpoint.Role.Feed)
             .WithProperties(Helper.ParseProperties(cmdArgs.Properties))
+            .WithName(nameof(ConnectTool))
             .Build();
 
         using var sub = endpoint

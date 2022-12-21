@@ -30,6 +30,7 @@ public abstract class DumpTool
             .WithRole(DXEndpoint.Role.StreamFeed)
             .WithProperty(DXEndpoint.DXFeedWildcardEnableProperty, "true") // enabled by default.
             .WithProperties(Helper.ParseProperties(cmdArgs.Properties))
+            .WithName(nameof(DumpTool))
             .Build();
 
         using var sub = endpoint
