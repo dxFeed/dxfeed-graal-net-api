@@ -37,7 +37,8 @@ public sealed class DXEndpoint : IDisposable
     /// This file must be in the <a href="https://en.wikipedia.org/wiki/.properties">Java properties file format</a>.
     /// <br/>
     /// This property can also be set using <see cref="SystemProperty.SetProperty"/>,
-    /// as the default property for all instances <see cref="DXEndpoint"/> with <see cref="Role.Feed"/> role.
+    /// as the default property for all instances <see cref="DXEndpoint"/> with <see cref="Role.Feed"/> or
+    /// or <see cref="Role.OnDemandFeed"/> role.
     /// <br/>
     /// When the path to this properties file not provided (<see cref="SystemProperty.SetProperty"/>
     /// and <see cref="Builder.WithProperty(string,string)"/>),
@@ -387,8 +388,7 @@ public sealed class DXEndpoint : IDisposable
 
     /// <summary>
     /// Closes this endpoint. All network connection are terminated as with
-    /// <see cref="Disconnect"/> method and no further connections
-    /// can be established.
+    /// <see cref="Disconnect"/> method and no further connections can be established.
     /// The endpoint <see cref="State"/> immediately becomes <see cref="State.Closed"/>.
     /// <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/api/DXEndpoint.html#close--">Javadoc.</a>
     /// </summary>
@@ -611,10 +611,14 @@ public sealed class DXEndpoint : IDisposable
         /// </summary>
         private readonly BuilderNative _builderNative;
 
-        // List of set properties.
+        /// <summary>
+        /// List of set properties.
+        /// </summary>
         private readonly Dictionary<string, string> _props = new();
 
-        // The current role.
+        /// <summary>
+        /// Current role for implementations of <see cref="Builder"/>.
+        /// </summary>
         private Role _role = Role.Feed;
 
         /// <summary>
@@ -718,14 +722,15 @@ public sealed class DXEndpoint : IDisposable
             _builderNative.Dispose();
 
         /// <summary>
-        /// Tries to load default properties file for <see cref="Role.Feed"/>, <see cref="Role.OnDemandFeed"/>
+        /// Tries to load the default properties file for <see cref="Role.Feed"/>, <see cref="Role.OnDemandFeed"/>
         /// and <see cref="Role.Publisher"/> role.
         /// The default properties file is loaded only if there are no system properties
         /// or user properties set with the same key.
         /// </summary>
         private void LoadDefaultPropertiesFileIfExist()
         {
-            // The default properties file is only valid for the Feed, OnDemandFeed and Publisher roles.
+            // The default properties file is only valid for the
+            // Feed, OnDemandFeed and Publisher roles.
             string propFileKey;
             switch (_role)
             {
@@ -740,14 +745,15 @@ public sealed class DXEndpoint : IDisposable
                     return;
             }
 
-            // If propFileKey was set in system properties, don't try to load the default properties file.
+            // If propFileKey was set in system properties,
+            // don't try to load the default properties file.
             if (SystemProperty.GetProperty(propFileKey) != null)
             {
                 return;
             }
 
             // If there is no propFileKey in user-set properties,
-            // try load default properties file from current runtime directory.
+            // try load default properties file from current runtime directory if file exist.
             if (!_props.ContainsKey(propFileKey) && File.Exists(propFileKey))
             {
                 // The default property file has the same value as the key.
