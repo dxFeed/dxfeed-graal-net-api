@@ -631,11 +631,8 @@ public sealed class DXEndpoint : IDisposable
         /// </summary>
         /// <param name="name">The endpoint name.</param>
         /// <returns>Returns this <see cref="Builder"/>.</returns>
-        public Builder WithName(string name)
-        {
-            _builderNative.WithName(name);
-            return this;
-        }
+        public Builder WithName(string name) =>
+            WithProperty(NameProperty, name);
 
         /// <summary>
         /// Sets the specified property. Unsupported properties are ignored.
