@@ -62,4 +62,9 @@ public class DXPublisher
     // ToDo Implement method.
     public void PublishEvents(IEnumerable<IEventType> events) =>
         PublishEvents(events.ToArray());
+
+    internal void Close()
+    {
+        // ToDo Add implementation.
+    }
 }

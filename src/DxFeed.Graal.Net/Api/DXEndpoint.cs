@@ -417,9 +417,11 @@ public sealed class DXEndpoint : IDisposable
     /// The endpoint <see cref="State"/> immediately becomes <see cref="State.Closed"/>.
     /// <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/api/DXEndpoint.html#close--">Javadoc.</a>
     /// </summary>
-    // ToDo Implement feed and publisher closure.
-    public void Close() =>
+    public void Close()
+    {
         _endpointNative.Close();
+        CloseRest();
+    }
 
     /// <summary>
     /// Closes this endpoint and wait until all pending data processing tasks are completed.
@@ -429,8 +431,11 @@ public sealed class DXEndpoint : IDisposable
     /// to make sure that file was completely processed.
     /// <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/api/DXEndpoint.html#closeAndAwaitTermination--">Javadoc.</a>
     /// </summary>
-    public void CloseAndAwaitTermination() =>
+    public void CloseAndAwaitTermination()
+    {
         _endpointNative.CloseAndAwaitTermination();
+        CloseRest();
+    }
 
     /// <summary>
     /// Gets the <see cref="Role"/> of this endpoint.
@@ -621,6 +626,22 @@ public sealed class DXEndpoint : IDisposable
         Close();
         _endpointNative.Dispose();
         _disposed = true;
+    }
+
+    /// <summary>
+    /// Closes all associated resources with this <see cref="DXEndpoint"/>.
+    /// </summary>
+    private void CloseRest()
+    {
+        if (_feed.IsValueCreated)
+        {
+            _feed.Value.Close();
+        }
+
+        if (_publisher.IsValueCreated)
+        {
+            _publisher.Value.Close();
+        }
     }
 
     /// <summary>
