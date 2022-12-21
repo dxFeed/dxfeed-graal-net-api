@@ -763,8 +763,6 @@ public sealed class DXEndpoint : IDisposable
             return this;
         }
 
-        // ToDo Add method for parsing properties file in *.properties format (like in Java).
-
         /// <summary>
         /// Checks if the corresponding property key is supported.
         /// <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/api/DXEndpoint.Builder.html#supportsProperty-java.lang.String-">Javadoc.</a>
