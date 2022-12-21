@@ -16,6 +16,13 @@ namespace DxFeed.Graal.Net.Api;
 
 /// <summary>
 /// Manages network connections to <see cref="DXFeed"/> or <see cref="DXPublisher"/>.
+/// <br/>
+/// There are ready-to-use singleton instances that are available with
+/// <see cref="Instance"/> and <see cref="GetInstance"/> methods as wel as
+/// factory methods <see cref="Create()"/> and <see cref="Create(Role)"/> , and a number of configuration methods.
+/// <br/>
+/// Advanced properties can be configured with <see cref="Builder"/>(creates with <see cref="NewBuilder"/>).
+/// <br/>
 /// This class is a wrapper for <see cref="EndpointNative"/>.
 /// <br/>
 /// For more details see <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/api/DXEndpoint.html">Javadoc</a>.
@@ -187,7 +194,7 @@ public sealed class DXEndpoint : IDisposable
     public const string DXSchemeEnabledPropertyPrefix = "dxscheme.enabled.";
 
     /// <summary>
-    /// List of singleton instances.
+    /// List of singleton <see cref="DXEndpoint"/> instances with different roles.
     /// </summary>
     private static readonly Dictionary<Role, DXEndpoint> Instances = new();
 
@@ -197,7 +204,8 @@ public sealed class DXEndpoint : IDisposable
     private readonly EndpointNative _endpointNative;
 
     /// <summary>
-    /// A delegate to to the endpoint state change listener.
+    /// A delegate to the endpoint state change listener.
+    /// Callback from native code.
     /// </summary>
     private readonly StateChangeListenerFunc _stateChangeListenerFunc;
 
@@ -231,12 +239,16 @@ public sealed class DXEndpoint : IDisposable
     /// </summary>
     private volatile ImmutableList<OnStateChangeListener> _listeners = ImmutableList.Create<OnStateChangeListener>();
 
+    /// <summary>
+    /// To detect redundant calls <see cref="Dispose"/>.
+    /// </summary>
     private bool _disposed;
 
     /// <summary>
-    /// Initializes a new instance of the <see cref="DXEndpoint"/> class with specified endpoint native and role.
+    /// Initializes a new instance of the <see cref="DXEndpoint"/>
+    /// class with specified <see cref="EndpointNative"/>, role and properties.
     /// </summary>
-    /// <param name="endpointNative">The specified endpoint native.</param>
+    /// <param name="endpointNative">The specified <see cref="EndpointNative"/>.</param>
     /// <param name="role">The endpoint role.</param>
     /// <param name="props">The endpoint properties.</param>
     private DXEndpoint(EndpointNative endpointNative, Role role, Dictionary<string, string> props)
@@ -251,7 +263,7 @@ public sealed class DXEndpoint : IDisposable
     }
 
     /// <summary>
-    /// Notifies of a change in the state of this endpoint.
+    /// Notifies a change in the state of this endpoint.
     /// </summary>
     /// <param name="oldState">The old state of endpoint.</param>
     /// <param name="newState">The new state of endpoint.</param>
@@ -264,8 +276,12 @@ public sealed class DXEndpoint : IDisposable
     public enum Role
     {
         /// <summary>
-        /// <c>Feed</c> endpoint connects to the remote data feed provider and is optimized for real-time or
-        /// delayed data processing (<b>this is a default role</b>).
+        /// <c>Feed</c> endpoint connects to the remote data feed provider
+        /// and is optimized for real-time or delayed data processing (<b>this is a default role</b>).
+        /// <see cref="DXEndpoint.GetFeed"/> method returns feed object that subscribes
+        /// to the remote data feed provider and receives events from it.
+        /// When event processing threads cannot keep up (don't have enough CPU time), data is dynamically conflated
+        /// to minimize latency between received events and their processing time.
         /// </summary>
         Feed,
 
@@ -278,18 +294,26 @@ public sealed class DXEndpoint : IDisposable
         /// <summary>
         /// <c>StreamFeed</c> endpoint is similar to <see cref="Feed"/>
         /// and also connects to the remote data feed provider, is designed for bulk parsing of data from files.
+        /// <see cref="DXEndpoint.GetFeed"/> method returns feed object that subscribes
+        /// to the data from the opened files and receives events from them.
+        /// Events from the files are not conflated, are not skipped, and are processed as fast as possible.
         /// </summary>
         StreamFeed,
 
         /// <summary>
         /// <c>Publisher</c> endpoint connects to the remote publisher hub (also known as multiplexor) or
         /// creates a publisher on the local host.
+        /// <see cref="DXEndpoint.GetPublisher"/> method returns a publisher object
+        /// that publishes events to all connected feeds.
         /// </summary>
         Publisher,
 
         /// <summary>
         /// <c>StreamPublisher</c> endpoint is similar to <see cref="Publisher"/>
         /// and also connects to the remote publisher hub, but is designed for bulk publishing of data.
+        /// <see cref="DXEndpoint.GetPublisher"/> method returns a publisher object that publishes events
+        /// to all connected feeds.
+        /// Published events are not conflated, are not skipped, and are processed as fast as possible.
         /// </summary>
         StreamPublisher,
 
@@ -329,6 +353,7 @@ public sealed class DXEndpoint : IDisposable
 
     /// <summary>
     /// Gets a default application-wide singleton instance of DXEndpoint with a <see cref="Role.Feed"/> role.
+    /// Most applications use only a single data-source and should rely on this method to get one.
     /// <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/api/DXEndpoint.html#getInstance--">Javadoc.</a>
     /// </summary>
     /// <returns>Returns singleton instance of <see cref="DXEndpoint"/>.</returns>
@@ -337,6 +362,7 @@ public sealed class DXEndpoint : IDisposable
 
     /// <summary>
     /// Gets a default application-wide singleton instance of DXEndpoint with a specific <see cref="Role"/>.
+    /// Most applications use only a single data-source and should rely on this method to get one.
     /// <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/api/DXEndpoint.html#getInstance-com.dxfeed.api.DXEndpoint.Role-">Javadoc.</a>
     /// </summary>
     /// <param name="role">The <see cref="Role"/>.</param>
@@ -362,7 +388,7 @@ public sealed class DXEndpoint : IDisposable
     /// all configuration properties were set.
     /// <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/api/DXEndpoint.html#newBuilder--">Javadoc.</a>
     /// </summary>
-    /// <returns>The new <see cref="Builder"/> instance.</returns>
+    /// <returns>The created <see cref="Builder"/> instance.</returns>
     public static Builder NewBuilder() =>
         new();
 
@@ -414,6 +440,29 @@ public sealed class DXEndpoint : IDisposable
     /// <returns>The <see cref="Role"/>.</returns>
     public Role GetRole() =>
         _role;
+
+    /// <summary>
+    /// Gets the <see cref="State"/> of this endpoint.
+    /// <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/api/DXEndpoint.html#getState--">Javadoc.</a>
+    /// </summary>
+    /// <returns>The <see cref="State"/>.</returns>
+    public State GetState() =>
+        EnumUtil.ValueOf<State>(_endpointNative.GetState());
+
+    /// <summary>
+    /// Gets a value indicating whether if this endpoint is closed.
+    /// There is a shortcut for <c><see cref="GetState"/> == <see cref="State.Closed"/></c>.
+    /// </summary>
+    /// <returns>Returns <c>true</c> if this endpoint is closed.</returns>
+    public bool IsClosed() =>
+        GetState() == State.Closed;
+
+    /// <summary>
+    /// Gets user-defined endpoint name.
+    /// </summary>
+    /// <returns>Returns endpoint name, or <c>null</c> if name was not set.</returns>
+    public string? GetName() =>
+        _name;
 
     /// <summary>
     /// Changes user name for this endpoint.
@@ -504,32 +553,8 @@ public sealed class DXEndpoint : IDisposable
         _endpointNative.AwaitNotConnected();
 
     /// <summary>
-    /// Gets the <see cref="State"/> of this endpoint.
-    /// <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/api/DXEndpoint.html#getState--">Javadoc.</a>
-    /// </summary>
-    /// <returns>The <see cref="State"/>.</returns>
-    public State GetState() =>
-        EnumUtil.ValueOf<State>(_endpointNative.GetState());
-
-    /// <summary>
-    /// Gets user-defined endpoint name.
-    /// </summary>
-    /// <returns>Returns endpoint name, or <c>null</c> if name was not set.</returns>
-    public string? GetName() =>
-        _name;
-
-    /// <summary>
-    /// Gets a value indicating whether if this endpoint is closed.
-    /// There is a shortcut for <c><see cref="GetState"/> == <see cref="State.Closed"/></c>.
-    /// </summary>
-    /// <returns>Returns <c>true</c> if this endpoint is closed.</returns>
-    public bool IsClosed() =>
-        GetState() == State.Closed;
-
-    /// <summary>
     /// Adds listener that is notified about changes in <see cref="GetState"/> property.
-    /// It removes the listener that was previously installed with
-    /// <see cref="RemoveStateChangeListener"/> method.
+    /// It removes the listener that was previously installed with <see cref="RemoveStateChangeListener"/> method.
     /// <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/api/DXEndpoint.html#addStateChangeListener-java.beans.PropertyChangeListener-">Javadoc.</a>
     /// </summary>
     /// <param name="listener">The listener to add.</param>
@@ -539,6 +564,7 @@ public sealed class DXEndpoint : IDisposable
         {
             if (_listeners.IsEmpty)
             {
+                // If this is the first listener, attach StateChangeListenerFuncWrapper.
                 _endpointNative.SetStateChangeListener(_stateChangeListenerFunc);
             }
 
@@ -548,8 +574,7 @@ public sealed class DXEndpoint : IDisposable
 
     /// <summary>
     /// Removes listener that is notified about changes in <see cref="GetState"/> property.
-    /// It removes the listener that was previously installed with
-    /// <see cref="AddStateChangeListener"/> method.
+    /// It removes the listener that was previously installed with <see cref="AddStateChangeListener"/> method.
     /// <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/api/DXEndpoint.html#removeStateChangeListener-java.beans.PropertyChangeListener-">Javadoc.</a>
     /// </summary>
     /// <param name="listener">The listener to remove.</param>
@@ -561,6 +586,7 @@ public sealed class DXEndpoint : IDisposable
 
             if (_listeners.IsEmpty)
             {
+                // If there are no more listeners left, detach StateChangeListenerFuncWrapper.
                 _endpointNative.ClearStateChangeListener();
             }
         }
