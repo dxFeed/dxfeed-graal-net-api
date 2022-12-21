@@ -255,8 +255,7 @@ public sealed class DXEndpoint : IDisposable
     {
         _endpointNative = endpointNative;
         _role = role;
-        props.TryGetValue(NameProperty, out var name);
-        _name = name;
+        _name = props.TryGetValue(NameProperty, out var name) ? name : null;
         _stateChangeListenerFunc = StateChangeListenerFuncWrapper;
         _feed = new Lazy<DXFeed>(() => new DXFeed(_endpointNative.GetFeed()));
         _publisher = new Lazy<DXPublisher>(() => new DXPublisher(_endpointNative.GetPublisher()));
