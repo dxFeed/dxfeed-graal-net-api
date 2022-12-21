@@ -21,6 +21,7 @@ public abstract class BaseArgs<T>
             config.EnableDashDash = true;
             config.HelpWriter = null;
             config.CaseInsensitiveEnumValues = true;
+            config.IgnoreUnknownArguments = true;
         });
         var result = parser.ParseArguments<T>(args);
         result.WithNotParsed(_ => DisplayHelpText(result));
