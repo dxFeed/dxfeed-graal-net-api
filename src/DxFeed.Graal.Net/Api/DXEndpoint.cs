@@ -511,6 +511,14 @@ public sealed class DXEndpoint : IDisposable
         EnumUtil.ValueOf<State>(_endpointNative.GetState());
 
     /// <summary>
+    /// Gets a value indicating whether if this endpoint is closed.
+    /// There is a shortcut for <c><see cref="GetState"/> == <see cref="State.Closed"/></c>.
+    /// </summary>
+    /// <returns>Returns <c>true</c> if this endpoint is closed.</returns>
+    public bool IsClosed() =>
+        GetState() == State.Closed;
+
+    /// <summary>
     /// Adds listener that is notified about changes in <see cref="GetState"/> property.
     /// It removes the listener that was previously installed with
     /// <see cref="RemoveStateChangeListener"/> method.

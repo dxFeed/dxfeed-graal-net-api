@@ -17,13 +17,13 @@ public class DXEndpointListenerTest
     [Test]
     public void StateChangeListenerNotTerminatedWhenExceptionOccurs()
     {
-        using var feed = Create(Feed);
+        using var endpoint = Create(Feed);
 
-        feed.AddStateChangeListener((_, _) =>
+        endpoint.AddStateChangeListener((_, _) =>
             throw new AssertionException("Not terminated"));
 
-        feed.CloseAndAwaitTermination();
-        Assert.That(feed.GetState(), Is.EqualTo(State.Closed));
+        endpoint.CloseAndAwaitTermination();
+        Assert.That(endpoint.IsClosed(), Is.True);
     }
 
     [Test]
@@ -124,7 +124,7 @@ public class DXEndpointListenerTest
         Assert.Multiple(() =>
         {
             // The connection was closed.
-            Assert.That(endpoint.GetState(), Is.EqualTo(State.Closed));
+            Assert.That(endpoint.IsClosed, Is.True);
 
             // Listener was only called once.
             Assert.That(countCallListener, Is.EqualTo(1));
