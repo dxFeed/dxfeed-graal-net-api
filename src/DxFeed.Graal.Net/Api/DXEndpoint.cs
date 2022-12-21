@@ -231,6 +231,8 @@ public sealed class DXEndpoint : IDisposable
     /// </summary>
     private volatile ImmutableList<OnStateChangeListener> _listeners = ImmutableList.Create<OnStateChangeListener>();
 
+    private bool _disposed;
+
     /// <summary>
     /// Initializes a new instance of the <see cref="DXEndpoint"/> class with specified endpoint native and role.
     /// </summary>
@@ -565,11 +567,20 @@ public sealed class DXEndpoint : IDisposable
         _publisher.Value;
 
     /// <summary>
-    /// Releases all resources used by the current instance of the <see cref="DXEndpoint"/> class.
+    /// Closes this endpoint and releases all resources used
+    /// by the current instance of the <see cref="DXEndpoint"/> class.
     /// </summary>
-    /// ToDo Must use Close().
-    public void Dispose() =>
+    public void Dispose()
+    {
+        if (_disposed)
+        {
+            return;
+        }
+
+        Close();
         _endpointNative.Dispose();
+        _disposed = true;
+    }
 
     /// <summary>
     /// Wrapper function over native change state listener calls.
