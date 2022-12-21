@@ -6,7 +6,6 @@
 
 using System;
 using System.Runtime.InteropServices;
-using DxFeed.Graal.Net.Api;
 using DxFeed.Graal.Net.Native.ErrorHandling;
 using DxFeed.Graal.Net.Native.Feed;
 using DxFeed.Graal.Net.Native.Graal;
