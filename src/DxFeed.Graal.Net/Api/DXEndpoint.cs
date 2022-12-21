@@ -277,7 +277,7 @@ public sealed class DXEndpoint : IDisposable
         /// <summary>
         /// <c>Feed</c> endpoint connects to the remote data feed provider
         /// and is optimized for real-time or delayed data processing (<b>this is a default role</b>).
-        /// <see cref="DXEndpoint.GetFeed"/> method returns feed object that subscribes
+        /// <see cref="GetFeed"/> method returns feed object that subscribes
         /// to the remote data feed provider and receives events from it.
         /// When event processing threads cannot keep up (don't have enough CPU time), data is dynamically conflated
         /// to minimize latency between received events and their processing time.
@@ -293,7 +293,7 @@ public sealed class DXEndpoint : IDisposable
         /// <summary>
         /// <c>StreamFeed</c> endpoint is similar to <see cref="Feed"/>
         /// and also connects to the remote data feed provider, is designed for bulk parsing of data from files.
-        /// <see cref="DXEndpoint.GetFeed"/> method returns feed object that subscribes
+        /// <see cref="GetFeed"/> method returns feed object that subscribes
         /// to the data from the opened files and receives events from them.
         /// Events from the files are not conflated, are not skipped, and are processed as fast as possible.
         /// </summary>
@@ -302,7 +302,7 @@ public sealed class DXEndpoint : IDisposable
         /// <summary>
         /// <c>Publisher</c> endpoint connects to the remote publisher hub (also known as multiplexor) or
         /// creates a publisher on the local host.
-        /// <see cref="DXEndpoint.GetPublisher"/> method returns a publisher object
+        /// <see cref="GetPublisher"/> method returns a publisher object
         /// that publishes events to all connected feeds.
         /// </summary>
         Publisher,
@@ -310,7 +310,7 @@ public sealed class DXEndpoint : IDisposable
         /// <summary>
         /// <c>StreamPublisher</c> endpoint is similar to <see cref="Publisher"/>
         /// and also connects to the remote publisher hub, but is designed for bulk publishing of data.
-        /// <see cref="DXEndpoint.GetPublisher"/> method returns a publisher object that publishes events
+        /// <see cref="GetPublisher"/> method returns a publisher object that publishes events
         /// to all connected feeds.
         /// Published events are not conflated, are not skipped, and are processed as fast as possible.
         /// </summary>
