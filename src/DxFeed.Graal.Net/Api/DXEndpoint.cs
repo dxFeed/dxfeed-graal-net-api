@@ -368,11 +368,8 @@ public sealed class DXEndpoint : IDisposable
     /// <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/api/DXEndpoint.html#create--">Javadoc.</a>
     /// </summary>
     /// <returns>The created <see cref="DXEndpoint"/>.</returns>
-    public static DXEndpoint Create()
-    {
-        using var builder = NewBuilder();
-        return builder.WithRole(Role.Feed).Build();
-    }
+    public static DXEndpoint Create() =>
+        Create(Role.Feed);
 
     /// <summary>
     /// Creates an endpoint with a specified <see cref="Role"/>.
