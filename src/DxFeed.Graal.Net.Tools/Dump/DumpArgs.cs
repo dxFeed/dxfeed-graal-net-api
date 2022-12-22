@@ -13,7 +13,7 @@ using DxFeed.Graal.Net.Tools.Arguments;
 namespace DxFeed.Graal.Net.Tools.Dump;
 
 public class DumpArgs :
-    BaseArgs<DumpArgs>, IAddressArg, ITypesArg, ISymbolsArg, IFromTimeArg, ISourceArg, IPropertyArg, IQuiteArg
+    AbstractParser<DumpArgs>, IAddressArg, ITypesArg, ISymbolsArg, IPropertyArg, IQuiteArg
 {
     public string Address { get; set; } = null!;
 
@@ -22,10 +22,6 @@ public class DumpArgs :
 
     [Value(ISymbolsArg.Index, MetaName = ISymbolsArg.MetaName, Required = false, HelpText = ISymbolsArg.HelpText)]
     public string? Symbols { get; set; } = null!;
-
-    public long? FromTime { get; set; } = null!;
-
-    public string? Source { get; set; } = null!;
 
     public IEnumerable<string> Properties { get; set; } = null!;
 

@@ -13,7 +13,7 @@ using DxFeed.Graal.Net.Tools.Arguments;
 namespace DxFeed.Graal.Net.Tools.Connect;
 
 public class ConnectArgs :
-    BaseArgs<ConnectArgs>, IAddressArg, ITypesArg, ISymbolsArg, IFromTimeArg, ISourceArg, IPropertyArg, IQuiteArg
+    AbstractParser<ConnectArgs>, IAddressArg, ITypesArg, ISymbolsArg, IFromTimeArg, ISourceArg, IPropertyArg, IQuiteArg
 {
     public string Address { get; set; } = null!;
 

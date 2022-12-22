@@ -5,9 +5,9 @@
 // </copyright>
 
 using System;
+using System.Collections.Generic;
 using CommandLine;
 using CommandLine.Text;
-using DxFeed.Graal.Net.Tools.Arguments;
 
 namespace DxFeed.Graal.Net.Tools;
 
@@ -17,10 +17,22 @@ public enum Tools
     Dump
 }
 
-public class ProgramArgs : BaseArgs<ProgramArgs>
+public class ProgramArgs : AbstractParser<ProgramArgs>
 {
     [Value(0, MetaName = "tool", Required = true, HelpText = "The name of tool.")]
     public Tools? Tool { get; set; } = null!;
+
+    public override ProgramArgs? ParseArgs(IEnumerable<string> args)
+    {
+        // Change default settings for parser.
+        void ParserSettings(ParserSettings settings)
+        {
+            GetDefaultParserSettings()(settings);
+            settings.IgnoreUnknownArguments = true;
+        }
+
+        return ParseArgs(args, ParserSettings);
+    }
 
     protected override void DisplayHelpText(ParserResult<ProgramArgs> parserResult)
     {
