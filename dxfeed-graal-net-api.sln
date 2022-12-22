@@ -12,6 +12,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrintQuoteEvents", "samples
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventSample", "samples\EventSample\EventSample.csproj", "{2A8B6037-09FF-40DC-868F-A0ED54A46287}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{D8A3B3E7-CFFD-4113-862D-B9E9E7FF0BA5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -42,5 +44,6 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{73597E04-D8A8-4991-A759-7F886CBE2A8F} = {C4490D74-2970-4A1B-8178-A724A06B140A}
 		{2A8B6037-09FF-40DC-868F-A0ED54A46287} = {C4490D74-2970-4A1B-8178-A724A06B140A}
+		{7F07BB95-9DB6-4331-BCCF-FBF441F8F3E2} = {D8A3B3E7-CFFD-4113-862D-B9E9E7FF0BA5}
 	EndGlobalSection
 EndGlobal

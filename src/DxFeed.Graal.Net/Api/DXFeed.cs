@@ -43,7 +43,7 @@ public class DXFeed
     /// <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/api/DXFeed.html#getInstance--">Javadoc.</a>
     /// </summary>
     public static DXFeed Instance =>
-        DXEndpoint.Instance.GetFeed();
+        DXEndpoint.GetInstance().GetFeed();
 
     /// <summary>
     /// Creates new subscription for a list of event types that is <i>attached</i> to this feed.
