@@ -34,7 +34,7 @@ public class DXEndpointTest
     public void DefaultEndpointRoleIsFeed() =>
         Assert.Multiple(() =>
         {
-            Assert.That(Instance.GetRole(), Is.EqualTo(Feed));
+            Assert.That(GetInstance().GetRole(), Is.EqualTo(Feed));
             Assert.That(Create().GetRole(), Is.EqualTo(Feed));
         });
 
@@ -67,15 +67,15 @@ public class DXEndpointTest
     [Test]
     public void GetFeedReturnsSameObject()
     {
-        var feed = Instance.GetFeed();
-        Assert.That(feed, Is.EqualTo(Instance.GetFeed()));
+        var feed = GetInstance().GetFeed();
+        Assert.That(feed, Is.EqualTo(GetInstance().GetFeed()));
     }
 
     [Test]
     public void GetGePublisherReturnsSameObject()
     {
-        var publisher = Instance.GetPublisher();
-        Assert.That(publisher, Is.EqualTo(Instance.GetPublisher()));
+        var publisher = GetInstance().GetPublisher();
+        Assert.That(publisher, Is.EqualTo(GetInstance().GetPublisher()));
     }
 
     [Test]

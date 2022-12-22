@@ -18,7 +18,7 @@ namespace DxFeed.Graal.Net.Api;
 /// Manages network connections to <see cref="DXFeed"/> or <see cref="DXPublisher"/>.
 /// <br/>
 /// There are ready-to-use singleton instances that are available with
-/// <see cref="Instance"/> and <see cref="GetInstance"/> methods as wel as
+/// <see cref="GetInstance()"/> and <see cref="GetInstance(Role)"/> methods as wel as
 /// factory methods <see cref="Create()"/> and <see cref="Create(Role)"/> , and a number of configuration methods.
 /// <br/>
 /// Advanced properties can be configured with <see cref="Builder"/>(creates with <see cref="NewBuilder"/>).
@@ -356,7 +356,7 @@ public sealed class DXEndpoint : IDisposable
     /// <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/api/DXEndpoint.html#getInstance--">Javadoc.</a>
     /// </summary>
     /// <returns>Returns singleton instance of <see cref="DXEndpoint"/>.</returns>
-    public static DXEndpoint Instance =>
+    public static DXEndpoint GetInstance() =>
         GetInstance(Role.Feed);
 
     /// <summary>
@@ -623,9 +623,10 @@ public sealed class DXEndpoint : IDisposable
             return;
         }
 
+        _disposed = true;
+
         Close();
         _endpointNative.Dispose();
-        _disposed = true;
     }
 
     /// <summary>
