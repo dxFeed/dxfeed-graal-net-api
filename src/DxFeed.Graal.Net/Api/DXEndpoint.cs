@@ -224,7 +224,7 @@ public sealed class DXEndpoint : IDisposable
     // ReSharper disable once PrivateFieldCanBeConvertedToLocalVariable
 #pragma warning disable S1450
     private readonly StateChangeListenerFunc _stateChangeListenerFunc;
-#pragma warning enable S1450
+#pragma warning restore S1450
 
     /// <summary>
     /// The endpoint role.
