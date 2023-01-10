@@ -121,9 +121,9 @@ internal sealed unsafe class EndpointNative : IDisposable
             return;
         }
 
+        _disposed = true;
         ReleaseUnmanagedResources();
         GC.SuppressFinalize(this);
-        _disposed = true;
     }
 
     private static nint GetCurrentThread() =>
