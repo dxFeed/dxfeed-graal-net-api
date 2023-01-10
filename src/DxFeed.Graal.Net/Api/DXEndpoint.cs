@@ -699,6 +699,16 @@ public sealed class DXEndpoint : IDisposable
             _builderNative = BuilderNative.Create();
 
         /// <summary>
+        /// Changes name that is used to distinguish multiple <see cref="DXEndpoint"/>
+        /// in the same in logs and in other diagnostic means.
+        /// <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/api/DXEndpoint.Builder.html#withName-java.lang.String-">Javadoc.</a>
+        /// </summary>
+        /// <param name="name">The endpoint name.</param>
+        /// <returns>Returns this <see cref="Builder"/>.</returns>
+        public Builder WithName(string name) =>
+            WithProperty(NameProperty, name);
+
+        /// <summary>
         /// Sets role for the created <see cref="DXEndpoint"/>.
         /// Default role is <see cref="Role.Feed"/>.
         /// <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/api/DXEndpoint.Builder.html#withRole-com.dxfeed.api.DXEndpoint.Role-">Javadoc.</a>
@@ -711,16 +721,6 @@ public sealed class DXEndpoint : IDisposable
             _builderNative.WithRole(role);
             return this;
         }
-
-        /// <summary>
-        /// Changes name that is used to distinguish multiple <see cref="DXEndpoint"/>
-        /// in the same in logs and in other diagnostic means.
-        /// <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/api/DXEndpoint.Builder.html#withName-java.lang.String-">Javadoc.</a>
-        /// </summary>
-        /// <param name="name">The endpoint name.</param>
-        /// <returns>Returns this <see cref="Builder"/>.</returns>
-        public Builder WithName(string name) =>
-            WithProperty(NameProperty, name);
 
         /// <summary>
         /// Sets the specified property. Unsupported properties are ignored.
@@ -749,7 +749,7 @@ public sealed class DXEndpoint : IDisposable
         }
 
         /// <summary>
-        /// Sets the specified properties from the provided key-value collection.
+        /// Sets the specified properties from the provided key-value collection. Unsupported properties are ignored.
         /// <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/api/DXEndpoint.Builder.html#withProperties-java.util.Properties-">Javadoc.</a>
         /// </summary>
         /// <param name="properties">The key-value collection.</param>
@@ -794,7 +794,7 @@ public sealed class DXEndpoint : IDisposable
         /// Tries to load the default properties file for <see cref="Role.Feed"/>, <see cref="Role.OnDemandFeed"/>
         /// and <see cref="Role.Publisher"/> role.
         /// The default properties file is loaded only if there are no system properties
-        /// or user properties set with the same key.
+        /// or user properties set with the same key and the file itself exists and is readable.
         /// </summary>
         private void LoadDefaultPropertiesFileIfExist()
         {
