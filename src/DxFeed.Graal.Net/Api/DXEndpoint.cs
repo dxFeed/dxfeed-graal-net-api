@@ -207,6 +207,11 @@ public sealed class DXEndpoint : IDisposable
     private static readonly Dictionary<Role, DXEndpoint> Instances = new();
 
     /// <summary>
+    /// List of <see cref="DXEndpoint"/> roots links for avoid GC, as long as the object cannot be safely collected.
+    /// </summary>
+    private static readonly ConcurrentSet<DXEndpoint> RootRefs = new();
+
+    /// <summary>
     /// Endpoint native wrapper.
     /// </summary>
     private readonly EndpointNative _endpointNative;
@@ -214,8 +219,12 @@ public sealed class DXEndpoint : IDisposable
     /// <summary>
     /// A delegate to the endpoint state change listener.
     /// Callback from native code.
+    /// You need to save this delegate as it will be passed to native code to avoid premature GC.
     /// </summary>
+    // ReSharper disable once PrivateFieldCanBeConvertedToLocalVariable
+#pragma warning disable S1450
     private readonly StateChangeListenerFunc _stateChangeListenerFunc;
+#pragma warning enable S1450
 
     /// <summary>
     /// The endpoint role.
@@ -265,8 +274,10 @@ public sealed class DXEndpoint : IDisposable
         _role = role;
         _name = props.TryGetValue(NameProperty, out var name) ? name : null;
         _stateChangeListenerFunc = StateChangeListenerFuncWrapper;
+        _endpointNative.SetStateChangeListener(_stateChangeListenerFunc);
         _feed = new Lazy<DXFeed>(() => new DXFeed(_endpointNative.GetFeed()));
         _publisher = new Lazy<DXPublisher>(() => new DXPublisher(_endpointNative.GetPublisher()));
+        RootRefs.Add(this);
     }
 
     /// <summary>
@@ -428,7 +439,7 @@ public sealed class DXEndpoint : IDisposable
     public void Close()
     {
         _endpointNative.Close();
-        CloseRest();
+        CloseInner();
     }
 
     /// <summary>
@@ -442,7 +453,7 @@ public sealed class DXEndpoint : IDisposable
     public void CloseAndAwaitTermination()
     {
         _endpointNative.CloseAndAwaitTermination();
-        CloseRest();
+        CloseInner();
     }
 
     /// <summary>
@@ -459,7 +470,7 @@ public sealed class DXEndpoint : IDisposable
     /// </summary>
     /// <returns>The <see cref="State"/>.</returns>
     public State GetState() =>
-        EnumUtil.ValueOf<State>(_endpointNative.GetState());
+        _disposed ? State.Closed : EnumUtil.ValueOf<State>(_endpointNative.GetState());
 
     /// <summary>
     /// Gets a value indicating whether if this endpoint is closed.
@@ -574,12 +585,6 @@ public sealed class DXEndpoint : IDisposable
     {
         lock (_listenersLock)
         {
-            if (_listeners.IsEmpty)
-            {
-                // If this is the first listener, attach StateChangeListenerFuncWrapper.
-                _endpointNative.SetStateChangeListener(_stateChangeListenerFunc);
-            }
-
             _listeners = _listeners.Add(listener);
         }
     }
@@ -595,12 +600,6 @@ public sealed class DXEndpoint : IDisposable
         lock (_listenersLock)
         {
             _listeners = _listeners.Remove(listener);
-
-            if (_listeners.IsEmpty)
-            {
-                // If there are no more listeners left, detach StateChangeListenerFuncWrapper.
-                _endpointNative.ClearStateChangeListener();
-            }
         }
     }
 
@@ -632,7 +631,6 @@ public sealed class DXEndpoint : IDisposable
         }
 
         _disposed = true;
-
         Close();
         _endpointNative.Dispose();
     }
@@ -640,7 +638,7 @@ public sealed class DXEndpoint : IDisposable
     /// <summary>
     /// Closes all associated resources with this <see cref="DXEndpoint"/>.
     /// </summary>
-    private void CloseRest()
+    private void CloseInner()
     {
         if (_feed.IsValueCreated)
         {
@@ -674,6 +672,12 @@ public sealed class DXEndpoint : IDisposable
                 // ToDo Add log entry.
                 Console.Error.WriteLine($"Exception in {_name ?? GetType().Name} state change listener: {e}");
             }
+        }
+
+        // If the object's state is closed, we can remove the root reference to the object.
+        if (newState == State.Closed)
+        {
+            RootRefs.Remove(this);
         }
     }
 
