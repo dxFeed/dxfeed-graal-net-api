@@ -67,7 +67,7 @@ internal sealed unsafe class BuilderNative : IDisposable
         catch (Exception e)
         {
             // ToDo Add a log entry.
-            Console.Error.WriteLine($"Exception in {nameof(GetType)} when releasing resource: {e}");
+            Console.Error.WriteLine($"Exception in {GetType().Name} when releasing resource: {e}");
         }
     }
 
