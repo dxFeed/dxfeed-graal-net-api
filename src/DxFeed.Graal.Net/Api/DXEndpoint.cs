@@ -19,14 +19,22 @@ namespace DxFeed.Graal.Net.Api;
 /// <br/>
 /// There are ready-to-use singleton instances that are available with
 /// <see cref="GetInstance()"/> and <see cref="GetInstance(Role)"/> methods as wel as
-/// factory methods <see cref="Create()"/> and <see cref="Create(Role)"/> , and a number of configuration methods.
+/// factory methods <see cref="Create()"/> and <see cref="Create(Role)"/>, and a number of configuration methods.
 /// <br/>
-/// Advanced properties can be configured with <see cref="Builder"/>(creates with <see cref="NewBuilder"/>).
+/// Advanced properties can be configured with <see cref="Builder"/> (creates with <see cref="NewBuilder"/>).
 /// <br/>
 /// This class is a wrapper for <see cref="EndpointNative"/>.
 /// <br/>
 /// For more details see <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/api/DXEndpoint.html">Javadoc</a>.
 /// </summary>
+/// <example>
+/// <code>
+/// DXFeed feed = DXEndpoint.Create()
+///     .User("demo").Password("demo")
+///     .Connect("demo.dxfeed.com:7300")
+///     .GetFeed();
+/// </code>
+/// </example>
 public sealed class DXEndpoint : IDisposable
 {
     /// <summary>
@@ -210,6 +218,16 @@ public sealed class DXEndpoint : IDisposable
     private readonly StateChangeListenerFunc _stateChangeListenerFunc;
 
     /// <summary>
+    /// The endpoint role.
+    /// </summary>
+    private readonly Role _role;
+
+    /// <summary>
+    /// User-defined endpoint name.
+    /// </summary>
+    private readonly string? _name;
+
+    /// <summary>
     /// Lazy initialization of the <see cref="DXFeed"/> instance.
     /// </summary>
     private readonly Lazy<DXFeed> _feed;
@@ -225,16 +243,6 @@ public sealed class DXEndpoint : IDisposable
     private readonly object _listenersLock = new();
 
     /// <summary>
-    /// The endpoint role.
-    /// </summary>
-    private readonly Role _role;
-
-    /// <summary>
-    /// User-defined endpoint name.
-    /// </summary>
-    private readonly string? _name;
-
-    /// <summary>
     /// List of state change listeners.
     /// </summary>
     private volatile ImmutableList<OnStateChangeListener> _listeners = ImmutableList.Create<OnStateChangeListener>();
@@ -246,7 +254,7 @@ public sealed class DXEndpoint : IDisposable
 
     /// <summary>
     /// Initializes a new instance of the <see cref="DXEndpoint"/>
-    /// class with specified <see cref="EndpointNative"/>, role and properties.
+    /// class with specified <see cref="EndpointNative"/>, <see cref="Role"/> and properties.
     /// </summary>
     /// <param name="endpointNative">The specified <see cref="EndpointNative"/>.</param>
     /// <param name="role">The endpoint role.</param>
