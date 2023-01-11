@@ -99,6 +99,20 @@ public class DXEndpointBuilderTest
         });
 
     [Test]
+    public void CheckWithPropertyOverloads()
+    {
+        var str = "TestName1";
+        var kvp = new KeyValuePair<string, string>(NameProperty, "TestName2");
+        var dic = new Dictionary<string, string> { { NameProperty, "TestName3" } };
+        Assert.Multiple(() =>
+        {
+            Assert.That(NewBuilder().WithProperty(NameProperty, str).Build().GetName(), Is.EqualTo(str));
+            Assert.That(NewBuilder().WithProperty(kvp).Build().GetName(), Is.EqualTo(kvp.Value));
+            Assert.That(NewBuilder().WithProperties(dic).Build().GetName(), Is.EqualTo(dic[NameProperty]));
+        });
+    }
+
+    [Test]
     public void OneBuilderInstanceCannotCreateMoreThanOneEndpoint()
     {
         using var builder = NewBuilder();
