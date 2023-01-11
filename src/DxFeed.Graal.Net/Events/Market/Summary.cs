@@ -13,6 +13,8 @@ namespace DxFeed.Graal.Net.Events.Market;
 /// Summary information snapshot about the trading session including session highs, lows, etc.
 /// It represents the most recent information that is available about the trading session in
 /// the market at any given moment of time.
+/// <br/>
+/// For more details see <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/event/market/Summary.html">Javadoc</a>.
 /// </summary>
 [EventCode(EventCodeNative.Summary)]
 public class Summary : MarketEvent, ILastingEvent<string>
