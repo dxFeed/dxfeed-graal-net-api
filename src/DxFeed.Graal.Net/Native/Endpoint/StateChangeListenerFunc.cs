@@ -6,6 +6,7 @@
 
 using System.Runtime.InteropServices;
 using DxFeed.Graal.Net.Api;
+using static DxFeed.Graal.Net.Api.DXEndpoint;
 
 namespace DxFeed.Graal.Net.Native.Endpoint;
 
@@ -14,8 +15,8 @@ namespace DxFeed.Graal.Net.Native.Endpoint;
 /// Called when the state of the endpoint changes.
 /// </summary>
 /// <param name="thread">The pointer to a run-time data structure for the thread.</param>
-/// <param name="oldState">The old endpoint <see cref="DXEndpoint.State"/>. Represents as <c>int</c> in native code.</param>
-/// <param name="newState">The new endpoint <see cref="DXEndpoint.State"/>. Represents as <c>int</c> in native code.</param>
+/// <param name="oldState">The old endpoint <see cref="State"/>. Represents as <c>int</c> in native code.</param>
+/// <param name="newState">The new endpoint <see cref="State"/>. Represents as <c>int</c> in native code.</param>
 /// <param name="userData">The pointer to user data. Actually not used.</param>
 [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-internal delegate void StateChangeListenerFunc(nint thread, DXEndpoint.State oldState, DXEndpoint.State newState, nint userData);
+internal delegate void StateChangeListenerFunc(nint thread, State oldState, State newState, nint userData);

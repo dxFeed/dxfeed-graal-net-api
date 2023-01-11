@@ -10,6 +10,7 @@ using System.Collections.Generic;
 using System.Linq;
 using DxFeed.Graal.Net.Events;
 using DxFeed.Graal.Net.Native.Feed;
+using DxFeed.Graal.Net.Utils;
 
 namespace DxFeed.Graal.Net.Api;
 
@@ -28,7 +29,7 @@ public class DXFeed
     private readonly FeedNative _feedNative;
 
     // ToDo Wrap a ConcurrentDictionary to ConcurrentHashSet. Dotnet does not have implementation ConcurrentHashSet.
-    private readonly ConcurrentDictionary<DXFeedSubscription, byte> _attachedSubscription = new();
+    private readonly ConcurrentSet<DXFeedSubscription> _attachedSubscription = new();
 
     /// <summary>
     /// Initializes a new instance of the <see cref="DXFeed"/> class with specified feed native.
@@ -61,7 +62,7 @@ public class DXFeed
     {
         var eventCodes = EventCodeAttribute.GetEventCodes(eventTypes);
         DXFeedSubscription sub = new(_feedNative.CreateSubscription(eventCodes), new HashSet<Type>(eventTypes));
-        _attachedSubscription.TryAdd(sub, 0);
+        _attachedSubscription.Add(sub);
         return sub;
     }
 
@@ -88,7 +89,7 @@ public class DXFeed
     /// <param name="subscription">The subscription.</param>
     public void AttachSubscription(DXFeedSubscription subscription)
     {
-        _attachedSubscription.TryAdd(subscription, 0);
+        _attachedSubscription.Add(subscription);
         _feedNative.AttachSubscription(subscription.GetNative());
     }
 
@@ -101,7 +102,7 @@ public class DXFeed
     /// <param name="subscription">The subscription.</param>
     public void DetachSubscription(DXFeedSubscription subscription)
     {
-        _attachedSubscription.TryRemove(subscription, out _);
+        _attachedSubscription.Remove(subscription);
         _feedNative.DetachSubscription(subscription.GetNative());
     }
 
@@ -114,7 +115,7 @@ public class DXFeed
     /// <param name="subscription">The subscription.</param>
     public void DetachSubscriptionAndClear(DXFeedSubscription subscription)
     {
-        _attachedSubscription.TryRemove(subscription, out _);
+        _attachedSubscription.Remove(subscription);
         _feedNative.DetachSubscriptionAndClear(subscription.GetNative());
     }
 
@@ -125,8 +126,6 @@ public class DXFeed
     internal FeedNative GetNative() =>
         _feedNative;
 
-    internal void Close()
-    {
-        // ToDo Add implementation.
-    }
+    internal void Close() =>
+        _attachedSubscription.Clear();
 }

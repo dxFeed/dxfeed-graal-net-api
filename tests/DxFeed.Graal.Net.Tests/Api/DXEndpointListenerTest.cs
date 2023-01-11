@@ -165,7 +165,7 @@ public class DXEndpointListenerTest
     }
 
     [Test]
-    public void CheckDisposeCallClose()
+    public void CheckDisposeFromListener()
     {
         var endpoint = Create(Publisher);
         var lastState = endpoint.GetState();

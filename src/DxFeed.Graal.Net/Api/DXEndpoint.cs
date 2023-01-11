@@ -259,7 +259,7 @@ public sealed class DXEndpoint : IDisposable
     /// <summary>
     /// To detect redundant calls <see cref="Dispose"/>.
     /// </summary>
-    private bool _disposed;
+    private volatile bool _disposed;
 
     /// <summary>
     /// Initializes a new instance of the <see cref="DXEndpoint"/>
@@ -273,8 +273,11 @@ public sealed class DXEndpoint : IDisposable
         _endpointNative = endpointNative;
         _role = role;
         _name = props.TryGetValue(NameProperty, out var name) ? name : null;
+
+        // We need to store this delegate in a class field because it's being passed to native code.
         _stateChangeListenerFunc = StateChangeListenerFuncWrapper;
         _endpointNative.SetStateChangeListener(_stateChangeListenerFunc);
+
         _feed = new Lazy<DXFeed>(() => new DXFeed(_endpointNative.GetFeed()));
         _publisher = new Lazy<DXPublisher>(() => new DXPublisher(_endpointNative.GetPublisher()));
         RootRefs.Add(this);
@@ -683,7 +686,7 @@ public sealed class DXEndpoint : IDisposable
 
     /// <summary>
     /// Builder class for <see cref="DXEndpoint"/> that supports additional configuration properties.
-    /// This class is a wrapper for <see cref="BuilderNative"/>.
+    /// This class uses <see cref="BuilderNative"/> for passing calls to native code.
     /// <br/>
     /// For more details see <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/api/DXEndpoint.Builder.html">Javadoc</a>.
     /// </summary>
@@ -807,6 +810,10 @@ public sealed class DXEndpoint : IDisposable
         /// and <see cref="Role.Publisher"/> role.
         /// The default properties file is loaded only if there are no system properties
         /// or user properties set with the same key and the file itself exists and is readable.
+        /// <br/>
+        /// This file must be in the <a href="https://en.wikipedia.org/wiki/.properties">Java properties file format</a>.
+        /// File be named "dxfeed.properties" for <see cref="Role.Feed"/> and <see cref="Role.OnDemandFeed"/> roles
+        /// or "dxpublisher.properties" for the <see cref="Role.Publisher"/> role.
         /// </summary>
         private void LoadDefaultPropertiesFileIfExist()
         {
@@ -828,7 +835,7 @@ public sealed class DXEndpoint : IDisposable
 
             // If propFileKey was set in system properties,
             // don't try to load the default properties file.
-            if (SystemProperty.GetProperty(propFileKey) != null)
+            if (!string.IsNullOrEmpty(SystemProperty.GetProperty(propFileKey)))
             {
                 return;
             }

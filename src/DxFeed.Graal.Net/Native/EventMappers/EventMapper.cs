@@ -65,7 +65,7 @@ internal static class EventMapper
             EventCodeNative.Trade => TradeMapper.FromNative((TradeNative*)baseEvent),
             EventCodeNative.TradeETH => TradeMapper.FromNative((TradeETHNative*)baseEvent),
             EventCodeNative.Profile => throw new NotImplementedException(),
-            EventCodeNative.Summary => throw new NotImplementedException(),
+            EventCodeNative.Summary => SummaryMapper.FromNative((SummaryNative*)baseEvent),
             EventCodeNative.Greeks => throw new NotImplementedException(),
             EventCodeNative.Candle => throw new NotImplementedException(),
             EventCodeNative.DailyCandle => throw new NotImplementedException(),
