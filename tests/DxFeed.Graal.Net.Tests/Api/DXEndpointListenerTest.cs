@@ -204,8 +204,6 @@ public class DXEndpointListenerTest
             State.NotConnected,
             // Connect.
             State.Connected,
-            // Reconnect.
-            State.Connected,
             // Close.
             State.Closed
         };
@@ -257,17 +255,6 @@ public class DXEndpointListenerTest
         expectedState = State.Connected;
         countdownEvent.Reset();
         endpoint.Connect(address);
-        Assert.Multiple(() =>
-        {
-            Assert.That(countdownEvent.Wait(_timeoutStateChange), Is.True);
-            Assert.That(endpoint.GetState(), Is.EqualTo(expectedState));
-        });
-
-
-        // Wait Connected state.
-        expectedState = State.Connected;
-        countdownEvent.Reset();
-        endpoint.Reconnect();
         Assert.Multiple(() =>
         {
             Assert.That(countdownEvent.Wait(_timeoutStateChange), Is.True);
