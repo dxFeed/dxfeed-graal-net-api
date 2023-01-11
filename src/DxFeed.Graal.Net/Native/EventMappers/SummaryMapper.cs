@@ -1,0 +1,31 @@
+// <copyright file="SummaryMapper.cs" company="Devexperts LLC">
+// Copyright © 2022 Devexperts LLC. All rights reserved.
+// This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
+// If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
+// </copyright>
+
+using System.Runtime.InteropServices;
+using DxFeed.Graal.Net.Events.Market;
+using DxFeed.Graal.Net.Native.Events.Market;
+
+namespace DxFeed.Graal.Net.Native.EventMappers;
+
+internal static class SummaryMapper
+{
+    public static unsafe Summary FromNative(SummaryNative* eventNative) =>
+        new()
+        {
+            EventSymbol = Marshal.PtrToStringUTF8(eventNative->MarketEvent.EventSymbol),
+            EventTime = eventNative->MarketEvent.EventTime,
+            DayId = eventNative->DayId,
+            DayOpenPrice = eventNative->DayOpenPrice,
+            DayHighPrice = eventNative->DayHighPrice,
+            DayLowPrice = eventNative->DayLowPrice,
+            DayClosePrice = eventNative->DayClosePrice,
+            PrevDayId = eventNative->PrevDayId,
+            PrevDayClosePrice = eventNative->PrevDayClosePrice,
+            PrevDayVolume = eventNative->PrevDayVolume,
+            OpenInterest = eventNative->OpenInterest,
+            Flags = eventNative->Flags,
+        };
+}

@@ -25,7 +25,7 @@ public enum EventCodeNative
     Profile,
 
     /// <summary>
-    /// Not implemented.
+    /// <see cref="Summary"/>.
     /// </summary>
     Summary,
 
