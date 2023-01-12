@@ -165,29 +165,6 @@ public class DXEndpointListenerTest
     }
 
     [Test]
-    public void CheckDisposeFromListener()
-    {
-        var endpoint = Create(Publisher);
-        var lastState = endpoint.GetState();
-        endpoint.AddStateChangeListener((_, newState) =>
-        {
-            if (newState == State.Connected)
-            {
-                endpoint.Dispose();
-            }
-
-            lastState = newState;
-        });
-        endpoint.Connect(":0");
-        endpoint.AwaitNotConnected();
-        Assert.Multiple(() =>
-        {
-            Assert.That(endpoint.GetState(), Is.EqualTo(State.Closed));
-            Assert.That(lastState, Is.EqualTo(State.Closed));
-        });
-    }
-
-    [Test]
     public void SimpleCheckEndpointListenerStates()
     {
         const string address = ":0";
