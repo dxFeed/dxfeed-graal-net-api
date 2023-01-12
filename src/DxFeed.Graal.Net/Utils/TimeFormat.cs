@@ -10,7 +10,7 @@ using System.Globalization;
 namespace DxFeed.Graal.Net.Utils;
 
 /// <summary>
-/// Provides functionality to convert UTC time to a string with the specified format.
+/// Utility class for parsing and formatting dates and times in ISO-compatible format.
 /// </summary>
 public class TimeFormat
 {
@@ -39,108 +39,116 @@ public class TimeFormat
     /// </summary>
     private const string FullIsoFormat = "o";
 
-    /// <summary>
-    /// <c>True</c> if the time converts to Local Time Zone; otherwise is UTC.
-    /// </summary>
-    private readonly bool _isLocalTime;
+    private static readonly Lazy<TimeFormat> LocalTimeZoneFormat = new(() => Create(TimeZoneInfo.Local));
+    private static readonly Lazy<TimeFormat> UtcTimeZoneFormat = new(() => Create(TimeZoneInfo.Utc));
 
-    private bool _withMillis;
-    private bool _withTimeZone;
-    private bool _isOnlyDate;
-    private bool _asFullIso;
+    private readonly TimeZoneInfo _timeZone;
+    private readonly TimeFormat _withMillis;
+    private readonly TimeFormat _withTimeZone;
+    private readonly TimeFormat _asOnlyDate;
+    private readonly TimeFormat _asFullIso;
+    private readonly string _formatString;
+
+    private TimeFormat(
+        TimeZoneInfo timeZone,
+        TimeFormat? withMillis,
+        TimeFormat? withTimeZone,
+        TimeFormat? asOnlyDate,
+        TimeFormat? asFullIso)
+    {
+        _timeZone = timeZone;
+        _withMillis = withMillis ?? this;
+        _withTimeZone = withTimeZone ?? this;
+        _asOnlyDate = asOnlyDate ?? this;
+        _asFullIso = asFullIso ?? this;
+        _formatString = CreateFormatString();
+    }
 
     /// <summary>
-    /// Initializes a new instance of the <see cref="TimeFormat"/> class.
+    /// Gets instance <see cref="TimeFormat"/> with <see cref="TimeZoneInfo.Local"/> <see cref="TimeZoneInfo"/>.
     /// </summary>
-    /// <param name="isLocalTime"><c>True</c> if the time converts to Local Time Zone; otherwise is UTC.</param>
-    // ToDo Avoid creating new TimeFormat instances for same format.
-    private TimeFormat(bool isLocalTime) =>
-        _isLocalTime = isLocalTime;
+    public static TimeFormat LocalTime => LocalTimeZoneFormat.Value;
 
     /// <summary>
-    /// Gets new instance <see cref="TimeFormat"/> with UTC.
+    /// Gets instance <see cref="TimeFormat"/> with <see cref="TimeZoneInfo.Utc"/> <see cref="TimeZoneInfo"/>.
     /// </summary>
-    // ToDo Avoid creating new TimeFormat instances for same format.
-    public static TimeFormat Utc =>
-        new(isLocalTime: false);
+    public static TimeFormat Utc => UtcTimeZoneFormat.Value;
 
     /// <summary>
-    /// Gets new instance <see cref="TimeFormat"/> with Local Time Zone.
+    /// Creates a new instance of <see cref="TimeFormat"/>
+    /// with a specified <see cref="TimeZoneInfo"/> and <see cref="DefaultFormat"/>.
     /// </summary>
-    public static TimeFormat LocalTime =>
-        new(isLocalTime: true);
+    /// <param name="timeZone">The specified <see cref="TimeZoneInfo"/>.</param>
+    /// <returns>Returns new instance <see cref="TimeFormat"/>.</returns>
+    public static TimeFormat Create(TimeZoneInfo timeZone)
+    {
+        var fullIso = new TimeFormat(timeZone, null, null, null, null);
+        var onlyDate = new TimeFormat(timeZone, null, null, null, fullIso);
+        var millisTimezone = new TimeFormat(timeZone, null, null, onlyDate, fullIso);
+        var timezone = new TimeFormat(timeZone, millisTimezone, null, onlyDate, fullIso);
+        var millis = new TimeFormat(timeZone, null, millisTimezone, onlyDate, fullIso);
+        return new(timeZone, millis, timezone, onlyDate, fullIso);
+    }
 
     /// <summary>
     /// Adds milliseconds to the current format string.
-    /// Example: 19700101-000000.000.
     /// </summary>
     /// <returns>Returns <see cref="TimeFormat"/>.</returns>
-    public TimeFormat WithMillis()
-    {
-        _withMillis = true;
-        return this;
-    }
+    /// <example>19700101-000000.000.</example>
+    public TimeFormat WithMillis() =>
+        _withMillis;
 
     /// <summary>
     /// Adds Time Zone to the current format string.
-    /// Example: 19700101-000000+00:00.
     /// </summary>
     /// <returns>Returns <see cref="TimeFormat"/>.</returns>
-    public TimeFormat WithTimeZone()
-    {
-        _withTimeZone = true;
-        return this;
-    }
+    /// <example>19700101-000000+00:00.</example>
+    public TimeFormat WithTimeZone() =>
+        _withTimeZone;
 
     /// <summary>
     /// Sets the current format as Only Date.
-    /// Example: 19700101.
     /// </summary>
     /// <returns>Returns <see cref="TimeFormat"/>.</returns>
-    public TimeFormat OnlyDate()
-    {
-        _isOnlyDate = true;
-        return this;
-    }
+    /// <example>19700101.</example>
+    public TimeFormat AsOnlyDate() =>
+        _asOnlyDate;
 
     /// <summary>
     /// Sets the current format as Full Iso.
-    /// Example: 1970-01-01T00:00:00.0000000+00:00.
     /// </summary>
     /// <returns>Returns <see cref="TimeFormat"/>.</returns>
-    public TimeFormat AsFullIso()
-    {
-        _asFullIso = true;
-        return this;
-    }
+    /// <example>1970-01-01T00:00:00.0000000+00:00.</example>
+    public TimeFormat AsFullIso() =>
+        _asFullIso;
 
     /// <summary>
     /// Converts the value in days since Unix epoch
-    /// to its equivalent string representation using the current format <see cref="GetFormat()"/>,
-    /// current time zone (UTC or Local Time Zone) and <see cref="CultureInfo.InvariantCulture"/>.
+    /// to its equivalent string representation using the current format <see cref="CreateFormatString()"/>,
+    /// current <see cref="TimeZoneInfo"/> and <see cref="CultureInfo.InvariantCulture"/>.
     /// </summary>
     /// <param name="dayId">A number of whole days since Unix epoch of January 1, 1970.</param>
     /// <returns>The string representation of the date.</returns>
     public string FromDayId(int dayId) =>
-        Format(DateTimeOffset.UtcNow.AddDays(dayId));
+        Format(DateTimeOffset.UnixEpoch.AddDays(dayId));
 
     /// <summary>
     /// Converts the value in seconds since Unix epoch
-    /// to its equivalent string representation using the current format <see cref="GetFormat()"/>,
-    /// current time zone (UTC or Local Time Zone) and <see cref="CultureInfo.InvariantCulture"/>.
+    /// to its equivalent string representation using the current format <see cref="CreateFormatString()"/>,
+    /// current <see cref="TimeZoneInfo"/> and <see cref="CultureInfo.InvariantCulture"/>.
     /// </summary>
     /// <param name="timeSeconds">The time measured in seconds since Unix epoch.</param>
-    /// <returns>The string representation of the date, or "0" if timeSeconds is 0.</returns>
+    /// <returns>The string representation of the date, or <c>"0"</c> if timeSeconds is <c>0</c>.</returns>
     public string FromSeconds(long timeSeconds) =>
         FromMillis(timeSeconds * 1000);
 
     /// <summary>
     /// Converts the value in milliseconds since Unix epoch
-    /// to its equivalent string representation using the current format <see cref="GetFormat()"/>,
-    /// current time zone (UTC or Local Time Zone) and <see cref="CultureInfo.InvariantCulture"/>.
+    /// to its equivalent string representation using the current format <see cref="CreateFormatString()"/>,
+    /// current <see cref="TimeZoneInfo"/> and <see cref="CultureInfo.InvariantCulture"/>.
     /// </summary>
     /// <param name="timeMillis">The time measured in milliseconds since Unix epoch.</param>
-    /// <returns>The string representation of the date, or "0" if timeMillis is 0.</returns>
+    /// <returns>The string representation of the date, or <c>"0"</c> if timeMillis is <c>0</c>.</returns>
     public string FromMillis(long timeMillis)
     {
         if (timeMillis == 0)
@@ -149,38 +157,42 @@ public class TimeFormat
         }
 
         var dateTimeOffset = DateTimeOffset.FromUnixTimeMilliseconds(timeMillis);
-        dateTimeOffset = _isLocalTime ? dateTimeOffset.ToLocalTime() : dateTimeOffset;
         return Format(dateTimeOffset);
     }
 
     /// <summary>
     /// Converts the value of the specified <see cref="DateTimeOffset"/> object
-    /// to its equivalent string representation using the current format <see cref="GetFormat()"/>,
-    /// current time zone (UTC or Local Time Zone) and <see cref="CultureInfo.InvariantCulture"/>.
+    /// to its equivalent string representation using the current format <see cref="CreateFormatString()"/>,
+    /// current <see cref="TimeZoneInfo"/> and <see cref="CultureInfo.InvariantCulture"/>.
     /// </summary>
     /// <param name="dateTimeOffset">The <see cref="DateTimeOffset"/> object.</param>
     /// <returns>The string representation.</returns>
-    private string Format(DateTimeOffset dateTimeOffset) =>
-        dateTimeOffset.ToString(GetFormat(), CultureInfo.InvariantCulture);
+    private string Format(DateTimeOffset dateTimeOffset)
+    {
+        dateTimeOffset = !_timeZone.Equals(TimeZoneInfo.Utc)
+            ? TimeZoneInfo.ConvertTime(dateTimeOffset, _timeZone)
+            : dateTimeOffset;
+        return dateTimeOffset.ToString(_formatString, CultureInfo.InvariantCulture);
+    }
 
     /// <summary>
-    /// Gets current format string.
+    /// Creates a format string for the <see cref="DateTimeOffset"/>.<see cref="DateTimeOffset.ToString()"/> method.
     /// </summary>
-    /// <returns>The current format string.</returns>
-    private string GetFormat()
+    /// <returns>Returns format string.</returns>
+    private string CreateFormatString()
     {
-        if (_asFullIso)
+        if (_asFullIso == this)
         {
             return FullIsoFormat;
         }
 
-        if (_isOnlyDate)
+        if (_asOnlyDate == this)
         {
             return OnlyDateFormat;
         }
 
-        var withMillis = _withMillis ? WithMillisFormat : string.Empty;
-        var withTimeZone = _withTimeZone ? WithTimeZoneFormat : string.Empty;
+        var withMillis = _withMillis == this ? WithMillisFormat : string.Empty;
+        var withTimeZone = _withTimeZone == this ? WithTimeZoneFormat : string.Empty;
         return $"{DefaultFormat}{withMillis}{withTimeZone}";
     }
 }

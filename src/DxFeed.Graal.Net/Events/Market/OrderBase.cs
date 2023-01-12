@@ -209,7 +209,7 @@ public abstract class OrderBase : MarketEvent, IIndexedEvent<string>
     /// </summary>
     public OrderAction Action
     {
-        get => EnumUtil.ValueOf(BitUtil.GetBits(Flags, ActionMask, ActionShift), OrderAction.Undefined);
+        get => OrderActionExt.ValueOf(BitUtil.GetBits(Flags, ActionMask, ActionShift));
         set => BitUtil.SetBits(Flags, ActionMask, ActionShift, (int)value);
     }
 
@@ -298,7 +298,7 @@ public abstract class OrderBase : MarketEvent, IIndexedEvent<string>
     /// </summary>
     public Side OrderSide
     {
-        get => EnumUtil.ValueOf(BitUtil.GetBits(Flags, SideMask, SideShift), Side.Undefined);
+        get => SideExt.ValueOf(BitUtil.GetBits(Flags, SideMask, SideShift));
         set => Flags = BitUtil.SetBits(Flags, SideMask, SideShift, (int)value);
     }
 
@@ -307,7 +307,7 @@ public abstract class OrderBase : MarketEvent, IIndexedEvent<string>
     /// </summary>
     public Scope Scope
     {
-        get => EnumUtil.ValueOf(BitUtil.GetBits(Flags, ScopeMask, ScopeShift), Scope.Composite);
+        get => ScopeExt.ValueOf(BitUtil.GetBits(Flags, ScopeMask, ScopeShift));
         set => Flags = BitUtil.SetBits(Flags, ScopeMask, ScopeShift, (int)value);
     }
 

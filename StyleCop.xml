@@ -8,5 +8,6 @@
     <Rule Id="SA1108" Action="None"/><!-- BlockStatementsMustNotContainEmbeddedComments -->
     <Rule Id="SA1011" Action="None"/><!-- ClosingSquareBracketsMustBeSpacedCorrectly -->
     <Rule Id="SA1600" Action="None"/><!-- Elements should be documented -->
+    <Rule Id="SA1649" Action="None"/><!-- File name must match type name -->
   </Rules>
 </RuleSet>

@@ -190,7 +190,7 @@ public class TimeAndSale : MarketEvent, ITimeSeriesEvent<string>
     /// </summary>
     public Side AggressorSide
     {
-        get => EnumUtil.ValueOf(BitUtil.GetBits(Flags, SideMask, SideShift), Side.Undefined);
+        get => SideExt.ValueOf(BitUtil.GetBits(Flags, SideMask, SideShift));
         set => Flags = BitUtil.SetBits(Flags, SideMask, SideShift, (int)value);
     }
 
@@ -228,7 +228,7 @@ public class TimeAndSale : MarketEvent, ITimeSeriesEvent<string>
     /// </summary>
     public TimeAndSaleType Type
     {
-        get => EnumUtil.ValueOf(BitUtil.GetBits(Flags, TypeMask, TypeShift), TimeAndSaleType.New);
+        get => TimeAndSaleTypeExt.ValueOf(BitUtil.GetBits(Flags, TypeMask, TypeShift));
         set => Flags = BitUtil.SetBits(Flags, TypeMask, TypeShift, (int)value);
     }
 

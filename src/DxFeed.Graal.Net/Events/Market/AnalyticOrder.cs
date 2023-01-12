@@ -69,8 +69,7 @@ public class AnalyticOrder : Order
     /// </summary>
     public IcebergType IcebergType
     {
-        get => EnumUtil.ValueOf(
-            BitUtil.GetBits(IcebergFlags, IcebergTypeMask, IcebergTypeShift), IcebergType.Undefined);
+        get => IcebergTypeExt.ValueOf(BitUtil.GetBits(IcebergFlags, IcebergTypeMask, IcebergTypeShift));
         set => IcebergFlags = BitUtil.SetBits(IcebergFlags, IcebergTypeMask, IcebergTypeShift, (int)value);
     }
 

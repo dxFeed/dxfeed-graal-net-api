@@ -7,7 +7,7 @@
 namespace DxFeed.Graal.Net.Utils;
 
 /// <summary>
-/// A collection of static utility methods for manipulation of <c>int</c> day id,
+/// A collection of static utility methods for manipulation of <see cref="int"/> day id,
 /// that is the number of days since Unix epoch of January 1, 1970.
 /// <br/>
 /// Porting Java class <c>com.devexperts.util.DayUtil</c>.

@@ -5,7 +5,6 @@
 // </copyright>
 
 using System.Runtime.InteropServices;
-using DxFeed.Graal.Net.Api;
 using static DxFeed.Graal.Net.Api.DXEndpoint;
 
 namespace DxFeed.Graal.Net.Native.Endpoint;
