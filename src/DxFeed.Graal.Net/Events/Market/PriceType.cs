@@ -4,7 +4,6 @@
 // If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
 // </copyright>
 
-using System.Numerics;
 using DxFeed.Graal.Net.Utils;
 using static DxFeed.Graal.Net.Events.Market.PriceType;
 
