@@ -89,4 +89,12 @@ public static class MathUtil
     /// </returns>
     public static long FloorMod(long x, long y) =>
         x - (FloorDiv(x, y) * y);
+
+    /// <summary>
+    /// Checks if the specified number is a power of two.
+    /// </summary>
+    /// <param name="x">The specified number.</param>
+    /// <returns>Returns <c>true</c> if x represents a power of two.</returns>
+    public static bool IsPowerOfTwo(long x) =>
+        x > 0 && (x & (x - 1)) == 0;
 }
