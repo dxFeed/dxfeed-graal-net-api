@@ -9,7 +9,7 @@ using System;
 namespace DxFeed.Graal.Net.Utils;
 
 /// <summary>
-/// Provides utility methods for manipulating enums.
+/// Provides utility methods for manipulating <see cref="Enum"/>.
 /// </summary>
 public static class EnumUtil
 {

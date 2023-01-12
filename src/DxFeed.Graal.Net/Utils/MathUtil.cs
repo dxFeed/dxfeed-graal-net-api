@@ -16,7 +16,7 @@ namespace DxFeed.Graal.Net.Utils;
 public static class MathUtil
 {
     /// <summary>
-    /// Method like a <see cref="Math.Abs(int)"/>, but not throws AbsOverflow exception,
+    /// Method like a <see cref="Math.Abs(int)"/>, but not throws <see cref="OverflowException"/> exception,
     /// when argument the argument is equal to the value of <see cref="int.MinValue"/>.
     /// Returns the absolute value of an int value.
     /// If the argument is not negative, the argument is returned.
@@ -51,10 +51,11 @@ public static class MathUtil
     }
 
     /// <summary>
-    /// Returns the largest (closest to positive infinity) <c>long</c> value that is less than
+    /// Returns the largest (closest to positive infinity) <see cref="long"/> value that is less than
     /// or equal to the algebraic quotient.
-    /// There is one special case, if the dividend is the <see cref="long.MinValue"/> and the divisor is <c>-1</c>,
-    /// then integer overflow occurs and the result is equal to the <c>long.MinValue</c>.
+    /// There is one special case, if the dividend is the <see cref="long"/>.<see cref="long.MinValue"/>
+    /// and the divisor is <c>-1</c>,
+    /// then integer overflow occurs and the result is equal to the <see cref="long"/>.<see cref="long.MinValue"/>.
     /// Normal integer division operates under the round to zero rounding mode (truncation).
     /// This operation instead acts under the round toward negative infinity (floor) rounding mode.
     /// The floor rounding mode gives different results than truncation when the exact result is negative.
@@ -62,7 +63,7 @@ public static class MathUtil
     /// <param name="x">The dividend.</param>
     /// <param name="y">The divisor.</param>
     /// <returns>
-    /// The largest (closest to positive infinity) <c>long</c>value that is less than
+    /// The largest (closest to positive infinity) <see cref="long"/> value that is less than
     /// or equal to the algebraic quotient.
     /// </returns>
     public static long FloorDiv(long x, long y)
@@ -84,7 +85,7 @@ public static class MathUtil
     /// <param name="x">The dividend.</param>
     /// <param name="y">The divisor.</param>
     /// <returns>
-    /// The floor modulus <c>x - (FloorDiv(x, y) * y)</c>.
+    /// The floor modulus: <code>x - (FloorDiv(x, y) * y)</code>
     /// </returns>
     public static long FloorMod(long x, long y) =>
         x - (FloorDiv(x, y) * y);

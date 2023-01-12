@@ -39,8 +39,8 @@ public static class TimeUtil
     /// Returns correct number of seconds with proper handling negative values and overflows.
     /// Idea is that number of milliseconds shall be within [0..999] interval
     /// so that the following equation always holds:
-    /// <c>GetSecondsFromTime(timeMillis) * 1000L + GetMillisFromTime(timeMillis) == timeMillis</c>
-    /// as as long the time in seconds fits into <b>int</b>.
+    /// <code>GetSecondsFromTime(timeMillis) * 1000L + GetMillisFromTime(timeMillis) == timeMillis</code>
+    /// as as long the time in seconds fits into <see cref="int"/>.
     /// <seealso cref="GetMillisFromTime(long)"/>
     /// </summary>
     /// <param name="timeMillis">The time measured in milliseconds since Unix epoch.</param>
@@ -54,8 +54,8 @@ public static class TimeUtil
     /// Returns correct number of milliseconds with proper handling negative values.
     /// Idea is that number of milliseconds shall be within [0..999] interval
     /// so that the following equation always holds:
-    /// <c>GetSecondsFromTime(timeMillis) * 1000L + GetMillisFromTime(timeMillis) == timeMillis</c>
-    /// as as long the time in seconds fits into <b>int</b>.
+    /// <code>GetSecondsFromTime(timeMillis) * 1000L + GetMillisFromTime(timeMillis) == timeMillis</code>
+    /// as as long the time in seconds fits into <see cref="int"/>.
     /// <seealso cref="GetSecondsFromTime(long)"/>
     /// </summary>
     /// <param name="timeMillis">The time measured in milliseconds since Unix epoch.</param>

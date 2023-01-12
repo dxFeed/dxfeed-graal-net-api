@@ -16,18 +16,18 @@ public static class StringUtil
 {
     /// <summary>
     /// Encodes specified nullable string.
-    /// If string equals null, returns 'null'; otherwise specified string.
+    /// If string equals null, returns <c>"null"</c> string; otherwise returns specified string.
     /// </summary>
     /// <param name="s">The specified string.</param>
-    /// <returns>Return specified string or 'null'.</returns>
+    /// <returns>Return specified string or <c>"null"</c> string.</returns>
     public static string EncodeNullableString(string? s) =>
         s ?? "null";
 
     /// <summary>
     /// Encodes char to string.
     /// If the value of char falls within the range of printable ASCII characters [32-126],
-    /// then returns a string containing that character, otherwise return unicode number (\uffff).
-    /// For zero char returns \0.
+    /// then returns a string containing that character, otherwise return unicode number <c>"(\uffff)"</c>.
+    /// For zero char returns <c>"\0"</c>.
     /// </summary>
     /// <param name="c">The char.</param>
     /// <returns>Returns the encoded string.</returns>
@@ -48,7 +48,7 @@ public static class StringUtil
     /// </summary>
     /// <param name="c">The char.</param>
     /// <param name="mask">The bit mask.</param>
-    /// <param name="name">The name.</param>
+    /// <param name="name">The char name. Used in the exception message.</param>
     /// <exception cref="ArgumentException">If the specified char dont fits in the mask.</exception>
     public static void CheckChar(char c, int mask, string name)
     {
@@ -59,5 +59,5 @@ public static class StringUtil
     }
 
     private static void ThrowInvalidChar(char c, string name) =>
-        throw new ArgumentException("Invalid " + name + ": " + EncodeChar(c));
+        throw new ArgumentException($"Invalid {name}: {EncodeChar(c)}");
 }
