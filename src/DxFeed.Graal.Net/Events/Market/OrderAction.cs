@@ -4,6 +4,9 @@
 // If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
 // </copyright>
 
+using DxFeed.Graal.Net.Utils;
+using static DxFeed.Graal.Net.Events.Market.OrderAction;
+
 namespace DxFeed.Graal.Net.Events.Market;
 
 // Documentation Text Must End With A Period. False positive.
@@ -143,4 +146,20 @@ public enum OrderAction
     /// </para>
     /// </summary>
     Bust,
+}
+
+/// <summary>
+/// Class extension for <see cref="OrderAction"/> enum.
+/// </summary>
+internal static class OrderActionExt
+{
+    private static readonly OrderAction[] Values = EnumUtil.BuildEnumBitMaskArrayByValue(Undefined);
+
+    /// <summary>
+    /// Returns an enum constant of the <see cref="OrderAction"/> with the specified value.
+    /// </summary>
+    /// <param name="value">The specified value.</param>
+    /// <returns>The enum constant of the specified enum type with the specified value.</returns>
+    public static OrderAction ValueOf(int value) =>
+        Values[value];
 }

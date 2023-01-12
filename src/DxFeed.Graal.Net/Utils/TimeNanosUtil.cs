@@ -32,7 +32,8 @@ public static class TimeNanosUtil
     /// Returns time measured in milliseconds since Unix epoch from the time in nanoseconds.
     /// Idea is that nano part of time shall be within [0..999999] interval
     /// so that the following equation always holds:
-    /// <c>GetMillisFromNanos(timeNanos) * 1_000_000 + GetNanoPartFromNanos(timeNanos) == timeNanos</c>.
+    /// <code>GetMillisFromNanos(timeNanos) * 1_000_000 + GetNanoPartFromNanos(timeNanos) == timeNanos</code>
+    /// <seealso cref="GetNanoPartFromNanos(long)"/>
     /// </summary>
     /// <param name="timeNanos">The time measured in nanoseconds since Unix epoch.</param>
     /// <returns>The time measured in milliseconds since Unix epoch.</returns>
@@ -43,7 +44,8 @@ public static class TimeNanosUtil
     /// Returns nano part of time.
     /// Idea is that nano part of time shall be within [0..999999] interval
     /// so that the following equation always holds:
-    /// <c>GetMillisFromNanos(timeNanos) * 1_000_000 + GetNanoPartFromNanos(timeNanos) == timeNanos</c>.
+    /// <code>GetMillisFromNanos(timeNanos) * 1_000_000 + GetNanoPartFromNanos(timeNanos) == timeNanos</code>
+    /// <seealso cref="GetMillisFromNanos(long)"/>
     /// </summary>
     /// <param name="timeNanos">The time measured in nanoseconds since Unix epoch.</param>
     /// <returns>The time measured in milliseconds since Unix epoch.</returns>

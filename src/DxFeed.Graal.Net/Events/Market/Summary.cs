@@ -82,10 +82,8 @@ public class Summary : MarketEvent, ILastingEvent<string>
     /// </summary>
     public PriceType DayClosePriceType
     {
-        get => EnumUtil.ValueOf(
-            BitUtil.GetBits(Flags, DayClosePriceTypeMask, DayClosePriceTypeShift), PriceType.Regular);
-        set => Flags = BitUtil.SetBits(
-            Flags, DayClosePriceTypeMask, DayClosePriceTypeShift, (int)value);
+        get => PriceTypeExt.ValueOf(BitUtil.GetBits(Flags, DayClosePriceTypeMask, DayClosePriceTypeShift));
+        set => Flags = BitUtil.SetBits(Flags, DayClosePriceTypeMask, DayClosePriceTypeShift, (int)value);
     }
 
     /// <summary>
@@ -104,10 +102,8 @@ public class Summary : MarketEvent, ILastingEvent<string>
     /// </summary>
     public PriceType PrevDayClosePriceType
     {
-        get => EnumUtil.ValueOf(
-            BitUtil.GetBits(Flags, PrevDayClosePriceTypeMask, PrevDayClosePriceTypeShift), PriceType.Regular);
-        set => Flags = BitUtil.SetBits(
-            Flags, PrevDayClosePriceTypeMask, PrevDayClosePriceTypeShift, (int)value);
+        get => PriceTypeExt.ValueOf(BitUtil.GetBits(Flags, PrevDayClosePriceTypeMask, PrevDayClosePriceTypeShift));
+        set => Flags = BitUtil.SetBits(Flags, PrevDayClosePriceTypeMask, PrevDayClosePriceTypeShift, (int)value);
     }
 
     /// <summary>

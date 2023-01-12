@@ -149,7 +149,7 @@ public abstract class TradeBase : MarketEvent, ILastingEvent<string>
     /// </summary>
     public Direction TickDirection
     {
-        get => EnumUtil.ValueOf(BitUtil.GetBits(Flags, DirectionMask, DirectionShift), Direction.Undefined);
+        get => DirectionExt.ValueOf(BitUtil.GetBits(Flags, DirectionMask, DirectionShift));
         set => Flags = BitUtil.SetBits(Flags, DirectionMask, DirectionShift, (int)value);
     }
 

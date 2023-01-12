@@ -4,6 +4,9 @@
 // If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
 // </copyright>
 
+using DxFeed.Graal.Net.Utils;
+using static DxFeed.Graal.Net.Events.Market.Direction;
+
 namespace DxFeed.Graal.Net.Events.Market;
 
 /// <summary>
@@ -46,4 +49,20 @@ public enum Direction
     /// Current price is higher than previous price.
     /// </summary>
     Up,
+}
+
+/// <summary>
+/// Class extension for <see cref="Direction"/> enum.
+/// </summary>
+internal static class DirectionExt
+{
+    private static readonly Direction[] Values = EnumUtil.BuildEnumBitMaskArrayByValue(Undefined);
+
+    /// <summary>
+    /// Returns an enum constant of the <see cref="Direction"/> with the specified value.
+    /// </summary>
+    /// <param name="value">The specified value.</param>
+    /// <returns>The enum constant of the specified enum type with the specified value.</returns>
+    public static Direction ValueOf(int value) =>
+        Values[value];
 }
