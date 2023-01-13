@@ -16,7 +16,7 @@ public class IndexedEventSource
     /// <summary>
     /// The default source with zero identifier for all events that do not support multiple sources.
     /// </summary>
-    public static readonly IndexedEventSource Default = new(0, "DEFAULT");
+    public static readonly IndexedEventSource DEFAULT = new(0, "DEFAULT");
 
     /// <summary>
     /// Initializes a new instance of the <see cref="IndexedEventSource"/> class.

@@ -34,7 +34,7 @@ public class TimeSeriesSubscriptionSymbol<T> : IndexedEventSubscriptionSymbol<T>
     /// The from time is measured in milliseconds between the current time and midnight, January 1, 1970 UTC.
     /// </param>
     public TimeSeriesSubscriptionSymbol(T eventSymbol, long fromTime)
-        : base(eventSymbol, IndexedEventSource.Default) =>
+        : base(eventSymbol, IndexedEventSource.DEFAULT) =>
         FromTime = fromTime;
 
     /// <summary>

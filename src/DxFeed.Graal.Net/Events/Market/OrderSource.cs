@@ -47,7 +47,7 @@ public class OrderSource : IndexedEventSource
     /// <summary>
     /// Default source for publishing custom order books.
     /// </summary>
-    public static readonly OrderSource DEFAULT = new(0, "DEFAULT",
+    public static new readonly OrderSource DEFAULT = new(0, "DEFAULT",
         PubOrder | PubAnalyticOrder | PubSpreadOrder | FullOrderBook);
 
     /// <summary>
@@ -330,24 +330,6 @@ public class OrderSource : IndexedEventSource
         (_pubFlags & FullOrderBook) != 0;
 
     /// <summary>
-    /// Gets a value indicating whether the given event type can be directly published with this source.
-    /// Subscription on such sources can be observed directly via <see cref="DXPublisher"/>.
-    /// Subscription on such sources is observed via instances of <see cref="IndexedEventSubscriptionSymbol{T}"/> class.
-    /// </summary>
-    /// <param name="eventType">
-    /// Typeof <see cref="Order"/> or <see cref="AnalyticOrder"/> or <see cref="SpreadOrder"/>.
-    /// </param>
-    /// <returns>
-    /// <c>true</c> if <see cref="Order"/> , <see cref="AnalyticOrder"/>  and <see cref="SpreadOrder"/>
-    /// events can be directly published with this source.
-    /// </returns>
-    /// <exception cref="ArgumentException">
-    /// If eventType differs from <see cref="Order"/> , <see cref="AnalyticOrder"/>, <see cref="SpreadOrder"/>.
-    /// </exception>
-    public bool IsPublishable(Type eventType) =>
-        (_pubFlags & GetEventTypeMask(eventType)) != 0;
-
-    /// <summary>
     /// Determines whether specified source identifier refers to special order source.
     /// Special order sources are used for wrapping non-order events into order events.
     /// </summary>
@@ -402,6 +384,24 @@ public class OrderSource : IndexedEventSource
 
         throw new ArgumentException($"Invalid order event type:{eventType}");
     }
+
+    /// <summary>
+    /// Gets a value indicating whether the given event type can be directly published with this source.
+    /// Subscription on such sources can be observed directly via <see cref="DXPublisher"/>.
+    /// Subscription on such sources is observed via instances of <see cref="IndexedEventSubscriptionSymbol{T}"/> class.
+    /// </summary>
+    /// <param name="eventType">
+    /// Typeof <see cref="Order"/> or <see cref="AnalyticOrder"/> or <see cref="SpreadOrder"/>.
+    /// </param>
+    /// <returns>
+    /// <c>true</c> if <see cref="Order"/> , <see cref="AnalyticOrder"/>  and <see cref="SpreadOrder"/>
+    /// events can be directly published with this source.
+    /// </returns>
+    /// <exception cref="ArgumentException">
+    /// If eventType differs from <see cref="Order"/> , <see cref="AnalyticOrder"/>, <see cref="SpreadOrder"/>.
+    /// </exception>
+    public bool IsPublishable(Type eventType) =>
+        (_pubFlags & GetEventTypeMask(eventType)) != 0;
 
     /// <summary>
     /// Checks that char is an alphanumeric character.
@@ -474,7 +474,6 @@ public class OrderSource : IndexedEventSource
         var cacheEntryOptions = new MemoryCacheEntryOptions()
             .SetSize(1)
             .SetPriority(orderSource._isBuiltin ? CacheItemPriority.NeverRemove : CacheItemPriority.Low);
-
         CacheSource.Set(key, orderSource, cacheEntryOptions);
     }
 

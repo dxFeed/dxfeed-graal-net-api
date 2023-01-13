@@ -79,7 +79,7 @@ public class TimeAndSale : MarketEvent, ITimeSeriesEvent<string>
 
     /// <inheritdoc/>
     public IndexedEventSource EventSource =>
-        IndexedEventSource.Default;
+        IndexedEventSource.DEFAULT;
 
     /// <inheritdoc/>
     public int EventFlags { get; set; }
