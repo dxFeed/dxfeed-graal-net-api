@@ -9,6 +9,7 @@ using System.Collections.Generic;
 using DxFeed.Graal.Net.Events;
 using DxFeed.Graal.Net.Native.Events;
 using DxFeed.Graal.Net.Native.Events.Market;
+using DxFeed.Graal.Net.Native.Events.Options;
 
 namespace DxFeed.Graal.Net.Native.EventMappers;
 
@@ -66,7 +67,7 @@ internal static class EventMapper
             EventCodeNative.TradeETH => TradeMapper.FromNative((TradeETHNative*)baseEvent),
             EventCodeNative.Profile => ProfileMapper.FromNative((ProfileNative*)baseEvent),
             EventCodeNative.Summary => SummaryMapper.FromNative((SummaryNative*)baseEvent),
-            EventCodeNative.Greeks => throw new NotImplementedException(),
+            EventCodeNative.Greeks => GreeksMapper.FromNative((GreeksNative*)baseEvent),
             EventCodeNative.Candle => throw new NotImplementedException(),
             EventCodeNative.DailyCandle => throw new NotImplementedException(),
             EventCodeNative.Underlying => throw new NotImplementedException(),
