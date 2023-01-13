@@ -17,7 +17,7 @@ namespace DxFeed.Graal.Net.Events.Market;
 /// For more details see <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/event/market/Summary.html">Javadoc</a>.
 /// </summary>
 [EventCode(EventCodeNative.Summary)]
-public class Summary : MarketEvent, ILastingEvent<string>
+public class Summary : MarketEvent, ILastingEvent
 {
     /*
      * Flags property has several significant bits that are packed into an integer in the following way:

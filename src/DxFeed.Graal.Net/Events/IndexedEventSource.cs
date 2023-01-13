@@ -7,16 +7,17 @@
 namespace DxFeed.Graal.Net.Events;
 
 /// <summary>
-/// Source identifier for <see cref="IIndexedEvent{T}"/>.
+/// Source identifier for <see cref="IIndexedEvent"/>.
 /// <br/>
 /// For more details see <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/event/IndexedEventSource.html">Javadoc</a>.
 /// </summary>
+/// <seealso cref="IIndexedEvent.EventSource"/>
 public class IndexedEventSource
 {
     /// <summary>
     /// The default source with zero identifier for all events that do not support multiple sources.
     /// </summary>
-    public static readonly IndexedEventSource Default = new(0, "DEFAULT");
+    public static readonly IndexedEventSource DEFAULT = new(0, "DEFAULT");
 
     /// <summary>
     /// Initializes a new instance of the <see cref="IndexedEventSource"/> class.

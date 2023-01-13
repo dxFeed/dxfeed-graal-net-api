@@ -15,11 +15,13 @@ namespace DxFeed.Graal.Net.Events.Market;
 /// Time and Sale represents a trade or other market event with price, like market open/close price, etc.
 /// Time and Sales are intended to provide information about trades <b>in a continuous time slice</b>
 /// (unlike <see cref="Trade"/> events which are supposed to provide snapshot about the <b>current last</b> trade).
+/// <br/> Time and Sale events have unique <see cref="Index"/>
+/// which can be used for later correction/cancellation processing.
 /// <br/>
 /// For more details see <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/event/market/TimeAndSale.html">Javadoc</a>.
 /// </summary>
 [EventCode(EventCodeNative.TimeAndSale)]
-public class TimeAndSale : MarketEvent, ITimeSeriesEvent<string>
+public class TimeAndSale : MarketEvent, ITimeSeriesEvent
 {
     /// <summary>
     /// Maximum allowed sequence value.
@@ -77,7 +79,7 @@ public class TimeAndSale : MarketEvent, ITimeSeriesEvent<string>
 
     /// <inheritdoc/>
     public IndexedEventSource EventSource =>
-        IndexedEventSource.Default;
+        IndexedEventSource.DEFAULT;
 
     /// <inheritdoc/>
     public int EventFlags { get; set; }

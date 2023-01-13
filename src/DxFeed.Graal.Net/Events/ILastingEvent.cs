@@ -15,7 +15,6 @@ namespace DxFeed.Graal.Net.Events;
 /// <br/>
 /// For more details see <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/event/LastingEvent.html">Javadoc</a>.
 /// </summary>
-/// <typeparam name="T">Type of the event symbol for this event type.</typeparam>
-public interface ILastingEvent<out T> : IEventType<T>
+public interface ILastingEvent : IEventType
 {
 }

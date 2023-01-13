@@ -59,7 +59,7 @@ internal static class DirectionExt
     private static readonly Direction[] Values = EnumUtil.BuildEnumBitMaskArrayByValue(Undefined);
 
     /// <summary>
-    /// Returns an enum constant of the <see cref="Direction"/> with the specified value.
+    /// Returns an enum constant of the <see cref="Direction"/> by integer code bit pattern.
     /// </summary>
     /// <param name="value">The specified value.</param>
     /// <returns>The enum constant of the specified enum type with the specified value.</returns>
