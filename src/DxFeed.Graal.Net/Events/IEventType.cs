@@ -46,18 +46,3 @@ public interface IEventType
             .Where(t => !t.IsAbstract)
             .Where(t => t.IsClass);
 }
-
-/// <summary>
-/// Marks all event types that can be received via dxFeed API.
-/// <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/event/EventType.html">Javadoc</a>.
-/// </summary>
-/// <typeparam name="T">The type of <see cref="EventSymbol"/>.</typeparam>
-// ToDo Avoid generic type for IEventType.
-public interface IEventType<out T> : IEventType
-{
-    /// <summary>
-    /// Gets event symbol that identifies this event type <see cref="DXFeedSubscription"/>.
-    /// <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/event/EventType.html#getEventSymbol--">Javadoc</a>.
-    /// </summary>
-    new T? EventSymbol { get; }
-}

@@ -26,7 +26,7 @@ namespace DxFeed.Graal.Net.Events.Market;
 /// <br/>
 /// For more details see <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/event/market/OrderBase.html">Javadoc</a>.
 /// </summary>
-public abstract class OrderBase : MarketEvent, IIndexedEvent<string>
+public abstract class OrderBase : MarketEvent, IIndexedEvent
 {
     /// <summary>
     /// Maximum allowed sequence value.
@@ -101,7 +101,7 @@ public abstract class OrderBase : MarketEvent, IIndexedEvent<string>
     }
 
     /// <inheritdoc/>
-    IndexedEventSource IIndexedEvent<string>.EventSource => EventSource;
+    IndexedEventSource IIndexedEvent.EventSource => EventSource;
 
     /// <summary>
     /// Gets or sets order source of this event.

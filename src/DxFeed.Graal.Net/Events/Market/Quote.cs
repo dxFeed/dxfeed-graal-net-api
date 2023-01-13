@@ -18,7 +18,7 @@ namespace DxFeed.Graal.Net.Events.Market;
 /// For more details see <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/event/market/Quote.html">Javadoc</a>.
 /// </summary>
 [EventCode(EventCodeNative.Quote)]
-public class Quote : MarketEvent, ILastingEvent<string>
+public class Quote : MarketEvent, ILastingEvent
 {
     /// <summary>
     /// Maximum allowed sequence value.

@@ -21,7 +21,7 @@ namespace DxFeed.Graal.Net.Events.Market;
 /// For more details see <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/event/market/TimeAndSale.html">Javadoc</a>.
 /// </summary>
 [EventCode(EventCodeNative.TimeAndSale)]
-public class TimeAndSale : MarketEvent, ITimeSeriesEvent<string>
+public class TimeAndSale : MarketEvent, ITimeSeriesEvent
 {
     /// <summary>
     /// Maximum allowed sequence value.

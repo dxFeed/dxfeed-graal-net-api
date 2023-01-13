@@ -7,10 +7,11 @@
 namespace DxFeed.Graal.Net.Events;
 
 /// <summary>
-/// Source identifier for <see cref="IIndexedEvent{T}"/>.
+/// Source identifier for <see cref="IIndexedEvent"/>.
 /// <br/>
 /// For more details see <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/event/IndexedEventSource.html">Javadoc</a>.
 /// </summary>
+/// <seealso cref="IIndexedEvent.EventSource"/>
 public class IndexedEventSource
 {
     /// <summary>
