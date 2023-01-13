@@ -40,7 +40,7 @@ internal static class TimeAndSaleTypeExt
     private static readonly TimeAndSaleType[] Values = EnumUtil.BuildEnumBitMaskArrayByValue(New);
 
     /// <summary>
-    /// Returns an enum constant of the <see cref="TimeAndSaleType"/> with the specified value.
+    /// Returns an enum constant of the <see cref="TimeAndSaleType"/> by integer code bit pattern.
     /// </summary>
     /// <param name="value">The specified value.</param>
     /// <returns>The enum constant of the specified enum type with the specified value.</returns>

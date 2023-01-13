@@ -17,6 +17,13 @@ namespace DxFeed.Graal.Net.Events.Market;
 /// The collection of order events of a symbol represents the most recent information that is
 /// available about orders on the market at any given moment of time.
 /// <br/>
+/// <see cref="Order"/> event represents market depth for a <b>specific symbol</b>.
+/// <br/>
+/// <see cref="AnalyticOrder"/> event represents market depth for a <b>specific symbol</b>
+/// extended with an analytic information, for example, whether particular order represent an iceberg or not.
+/// <br/>
+/// <see cref="SpreadOrder"/> event represents market depth for <b>all spreads on a given underlying symbol</b>.
+/// <br/>
 /// For more details see <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/event/market/OrderBase.html">Javadoc</a>.
 /// </summary>
 public abstract class OrderBase : MarketEvent, IIndexedEvent<string>
@@ -125,7 +132,7 @@ public abstract class OrderBase : MarketEvent, IIndexedEvent<string>
     public int EventFlags { get; set; }
 
     /// <summary>
-    /// Gets or sets unique per-symbol index of this order.  Index is non-negative.
+    /// Gets or sets unique per-symbol index of this order. Index is non-negative.
     /// Note, that this method also changes <see cref="EventSource"/>, whose id occupies highest bits of index.
     /// Use <see cref="EventSource"/> after invocation of this method to set the desired value of source.
     /// </summary>
@@ -220,8 +227,8 @@ public abstract class OrderBase : MarketEvent, IIndexedEvent<string>
 
     /// <summary>
     /// Gets or sets order ID if available.
-    /// Some actions <see cref="OrderAction.Trade"/>,
-    /// <see cref="OrderAction.Bust"/> have no order ID since they are not related to any order in Order book.
+    /// Some actions <see cref="OrderAction.Trade"/>, <see cref="OrderAction.Bust"/>
+    /// have no order ID since they are not related to any order in Order book.
     /// </summary>
     public long OrderId { get; set; }
 

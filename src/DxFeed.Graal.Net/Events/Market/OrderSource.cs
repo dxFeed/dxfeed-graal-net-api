@@ -9,13 +9,31 @@ using DxFeed.Graal.Net.Api;
 using DxFeed.Graal.Net.Api.Osub;
 using Microsoft.Extensions.Caching.Memory;
 
+// This file is marked as auto-generated in .editorconfig for disable style warning.
+// Because the current fields naming is important to use.
 // ReSharper disable InconsistentNaming for order source.
+
 namespace DxFeed.Graal.Net.Events.Market;
 
 /// <summary>
 /// Identifies source of <see cref="Order"/>, <see cref="AnalyticOrder"/> and <see cref="SpreadOrder"/> events.
-/// <br/>
-/// For more details see <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/event/market/OrderSource.html">Javadoc.</a>
+/// <ul>
+/// <li>
+/// <em>Synthetic</em> sources <see cref="COMPOSITE_BID"/>, <see cref="COMPOSITE_ASK"/>,
+///     <see cref="REGIONAL_BID"/> and <see cref="REGIONAL_ASK"/> are provided for convenience of a consolidated
+///     order book and are automatically generated based on the corresponding <see cref="Quote"/> events.
+/// </li>
+/// <li>
+/// <em>Aggregate</em> sources <see cref="AGGREGATE_BID"/>  and <see cref="AGGREGATE_ASK"/>  provide
+///     futures depth (aggregated by price level) and NASDAQ Level II (top of book for each market maker).
+///     These source cannot be directly published to via dxFeed API.
+/// </li>
+/// <li>
+/// <see cref="IsPublishable"/> sources <see cref="DEFAULT"/>, <see cref="NTV"/> and <see cref="ISE"/>
+///     support full range of dxFeed API features.
+/// </li>
+/// </ul>
+/// For more details see <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/event/market/OrderSource.html">Javadoc</a>.
 /// </summary>
 public class OrderSource : IndexedEventSource
 {
@@ -274,7 +292,7 @@ public class OrderSource : IndexedEventSource
         switch (id)
         {
             case < 0:
-                throw new ArgumentException("id is negative", nameof(id));
+                throw new ArgumentException("Id is negative", nameof(id));
             case > 0 and < 0x20 when !IsSpecialSourceId(id):
                 throw new ArgumentException("Id is not marked as special", nameof(id));
             case >= 0x20 when id != ComposeId(name) || !name.Equals(DecodeName(id), StringComparison.Ordinal):
@@ -334,7 +352,7 @@ public class OrderSource : IndexedEventSource
     /// Special order sources are used for wrapping non-order events into order events.
     /// </summary>
     /// <param name="sourceId">The source identifier.</param>
-    /// <returns><c>true</c> if it is a special source identifier.</returns>
+    /// <returns>Returns <c>true</c> if it is a special source identifier.</returns>
     public static bool IsSpecialSourceId(int sourceId) =>
         sourceId is >= 1 and <= 6;
 
@@ -447,7 +465,7 @@ public class OrderSource : IndexedEventSource
     /// Adds a new <see cref="OrderSource"/> instance to the cache by key.
     /// If the added instance is "builtin" source, the cache item priority sets
     /// to <see cref="CacheItemPriority.NeverRemove"/> the user order source
-    /// is set to <see cref="CacheItemPriority.Low"/>
+    /// is set to <see cref="CacheItemPriority.Low"/>.
     /// </summary>
     /// <param name="key">The key.</param>
     /// <param name="orderSource">The instance of <see cref="OrderSource"/>.</param>

@@ -13,6 +13,9 @@ namespace DxFeed.Graal.Net.Events;
 
 /// <summary>
 /// Marks all event types that can be received via dxFeed API.
+/// Events are considered instantaneous, non-persistent, and unconflateable
+/// (each event is individually delivered) unless they implement one of interfaces
+/// defined in this package to further refine their meaning.
 /// <br/>
 /// For more details see <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/event/EventType.html">Javadoc</a>.
 /// </summary>
