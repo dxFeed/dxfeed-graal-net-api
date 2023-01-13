@@ -7,7 +7,6 @@
 using System;
 using System.Collections.Generic;
 using DxFeed.Graal.Net.Events;
-using DxFeed.Graal.Net.Events.Market;
 using DxFeed.Graal.Net.Native.Events;
 using DxFeed.Graal.Net.Native.Events.Market;
 
