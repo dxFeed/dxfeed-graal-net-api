@@ -39,10 +39,25 @@ public class TimeFormat
     /// </summary>
     private const string FullIsoFormat = "o";
 
-    private static readonly Lazy<TimeFormat> LocalTimeZoneFormat = new(() => Create(TimeZoneInfo.Local));
-    private static readonly Lazy<TimeFormat> UtcTimeZoneFormat = new(() => Create(TimeZoneInfo.Utc));
+    /// <summary>
+    /// Lazy initialization of the <see cref="TimeFormat"/> with Local Time Zone.
+    /// </summary>
+    private static readonly Lazy<TimeFormat> LocalTimeZoneFormat = new(() =>
+        Create(() => TimeZoneInfo.Local));
 
-    private readonly TimeZoneInfo _timeZone;
+    /// <summary>
+    /// Lazy initialization of the <see cref="TimeFormat"/> with UTC Time Zone.
+    /// For UTC we can pass null for better performance because no conversion is required.
+    /// </summary>
+    private static readonly Lazy<TimeFormat> UtcTimeZoneFormat = new(() =>
+        Create(null));
+
+    // The field is made as a func because, you should always access
+    // the local time zone through the TimeZoneInfo.Local and TimeZoneInfo.Utc property rather
+    // than assigning the local time zone to a TimeZoneInfo object variable.
+    // This prevents the TimeZoneInfo object variable from being invalidated
+    // by a call to the ClearCachedData method.
+    private readonly Func<TimeZoneInfo>? _timeZone;
     private readonly TimeFormat _withMillis;
     private readonly TimeFormat _withTimeZone;
     private readonly TimeFormat _asOnlyDate;
@@ -50,7 +65,7 @@ public class TimeFormat
     private readonly string _formatString;
 
     private TimeFormat(
-        TimeZoneInfo timeZone,
+        Func<TimeZoneInfo>? timeZone,
         TimeFormat? withMillis,
         TimeFormat? withTimeZone,
         TimeFormat? asOnlyDate,
@@ -65,22 +80,26 @@ public class TimeFormat
     }
 
     /// <summary>
-    /// Gets instance <see cref="TimeFormat"/> with <see cref="TimeZoneInfo.Local"/> <see cref="TimeZoneInfo"/>.
+    /// Gets instance <see cref="TimeFormat"/> with <see cref="TimeZoneInfo"/>.<see cref="TimeZoneInfo.Local"/>.
     /// </summary>
-    public static TimeFormat LocalTime => LocalTimeZoneFormat.Value;
+    public static TimeFormat LocalTime =>
+        LocalTimeZoneFormat.Value;
 
     /// <summary>
-    /// Gets instance <see cref="TimeFormat"/> with <see cref="TimeZoneInfo.Utc"/> <see cref="TimeZoneInfo"/>.
+    /// Gets instance <see cref="TimeFormat"/> with <see cref="TimeZoneInfo"/>.<see cref="TimeZoneInfo.Utc"/>.
     /// </summary>
-    public static TimeFormat Utc => UtcTimeZoneFormat.Value;
+    public static TimeFormat Utc =>
+        UtcTimeZoneFormat.Value;
 
     /// <summary>
     /// Creates a new instance of <see cref="TimeFormat"/>
     /// with a specified <see cref="TimeZoneInfo"/> and <see cref="DefaultFormat"/>.
     /// </summary>
-    /// <param name="timeZone">The specified <see cref="TimeZoneInfo"/>.</param>
+    /// <param name="timeZone">
+    /// The specified <see cref="TimeZoneInfo"/>, or <c>null</c> if no conversions are required (for the UTC Time Zone).
+    /// </param>
     /// <returns>Returns new instance <see cref="TimeFormat"/>.</returns>
-    public static TimeFormat Create(TimeZoneInfo timeZone)
+    public static TimeFormat Create(Func<TimeZoneInfo>? timeZone)
     {
         var fullIso = new TimeFormat(timeZone, null, null, null, null);
         var onlyDate = new TimeFormat(timeZone, null, null, null, fullIso);
@@ -169,9 +188,13 @@ public class TimeFormat
     /// <returns>The string representation.</returns>
     private string Format(DateTimeOffset dateTimeOffset)
     {
-        dateTimeOffset = !_timeZone.Equals(TimeZoneInfo.Utc)
-            ? TimeZoneInfo.ConvertTime(dateTimeOffset, _timeZone)
-            : dateTimeOffset;
+        if (_timeZone != null)
+        {
+            // If _timeZone not null, we need convert time.
+            dateTimeOffset = TimeZoneInfo.ConvertTime(dateTimeOffset, _timeZone());
+        }
+
+        // Otherwise, is UTC Time Zone, no conversions required.
         return dateTimeOffset.ToString(_formatString, CultureInfo.InvariantCulture);
     }
 
