@@ -77,7 +77,7 @@ public class TimeAndSale : MarketEvent, ITimeSeriesEvent
     {
     }
 
-    /// <inheritdoc/>
+    /// <inheritdoc cref="ITimeSeriesEvent.EventSource" />
     public IndexedEventSource EventSource =>
         IndexedEventSource.DEFAULT;
 
@@ -151,22 +151,22 @@ public class TimeAndSale : MarketEvent, ITimeSeriesEvent
     /// <summary>
     /// Gets or sets price of this time and sale event.
     /// </summary>
-    public double Price { get; set; }
+    public double Price { get; set; } = double.NaN;
 
     /// <summary>
     /// Gets or sets size of this time and sale event as floating number with fractions.
     /// </summary>
-    public double Size { get; set; }
+    public double Size { get; set; } = double.NaN;
 
     /// <summary>
     /// Gets or sets the current bid price on the market when this time and sale event had occurred.
     /// </summary>
-    public double BidPrice { get; set; }
+    public double BidPrice { get; set; } = double.NaN;
 
     /// <summary>
     /// Gets or sets the current ask price on the market when this time and sale event had occurred.
     /// </summary>
-    public double AskPrice { get; set; }
+    public double AskPrice { get; set; } = double.NaN;
 
     /// <summary>
     /// Gets or sets sale conditions provided for this event by data feed.

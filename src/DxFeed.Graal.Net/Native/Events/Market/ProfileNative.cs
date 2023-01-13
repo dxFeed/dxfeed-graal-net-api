@@ -17,7 +17,7 @@ namespace DxFeed.Graal.Net.Native.Events.Market;
 [StructLayout(LayoutKind.Sequential)]
 internal readonly struct ProfileNative
 {
-    public readonly MarketEvent MarketEvent;
+    public readonly MarketEventNative MarketEvent;
     public readonly nint Description; // A null-terminated UTF-8 string.
     public readonly nint StatusReason; // A null-terminated UTF-8 string.
     public readonly long HaltStartTime;

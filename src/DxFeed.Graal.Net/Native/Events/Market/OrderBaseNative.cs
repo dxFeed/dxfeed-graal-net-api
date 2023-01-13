@@ -18,7 +18,7 @@ namespace DxFeed.Graal.Net.Native.Events.Market;
 [StructLayout(LayoutKind.Sequential)]
 internal readonly struct OrderBaseNative
 {
-    public readonly MarketEvent MarketEvent;
+    public readonly MarketEventNative MarketEvent;
     public readonly int EventFlags;
     public readonly long Index;
     public readonly long TimeSequence;

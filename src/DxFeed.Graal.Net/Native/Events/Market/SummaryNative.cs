@@ -11,7 +11,7 @@ namespace DxFeed.Graal.Net.Native.Events.Market;
 [StructLayout(LayoutKind.Sequential)]
 internal readonly struct SummaryNative
 {
-    public readonly MarketEvent MarketEvent;
+    public readonly MarketEventNative MarketEvent;
     public readonly int DayId;
     public readonly double DayOpenPrice;
     public readonly double DayHighPrice;
