@@ -51,7 +51,7 @@ public class DXFeed
     /// </summary>
     /// <param name="eventTypes">
     /// The list of event types.
-    /// Events types must be implement <see cref="IEventType{T}"/> and have <see cref="EventCodeAttribute"/>.
+    /// Events types must be implement <see cref="IEventType"/> and have <see cref="EventCodeAttribute"/>.
     /// </param>
     /// <returns>The created <see cref="DXFeedSubscription"/>.</returns>
     /// <exception cref="ArgumentException">
@@ -71,7 +71,7 @@ public class DXFeed
     /// </summary>
     /// <param name="eventTypes">
     /// The list of event types.
-    /// Events types must be implement <see cref="IEventType{T}"/> and have <see cref="EventCodeAttribute"/>.
+    /// Events types must be implement <see cref="IEventType"/> and have <see cref="EventCodeAttribute"/>.
     /// </param>
     /// <returns>The created subscription.</returns>
     /// <exception cref="ArgumentException">

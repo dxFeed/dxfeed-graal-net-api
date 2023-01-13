@@ -7,6 +7,9 @@
 using System.Runtime.InteropServices;
 using DxFeed.Graal.Net.Events.Market;
 
+// Disable pascal case naming rules.
+#pragma warning disable S101
+
 namespace DxFeed.Graal.Net.Native.Events.Market;
 
 /// <summary>

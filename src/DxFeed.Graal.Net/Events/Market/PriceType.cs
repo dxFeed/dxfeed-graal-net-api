@@ -25,7 +25,7 @@ public enum PriceType
     Indicative,
 
     /// <summary>
-    /// Preliminary price (preliminary settlement price), usually posted prior to {@link #FINAL} price.
+    /// Preliminary price (preliminary settlement price), usually posted prior to <see cref="Final"/>price.
     /// </summary>
     Preliminary,
 
@@ -43,7 +43,7 @@ internal static class PriceTypeExt
     private static readonly PriceType[] Values = EnumUtil.BuildEnumBitMaskArrayByValue(Regular);
 
     /// <summary>
-    /// Returns an enum constant of the <see cref="PriceType"/> with the specified value.
+    /// Returns an enum constant of the <see cref="PriceType"/> by integer code bit pattern.
     /// </summary>
     /// <param name="value">The specified value.</param>
     /// <returns>The enum constant of the specified enum type with the specified value.</returns>

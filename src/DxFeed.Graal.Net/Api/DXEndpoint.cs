@@ -159,8 +159,8 @@ public sealed class DXEndpoint : IDisposable
     public const string DXEndpointEventTimeProperty = "dxendpoint.eventTime";
 
     /// <summary>
-    /// Set this property to to store all <see cref="Events.ILastingEvent{T}"/>
-    /// and <see cref="Events.ILastingEvent{T}"/> events
+    /// Set this property to to store all <see cref="Events.ILastingEvent"/>
+    /// and <see cref="Events.ILastingEvent"/> events
     /// even when there is no subscription on them. By default, the endpoint stores only events from subscriptions.
     /// It works in the same way both for <see cref="DXFeed"/> and <see cref="DXPublisher"/>.
     /// <br/>

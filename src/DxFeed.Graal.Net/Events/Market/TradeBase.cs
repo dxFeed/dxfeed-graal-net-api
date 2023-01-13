@@ -16,7 +16,7 @@ namespace DxFeed.Graal.Net.Events.Market;
 /// <br/>
 /// For more details see <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/event/market/TradeBase.html">Javadoc</a>.
 /// </summary>
-public abstract class TradeBase : MarketEvent, ILastingEvent<string>
+public abstract class TradeBase : MarketEvent, ILastingEvent
 {
     /// <summary>
     /// Maximum allowed sequence value.
@@ -120,12 +120,12 @@ public abstract class TradeBase : MarketEvent, ILastingEvent<string>
     /// <summary>
     /// Gets or sets price of the last trade.
     /// </summary>
-    public double Price { get; set; }
+    public double Price { get; set; } = double.NaN;
 
     /// <summary>
     /// Gets or sets size of this last trade event as floating number with fractions.
     /// </summary>
-    public double Size { get; set; }
+    public double Size { get; set; } = double.NaN;
 
     /// <summary>
     /// Gets or sets identifier of the current trading day.
@@ -136,13 +136,13 @@ public abstract class TradeBase : MarketEvent, ILastingEvent<string>
     /// <summary>
     /// Gets or sets total volume traded for a day as floating number with fractions.
     /// </summary>
-    public double DayVolume { get; set; }
+    public double DayVolume { get; set; } = double.NaN;
 
     /// <summary>
     /// Gets or sets total turnover traded for a day.
     /// Day VWAP can be computed with  <see cref="DayTurnover"/> / <see cref="DayVolume"/>.
     /// </summary>
-    public double DayTurnover { get; set; }
+    public double DayTurnover { get; set; } = double.NaN;
 
     /// <summary>
     /// Gets or sets tick direction of the last trade.
@@ -165,7 +165,7 @@ public abstract class TradeBase : MarketEvent, ILastingEvent<string>
     /// <summary>
     /// Gets or sets change of the last trade.
     /// </summary>
-    public double Change { get; set; }
+    public double Change { get; set; } = double.NaN;
 
     /// <summary>
     /// Gets or sets implementation-specific flags.

@@ -14,7 +14,7 @@ namespace DxFeed.Graal.Net.Events.Market;
 /// <br/>
 /// For more details see <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/event/market/MarketEvent.html">Javadoc</a>.
 /// </summary>
-public abstract class MarketEvent : IEventType<string>
+public abstract class MarketEvent : IEventType
 {
     /// <summary>
     /// Initializes a new instance of the <see cref="MarketEvent"/> class.
@@ -24,13 +24,13 @@ public abstract class MarketEvent : IEventType<string>
     }
 
     /// <summary>
-    /// Initializes a new instance of the <see cref="MarketEvent"/> class with event symbol.
+    /// Initializes a new instance of the <see cref="MarketEvent"/> class with the specified event symbol.
     /// </summary>
     /// <param name="eventSymbol">The event symbol.</param>
     protected MarketEvent(string? eventSymbol) =>
         EventSymbol = eventSymbol;
 
-    /// <inheritdoc cref="IEventType{T}.EventSymbol"/>
+    /// <inheritdoc cref="IEventType.EventSymbol"/>
     public string? EventSymbol { get; set; }
 
     /// <inheritdoc/>

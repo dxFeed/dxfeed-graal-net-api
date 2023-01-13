@@ -27,7 +27,7 @@ public enum OrderAction
 
     /// <summary>
     /// New Order is added to Order Book.
-    ///
+    /// <br/>
     /// <para>
     /// Full Order Book fields:
     /// <ul>
@@ -42,7 +42,7 @@ public enum OrderAction
     /// <summary>
     /// Order is modified and price-time-priority is not maintained (i.e. order has re-entered Order Book).
     /// Order <see cref="MarketEvent.EventSymbol"/> and <see cref="OrderBase.OrderSide"/> will remain the same.
-    ///
+    /// <br/>
     /// <para>
     /// Full Order Book fields:
     /// <ul>
@@ -56,7 +56,7 @@ public enum OrderAction
     /// <summary>
     /// Order is modified without changing its price-time-priority (usually due to partial cancel by user).
     /// Order's <see cref="OrderBase.Size"/> will contain new updated size.
-    ///
+    /// <br/>
     /// <para>
     /// Full Order Book fields:
     /// <ul>
@@ -70,7 +70,7 @@ public enum OrderAction
     /// <summary>
     /// Order is fully canceled and removed from Order Book.
     /// Order's <see cref="OrderBase.Size"/> will be equal to 0.
-    ///
+    /// <br/>
     /// <para>
     /// Full Order Book fields:
     /// <ul>
@@ -85,7 +85,7 @@ public enum OrderAction
     /// <summary>
     /// Size is changed (usually reduced) due to partial order execution.
     /// Order's <see cref="OrderBase.Size"/> will be updated to show current outstanding size.
-    ///
+    /// <br/>
     /// <para>
     /// Full Order Book fields:
     /// <ul>
@@ -102,7 +102,7 @@ public enum OrderAction
     /// <summary>
     /// Order is fully executed and removed from Order Book.
     /// Order's <see cref="OrderBase.Size"/> will be equals to 0.
-    ///
+    /// <br/>
     /// <para>
     /// Full Order Book fields:
     /// <ul>
@@ -119,7 +119,7 @@ public enum OrderAction
     /// <summary>
     /// Non-Book Trade - this Trade not refers to any entry in Order Book.
     /// Order's <see cref="OrderBase.Size"/> and <see cref="OrderBase.Price"/> will be equals to 0.
-    ///
+    /// <br/>
     /// <para>
     /// Full Order Book fields:
     /// <ul>
@@ -134,8 +134,8 @@ public enum OrderAction
 
     /// <summary>
     /// Prior Trade/Order Execution bust.
-    /// Order's <see cref="OrderBase.Size"/> and <see cref="OrderBase.Size"/> will be equals to 0.
-    ///
+    /// Order's <see cref="OrderBase.Size"/> and <see cref="OrderBase.Price"/> will be equals to 0.
+    /// <br/>
     /// <para>
     /// Full Order Book fields:
     /// <ul>
@@ -156,7 +156,7 @@ internal static class OrderActionExt
     private static readonly OrderAction[] Values = EnumUtil.BuildEnumBitMaskArrayByValue(Undefined);
 
     /// <summary>
-    /// Returns an enum constant of the <see cref="OrderAction"/> with the specified value.
+    /// Returns an enum constant of the <see cref="OrderAction"/> by integer code bit pattern.
     /// </summary>
     /// <param name="value">The specified value.</param>
     /// <returns>The enum constant of the specified enum type with the specified value.</returns>

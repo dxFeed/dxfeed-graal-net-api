@@ -4,16 +4,20 @@
 // If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
 // </copyright>
 
+using DxFeed.Graal.Net.Events.Market;
+
 namespace DxFeed.Graal.Net.Events;
 
 /// <summary>
 /// Represents an indexed collection of up-to-date information about some
-/// condition or state of an external entity that updates in real-time.
+/// condition or state of an external entity that updates in real-time. For example,
+/// <see cref="Order"/> represents an order to buy or to sell some market instrument
+/// that is currently active on a market exchange and multiple
+/// orders are active for each symbol at any given moment in time.
 /// <br/>
 /// For more details see <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/event/IndexedEvent.html">Javadoc</a>.
 /// </summary>
-/// <typeparam name="T">Type of the event symbol for this event type.</typeparam>
-public interface IIndexedEvent<out T> : IEventType<T>
+public interface IIndexedEvent : IEventType
 {
     /// <summary>
     /// Indicates a pending transactional update. When <see cref="TxPending"/> is 1,
