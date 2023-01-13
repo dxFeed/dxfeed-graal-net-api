@@ -69,7 +69,7 @@ public static class EnumUtil
         Enum.GetValues(typeof(T)).Length;
 
     /// <summary>
-    /// Creates an array containing elements of the specified enum type <see cref="T"/>,
+    /// Creates an array containing elements of the specified enum type T,
     /// of the specified length.
     /// If the length is greater than the number of enum values,
     /// the remaining elements are filled with a default value, otherwise array are truncated.
@@ -103,7 +103,7 @@ public static class EnumUtil
     }
 
     /// <summary>
-    /// Creates an array containing elements of the specified enum type <see cref="T"/>,
+    /// Creates an array containing elements of the specified enum type T,
     /// where the length of the array is rounded to the nearest power of two,
     /// which is greater than or equal to the number of enum values.
     /// If the calculated length is greater than the number of enum values,
