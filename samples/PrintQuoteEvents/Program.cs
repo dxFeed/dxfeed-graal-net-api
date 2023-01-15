@@ -14,19 +14,32 @@ namespace DxFeed.Graal.Net.Samples;
 
 internal abstract class Program
 {
+    /// <summary>
+    /// A simple sample that shows how to subscribe to quotes for one instruments,
+    /// and print all received quotes to the console.
+    /// Use default DXFeed instance for that data feed address is defined by "dxfeed.properties" file.
+    /// The properties file is copied to the build output directory from the project directory.
+    /// </summary>
     public static async Task Main(string[] args)
     {
+        // Specified instrument name, fo example AAPL, IBM, MSFT, etc.
         var symbol = args[0];
-        // Use default DXFeed instance for that data feed address is defined by dxfeed.properties file.
-        // The properties file is copied to the build output directory from the project directory.
+
+        // Creates a subscription attached to a default DXFeed with a Quote event type.
+        // The endpoint address to use is stored in the "dxfeed.properties" file.
         var sub = DXFeed.Instance.CreateSubscription(typeof(Quote));
+
+        // Listener must be attached before symbols are added.
         sub.AddEventListener(events =>
         {
+            // Prints all received events.
             foreach (var quote in events)
             {
                 Console.WriteLine(quote);
             }
         });
+
+        // Adds specified symbol.
         sub.AddSymbols(symbol);
 
         await Task.Delay(Timeout.Infinite);

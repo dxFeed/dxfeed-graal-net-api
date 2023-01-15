@@ -66,6 +66,7 @@ Examples:
 
   Dump only Quote event for AAPL symbol from the specified address in a stream contract:
       dump demo.dxfeed.com:7300 Quote ETH/USD:GDAX");
+
             return HelpText.DefaultParsingErrorsHandler(parserResult, h);
         }, e => e);
         Console.WriteLine(helpText);

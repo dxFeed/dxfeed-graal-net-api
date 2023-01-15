@@ -52,7 +52,6 @@ internal abstract class ConnectTool
             Output.Flush();
         });
 
-
         IEnumerable<object> symbols = Helper.ParseSymbols(cmdArgs.Symbols!).ToList();
         if (cmdArgs.FromTime != null)
         {

@@ -1,14 +1,19 @@
 {
+  "$schema": "http://json.schemastore.org/launchsettings.json",
   "profiles": {
     "Connect": {
       "commandName": "Project",
-      "commandLineArgs": "connect demo.dxfeed.com:7300 Quote,Trade AAPL,IBM,MSFT,GOOG",
-      "nativeDebugging": true
+      "commandLineArgs": "connect demo.dxfeed.com:7300 Profile,Quote,Trade, AAPL,IBM,MSFT,GOOG",
+      "nativeDebugging": true,
+      "environmentVariables": {
+      }
     },
     "Dump": {
       "commandName": "Project",
       "commandLineArgs": "dump tape.csv[speed=max]",
-      "nativeDebugging": true
+      "nativeDebugging": true,
+      "environmentVariables": {
+      }
     }
   }
 }
