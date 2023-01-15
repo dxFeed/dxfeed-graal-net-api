@@ -24,24 +24,31 @@ internal abstract class PerfTestTool
 
     private sealed class Diagnostic : IDisposable
     {
+        private readonly bool _cpuUsageByCore;
         private readonly string _os;
         private readonly string _arch;
         private readonly Timer _timer;
         private readonly Process _currentProcess;
-        private readonly Stopwatch _timerTimeElapsed = new();
-        private readonly Stopwatch _runningTimeElapsed = new();
         private readonly NumberFormatInfo _numberFormatInfo = new() { NumberGroupSeparator = " " };
+        private readonly Stopwatch _timerDiff = new();
+        private readonly Stopwatch _runningDiff = new();
+        private readonly double _cpuCoeff;
+        private TimeSpan _cpuStartTime;
         private long _eventCounter;
         private double _peakMemoryUsage;
+        private double _peakCpuUsage;
 
-        public Diagnostic(Process currentProcess, int dueTimeSec, int periodSec)
+        public Diagnostic(Process currentProcess, int periodSec, bool cpuUsageByCore)
         {
+            _cpuUsageByCore = cpuUsageByCore;
             _os = GetOsNameAndVersion();
-            _arch = RuntimeInformation.ProcessArchitecture.ToString();
+            _arch = GetArch().ToString();
             _currentProcess = currentProcess;
-            _timerTimeElapsed.Restart();
-            _runningTimeElapsed.Restart();
-            _timer = new Timer(TimerCallback, null, dueTimeSec * 1000, periodSec * 1000);
+            _timerDiff.Restart();
+            _runningDiff.Restart();
+            _cpuStartTime = _currentProcess.TotalProcessorTime;
+            _cpuCoeff = GetCpuCoeff();
+            _timer = new Timer(TimerCallback, null, periodSec * 1000, periodSec * 1000);
         }
 
         public void AddEventCounter(long value) =>
@@ -52,6 +59,9 @@ internal abstract class PerfTestTool
             _currentProcess.Dispose();
             _timer.Dispose();
         }
+
+        private static Architecture GetArch() =>
+            RuntimeInformation.ProcessArchitecture;
 
         private static string GetOsNameAndVersion()
         {
@@ -73,27 +83,65 @@ internal abstract class PerfTestTool
             return Environment.OSVersion.ToString();
         }
 
+        private static double GetCpuCoeff()
+        {
+            if (RuntimeInformation.IsOSPlatform(OSPlatform.OSX) && GetArch() == Architecture.Arm64)
+            {
+                // Seems like a weird error in macOS with M1 processor.
+                // EndProcessorTime - StartProcessorTime returns a very small value.
+                // For example, if a process maxes out one core for 2 seconds,
+                // EndProcessorTime - StartProcessorTime should be ~2000ms but it is ~42ms.
+                // This factor temporarily solves the problem.
+                // There has already been an error associated with this counter
+                // https://github.com/dotnet/runtime/issues/29527
+                return 41.6;
+            }
+
+            return 1;
+        }
+
+        private double GetEventsPerSec() =>
+            GetAndResetEventCounter() / _timerDiff.Elapsed.TotalSeconds;
+
+        private double GetMemoryUsage()
+        {
+            _currentProcess.Refresh();
+            return _currentProcess.WorkingSet64 / 1024.0 / 1024.0;
+        }
+
+        private double GetCpuUsage()
+        {
+            _currentProcess.Refresh();
+            var cpuEndTime = _currentProcess.TotalProcessorTime;
+            var processorDiff = (cpuEndTime - _cpuStartTime) * _cpuCoeff;
+            _cpuStartTime = cpuEndTime;
+            return processorDiff / (_timerDiff.Elapsed * (!_cpuUsageByCore ? Environment.ProcessorCount : 1));
+        }
+
         private long GetAndResetEventCounter() =>
             Interlocked.Exchange(ref _eventCounter, 0);
 
         private void TimerCallback(object? _)
         {
-            var totalEvents = GetAndResetEventCounter();
-            var elapsedSec = _timerTimeElapsed.Elapsed.TotalSeconds;
-            _timerTimeElapsed.Restart();
-            _currentProcess.Refresh();
+            var eventsPerSec = GetEventsPerSec();
 
-            var eventsPerSec = totalEvents / elapsedSec;
-            var currentMemoryUsage = _currentProcess.WorkingSet64 / 1024.0 / 1024.0;
+            var currentMemoryUsage = GetMemoryUsage();
             _peakMemoryUsage = currentMemoryUsage > _peakMemoryUsage ? currentMemoryUsage : _peakMemoryUsage;
 
+            var currentCpuUsage = GetCpuUsage();
+            _peakCpuUsage = currentCpuUsage > _peakCpuUsage ? currentCpuUsage : _peakCpuUsage;
+
             Console.WriteLine();
-            Console.WriteLine($"{_os} {_arch}");
+            Console.WriteLine($"{_os} {_arch} ({Environment.ProcessorCount} core)");
             Console.WriteLine("----------------------------------------------");
             Console.WriteLine($"  Events               : {eventsPerSec.ToString("N2", _numberFormatInfo)} (per/sec)");
             Console.WriteLine($"  Current Memory Usage : {currentMemoryUsage} (Mbyte)");
             Console.WriteLine($"  Peak Memory Usage    : {_peakMemoryUsage} (Mbyte)");
-            Console.WriteLine($"  Running time         : {_runningTimeElapsed.Elapsed}");
+            Console.WriteLine($"  Current CPU Usage    : {currentCpuUsage:P2} (%)");
+            Console.WriteLine($"  Peak CPU Usage       : {_peakCpuUsage:P2} (%)");
+            Console.WriteLine($"  Running time         : {_runningDiff.Elapsed}");
+
+            _timerDiff.Restart();
         }
     }
 
@@ -117,9 +165,8 @@ internal abstract class PerfTestTool
             .GetFeed()
             .CreateSubscription(Helper.ParseEventTypes(cmdArgs.Types!));
 
-        const int dueTimeSec = 2;
         const int periodSec = 2;
-        using var diagnostic = new Diagnostic(Process.GetCurrentProcess(), dueTimeSec, periodSec);
+        using var diagnostic = new Diagnostic(Process.GetCurrentProcess(), periodSec, cmdArgs.CpuUsageByCore);
 
         if (!cmdArgs.DetachListener)
         {

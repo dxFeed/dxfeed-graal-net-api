@@ -29,6 +29,9 @@ public class PerfTestArgs :
     [Option('d', "detach-listener", Required = false, HelpText = "Don't attach a listener.")]
     public bool DetachListener { get; set; } = false;
 
+    [Option("cpu-by-core", Required = false, HelpText = "Show CPU usage by core (where 1 core = 100%).")]
+    public bool CpuUsageByCore { get; set; } = false;
+
     protected override void DisplayHelpText(ParserResult<PerfTestArgs> parserResult)
     {
         var helpText = HelpText.AutoBuild(parserResult, h =>
