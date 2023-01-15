@@ -28,7 +28,7 @@ public abstract class DumpTool
         using var endpoint = DXEndpoint
             .NewBuilder()
             .WithRole(DXEndpoint.Role.StreamFeed)
-            .WithProperty(DXEndpoint.DXFeedWildcardEnableProperty, "true") // enabled by default.
+            .WithProperty(DXEndpoint.DXFeedWildcardEnableProperty, "true") // Enabled by default.
             .WithProperties(Helper.ParseProperties(cmdArgs.Properties))
             .WithName(nameof(DumpTool))
             .Build();

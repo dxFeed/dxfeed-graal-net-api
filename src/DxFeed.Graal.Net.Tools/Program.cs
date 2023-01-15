@@ -7,6 +7,7 @@
 using System;
 using DxFeed.Graal.Net.Tools.Connect;
 using DxFeed.Graal.Net.Tools.Dump;
+using DxFeed.Graal.Net.Tools.PerfTest;
 
 namespace DxFeed.Graal.Net.Tools;
 
@@ -27,6 +28,9 @@ internal abstract class Program
                 break;
             case Tools.Dump:
                 DumpTool.Run(args.AsSpan()[1..].ToArray());
+                break;
+            case Tools.PerfTest:
+                PerfTestTool.Run(args.AsSpan()[1..].ToArray());
                 break;
         }
     }

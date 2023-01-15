@@ -14,7 +14,8 @@ namespace DxFeed.Graal.Net.Tools;
 public enum Tools
 {
     Connect,
-    Dump
+    Dump,
+    PerfTest,
 }
 
 public class ProgramArgs : AbstractParser<ProgramArgs>
@@ -45,8 +46,9 @@ public class ProgramArgs : AbstractParser<ProgramArgs>
 Usage:
   <tool> [...]
 Where <tool> is one of:
-    Connect - Connects to specified address(es).
-    Dump    - Dumps all events received from address.");
+    Connect  - Connects to specified address(es).
+    Dump     - Dumps all events received from address.
+    PerfTest - Calculates performance counters.");
 
             h.AddPostOptionsLine("To get detailed help on some tool use <tool> --help.");
 

@@ -1,0 +1,12 @@
+{
+  "$schema": "http://json.schemastore.org/launchsettings.json",
+  "profiles": {
+    "Run": {
+      "commandName": "Project",
+      "nativeDebugging": true,
+      "commandLineArgs": "AAPL",
+      "environmentVariables": {
+      }
+    }
+  }
+}
