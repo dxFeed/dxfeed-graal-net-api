@@ -121,17 +121,20 @@ internal abstract class PerfTestTool
         const int periodSec = 2;
         using var diagnostic = new Diagnostic(Process.GetCurrentProcess(), dueTimeSec, periodSec);
 
-        sub.AddEventListener(events =>
+        if (!cmdArgs.DetachListener)
         {
-            var eventTypes = events as IEventType[] ?? events.ToArray();
-            // ReSharper disable once AccessToDisposedClosure
-            diagnostic.AddEventCounter(eventTypes.Length);
-            foreach (var e in eventTypes)
+            sub.AddEventListener(events =>
             {
-                // ReSharper disable once NonAtomicCompoundOperator
-                _blackHoleHashCode += e.GetHashCode();
-            }
-        });
+                var eventTypes = events as IEventType[] ?? events.ToArray();
+                // ReSharper disable once AccessToDisposedClosure
+                diagnostic.AddEventCounter(eventTypes.Length);
+                foreach (var e in eventTypes)
+                {
+                    // ReSharper disable once NonAtomicCompoundOperator
+                    _blackHoleHashCode += e.GetHashCode();
+                }
+            });
+        }
 
         sub.AddSymbols(Helper.ParseSymbols(cmdArgs.Symbols!).ToList());
 

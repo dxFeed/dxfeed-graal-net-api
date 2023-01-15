@@ -26,6 +26,9 @@ public class PerfTestArgs :
     [Option("force-stream", Required = false, HelpText = "Sets \"stream\" contract for all events.")]
     public bool ForceStream { get; set; } = false;
 
+    [Option('d', "detach-listener", Required = false, HelpText = "Don't attach a listener.")]
+    public bool DetachListener { get; set; } = false;
+
     protected override void DisplayHelpText(ParserResult<PerfTestArgs> parserResult)
     {
         var helpText = HelpText.AutoBuild(parserResult, h =>
