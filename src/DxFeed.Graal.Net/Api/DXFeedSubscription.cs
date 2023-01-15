@@ -9,6 +9,7 @@ using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Linq;
 using DxFeed.Graal.Net.Api.Osub;
+using DxFeed.Graal.Net.Events;
 using DxFeed.Graal.Net.Native;
 using DxFeed.Graal.Net.Native.EventMappers;
 using DxFeed.Graal.Net.Native.Events;

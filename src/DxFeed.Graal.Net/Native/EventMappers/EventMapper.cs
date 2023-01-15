@@ -78,7 +78,7 @@ internal static class EventMapper
             EventCodeNative.Order => OrderMapper.FromNative((OrderNative*)baseEvent),
             EventCodeNative.AnalyticOrder => OrderMapper.FromNative((AnalyticOrderNative*)baseEvent),
             EventCodeNative.SpreadOrder => OrderMapper.FromNative((SpreadOrderNative*)baseEvent),
-            EventCodeNative.Series => throw new NotImplementedException(),
+            EventCodeNative.Series => SeriesMapper.FromNative((SeriesNative*)baseEvent),
             _ => throw new ArgumentException($"Unknown {nameof(EventCodeNative)}:{baseEvent->EventCode}"),
         };
 }
