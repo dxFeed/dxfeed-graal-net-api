@@ -4,6 +4,11 @@
 // If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
 // </copyright>
 
+using System;
+
+// Arithmetic Expressions Must Declare Precedence. False positive.
+#pragma warning disable SA1407
+
 namespace DxFeed.Graal.Net.Utils;
 
 /// <summary>
@@ -14,6 +19,65 @@ namespace DxFeed.Graal.Net.Utils;
 /// </summary>
 public static class DayUtil
 {
+    private static readonly int[] DayOfYear = { 0, 0, 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334, 365 };
+
+    /// <summary>
+    /// Returns day identifier for specified year, month and day in Gregorian calendar.
+    /// The day identifier is defined as the number of days since Unix epoch of January 1, 1970.
+    /// Month must be between 1 and 12 inclusive.
+    /// Year and day might take arbitrary values assuming proleptic Gregorian calendar.
+    /// The value returned by this method for an arbitrary day value always satisfies the following equality:
+    /// <code>
+    /// GetDayIdByYearMonthDay(year, month, day) == GetDayIdByYearMonthDay(year, month, 0) + day
+    /// </code>
+    /// </summary>
+    /// <param name="year">The year.</param>
+    /// <param name="month">The month between 1 and 12 inclusive.</param>
+    /// <param name="day">The dat.</param>
+    /// <returns>The day id.</returns>
+    /// <exception cref="ArgumentException">f the month is less than 1 or greater than 12.</exception>
+    public static int GetDayIdByYearMonthDay(int year, int month, int day)
+    {
+        if (month is < 1 or > 12)
+        {
+            throw new ArgumentException($"Invalid month {month}", nameof(month));
+        }
+
+        var dayOfYear = DayOfYear[month] + day - 1;
+        if (month > 2 && year % 4 == 0 && (year % 100 != 0 || year % 400 == 0))
+        {
+            dayOfYear++;
+        }
+
+        return (year * 365) +
+            MathUtil.Div(year - 1, 4) -
+            MathUtil.Div(year - 1, 100) +
+            MathUtil.Div(year - 1, 400) +
+            dayOfYear - 719527;
+    }
+
+    /// <summary>
+    /// Returns day identifier for specified <c>yyyymmdd</c>  integer in Gregorian calendar.
+    /// The day identifier is defined as the number of days since Unix epoch of January 1, 1970.
+    /// The <c>yyyymmdd</c>  integer is equal to <c>yearSign * (abs(year) * 10000 + month * 100 + day)</c>,
+    /// where year, month, and day are in Gregorian calendar,
+    /// month is between 1 and 12 inclusive, and day is counted from 1.
+    /// </summary>
+    /// <param name="yyyymmdd">The <c>yyyymmdd</c> integer in Gregorian calendar.</param>
+    /// <returns>The day id.</returns>
+    /// <seealso cref="GetDayIdByYearMonthDay(int,int,int)"/>
+    /// <example>
+    /// <code>
+    /// DayUtil.GetDayIdByYearMonthDay(19691231) == -1
+    /// DayUtil.GetDayIdByYearMonthDay(19700101) ==  0
+    /// DayUtil.GetDayIdByYearMonthDay(19700102) ==  1
+    /// </code>
+    /// </example>
+    public static int GetDayIdByYearMonthDay(int yyyymmdd) =>
+        yyyymmdd >= 0
+            ? GetDayIdByYearMonthDay(yyyymmdd / 10000, yyyymmdd / 100 % 100, yyyymmdd % 100)
+            : GetDayIdByYearMonthDay(-(-yyyymmdd / 10000), -yyyymmdd / 100 % 100, -yyyymmdd % 100);
+
     /// <summary>
     /// Gets <c>yyyymmdd</c> integer in Gregorian calendar for a specified day identifier.
     /// The day identifier is defined as the number of days since Unix epoch of January 1, 1970.
