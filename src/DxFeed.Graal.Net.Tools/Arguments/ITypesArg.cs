@@ -16,7 +16,7 @@ public interface ITypesArg
 
     public const string HelpText = @"
 Comma-separated list of dxfeed event types (e.g. Quote,TimeAndSale).
-Use ""feed"" for all available events. The dxfeed.wildcard.enable property must be set to true.";
+Use ""feed"" for all available events.";
 
     [Value(Index, MetaName = MetaName, Required = IsRequired, HelpText = HelpText)]
     public string? Types { get; set; }
