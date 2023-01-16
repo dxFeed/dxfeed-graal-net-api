@@ -65,6 +65,7 @@ internal abstract class ConnectTool
         }
 
         sub.AddSymbols(symbols);
+
         endpoint.Connect(cmdArgs.Address);
 
         Task.Delay(Timeout.Infinite).Wait();

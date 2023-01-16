@@ -25,6 +25,7 @@ public static class Helper
 
     /// <summary>
     /// Parses an input string and returns a set of event types.
+    /// If eventTypeNames is "feed", that returns all available events types.
     /// </summary>
     /// <param name="eventTypeNames">The coma-separated list of event types.</param>
     /// <returns>Returns a set of parsed types.</returns>

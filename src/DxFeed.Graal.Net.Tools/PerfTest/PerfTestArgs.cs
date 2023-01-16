@@ -23,14 +23,15 @@ public class PerfTestArgs :
 
     public IEnumerable<string> Properties { get; set; } = null!;
 
-    [Option("force-stream", Required = false, HelpText = "Sets \"stream\" contract for all events.")]
+    [Option("force-stream", Required = false,
+        HelpText = "Enforces a streaming contract for subscription. The StreamFeed role is used instead of Feed.")]
     public bool ForceStream { get; set; } = false;
 
-    [Option('d', "detach-listener", Required = false, HelpText = "Don't attach a listener.")]
-    public bool DetachListener { get; set; } = false;
+    [Option("cpu-usage-by-core", Required = false, HelpText = "Show CPU usage by core (where 1 core = 100%).")]
+    public bool ShowCpuUsageByCore { get; set; } = false;
 
-    [Option("cpu-by-core", Required = false, HelpText = "Show CPU usage by core (where 1 core = 100%).")]
-    public bool CpuUsageByCore { get; set; } = false;
+    [Option("detach-listener", Required = false, HelpText = "Don't attach a listener. Used for debugging purposes.")]
+    public bool DetachListener { get; set; } = false;
 
     protected override void DisplayHelpText(ParserResult<PerfTestArgs> parserResult)
     {
@@ -41,7 +42,7 @@ public class PerfTestArgs :
 
             h.AddPreOptionsLine(@"
 PerfTest:
-    Calculates performance counters (events per second, memory usage, cpu usage).");
+     Connects to the specified address(es) and calculates performance counters (events per second, memory usage, cpu usage, etc).");
 
             h.AddPreOptionsLine(@"
 Usage:

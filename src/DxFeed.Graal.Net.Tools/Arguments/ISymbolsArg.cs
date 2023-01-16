@@ -16,7 +16,7 @@ public interface ISymbolsArg
 
     public const string HelpText = @"
 Comma-separated list of symbol names to get events for (e.g. ""IBM,AAPL,MSFT"").
-Use ""all"" for wildcard subscription.";
+Use ""all"" for wildcard subscription. For this, the dxfeed.wildcard.enable property must be set to true.";
 
     [Value(Index, MetaName = MetaName, Required = IsRequired, HelpText = HelpText)]
     public string? Symbols { get; set; }

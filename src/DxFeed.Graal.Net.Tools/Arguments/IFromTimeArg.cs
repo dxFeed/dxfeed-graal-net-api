@@ -15,7 +15,7 @@ public interface IFromTimeArg
     public const bool IsRequired = false;
 
     public const string HelpText = @"
-From-time for the time-series subscription.
+From-time for history subscription in standard formats.
 From-time is measured in milliseconds between the current time and midnight on January 1, 1970 UTC.";
 
     [Option(ShortName, LongName, Required = IsRequired, HelpText = HelpText)]
