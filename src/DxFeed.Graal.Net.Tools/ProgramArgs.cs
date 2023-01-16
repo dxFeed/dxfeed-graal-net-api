@@ -48,7 +48,7 @@ Usage:
 Where <tool> is one of:
     Connect  - Connects to specified address(es).
     Dump     - Dumps all events received from address.
-    PerfTest - Calculates performance counters.");
+    PerfTest - Connects to specified address and calculates performance counters.");
 
             h.AddPostOptionsLine("To get detailed help on some tool use <tool> --help.");
 
