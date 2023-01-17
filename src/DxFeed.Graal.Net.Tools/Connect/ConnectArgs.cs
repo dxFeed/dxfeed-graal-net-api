@@ -21,7 +21,7 @@ public class ConnectArgs :
 
     public string? Symbols { get; set; } = null!;
 
-    public long? FromTime { get; set; }
+    public string? FromTime { get; set; }
 
     public string? Source { get; set; }
 

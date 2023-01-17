@@ -128,7 +128,7 @@ public class Summary : MarketEvent, ILastingEvent
     /// <returns>The string representation.</returns>
     public override string ToString() =>
         "Summary{" + StringUtil.EncodeNullableString(EventSymbol) +
-        ", eventTime=" + TimeFormat.LocalTime.FromMillis(EventTime) +
+        ", eventTime=" + TimeFormat.Local.WithMillis().WithTimeZone().FormatFromMillis(EventTime) +
         ", day=" + DayUtil.GetYearMonthDayByDayId(DayId) +
         ", dayOpen=" + DayOpenPrice +
         ", dayHigh=" + DayHighPrice +

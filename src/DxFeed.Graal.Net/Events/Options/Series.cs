@@ -175,10 +175,10 @@ public class Series : MarketEvent, IIndexedEvent
     /// <returns>The string representation.</returns>
     public override string ToString() =>
         "Series{" + StringUtil.EncodeNullableString(EventSymbol) +
-        ", eventTime=" + TimeFormat.LocalTime.FromMillis(EventTime) +
+        ", eventTime=" + TimeFormat.Local.WithTimeZone().FormatFromMillis(EventTime) +
         ", eventFlags=0x" + EventFlags.ToString("x", CultureInfo.InvariantCulture) +
         ", index=0x" + Index.ToString("x", CultureInfo.InvariantCulture) +
-        ", time=" + TimeFormat.LocalTime.WithMillis().FromMillis(Time) +
+        ", time=" + TimeFormat.Local.WithMillis().WithTimeZone().FormatFromMillis(Time) +
         ", sequence=" + Sequence +
         ", expiration=" + DayUtil.GetYearMonthDayByDayId(Expiration) +
         ", volatility=" + Volatility +

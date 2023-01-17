@@ -44,7 +44,7 @@ public class TimeSeriesSubscriptionSymbol<T> : IndexedEventSubscriptionSymbol<T>
 
     /// <inheritdoc/>
     public override string ToString() =>
-        $"{EventSymbol}{{fromTime={TimeFormat.LocalTime.WithMillis().FromMillis(FromTime)}}}";
+        $"{EventSymbol}{{fromTime={TimeFormat.Local.WithMillis().WithTimeZone().FormatFromMillis(FromTime)}}}";
 
     /// <summary>
     /// Indicates whether some other time series event subscription symbol

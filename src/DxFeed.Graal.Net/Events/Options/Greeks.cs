@@ -145,9 +145,9 @@ public class Greeks : MarketEvent, ITimeSeriesEvent, ILastingEvent
     /// <returns>The string representation.</returns>
     public override string ToString() =>
         "Greeks{" + StringUtil.EncodeNullableString(EventSymbol) +
-        ", eventTime=" + TimeFormat.LocalTime.FromMillis(EventTime) +
+        ", eventTime=" + TimeFormat.Local.WithTimeZone().FormatFromMillis(EventTime) +
         ", eventFlags=0x" + EventFlags.ToString("x", CultureInfo.InvariantCulture) +
-        ", time=" + TimeFormat.LocalTime.WithMillis().FromMillis(Time) +
+        ", time=" + TimeFormat.Local.WithMillis().WithTimeZone().FormatFromMillis(Time) +
         ", sequence=" + Sequence +
         ", price=" + Price +
         ", volatility=" + Volatility +

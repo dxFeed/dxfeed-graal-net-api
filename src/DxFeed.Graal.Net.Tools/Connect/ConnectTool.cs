@@ -13,6 +13,7 @@ using System.Threading.Tasks;
 using DxFeed.Graal.Net.Api;
 using DxFeed.Graal.Net.Api.Osub;
 using DxFeed.Graal.Net.Events.Market;
+using DxFeed.Graal.Net.Utils;
 
 namespace DxFeed.Graal.Net.Tools.Connect;
 
@@ -55,8 +56,9 @@ internal abstract class ConnectTool
         IEnumerable<object> symbols = Helper.ParseSymbols(cmdArgs.Symbols!).ToList();
         if (cmdArgs.FromTime != null)
         {
+            var fromTime = TimeFormat.Local.Parse(cmdArgs.FromTime!).ToUnixTimeMilliseconds();
             symbols = symbols.Select(s =>
-                new TimeSeriesSubscriptionSymbol(s, (long)cmdArgs.FromTime!));
+                new TimeSeriesSubscriptionSymbol(s, fromTime));
         }
         else if (cmdArgs.Source != null)
         {
