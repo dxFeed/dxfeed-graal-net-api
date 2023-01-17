@@ -1,4 +1,4 @@
-// <copyright file="Underlying.cs" company="Devexperts LLC">
+// <copyright file="Candle.cs" company="Devexperts LLC">
 // Copyright © 2022 Devexperts LLC. All rights reserved.
 // This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 // If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
@@ -6,22 +6,13 @@
 
 using System;
 using System.Globalization;
-using DxFeed.Graal.Net.Events.Market;
 using DxFeed.Graal.Net.Native.Events;
 using DxFeed.Graal.Net.Utils;
 
-namespace DxFeed.Graal.Net.Events.Options;
+namespace DxFeed.Graal.Net.Events.Candle;
 
-/// <summary>
-/// Underlying event is a snapshot of computed values that are available for an option underlying
-/// symbol based on the option prices on the market.
-/// It represents the most recent information that is available about the corresponding values on
-/// the market at any given moment of time.
-/// <br/>
-/// For more details see <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/event/option/Underlying.html">Javadoc</a>.
-/// </summary>
-[EventCode(EventCodeNative.Underlying)]
-public class Underlying : MarketEvent, ITimeSeriesEvent, ILastingEvent
+[EventCode(EventCodeNative.Candle)]
+public class Candle : ITimeSeriesEvent, ILastingEvent
 {
     /// <summary>
     /// Maximum allowed sequence value.
@@ -38,25 +29,26 @@ public class Underlying : MarketEvent, ITimeSeriesEvent, ILastingEvent
      */
 
     /// <summary>
-    /// Initializes a new instance of the <see cref="Underlying"/> class.
+    /// Initializes a new instance of the <see cref="Candle"/> class.
     /// </summary>
-    public Underlying()
+    public Candle()
     {
     }
 
     /// <summary>
-    /// Initializes a new instance of the <see cref="Underlying"/> class with the specified event symbol.
+    /// Initializes a new instance of the <see cref="Candle"/> class with the specified event symbol.
     /// </summary>
     /// <param name="eventSymbol">The specified event symbol.</param>
-    public Underlying(string? eventSymbol)
-        : base(eventSymbol)
-    {
-    }
+    public Candle(string? eventSymbol) =>
+        EventSymbol = eventSymbol;
 
-    /// <summary>
-    /// Gets a source for this event.
-    /// This method always returns <see cref="IndexedEventSource.DEFAULT"/>.
-    /// </summary>
+    /// <inheritdoc/>
+    public string? EventSymbol { get; set; }
+
+    /// <inheritdoc/>
+    public long EventTime { get; set; }
+
+    /// <inheritdoc cref="ITimeSeriesEvent.EventSource" />
     public IndexedEventSource EventSource =>
         IndexedEventSource.DEFAULT;
 
@@ -64,16 +56,16 @@ public class Underlying : MarketEvent, ITimeSeriesEvent, ILastingEvent
     public int EventFlags { get; set; }
 
     /// <summary>
-    /// Gets or sets unique per-symbol index of this event.
-    /// The index is composed of <see cref="Time"/> and <see cref="Sequence"/>,
-    /// invocation of this method changes time and sequence.
-    /// <b>Do not use this method directly.</b>
+    /// Gets or sets unique per-symbol index of this time and sale event.
+    /// Time and sale index is composed of <see cref="Time"/> and <see cref="Sequence"/>.
+    /// Changing either time or sequence changes event index.
+    /// <b>Do not sets this value directly.</b>
     /// Change <see cref="Time"/> and/or <see cref="Sequence"/>.
     /// </summary>
     public long Index { get; set; }
 
     /// <summary>
-    /// Gets or sets timestamp of the event in milliseconds.
+    /// Gets or sets timestamp of the original event.
     /// Time is measured in milliseconds between the current time and midnight, January 1, 1970 UTC.
     /// </summary>
     public long Time
@@ -104,83 +96,89 @@ public class Underlying : MarketEvent, ITimeSeriesEvent, ILastingEvent
     }
 
     /// <summary>
-    /// Gets or sets day id of expiration.
+    /// Gets or sets total number of original trade (or quote) events in this candle.
     /// </summary>
-    /// <seealso cref="DayUtil.GetDayIdByYearMonthDay(int)"/>.
-    /// <example>
-    /// <code>
-    /// DayUtil.GetDayIdByYearMonthDay(20090117)
-    /// </code>
-    /// </example>
-    public int Expiration { get; set; }
+    public long Count { get; set; }
 
     /// <summary>
-    /// Gets or sets 30-day implied volatility for this underlying based on VIX methodology.
+    /// Gets or sets the first (open) price of this candle.
     /// </summary>
-    public double Volatility { get; set; } = double.NaN;
+    public double Open { get; set; } = double.NaN;
 
     /// <summary>
-    /// Gets or sets front month implied volatility for this underlying based on VIX methodology.
+    /// Gets or sets the maximal (high) price of this candle.
     /// </summary>
-    public double FrontVolatility { get; set; } = double.NaN;
+    public double High { get; set; } = double.NaN;
 
     /// <summary>
-    /// Gets or sets back month implied volatility for this underlying based on VIX methodology.
+    /// Gets or sets the minimal (low) price of this candle.
     /// </summary>
-    public double BackVolatility { get; set; } = double.NaN;
+    public double Low { get; set; } = double.NaN;
 
     /// <summary>
-    /// Gets or sets call options traded volume for a day.
+    /// Gets or sets the last (close) price of this candle.
     /// </summary>
-    public double CallVolume { get; set; } = double.NaN;
+    public double Close { get; set; } = double.NaN;
 
     /// <summary>
-    /// Gets or sets put options traded volume for a day.
+    /// Gets or sets total volume in this candle as floating number with fractions.
+    /// Total turnover in this candle can be computed with <c>VWAP * Volume</c>.
     /// </summary>
-    public double PutVolume { get; set; } = double.NaN;
+    public double Volume { get; set; } = double.NaN;
 
     /// <summary>
-    /// Gets options traded volume for a day.
+    /// Gets or sets volume-weighted average price (VWAP) in this candle.
+    /// Total turnover in this candle can be computed with <c>VWAP * Volume</c>.
     /// </summary>
-    public double OptionVolume
-    {
-        get
-        {
-            if (double.IsNaN(PutVolume))
-            {
-                return CallVolume;
-            }
-
-            return double.IsNaN(CallVolume) ? PutVolume : PutVolume + CallVolume;
-        }
-    }
+    public double VWAP { get; set; } = double.NaN;
 
     /// <summary>
-    /// Gets or sets ratio of put options traded volume to call options traded volume for a day.
+    /// Gets or sets bid volume in this candle as floating number with fractions.
     /// </summary>
-    public double PutCallRatio { get; set; } = double.NaN;
+    public double BidVolume { get; set; } = double.NaN;
 
     /// <summary>
-    /// Returns string representation of this underlying event.
+    /// Gets or sets ask volume in this candle as floating number with fractions.
+    /// </summary>
+    public double AskVolume { get; set; } = double.NaN;
+
+    /// <summary>
+    /// Gets or sets implied volatility.
+    /// </summary>
+    public double ImpVolatility { get; set; } = double.NaN;
+
+    /// <summary>
+    /// Gets or sets open interest as floating number with fractions.
+    /// </summary>
+    public double OpenInterest { get; set; } = double.NaN;
+
+    /// <summary>
+    /// Returns string representation of this candle event.
     /// </summary>
     /// <returns>The string representation.</returns>
     public override string ToString() =>
-        "Underlying{" + BaseFieldsToString() + "}";
+        "Candle{" + BaseFieldsToString() + "}";
 
     /// <summary>
-    /// Returns string representation of this underlying fields.
+    /// Returns string representation of this candle fields.
     /// </summary>
     /// <returns>The string representation.</returns>
     protected string BaseFieldsToString() =>
         StringUtil.EncodeNullableString(EventSymbol) +
         ", eventTime=" + TimeFormat.Local.WithMillis().WithTimeZone().FormatFromMillis(EventTime) +
+        ", source=" + EventSource +
         ", eventFlags=0x" + EventFlags.ToString("x", CultureInfo.InvariantCulture) +
+        ", index=0x" + Index.ToString("x", CultureInfo.InvariantCulture) +
         ", time=" + TimeFormat.Local.WithMillis().WithTimeZone().FormatFromMillis(Time) +
-        ", sequence=" + Sequence +
-        ", volatility=" + Volatility +
-        ", frontVolatility=" + FrontVolatility +
-        ", backVolatility=" + BackVolatility +
-        ", callVolume=" + CallVolume +
-        ", putVolume=" + PutVolume +
-        ", putCallRatio=" + PutCallRatio;
+        ", count=" + Count +
+        ", open=" + Open +
+        ", high=" + High +
+        ", low=" + Low +
+        ", close=" + Close +
+        ", volume=" + Volume +
+        ", vwap=" + VWAP +
+        ", bidVolume=" + BidVolume +
+        ", askVolume=" + AskVolume +
+        ", impVolatility=" + ImpVolatility +
+        ", openInterest=" + OpenInterest;
 }

@@ -170,8 +170,7 @@ public class Profile : MarketEvent, ILastingEvent
     /// </summary>
     /// <returns>The string representation.</returns>
     public override string ToString() =>
-        "Profile{" + BaseFieldsToString() +
-        "}";
+        "Profile{" + BaseFieldsToString() + "}";
 
     /// <summary>
     /// Returns string representation of this order fields.
