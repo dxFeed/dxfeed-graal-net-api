@@ -167,7 +167,7 @@ public class TimeFormat
     /// <summary>
     /// Converts the specified string representation of a date and time
     /// to its <see cref="DateTimeOffset"/> in current <see cref="TimeZoneInfo"/>
-    /// and <see cref="CultureInfo.InvariantCulture"/>.
+    /// and <see cref="InvariantCulture"/>.
     /// If no time zone is specified in the parsed string, the string is assumed to denote a local time,
     /// and converted to current <see cref="TimeZoneInfo"/>.
     /// <br/>
@@ -288,7 +288,7 @@ public class TimeFormat
     /// <summary>
     /// Converts the value in seconds since Unix epoch
     /// to its equivalent string representation using the current format <see cref="CreateFormatString()"/>,
-    /// current <see cref="TimeZoneInfo"/> and <see cref="CultureInfo.InvariantCulture"/>.
+    /// current <see cref="TimeZoneInfo"/> and <see cref="InvariantCulture"/>.
     /// </summary>
     /// <param name="timeSeconds">The time measured in seconds since Unix epoch.</param>
     /// <returns>The string representation of the date, or <c>"0"</c> if timeSeconds is <c>0</c>.</returns>
@@ -298,7 +298,7 @@ public class TimeFormat
     /// <summary>
     /// Converts the value in milliseconds since Unix epoch
     /// to its equivalent string representation using the current format <see cref="CreateFormatString()"/>,
-    /// current <see cref="TimeZoneInfo"/> and <see cref="CultureInfo.InvariantCulture"/>.
+    /// current <see cref="TimeZoneInfo"/> and <see cref="InvariantCulture"/>.
     /// </summary>
     /// <param name="timeMillis">The time measured in milliseconds since Unix epoch.</param>
     /// <returns>The string representation of the date, or <c>"0"</c> if timeMillis is <c>0</c>.</returns>
@@ -316,7 +316,7 @@ public class TimeFormat
     /// <summary>
     /// Converts the value of the specified <see cref="DateTimeOffset"/> object
     /// to its equivalent string representation using the current format <see cref="CreateFormatString()"/>,
-    /// current <see cref="TimeZoneInfo"/> and <see cref="CultureInfo.InvariantCulture"/>.
+    /// current <see cref="TimeZoneInfo"/> and <see cref="InvariantCulture"/>.
     /// </summary>
     /// <param name="dateTimeOffset">The <see cref="DateTimeOffset"/> object.</param>
     /// <returns>The string representation.</returns>

@@ -1,4 +1,4 @@
-// <copyright file="Greeks.cs" company="Devexperts LLC">
+// <copyright file="TheoPrice.cs" company="Devexperts LLC">
 // Copyright © 2022 Devexperts LLC. All rights reserved.
 // This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 // If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
@@ -13,14 +13,19 @@ using DxFeed.Graal.Net.Utils;
 namespace DxFeed.Graal.Net.Events.Options;
 
 /// <summary>
-/// Greeks event is a snapshot of the option price, Black-Scholes volatility and greeks.
-/// It represents the most recent information that is available about the corresponding values on
-/// the market at any given moment of time.
+/// Theo price is a snapshot of the theoretical option price computation that is
+/// periodically performed by <a href="http://www.devexperts.com/en/products/price.html">dxPrice</a>
+/// model-free computation.
+/// It represents the most recent information that is available about the corresponding
+/// values at any given moment of time.
+/// The values include first and second order derivative of the price curve by price, so that
+/// the real-time theoretical option price can be estimated on real-time changes of the underlying
+/// price in the vicinity.
 /// <br/>
-/// For more details see <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/event/option/Greeks.html">Javadoc</a>.
+/// For more details see <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/event/option/TheoPrice.html">Javadoc</a>.
 /// </summary>
-[EventCode(EventCodeNative.Greeks)]
-public class Greeks : MarketEvent, ITimeSeriesEvent, ILastingEvent
+[EventCode(EventCodeNative.TheoPrice)]
+public class TheoPrice : MarketEvent, ITimeSeriesEvent, ILastingEvent
 {
     /// <summary>
     /// Maximum allowed sequence value.
@@ -37,22 +42,25 @@ public class Greeks : MarketEvent, ITimeSeriesEvent, ILastingEvent
      */
 
     /// <summary>
-    /// Initializes a new instance of the <see cref="Greeks"/> class.
+    /// Initializes a new instance of the <see cref="TheoPrice"/> class.
     /// </summary>
-    public Greeks()
+    public TheoPrice()
     {
     }
 
     /// <summary>
-    /// Initializes a new instance of the <see cref="Greeks"/> class with the specified event symbol.
+    /// Initializes a new instance of the <see cref="TheoPrice"/> class with the specified event symbol.
     /// </summary>
     /// <param name="eventSymbol">The specified event symbol.</param>
-    public Greeks(string? eventSymbol)
+    public TheoPrice(string? eventSymbol)
         : base(eventSymbol)
     {
     }
 
-    /// <inheritdoc cref="ITimeSeriesEvent.EventSource" />
+    /// <summary>
+    /// Gets a source for this event.
+    /// This method always returns <see cref="IndexedEventSource.DEFAULT"/>.
+    /// </summary>
     public IndexedEventSource EventSource =>
         IndexedEventSource.DEFAULT;
 
@@ -100,61 +108,52 @@ public class Greeks : MarketEvent, ITimeSeriesEvent, ILastingEvent
     }
 
     /// <summary>
-    /// Gets or sets option market price.
+    /// Gets or sets theoretical option price.
     /// </summary>
     public double Price { get; set; } = double.NaN;
 
     /// <summary>
-    /// Gets or sets Black-Scholes implied volatility of the option.
+    /// Gets or sets underlying price at the time of theo price computation.
     /// </summary>
-    public double Volatility { get; set; } = double.NaN;
+    public double UnderlyingPrice { get; set; } = double.NaN;
 
     /// <summary>
-    /// Gets or sets option delta.
+    /// Gets or sets delta of the theoretical price.
     /// Delta is the first derivative of an option price by an underlying price.
     /// </summary>
     public double Delta { get; set; } = double.NaN;
 
     /// <summary>
-    /// Gets or sets option gamma.
+    /// Gets or sets gamma of the theoretical price.
     /// Gamma is the second derivative of an option price by an underlying price.
     /// </summary>
     public double Gamma { get; set; } = double.NaN;
 
     /// <summary>
-    /// Gets or sets option theta.
-    /// Theta is the first derivative of an option price by a number of days to expiration.
+    /// Gets or sets implied simple dividend return of the corresponding option series.
     /// </summary>
-    public double Theta { get; set; } = double.NaN;
+    public double Dividend { get; set; } = double.NaN;
 
     /// <summary>
-    /// Gets or sets option rho.
-    /// Rho is the first derivative of an option price by percentage interest rate.
+    /// Gets or sets implied simple interest return of the corresponding option series.
     /// </summary>
-    public double Rho { get; set; } = double.NaN;
+    public double Interest { get; set; } = double.NaN;
 
     /// <summary>
-    /// Gets or sets vega.
-    /// Vega is the first derivative of an option price by percentage volatility.
-    /// </summary>
-    public double Vega { get; set; } = double.NaN;
-
-    /// <summary>
-    /// Returns string representation of this greeks event.
+    /// Returns string representation of this theo price event.
     /// </summary>
     /// <returns>The string representation.</returns>
     public override string ToString() =>
-        "Greeks{" + StringUtil.EncodeNullableString(EventSymbol) +
+        "TheoPrice{" + StringUtil.EncodeNullableString(EventSymbol) +
         ", eventTime=" + TimeFormat.Local.WithMillis().WithTimeZone().FormatFromMillis(EventTime) +
         ", eventFlags=0x" + EventFlags.ToString("x", CultureInfo.InvariantCulture) +
         ", time=" + TimeFormat.Local.WithMillis().WithTimeZone().FormatFromMillis(Time) +
         ", sequence=" + Sequence +
         ", price=" + Price +
-        ", volatility=" + Volatility +
+        ", underlyingPrice=" + UnderlyingPrice +
         ", delta=" + Delta +
         ", gamma=" + Gamma +
-        ", theta=" + Theta +
-        ", rho=" + Rho +
-        ", vega=" + Vega +
+        ", dividend=" + Dividend +
+        ", interest=" + Interest +
         "}";
 }

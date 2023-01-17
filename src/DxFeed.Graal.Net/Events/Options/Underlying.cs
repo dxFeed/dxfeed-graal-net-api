@@ -1,4 +1,4 @@
-// <copyright file="Greeks.cs" company="Devexperts LLC">
+// <copyright file="Underlying.cs" company="Devexperts LLC">
 // Copyright © 2022 Devexperts LLC. All rights reserved.
 // This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 // If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
@@ -13,14 +13,15 @@ using DxFeed.Graal.Net.Utils;
 namespace DxFeed.Graal.Net.Events.Options;
 
 /// <summary>
-/// Greeks event is a snapshot of the option price, Black-Scholes volatility and greeks.
+/// Underlying event is a snapshot of computed values that are available for an option underlying
+/// symbol based on the option prices on the market.
 /// It represents the most recent information that is available about the corresponding values on
 /// the market at any given moment of time.
 /// <br/>
-/// For more details see <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/event/option/Greeks.html">Javadoc</a>.
+/// For more details see <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/event/option/Underlying.html">Javadoc</a>.
 /// </summary>
-[EventCode(EventCodeNative.Greeks)]
-public class Greeks : MarketEvent, ITimeSeriesEvent, ILastingEvent
+[EventCode(EventCodeNative.Underlying)]
+public class Underlying : MarketEvent, ITimeSeriesEvent, ILastingEvent
 {
     /// <summary>
     /// Maximum allowed sequence value.
@@ -37,22 +38,25 @@ public class Greeks : MarketEvent, ITimeSeriesEvent, ILastingEvent
      */
 
     /// <summary>
-    /// Initializes a new instance of the <see cref="Greeks"/> class.
+    /// Initializes a new instance of the <see cref="Underlying"/> class.
     /// </summary>
-    public Greeks()
+    public Underlying()
     {
     }
 
     /// <summary>
-    /// Initializes a new instance of the <see cref="Greeks"/> class with the specified event symbol.
+    /// Initializes a new instance of the <see cref="Underlying"/> class with the specified event symbol.
     /// </summary>
     /// <param name="eventSymbol">The specified event symbol.</param>
-    public Greeks(string? eventSymbol)
+    public Underlying(string? eventSymbol)
         : base(eventSymbol)
     {
     }
 
-    /// <inheritdoc cref="ITimeSeriesEvent.EventSource" />
+    /// <summary>
+    /// Gets a source for this event.
+    /// This method always returns <see cref="IndexedEventSource.DEFAULT"/>.
+    /// </summary>
     public IndexedEventSource EventSource =>
         IndexedEventSource.DEFAULT;
 
@@ -100,61 +104,83 @@ public class Greeks : MarketEvent, ITimeSeriesEvent, ILastingEvent
     }
 
     /// <summary>
-    /// Gets or sets option market price.
+    /// Gets or sets day id of expiration.
     /// </summary>
-    public double Price { get; set; } = double.NaN;
+    /// <seealso cref="DayUtil.GetDayIdByYearMonthDay(int)"/>.
+    /// <example>
+    /// <code>
+    /// DayUtil.GetDayIdByYearMonthDay(20090117)
+    /// </code>
+    /// </example>
+    public int Expiration { get; set; }
 
     /// <summary>
-    /// Gets or sets Black-Scholes implied volatility of the option.
+    /// Gets or sets 30-day implied volatility for this underlying based on VIX methodology.
     /// </summary>
     public double Volatility { get; set; } = double.NaN;
 
     /// <summary>
-    /// Gets or sets option delta.
-    /// Delta is the first derivative of an option price by an underlying price.
+    /// Gets or sets front month implied volatility for this underlying based on VIX methodology.
     /// </summary>
-    public double Delta { get; set; } = double.NaN;
+    public double FrontVolatility { get; set; } = double.NaN;
 
     /// <summary>
-    /// Gets or sets option gamma.
-    /// Gamma is the second derivative of an option price by an underlying price.
+    /// Gets or sets back month implied volatility for this underlying based on VIX methodology.
     /// </summary>
-    public double Gamma { get; set; } = double.NaN;
+    public double BackVolatility { get; set; } = double.NaN;
 
     /// <summary>
-    /// Gets or sets option theta.
-    /// Theta is the first derivative of an option price by a number of days to expiration.
+    /// Gets or sets call options traded volume for a day.
     /// </summary>
-    public double Theta { get; set; } = double.NaN;
+    public double CallVolume { get; set; } = double.NaN;
 
     /// <summary>
-    /// Gets or sets option rho.
-    /// Rho is the first derivative of an option price by percentage interest rate.
+    /// Gets or sets put options traded volume for a day.
     /// </summary>
-    public double Rho { get; set; } = double.NaN;
+    public double PutVolume { get; set; } = double.NaN;
 
     /// <summary>
-    /// Gets or sets vega.
-    /// Vega is the first derivative of an option price by percentage volatility.
+    /// Gets options traded volume for a day.
     /// </summary>
-    public double Vega { get; set; } = double.NaN;
+    public double OptionVolume
+    {
+        get
+        {
+            if (double.IsNaN(PutVolume))
+            {
+                return CallVolume;
+            }
+
+            return double.IsNaN(CallVolume) ? PutVolume : PutVolume + CallVolume;
+        }
+    }
 
     /// <summary>
-    /// Returns string representation of this greeks event.
+    /// Gets or sets ratio of put options traded volume to call options traded volume for a day.
+    /// </summary>
+    public double PutCallRatio { get; set; } = double.NaN;
+
+    /// <summary>
+    /// Returns string representation of this spread order event.
     /// </summary>
     /// <returns>The string representation.</returns>
     public override string ToString() =>
-        "Greeks{" + StringUtil.EncodeNullableString(EventSymbol) +
+        "Underlying{" + BaseFieldsToString() + "}";
+
+    /// <summary>
+    /// Returns string representation of this order fields.
+    /// </summary>
+    /// <returns>The string representation.</returns>
+    protected string BaseFieldsToString() =>
+        StringUtil.EncodeNullableString(EventSymbol) +
         ", eventTime=" + TimeFormat.Local.WithMillis().WithTimeZone().FormatFromMillis(EventTime) +
         ", eventFlags=0x" + EventFlags.ToString("x", CultureInfo.InvariantCulture) +
         ", time=" + TimeFormat.Local.WithMillis().WithTimeZone().FormatFromMillis(Time) +
         ", sequence=" + Sequence +
-        ", price=" + Price +
         ", volatility=" + Volatility +
-        ", delta=" + Delta +
-        ", gamma=" + Gamma +
-        ", theta=" + Theta +
-        ", rho=" + Rho +
-        ", vega=" + Vega +
-        "}";
+        ", frontVolatility=" + FrontVolatility +
+        ", backVolatility=" + BackVolatility +
+        ", callVolume=" + CallVolume +
+        ", putVolume=" + PutVolume +
+        ", putCallRatio=" + PutCallRatio;
 }
