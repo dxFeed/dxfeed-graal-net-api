@@ -337,15 +337,15 @@ public abstract class OrderBase : MarketEvent, IIndexedEvent
     /// <returns>The string representation.</returns>
     protected string BaseFieldsToString() =>
         StringUtil.EncodeNullableString(EventSymbol) +
-        ", eventTime=" + TimeFormat.LocalTime.WithMillis().FromMillis(EventTime) +
+        ", eventTime=" + TimeFormat.Local.WithMillis().WithTimeZone().FormatFromMillis(EventTime) +
         ", source=" + EventSource +
         ", eventFlags=0x" + EventFlags.ToString("x", CultureInfo.InvariantCulture) +
         ", index=0x" + Index.ToString("x", CultureInfo.InvariantCulture) +
-        ", time=" + TimeFormat.LocalTime.WithMillis().FromMillis(Time) +
+        ", time=" + TimeFormat.Local.WithMillis().WithTimeZone().FormatFromMillis(Time) +
         ", sequence=" + Sequence +
         ", timeNanoPart=" + TimeNanoPart +
         ", action=" + Action +
-        ", actionTime=" + TimeFormat.LocalTime.WithMillis().FromMillis(ActionTime) +
+        ", actionTime=" + TimeFormat.Local.WithMillis().WithTimeZone().FormatFromMillis(ActionTime) +
         ", orderId=" + OrderId +
         ", auxOrderId=" + AuxOrderId +
         ", price=" + Price +
