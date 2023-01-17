@@ -166,15 +166,15 @@ public class Quote : MarketEvent, ILastingEvent
     /// <returns>The string representation.</returns>
     public override string ToString() =>
         "Quote{" + StringUtil.EncodeNullableString(EventSymbol) +
-        ", eventTime=" + TimeFormat.LocalTime.WithMillis().FromMillis(EventTime) +
-        ", time=" + TimeFormat.LocalTime.WithMillis().FromMillis(Time) +
+        ", eventTime=" + TimeFormat.Local.WithMillis().WithTimeZone().FormatFromMillis(EventTime) +
+        ", time=" + TimeFormat.Local.WithMillis().WithTimeZone().FormatFromMillis(Time) +
         ", timeNanoPart=" + TimeNanoPart +
         ", sequence=" + Sequence +
-        ", bidTime=" + TimeFormat.LocalTime.FromMillis(BidTime) +
+        ", bidTime=" + TimeFormat.Local.WithTimeZone().FormatFromMillis(BidTime) +
         ", bidExchange=" + StringUtil.EncodeChar(BidExchangeCode) +
         ", bidPrice=" + BidPrice +
         ", bidSize=" + BidSize +
-        ", askTime=" + TimeFormat.LocalTime.FromMillis(AskTime) +
+        ", askTime=" + TimeFormat.Local.WithTimeZone().FormatFromMillis(AskTime) +
         ", askExchange=" + StringUtil.EncodeChar(AskExchangeCode) +
         ", askPrice=" + AskPrice +
         ", askSize=" + AskSize +
