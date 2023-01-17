@@ -161,14 +161,14 @@ public class Underlying : MarketEvent, ITimeSeriesEvent, ILastingEvent
     public double PutCallRatio { get; set; } = double.NaN;
 
     /// <summary>
-    /// Returns string representation of this spread order event.
+    /// Returns string representation of this underlying event.
     /// </summary>
     /// <returns>The string representation.</returns>
     public override string ToString() =>
         "Underlying{" + BaseFieldsToString() + "}";
 
     /// <summary>
-    /// Returns string representation of this order fields.
+    /// Returns string representation of this underlying fields.
     /// </summary>
     /// <returns>The string representation.</returns>
     protected string BaseFieldsToString() =>
