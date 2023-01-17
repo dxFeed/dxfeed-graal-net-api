@@ -226,10 +226,10 @@ public class TimeFormat
 
         value = value.Trim();
 
-        // Try parse as milliseconds since Unix epoch.
-        if (long.TryParse(value, out var milliseconds))
+        // Fast path for 0 ms since Unix epoch.
+        if (value.Equals("0", StringComparison.Ordinal))
         {
-            return ConvertDateTimeToCurrentTimeZone(DateTimeOffset.FromUnixTimeMilliseconds(milliseconds));
+            return ConvertDateTimeToCurrentTimeZone(DateTimeOffset.FromUnixTimeMilliseconds(0));
         }
 
         var styles = DateTimeStyles.AllowWhiteSpaces | DateTimeStyles.AssumeLocal;
@@ -248,6 +248,12 @@ public class TimeFormat
         if (DateTimeOffset.TryParse(value, CurrentCulture, styles, out dateTimeOffset))
         {
             return ConvertDateTimeToCurrentTimeZone(dateTimeOffset);
+        }
+
+        // Try parse as milliseconds since Unix epoch.
+        if (long.TryParse(value, out var milliseconds))
+        {
+            return ConvertDateTimeToCurrentTimeZone(DateTimeOffset.FromUnixTimeMilliseconds(milliseconds));
         }
 
         throw new ArgumentException($"Cannot parse date-time from input string: \"{value}\"");
