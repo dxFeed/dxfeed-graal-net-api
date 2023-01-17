@@ -45,6 +45,5 @@ public class TradeETH : TradeBase
     /// </summary>
     /// <returns>The string representation.</returns>
     public override string ToString() =>
-        "TradeETH{" + BaseFieldsToString() +
-        "}";
+        "TradeETH{" + BaseFieldsToString() + "}";
 }
