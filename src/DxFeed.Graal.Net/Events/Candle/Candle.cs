@@ -166,10 +166,9 @@ public class Candle : ITimeSeriesEvent, ILastingEvent
     protected string BaseFieldsToString() =>
         StringUtil.EncodeNullableString(EventSymbol) +
         ", eventTime=" + TimeFormat.Local.WithMillis().WithTimeZone().FormatFromMillis(EventTime) +
-        ", source=" + EventSource +
         ", eventFlags=0x" + EventFlags.ToString("x", CultureInfo.InvariantCulture) +
-        ", index=0x" + Index.ToString("x", CultureInfo.InvariantCulture) +
         ", time=" + TimeFormat.Local.WithMillis().WithTimeZone().FormatFromMillis(Time) +
+        ", sequence=" + Sequence +
         ", count=" + Count +
         ", open=" + Open +
         ", high=" + High +
