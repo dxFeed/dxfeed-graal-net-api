@@ -11,6 +11,12 @@ using DxFeed.Graal.Net.Utils;
 
 namespace DxFeed.Graal.Net.Events.Candle;
 
+/// <summary>
+/// Candle event with open, high, low, close prices and other information for a specific period.
+/// Candles are build with a specified <see cref="CandlePeriod"/> using a specified <see cref="CandlePrice"/> type
+/// with a data taken from the specified <see cref="CandleExchange"/> from the specified <see cref="CandleSession"/>
+/// with further details of aggregation provided by <see cref="CandleAlignment"/>.
+/// </summary>
 [EventCode(EventCodeNative.Candle)]
 public class Candle : ITimeSeriesEvent, ILastingEvent
 {
@@ -39,11 +45,23 @@ public class Candle : ITimeSeriesEvent, ILastingEvent
     /// Initializes a new instance of the <see cref="Candle"/> class with the specified event symbol.
     /// </summary>
     /// <param name="eventSymbol">The specified event symbol.</param>
-    public Candle(string? eventSymbol) =>
-        EventSymbol = eventSymbol;
+    public Candle(CandleSymbol eventSymbol)
+    {
+        CandleSymbol = eventSymbol;
+        EventSymbol = CandleSymbol.ToString();
+    }
 
     /// <inheritdoc/>
-    public string? EventSymbol { get; set; }
+    public string? EventSymbol
+    {
+        get => CandleSymbol?.ToString();
+        set => CandleSymbol.ValueOf(value);
+    }
+
+    /// <summary>
+    /// Gets or sets candle symbol object.
+    /// </summary>
+    public CandleSymbol? CandleSymbol { get; set; }
 
     /// <inheritdoc/>
     public long EventTime { get; set; }
