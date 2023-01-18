@@ -16,6 +16,12 @@ namespace DxFeed.Graal.Net.Utils;
 public static class MathUtil
 {
     /// <summary>
+    /// The bit representation -0.0 (negative zero).
+    /// </summary>
+    private static readonly long NegativeZeroBits =
+        BitConverter.DoubleToInt64Bits(-0.0);
+
+    /// <summary>
     /// Method like a <see cref="Math.Abs(int)"/>, but not throws <see cref="OverflowException"/> exception,
     /// when argument the argument is equal to the value of <see cref="int.MinValue"/>.
     /// Returns the absolute value of an int value.
@@ -97,4 +103,12 @@ public static class MathUtil
     /// <returns>Returns <c>true</c> if x represents a power of two.</returns>
     public static bool IsPowerOfTwo(long x) =>
         x > 0 && (x & (x - 1)) == 0;
+
+    /// <summary>
+    /// Checks if the specified number is a -0.0 (negative zero).
+    /// </summary>
+    /// <param name="x">The specified number.</param>
+    /// <returns>Returns <c>true</c> if x is equals -0.0.</returns>
+    public static bool IsNegativeZero(double x) =>
+        BitConverter.DoubleToInt64Bits(x) == NegativeZeroBits;
 }
