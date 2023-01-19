@@ -57,9 +57,9 @@ public static class MarketEventSymbols
     /// </summary>
     /// <param name="symbol">The specified symbol.</param>
     /// <returns>Returns exchange code of the specified symbol or <c>'\0'</c> if none is defined.</returns>
-    public static char GetExchangeCode(string symbol) =>
+    public static char GetExchangeCode(string? symbol) =>
         (char)(HasExchangeCode(symbol)
-            ? symbol[GetLengthWithoutAttributesInternal(symbol) - 1]
+            ? symbol![GetLengthWithoutAttributesInternal(symbol) - 1]
             : 0);
 
     /// <summary>

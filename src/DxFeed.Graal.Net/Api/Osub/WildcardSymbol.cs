@@ -57,7 +57,7 @@ public class WildcardSymbol
     /// <summary>
     /// Determines whether the specified object is equal to the current object.
     /// </summary>
-    /// <param name="obj"> The object to compare with the current object.</param>
+    /// <param name="obj">The object to compare with the current object.</param>
     /// <returns><c>true</c> if the specified object is equal to the current object; otherwise, <c>false</c>.</returns>
     public override bool Equals(object? obj) =>
         this == obj || (obj is WildcardSymbol symbol && _symbol.Equals(symbol._symbol, Ordinal));

@@ -15,7 +15,7 @@ internal static class CandleMapper
     public static unsafe Candle FromNative(CandleNative* eventNative) =>
         new()
         {
-            EventSymbol = Marshal.PtrToStringUTF8(eventNative->CandleSymbol->Symbol),
+            CandleSymbol = CandleSymbol.ValueOf(Marshal.PtrToStringUTF8(eventNative->CandleSymbol->Symbol)),
             EventFlags = eventNative->EventFlags,
             EventTime = eventNative->EventTime,
             Index = eventNative->Index,

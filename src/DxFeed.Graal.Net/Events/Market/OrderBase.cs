@@ -144,7 +144,7 @@ public abstract class OrderBase : MarketEvent, IIndexedEvent
         {
             if (value < 0)
             {
-                throw new ArgumentException($"Negative index:{value}", nameof(value));
+                throw new ArgumentException($"Negative index: {value}", nameof(value));
             }
 
             _index = value;

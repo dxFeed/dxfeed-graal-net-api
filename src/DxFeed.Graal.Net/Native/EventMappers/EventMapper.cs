@@ -80,6 +80,6 @@ internal static class EventMapper
             EventCodeNative.AnalyticOrder => OrderMapper.FromNative((AnalyticOrderNative*)baseEvent),
             EventCodeNative.SpreadOrder => OrderMapper.FromNative((SpreadOrderNative*)baseEvent),
             EventCodeNative.Series => SeriesMapper.FromNative((SeriesNative*)baseEvent),
-            _ => throw new ArgumentException($"Unknown {nameof(EventCodeNative)}:{baseEvent->EventCode}"),
+            _ => throw new ArgumentException($"Unknown {nameof(EventCodeNative)}: {baseEvent->EventCode}"),
         };
 }

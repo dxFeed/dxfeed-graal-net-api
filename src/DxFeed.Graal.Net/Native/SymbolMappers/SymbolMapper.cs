@@ -41,7 +41,7 @@ internal static unsafe class SymbolMapper
             IndexedEventSubscriptionSymbol => (BaseSymbolNative*)Marshal.AllocHGlobal(sizeof(IndexedEventSubscriptionSymbolNative)),
             TimeSeriesSubscriptionSymbol => (BaseSymbolNative*)Marshal.AllocHGlobal(sizeof(TimeSeriesSubscriptionSymbolNative)),
             WildcardSymbol => (BaseSymbolNative*)Marshal.AllocHGlobal(sizeof(WildcardSymbolNative)),
-            _ => throw new ArgumentException($"Unknown symbol type:{symbol.GetType().Name}"),
+            _ => throw new ArgumentException($"Unknown symbol type: {symbol.GetType().Name}"),
         };
         FillNative(symbol, nativeSymbol);
         return nativeSymbol;
@@ -72,7 +72,7 @@ internal static unsafe class SymbolMapper
             case SymbolTypeNative.Wildcard:
                 break;
             default:
-                throw new ArgumentException($"Unknown symbol type:{nativeSymbol->Type}");
+                throw new ArgumentException($"Unknown symbol type: {nativeSymbol->Type}");
         }
 
         Marshal.FreeHGlobal((nint)nativeSymbol);

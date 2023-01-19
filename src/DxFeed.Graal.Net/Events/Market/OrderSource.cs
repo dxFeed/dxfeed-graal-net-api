@@ -382,7 +382,7 @@ public class OrderSource : IndexedEventSource
             return PubSpreadOrder;
         }
 
-        throw new ArgumentException($"Invalid order event type:{eventType}");
+        throw new ArgumentException($"Invalid order event type: {eventType}");
     }
 
     /// <summary>
