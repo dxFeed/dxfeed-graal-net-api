@@ -1,0 +1,13 @@
+## Version 0.1.0
+
+## What's Changed
+* Feature: Add new events type (Candle, Profile, Summary, Greeks, Series, TheoPrice, Underlying)
+* Fix: Implement safe dispose for the DXEdnpoint
+* Fix: Complete to-do tasks in the Utils namespace
+* Fix: Complete to-do tasks in the DXEndpoint class
+* Feature: Add unit tests for DXEndpoint
+* Feature: Improve TimeFormat utils (no new instances are created for the same format, add added the ability to parse sting)
+* Feature: Add new tools to measure performance (PerfTools)
+* Feature: Add CandelSymbol (all candle attributes and market event symbols)
+* Feature: Add release cycle to CI/CD
+* Doc: Improve documentation

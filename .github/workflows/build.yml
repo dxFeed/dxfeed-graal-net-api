@@ -30,13 +30,13 @@ jobs:
         run: dotnet restore
 
       - name: Build
-        run: dotnet build --no-restore
+        run: dotnet build -c Release --no-restore
 
       - name: Test
-        run: dotnet test --no-build --verbosity normal --logger:"console;verbosity=normal"
+        run: dotnet test --configuration Release --no-build --verbosity normal --logger:"console;verbosity=normal"
 
       - name: Pack
-        run: dotnet pack
+        run: dotnet pack -c Release
 
       - name: Publish self-contained DxFeed.Graal.Net.Tools
         run: |
@@ -51,6 +51,29 @@ jobs:
                echo "$RUNNER_OS not supported"
                exit 1
           fi
+        shell: bash
+
+  release:
+    needs: build
+    name: Release
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: |
+            6.0.x
+
+      - name: Pack
+        run: dotnet pack -c Release -o artifacts/Packages
+
+      - name: Upload NuGet
+        if: startsWith(github.event.ref, 'refs/tags/')
+        run: |
+          nuget push artifacts/Packages/DxFeed.Graal.Net.${{ github.ref_name }}.nupkg \
+          -Source ${{ secrets.JFROG_PATH }}/${{ github.ref_name }} \
+          -ApiKey ${{ secrets.JFROG_API_KEY }}
         shell: bash
 
 # ToDo Create a reusable workflow and extract uploading artifacts to a separate flow.
