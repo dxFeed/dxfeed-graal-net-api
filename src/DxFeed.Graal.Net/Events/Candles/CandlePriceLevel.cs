@@ -54,11 +54,9 @@ public class CandlePriceLevel : ICandleSymbolProperty
 
         Value = value;
         _stringRepresentation = new(() =>
-        {
-            return Value.Equals((long)Value)
+            Value.Equals((long)Value)
                 ? $"{(long)Value}"
-                : $"{Value.ToString(CultureInfo.InvariantCulture)}";
-        });
+                : $"{Value.ToString(CultureInfo.InvariantCulture)}");
     }
 
     /// <summary>

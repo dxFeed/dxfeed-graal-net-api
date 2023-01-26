@@ -31,12 +31,12 @@ public class CandlePeriod : ICandleSymbolProperty
     /// <summary>
     /// Tick aggregation where each candle represents an individual tick.
     /// </summary>
-    public static readonly CandlePeriod Tick = new CandlePeriod(DefaultPeriodValue, CandleType.Tick);
+    public static readonly CandlePeriod Tick = new(DefaultPeriodValue, CandleType.Tick);
 
     /// <summary>
     /// Day aggregation where each candle represents a day.
     /// </summary>
-    public static readonly CandlePeriod Day = new CandlePeriod(DefaultPeriodValue, CandleType.Day);
+    public static readonly CandlePeriod Day = new(DefaultPeriodValue, CandleType.Day);
 
     /// <summary>
     /// Default period is <see cref="Tick"/>.
@@ -143,7 +143,7 @@ public class CandlePeriod : ICandleSymbolProperty
         for (; i < s.Length; i++)
         {
             var c = s[i];
-            if (c is < '0' or > '9' && c != '.' && c != '-' && c != '+' && c != 'e' && c != 'E')
+            if (c is (< '0' or > '9') and not '.' and not '-' and not '+' and not 'e' and not 'E')
             {
                 break;
             }

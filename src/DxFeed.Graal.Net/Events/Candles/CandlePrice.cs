@@ -69,7 +69,7 @@ public class CandlePrice : ICandleSymbolProperty
     /// <see cref="PriceType"/>.<see cref="PriceType.Preliminary"/>,
     /// and <see cref="PriceType"/>.<see cref="PriceType.Final"/>.
     /// </summary>
-    public static readonly CandlePrice Settlement = new CandlePrice(CandlePriceId.Settlement, "s");
+    public static readonly CandlePrice Settlement = new(CandlePriceId.Settlement, "s");
 
     /// <summary>
     /// Default price type is <see cref="Last"/>.
