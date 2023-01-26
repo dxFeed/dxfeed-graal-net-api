@@ -6,7 +6,7 @@
 
 using System;
 
-namespace DxFeed.Graal.Net.Events.Candle;
+namespace DxFeed.Graal.Net.Events.Candles;
 
 /// <summary>
 /// Property of the <see cref="CandleSymbol"/>.

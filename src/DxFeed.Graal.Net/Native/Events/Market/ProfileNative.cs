@@ -6,25 +6,41 @@
 
 using System.Runtime.InteropServices;
 using DxFeed.Graal.Net.Events.Market;
+using DxFeed.Graal.Net.Native.Interop;
 
 namespace DxFeed.Graal.Net.Native.Events.Market;
 
 /// <summary>
 /// The structure contains all the fields required
 /// to build an <see cref="Profile"/>.
-/// Used to exchange data with native code.
 /// </summary>
 [StructLayout(LayoutKind.Sequential)]
-internal readonly struct ProfileNative
+internal readonly record struct ProfileNative(
+        EventTypeNative EventType,
+        StringNative Description,
+        StringNative StatusReason,
+        long HaltStartTime,
+        long HaltEndTime,
+        double HighLimitPrice,
+        double LowLimitPrice,
+        double High52WeekPrice,
+        double Low52WeekPrice,
+        int Flags)
+    : IEventTypeNative<Profile>
 {
-    public readonly MarketEventNative MarketEvent;
-    public readonly nint Description; // A null-terminated UTF-8 string.
-    public readonly nint StatusReason; // A null-terminated UTF-8 string.
-    public readonly long HaltStartTime;
-    public readonly long HaltEndTime;
-    public readonly double HighLimitPrice;
-    public readonly double LowLimitPrice;
-    public readonly double High52WeekPrice;
-    public readonly double Low52WeekPrice;
-    public readonly int Flags;
+    /// <inheritdoc/>
+    public Profile ToEventType()
+    {
+        var profile = EventType.ToEventType<Profile>();
+        profile.Description = Description.ToString();
+        profile.StatusReason = StatusReason.ToString();
+        profile.HaltStartTime = HaltStartTime;
+        profile.HaltEndTime = HaltEndTime;
+        profile.HighLimitPrice = HighLimitPrice;
+        profile.LowLimitPrice = LowLimitPrice;
+        profile.High52WeekPrice = High52WeekPrice;
+        profile.Low52WeekPrice = Low52WeekPrice;
+        profile.Flags = Flags;
+        return profile;
+    }
 }

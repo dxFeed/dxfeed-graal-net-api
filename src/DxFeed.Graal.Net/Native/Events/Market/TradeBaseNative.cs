@@ -12,21 +12,42 @@ namespace DxFeed.Graal.Net.Native.Events.Market;
 /// <summary>
 /// The structure contains all the fields required
 /// to build an <see cref="TradeBase"/>.
-/// Used to exchange data with native code.
 /// Includes at the beginning of each trade structure.
 /// </summary>
 [StructLayout(LayoutKind.Sequential)]
-internal readonly struct TradeBaseNative
+internal readonly record struct TradeBaseNative(
+    EventTypeNative EventType,
+    long TimeSequence,
+    int TimeNanoPart,
+    char ExchangeCode,
+    double Price,
+    double Change,
+    double Size,
+    int DayId,
+    double DayVolume,
+    double DayTurnover,
+    int Flags)
 {
-    public readonly MarketEventNative MarketEvent;
-    public readonly long TimeSequence;
-    public readonly int TimeNanoPart;
-    public readonly char ExchangeCode;
-    public readonly double Price;
-    public readonly double Change;
-    public readonly double Size;
-    public readonly int DayId;
-    public readonly double DayVolume;
-    public readonly double DayTurnover;
-    public readonly int Flags;
+    /// <summary>
+    /// Converts a native event to the specified <see cref="TradeBase"/>.
+    /// This method fills only <see cref="TradeBase"/> properties.
+    /// </summary>
+    /// <typeparam name="T">The specified <see cref="TradeBase"/>.</typeparam>
+    /// <returns>The <see cref="TradeBase"/>.</returns>
+    public T ToEventType<T>()
+        where T : TradeBase, new()
+    {
+        var tradeBase = EventType.ToEventType<T>();
+        tradeBase.TimeSequence = TimeSequence;
+        tradeBase.TimeNanoPart = TimeNanoPart;
+        tradeBase.ExchangeCode = ExchangeCode;
+        tradeBase.Price = Price;
+        tradeBase.Change = Change;
+        tradeBase.Size = Size;
+        tradeBase.DayId = DayId;
+        tradeBase.DayVolume = DayVolume;
+        tradeBase.DayTurnover = DayTurnover;
+        tradeBase.Flags = Flags;
+        return tradeBase;
+    }
 }

@@ -11,6 +11,7 @@ using DxFeed.Graal.Net.Native.ErrorHandling;
 using DxFeed.Graal.Net.Native.Events;
 using DxFeed.Graal.Net.Native.Feed;
 using DxFeed.Graal.Net.Native.Graal;
+using DxFeed.Graal.Net.Native.Interop;
 using DxFeed.Graal.Net.Native.SymbolMappers;
 using DxFeed.Graal.Net.Native.Symbols;
 
@@ -163,14 +164,14 @@ internal sealed unsafe class SubscriptionNative : IDisposable
 
         public static SubscriptionHandle* New(nint thread, IEnumerable<EventCodeNative> eventCodes)
         {
-            var codes = ListNative<EventCodeNative>.CreateNative(eventCodes);
+            var codes = ListNative<EventCodeNative>.Create(eventCodes);
             try
             {
                 return ErrorCheck.NativeCall(thread, NativeSubscriptionNew(thread, codes));
             }
             finally
             {
-                ListNative<EventCodeNative>.ReleaseNative(codes);
+                ListNative<EventCodeNative>.Release(codes);
             }
         }
 

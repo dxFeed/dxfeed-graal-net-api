@@ -12,14 +12,24 @@ namespace DxFeed.Graal.Net.Native.Events.Market;
 /// <summary>
 /// The structure contains all the fields required
 /// to build an <see cref="AnalyticOrder"/>.
-/// Used to exchange data with native code.
 /// </summary>
 [StructLayout(LayoutKind.Sequential)]
-internal readonly struct AnalyticOrderNative
+internal readonly record struct AnalyticOrderNative(
+        OrderBaseNative OrderBase,
+        double IcebergPeakSize,
+        double IcebergHiddenSize,
+        double IcebergExecutedSize,
+        int IcebergFlags)
+    : IEventTypeNative<AnalyticOrder>
 {
-    public readonly OrderBaseNative OrderBase;
-    public readonly double IcebergPeakSize;
-    public readonly double IcebergHiddenSize;
-    public readonly double IcebergExecutedSize;
-    public readonly int IcebergFlags;
+    /// <inheritdoc/>
+    public AnalyticOrder ToEventType()
+    {
+        var analyticOrder = OrderBase.ToEventType<AnalyticOrder>();
+        analyticOrder.IcebergPeakSize = IcebergPeakSize;
+        analyticOrder.IcebergHiddenSize = IcebergHiddenSize;
+        analyticOrder.IcebergExecutedSize = IcebergExecutedSize;
+        analyticOrder.IcebergFlags = IcebergFlags;
+        return analyticOrder;
+    }
 }

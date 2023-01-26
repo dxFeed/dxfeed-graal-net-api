@@ -12,26 +12,52 @@ namespace DxFeed.Graal.Net.Native.Events.Market;
 /// <summary>
 /// The structure contains all the fields required
 /// to build an <see cref="OrderBase"/>.
-/// Used to exchange data with native code.
 /// Includes at the beginning of each order structure.
 /// </summary>
 [StructLayout(LayoutKind.Sequential)]
-internal readonly struct OrderBaseNative
+internal readonly record struct OrderBaseNative(
+    EventTypeNative EventType,
+    int EventFlags,
+    long Index,
+    long TimeSequence,
+    int TimeNanoPart,
+    long ActionTime,
+    long OrderOd,
+    long AuxOrderId,
+    double Price,
+    double Size,
+    double ExecutedSize,
+    long Count,
+    int Flags,
+    long TradeId,
+    double TradePrice,
+    double TradeSize)
 {
-    public readonly MarketEventNative MarketEvent;
-    public readonly int EventFlags;
-    public readonly long Index;
-    public readonly long TimeSequence;
-    public readonly int TimeNanoPart;
-    public readonly long ActionTime;
-    public readonly long OrderOd;
-    public readonly long AuxOrderId;
-    public readonly double Price;
-    public readonly double Size;
-    public readonly double ExecutedSize;
-    public readonly long Count;
-    public readonly int Flags;
-    public readonly long TradeId;
-    public readonly double TradePrice;
-    public readonly double TradeSize;
+    /// <summary>
+    /// Converts a native event to the specified <see cref="OrderBase"/>.
+    /// This method fills only <see cref="OrderBase"/> properties.
+    /// </summary>
+    /// <typeparam name="T">The specified <see cref="OrderBase"/>.</typeparam>
+    /// <returns>The <see cref="OrderBase"/>.</returns>
+    public T ToEventType<T>()
+        where T : OrderBase, new()
+    {
+        var orderBase = EventType.ToEventType<T>();
+        orderBase.EventFlags = EventFlags;
+        orderBase.Index = Index;
+        orderBase.TimeSequence = TimeSequence;
+        orderBase.TimeNanoPart = TimeNanoPart;
+        orderBase.ActionTime = ActionTime;
+        orderBase.OrderId = OrderOd;
+        orderBase.AuxOrderId = AuxOrderId;
+        orderBase.Price = Price;
+        orderBase.Size = Size;
+        orderBase.ExecutedSize = ExecutedSize;
+        orderBase.Count = Count;
+        orderBase.Flags = Flags;
+        orderBase.TradeId = TradeId;
+        orderBase.TradePrice = TradePrice;
+        orderBase.TradeSize = TradeSize;
+        return orderBase;
+    }
 }

@@ -8,7 +8,7 @@ using System;
 using System.Globalization;
 using DxFeed.Graal.Net.Events.Market;
 
-namespace DxFeed.Graal.Net.Events.Candle;
+namespace DxFeed.Graal.Net.Events.Candles;
 
 /// <summary>
 /// Period attribute of <see cref="CandleSymbol"/> defines aggregation period of the candles.
@@ -75,7 +75,7 @@ public class CandlePeriod : ICandleSymbolProperty
     /// <summary>
     /// Gets aggregation period value.
     /// For example, the value of <c>5</c> with
-    /// the candle type of <see cref="Events.Candle.CandleType.Minute"/> represents 5 minute
+    /// the candle type of <see cref="CandleType.Minute"/> represents 5 minute
     /// aggregation period.
     /// </summary>
     public double Value { get; }

@@ -5,6 +5,7 @@
 // </copyright>
 
 using System.Runtime.InteropServices;
+using DxFeed.Graal.Net.Native.Interop;
 
 namespace DxFeed.Graal.Net.Native.Symbols.Candle;
 
@@ -16,5 +17,5 @@ namespace DxFeed.Graal.Net.Native.Symbols.Candle;
 internal struct CandleSymbolNative
 {
     public BaseSymbolNative BaseSymbol;
-    public nint Symbol; // A null-terminated UTF-8 string.
+    public StringNative Symbol; // A null-terminated UTF-8 string.
 }

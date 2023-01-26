@@ -8,9 +8,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.InteropServices;
 
-namespace DxFeed.Graal.Net.Native;
+namespace DxFeed.Graal.Net.Native.Interop;
 
-// ToDo Create wrapper implements dispose pattern.
 [StructLayout(LayoutKind.Sequential)]
 internal unsafe struct ListNative<T>
     where T : unmanaged
@@ -18,7 +17,7 @@ internal unsafe struct ListNative<T>
     public int Size;
     public T** Elements;
 
-    public static ListNative<T>* CreateNative(IEnumerable<T> elements)
+    public static ListNative<T>* Create(IEnumerable<T> elements)
     {
         var enumerable = elements as T[] ?? elements.ToArray();
         var list = (ListNative<T>*)Marshal.AllocHGlobal(sizeof(ListNative<T>));
@@ -35,7 +34,7 @@ internal unsafe struct ListNative<T>
         return list;
     }
 
-    public static void ReleaseNative(ListNative<T>* list)
+    public static void Release(ListNative<T>* list)
     {
         if (list == null)
         {

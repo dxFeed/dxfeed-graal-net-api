@@ -8,6 +8,7 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 using DxFeed.Graal.Net.Api.Osub;
+using DxFeed.Graal.Net.Native.Interop;
 using DxFeed.Graal.Net.Native.Symbols;
 using DxFeed.Graal.Net.Native.Symbols.Indexed;
 using DxFeed.Graal.Net.Native.Symbols.TimeSeries;

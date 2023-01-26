@@ -12,10 +12,13 @@ namespace DxFeed.Graal.Net.Native.Events.Market;
 /// <summary>
 /// The structure contains all the fields required
 /// to build an <see cref="Trade"/>.
-/// Used to exchange data with native code.
 /// </summary>
 [StructLayout(LayoutKind.Sequential)]
-internal readonly struct TradeNative
+internal readonly record struct TradeNative(
+        TradeBaseNative TradeBase)
+    : IEventTypeNative<Trade>
 {
-    public readonly TradeBaseNative TradeBase;
+    /// <inheritdoc/>
+    public Trade ToEventType() =>
+        TradeBase.ToEventType<Trade>();
 }

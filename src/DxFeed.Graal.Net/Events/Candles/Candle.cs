@@ -9,7 +9,7 @@ using System.Globalization;
 using DxFeed.Graal.Net.Native.Events;
 using DxFeed.Graal.Net.Utils;
 
-namespace DxFeed.Graal.Net.Events.Candle;
+namespace DxFeed.Graal.Net.Events.Candles;
 
 /// <summary>
 /// Candle event with open, high, low, close prices and other information for a specific period.
@@ -45,17 +45,14 @@ public class Candle : ITimeSeriesEvent, ILastingEvent
     /// Initializes a new instance of the <see cref="Candle"/> class with the specified event symbol.
     /// </summary>
     /// <param name="eventSymbol">The specified event symbol.</param>
-    public Candle(CandleSymbol eventSymbol)
-    {
+    public Candle(CandleSymbol eventSymbol) =>
         CandleSymbol = eventSymbol;
-        EventSymbol = CandleSymbol.ToString();
-    }
 
     /// <inheritdoc/>
     public string? EventSymbol
     {
         get => CandleSymbol?.ToString();
-        set => CandleSymbol.ValueOf(value);
+        set => CandleSymbol = CandleSymbol.ValueOf(value);
     }
 
     /// <summary>

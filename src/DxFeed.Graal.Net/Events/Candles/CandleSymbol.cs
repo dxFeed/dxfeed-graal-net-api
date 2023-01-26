@@ -10,7 +10,7 @@ using DxFeed.Graal.Net.Api;
 using DxFeed.Graal.Net.Events.Market;
 using DxFeed.Graal.Net.Utils;
 
-namespace DxFeed.Graal.Net.Events.Candle;
+namespace DxFeed.Graal.Net.Events.Candles;
 
 /// <summary>
 /// Symbol that should be used with <see cref="DXFeedSubscription"/> class

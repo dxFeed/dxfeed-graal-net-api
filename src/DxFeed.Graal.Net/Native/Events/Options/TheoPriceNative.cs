@@ -6,25 +6,38 @@
 
 using System.Runtime.InteropServices;
 using DxFeed.Graal.Net.Events.Options;
-using DxFeed.Graal.Net.Native.Events.Market;
 
 namespace DxFeed.Graal.Net.Native.Events.Options;
 
 /// <summary>
 /// The structure contains all the fields required
 /// to build an <see cref="TheoPrice"/>.
-/// Used to exchange data with native code.
 /// </summary>
 [StructLayout(LayoutKind.Sequential)]
-internal readonly struct TheoPriceNative
+internal readonly record struct TheoPriceNative(
+        EventTypeNative EventType,
+        int EventFlags,
+        long Index,
+        double Price,
+        double UnderlyingPrice,
+        double Delta,
+        double Gamma,
+        double Dividend,
+        double Interest)
+    : IEventTypeNative<TheoPrice>
 {
-    public readonly MarketEventNative MarketEvent;
-    public readonly int EventFlags;
-    public readonly long Index;
-    public readonly double Price;
-    public readonly double UnderlyingPrice;
-    public readonly double Delta;
-    public readonly double Gamma;
-    public readonly double Dividend;
-    public readonly double Interest;
+    /// <inheritdoc/>
+    public TheoPrice ToEventType()
+    {
+        var theoPrice = EventType.ToEventType<TheoPrice>();
+        theoPrice.EventFlags = EventFlags;
+        theoPrice.Index = Index;
+        theoPrice.Price = Price;
+        theoPrice.UnderlyingPrice = UnderlyingPrice;
+        theoPrice.Delta = Delta;
+        theoPrice.Gamma = Gamma;
+        theoPrice.Dividend = Dividend;
+        theoPrice.Interest = Interest;
+        return theoPrice;
+    }
 }

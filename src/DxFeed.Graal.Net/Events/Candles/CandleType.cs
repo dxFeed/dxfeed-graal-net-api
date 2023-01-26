@@ -8,7 +8,7 @@ using System;
 using System.Collections.Concurrent;
 using System.Linq;
 
-namespace DxFeed.Graal.Net.Events.Candle;
+namespace DxFeed.Graal.Net.Events.Candles;
 
 /// <summary>
 /// Type of the candle aggregation period constitutes <see cref="CandlePeriod"/> type together

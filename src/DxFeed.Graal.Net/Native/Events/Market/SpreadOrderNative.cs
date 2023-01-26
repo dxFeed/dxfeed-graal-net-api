@@ -6,17 +6,25 @@
 
 using System.Runtime.InteropServices;
 using DxFeed.Graal.Net.Events.Market;
+using DxFeed.Graal.Net.Native.Interop;
 
 namespace DxFeed.Graal.Net.Native.Events.Market;
 
 /// <summary>
 /// The structure contains all the fields required
 /// to build an <see cref="SpreadOrder"/>.
-/// Used to exchange data with native code.
 /// </summary>
 [StructLayout(LayoutKind.Sequential)]
-internal readonly struct SpreadOrderNative
+internal readonly record struct SpreadOrderNative(
+        OrderBaseNative OrderBase,
+        StringNative SpreadSymbol)
+    : IEventTypeNative<SpreadOrder>
 {
-    public readonly OrderBaseNative OrderBase;
-    public readonly nint SpreadSymbol; // A null-terminated UTF-8 string.
+    /// <inheritdoc/>
+    public SpreadOrder ToEventType()
+    {
+        var spreadOrder = OrderBase.ToEventType<SpreadOrder>();
+        spreadOrder.SpreadSymbol = SpreadSymbol.ToString();
+        return spreadOrder;
+    }
 }

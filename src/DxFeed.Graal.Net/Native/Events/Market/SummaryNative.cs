@@ -5,21 +5,43 @@
 // </copyright>
 
 using System.Runtime.InteropServices;
+using DxFeed.Graal.Net.Events.Market;
 
 namespace DxFeed.Graal.Net.Native.Events.Market;
 
+/// <summary>
+/// The structure contains all the fields required
+/// to build an <see cref="Summary"/>.
+/// </summary>
 [StructLayout(LayoutKind.Sequential)]
-internal readonly struct SummaryNative
+internal readonly record struct SummaryNative(
+        EventTypeNative EventType,
+        int DayId,
+        double DayOpenPrice,
+        double DayHighPrice,
+        double DayLowPrice,
+        double DayClosePrice,
+        int PrevDayId,
+        double PrevDayClosePrice,
+        double PrevDayVolume,
+        long OpenInterest,
+        int Flags)
+    : IEventTypeNative<Summary>
 {
-    public readonly MarketEventNative MarketEvent;
-    public readonly int DayId;
-    public readonly double DayOpenPrice;
-    public readonly double DayHighPrice;
-    public readonly double DayLowPrice;
-    public readonly double DayClosePrice;
-    public readonly int PrevDayId;
-    public readonly double PrevDayClosePrice;
-    public readonly double PrevDayVolume;
-    public readonly long OpenInterest;
-    public readonly int Flags;
+    /// <inheritdoc/>
+    public Summary ToEventType()
+    {
+        var summary = EventType.ToEventType<Summary>();
+        summary.DayId = DayId;
+        summary.DayOpenPrice = DayOpenPrice;
+        summary.DayHighPrice = DayHighPrice;
+        summary.DayLowPrice = DayLowPrice;
+        summary.DayClosePrice = DayClosePrice;
+        summary.PrevDayId = PrevDayId;
+        summary.PrevDayClosePrice = PrevDayClosePrice;
+        summary.PrevDayVolume = PrevDayVolume;
+        summary.OpenInterest = OpenInterest;
+        summary.Flags = Flags;
+        return summary;
+    }
 }

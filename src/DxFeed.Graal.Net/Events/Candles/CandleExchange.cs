@@ -7,7 +7,7 @@
 using System;
 using DxFeed.Graal.Net.Events.Market;
 
-namespace DxFeed.Graal.Net.Events.Candle;
+namespace DxFeed.Graal.Net.Events.Candles;
 
 /// <summary>
 /// Exchange attribute of <see cref="CandleSymbol"/> defines exchange identifier where data is

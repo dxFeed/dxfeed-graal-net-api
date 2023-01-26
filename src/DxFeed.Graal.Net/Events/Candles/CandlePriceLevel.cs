@@ -9,7 +9,7 @@ using System.Globalization;
 using DxFeed.Graal.Net.Events.Market;
 using DxFeed.Graal.Net.Utils;
 
-namespace DxFeed.Graal.Net.Events.Candle;
+namespace DxFeed.Graal.Net.Events.Candles;
 
 /// <summary>
 /// Candle price level attribute of <see cref="CandleSymbol"/> defines how candles shall be aggregated in respect to

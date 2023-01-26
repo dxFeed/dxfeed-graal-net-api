@@ -9,7 +9,7 @@ using System.Collections.Concurrent;
 using System.Linq;
 using DxFeed.Graal.Net.Events.Market;
 
-namespace DxFeed.Graal.Net.Events.Candle;
+namespace DxFeed.Graal.Net.Events.Candles;
 
 /// <summary>
 /// Candle alignment attribute of <see cref="CandleSymbol"/> defines how candle are aligned with respect to time.

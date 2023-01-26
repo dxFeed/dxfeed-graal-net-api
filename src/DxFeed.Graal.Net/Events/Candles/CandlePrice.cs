@@ -9,7 +9,7 @@ using System.Collections.Concurrent;
 using System.Linq;
 using DxFeed.Graal.Net.Events.Market;
 
-namespace DxFeed.Graal.Net.Events.Candle;
+namespace DxFeed.Graal.Net.Events.Candles;
 
 /// <summary>
 /// Price type attribute of <see cref="CandleSymbol"/> defines price that is used to build the candles.
