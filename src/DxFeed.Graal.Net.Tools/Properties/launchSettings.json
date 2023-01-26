@@ -3,7 +3,7 @@
   "profiles": {
     "Connect": {
       "commandName": "Project",
-      "commandLineArgs": "connect demo.dxfeed.com:7300 Profile,Quote,Trade, AAPL,IBM,MSFT,GOOG",
+      "commandLineArgs": "connect demo.dxfeed.com:7300 Profile,Quote,Trade AAPL,IBM,MSFT,GOOG",
       "nativeDebugging": true,
       "environmentVariables": {
       }
