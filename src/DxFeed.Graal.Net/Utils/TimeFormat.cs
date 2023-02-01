@@ -232,7 +232,7 @@ public class TimeFormat
             return ConvertDateTimeToCurrentTimeZone(DateTimeOffset.FromUnixTimeMilliseconds(0));
         }
 
-        var styles = DateTimeStyles.AllowWhiteSpaces | DateTimeStyles.AssumeLocal;
+        const DateTimeStyles styles = DateTimeStyles.AllowWhiteSpaces | DateTimeStyles.AssumeLocal;
         DateTimeOffset dateTimeOffset;
 
         // Try to parse for all available format strings.
