@@ -15,29 +15,12 @@ namespace DxFeed.Graal.Net.Native.Events.Options;
 /// </summary>
 [StructLayout(LayoutKind.Sequential)]
 internal readonly record struct UnderlyingNative(
-        EventTypeNative EventType,
-        int EventFlags,
-        long Index,
-        double Volatility,
-        double FrontVolatility,
-        double BackVolatility,
-        double CallVolume,
-        double PutVolume,
-        double PutCallRatio)
-    : IEventTypeNative<Underlying>
-{
-    /// <inheritdoc/>
-    public Underlying ToEventType()
-    {
-        var underlying = EventType.ToEventType<Underlying>();
-        underlying.EventFlags = EventFlags;
-        underlying.Index = Index;
-        underlying.Volatility = Volatility;
-        underlying.FrontVolatility = FrontVolatility;
-        underlying.BackVolatility = BackVolatility;
-        underlying.CallVolume = CallVolume;
-        underlying.PutVolume = PutVolume;
-        underlying.PutCallRatio = PutCallRatio;
-        return underlying;
-    }
-}
+    EventTypeNative EventType,
+    int EventFlags,
+    long Index,
+    double Volatility,
+    double FrontVolatility,
+    double BackVolatility,
+    double CallVolume,
+    double PutVolume,
+    double PutCallRatio);

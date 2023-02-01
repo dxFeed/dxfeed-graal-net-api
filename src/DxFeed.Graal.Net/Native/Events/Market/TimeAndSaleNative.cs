@@ -16,37 +16,16 @@ namespace DxFeed.Graal.Net.Native.Events.Market;
 /// </summary>
 [StructLayout(LayoutKind.Sequential)]
 internal readonly record struct TimeAndSaleNative(
-        EventTypeNative EventType,
-        int EventFlags,
-        long Index,
-        int TimeNanoPart,
-        char ExchangeCode,
-        double Price,
-        double Size,
-        double BidPrice,
-        double AskPrice,
-        StringNative ExchangeSaleConditions,
-        int Flags,
-        StringNative Buyer,
-        StringNative Seller)
-    : IEventTypeNative<TimeAndSale>
-{
-    /// <inheritdoc/>
-    public TimeAndSale ToEventType()
-    {
-        var timeAndSale = EventType.ToEventType<TimeAndSale>();
-        timeAndSale.EventFlags = EventFlags;
-        timeAndSale.Index = Index;
-        timeAndSale.TimeNanoPart = TimeNanoPart;
-        timeAndSale.ExchangeCode = ExchangeCode;
-        timeAndSale.Price = Price;
-        timeAndSale.Size = Size;
-        timeAndSale.BidPrice = BidPrice;
-        timeAndSale.AskPrice = AskPrice;
-        timeAndSale.ExchangeSaleConditions = ExchangeSaleConditions.ToString();
-        timeAndSale.Flags = Flags;
-        timeAndSale.Buyer = Buyer.ToString();
-        timeAndSale.Seller = Seller.ToString();
-        return timeAndSale;
-    }
-}
+    EventTypeNative EventType,
+    int EventFlags,
+    long Index,
+    int TimeNanoPart,
+    char ExchangeCode,
+    double Price,
+    double Size,
+    double BidPrice,
+    double AskPrice,
+    StringNative ExchangeSaleConditions,
+    int Flags,
+    StringNative Buyer,
+    StringNative Seller);

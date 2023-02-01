@@ -6,6 +6,7 @@
 
 using System.Runtime.InteropServices;
 using DxFeed.Graal.Net.Events.Candles;
+using DxFeed.Graal.Net.Native.Interop;
 using DxFeed.Graal.Net.Native.Symbols.Candle;
 
 namespace DxFeed.Graal.Net.Native.Events.Candles;
@@ -16,8 +17,8 @@ namespace DxFeed.Graal.Net.Native.Events.Candles;
 /// </summary>
 [StructLayout(LayoutKind.Sequential)]
 internal readonly record struct CandleNative(
-    EventTypeNative Base,
-    nint EventSymbol,
+    EventCodeNative EventCode,
+    nint CandleSymbol,
     int EventFlags,
     long EventTime,
     long Index,
@@ -31,25 +32,4 @@ internal readonly record struct CandleNative(
     double BidVolume,
     double AskVolume,
     double ImpVolatility,
-    double OpenInterest)
-{
-    public unsafe Candle ToEvent() =>
-        new()
-        {
-            EventSymbol = ((CandleSymbolNative*)EventSymbol)->Symbol.ToString(),
-            EventFlags = EventFlags,
-            EventTime = EventTime,
-            Index = Index,
-            Count = Count,
-            Open = Open,
-            High = High,
-            Low = Low,
-            Close = Close,
-            Volume = Volume,
-            VWAP = VWAP,
-            BidVolume = BidVolume,
-            AskVolume = AskVolume,
-            ImpVolatility = ImpVolatility,
-            OpenInterest = OpenInterest,
-        };
-}
+    double OpenInterest);

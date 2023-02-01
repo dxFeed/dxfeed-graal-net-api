@@ -5,6 +5,7 @@
 // </copyright>
 
 using System.Runtime.InteropServices;
+using DxFeed.Graal.Net.Events;
 using DxFeed.Graal.Net.Events.Options;
 
 namespace DxFeed.Graal.Net.Native.Events.Options;
@@ -15,29 +16,12 @@ namespace DxFeed.Graal.Net.Native.Events.Options;
 /// </summary>
 [StructLayout(LayoutKind.Sequential)]
 internal readonly record struct TheoPriceNative(
-        EventTypeNative EventType,
-        int EventFlags,
-        long Index,
-        double Price,
-        double UnderlyingPrice,
-        double Delta,
-        double Gamma,
-        double Dividend,
-        double Interest)
-    : IEventTypeNative<TheoPrice>
-{
-    /// <inheritdoc/>
-    public TheoPrice ToEventType()
-    {
-        var theoPrice = EventType.ToEventType<TheoPrice>();
-        theoPrice.EventFlags = EventFlags;
-        theoPrice.Index = Index;
-        theoPrice.Price = Price;
-        theoPrice.UnderlyingPrice = UnderlyingPrice;
-        theoPrice.Delta = Delta;
-        theoPrice.Gamma = Gamma;
-        theoPrice.Dividend = Dividend;
-        theoPrice.Interest = Interest;
-        return theoPrice;
-    }
-}
+    EventTypeNative EventType,
+    int EventFlags,
+    long Index,
+    double Price,
+    double UnderlyingPrice,
+    double Delta,
+    double Gamma,
+    double Dividend,
+    double Interest);

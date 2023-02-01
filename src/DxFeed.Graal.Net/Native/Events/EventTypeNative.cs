@@ -5,7 +5,6 @@
 // </copyright>
 
 using System.Runtime.InteropServices;
-using DxFeed.Graal.Net.Events;
 using DxFeed.Graal.Net.Native.Interop;
 
 namespace DxFeed.Graal.Net.Native.Events;
@@ -19,15 +18,4 @@ namespace DxFeed.Graal.Net.Native.Events;
 internal readonly record struct EventTypeNative(
     EventCodeNative EventCode,
     StringNative EventSymbol,
-    long EventTime)
-{
-    /// <summary>
-    /// Converts a native event to the specified <see cref="IEventType"/>.
-    /// This method fills only <see cref="IEventType.EventSymbol"/> and <see cref="IEventType.EventTime"/>.
-    /// </summary>
-    /// <typeparam name="T">The specified <see cref="IEventType"/>.</typeparam>
-    /// <returns>The <see cref="IEventType"/>.</returns>
-    public T ToEventType<T>()
-        where T : IEventType, new() =>
-        new() { EventSymbol = EventSymbol.ToString(), EventTime = EventTime, };
-}
+    long EventTime);

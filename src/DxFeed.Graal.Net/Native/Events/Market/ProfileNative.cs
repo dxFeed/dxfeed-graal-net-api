@@ -5,6 +5,7 @@
 // </copyright>
 
 using System.Runtime.InteropServices;
+using DxFeed.Graal.Net.Events;
 using DxFeed.Graal.Net.Events.Market;
 using DxFeed.Graal.Net.Native.Interop;
 
@@ -16,31 +17,13 @@ namespace DxFeed.Graal.Net.Native.Events.Market;
 /// </summary>
 [StructLayout(LayoutKind.Sequential)]
 internal readonly record struct ProfileNative(
-        EventTypeNative EventType,
-        StringNative Description,
-        StringNative StatusReason,
-        long HaltStartTime,
-        long HaltEndTime,
-        double HighLimitPrice,
-        double LowLimitPrice,
-        double High52WeekPrice,
-        double Low52WeekPrice,
-        int Flags)
-    : IEventTypeNative<Profile>
-{
-    /// <inheritdoc/>
-    public Profile ToEventType()
-    {
-        var profile = EventType.ToEventType<Profile>();
-        profile.Description = Description.ToString();
-        profile.StatusReason = StatusReason.ToString();
-        profile.HaltStartTime = HaltStartTime;
-        profile.HaltEndTime = HaltEndTime;
-        profile.HighLimitPrice = HighLimitPrice;
-        profile.LowLimitPrice = LowLimitPrice;
-        profile.High52WeekPrice = High52WeekPrice;
-        profile.Low52WeekPrice = Low52WeekPrice;
-        profile.Flags = Flags;
-        return profile;
-    }
-}
+    EventTypeNative EventType,
+    StringNative Description,
+    StringNative StatusReason,
+    long HaltStartTime,
+    long HaltEndTime,
+    double HighLimitPrice,
+    double LowLimitPrice,
+    double High52WeekPrice,
+    double Low52WeekPrice,
+    int Flags);

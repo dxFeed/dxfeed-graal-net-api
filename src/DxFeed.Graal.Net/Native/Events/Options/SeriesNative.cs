@@ -15,35 +15,15 @@ namespace DxFeed.Graal.Net.Native.Events.Options;
 /// </summary>
 [StructLayout(LayoutKind.Sequential)]
 internal readonly record struct SeriesNative(
-        EventTypeNative EventType,
-        int EventFlags,
-        long Index,
-        long TimeSequence,
-        int Expiration,
-        double Volatility,
-        double CallVolume,
-        double PutVolume,
-        double PutCallRatio,
-        double ForwardPrice,
-        double Dividend,
-        double Interest)
-    : IEventTypeNative<Series>
-{
-    /// <inheritdoc/>
-    public Series ToEventType()
-    {
-        var series = EventType.ToEventType<Series>();
-        series.EventFlags = EventFlags;
-        series.Index = Index;
-        series.TimeSequence = TimeSequence;
-        series.Expiration = Expiration;
-        series.Volatility = Volatility;
-        series.CallVolume = CallVolume;
-        series.PutVolume = PutVolume;
-        series.PutCallRatio = PutCallRatio;
-        series.ForwardPrice = ForwardPrice;
-        series.Dividend = Dividend;
-        series.Interest = Interest;
-        return series;
-    }
-}
+    EventTypeNative EventType,
+    int EventFlags,
+    long Index,
+    long TimeSequence,
+    int Expiration,
+    double Volatility,
+    double CallVolume,
+    double PutVolume,
+    double PutCallRatio,
+    double ForwardPrice,
+    double Dividend,
+    double Interest);

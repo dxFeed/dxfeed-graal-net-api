@@ -22,7 +22,7 @@ internal readonly record struct OrderBaseNative(
     long TimeSequence,
     int TimeNanoPart,
     long ActionTime,
-    long OrderOd,
+    long OrderId,
     long AuxOrderId,
     double Price,
     double Size,
@@ -31,33 +31,4 @@ internal readonly record struct OrderBaseNative(
     int Flags,
     long TradeId,
     double TradePrice,
-    double TradeSize)
-{
-    /// <summary>
-    /// Converts a native event to the specified <see cref="OrderBase"/>.
-    /// This method fills only <see cref="OrderBase"/> properties.
-    /// </summary>
-    /// <typeparam name="T">The specified <see cref="OrderBase"/>.</typeparam>
-    /// <returns>The <see cref="OrderBase"/>.</returns>
-    public T ToEventType<T>()
-        where T : OrderBase, new()
-    {
-        var orderBase = EventType.ToEventType<T>();
-        orderBase.EventFlags = EventFlags;
-        orderBase.Index = Index;
-        orderBase.TimeSequence = TimeSequence;
-        orderBase.TimeNanoPart = TimeNanoPart;
-        orderBase.ActionTime = ActionTime;
-        orderBase.OrderId = OrderOd;
-        orderBase.AuxOrderId = AuxOrderId;
-        orderBase.Price = Price;
-        orderBase.Size = Size;
-        orderBase.ExecutedSize = ExecutedSize;
-        orderBase.Count = Count;
-        orderBase.Flags = Flags;
-        orderBase.TradeId = TradeId;
-        orderBase.TradePrice = TradePrice;
-        orderBase.TradeSize = TradeSize;
-        return orderBase;
-    }
-}
+    double TradeSize);

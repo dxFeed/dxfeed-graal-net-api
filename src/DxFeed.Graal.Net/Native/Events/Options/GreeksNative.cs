@@ -15,31 +15,13 @@ namespace DxFeed.Graal.Net.Native.Events.Options;
 /// </summary>
 [StructLayout(LayoutKind.Sequential)]
 internal readonly record struct GreeksNative(
-        EventTypeNative EventType,
-        int EventFlags,
-        long Index,
-        double Price,
-        double Volatility,
-        double Delta,
-        double Gamma,
-        double Theta,
-        double Rho,
-        double Vega)
-    : IEventTypeNative<Greeks>
-{
-    /// <inheritdoc/>
-    public Greeks ToEventType()
-    {
-        var greeks = EventType.ToEventType<Greeks>();
-        greeks.EventFlags = EventFlags;
-        greeks.Index = Index;
-        greeks.Price = Price;
-        greeks.Volatility = Volatility;
-        greeks.Delta = Delta;
-        greeks.Gamma = Gamma;
-        greeks.Theta = Theta;
-        greeks.Rho = Rho;
-        greeks.Vega = Vega;
-        return greeks;
-    }
-}
+    EventTypeNative EventType,
+    int EventFlags,
+    long Index,
+    double Price,
+    double Volatility,
+    double Delta,
+    double Gamma,
+    double Theta,
+    double Rho,
+    double Vega);

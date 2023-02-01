@@ -20,6 +20,21 @@ namespace DxFeed.Graal.Net.Native.Events;
 /// </summary>
 internal static class EventMapper
 {
+    private static readonly QuoteMapper QuoteMapper = new();
+    private static readonly ProfileMapper ProfileMapper = new();
+    private static readonly SummaryMapper SummaryMapper = new();
+    private static readonly GreeksMapper GreeksMapper = new();
+    private static readonly CandleMapper CandleMapper = new();
+    private static readonly UnderlyingMapper UnderlyingMapper = new();
+    private static readonly TheoPriceMapper TheoPriceMapper = new();
+    private static readonly TradeMapper TradeMapper = new();
+    private static readonly TradeETHMapper TradeETHMapper = new();
+    private static readonly TimeAndSaleMapper TimeAndSaleMapper = new();
+    private static readonly OrderMapper OrderMapper = new();
+    private static readonly AnalyticOrderMapper AnalyticOrderMapper = new();
+    private static readonly SpreadOrderMapper SpreadOrderMapper = new();
+    private static readonly SeriesMapper SeriesMapper = new();
+
     /// <summary>
     /// Creates a specific collection of <see cref="IEventType"/> from a <see cref="ListNative{T}"/> unsafe pointer.
     /// </summary>
@@ -61,26 +76,32 @@ internal static class EventMapper
     /// If specific <see cref="EventTypeNative.EventCode"/> not implement.
     /// </exception>
     public static unsafe IEventType FromNative(EventTypeNative* eventTypeNative) =>
-        eventTypeNative->EventCode switch
+        GetEventMapperByEventCode(eventTypeNative->EventCode).FromNative(eventTypeNative);
+
+    public static unsafe EventTypeNative* ToNative(IEventType eventType) =>
+        GetEventMapperByEventCode(EventCodeNative.Quote).ToNative(eventType);
+
+    public static IEventMapper GetEventMapperByEventCode(EventCodeNative eventCode) =>
+        eventCode switch
         {
-            EventCodeNative.Quote => ((QuoteNative*)eventTypeNative)->ToEventType(),
-            EventCodeNative.Profile => ((ProfileNative*)eventTypeNative)->ToEventType(),
-            EventCodeNative.Summary => ((SummaryNative*)eventTypeNative)->ToEventType(),
-            EventCodeNative.Greeks => ((GreeksNative*)eventTypeNative)->ToEventType(),
-            EventCodeNative.Candle => ((CandleNative*)eventTypeNative)->ToEvent(),
-            EventCodeNative.Underlying => ((UnderlyingNative*)eventTypeNative)->ToEventType(),
-            EventCodeNative.TheoPrice => ((TheoPriceNative*)eventTypeNative)->ToEventType(),
-            EventCodeNative.Trade => ((TradeNative*)eventTypeNative)->ToEventType(),
-            EventCodeNative.TradeETH => ((TradeETHNative*)eventTypeNative)->ToEventType(),
-            EventCodeNative.TimeAndSale => ((TimeAndSaleNative*)eventTypeNative)->ToEventType(),
-            EventCodeNative.Order => ((OrderNative*)eventTypeNative)->ToEventType(),
-            EventCodeNative.AnalyticOrder => ((AnalyticOrderNative*)eventTypeNative)->ToEventType(),
-            EventCodeNative.SpreadOrder => ((SpreadOrderNative*)eventTypeNative)->ToEventType(),
-            EventCodeNative.Series => ((SeriesNative*)eventTypeNative)->ToEventType(),
+            EventCodeNative.Quote => QuoteMapper,
+            EventCodeNative.Profile => ProfileMapper,
+            EventCodeNative.Summary => SummaryMapper,
+            EventCodeNative.Greeks => GreeksMapper,
+            EventCodeNative.Candle => CandleMapper,
+            EventCodeNative.Underlying => UnderlyingMapper,
+            EventCodeNative.TheoPrice => TheoPriceMapper,
+            EventCodeNative.Trade => TradeMapper,
+            EventCodeNative.TradeETH => TradeETHMapper,
+            EventCodeNative.TimeAndSale => TimeAndSaleMapper,
+            EventCodeNative.Order => OrderMapper,
+            EventCodeNative.AnalyticOrder => AnalyticOrderMapper,
+            EventCodeNative.SpreadOrder => SpreadOrderMapper,
+            EventCodeNative.Series => SeriesMapper,
             EventCodeNative.DailyCandle => throw new NotImplementedException(),
             EventCodeNative.OrderBase => throw new NotImplementedException(),
             EventCodeNative.Configuration => throw new NotImplementedException(),
             EventCodeNative.Message => throw new NotImplementedException(),
-            _ => throw new ArgumentException($"Unknown {nameof(EventCodeNative)}: {eventTypeNative->EventCode}"),
+            _ => throw new ArgumentException($"Unknown {nameof(EventCodeNative)}: {eventCode}"),
         };
 }

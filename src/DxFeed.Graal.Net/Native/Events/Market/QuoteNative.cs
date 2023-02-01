@@ -15,33 +15,14 @@ namespace DxFeed.Graal.Net.Native.Events.Market;
 /// </summary>
 [StructLayout(LayoutKind.Sequential)]
 internal readonly record struct QuoteNative(
-        EventTypeNative EventType,
-        int TimeMillisSequence,
-        int TimeNanoPart,
-        long BidTime,
-        char BidExchangeCode,
-        double BidPrice,
-        double BidSize,
-        long AskTime,
-        char AskExchangeCode,
-        double AskPrice,
-        double AskSize)
-    : IEventTypeNative<Quote>
-{
-    /// <inheritdoc/>
-    public Quote ToEventType()
-    {
-        var quote = EventType.ToEventType<Quote>();
-        quote.TimeMillisSequence = TimeMillisSequence;
-        quote.TimeNanoPart = TimeNanoPart;
-        quote.BidTime = BidTime;
-        quote.BidExchangeCode = BidExchangeCode;
-        quote.BidPrice = BidPrice;
-        quote.BidSize = BidSize;
-        quote.AskTime = AskTime;
-        quote.AskExchangeCode = AskExchangeCode;
-        quote.AskPrice = AskPrice;
-        quote.AskSize = AskSize;
-        return quote;
-    }
-}
+    EventTypeNative EventType,
+    int TimeMillisSequence,
+    int TimeNanoPart,
+    long BidTime,
+    char BidExchangeCode,
+    double BidPrice,
+    double BidSize,
+    long AskTime,
+    char AskExchangeCode,
+    double AskPrice,
+    double AskSize);

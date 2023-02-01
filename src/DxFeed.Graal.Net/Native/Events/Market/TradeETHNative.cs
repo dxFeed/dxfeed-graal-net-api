@@ -5,6 +5,7 @@
 // </copyright>
 
 using System.Runtime.InteropServices;
+using DxFeed.Graal.Net.Events;
 using DxFeed.Graal.Net.Events.Market;
 
 // Disable pascal case naming rules.
@@ -17,11 +18,4 @@ namespace DxFeed.Graal.Net.Native.Events.Market;
 /// to build an <see cref="TradeETH"/>.
 /// </summary>
 [StructLayout(LayoutKind.Sequential)]
-internal readonly record struct TradeETHNative(
-        TradeBaseNative TradeBase)
-    : IEventTypeNative<TradeETH>
-{
-    /// <inheritdoc/>
-    public TradeETH ToEventType() =>
-        TradeBase.ToEventType<TradeETH>();
-}
+internal readonly record struct TradeETHNative(TradeBaseNative TradeBase);

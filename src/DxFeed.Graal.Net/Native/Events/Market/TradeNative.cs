@@ -14,11 +14,4 @@ namespace DxFeed.Graal.Net.Native.Events.Market;
 /// to build an <see cref="Trade"/>.
 /// </summary>
 [StructLayout(LayoutKind.Sequential)]
-internal readonly record struct TradeNative(
-        TradeBaseNative TradeBase)
-    : IEventTypeNative<Trade>
-{
-    /// <inheritdoc/>
-    public Trade ToEventType() =>
-        TradeBase.ToEventType<Trade>();
-}
+internal readonly record struct TradeNative(TradeBaseNative TradeBase);

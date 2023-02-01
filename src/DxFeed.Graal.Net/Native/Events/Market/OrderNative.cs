@@ -5,6 +5,7 @@
 // </copyright>
 
 using System.Runtime.InteropServices;
+using DxFeed.Graal.Net.Events;
 using DxFeed.Graal.Net.Events.Market;
 using DxFeed.Graal.Net.Native.Interop;
 
@@ -16,15 +17,5 @@ namespace DxFeed.Graal.Net.Native.Events.Market;
 /// </summary>
 [StructLayout(LayoutKind.Sequential)]
 internal readonly record struct OrderNative(
-        OrderBaseNative OrderBase,
-        StringNative MarketMaker)
-    : IEventTypeNative<Order>
-{
-    /// <inheritdoc/>
-    public Order ToEventType()
-    {
-        var order = OrderBase.ToEventType<Order>();
-        order.MarketMaker = MarketMaker.ToString();
-        return order;
-    }
-}
+    OrderBaseNative OrderBase,
+    StringNative MarketMaker);
