@@ -11,7 +11,7 @@ namespace DxFeed.Graal.Net.Native.Symbols.Indexed;
 [StructLayout(LayoutKind.Sequential)]
 internal unsafe struct IndexedEventSubscriptionSymbolNative
 {
-    public BaseSymbolNative BaseSymbol;
-    public BaseSymbolNative* Symbol; // Can be any allowed symbol (String, Wildcard, etc.).
+    public SymbolNative SymbolNative;
+    public SymbolNative* Symbol; // Can be any allowed symbol (String, Wildcard, etc.).
     public IndexedEventSourceNative* Source;
 }

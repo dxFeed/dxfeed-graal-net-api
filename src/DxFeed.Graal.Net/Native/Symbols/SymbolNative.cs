@@ -1,4 +1,4 @@
-// <copyright file="BaseSymbolNative.cs" company="Devexperts LLC">
+// <copyright file="SymbolNative.cs" company="Devexperts LLC">
 // Copyright © 2022 Devexperts LLC. All rights reserved.
 // This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 // If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
@@ -13,7 +13,7 @@ namespace DxFeed.Graal.Net.Native.Symbols;
 /// Must be included at the beginning of every native symbols structure to determine its type.
 /// </summary>
 [StructLayout(LayoutKind.Sequential)]
-internal struct BaseSymbolNative
+internal struct SymbolNative
 {
-    public SymbolTypeNative Type;
+    public SymbolCodeNative SymbolCode;
 }

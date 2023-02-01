@@ -1,17 +1,18 @@
-// <copyright file="SymbolTypeNative.cs" company="Devexperts LLC">
+// <copyright file="SymbolCodeNative.cs" company="Devexperts LLC">
 // Copyright © 2022 Devexperts LLC. All rights reserved.
 // This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 // If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
 // </copyright>
 
 using DxFeed.Graal.Net.Api.Osub;
+using DxFeed.Graal.Net.Events.Candles;
 
 namespace DxFeed.Graal.Net.Native.Symbols;
 
 /// <summary>
-/// List of all symbols type, that can be passed to/from native code, represented as a numeric code.
+/// A list of all symbols type, that can be passed to/from native code, represented as a numeric code.
 /// </summary>
-internal enum SymbolTypeNative
+internal enum SymbolCodeNative
 {
     /// <summary>
     /// Symbol as <see cref="string"/>.
@@ -19,23 +20,22 @@ internal enum SymbolTypeNative
     String,
 
     /// <summary>
-    /// Symbol as CandleSymbol.
-    /// Not implemented.
+    /// Symbol as <see cref="Net.Events.Candles.CandleSymbol"/>.
     /// </summary>
-    Candle,
+    CandleSymbol,
 
     /// <summary>
-    /// Symbol as <see cref="WildcardSymbol"/>.
+    /// Symbol as <see cref="Api.Osub.WildcardSymbol"/>.
     /// </summary>
-    Wildcard,
+    WildcardSymbol,
 
     /// <summary>
-    /// Symbols as <see cref="IndexedEventSubscriptionSymbol"/>.
+    /// Symbols as <see cref="Api.Osub.IndexedEventSubscriptionSymbol"/>.
     /// </summary>
-    IndexedEventSymbol,
+    IndexedEventSubscriptionSymbol,
 
     /// <summary>
-    /// Symbols as <see cref="TimeSeriesSubscriptionSymbol"/>.
+    /// Symbols as <see cref="Api.Osub.TimeSeriesSubscriptionSymbol"/>.
     /// </summary>
-    TimeSeriesSymbol,
+    TimeSeriesSubscriptionSymbol,
 }

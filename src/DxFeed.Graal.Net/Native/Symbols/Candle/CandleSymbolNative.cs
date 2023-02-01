@@ -16,6 +16,6 @@ namespace DxFeed.Graal.Net.Native.Symbols.Candle;
 [StructLayout(LayoutKind.Sequential)]
 internal struct CandleSymbolNative
 {
-    public BaseSymbolNative BaseSymbol;
+    public SymbolNative SymbolNative;
     public StringNative Symbol; // A null-terminated UTF-8 string.
 }

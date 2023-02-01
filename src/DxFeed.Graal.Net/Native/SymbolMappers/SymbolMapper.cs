@@ -34,75 +34,75 @@ internal static unsafe class SymbolMapper
         return listNative;
     }
 
-    public static BaseSymbolNative* CreateNative(object symbol)
+    public static SymbolNative* CreateNative(object symbol)
     {
         var nativeSymbol = symbol switch
         {
-            string => (BaseSymbolNative*)Marshal.AllocHGlobal(sizeof(StringSymbolNative)),
-            IndexedEventSubscriptionSymbol => (BaseSymbolNative*)Marshal.AllocHGlobal(sizeof(IndexedEventSubscriptionSymbolNative)),
-            TimeSeriesSubscriptionSymbol => (BaseSymbolNative*)Marshal.AllocHGlobal(sizeof(TimeSeriesSubscriptionSymbolNative)),
-            WildcardSymbol => (BaseSymbolNative*)Marshal.AllocHGlobal(sizeof(WildcardSymbolNative)),
+            string => (SymbolNative*)Marshal.AllocHGlobal(sizeof(StringSymbolNative)),
+            IndexedEventSubscriptionSymbol => (SymbolNative*)Marshal.AllocHGlobal(sizeof(IndexedEventSubscriptionSymbolNative)),
+            TimeSeriesSubscriptionSymbol => (SymbolNative*)Marshal.AllocHGlobal(sizeof(TimeSeriesSubscriptionSymbolNative)),
+            WildcardSymbol => (SymbolNative*)Marshal.AllocHGlobal(sizeof(WildcardSymbolNative)),
             _ => throw new ArgumentException($"Unknown symbol type: {symbol.GetType().Name}"),
         };
         FillNative(symbol, nativeSymbol);
         return nativeSymbol;
     }
 
-    public static void ReleaseNative(BaseSymbolNative* nativeSymbol)
+    public static void ReleaseNative(SymbolNative* nativeSymbol)
     {
         if ((nint)nativeSymbol == 0)
         {
             return;
         }
 
-        switch (nativeSymbol->Type)
+        switch (nativeSymbol->SymbolCode)
         {
-            case SymbolTypeNative.String:
+            case SymbolCodeNative.String:
                 var s = (StringSymbolNative*)nativeSymbol;
                 Marshal.FreeHGlobal(s->Symbol);
                 break;
-            case SymbolTypeNative.IndexedEventSymbol:
+            case SymbolCodeNative.IndexedEventSubscriptionSymbol:
                 var iss = (IndexedEventSubscriptionSymbolNative*)nativeSymbol;
                 IndexedSourceMapper.ReleaseNative(iss->Source);
                 ReleaseNative(iss->Symbol);
                 break;
-            case SymbolTypeNative.TimeSeriesSymbol:
+            case SymbolCodeNative.TimeSeriesSubscriptionSymbol:
                 var tss = (TimeSeriesSubscriptionSymbolNative*)nativeSymbol;
                 ReleaseNative(tss->Symbol);
                 break;
-            case SymbolTypeNative.Wildcard:
+            case SymbolCodeNative.WildcardSymbol:
                 break;
             default:
-                throw new ArgumentException($"Unknown symbol type: {nativeSymbol->Type}");
+                throw new ArgumentException($"Unknown symbol type: {nativeSymbol->SymbolCode}");
         }
 
         Marshal.FreeHGlobal((nint)nativeSymbol);
     }
 
-    private static void FillNative(object symbol, BaseSymbolNative* nativeSymbol)
+    private static void FillNative(object symbol, SymbolNative* nativeSymbol)
     {
         switch (symbol)
         {
             case string s:
                 var stringSymbol = (StringSymbolNative*)nativeSymbol;
-                stringSymbol->Base.Type = SymbolTypeNative.String;
+                stringSymbol->Base.SymbolCode = SymbolCodeNative.String;
                 stringSymbol->Symbol = StringUtilNative.NativeFromString(s, Encoding.UTF8);
                 break;
             case IndexedEventSubscriptionSymbol iss:
                 var indexedSymbol = (IndexedEventSubscriptionSymbolNative*)nativeSymbol;
-                indexedSymbol->BaseSymbol.Type = SymbolTypeNative.IndexedEventSymbol;
+                indexedSymbol->SymbolNative.SymbolCode = SymbolCodeNative.IndexedEventSubscriptionSymbol;
                 indexedSymbol->Symbol = CreateNative(iss.EventSymbol);
                 indexedSymbol->Source = IndexedSourceMapper.CreateNative(iss.Source);
                 break;
             case TimeSeriesSubscriptionSymbol tss:
                 var timeSeriesSymbol = (TimeSeriesSubscriptionSymbolNative*)nativeSymbol;
-                timeSeriesSymbol->BaseSymbol.Type = SymbolTypeNative.TimeSeriesSymbol;
+                timeSeriesSymbol->SymbolNative.SymbolCode = SymbolCodeNative.TimeSeriesSubscriptionSymbol;
                 timeSeriesSymbol->Symbol = CreateNative(tss.EventSymbol);
                 timeSeriesSymbol->FromTime = tss.FromTime;
                 break;
             case WildcardSymbol:
                 var wildcardSymbol = (WildcardSymbolNative*)nativeSymbol;
-                wildcardSymbol->BaseSymbol.Type = SymbolTypeNative.Wildcard;
+                wildcardSymbol->SymbolNative.SymbolCode = SymbolCodeNative.WildcardSymbol;
                 break;
         }
     }
