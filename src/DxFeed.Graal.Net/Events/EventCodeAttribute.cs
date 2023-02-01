@@ -5,7 +5,9 @@
 // </copyright>
 
 using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
+using System.Reflection;
 using DxFeed.Graal.Net.Native.Events;
 using DxFeed.Graal.Net.Utils;
 
@@ -17,6 +19,8 @@ namespace DxFeed.Graal.Net.Events;
 [AttributeUsage(AttributeTargets.Class)]
 public sealed class EventCodeAttribute : Attribute
 {
+    private static readonly ConcurrentDictionary<Type, EventCodeNative> CacheEventCode = new();
+
     /// <summary>
     /// Initializes a new instance of the <see cref="EventCodeAttribute"/> class.
     /// </summary>
@@ -28,19 +32,6 @@ public sealed class EventCodeAttribute : Attribute
     /// Gets native event code.
     /// </summary>
     public EventCodeNative EventCode { get; }
-
-    /// <summary>
-    /// Gets native event code from specified type.
-    /// </summary>
-    /// <param name="type">The specified type.</param>
-    /// <returns>Returns native event code.</returns>
-    /// <exception cref="ArgumentException">If specified type has no <see cref="EventCodeAttribute"/>.</exception>
-    public static EventCodeNative GetEventCode(Type type)
-    {
-        var attribute = AttributeUtil.GetCustomAttribute<EventCodeAttribute>(type);
-        return attribute?.EventCode
-               ?? throw new ArgumentException($"{type.Name} has no {typeof(EventCodeAttribute)}", nameof(type));
-    }
 
     /// <summary>
     /// Gets native event codes from specified types.
@@ -60,4 +51,18 @@ public sealed class EventCodeAttribute : Attribute
 
         return eventCodes;
     }
+
+    /// <summary>
+    /// Gets native event code from specified type.
+    /// </summary>
+    /// <param name="type">The specified type.</param>
+    /// <returns>Returns native event code.</returns>
+    /// <exception cref="ArgumentException">If specified type has no <see cref="EventCodeAttribute"/>.</exception>
+    public static EventCodeNative GetEventCode(Type type) =>
+        CacheEventCode.GetOrAdd(type, t =>
+        {
+            var attribute = AttributeUtil.GetCustomAttribute<EventCodeAttribute>(t)
+                            ?? throw new ArgumentException($"{t.Name} has no {typeof(EventCodeAttribute)}", nameof(t));
+            return attribute.EventCode;
+        });
 }
