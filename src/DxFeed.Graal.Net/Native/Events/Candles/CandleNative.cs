@@ -6,8 +6,6 @@
 
 using System.Runtime.InteropServices;
 using DxFeed.Graal.Net.Events.Candles;
-using DxFeed.Graal.Net.Native.Interop;
-using DxFeed.Graal.Net.Native.Symbols.Candle;
 
 namespace DxFeed.Graal.Net.Native.Events.Candles;
 

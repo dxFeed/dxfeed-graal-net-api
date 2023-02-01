@@ -39,7 +39,7 @@ internal class SummaryMapper : EventTypeMapper<Summary, SummaryNative>
     protected override unsafe SummaryNative* Convert(Summary eventType)
     {
         var ptr = AllocEventType();
-        *ptr = new ()
+        *ptr = new()
         {
             EventType = CreateEventType(eventType),
             DayId = eventType.DayId,

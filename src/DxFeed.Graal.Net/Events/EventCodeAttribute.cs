@@ -7,7 +7,6 @@
 using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
-using System.Reflection;
 using DxFeed.Graal.Net.Native.Events;
 using DxFeed.Graal.Net.Utils;
 

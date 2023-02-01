@@ -5,7 +5,6 @@
 // </copyright>
 
 using System.Runtime.InteropServices;
-using DxFeed.Graal.Net.Events;
 using DxFeed.Graal.Net.Events.Market;
 
 // Disable pascal case naming rules.
