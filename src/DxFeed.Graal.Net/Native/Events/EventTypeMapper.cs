@@ -84,7 +84,7 @@ internal abstract class EventTypeMapper<TEventType, TEventTypeNative> : IEventMa
         }
 
         eventType->EventSymbol.Release();
-        Marshal.Release((nint)eventType);
+        Marshal.FreeHGlobal((nint)eventType);
     }
 
     /// <summary>
