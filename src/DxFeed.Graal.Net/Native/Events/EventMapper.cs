@@ -79,7 +79,19 @@ internal static class EventMapper
         GetEventMapperByEventCode(eventTypeNative->EventCode).FromNative(eventTypeNative);
 
     public static unsafe EventTypeNative* ToNative(IEventType eventType) =>
-        GetEventMapperByEventCode(EventCodeNative.Quote).ToNative(eventType);
+        GetEventMapperByEventCode(eventType).ToNative(eventType);
+
+    public static unsafe ListNative<EventTypeNative>* ToNative(IEnumerable<IEventType> eventType) =>
+        ListNative<EventTypeNative>.Create(eventType, e => (nint)ToNative(e));
+
+    public static unsafe void Release(EventTypeNative* eventType) =>
+        GetEventMapperByEventCode(eventType->EventCode).Release(eventType);
+
+    public static unsafe void Release(ListNative<EventTypeNative>* eventType) =>
+        ListNative<EventTypeNative>.Release(eventType, e => Release((EventTypeNative*)e));
+
+    public static IEventMapper GetEventMapperByEventCode(IEventType eventType) =>
+        GetEventMapperByEventCode(EventCodeAttribute.GetEventCode(eventType.GetType()));
 
     public static IEventMapper GetEventMapperByEventCode(EventCodeNative eventCode) =>
         eventCode switch
