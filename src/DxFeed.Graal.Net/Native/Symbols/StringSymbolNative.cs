@@ -14,6 +14,6 @@ namespace DxFeed.Graal.Net.Native.Symbols;
 [StructLayout(LayoutKind.Sequential)]
 internal struct StringSymbolNative
 {
-    public BaseSymbolNative Base;
+    public SymbolNative Base;
     public nint Symbol; // A null-terminated UTF-8 string.
 }

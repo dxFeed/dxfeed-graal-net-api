@@ -15,10 +15,6 @@ namespace DxFeed.Graal.Net.Native.Events.Market;
 /// <summary>
 /// The structure contains all the fields required
 /// to build an <see cref="TradeETH"/>.
-/// Used to exchange data with native code.
 /// </summary>
 [StructLayout(LayoutKind.Sequential)]
-internal readonly struct TradeETHNative
-{
-    public readonly TradeBaseNative TradeBase;
-}
+internal readonly record struct TradeETHNative(TradeBaseNative TradeBase);

@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 using DxFeed.Graal.Net.Native.ErrorHandling;
 using DxFeed.Graal.Net.Native.Events;
 using DxFeed.Graal.Net.Native.Graal;
+using DxFeed.Graal.Net.Native.Interop;
 using DxFeed.Graal.Net.Native.Subscription;
 
 namespace DxFeed.Graal.Net.Native.Feed;
@@ -62,14 +63,14 @@ internal sealed unsafe class FeedNative
             FeedHandle* feedHandle,
             IEnumerable<EventCodeNative> eventCodes)
         {
-            var codes = ListNative<EventCodeNative>.CreateNative(eventCodes);
+            var codes = ListNative<EventCodeNative>.Create(eventCodes);
             try
             {
                 return ErrorCheck.NativeCall(thread, NativeCreateSubscription(thread, feedHandle, codes));
             }
             finally
             {
-                ListNative<EventCodeNative>.ReleaseNative(codes);
+                ListNative<EventCodeNative>.Release(codes);
             }
         }
 

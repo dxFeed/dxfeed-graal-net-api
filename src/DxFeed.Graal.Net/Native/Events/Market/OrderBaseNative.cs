@@ -12,26 +12,23 @@ namespace DxFeed.Graal.Net.Native.Events.Market;
 /// <summary>
 /// The structure contains all the fields required
 /// to build an <see cref="OrderBase"/>.
-/// Used to exchange data with native code.
 /// Includes at the beginning of each order structure.
 /// </summary>
 [StructLayout(LayoutKind.Sequential)]
-internal readonly struct OrderBaseNative
-{
-    public readonly MarketEventNative MarketEvent;
-    public readonly int EventFlags;
-    public readonly long Index;
-    public readonly long TimeSequence;
-    public readonly int TimeNanoPart;
-    public readonly long ActionTime;
-    public readonly long OrderOd;
-    public readonly long AuxOrderId;
-    public readonly double Price;
-    public readonly double Size;
-    public readonly double ExecutedSize;
-    public readonly long Count;
-    public readonly int Flags;
-    public readonly long TradeId;
-    public readonly double TradePrice;
-    public readonly double TradeSize;
-}
+internal readonly record struct OrderBaseNative(
+    EventTypeNative EventType,
+    int EventFlags,
+    long Index,
+    long TimeSequence,
+    int TimeNanoPart,
+    long ActionTime,
+    long OrderId,
+    long AuxOrderId,
+    double Price,
+    double Size,
+    double ExecutedSize,
+    long Count,
+    int Flags,
+    long TradeId,
+    double TradePrice,
+    double TradeSize);

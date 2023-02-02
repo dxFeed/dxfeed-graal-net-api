@@ -25,21 +25,24 @@ public static class Helper
 
     /// <summary>
     /// Parses an input string and returns a set of event types.
-    /// If eventTypeNames is "feed", that returns all available events types.
+    /// If typeNames is "feed", that returns all available events types.
     /// </summary>
-    /// <param name="eventTypeNames">The coma-separated list of event types.</param>
+    /// <param name="typeNames">The coma-separated list of event types.</param>
     /// <returns>Returns a set of parsed types.</returns>
     /// <exception cref="ArgumentException">If the passed type is not available.</exception>
-    public static IEnumerable<Type> ParseEventTypes(string eventTypeNames)
+    public static IEnumerable<Type> ParseEventTypes(string typeNames)
     {
-        if (eventTypeNames.Equals("feed", StringComparison.OrdinalIgnoreCase))
+        typeNames = typeNames.Trim().TrimEnd(',');
+
+        if (typeNames.Equals("feed", StringComparison.OrdinalIgnoreCase))
         {
             return IEventType.GetEventTypes();
         }
 
         var availableTypesDictionary = IEventType.GetEventTypes().ToDictionary(kvp => kvp.Name, kvp => kvp);
         var setTypes = new HashSet<Type>();
-        foreach (var typeName in eventTypeNames.Split(','))
+        foreach (var typeName in typeNames.Split(',')
+                     .Where(s => !string.IsNullOrEmpty(s) && !string.IsNullOrWhiteSpace(s)))
         {
             if (!availableTypesDictionary.TryGetValue(typeName, out var type))
             {
@@ -62,16 +65,15 @@ public static class Helper
     /// <returns>Returns a set of parsed symbols.</returns>
     public static IEnumerable<object> ParseSymbols(string symbols)
     {
-        var setSymbols = new HashSet<object>();
-        setSymbols.UnionWith(symbols.Split(','));
+        symbols = symbols.Trim().TrimEnd(',');
 
-        // If string contains "all", remove "all" and add WildcardSymbol.
-        const string wildcard = "all";
-        if (setSymbols.Contains(wildcard))
+        if (symbols.Equals("all", StringComparison.OrdinalIgnoreCase))
         {
-            setSymbols.Remove(wildcard);
-            setSymbols.Add(WildcardSymbol.All);
+            return new[] { WildcardSymbol.All };
         }
+
+        var setSymbols = new HashSet<object>(symbols.Split(',')
+            .Where(s => !string.IsNullOrEmpty(s) && !string.IsNullOrWhiteSpace(s)));
 
         return setSymbols;
     }

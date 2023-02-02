@@ -9,9 +9,8 @@ using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Linq;
 using DxFeed.Graal.Net.Api.Osub;
-using DxFeed.Graal.Net.Native;
-using DxFeed.Graal.Net.Native.EventMappers;
 using DxFeed.Graal.Net.Native.Events;
+using DxFeed.Graal.Net.Native.Interop;
 using DxFeed.Graal.Net.Native.Subscription;
 
 namespace DxFeed.Graal.Net.Api;
@@ -197,7 +196,7 @@ public sealed class DXFeedSubscription : IObservableSubscription, IDisposable
     /// <param name="thread">The current isolate thread. <b>Ignored</b>.</param>
     /// <param name="events">The pointer-to-pointer events (array of pointers to events).</param>
     /// <param name="userData">The pointer to user data.</param>
-    private unsafe void EventListenerFuncWrapper(nint thread, ListNative<BaseEventNative>* events, nint userData)
+    private unsafe void EventListenerFuncWrapper(nint thread, ListNative<EventTypeNative>* events, nint userData)
     {
         try
         {

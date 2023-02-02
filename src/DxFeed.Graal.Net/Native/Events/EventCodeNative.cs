@@ -9,7 +9,7 @@ using DxFeed.Graal.Net.Events;
 namespace DxFeed.Graal.Net.Native.Events;
 
 /// <summary>
-/// List of all events, that can be passed to/from native code, represented as a numeric code.
+/// A list of all events, that can be passed to/from native code, represented as a numeric code.
 /// In a particular case, these are implementations <see cref="IEventType"/>.
 /// </summary>
 public enum EventCodeNative
@@ -20,7 +20,7 @@ public enum EventCodeNative
     Quote,
 
     /// <summary>
-    /// Not implemented.
+    /// <see cref="Profile"/>.
     /// </summary>
     Profile,
 
@@ -30,27 +30,27 @@ public enum EventCodeNative
     Summary,
 
     /// <summary>
-    /// Not implemented.
+    /// <see cref="Greeks"/>.
     /// </summary>
     Greeks,
 
     /// <summary>
-    /// Not implemented.
+    /// <see cref="Candle"/>.
     /// </summary>
     Candle,
 
     /// <summary>
-    /// Not implemented.
+    /// <b>Deprecated. Doesn't need to be implemented.</b>
     /// </summary>
     DailyCandle,
 
     /// <summary>
-    /// Not implemented.
+    /// <see cref="Underlying"/>.
     /// </summary>
     Underlying,
 
     /// <summary>
-    /// Not implemented.
+    /// <see cref="TheoPrice"/>.
     /// </summary>
     TheoPrice,
 
@@ -65,12 +65,12 @@ public enum EventCodeNative
     TradeETH,
 
     /// <summary>
-    /// Not implemented.
+    /// <b>Not implemented.</b>
     /// </summary>
     Configuration,
 
     /// <summary>
-    /// Not implemented.
+    /// <b>Not implemented.</b>
     /// </summary>
     Message,
 
@@ -80,7 +80,8 @@ public enum EventCodeNative
     TimeAndSale,
 
     /// <summary>
-    /// <b>Not need implemented.</b>
+    /// <see cref="OrderBase"/>.
+    /// <b>Doesn't need to be implemented. Abstract class.</b>
     /// </summary>
     OrderBase,
 
@@ -100,7 +101,7 @@ public enum EventCodeNative
     SpreadOrder,
 
     /// <summary>
-    /// Not implemented.
+    /// <see cref="Series"/>.
     /// </summary>
     Series,
 }

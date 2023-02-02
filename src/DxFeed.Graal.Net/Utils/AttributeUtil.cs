@@ -18,6 +18,7 @@ public static class AttributeUtil
     /// Generic version of <see cref="Attribute.GetCustomAttribute(Assembly,Type)"/>.
     /// Retrieves a custom attribute applied to a member of a type.
     /// Parameters specify the member, and the type of the custom attribute to search for.
+    /// Doesn't look up the element's ancestors for custom attributes.
     /// </summary>
     /// <param name="member">
     /// An object derived from the <see cref="Type"/> class that describes
@@ -30,5 +31,5 @@ public static class AttributeUtil
     /// </returns>
     public static T? GetCustomAttribute<T>(Type member)
         where T : Attribute =>
-        (T?)Attribute.GetCustomAttribute(member, typeof(T));
+        (T?)Attribute.GetCustomAttribute(member, typeof(T), false);
 }

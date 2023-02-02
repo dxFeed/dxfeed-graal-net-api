@@ -6,28 +6,26 @@
 
 using System.Runtime.InteropServices;
 using DxFeed.Graal.Net.Events.Market;
+using DxFeed.Graal.Net.Native.Interop;
 
 namespace DxFeed.Graal.Net.Native.Events.Market;
 
 /// <summary>
 /// The structure contains all the fields required
 /// to build an <see cref="TimeAndSale"/>.
-/// Used to exchange data with native code.
 /// </summary>
 [StructLayout(LayoutKind.Sequential)]
-internal readonly struct TimeAndSaleNative
-{
-    public readonly MarketEventNative MarketEvent;
-    public readonly int EventFlags;
-    public readonly long Index;
-    public readonly int TimeNanoPart;
-    public readonly char ExchangeCode;
-    public readonly double Price;
-    public readonly double Size;
-    public readonly double BidPrice;
-    public readonly double AskPrice;
-    public readonly nint ExchangeSaleConditions; // A null-terminated UTF-8 string.
-    public readonly int Flags;
-    public readonly nint Buyer; // A null-terminated UTF-8 string.
-    public readonly nint Seller; // A null-terminated UTF-8 string.
-}
+internal readonly record struct TimeAndSaleNative(
+    EventTypeNative EventType,
+    int EventFlags,
+    long Index,
+    int TimeNanoPart,
+    char ExchangeCode,
+    double Price,
+    double Size,
+    double BidPrice,
+    double AskPrice,
+    StringNative ExchangeSaleConditions,
+    int Flags,
+    StringNative Buyer,
+    StringNative Seller);

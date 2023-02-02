@@ -127,5 +127,5 @@ public static class EnumUtil
         where T : Enum =>
         BuildEnumBitMaskArrayByValue(
             defaultValue,
-            (int)BitOperations.RoundUpToPowerOf2((uint)GetCountValues<Direction>()));
+            (int)BitOperations.RoundUpToPowerOf2((uint)GetCountValues<T>()));
 }

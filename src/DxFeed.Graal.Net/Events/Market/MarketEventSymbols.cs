@@ -250,7 +250,7 @@ public static class MarketEventSymbols
     private static string? GetKeyInternal(string symbol, int i)
     {
         var val = symbol.IndexOf(AttributeValue, i);
-        return val < 0 ? null : symbol.Substring(i, val - i);
+        return val < 0 ? null : symbol[i..val];
     }
 
     private static int GetNextKeyInternal(string symbol, int i)
@@ -264,7 +264,7 @@ public static class MarketEventSymbols
     {
         var startPos = symbol.IndexOf(AttributeValue, i) + 1;
         var endPos = j - 1;
-        return symbol.Substring(startPos, endPos - startPos);
+        return symbol[startPos..endPos];
     }
 
     private static string DropKeyAndValueInternal(string symbol, int length, int i, int j)

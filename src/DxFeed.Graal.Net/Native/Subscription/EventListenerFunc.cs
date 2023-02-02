@@ -6,6 +6,7 @@
 
 using System.Runtime.InteropServices;
 using DxFeed.Graal.Net.Native.Events;
+using DxFeed.Graal.Net.Native.Interop;
 
 namespace DxFeed.Graal.Net.Native.Subscription;
 
@@ -16,4 +17,4 @@ namespace DxFeed.Graal.Net.Native.Subscription;
 /// <param name="events">The pointer-to-pointer events (array of pointers to events).</param>
 /// <param name="userData">The pointer to user data.</param>
 [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-internal unsafe delegate void EventListenerFunc(nint thread, ListNative<BaseEventNative>* events, nint userData);
+internal unsafe delegate void EventListenerFunc(nint thread, ListNative<EventTypeNative>* events, nint userData);
