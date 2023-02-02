@@ -6,26 +6,22 @@
 
 using System.Runtime.InteropServices;
 using DxFeed.Graal.Net.Events.Options;
-using DxFeed.Graal.Net.Native.Events.Market;
 
 namespace DxFeed.Graal.Net.Native.Events.Options;
 
 /// <summary>
 /// The structure contains all the fields required
 /// to build an <see cref="Greeks"/>.
-/// Used to exchange data with native code.
 /// </summary>
 [StructLayout(LayoutKind.Sequential)]
-internal readonly struct GreeksNative
-{
-    public readonly MarketEventNative MarketEvent;
-    public readonly int EventFlags;
-    public readonly long Index;
-    public readonly double Price;
-    public readonly double Volatility;
-    public readonly double Delta;
-    public readonly double Gamma;
-    public readonly double Theta;
-    public readonly double Rho;
-    public readonly double Vega;
-}
+internal readonly record struct GreeksNative(
+    EventTypeNative EventType,
+    int EventFlags,
+    long Index,
+    double Price,
+    double Volatility,
+    double Delta,
+    double Gamma,
+    double Theta,
+    double Rho,
+    double Vega);

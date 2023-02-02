@@ -49,7 +49,7 @@ public class DXPublisher
     /// <param name="events">The list of events to publish.</param>
     // ToDo Implement method.
     public void PublishEvents(params IEventType[] events) =>
-        throw new NotImplementedException();
+        _publisherNative.PublishEvents(events);
 
     /// <summary>
     /// Publishes events to the corresponding feed. If the <see cref="DXEndpoint"/> of this publisher has

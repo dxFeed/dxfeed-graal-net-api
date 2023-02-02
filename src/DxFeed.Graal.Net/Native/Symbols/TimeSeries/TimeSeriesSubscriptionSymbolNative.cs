@@ -15,7 +15,7 @@ namespace DxFeed.Graal.Net.Native.Symbols.TimeSeries;
 [StructLayout(LayoutKind.Sequential)]
 internal unsafe struct TimeSeriesSubscriptionSymbolNative
 {
-    public BaseSymbolNative BaseSymbol;
-    public BaseSymbolNative* Symbol; // Can be any allowed symbol (String, Wildcard, etc.).
+    public SymbolNative SymbolNative;
+    public SymbolNative* Symbol; // Can be any allowed symbol (String, Wildcard, etc.).
     public long FromTime;
 }

@@ -15,5 +15,5 @@ namespace DxFeed.Graal.Net.Native.Symbols;
 [StructLayout(LayoutKind.Sequential)]
 internal struct WildcardSymbolNative
 {
-    public BaseSymbolNative BaseSymbol;
+    public SymbolNative SymbolNative;
 }

@@ -6,28 +6,24 @@
 
 using System.Runtime.InteropServices;
 using DxFeed.Graal.Net.Events.Options;
-using DxFeed.Graal.Net.Native.Events.Market;
 
 namespace DxFeed.Graal.Net.Native.Events.Options;
 
 /// <summary>
 /// The structure contains all the fields required
 /// to build an <see cref="Series"/>.
-/// Used to exchange data with native code.
 /// </summary>
 [StructLayout(LayoutKind.Sequential)]
-internal readonly struct SeriesNative
-{
-    public readonly MarketEventNative MarketEvent;
-    public readonly int EventFlags;
-    public readonly long Index;
-    public readonly long TimeSequence;
-    public readonly int Expiration;
-    public readonly double Volatility;
-    public readonly double CallVolume;
-    public readonly double PutVolume;
-    public readonly double PutCallRatio;
-    public readonly double ForwardPrice;
-    public readonly double Dividend;
-    public readonly double Interest;
-}
+internal readonly record struct SeriesNative(
+    EventTypeNative EventType,
+    int EventFlags,
+    long Index,
+    long TimeSequence,
+    int Expiration,
+    double Volatility,
+    double CallVolume,
+    double PutVolume,
+    double PutCallRatio,
+    double ForwardPrice,
+    double Dividend,
+    double Interest);

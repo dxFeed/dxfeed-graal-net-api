@@ -6,17 +6,15 @@
 
 using System.Runtime.InteropServices;
 using DxFeed.Graal.Net.Events.Market;
+using DxFeed.Graal.Net.Native.Interop;
 
 namespace DxFeed.Graal.Net.Native.Events.Market;
 
 /// <summary>
 /// The structure contains all the fields required
 /// to build an <see cref="Order"/>.
-/// Used to exchange data with native code.
 /// </summary>
 [StructLayout(LayoutKind.Sequential)]
-internal readonly struct OrderNative
-{
-    public readonly OrderBaseNative OrderBase;
-    public readonly nint MarketMaker; // A null-terminated UTF-8 string.
-}
+internal readonly record struct OrderNative(
+    OrderBaseNative OrderBase,
+    StringNative MarketMaker);
