@@ -13,7 +13,7 @@ using DxFeed.Graal.Net.Tools.Arguments;
 namespace DxFeed.Graal.Net.Tools.Dump;
 
 public class DumpArgs :
-    AbstractParser<DumpArgs>, IAddressArg, ITypesArg, ISymbolsArg, IPropertyArg, IQuiteArg
+    AbstractParser<DumpArgs>, IAddressArg, ITypesArg, ISymbolsArg, IPropertyArg, ITapeArg, IQuiteArg
 {
     public string Address { get; set; } = null!;
 
@@ -24,6 +24,8 @@ public class DumpArgs :
     public string? Symbols { get; set; } = null!;
 
     public IEnumerable<string> Properties { get; set; } = null!;
+
+    public string? Tape { get; set; } = null!;
 
     public bool IsQuite { get; set; }
 
@@ -65,7 +67,10 @@ Examples:
       dump tape.csv Quote AAPL
 
   Dump only Quote event for AAPL symbol from the specified address in a stream contract:
-      dump demo.dxfeed.com:7300 Quote ETH/USD:GDAX");
+      dump demo.dxfeed.com:7300 Quote AAPL
+
+  Tape only Quote event for AAPL symbol from the specified address in a stream contract into the specified tape file:
+      dump demo.dxfeed.com:7300 Quote AAPL -q -t tape.bin");
 
             return HelpText.DefaultParsingErrorsHandler(parserResult, h);
         }, e => e);

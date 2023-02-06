@@ -40,18 +40,18 @@ internal abstract class ConnectTool
             .GetFeed()
             .CreateSubscription(Helper.ParseEventTypes(cmdArgs.Types!));
 
-        sub.AddEventListener(events =>
+        if (!cmdArgs.IsQuite)
         {
-            foreach (var e in events)
+            sub.AddEventListener(events =>
             {
-                if (!cmdArgs.IsQuite)
+                foreach (var e in events)
                 {
                     Output.WriteLine(e);
                 }
-            }
 
-            Output.Flush();
-        });
+                Output.Flush();
+            });
+        }
 
         IEnumerable<object> symbols = Helper.ParseSymbols(cmdArgs.Symbols!).ToList();
         if (cmdArgs.FromTime != null)
@@ -64,6 +64,23 @@ internal abstract class ConnectTool
         {
             symbols = symbols.Select(s =>
                 new IndexedEventSubscriptionSymbol(s, OrderSource.ValueOf(cmdArgs.Source)));
+        }
+
+        if (cmdArgs.Tape != null)
+        {
+            var pub = DXEndpoint
+                .NewBuilder()
+                .WithRole(DXEndpoint.Role.Publisher)
+                .WithProperty(DXEndpoint.DXFeedWildcardEnableProperty, "true") // Enabled by default.
+                .WithProperties(Helper.ParseProperties(cmdArgs.Properties))
+                .WithName(nameof(ConnectTool))
+                .Build()
+                .Connect(cmdArgs.Tape.StartsWith("tape:") ? cmdArgs.Tape : $"tape:{cmdArgs.Tape}").GetPublisher();
+
+            sub.AddEventListener(events =>
+            {
+                pub.PublishEvents(events);
+            });
         }
 
         sub.AddSymbols(symbols);
