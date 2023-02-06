@@ -10,7 +10,7 @@ namespace DxFeed.Graal.Net.Tools.Arguments;
 
 public interface IFromTimeArg
 {
-    public const char ShortName = 't';
+    public const char ShortName = 'f';
     public const string LongName = "from-time";
     public const bool IsRequired = false;
 

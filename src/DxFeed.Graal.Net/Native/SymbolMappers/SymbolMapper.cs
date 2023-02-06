@@ -6,13 +6,11 @@
 
 using System;
 using System.Runtime.InteropServices;
-using System.Text;
 using DxFeed.Graal.Net.Api.Osub;
 using DxFeed.Graal.Net.Native.Interop;
 using DxFeed.Graal.Net.Native.Symbols;
 using DxFeed.Graal.Net.Native.Symbols.Indexed;
 using DxFeed.Graal.Net.Native.Symbols.TimeSeries;
-using DxFeed.Graal.Net.Native.Utils;
 
 namespace DxFeed.Graal.Net.Native.SymbolMappers;
 
@@ -59,7 +57,7 @@ internal static unsafe class SymbolMapper
         {
             case SymbolCodeNative.String:
                 var s = (StringSymbolNative*)nativeSymbol;
-                Marshal.FreeHGlobal(s->Symbol);
+                s->Symbol.Release();
                 break;
             case SymbolCodeNative.IndexedEventSubscriptionSymbol:
                 var iss = (IndexedEventSubscriptionSymbolNative*)nativeSymbol;
@@ -86,7 +84,7 @@ internal static unsafe class SymbolMapper
             case string s:
                 var stringSymbol = (StringSymbolNative*)nativeSymbol;
                 stringSymbol->Base.SymbolCode = SymbolCodeNative.String;
-                stringSymbol->Symbol = StringUtilNative.NativeFromString(s, Encoding.UTF8);
+                stringSymbol->Symbol = s;
                 break;
             case IndexedEventSubscriptionSymbol iss:
                 var indexedSymbol = (IndexedEventSubscriptionSymbolNative*)nativeSymbol;

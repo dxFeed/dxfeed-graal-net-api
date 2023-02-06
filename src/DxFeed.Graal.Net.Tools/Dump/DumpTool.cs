@@ -39,18 +39,35 @@ public abstract class DumpTool
                 ? IEventType.GetEventTypes()
                 : Helper.ParseEventTypes(cmdArgs.Types));
 
-        sub.AddEventListener(events =>
+        if (!cmdArgs.IsQuite)
         {
-            foreach (var e in events)
+            sub.AddEventListener(events =>
             {
-                if (!cmdArgs.IsQuite)
+                foreach (var e in events)
                 {
                     Output.WriteLine(e);
                 }
-            }
 
-            Output.Flush();
-        });
+                Output.Flush();
+            });
+        }
+
+        if (cmdArgs.Tape != null)
+        {
+            var pub = DXEndpoint
+                .NewBuilder()
+                .WithRole(DXEndpoint.Role.StreamPublisher)
+                .WithProperty(DXEndpoint.DXFeedWildcardEnableProperty, "true") // Enabled by default.
+                .WithProperties(Helper.ParseProperties(cmdArgs.Properties))
+                .WithName(nameof(DumpTool))
+                .Build()
+                .Connect(cmdArgs.Tape.StartsWith("tape:") ? cmdArgs.Tape : $"tape:{cmdArgs.Tape}").GetPublisher();
+
+            sub.AddEventListener(events =>
+            {
+                pub.PublishEvents(events);
+            });
+        }
 
         sub.AddSymbols(cmdArgs.Symbols == null
             ? new[] { WildcardSymbol.All }
