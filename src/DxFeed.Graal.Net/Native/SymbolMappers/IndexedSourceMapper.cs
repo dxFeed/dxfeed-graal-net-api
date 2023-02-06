@@ -5,11 +5,9 @@
 // </copyright>
 
 using System.Runtime.InteropServices;
-using System.Text;
 using DxFeed.Graal.Net.Events;
 using DxFeed.Graal.Net.Events.Market;
 using DxFeed.Graal.Net.Native.Symbols.Indexed;
-using DxFeed.Graal.Net.Native.Utils;
 
 namespace DxFeed.Graal.Net.Native.SymbolMappers;
 
@@ -30,7 +28,7 @@ internal static unsafe class IndexedSourceMapper
         }
 
         sourceNative->Id = source.Id;
-        sourceNative->Name = StringUtilNative.NativeFromString(source.Name, Encoding.UTF8);
+        sourceNative->Name = source.Name;
 
         return sourceNative;
     }
@@ -46,7 +44,7 @@ internal static unsafe class IndexedSourceMapper
             return;
         }
 
-        Marshal.FreeHGlobal(sourceNative->Name);
+        sourceNative->Name.Release();
         Marshal.FreeHGlobal((nint)sourceNative);
     }
 }

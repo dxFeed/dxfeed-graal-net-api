@@ -5,6 +5,7 @@
 // </copyright>
 
 using System.Runtime.InteropServices;
+using DxFeed.Graal.Net.Native.Interop;
 
 namespace DxFeed.Graal.Net.Native.Symbols;
 
@@ -15,5 +16,5 @@ namespace DxFeed.Graal.Net.Native.Symbols;
 internal struct StringSymbolNative
 {
     public SymbolNative Base;
-    public nint Symbol; // A null-terminated UTF-8 string.
+    public StringNative Symbol; // A null-terminated UTF-8 string.
 }
