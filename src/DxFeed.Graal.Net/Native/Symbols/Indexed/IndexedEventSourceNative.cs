@@ -5,6 +5,7 @@
 // </copyright>
 
 using System.Runtime.InteropServices;
+using DxFeed.Graal.Net.Native.Interop;
 
 namespace DxFeed.Graal.Net.Native.Symbols.Indexed;
 
@@ -13,5 +14,5 @@ internal struct IndexedEventSourceNative
 {
     public IndexedSourceTypeNative Type;
     public int Id;
-    public nint Name;
+    public StringNative Name;
 }
