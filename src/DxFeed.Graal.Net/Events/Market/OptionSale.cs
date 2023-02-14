@@ -1,4 +1,4 @@
-// <copyright file="TimeAndSale.cs" company="Devexperts LLC">
+// <copyright file="OptionSale.cs" company="Devexperts LLC">
 // Copyright © 2022 Devexperts LLC. All rights reserved.
 // This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 // If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
@@ -8,50 +8,28 @@ using System;
 using System.Globalization;
 using DxFeed.Graal.Net.Native.Events;
 using DxFeed.Graal.Net.Utils;
+using static DxFeed.Graal.Net.Events.Market.TimeAndSale;
 
 namespace DxFeed.Graal.Net.Events.Market;
 
 /// <summary>
-/// Time and Sale represents a trade or other market event with price, like market open/close price, etc.
-/// Time and Sales are intended to provide information about trades <b>in a continuous time slice</b>
-/// (unlike <see cref="Trade"/> events which are supposed to provide snapshot about the <b>current last</b> trade).
-/// <br/> Time and Sale events have unique <see cref="Index"/>
+/// Option Sale event represents a trade or another market event with the price
+/// (for example, market open/close price, etc.) for each option symbol listed under the specified Underlying.
+/// Option Sales are intended to provide information about option trades <b>in a continuous time slice</b> with
+/// the additional metrics, like Option Volatility, Option Delta, and Underlying Price.
+/// <br/> Option Sale events have unique <see cref="Index"/>
 /// which can be used for later correction/cancellation processing.
 /// <br/>
-/// For more details see <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/event/market/TimeAndSale.html">Javadoc</a>.
+/// For more details see <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/event/market/OptionSale.html">Javadoc</a>.
 /// </summary>
-[EventCode(EventCodeNative.TimeAndSale)]
-public class TimeAndSale : MarketEvent, ITimeSeriesEvent
+[EventCode(EventCodeNative.OptionSale)]
+public class OptionSale : MarketEvent, IIndexedEvent
 {
     /// <summary>
     /// Maximum allowed sequence value.
     /// <seealso cref="Sequence"/>
     /// </summary>
     public const int MaxSequence = (1 << 22) - 1;
-
-    /*
-     * Flags property has several significant bits that are packed into an integer in the following way:
-     *   31..16   15...8    7    6    5    4    3    2    1    0
-     * +--------+--------+----+----+----+----+----+----+----+----+
-     * |        |   TTE  |    |  Side   | SL | ETH| VT |  Type   |
-     * +--------+--------+----+----+----+----+----+----+----+----+
-     */
-
-    // TTE (TradeThroughExempt) values are ASCII chars in [0, 255].
-    internal const int TteMask = 0xff;
-    internal const int TteShift = 8;
-
-    // SIDE values are taken from Side enum.
-    internal const int SideMask = 3;
-    internal const int SideShift = 5;
-
-    internal const int SpreadLeg = 1 << 4;
-    internal const int Eth = 1 << 3;
-    internal const int ValidTick = 1 << 2;
-
-    // TYPE values are taken from TimeAndSaleType enum.
-    internal const int TypeMask = 3;
-    internal const int TypeShift = 0;
 
     /*
      * EventFlags property has several significant bits that are packed into an integer in the following way:
@@ -62,17 +40,17 @@ public class TimeAndSale : MarketEvent, ITimeSeriesEvent
     */
 
     /// <summary>
-    /// Initializes a new instance of the <see cref="TimeAndSale"/> class.
+    /// Initializes a new instance of the <see cref="OptionSale"/> class.
     /// </summary>
-    public TimeAndSale()
+    public OptionSale()
     {
     }
 
     /// <summary>
-    /// Initializes a new instance of the <see cref="TimeAndSale"/> class with the specified event symbol.
+    /// Initializes a new instance of the <see cref="OptionSale"/> class with the specified event symbol.
     /// </summary>
     /// <param name="eventSymbol">The specified event symbol.</param>
-    public TimeAndSale(string? eventSymbol)
+    public OptionSale(string? eventSymbol)
         : base(eventSymbol)
     {
     }
@@ -85,13 +63,16 @@ public class TimeAndSale : MarketEvent, ITimeSeriesEvent
     public int EventFlags { get; set; }
 
     /// <summary>
-    /// Gets or sets unique per-symbol index of this time and sale event.
-    /// Time and sale index is composed of <see cref="Time"/> and <see cref="Sequence"/>.
-    /// Changing either time or sequence changes event index.
-    /// <b>Do not sets this value directly.</b>
-    /// Change <see cref="Time"/> and/or <see cref="Sequence"/>.
+    /// Gets or sets unique per-symbol index of this option sale event.
     /// </summary>
     public long Index { get; set; }
+
+    /// <summary>
+    /// Gets or sets time and sequence of of this event.
+    /// <b>Do not set this property directly.</b>
+    /// Sets <see cref="Time"/> and/or <see cref="Sequence"/>.
+    /// </summary>
+    public long TimeSequence { get; set; }
 
     /// <summary>
     /// Gets or sets timestamp of the original event.
@@ -99,13 +80,13 @@ public class TimeAndSale : MarketEvent, ITimeSeriesEvent
     /// </summary>
     public long Time
     {
-        get => ((Index >> 32) * 1000) + ((Index >> 22) & 0x3ff);
-        set => Index = ((long)TimeUtil.GetSecondsFromTime(value) << 32) |
-                       ((long)TimeUtil.GetMillisFromTime(value) << 22) | (uint)Sequence;
+        get => ((TimeSequence >> 32) * 1000) + ((TimeSequence >> 22) & 0x3ff);
+        set => TimeSequence = ((long)TimeUtil.GetSecondsFromTime(value) << 32) |
+                              ((long)TimeUtil.GetMillisFromTime(value) << 22) | (uint)Sequence;
     }
 
     /// <summary>
-    /// Gets or sets timestamp of the original event in nanoseconds.
+    /// Gets or sets time of the last trade in nanoseconds.
     /// Time is measured in nanoseconds between the current time and midnight, January 1, 1970 UTC.
     /// </summary>
     public long TimeNanos
@@ -124,14 +105,14 @@ public class TimeAndSale : MarketEvent, ITimeSeriesEvent
     public int TimeNanoPart { get; set; }
 
     /// <summary>
-    /// Gets or sets sequence number of this event to distinguish events that have the same <see cref="Time"/>.
-    /// This sequence number does not have to be unique and
+    /// Gets or sets sequence number sequence number of this order to distinguish orders that have the same
+    /// <see cref="Time"/>. This sequence number does not have to be unique and
     /// does not need to be sequential. Sequence can range from 0 to <see cref="MaxSequence"/>.
     /// </summary>
     /// <exception cref="ArgumentException">If sequence out of range.</exception>
     public int Sequence
     {
-        get => (int)Index & MaxSequence;
+        get => (int)TimeSequence & MaxSequence;
         set
         {
             if (value is < 0 or > MaxSequence)
@@ -139,32 +120,32 @@ public class TimeAndSale : MarketEvent, ITimeSeriesEvent
                 throw new ArgumentException($"Sequence({value}) is < 0 or > MaxSequence({MaxSequence})", nameof(value));
             }
 
-            Index = (Index & ~MaxSequence) | (uint)value;
+            TimeSequence = (TimeSequence & ~MaxSequence) | (uint)value;
         }
     }
 
     /// <summary>
-    /// Gets or sets exchange code of this time and sale event.
+    /// Gets or sets exchange code of this option sale event.
     /// </summary>
     public char ExchangeCode { get; set; }
 
     /// <summary>
-    /// Gets or sets price of this time and sale event.
+    /// Gets or sets price of this option sale event.
     /// </summary>
     public double Price { get; set; } = double.NaN;
 
     /// <summary>
-    /// Gets or sets size of this time and sale event as floating number with fractions.
+    /// Gets or sets size this option sale event as floating number with fractions.
     /// </summary>
     public double Size { get; set; } = double.NaN;
 
     /// <summary>
-    /// Gets or sets the current bid price on the market when this time and sale event had occurred.
+    /// Gets or sets the current bid price on the market when this option sale event had occurred.
     /// </summary>
     public double BidPrice { get; set; } = double.NaN;
 
     /// <summary>
-    /// Gets or sets the current ask price on the market when this time and sale event had occurred.
+    /// Gets or sets the current ask price on the market when this option sale event had occurred.
     /// </summary>
     public double AskPrice { get; set; } = double.NaN;
 
@@ -175,7 +156,7 @@ public class TimeAndSale : MarketEvent, ITimeSeriesEvent
     public string? ExchangeSaleConditions { get; set; }
 
     /// <summary>
-    /// Gets or sets TradeThroughExempt flag of this time and sale event.
+    /// Gets or sets TradeThroughExempt flag of this option sale event.
     /// </summary>
     public char TradeThroughExempt
     {
@@ -187,8 +168,9 @@ public class TimeAndSale : MarketEvent, ITimeSeriesEvent
         }
     }
 
+
     /// <summary>
-    /// Gets or sets aggressor side of this time and sale event.
+    /// Gets or sets aggressor side of this option sale event.
     /// </summary>
     public Side AggressorSide
     {
@@ -226,7 +208,7 @@ public class TimeAndSale : MarketEvent, ITimeSeriesEvent
     }
 
     /// <summary>
-    /// Gets or sets type of this time and sale event.
+    /// Gets or sets type of this option sale event.
     /// </summary>
     public TimeAndSaleType Type
     {
@@ -236,14 +218,14 @@ public class TimeAndSale : MarketEvent, ITimeSeriesEvent
 
     /// <summary>
     /// Gets a value indicating whether this is a new event (not cancellation or correction).
-    /// It is <c>true</c> for newly created time and sale event.
+    /// It is <c>true</c> for newly created option sale event.
     /// </summary>
     public bool IsNew =>
         Type == TimeAndSaleType.New;
 
     /// <summary>
     /// Gets a value indicating whether this is a correction of a previous event.
-    /// It is <c>false</c> for newly created time and sale event.
+    /// It is <c>false</c> for newly created optionsale event.
     /// <c>true</c> if this is a correction of a previous event.
     /// </summary>
     public bool IsCorrection =>
@@ -251,21 +233,32 @@ public class TimeAndSale : MarketEvent, ITimeSeriesEvent
 
     /// <summary>
     /// Gets a value indicating whether this is a cancellation of a previous event.
-    /// It is <c>false</c> for newly created time and sale event.
+    /// It is <c>false</c> for newly created option sale event.
     /// <c>true</c> if this is a cancellation of a previous event.
     /// </summary>
     public bool IsCancel =>
         Type == TimeAndSaleType.Cancel;
 
     /// <summary>
-    /// Gets or sets buyer of this time and sale event.
+    /// Gets or sets underlying price at the time of this option sale event.
     /// </summary>
-    public string? Buyer { get; set; }
+    public double UnderlyingPrice { get; set; } = double.NaN;
 
     /// <summary>
-    /// Gets or sets seller of this time and sale event.
+    /// Gets or sets Black-Scholes implied volatility of the option at the time of this option sale event.
     /// </summary>
-    public string? Seller { get; set; }
+    public double Volatility { get; set; } = double.NaN;
+
+    /// <summary>
+    /// Gets or sets option delta at the time of this option sale event.
+    /// Delta is the first derivative of an option price by an underlying price.
+    /// </summary>
+    public double Delta { get; set; } = double.NaN;
+
+    /// <summary>
+    /// Gets or sets option symbol of this event.
+    /// </summary>
+    public string? OptionSymbol { get; set; }
 
     /// <summary>
     /// Gets or sets implementation-specific flags.
@@ -274,13 +267,14 @@ public class TimeAndSale : MarketEvent, ITimeSeriesEvent
     internal int Flags { get; set; }
 
     /// <summary>
-    /// Returns string representation of this time and sale event.
+    /// Returns string representation of this option sale event.
     /// </summary>
     /// <returns>The string representation.</returns>
     public override string ToString() =>
-        "TimeAndSale{" + StringUtil.EncodeNullableString(EventSymbol) +
+        "OptionSale{" + StringUtil.EncodeNullableString(EventSymbol) +
         ", eventTime=" + TimeFormat.Local.WithMillis().WithTimeZone().FormatFromMillis(EventTime) +
         ", eventFlags=0x" + EventFlags.ToString("x", CultureInfo.InvariantCulture) +
+        ", index=0x" + Index.ToString("x", CultureInfo.InvariantCulture) +
         ", time=" + TimeFormat.Local.WithMillis().WithTimeZone().FormatFromMillis(Time) +
         ", timeNanoPart=" + TimeNanoPart +
         ", sequence=" + Sequence +
@@ -296,7 +290,9 @@ public class TimeAndSale : MarketEvent, ITimeSeriesEvent
         ", ETH=" + IsExtendedTradingHours +
         ", validTick=" + IsValidTick +
         ", type=" + Type +
-        (Buyer == null ? string.Empty : ", buyer='" + Buyer + "'") +
-        (Seller == null ? string.Empty : ", seller='" + Seller + "'") +
+        ", underlyingPrice=" + UnderlyingPrice +
+        ", volatility=" + Volatility +
+        ", delta=" + Delta +
+        ", optionSymbol='" + StringUtil.EncodeNullableString(OptionSymbol) + "'" +
         "}";
 }
