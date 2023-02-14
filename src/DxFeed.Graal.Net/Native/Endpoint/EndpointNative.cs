@@ -19,6 +19,7 @@ namespace DxFeed.Graal.Net.Native.Endpoint;
 /// </summary>
 internal sealed unsafe class EndpointNative : IDisposable
 {
+    private static readonly EndpointFinalizeFunc OnEndpointFinalize = Finalize;
     private readonly Lazy<FeedNative> _feedNative;
     private readonly Lazy<PublisherNative> _publisherNative;
     private readonly object _stateChangeListenerHandleLock = new();
@@ -129,6 +130,11 @@ internal sealed unsafe class EndpointNative : IDisposable
     private static nint GetCurrentThread() =>
         Isolate.CurrentThread;
 
+    private static void Finalize(nint isolate, nint userData)
+    {
+        // ToDo Implement finalize callback.
+    }
+
     private void ReleaseUnmanagedResources()
     {
         try
@@ -215,7 +221,7 @@ internal sealed unsafe class EndpointNative : IDisposable
             StateChangeListenerHandle* stateChangeListenerHandle) =>
             ErrorCheck.NativeCall(
                 thread,
-                NativeAddStateChangeListener(thread, endpointHandle, stateChangeListenerHandle));
+                NativeAddStateChangeListener(thread, endpointHandle, stateChangeListenerHandle, OnEndpointFinalize, 0));
 
         public static void RemoveStateChangeListener(
             nint thread,
@@ -378,7 +384,9 @@ internal sealed unsafe class EndpointNative : IDisposable
         private static extern int NativeAddStateChangeListener(
             nint thread,
             EndpointHandle* endpointHandle,
-            StateChangeListenerHandle* listenerHandle);
+            StateChangeListenerHandle* listenerHandle,
+            EndpointFinalizeFunc endpointFinalize,
+            nint userData);
 
         [DllImport(
             ImportInfo.DllName,
