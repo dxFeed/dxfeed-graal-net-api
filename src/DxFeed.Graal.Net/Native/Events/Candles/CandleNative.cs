@@ -15,10 +15,8 @@ namespace DxFeed.Graal.Net.Native.Events.Candles;
 /// </summary>
 [StructLayout(LayoutKind.Sequential)]
 internal readonly record struct CandleNative(
-    EventCodeNative EventCode,
-    nint CandleSymbol,
+    EventTypeNative EventType,
     int EventFlags,
-    long EventTime,
     long Index,
     long Count,
     double Open,

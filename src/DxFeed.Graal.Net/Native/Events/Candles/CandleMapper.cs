@@ -6,36 +6,59 @@
 
 using DxFeed.Graal.Net.Events;
 using DxFeed.Graal.Net.Events.Candles;
-using DxFeed.Graal.Net.Native.Symbols.Candle;
 
 namespace DxFeed.Graal.Net.Native.Events.Candles;
 
-internal class CandleMapper : IEventMapper
+internal class CandleMapper : EventTypeMapper<Candle, CandleNative>
 {
-    public unsafe IEventType FromNative(EventTypeNative* eventType) =>
-        ToEventType((CandleNative*)eventType);
+    public override unsafe IEventType FromNative(EventTypeNative* eventType) =>
+        Convert((CandleNative*)eventType);
 
-    public unsafe EventTypeNative* ToNative(IEventType eventType) => throw new System.NotImplementedException();
+    public override unsafe EventTypeNative* ToNative(IEventType eventType) =>
+        (EventTypeNative*)Convert((Candle)eventType);
 
-    public unsafe void Release(EventTypeNative* eventType) => throw new System.NotImplementedException();
+    public override unsafe void Release(EventTypeNative* eventType) =>
+        ReleaseEventType(eventType);
 
-    private static unsafe Candle ToEventType(CandleNative* native) =>
-        new()
+    protected override unsafe Candle Convert(CandleNative* eventType)
+    {
+        var candle = CreateEventType(eventType);
+        candle.EventFlags = eventType->EventFlags;
+        candle.Index = eventType->Index;
+        candle.Count = eventType->Count;
+        candle.Open = eventType->Open;
+        candle.High = eventType->High;
+        candle.Low = eventType->Low;
+        candle.Close = eventType->Close;
+        candle.Volume = eventType->Volume;
+        candle.VWAP = eventType->VWAP;
+        candle.BidVolume = eventType->BidVolume;
+        candle.AskVolume = eventType->AskVolume;
+        candle.ImpVolatility = eventType->ImpVolatility;
+        candle.OpenInterest = eventType->OpenInterest;
+        return candle;
+    }
+
+    protected override unsafe CandleNative* Convert(Candle eventType)
+    {
+        var ptr = AllocEventType();
+        *ptr = new()
         {
-            EventSymbol = ((CandleSymbolNative*)native->CandleSymbol)->Symbol.ToString(),
-            EventFlags = native->EventFlags,
-            EventTime = native->EventTime,
-            Index = native->Index,
-            Count = native->Count,
-            Open = native->Open,
-            High = native->High,
-            Low = native->Low,
-            Close = native->Close,
-            Volume = native->Volume,
-            VWAP = native->VWAP,
-            BidVolume = native->BidVolume,
-            AskVolume = native->AskVolume,
-            ImpVolatility = native->ImpVolatility,
-            OpenInterest = native->OpenInterest,
+            EventType = CreateEventType(eventType),
+            EventFlags = eventType.EventFlags,
+            Index = eventType.Index,
+            Count = eventType.Count,
+            Open = eventType.Open,
+            High = eventType.High,
+            Low = eventType.Low,
+            Close = eventType.Close,
+            Volume = eventType.Volume,
+            VWAP = eventType.VWAP,
+            BidVolume = eventType.BidVolume,
+            AskVolume = eventType.AskVolume,
+            ImpVolatility = eventType.ImpVolatility,
+            OpenInterest = eventType.OpenInterest,
         };
+        return ptr;
+    }
 }

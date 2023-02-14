@@ -11,6 +11,8 @@ namespace DxFeed.Graal.Net.Native.Events.Market;
 
 internal class AnalyticOrderMapper : OrderBaseMapper<AnalyticOrder, AnalyticOrderNative>
 {
+    private static readonly OrderMapper OrderMapper = new();
+
     public override unsafe IEventType FromNative(EventTypeNative* eventType) =>
         Convert((AnalyticOrderNative*)eventType);
 
@@ -18,11 +20,12 @@ internal class AnalyticOrderMapper : OrderBaseMapper<AnalyticOrder, AnalyticOrde
         (EventTypeNative*)Convert((AnalyticOrder)eventType);
 
     public override unsafe void Release(EventTypeNative* eventType) =>
-        ReleaseOrderBase(eventType);
+        OrderMapper.Release(eventType);
 
     protected override unsafe AnalyticOrder Convert(AnalyticOrderNative* eventType)
     {
         var analyticOrder = CreateOrderBase((OrderBaseNative*)eventType);
+        analyticOrder.MarketMaker = eventType->Order.MarketMaker;
         analyticOrder.IcebergPeakSize = eventType->IcebergPeakSize;
         analyticOrder.IcebergHiddenSize = eventType->IcebergHiddenSize;
         analyticOrder.IcebergExecutedSize = eventType->IcebergExecutedSize;
@@ -35,7 +38,7 @@ internal class AnalyticOrderMapper : OrderBaseMapper<AnalyticOrder, AnalyticOrde
         var ptr = AllocEventType();
         *ptr = new AnalyticOrderNative
         {
-            OrderBase = CreateOrderBase(eventType),
+            Order = new() { OrderBase = OrderMapper.CreateOrderBase(eventType), MarketMaker = eventType.MarketMaker, },
             IcebergPeakSize = eventType.IcebergPeakSize,
             IcebergHiddenSize = eventType.IcebergHiddenSize,
             IcebergExecutedSize = eventType.IcebergExecutedSize,

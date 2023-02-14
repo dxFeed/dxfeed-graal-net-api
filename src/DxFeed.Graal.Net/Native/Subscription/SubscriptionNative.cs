@@ -23,6 +23,7 @@ namespace DxFeed.Graal.Net.Native.Subscription;
 /// </summary>
 internal sealed unsafe class SubscriptionNative : IDisposable
 {
+    private static readonly SubFinalizeFunc OnSubFinalize = Finalize;
     private readonly object _eventListenerHandleLock = new();
     private EventListenerHandle* _eventListenerHandle;
     private SubscriptionHandle* _subHandle;
@@ -131,7 +132,12 @@ internal sealed unsafe class SubscriptionNative : IDisposable
         _subHandle;
 
     private static nint GetCurrentThread() =>
-        Isolate.Instance.IsolateThread;
+        IsolateThread.CurrentThread;
+
+    private static void Finalize(nint isolate, nint userData)
+    {
+        // ToDo Implement finalize callback.
+    }
 
     private void ReleaseUnmanagedResources()
     {
@@ -191,7 +197,7 @@ internal sealed unsafe class SubscriptionNative : IDisposable
             nint thread,
             SubscriptionHandle* subHandle,
             EventListenerHandle* eventListenerHandle) =>
-            ErrorCheck.NativeCall(thread, NativeAddEventListener(thread, subHandle, eventListenerHandle));
+            ErrorCheck.NativeCall(thread, NativeAddEventListener(thread, subHandle, eventListenerHandle, OnSubFinalize, 0));
 
         public static void RemoveEventListener(
             nint thread,
@@ -330,7 +336,9 @@ internal sealed unsafe class SubscriptionNative : IDisposable
         private static extern int NativeAddEventListener(
             nint thread,
             SubscriptionHandle* subHandle,
-            EventListenerHandle* listenerHandle);
+            EventListenerHandle* listenerHandle,
+            SubFinalizeFunc endpointFinalize,
+            nint userData);
 
         [DllImport(
             ImportInfo.DllName,

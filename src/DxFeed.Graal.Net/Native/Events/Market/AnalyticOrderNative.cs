@@ -15,7 +15,7 @@ namespace DxFeed.Graal.Net.Native.Events.Market;
 /// </summary>
 [StructLayout(LayoutKind.Sequential)]
 internal readonly record struct AnalyticOrderNative(
-    OrderBaseNative OrderBase,
+    OrderNative Order,
     double IcebergPeakSize,
     double IcebergHiddenSize,
     double IcebergExecutedSize,
