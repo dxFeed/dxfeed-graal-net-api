@@ -168,7 +168,6 @@ public class OptionSale : MarketEvent, IIndexedEvent
         }
     }
 
-
     /// <summary>
     /// Gets or sets aggressor side of this option sale event.
     /// </summary>

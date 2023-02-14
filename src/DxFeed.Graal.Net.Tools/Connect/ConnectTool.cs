@@ -77,10 +77,7 @@ internal abstract class ConnectTool
                 .Build()
                 .Connect(cmdArgs.Tape.StartsWith("tape:") ? cmdArgs.Tape : $"tape:{cmdArgs.Tape}").GetPublisher();
 
-            sub.AddEventListener(events =>
-            {
-                pub.PublishEvents(events);
-            });
+            sub.AddEventListener(events => pub.PublishEvents(events));
         }
 
         sub.AddSymbols(symbols);
