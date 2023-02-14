@@ -19,3 +19,6 @@ namespace DxFeed.Graal.Net.Native.Endpoint;
 /// <param name="userData">The pointer to user data. Actually not used.</param>
 [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
 internal delegate void StateChangeListenerFunc(nint thread, State oldState, State newState, nint userData);
+
+[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+internal delegate void EndpointFinalizeFunc(nint thread, nint userData);

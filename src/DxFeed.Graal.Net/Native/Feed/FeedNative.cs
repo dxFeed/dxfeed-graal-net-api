@@ -45,7 +45,7 @@ internal sealed unsafe class FeedNative
         _feedHandle;
 
     private static nint GetCurrentThread() =>
-        Isolate.Instance.IsolateThread;
+        Isolate.CurrentThread;
 
     /// <summary>
     /// Contains imported functions from native code.

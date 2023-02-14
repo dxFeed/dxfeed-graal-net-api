@@ -10,10 +10,10 @@ using System.Diagnostics;
 using System.Globalization;
 using System.IO;
 using System.Linq;
-using System.Runtime.InteropServices;
 using System.Threading;
 using DxFeed.Graal.Net.Api;
 using DxFeed.Graal.Net.Events;
+using DxFeed.Graal.Net.Utils;
 
 // ReSharper disable NonAtomicCompoundOperator
 // ReSharper disable AccessToDisposedClosure
@@ -27,11 +27,8 @@ internal abstract class PerfTestTool
 
     private sealed class Diagnostic : IDisposable
     {
-        private static readonly string OsName = GetOsNameAndVersion();
-        private static readonly string ArchName = GetArch().ToString();
-        private static readonly int CoreCount = GetCoreCount();
         private static readonly double CpuCoeff = GetCpuCoeff();
-        private static readonly string DiagnosticHeader = $"{OsName} {ArchName}({CoreCount} core)";
+        private static readonly string DiagnosticHeader = PlatformUtils.PlatformDiagInfo;
         private static readonly NumberFormatInfo SpaceNumFormat = new() { NumberGroupSeparator = " " };
 
         private readonly Timer _timer;
@@ -69,35 +66,9 @@ internal abstract class PerfTestTool
             _timer.Dispose();
         }
 
-        private static string GetOsNameAndVersion()
-        {
-            if (RuntimeInformation.IsOSPlatform(OSPlatform.OSX))
-            {
-                return $"macOS({Environment.OSVersion.Version})";
-            }
-
-            if (RuntimeInformation.IsOSPlatform(OSPlatform.Linux))
-            {
-                return $"Linux({Environment.OSVersion.Version})";
-            }
-
-            if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
-            {
-                return $"Windows({Environment.OSVersion.Version})";
-            }
-
-            return Environment.OSVersion.ToString();
-        }
-
-        private static Architecture GetArch() =>
-            RuntimeInformation.ProcessArchitecture;
-
-        private static int GetCoreCount() =>
-            Environment.ProcessorCount;
-
         private static double GetCpuCoeff()
         {
-            if (RuntimeInformation.IsOSPlatform(OSPlatform.OSX) && GetArch() == Architecture.Arm64)
+            if (PlatformUtils.IsAppleSilicon)
             {
                 // Seems like a weird error in macOS with M1 processor.
                 // EndProcessorTime - StartProcessorTime returns a very small value.
@@ -138,7 +109,7 @@ internal abstract class PerfTestTool
             var cpuEndTime = _currentProcess.TotalProcessorTime;
             var cpuDiff = (cpuEndTime - _cpuStartTime) * CpuCoeff;
             _cpuStartTime = cpuEndTime;
-            return cpuDiff / (_timerDiff.Elapsed * (!_showCpuUsageByCore ? Environment.ProcessorCount : 1));
+            return cpuDiff / (_timerDiff.Elapsed * (!_showCpuUsageByCore ? PlatformUtils.LogicalCoreCount : 1));
         }
 
         private long GetAndResetEventCounter() =>

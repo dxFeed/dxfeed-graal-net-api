@@ -41,6 +41,13 @@ internal class ProfileMapper : EventTypeMapper<Profile, ProfileNative>
         profile.LowLimitPrice = eventType->LowLimitPrice;
         profile.High52WeekPrice = eventType->High52WeekPrice;
         profile.Low52WeekPrice = eventType->Low52WeekPrice;
+        profile.Beta = eventType->Beta;
+        profile.EarningsPerShare = eventType->EarningsPerShare;
+        profile.DividendFrequency = eventType->DividendFrequency;
+        profile.ExDividendAmount = eventType->ExDividendAmount;
+        profile.ExDividendDayId = eventType->ExDividendDayId;
+        profile.Shares = eventType->Shares;
+        profile.FreeFloat = eventType->FreeFloat;
         profile.Flags = eventType->Flags;
         return profile;
     }
@@ -59,6 +66,13 @@ internal class ProfileMapper : EventTypeMapper<Profile, ProfileNative>
             LowLimitPrice = eventType.LowLimitPrice,
             High52WeekPrice = eventType.High52WeekPrice,
             Low52WeekPrice = eventType.Low52WeekPrice,
+            Beta = eventType.Beta,
+            EarningsPerShare = eventType.EarningsPerShare,
+            DividendFrequency = eventType.DividendFrequency,
+            ExDividendAmount = eventType.ExDividendAmount,
+            ExDividendDayId = eventType.ExDividendDayId,
+            Shares = eventType.Shares,
+            FreeFloat = eventType.FreeFloat,
             Flags = eventType.Flags,
         };
         return ptr;

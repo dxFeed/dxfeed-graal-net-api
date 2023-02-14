@@ -18,3 +18,5 @@ namespace DxFeed.Graal.Net.Native.Subscription;
 /// <param name="userData">The pointer to user data.</param>
 [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
 internal unsafe delegate void EventListenerFunc(nint thread, ListNative<EventTypeNative>* events, nint userData);
+
+internal delegate void SubFinalizeFunc(nint thread, nint userData);

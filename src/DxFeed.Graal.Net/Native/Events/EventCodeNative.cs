@@ -104,4 +104,9 @@ public enum EventCodeNative
     /// <see cref="Series"/>.
     /// </summary>
     Series,
+
+    /// <summary>
+    /// <see cref="OptionSale"/>.
+    /// </summary>
+    OptionSale,
 }

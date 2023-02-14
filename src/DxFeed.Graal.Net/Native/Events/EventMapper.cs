@@ -34,6 +34,7 @@ internal static class EventMapper
     private static readonly AnalyticOrderMapper AnalyticOrderMapper = new();
     private static readonly SpreadOrderMapper SpreadOrderMapper = new();
     private static readonly SeriesMapper SeriesMapper = new();
+    private static readonly OptionSaleMapper OptionSaleMapper = new();
 
     /// <summary>
     /// Creates a specific collection of <see cref="IEventType"/> from a <see cref="ListNative{T}"/> unsafe pointer.
@@ -110,6 +111,7 @@ internal static class EventMapper
             EventCodeNative.AnalyticOrder => AnalyticOrderMapper,
             EventCodeNative.SpreadOrder => SpreadOrderMapper,
             EventCodeNative.Series => SeriesMapper,
+            EventCodeNative.OptionSale => OptionSaleMapper,
             EventCodeNative.DailyCandle => throw new NotImplementedException(),
             EventCodeNative.OrderBase => throw new NotImplementedException(),
             EventCodeNative.Configuration => throw new NotImplementedException(),
