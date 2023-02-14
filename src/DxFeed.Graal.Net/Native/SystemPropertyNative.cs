@@ -38,7 +38,7 @@ internal static class SystemPropertyNative
         Import.SystemGetProperty(GetCurrentThread(), key);
 
     private static nint GetCurrentThread() =>
-        Isolate.Instance.IsolateThread;
+        Isolate.CurrentThread;
 
     /// <summary>
     /// Contains imported functions from native code.

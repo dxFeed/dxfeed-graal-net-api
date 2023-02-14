@@ -39,7 +39,7 @@ internal sealed unsafe class PublisherNative
     }
 
     private static nint GetCurrentThread() =>
-        Isolate.Instance.IsolateThread;
+        IsolateThread.CurrentThread;
 
     /// <summary>
     /// Contains imported functions from native code.

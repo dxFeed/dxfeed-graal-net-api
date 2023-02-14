@@ -131,7 +131,7 @@ internal sealed unsafe class SubscriptionNative : IDisposable
         _subHandle;
 
     private static nint GetCurrentThread() =>
-        Isolate.Instance.IsolateThread;
+        IsolateThread.CurrentThread;
 
     private void ReleaseUnmanagedResources()
     {
