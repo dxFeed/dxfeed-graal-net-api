@@ -127,7 +127,7 @@ internal sealed unsafe class EndpointNative : IDisposable
     }
 
     private static nint GetCurrentThread() =>
-        Isolate.Instance.IsolateThread;
+        Isolate.CurrentThread;
 
     private void ReleaseUnmanagedResources()
     {

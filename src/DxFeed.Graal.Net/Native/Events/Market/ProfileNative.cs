@@ -25,4 +25,11 @@ internal readonly record struct ProfileNative(
     double LowLimitPrice,
     double High52WeekPrice,
     double Low52WeekPrice,
+    double Beta,
+    double EarningsPerShare,
+    double DividendFrequency,
+    double ExDividendAmount,
+    int ExDividendDayId,
+    double Shares,
+    double FreeFloat,
     int Flags);
