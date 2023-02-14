@@ -25,7 +25,7 @@ public abstract class DumpTool
             return;
         }
 
-        using var endpoint = DXEndpoint
+        using var inputEndpoint = DXEndpoint
             .NewBuilder()
             .WithRole(DXEndpoint.Role.StreamFeed)
             .WithProperty(DXEndpoint.DXFeedWildcardEnableProperty, "true") // Enabled by default.
@@ -33,7 +33,7 @@ public abstract class DumpTool
             .WithName(nameof(DumpTool))
             .Build();
 
-        using var sub = endpoint
+        using var sub = inputEndpoint
             .GetFeed()
             .CreateSubscription(cmdArgs.Types == null
                 ? IEventType.GetEventTypes()
@@ -52,30 +52,31 @@ public abstract class DumpTool
             });
         }
 
+        DXEndpoint? outputEndpoint = null;
         if (cmdArgs.Tape != null)
         {
-            var pub = DXEndpoint
+            outputEndpoint = DXEndpoint
                 .NewBuilder()
                 .WithRole(DXEndpoint.Role.StreamPublisher)
                 .WithProperty(DXEndpoint.DXFeedWildcardEnableProperty, "true") // Enabled by default.
                 .WithProperties(Helper.ParseProperties(cmdArgs.Properties))
                 .WithName(nameof(DumpTool))
                 .Build()
-                .Connect(cmdArgs.Tape.StartsWith("tape:") ? cmdArgs.Tape : $"tape:{cmdArgs.Tape}").GetPublisher();
+                .Connect(cmdArgs.Tape.StartsWith("tape:") ? cmdArgs.Tape : $"tape:{cmdArgs.Tape}");
 
-            sub.AddEventListener(events =>
-            {
-                pub.PublishEvents(events);
-            });
+            sub.AddEventListener(events => outputEndpoint.GetPublisher().PublishEvents(events));
         }
 
         sub.AddSymbols(cmdArgs.Symbols == null
             ? new[] { WildcardSymbol.All }
             : Helper.ParseSymbols(cmdArgs.Symbols));
 
-        endpoint.Connect(cmdArgs.Address);
+        inputEndpoint.Connect(cmdArgs.Address);
 
-        endpoint.AwaitNotConnected();
-        endpoint.CloseAndAwaitTermination();
+        inputEndpoint.AwaitNotConnected();
+        inputEndpoint.CloseAndAwaitTermination();
+
+        outputEndpoint?.AwaitProcessed();
+        outputEndpoint?.CloseAndAwaitTermination();
     }
 }
