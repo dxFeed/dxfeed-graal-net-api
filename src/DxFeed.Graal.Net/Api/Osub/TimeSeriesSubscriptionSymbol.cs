@@ -4,6 +4,7 @@
 // If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
 // </copyright>
 
+using System;
 using DxFeed.Graal.Net.Events;
 using DxFeed.Graal.Net.Utils;
 
@@ -36,6 +37,12 @@ public class TimeSeriesSubscriptionSymbol<T> : IndexedEventSubscriptionSymbol<T>
     public TimeSeriesSubscriptionSymbol(T eventSymbol, long fromTime)
         : base(eventSymbol, IndexedEventSource.DEFAULT) =>
         FromTime = fromTime;
+
+    /// <inheritdoc cref="TimeSeriesSubscriptionSymbol{T}(T,long)"/>
+    public TimeSeriesSubscriptionSymbol(T eventSymbol, DateTimeOffset fromTime)
+        : this(eventSymbol, fromTime.ToUnixTimeMilliseconds())
+    {
+    }
 
     /// <summary>
     /// Gets subscription time in milliseconds since Unix epoch.
@@ -79,8 +86,6 @@ public class TimeSeriesSubscriptionSymbol<T> : IndexedEventSubscriptionSymbol<T>
 /// <inheritdoc/>
 public class TimeSeriesSubscriptionSymbol : TimeSeriesSubscriptionSymbol<object>
 {
-    // ToDo Add a constructor overload to pass fromTime as DateTimeOffset.
-
     /// <summary>
     /// Initializes a new instance of the <see cref="TimeSeriesSubscriptionSymbol"/> class
     /// with a specified event symbol and from time in milliseconds since Unix epoch.
@@ -91,6 +96,12 @@ public class TimeSeriesSubscriptionSymbol : TimeSeriesSubscriptionSymbol<object>
     /// </param>
     public TimeSeriesSubscriptionSymbol(object eventSymbol, long fromTime)
         : base(eventSymbol, fromTime)
+    {
+    }
+
+    /// <inheritdoc cref="TimeSeriesSubscriptionSymbol(object,long)"/>
+    public TimeSeriesSubscriptionSymbol(object eventSymbol, DateTimeOffset fromTime)
+        : this(eventSymbol, fromTime.ToUnixTimeMilliseconds())
     {
     }
 }
