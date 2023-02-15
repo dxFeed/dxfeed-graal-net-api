@@ -14,7 +14,6 @@ public interface IPropertyArg
     public const char ShortName = 'p';
     public const string LongName = "properties";
     public const bool IsRequired = false;
-    public const char Separator = ',';
 
     public const string HelpText = @"
 Comma-separated list of properties.
@@ -22,6 +21,6 @@ Examples:
     -p dxfeed.aggregationPeriod=5s - to set the aggregation period.
     -p dxfeed.wildcard.enable=true - to enable the wildcard symbol.";
 
-    [Option(ShortName, LongName, Required = IsRequired, Separator = Separator, HelpText = HelpText)]
-    public IEnumerable<string> Properties { get; set; }
+    [Option(ShortName, LongName, Required = IsRequired, HelpText = HelpText)]
+    public string? Properties { get; set; }
 }

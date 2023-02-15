@@ -160,13 +160,13 @@ internal abstract class PerfTestTool
             .NewBuilder()
             .WithRole(cmdArgs.ForceStream ? DXEndpoint.Role.StreamFeed : DXEndpoint.Role.Feed)
             .WithProperty(DXEndpoint.DXFeedWildcardEnableProperty, "true") // Enabled by default.
-            .WithProperties(Helper.ParseProperties(cmdArgs.Properties))
+            .WithProperties(ParseHelper.ParseProperties(cmdArgs.Properties))
             .WithName(nameof(PerfTestTool))
             .Build();
 
         using var sub = endpoint
             .GetFeed()
-            .CreateSubscription(Helper.ParseEventTypes(cmdArgs.Types!));
+            .CreateSubscription(ParseHelper.ParseEventTypes(cmdArgs.Types!));
 
         var measurementPeriod = new TimeSpan(0, 0, 2);
         using var diagnostic =
@@ -186,7 +186,7 @@ internal abstract class PerfTestTool
             });
         }
 
-        sub.AddSymbols(Helper.ParseSymbols(cmdArgs.Symbols!).ToList());
+        sub.AddSymbols(ParseHelper.ParseSymbols(cmdArgs.Symbols!).ToList());
 
         endpoint.Connect(cmdArgs.Address);
 

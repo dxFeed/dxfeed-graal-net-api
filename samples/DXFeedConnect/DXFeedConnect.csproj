@@ -6,15 +6,15 @@
   </PropertyGroup>
 
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
-    <OutputPath>../../artifacts/Debug/Samples/EventSample/</OutputPath>
+    <OutputPath>../../artifacts/Debug/Samples/DXFeedConnect/</OutputPath>
   </PropertyGroup>
 
   <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
-    <OutputPath>../../artifacts/Release/Samples/EventSample/</OutputPath>
+    <OutputPath>../../artifacts/Release/Samples/DXFeedConnect/</OutputPath>
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\DxFeed.Graal.Net\DxFeed.Graal.Net.csproj"/>
+    <ProjectReference Include="..\..\src\DxFeed.Graal.Net\DxFeed.Graal.Net.csproj" />
   </ItemGroup>
 
 </Project>

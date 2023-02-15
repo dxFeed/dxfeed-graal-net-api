@@ -32,13 +32,13 @@ internal abstract class ConnectTool
         using var endpoint = DXEndpoint
             .NewBuilder()
             .WithRole(DXEndpoint.Role.Feed)
-            .WithProperties(Helper.ParseProperties(cmdArgs.Properties))
+            .WithProperties(ParseHelper.ParseProperties(cmdArgs.Properties))
             .WithName(nameof(ConnectTool))
             .Build();
 
         using var sub = endpoint
             .GetFeed()
-            .CreateSubscription(Helper.ParseEventTypes(cmdArgs.Types!));
+            .CreateSubscription(ParseHelper.ParseEventTypes(cmdArgs.Types!));
 
         if (!cmdArgs.IsQuite)
         {
@@ -53,12 +53,11 @@ internal abstract class ConnectTool
             });
         }
 
-        IEnumerable<object> symbols = Helper.ParseSymbols(cmdArgs.Symbols!).ToList();
+        IEnumerable<object> symbols = ParseHelper.ParseSymbols(cmdArgs.Symbols!).ToList();
         if (cmdArgs.FromTime != null)
         {
-            var fromTime = TimeFormat.Local.Parse(cmdArgs.FromTime!).ToUnixTimeMilliseconds();
-            symbols = symbols.Select(s =>
-                new TimeSeriesSubscriptionSymbol(s, fromTime));
+            var fromTime = CmdArgsUtil.ParseFromTime(cmdArgs.FromTime);
+            symbols = symbols.Select(s => new TimeSeriesSubscriptionSymbol(s, fromTime));
         }
         else if (cmdArgs.Source != null)
         {
@@ -70,9 +69,9 @@ internal abstract class ConnectTool
         {
             var pub = DXEndpoint
                 .NewBuilder()
-                .WithRole(DXEndpoint.Role.Publisher)
+                .WithRole(DXEndpoint.Role.StreamPublisher)
                 .WithProperty(DXEndpoint.DXFeedWildcardEnableProperty, "true") // Enabled by default.
-                .WithProperties(Helper.ParseProperties(cmdArgs.Properties))
+                .WithProperties(ParseHelper.ParseProperties(cmdArgs.Properties))
                 .WithName(nameof(ConnectTool))
                 .Build()
                 .Connect(cmdArgs.Tape.StartsWith("tape:") ? cmdArgs.Tape : $"tape:{cmdArgs.Tape}").GetPublisher();

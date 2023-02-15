@@ -23,7 +23,7 @@ public class DumpArgs :
     [Value(ISymbolsArg.Index, MetaName = ISymbolsArg.MetaName, Required = false, HelpText = ISymbolsArg.HelpText)]
     public string? Symbols { get; set; } = null!;
 
-    public IEnumerable<string> Properties { get; set; } = null!;
+    public string? Properties { get; set; } = null!;
 
     public string? Tape { get; set; } = null!;
 

@@ -238,7 +238,7 @@ public class TimeFormat
         // Try to parse for all available format strings.
         foreach (var format in AvailableFormats)
         {
-            if (DateTimeOffset.TryParseExact(value, format, CurrentCulture, styles, out dateTimeOffset))
+            if (DateTimeOffset.TryParseExact(value, format, InvariantCulture, styles, out dateTimeOffset))
             {
                 return ConvertDateTimeToCurrentTimeZone(dateTimeOffset);
             }

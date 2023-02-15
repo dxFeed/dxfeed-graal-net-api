@@ -26,5 +26,5 @@ public interface ICandleSymbolProperty
     /// </summary>
     /// <param name="candleSymbol">The candle symbol.</param>
     /// <exception cref="InvalidOperationException">If used outside of internal initialization logic.</exception>
-    void CheckInAttributeCore(CandleSymbol candleSymbol);
+    void CheckInAttribute(CandleSymbol candleSymbol);
 }

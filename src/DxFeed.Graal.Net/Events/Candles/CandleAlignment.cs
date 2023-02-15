@@ -216,7 +216,7 @@ public class CandleAlignment : ICandleSymbolProperty
     /// </summary>
     /// <param name="candleSymbol">The candle symbol.</param>
     /// <exception cref="InvalidOperationException">If used outside of internal initialization logic.</exception>
-    public void CheckInAttributeCore(CandleSymbol candleSymbol)
+    public void CheckInAttribute(CandleSymbol candleSymbol)
     {
         if (candleSymbol.Alignment != null)
         {
