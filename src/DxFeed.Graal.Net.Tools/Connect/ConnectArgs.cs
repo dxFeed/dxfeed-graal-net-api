@@ -26,7 +26,7 @@ public class ConnectArgs :
 
     public string? Source { get; set; }
 
-    public IEnumerable<string> Properties { get; set; } = null!;
+    public string? Properties { get; set; } = null!;
 
     public string? Tape { get; set; } = null!;
 

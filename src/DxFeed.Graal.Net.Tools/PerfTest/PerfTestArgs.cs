@@ -21,7 +21,7 @@ public class PerfTestArgs :
 
     public string? Symbols { get; set; } = null!;
 
-    public IEnumerable<string> Properties { get; set; } = null!;
+    public string? Properties { get; set; } = null!;
 
     [Option("force-stream", Required = false,
         HelpText = "Enforces a streaming contract for subscription. The StreamFeed role is used instead of Feed.")]
