@@ -32,7 +32,7 @@ public class CandleSymbol
         Symbol = Normalize(ChangeAttributes(symbol, attributes));
         foreach (var attribute in attributes)
         {
-            attribute.CheckInAttributeCore(this);
+            attribute.CheckInAttribute(this);
         }
     }
 
