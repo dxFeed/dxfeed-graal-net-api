@@ -29,7 +29,7 @@ public abstract class DumpTool
             .NewBuilder()
             .WithRole(DXEndpoint.Role.StreamFeed)
             .WithProperty(DXEndpoint.DXFeedWildcardEnableProperty, "true") // Enabled by default.
-            .WithProperties(Helper.ParseProperties(cmdArgs.Properties))
+            .WithProperties(ParseHelper.ParseProperties(cmdArgs.Properties))
             .WithName(nameof(DumpTool))
             .Build();
 
@@ -37,7 +37,7 @@ public abstract class DumpTool
             .GetFeed()
             .CreateSubscription(cmdArgs.Types == null
                 ? IEventType.GetEventTypes()
-                : Helper.ParseEventTypes(cmdArgs.Types));
+                : ParseHelper.ParseEventTypes(cmdArgs.Types));
 
         if (!cmdArgs.IsQuite)
         {
@@ -59,7 +59,7 @@ public abstract class DumpTool
                 .NewBuilder()
                 .WithRole(DXEndpoint.Role.StreamPublisher)
                 .WithProperty(DXEndpoint.DXFeedWildcardEnableProperty, "true") // Enabled by default.
-                .WithProperties(Helper.ParseProperties(cmdArgs.Properties))
+                .WithProperties(ParseHelper.ParseProperties(cmdArgs.Properties))
                 .WithName(nameof(DumpTool))
                 .Build()
                 .Connect(cmdArgs.Tape.StartsWith("tape:") ? cmdArgs.Tape : $"tape:{cmdArgs.Tape}");
@@ -69,7 +69,7 @@ public abstract class DumpTool
 
         sub.AddSymbols(cmdArgs.Symbols == null
             ? new[] { WildcardSymbol.All }
-            : Helper.ParseSymbols(cmdArgs.Symbols));
+            : ParseHelper.ParseSymbols(cmdArgs.Symbols));
 
         inputEndpoint.Connect(cmdArgs.Address);
 

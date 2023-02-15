@@ -12,17 +12,17 @@ using DxFeed.Graal.Net.Events.Market;
 
 namespace DxFeed.Graal.Net.Samples;
 
+/// <summary>
+/// A simple sample that shows how to subscribe to quotes for one instruments,
+/// and print all received quotes to the console.
+/// Use default DXFeed instance for that data feed address is defined by "dxfeed.properties" file.
+/// The properties file is copied to the build output directory from the project directory.
+/// </summary>
 internal abstract class Program
 {
-    /// <summary>
-    /// A simple sample that shows how to subscribe to quotes for one instruments,
-    /// and print all received quotes to the console.
-    /// Use default DXFeed instance for that data feed address is defined by "dxfeed.properties" file.
-    /// The properties file is copied to the build output directory from the project directory.
-    /// </summary>
     public static async Task Main(string[] args)
     {
-        // Specified instrument name, fo example AAPL, IBM, MSFT, etc.
+        // Specified instrument name, for example AAPL, IBM, MSFT, etc.
         var symbol = args[0];
 
         // Creates a subscription attached to a default DXFeed with a Quote event type.
