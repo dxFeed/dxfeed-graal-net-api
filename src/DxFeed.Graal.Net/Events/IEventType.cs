@@ -6,8 +6,8 @@
 
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using DxFeed.Graal.Net.Api;
+using DxFeed.Graal.Net.Utils;
 
 namespace DxFeed.Graal.Net.Events;
 
@@ -40,9 +40,5 @@ public interface IEventType
     /// </summary>
     /// <returns>Returns a collection of event types.</returns>
     static IEnumerable<Type> GetEventTypes() =>
-        AppDomain.CurrentDomain.GetAssemblies()
-            .SelectMany(s => s.GetTypes())
-            .Where(t => typeof(IEventType).IsAssignableFrom(t))
-            .Where(t => !t.IsAbstract)
-            .Where(t => t.IsClass);
+        ReflectionUtil.GetInheritedTypes(typeof(IEventType));
 }
