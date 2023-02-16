@@ -51,6 +51,7 @@ jobs:
             6.0.x
 
       - name: Pack
+        if: startsWith(github.event.ref, 'refs/tags/')
         run: dotnet pack -c Release -o artifacts/Packages
 
       - name: Publish Tools
