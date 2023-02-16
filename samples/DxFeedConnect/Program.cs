@@ -25,7 +25,7 @@ internal abstract class Program
         var eventTypeNames = ReflectionUtil.CreateTypesString(IEventType.GetEventTypes());
         var usageString = $@"
 Usage:
-DXFeedConnect <address> <types> <symbols> [<time>]
+DxFeedConnect <address> <types> <symbols> [<time>]
 
 Where:
     address - The address to connect to retrieve data (remote host or local tape file).

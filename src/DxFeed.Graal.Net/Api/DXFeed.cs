@@ -42,7 +42,8 @@ public class DXFeed
     /// Most applications use only a single data-source and should rely on this method to get one.
     /// <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/api/DXFeed.html#getInstance--">Javadoc.</a>
     /// </summary>
-    public static DXFeed Instance =>
+    /// <returns>The <see cref="DXFeed"/>.</returns>
+    public static DXFeed GetInstance() =>
         DXEndpoint.GetInstance().GetFeed();
 
     /// <summary>
