@@ -46,37 +46,48 @@ internal static class ThreadExitManager
             UnregisterCallbackDelegate = UnregisterCallbackMacOs;
             EnableCallbackForCurrentThreadDelegate = EnableCallbackForCurrentThreadMacOs;
         }
+        else if (PlatformUtils.IsLinux && PlatformUtils.IsMono)
+        {
+            RegisterCallbackDelegate = RegisterCallbackMono;
+            UnregisterCallbackDelegate = UnregisterCallbackMono;
+            EnableCallbackForCurrentThreadDelegate = EnableCallbackForCurrentThreadMono;
+        }
         else if (PlatformUtils.IsLinux)
         {
-            if (PlatformUtils.IsMono)
+            // Depending on the Linux distro, use either "libcoreclr.so" or "libpthread.so".
+            // Try import "libcoreclr.so".
+            RegisterCallbackDelegate = RegisterCallbackLinuxLibcoreclr;
+            UnregisterCallbackDelegate = UnregisterCallbackLinuxLibcoreclr;
+            EnableCallbackForCurrentThreadDelegate = EnableCallbackForCurrentThreadLinuxLibcoreclr;
+            var result = CheckImportLib();
+
+            // Some linux distro have "libpthread.so".
+            // Try import "libpthread.so".
+            if (!result)
             {
-                RegisterCallbackDelegate = RegisterCallbackMono;
-                UnregisterCallbackDelegate = UnregisterCallbackMono;
-                EnableCallbackForCurrentThreadDelegate = EnableCallbackForCurrentThreadMono;
+                RegisterCallbackDelegate = RegisterCallbackLinuxLibpthread;
+                UnregisterCallbackDelegate = UnregisterCallbackLinuxLibpthread;
+                EnableCallbackForCurrentThreadDelegate = EnableCallbackForCurrentThreadLinuxLibpthread;
+                result = CheckImportLib();
             }
-            else
+
+            // Workaround. Some linux distro have "libpthread.so.0" instead of "libpthread.so".
+            // For example Ubuntu 22.04 LTS, does not create a simulink on "libpthread.so" from "libpthread.so.0".
+            // Try import "libpthread.so.0"
+            if (!result)
             {
-                unsafe
-                {
-                    // Depending on the Linux distro, use either libcoreclr.so or libpthread.so.
-                    try
-                    {
-                        int callbackId;
+                RegisterCallbackDelegate = RegisterCallbackLinuxLibpthread0;
+                UnregisterCallbackDelegate = UnregisterCallbackLinuxLibpthread0;
+                EnableCallbackForCurrentThreadDelegate = EnableCallbackForCurrentThreadLinuxLibpthread0;
+                result = CheckImportLib();
+            }
 
-                        CheckCall(LinuxLibcoreclrImport.pthread_key_create(new IntPtr(&callbackId), 0));
-                        CheckCall(LinuxLibcoreclrImport.pthread_key_delete(callbackId));
-
-                        RegisterCallbackDelegate = RegisterCallbackLinuxLibcoreclr;
-                        UnregisterCallbackDelegate = UnregisterCallbackLinuxLibcoreclr;
-                        EnableCallbackForCurrentThreadDelegate = EnableCallbackForCurrentThreadLinuxLibcoreclr;
-                    }
-                    catch (EntryPointNotFoundException)
-                    {
-                        RegisterCallbackDelegate = RegisterCallbackLinuxLibpthread;
-                        UnregisterCallbackDelegate = UnregisterCallbackLinuxLibpthread;
-                        EnableCallbackForCurrentThreadDelegate = EnableCallbackForCurrentThreadLinuxLibpthread;
-                    }
-                }
+            if (!result)
+            {
+                // ToDo Add log entry.
+                Console.Error.WriteLine(
+                    "Unable to load any of the libcoreclr.so, libpthread.so, libpthread.so.0 " +
+                    "shared libraries or any of its dependencies.");
             }
         }
         else
@@ -171,6 +182,14 @@ internal static class ThreadExitManager
     }
 
     /// <inheritdoc cref="RegisterCallback"/>
+    private static unsafe int RegisterCallbackLinuxLibpthread0(nint callbackPtr)
+    {
+        int callbackId;
+        CheckCall(LinuxLibpthread0Import.pthread_key_create(new IntPtr(&callbackId), callbackPtr));
+        return callbackId;
+    }
+
+    /// <inheritdoc cref="RegisterCallback"/>
     private static unsafe int RegisterCallbackMono(nint callbackPtr)
     {
         int callbackId;
@@ -209,6 +228,10 @@ internal static class ThreadExitManager
         CheckCall(LinuxLibpthreadImport.pthread_key_delete(callbackId));
 
     /// <inheritdoc cref="UnregisterCallback"/>
+    private static void UnregisterCallbackLinuxLibpthread0(int callbackId) =>
+        CheckCall(LinuxLibpthread0Import.pthread_key_delete(callbackId));
+
+    /// <inheritdoc cref="UnregisterCallback"/>
     private static void UnregisterCallbackMono(int callbackId) =>
         CheckCall(MonoThreadImport.pthread_key_delete(callbackId));
 
@@ -240,12 +263,34 @@ internal static class ThreadExitManager
         CheckCall(LinuxLibpthreadImport.pthread_setspecific(callbackId, threadLocalValue));
 
     /// <inheritdoc cref="EnableCallbackForCurrentThread"/>
+    private static void EnableCallbackForCurrentThreadLinuxLibpthread0(int callbackId, nint threadLocalValue) =>
+        CheckCall(LinuxLibpthread0Import.pthread_setspecific(callbackId, threadLocalValue));
+
+    /// <inheritdoc cref="EnableCallbackForCurrentThread"/>
     private static void EnableCallbackForCurrentThreadMono(int callbackId, nint threadLocalValue) =>
         CheckCall(MonoThreadImport.pthread_setspecific(callbackId, threadLocalValue));
 
     /// <inheritdoc cref="EnableCallbackForCurrentThread"/>
     private static void EnableCallbackForCurrentThreadNotSupported(int callbackId, nint threadLocalValue) =>
         ThrowNotSupportedException();
+
+    /// <summary>
+    /// Checks import native lib.
+    /// </summary>
+    /// <returns><c>true</c> if success; otherwise <c>false</c>.</returns>
+    private static bool CheckImportLib()
+    {
+        try
+        {
+            var callbackId = RegisterCallbackDelegate(0);
+            UnregisterCallbackDelegate(callbackId);
+            return true;
+        }
+        catch (Exception)
+        {
+            return false;
+        }
+    }
 
     /// <summary>
     /// Checks native call result.
@@ -323,6 +368,23 @@ internal static class ThreadExitManager
     private static class LinuxLibpthreadImport
     {
         public const string DllName = "libpthread.so";
+
+        [DllImport(DllName)]
+        public static extern int pthread_key_create(nint key, nint destructorCallback);
+
+        [DllImport(DllName)]
+        public static extern int pthread_key_delete(int key);
+
+        [DllImport(DllName)]
+        public static extern int pthread_setspecific(int key, nint threadLocalValue);
+    }
+
+    /// <summary>
+    /// Linux libpthread.so.0 imports.
+    /// </summary>
+    private static class LinuxLibpthread0Import
+    {
+        public const string DllName = "libpthread.so.0";
 
         [DllImport(DllName)]
         public static extern int pthread_key_create(nint key, nint destructorCallback);

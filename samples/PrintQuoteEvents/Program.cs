@@ -27,7 +27,7 @@ internal abstract class Program
 
         // Creates a subscription attached to a default DXFeed with a Quote event type.
         // The endpoint address to use is stored in the "dxfeed.properties" file.
-        var sub = DXFeed.Instance.CreateSubscription(typeof(Quote));
+        var sub = DXFeed.GetInstance().CreateSubscription(typeof(Quote));
 
         // Listener must be attached before symbols are added.
         sub.AddEventListener(events =>

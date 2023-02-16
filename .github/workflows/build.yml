@@ -38,25 +38,10 @@ jobs:
       - name: Pack
         run: dotnet pack -c Release
 
-      - name: Publish self-contained DxFeed.Graal.Net.Tools
-        run: |
-          if [ "$RUNNER_OS" == "Linux" ]; then
-               ./publish_tools.sh ${{ matrix.OS_NAME }}
-          elif [ "$RUNNER_OS" == "Windows" ]; then
-               ./publish_tools.cmd ${{ matrix.OS_NAME }}
-          elif [ "$RUNNER_OS" == "macOS" ]; then
-               ./publish_tools.sh ${{ matrix.OS_NAME }}
-               ./publish_tools.sh osx-arm64
-          else
-               echo "$RUNNER_OS not supported"
-               exit 1
-          fi
-        shell: bash
-
   release:
     needs: build
     name: Release
-    runs-on: ubuntu-latest
+    runs-on: macos-latest
     steps:
       - uses: actions/checkout@v3
       - name: Setup .NET
@@ -67,6 +52,36 @@ jobs:
 
       - name: Pack
         run: dotnet pack -c Release -o artifacts/Packages
+
+      - name: Publish Tools
+        if: startsWith(github.event.ref, 'refs/tags/')
+        run: |
+          ./publish.sh DxFeed.Graal.Net.Tools
+          ./publish.sh DxFeed.Graal.Net.Tools win-x64
+          ./publish.sh DxFeed.Graal.Net.Tools linux-x64
+          ./publish.sh DxFeed.Graal.Net.Tools osx-x64
+          codesign -f -s - artifacts/Publish/osx-x64/DxFeed.Graal.Net.Tools/DxFeed.Graal.Net.Tools
+          ./publish.sh DxFeed.Graal.Net.Tools osx-arm64
+          codesign -f -s - artifacts/Publish/osx-arm64/DxFeed.Graal.Net.Tools/DxFeed.Graal.Net.Tools
+
+          (cd artifacts/Publish/DxFeed.Graal.Net.Tools/           && zip DxFeed.Graal.Net.Tools-${{ github.ref_name }}.zip           . -r -D)
+          (cd artifacts/Publish/win-x64/DxFeed.Graal.Net.Tools/   && zip DxFeed.Graal.Net.Tools-win-x64-${{ github.ref_name }}.zip   . -r -D)
+          (cd artifacts/Publish/linux-x64/DxFeed.Graal.Net.Tools/ && zip DxFeed.Graal.Net.Tools-linux-x64-${{ github.ref_name }}.zip . -r -D)
+          (cd artifacts/Publish/osx-x64/DxFeed.Graal.Net.Tools/   && zip DxFeed.Graal.Net.Tools-osx-x64-${{ github.ref_name }}.zip   . -r -D)
+          (cd artifacts/Publish/osx-arm64/DxFeed.Graal.Net.Tools/ && zip DxFeed.Graal.Net.Tools-osx-arm64-${{ github.ref_name }}.zip . -r -D)
+        shell: bash
+
+      - name: Upload Tools
+        if: startsWith(github.event.ref, 'refs/tags/')
+        uses: softprops/action-gh-release@v1
+        with:
+          files: |
+            artifacts/Publish/DxFeed.Graal.Net.Tools/DxFeed.Graal.Net.Tools-${{ github.ref_name }}.zip
+            artifacts/Publish/win-x64/DxFeed.Graal.Net.Tools/DxFeed.Graal.Net.Tools-win-x64-${{ github.ref_name }}.zip
+            artifacts/Publish/linux-x64/DxFeed.Graal.Net.Tools/DxFeed.Graal.Net.Tools-linux-x64-${{ github.ref_name }}.zip
+            artifacts/Publish/osx-x64/DxFeed.Graal.Net.Tools/DxFeed.Graal.Net.Tools-osx-x64-${{ github.ref_name }}.zip
+            artifacts/Publish/osx-arm64/DxFeed.Graal.Net.Tools/DxFeed.Graal.Net.Tools-osx-arm64-${{ github.ref_name }}.zip
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Upload NuGet
         if: startsWith(github.event.ref, 'refs/tags/')

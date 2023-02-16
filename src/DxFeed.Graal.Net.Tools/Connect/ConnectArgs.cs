@@ -5,7 +5,6 @@
 // </copyright>
 
 using System;
-using System.Collections.Generic;
 using CommandLine;
 using CommandLine.Text;
 using DxFeed.Graal.Net.Tools.Arguments;

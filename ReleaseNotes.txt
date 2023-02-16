@@ -1,13 +1,37 @@
+## Version 0.2.0
+
+## What's Changed
+* Feature: Bump DxFeed.Graal.Native version to 0.3.3
+* Feature: Bump QD version to 3.316
+* Refactor: Rework event mappers (now we can convert to/from native)
+* Feature: Add DXPublisher (now we can publish events)
+* Feature: Add WriteTapFile sample
+* Feature: Add option tape to DxFeed.Graal.Net.Tools (now we can tape events to file)
+* Feature: Add OptionSale market event
+* Fix: AnalyticOrder market event parsing
+* Feature: Add new field to Profile market event
+* Fix: Isolate and IsolateThread now correct attach/detach
+* Feature: Add ThreadExitManager for manage IsolateThread
+* Feature: Add PlatformUtil to identify the current platform
+* Refactor: Rework native handle, now use SafeHandle class
+* Feature: Add CmdArgUtils and improve sample (moved argument parsing to a separate class)
+* Feature: Add publishing Tools to CI/CD (include self-contained version)
+* Fix: ThreadExitManager. Workaround. Some linux distro have "libpthread.so.0" instead of "libpthread.so"
+* Feature: Add ConvertTapeFile sample
+* Feature: Add DXFeedFileParser sample
+* Feature: Add DXFeedSample sample
+* BREAKING_CHANGES: Rename DxFeed.Instance method to DxFeed.GetInstance, for more consistency
+
 ## Version 0.1.0
 
 ## What's Changed
 * Feature: Add new events type (Candle, Profile, Summary, Greeks, Series, TheoPrice, Underlying)
-* Fix: Implement safe dispose for the DXEdnpoint
+* Fix: Implement safe dispose for the DxEdnpoint
 * Fix: Complete to-do tasks in the Utils namespace
-* Fix: Complete to-do tasks in the DXEndpoint class
-* Feature: Add unit tests for DXEndpoint
+* Fix: Complete to-do tasks in the DxEndpoint class
+* Feature: Add unit tests for DxEndpoint
 * Feature: Improve TimeFormat utils (no new instances are created for the same format, add added the ability to parse sting)
 * Feature: Add new tools to measure performance (PerfTools)
-* Feature: Add CandelSymbol (all candle attributes and market event symbols)
+* Feature: Add CandleSymbol (all candle attributes and market event symbols)
 * Feature: Add release cycle to CI/CD
 * Doc: Improve documentation

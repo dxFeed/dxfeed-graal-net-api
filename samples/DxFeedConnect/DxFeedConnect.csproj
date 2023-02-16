@@ -6,11 +6,11 @@
   </PropertyGroup>
 
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
-    <OutputPath>../../artifacts/Debug/Samples/DXFeedConnect/</OutputPath>
+    <OutputPath>../../artifacts/Debug/Samples/DxFeedConnect/</OutputPath>
   </PropertyGroup>
 
   <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
-    <OutputPath>../../artifacts/Release/Samples/DXFeedConnect/</OutputPath>
+    <OutputPath>../../artifacts/Release/Samples/DxFeedConnect/</OutputPath>
   </PropertyGroup>
 
   <ItemGroup>

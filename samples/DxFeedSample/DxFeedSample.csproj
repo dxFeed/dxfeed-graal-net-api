@@ -1,0 +1,26 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>Exe</OutputType>
+      <RootNamespace>DxFeed.Graal.Net.Samples</RootNamespace>
+    </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <OutputPath>../../artifacts/Debug/Samples/DxFeedSample/</OutputPath>
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <OutputPath>../../artifacts/Release/Samples/DxFeedSample/</OutputPath>
+  </PropertyGroup>
+
+  <ItemGroup>
+      <ProjectReference Include="..\..\src\DxFeed.Graal.Net\DxFeed.Graal.Net.csproj" />
+    </ItemGroup>
+
+  <ItemGroup>
+    <None Update="dxfeed.properties">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>
