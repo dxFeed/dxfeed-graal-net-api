@@ -14,7 +14,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\DxFeed.Graal.Net\DxFeed.Graal.Net.csproj"/>
+    <ProjectReference Include="..\..\src\DxFeed.Graal.Net\DxFeed.Graal.Net.csproj" />
   </ItemGroup>
 
   <ItemGroup>
