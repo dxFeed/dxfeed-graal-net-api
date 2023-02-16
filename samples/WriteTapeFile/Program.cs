@@ -9,11 +9,11 @@ using DxFeed.Graal.Net.Events.Market;
 
 namespace DxFeed.Graal.Net.Samples;
 
+/// <summary>
+/// Write events to a tape file.
+/// </summary>
 internal abstract class Program
 {
-    /// <summary>
-    /// Write events to a tape file.
-    /// </summary>
     public static void Main(string[] args)
     {
         // Create an appropriate endpoint.
@@ -24,15 +24,17 @@ internal abstract class Program
             .WithRole(DXEndpoint.Role.Publisher)
             .Build();
 
-        // Connect to the address.
-        endpoint.Connect("tape:WriteTapeFile.out.bin");
+        // Connect to the address, remove [format=text] or change on [format=binary] for binary format
+        endpoint.Connect("tape:WriteTapeFile.out.txt[format=text]");
 
         // Get publisher.
         var pub = endpoint.GetPublisher();
 
-        // Publish events.
+        // Creates new Quote market events.
         var quote1 = new Quote("TEST1") { BidPrice = 10.1, AskPrice = 10.2 };
         var quote2 = new Quote("TEST2") { BidPrice = 17.1, AskPrice = 17.2 };
+
+        // Publish events.
         pub.PublishEvents(quote1, quote2);
 
         // Wait until all data is written, close, and wait until it closes.
