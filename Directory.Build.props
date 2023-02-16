@@ -21,11 +21,11 @@
 
     <!-- Versioning -->
     <!-- Assembly version (System.Reflection.Assembly.GetExecutingAssembly()) -->
-    <AssemblyVersion>0.1.0</AssemblyVersion>
+    <AssemblyVersion>0.2.0</AssemblyVersion>
     <!-- File (dll) version -->
-    <FileVersion>0.1.0.0</FileVersion>
+    <FileVersion>0.2.0.0</FileVersion>
     <!-- NuGet (product) version -->
-    <Version>0.1.0</Version>
+    <Version>0.2.0</Version>
   </PropertyGroup>
 
   <ItemGroup Label="PackageIcon">
