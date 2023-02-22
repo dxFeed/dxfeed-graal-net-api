@@ -1,0 +1,92 @@
+{
+  "metadata": [
+    {
+      "src": [
+        {
+          "files": [
+            "**/*.csproj"
+          ],
+          "src": "src/DxFeed.Graal.Net"
+        }
+      ],
+      "dest": "docs/api",
+      "disableGitFeatures": false,
+      "disableDefaultFilter": false
+    }
+  ],
+  "build": {
+    "globalMetadata": {
+      "_appTitle": "dxFeed Graal .NET API",
+      "_appFooter": "<span>Copyright © 2022 Devexperts LLC</span>",
+      "_appLogoPath": "docs/images/logo.svg",
+      "_appFaviconPath": "docs/images/favicon.png",
+      "_disableContribution": false,
+      "_disableSideFilter": false,
+      "_enableSearch": true,
+      "_enableNewTab": true
+    },
+    "template": [
+      "default",
+      "statictoc",
+      "docs/templates/material"
+    ],
+    "xrefService": [
+      "https://xref.docs.microsoft.com/query?uid={uid}"
+    ],
+    "content": [
+      {
+        "files": [
+          "docs/api/**.yml",
+          "docs/api/index.md"
+        ]
+      },
+      {
+        "files": [
+          "docs/toc.yml",
+          "docs/*.md",
+          "index.md",
+          "toc.yml"
+        ]
+      }
+    ],
+    "resource": [
+      {
+        "files": [
+          "docs/images/**"
+        ]
+      }
+    ],
+    "overwrite": [
+      {
+        "files": [
+          "docs/apidoc/**.md"
+        ],
+        "exclude": [
+          "obj/**"
+        ]
+      }
+    ],
+    "dest": "artifacts/Documentation",
+    "globalMetadataFiles": [],
+    "fileMetadataFiles": [],
+    "postProcessors": [
+      "ExtractSearchIndex"
+    ],
+    "markdownEngineName": "markdig",
+    "markdownEngineProperties": {
+      "markdigExtensions": [
+        "advanced",
+        "listextras",
+        "abbreviations",
+        "definitionlists",
+        "tasklists",
+        "footnotes",
+        "gridtables"
+      ]
+    },
+    "noLangKeyword": false,
+    "keepFileLink": false,
+    "cleanupCacheHistory": false,
+    "disableGitFeatures": false
+  }
+}

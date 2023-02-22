@@ -1,4 +1,4 @@
-name: Build
+name: "Build & Test & Release"
 
 on:
   push:
@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  build:
+  build_and_test:
     name: Build & Test on ${{ matrix.OS_NAME }}
     runs-on: ${{ matrix.os }}
     strategy:
@@ -18,44 +18,46 @@ jobs:
             OS_NAME: linux-x64
           - os: macos-latest
             OS_NAME: osx-x64
+
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout
+        uses: actions/checkout@v3
+
       - name: Setup .NET
         uses: actions/setup-dotnet@v3
         with:
           dotnet-version: |
             6.0.x
 
-      - name: Restore dependencies
+      - name: Restore Dependencies
         run: dotnet restore
 
-      - name: Build
+      - name: Build Project
         run: dotnet build -c Release --no-restore
 
-      - name: Test
+      - name: Test Project
         run: dotnet test --configuration Release --no-build --verbosity normal --logger:"console;verbosity=normal"
 
-      - name: Pack
+      - name: Pack Project
         run: dotnet pack -c Release
 
   release:
-    needs: build
+    needs: build_and_test
+    if: (startsWith(github.event.ref, 'refs/tags/'))
     name: Release
     runs-on: macos-latest
+
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout
+        uses: actions/checkout@v3
+
       - name: Setup .NET
         uses: actions/setup-dotnet@v3
         with:
           dotnet-version: |
             6.0.x
 
-      - name: Pack
-        if: startsWith(github.event.ref, 'refs/tags/')
-        run: dotnet pack -c Release -o artifacts/Packages
-
       - name: Publish Tools
-        if: startsWith(github.event.ref, 'refs/tags/')
         run: |
           ./publish.sh DxFeed.Graal.Net.Tools
           ./publish.sh DxFeed.Graal.Net.Tools win-x64
@@ -73,7 +75,6 @@ jobs:
         shell: bash
 
       - name: Upload Tools
-        if: startsWith(github.event.ref, 'refs/tags/')
         uses: softprops/action-gh-release@v1
         with:
           generate_release_notes: true
@@ -85,13 +86,60 @@ jobs:
             artifacts/Publish/win-x64/DxFeed.Graal.Net.Tools/DxFeed.Graal.Net.Tools-self-contained-win-x64-${{ github.ref_name }}.zip
           token: ${{ secrets.GITHUB_TOKEN }}
 
+      - name: Pack NuGet
+        run: dotnet pack -c Release --property:PackageOutputPath=artifacts/Packages
+
       - name: Upload NuGet
-        if: startsWith(github.event.ref, 'refs/tags/')
         run: |
           nuget push artifacts/Packages/DxFeed.Graal.Net.${{ github.ref_name }}.nupkg \
           -Source ${{ secrets.JFROG_PATH }}/${{ github.ref_name }} \
           -ApiKey ${{ secrets.JFROG_API_KEY }}
         shell: bash
+
+  build_and_upload_docs:
+    needs: release
+    if: (startsWith(github.event.ref, 'refs/tags/'))
+    name: Build & Upload Docs
+    runs-on: windows-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: |
+            6.0.x
+
+      - name: Restore Dependencies
+        run: dotnet restore
+
+      - name: Build Project
+        run: dotnet build -c Release --no-restore
+
+      - name: Install DocFX
+        run: dotnet tool update -g docfx
+
+      - name: Prepare Tag
+        id: prepare_tag
+        if: startsWith(github.ref, 'refs/tags/')
+        run: |
+          echo "DEPLOY_TAG_NAME=deploy-${TAG_NAME}" >> "${GITHUB_OUTPUT}"
+
+      - name: Build Doc
+        run: ./build_doc.cmd
+
+      - name: Upload Doc
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: artifacts/Documentation
+          tag_name: ${{ steps.prepare_tag.outputs.DEPLOY_TAG_NAME }}
+          commit_message: 'deploy: ${{ github.ref_name }}'
+          allow_empty_commit: true
 
 # ToDo Create a reusable workflow and extract uploading artifacts to a separate flow.
 #      - name: Upload DxFeed.Graal.Net.Tools
