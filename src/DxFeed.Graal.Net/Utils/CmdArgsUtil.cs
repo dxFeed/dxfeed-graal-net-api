@@ -34,7 +34,8 @@ public static class CmdArgsUtil
             }
         }
 
-        var parentheses = 0; // Count of encountered parentheses of any type.
+        // Count of encountered parentheses of any type.
+        var parentheses = 0;
         var sb = new StringBuilder();
         foreach (var c in symbols)
         {
