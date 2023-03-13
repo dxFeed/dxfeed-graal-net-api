@@ -1,0 +1,1118 @@
+{
+  "homepages": [],
+  "source_base_path": "D:/a/dxfeed-graal-net-api/dxfeed-graal-net-api",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "Resource",
+      "output": {
+        "resource": {
+          "relative_path": "index.json"
+        }
+      }
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/DxFeed.Graal.Net.Api.DXEndpoint.Builder.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/api/DxFeed.Graal.Net.Api.DXEndpoint.Builder.html",
+          "hash": "n6mqOQnswMNxBsTng1C+ngJnmBgA7YxTf7/d/puv96A="
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/DxFeed.Graal.Net.Api.DXEndpoint.OnStateChangeListener.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/api/DxFeed.Graal.Net.Api.DXEndpoint.OnStateChangeListener.html",
+          "hash": "gyLxOL784b1FQzcUD8mX8QuLWi90y6hmkKw03ZUvS8g="
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/DxFeed.Graal.Net.Api.DXEndpoint.Role.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/api/DxFeed.Graal.Net.Api.DXEndpoint.Role.html",
+          "hash": "11WRLSKojGQSKOCREQ/WygNtwNhOpAUsTAlcP8nl2Ao="
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/DxFeed.Graal.Net.Api.DXEndpoint.State.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/api/DxFeed.Graal.Net.Api.DXEndpoint.State.html",
+          "hash": "pKuyAq5p5JTRrtErtzU4eRhoX8mAvBkfRd5JmAhaE9o="
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/DxFeed.Graal.Net.Api.DXEndpoint.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/api/DxFeed.Graal.Net.Api.DXEndpoint.html",
+          "hash": "j2C3zgSpbB4cpCRr8UDrfk/Cktx8E5D5jHxFLY0/VQ0="
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/DxFeed.Graal.Net.Api.DXFeed.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/api/DxFeed.Graal.Net.Api.DXFeed.html",
+          "hash": "DLblMC3Zda2Y7ENFZTwuC9SBFJwsEWpX74UO/BhQoPI="
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/DxFeed.Graal.Net.Api.DXFeedEventListener.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/api/DxFeed.Graal.Net.Api.DXFeedEventListener.html",
+          "hash": "id+fDKx1r6Vfzc4GxlHJvD4UbjZA3J9Xlz3OmtAx6SA="
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/DxFeed.Graal.Net.Api.DXFeedSubscription.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/api/DxFeed.Graal.Net.Api.DXFeedSubscription.html",
+          "hash": "mS1uKAJU4W+L2D3g/Nk8odlwARM0w3dNIkT/nMMvU3M="
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/DxFeed.Graal.Net.Api.DXPublisher.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/api/DxFeed.Graal.Net.Api.DXPublisher.html",
+          "hash": "gNCeRMQT3yU1Rk/rOoRJmOv8fVNfV04rgwswm+49+Qs="
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/DxFeed.Graal.Net.Api.Osub.IObservableSubscription.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/api/DxFeed.Graal.Net.Api.Osub.IObservableSubscription.html",
+          "hash": "6CHl5IjuaxYDFWDH7z4yBZ9G7uKYFVFh9xZVWgcuqck="
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/DxFeed.Graal.Net.Api.Osub.IndexedEventSubscriptionSymbol-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/api/DxFeed.Graal.Net.Api.Osub.IndexedEventSubscriptionSymbol-1.html",
+          "hash": "t29Y0JbKtPlZyUAGF7QWTPQrvg7s9RIDOLe0tsScV3s="
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/DxFeed.Graal.Net.Api.Osub.IndexedEventSubscriptionSymbol.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/api/DxFeed.Graal.Net.Api.Osub.IndexedEventSubscriptionSymbol.html",
+          "hash": "M+7EXY8M7XCbidHyN1xSySnFoZx5ARp1kHjKRV4w5zk="
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/DxFeed.Graal.Net.Api.Osub.TimeSeriesSubscriptionSymbol-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/api/DxFeed.Graal.Net.Api.Osub.TimeSeriesSubscriptionSymbol-1.html",
+          "hash": "Dcsgvm21NyNKRjifKW9clYftBEMkAE+FX3NlCDgZjtc="
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/DxFeed.Graal.Net.Api.Osub.TimeSeriesSubscriptionSymbol.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/api/DxFeed.Graal.Net.Api.Osub.TimeSeriesSubscriptionSymbol.html",
+          "hash": "N7zi65dfqBj5Skxcd0mg6gfA+ap/5alVR6izlPzeixM="
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/DxFeed.Graal.Net.Api.Osub.WildcardSymbol.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/api/DxFeed.Graal.Net.Api.Osub.WildcardSymbol.html",
+          "hash": "F+YZGENwgxf49CxXyPO5lkJENm9tW6HmWS/a8d4XJYQ="
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/DxFeed.Graal.Net.Api.Osub.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/api/DxFeed.Graal.Net.Api.Osub.html",
+          "hash": "sB4QR1jfqhRPasoB2AD79vTVUb3aZZLMOuAIs71h9xk="
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/DxFeed.Graal.Net.Api.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/api/DxFeed.Graal.Net.Api.html",
+          "hash": "NAeZPW5qF53CqbDsoV9zhITld3QhFOg+7L7bwouG0XU="
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/DxFeed.Graal.Net.Events.Candles.Candle.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/api/DxFeed.Graal.Net.Events.Candles.Candle.html",
+          "hash": "B8Mt9f3Ub7Td3CylNQYacrPwuElOS5hB9vrxsOMqcjs="
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/DxFeed.Graal.Net.Events.Candles.CandleAlignment.CandleAlignmentId.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/api/DxFeed.Graal.Net.Events.Candles.CandleAlignment.CandleAlignmentId.html",
+          "hash": "4NTg80Usm/3rXQUbpNpcKaQeDZvG+NL3OJP2RHrR25s="
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/DxFeed.Graal.Net.Events.Candles.CandleAlignment.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/api/DxFeed.Graal.Net.Events.Candles.CandleAlignment.html",
+          "hash": "GOcpfFBF/QeCrHGmWM3KpXt++iVF6qRoiuOgjP0GA7c="
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/DxFeed.Graal.Net.Events.Candles.CandleExchange.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/api/DxFeed.Graal.Net.Events.Candles.CandleExchange.html",
+          "hash": "IZwkUcY7p80Fmvj866Twxa6jlcsBN3LVx8fXrThofDc="
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/DxFeed.Graal.Net.Events.Candles.CandlePeriod.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/api/DxFeed.Graal.Net.Events.Candles.CandlePeriod.html",
+          "hash": "u0ppHy+26hKBW0RQ+hsbHLhGAR0wYfEK/e2jUZYcZi0="
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/DxFeed.Graal.Net.Events.Candles.CandlePrice.CandlePriceId.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/api/DxFeed.Graal.Net.Events.Candles.CandlePrice.CandlePriceId.html",
+          "hash": "wCQpp08u2n4K2725FdYjqdpzz+TAYWgDJGeyiK94HMg="
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/DxFeed.Graal.Net.Events.Candles.CandlePrice.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/api/DxFeed.Graal.Net.Events.Candles.CandlePrice.html",
+          "hash": "onuxHhfnkzvWNHErA0tReXvUNxWYEfuVXkOuF7YJ6Ew="
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/DxFeed.Graal.Net.Events.Candles.CandlePriceLevel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/api/DxFeed.Graal.Net.Events.Candles.CandlePriceLevel.html",
+          "hash": "0sxhZ1SKSIRj9KfTro0t1OxeXlGgk6nZ31TO1yp1um8="
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/DxFeed.Graal.Net.Events.Candles.CandleSession.CandleSessionId.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/api/DxFeed.Graal.Net.Events.Candles.CandleSession.CandleSessionId.html",
+          "hash": "N7Pt4un+GD+UuksiF28ys7619HgeozytlDix+6mh6iI="
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/DxFeed.Graal.Net.Events.Candles.CandleSession.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/api/DxFeed.Graal.Net.Events.Candles.CandleSession.html",
+          "hash": "t2knfUGBI5UrUKqw9gR4kGlvA0/jbyC3Qf3dTLPPnE8="
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/DxFeed.Graal.Net.Events.Candles.CandleSymbol.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/api/DxFeed.Graal.Net.Events.Candles.CandleSymbol.html",
+          "hash": "y9l0Vc1giua05D6HNvuhvi7hFtCXSAgnOGSf7B8Cpvg="
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/DxFeed.Graal.Net.Events.Candles.CandleType.CandleTypeId.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/api/DxFeed.Graal.Net.Events.Candles.CandleType.CandleTypeId.html",
+          "hash": "CApxbAvFQhxHXc5El3aeYzbf+HztL5ydwgPIM3A0zgg="
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/DxFeed.Graal.Net.Events.Candles.CandleType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/api/DxFeed.Graal.Net.Events.Candles.CandleType.html",
+          "hash": "ItvKfj0T/miqtZPCeV2RUmz/EYLebxwkfBaf3/lHAic="
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/DxFeed.Graal.Net.Events.Candles.ICandleSymbolProperty.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/api/DxFeed.Graal.Net.Events.Candles.ICandleSymbolProperty.html",
+          "hash": "mndGEc1MjDLZvT1ppDXUFnei6mPtfDJ6umtTFEA8j24="
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/DxFeed.Graal.Net.Events.Candles.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/api/DxFeed.Graal.Net.Events.Candles.html",
+          "hash": "LGRs/SSTL3be1zyBa0Qb4xPJYK2ggRODA6/eSpaxWKs="
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/DxFeed.Graal.Net.Events.EventCodeAttribute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/api/DxFeed.Graal.Net.Events.EventCodeAttribute.html",
+          "hash": "++7XRk8LS3wBXJ7f3hOw7CNsOZHWmkNN/7U2ydEXFd0="
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/DxFeed.Graal.Net.Events.IEventType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/api/DxFeed.Graal.Net.Events.IEventType.html",
+          "hash": "cHzUf7/0hbxdyWSrYn26WzC1teDc5IqbIPLXr6yZyqg="
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/DxFeed.Graal.Net.Events.IIndexedEvent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/api/DxFeed.Graal.Net.Events.IIndexedEvent.html",
+          "hash": "p9EOdqndeHJ0y8G4vWtbetZB7fBNEvSyHgg4laEWCrc="
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/DxFeed.Graal.Net.Events.ILastingEvent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/api/DxFeed.Graal.Net.Events.ILastingEvent.html",
+          "hash": "gPgq/3mSwILZ5w7twecH20lcc9g08Y3lP6WsZvdaawE="
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/DxFeed.Graal.Net.Events.ITimeSeriesEvent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/api/DxFeed.Graal.Net.Events.ITimeSeriesEvent.html",
+          "hash": "+JI/mXQIpSGqlaFMPZBs/+nd7OVcDQSC3PsrQ3dk6SQ="
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/DxFeed.Graal.Net.Events.IndexedEventSource.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/api/DxFeed.Graal.Net.Events.IndexedEventSource.html",
+          "hash": "S6a203Znkr/nn2NYk4ugMRtVmMcyyAFpNYsdl95hCkI="
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/DxFeed.Graal.Net.Events.Market.AnalyticOrder.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/api/DxFeed.Graal.Net.Events.Market.AnalyticOrder.html",
+          "hash": "bHD9keRlRzsB31f++u76onpX1YL1+4KHgIrwe1gxs9w="
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/DxFeed.Graal.Net.Events.Market.Direction.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/api/DxFeed.Graal.Net.Events.Market.Direction.html",
+          "hash": "b9qgnoZoKDukYN0Tc6K5GuoXHg8bccWRm0/58t+oq0o="
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/DxFeed.Graal.Net.Events.Market.IcebergType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/api/DxFeed.Graal.Net.Events.Market.IcebergType.html",
+          "hash": "Ufrtvu3zbvFMqWT/oX+BdAO8EXGadvvvR0WhgsyB7Q8="
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/DxFeed.Graal.Net.Events.Market.MarketEvent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/api/DxFeed.Graal.Net.Events.Market.MarketEvent.html",
+          "hash": "U1HgDYgOL791XkysaZmBY6Liwc6w+l2mBUHpGbFXIZA="
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/DxFeed.Graal.Net.Events.Market.MarketEventSymbols.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/api/DxFeed.Graal.Net.Events.Market.MarketEventSymbols.html",
+          "hash": "2iRwKOo9Tbq5URoOEZhcvrqYxMvxDNFMr9Db9GJC5fM="
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/DxFeed.Graal.Net.Events.Market.OptionSale.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/api/DxFeed.Graal.Net.Events.Market.OptionSale.html",
+          "hash": "S39RF+gJhZugkYxXlYpjzwfMCegcdLH7ERDSuvGY5mU="
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/DxFeed.Graal.Net.Events.Market.Order.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/api/DxFeed.Graal.Net.Events.Market.Order.html",
+          "hash": "nqaEGdiwWi77nbqANVwzbehp3TopRiz/QPca3IH+cWs="
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/DxFeed.Graal.Net.Events.Market.OrderAction.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/api/DxFeed.Graal.Net.Events.Market.OrderAction.html",
+          "hash": "YQmgniSSsA5VuWUQ3jLKdZMLhdiKRpWttV2DXNH6RkQ="
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/DxFeed.Graal.Net.Events.Market.OrderBase.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/api/DxFeed.Graal.Net.Events.Market.OrderBase.html",
+          "hash": "dtrhCz/hJ2zqHMOJDrn9MacrHgAMZC6obnwBsjh9sHY="
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/DxFeed.Graal.Net.Events.Market.OrderSource.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/api/DxFeed.Graal.Net.Events.Market.OrderSource.html",
+          "hash": "z/cBkRYx3xK7K54PjRAQL+QEf3V0Em0RWQGyQZKK8UQ="
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/DxFeed.Graal.Net.Events.Market.PriceType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/api/DxFeed.Graal.Net.Events.Market.PriceType.html",
+          "hash": "lR0G0o7aXSX92Z/JHvTMQsJgykhIWhqs+7g7GK1iRBw="
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/DxFeed.Graal.Net.Events.Market.Profile.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/api/DxFeed.Graal.Net.Events.Market.Profile.html",
+          "hash": "p8jgd68qanDs/PdawbU4dvcEVl1VkDV3GmspLNpdywI="
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/DxFeed.Graal.Net.Events.Market.Quote.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/api/DxFeed.Graal.Net.Events.Market.Quote.html",
+          "hash": "Z9SYCdL4hnnnHcJT4AZbAxEyoGcwELGDZBYvozz0LWA="
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/DxFeed.Graal.Net.Events.Market.Scope.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/api/DxFeed.Graal.Net.Events.Market.Scope.html",
+          "hash": "HdVgJiLGj+h+Ob32xfPKSfQMz4iF0WyA4/RKrI3hi3k="
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/DxFeed.Graal.Net.Events.Market.ShortSaleRestriction.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/api/DxFeed.Graal.Net.Events.Market.ShortSaleRestriction.html",
+          "hash": "cDc69UKUoTVebIFJpJ20+Esu38/bhFUC7TxHMhJS0CY="
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/DxFeed.Graal.Net.Events.Market.Side.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/api/DxFeed.Graal.Net.Events.Market.Side.html",
+          "hash": "ScJnqVR3pN+QjdmtnpT0yqB4W11JHqQmlixgP7prkE0="
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/DxFeed.Graal.Net.Events.Market.SpreadOrder.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/api/DxFeed.Graal.Net.Events.Market.SpreadOrder.html",
+          "hash": "kqZNjzvO7EQZ6zdR+KixAkAumLzIL7rXjS6ZFIaiOKc="
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/DxFeed.Graal.Net.Events.Market.Summary.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/api/DxFeed.Graal.Net.Events.Market.Summary.html",
+          "hash": "EVFAZv9IF0OJ/CX/MJ5WNvCMwCsE2TutsdqvBG5Cr9U="
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/DxFeed.Graal.Net.Events.Market.TimeAndSale.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/api/DxFeed.Graal.Net.Events.Market.TimeAndSale.html",
+          "hash": "i1Cg6U8jn3dSpU6X4wUUH2j/0XlKN2unnQMUZOxOypM="
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/DxFeed.Graal.Net.Events.Market.TimeAndSaleType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/api/DxFeed.Graal.Net.Events.Market.TimeAndSaleType.html",
+          "hash": "sJpsbgjWsA3B5VMhBrP3hFUOLK3rACLfkpbDiF3SRRI="
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/DxFeed.Graal.Net.Events.Market.Trade.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/api/DxFeed.Graal.Net.Events.Market.Trade.html",
+          "hash": "gOkw7eka/Pm7hZKvls2JSgDxZ5OUZYtk6ucXmj/H4pY="
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/DxFeed.Graal.Net.Events.Market.TradeBase.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/api/DxFeed.Graal.Net.Events.Market.TradeBase.html",
+          "hash": "6kyt/2UKXUR6kPTH6DxGkxKkHamYdLfeMzm5P9f9gWs="
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/DxFeed.Graal.Net.Events.Market.TradeETH.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/api/DxFeed.Graal.Net.Events.Market.TradeETH.html",
+          "hash": "FxljsSwWWw3RgkITUYj1FvjPH/2bRR95Ms5387piQco="
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/DxFeed.Graal.Net.Events.Market.TradingStatus.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/api/DxFeed.Graal.Net.Events.Market.TradingStatus.html",
+          "hash": "upMELe+zSjMYJwXT7u70+D5VsVjNIXznLMeCJ6YTRhQ="
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/DxFeed.Graal.Net.Events.Market.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/api/DxFeed.Graal.Net.Events.Market.html",
+          "hash": "dgY7Csge1FadjyNRoo5zhrlG4CyTpp+WHHspF+Zkc0g="
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/DxFeed.Graal.Net.Events.Options.Greeks.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/api/DxFeed.Graal.Net.Events.Options.Greeks.html",
+          "hash": "Ptq9mbhapFaHJPWytcUqOtjvA1Ej/7U4U3GgOw6wMmo="
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/DxFeed.Graal.Net.Events.Options.Series.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/api/DxFeed.Graal.Net.Events.Options.Series.html",
+          "hash": "TjVO073KRPN8zEG9JIPTezT63C19LU7ImXsL3+i5E8s="
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/DxFeed.Graal.Net.Events.Options.TheoPrice.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/api/DxFeed.Graal.Net.Events.Options.TheoPrice.html",
+          "hash": "YkApJbXo9n7pM8RvEAK6yszB56mhpMpP+o5YN//BdIc="
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/DxFeed.Graal.Net.Events.Options.Underlying.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/api/DxFeed.Graal.Net.Events.Options.Underlying.html",
+          "hash": "Q0ic1Sb0MtG+/AxambeXRS+8jQA/Z/Sg4dmKrH/gTOc="
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/DxFeed.Graal.Net.Events.Options.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/api/DxFeed.Graal.Net.Events.Options.html",
+          "hash": "7Uxx4GXw86uNo53xTq2ydWvKIUKZsXXWaag/g1Vw9oY="
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/DxFeed.Graal.Net.Events.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/api/DxFeed.Graal.Net.Events.html",
+          "hash": "JrI+0eSYNx2PUT3Lx6Vpaej8yUAVFu5+tb5CMjsBa3s="
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/DxFeed.Graal.Net.Native.ErrorHandling.GraalErrorCode.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/api/DxFeed.Graal.Net.Native.ErrorHandling.GraalErrorCode.html",
+          "hash": "2TCldHrvdTqMG6UUkDafH6e/bMbAyoh404/PNbIOE2U="
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/DxFeed.Graal.Net.Native.ErrorHandling.GraalException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/api/DxFeed.Graal.Net.Native.ErrorHandling.GraalException.html",
+          "hash": "tc054rrtkjNQPfU+VcwK/rDqobF2zMvI3VItQpqPtIQ="
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/DxFeed.Graal.Net.Native.ErrorHandling.JavaException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/api/DxFeed.Graal.Net.Native.ErrorHandling.JavaException.html",
+          "hash": "oUCpSN/RBSj6Rzk5sp6ywoEcf+91NfeM8Wn4Jkzlo/k="
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/DxFeed.Graal.Net.Native.ErrorHandling.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/api/DxFeed.Graal.Net.Native.ErrorHandling.html",
+          "hash": "Tc5tk+V/U8EvQXX5oSL0pTiTcFicocllPXGofBP7YK4="
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/DxFeed.Graal.Net.Native.Events.EventCodeNative.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/api/DxFeed.Graal.Net.Native.Events.EventCodeNative.html",
+          "hash": "xvzxr2ugrfhQUYwllfUJ2oPr8tTv38ZSWqIxT3J6800="
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/DxFeed.Graal.Net.Native.Events.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/api/DxFeed.Graal.Net.Native.Events.html",
+          "hash": "g02/cwUQ+djfXqxf8SSkn+Q//EsQQj8rfoCvjDt3U/0="
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/DxFeed.Graal.Net.SystemProperty.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/api/DxFeed.Graal.Net.SystemProperty.html",
+          "hash": "ZQWVMG5VqjZri072Xnu/YOHiQ5Jn3fixhJvFbF29pjI="
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/DxFeed.Graal.Net.Utils.AttributeUtil.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/api/DxFeed.Graal.Net.Utils.AttributeUtil.html",
+          "hash": "Qr3CBrvUcW0soQOuoVklILAtgXtCdg2ZnF2PCO3GpgU="
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/DxFeed.Graal.Net.Utils.BitUtil.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/api/DxFeed.Graal.Net.Utils.BitUtil.html",
+          "hash": "/7ivWQbNez/qINOzW3ZEH4fjzE3y1nFRa4tsxMSYEtA="
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/DxFeed.Graal.Net.Utils.CmdArgsUtil.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/api/DxFeed.Graal.Net.Utils.CmdArgsUtil.html",
+          "hash": "KBNmxO/dL36NiEEfj7DH3IGgSOTn/n6S1xzGW2hxsnA="
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/DxFeed.Graal.Net.Utils.DayUtil.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/api/DxFeed.Graal.Net.Utils.DayUtil.html",
+          "hash": "B+ykyEkYApwADlmrMNLLf1+fRqO0vR39sXFLq5Tap/8="
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/DxFeed.Graal.Net.Utils.EnumUtil.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/api/DxFeed.Graal.Net.Utils.EnumUtil.html",
+          "hash": "n3VQRBztPEsoWHcWmITJIpklTnOrEfZ1xOqsMJcqJuo="
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/DxFeed.Graal.Net.Utils.MathUtil.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/api/DxFeed.Graal.Net.Utils.MathUtil.html",
+          "hash": "Yh8gqUW28sSTIVzNTJqBO3YKMUgt+RwJS5Se7EYbFiE="
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/DxFeed.Graal.Net.Utils.PlatformUtils.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/api/DxFeed.Graal.Net.Utils.PlatformUtils.html",
+          "hash": "MUfrC4Kkpz5LvrUexYtLnHVqIZkPsheSDrji7Ktjf/E="
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/DxFeed.Graal.Net.Utils.ReflectionUtil.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/api/DxFeed.Graal.Net.Utils.ReflectionUtil.html",
+          "hash": "MAp7WjskIH3MG1vdcBc72wP8RW0E8MB8Ds3MrrXIKH8="
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/DxFeed.Graal.Net.Utils.StringUtil.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/api/DxFeed.Graal.Net.Utils.StringUtil.html",
+          "hash": "MOM0oAvyS3XgaQ7Eakw46qxaGrdbrwxH3GuRV1/+zgk="
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/DxFeed.Graal.Net.Utils.TimeFormat.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/api/DxFeed.Graal.Net.Utils.TimeFormat.html",
+          "hash": "WHCO+4C5h4Q9gIuz30JqlUlOsKhuq570nwqCaHBpml4="
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/DxFeed.Graal.Net.Utils.TimeNanosUtil.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/api/DxFeed.Graal.Net.Utils.TimeNanosUtil.html",
+          "hash": "filjMpeGTuzo3gw+ymkHstnYpWZGHOtLqxeUcdYAGa8="
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/DxFeed.Graal.Net.Utils.TimeUtil.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/api/DxFeed.Graal.Net.Utils.TimeUtil.html",
+          "hash": "j35owX0vp4nJdEEIYoJnLyoNL/47A8FM6Q2Gz/eBGGE="
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/DxFeed.Graal.Net.Utils.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/api/DxFeed.Graal.Net.Utils.html",
+          "hash": "kFjCB12UudSWwZM+yBV58dZV6vV5XY0MAqsZ5S2V14U="
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/DxFeed.Graal.Net.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/api/DxFeed.Graal.Net.html",
+          "hash": "71Y9wmU+TZKOyVK3LuJf/UkYotXP9pZ7ZFjBPCry1i0="
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/api/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/api/index.html",
+          "hash": "8Bm2ZPPYX6g7Bqy9G280qbU42yggLC/XYlqB+1HbcZs="
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "docs/api/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/api/toc.html",
+          "hash": "mUJ2MGskpdHkDzIp611lLfvzJB1ACn31VUgeL+i6EtY="
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "docs/images/favicon.png",
+      "output": {
+        "resource": {
+          "relative_path": "docs/images/favicon.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "docs/images/logo.svg",
+      "output": {
+        "resource": {
+          "relative_path": "docs/images/logo.svg"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "docs/images/logo_dark.svg",
+      "output": {
+        "resource": {
+          "relative_path": "docs/images/logo_dark.svg"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "docs/images/logo_light.svg",
+      "output": {
+        "resource": {
+          "relative_path": "docs/images/logo_light.svg"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "docs/images/scheme_dark.svg",
+      "output": {
+        "resource": {
+          "relative_path": "docs/images/scheme_dark.svg"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "docs/images/scheme_light.svg",
+      "output": {
+        "resource": {
+          "relative_path": "docs/images/scheme_light.svg"
+        }
+      },
+      "version": ""
+    },
+    {
+      "log_codes": [
+        "InvalidFileLink"
+      ],
+      "type": "Conceptual",
+      "source_relative_path": "index.md",
+      "output": {
+        ".html": {
+          "relative_path": "index.html",
+          "hash": "4qUQk3znUqlBre4aJ1YEEj0bcpk57pJal8/2T039RRg="
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "toc.html",
+          "hash": "a3+kEUjfb+sUO9XcLJMvAhIOtw8RlKuOgHXJDss8eG4="
+        }
+      },
+      "version": ""
+    }
+  ],
+  "version_info": {},
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
+}

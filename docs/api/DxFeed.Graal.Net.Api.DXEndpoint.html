@@ -1,0 +1,1861 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class DXEndpoint
+ | dxFeed Graal .NET API </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class DXEndpoint
+ | dxFeed Graal .NET API ">
+    <meta name="generator" content="docfx ">
+  
+    <link rel="shortcut icon" href="../../docs/images/favicon.png">
+    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../styles/docfx.css">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"> 
+    <meta property="docfx:navrel" content="../../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+  
+  <meta property="docfx:rel" content="../../">
+  <meta property="docfx:newtab" content="true">
+  </head>  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../docs/images/logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+
+                <ul class="nav level1 navbar-nav">
+                      <li>
+                          <a href="../../docs/api/index.html" title="API Documentation">API Documentation</a>
+                      </li>
+                </ul>            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div>
+              <div class="sidefilter">
+                <form class="toc-filter">
+                  <span class="glyphicon glyphicon-filter filter-icon"></span>
+                  <input type="text" id="toc_filter_input" placeholder="Enter here to filter..." onkeypress="if(event.keyCode==13) {return false;}">
+                </form>
+              </div>
+              <div class="sidetoc">
+                <div class="toc" id="toc">
+
+                  <ul class="nav level1">
+                    <li class="">
+                      <span class="expand-stub"></span>
+                      <a href="DxFeed.Graal.Net.html" title="DxFeed.Graal.Net" class="">DxFeed.Graal.Net</a>
+
+                        <ul class="nav level2">
+                          <li class="">
+                            <a href="DxFeed.Graal.Net.SystemProperty.html" title="SystemProperty" class="">SystemProperty</a>
+                          </li>
+                        </ul>                    </li>
+                    <li class="">
+                      <span class="expand-stub"></span>
+                      <a href="DxFeed.Graal.Net.Api.html" title="DxFeed.Graal.Net.Api" class="">DxFeed.Graal.Net.Api</a>
+
+                        <ul class="nav level2">
+                          <li class="active">
+                            <a href="DxFeed.Graal.Net.Api.DXEndpoint.html" title="DXEndpoint" class="active">DXEndpoint</a>
+                          </li>
+                          <li class="">
+                            <a href="DxFeed.Graal.Net.Api.DXEndpoint.Builder.html" title="DXEndpoint.Builder" class="">DXEndpoint.Builder</a>
+                          </li>
+                          <li class="">
+                            <a href="DxFeed.Graal.Net.Api.DXEndpoint.OnStateChangeListener.html" title="DXEndpoint.OnStateChangeListener" class="">DXEndpoint.OnStateChangeListener</a>
+                          </li>
+                          <li class="">
+                            <a href="DxFeed.Graal.Net.Api.DXEndpoint.Role.html" title="DXEndpoint.Role" class="">DXEndpoint.Role</a>
+                          </li>
+                          <li class="">
+                            <a href="DxFeed.Graal.Net.Api.DXEndpoint.State.html" title="DXEndpoint.State" class="">DXEndpoint.State</a>
+                          </li>
+                          <li class="">
+                            <a href="DxFeed.Graal.Net.Api.DXFeed.html" title="DXFeed" class="">DXFeed</a>
+                          </li>
+                          <li class="">
+                            <a href="DxFeed.Graal.Net.Api.DXFeedEventListener.html" title="DXFeedEventListener" class="">DXFeedEventListener</a>
+                          </li>
+                          <li class="">
+                            <a href="DxFeed.Graal.Net.Api.DXFeedSubscription.html" title="DXFeedSubscription" class="">DXFeedSubscription</a>
+                          </li>
+                          <li class="">
+                            <a href="DxFeed.Graal.Net.Api.DXPublisher.html" title="DXPublisher" class="">DXPublisher</a>
+                          </li>
+                        </ul>                    </li>
+                    <li class="">
+                      <span class="expand-stub"></span>
+                      <a href="DxFeed.Graal.Net.Api.Osub.html" title="DxFeed.Graal.Net.Api.Osub" class="">DxFeed.Graal.Net.Api.Osub</a>
+
+                        <ul class="nav level2">
+                          <li class="">
+                            <a href="DxFeed.Graal.Net.Api.Osub.IndexedEventSubscriptionSymbol.html" title="IndexedEventSubscriptionSymbol" class="">IndexedEventSubscriptionSymbol</a>
+                          </li>
+                          <li class="">
+                            <a href="DxFeed.Graal.Net.Api.Osub.IndexedEventSubscriptionSymbol-1.html" title="IndexedEventSubscriptionSymbol&lt;T&gt;" class="">IndexedEventSubscriptionSymbol&lt;T&gt;</a>
+                          </li>
+                          <li class="">
+                            <a href="DxFeed.Graal.Net.Api.Osub.IObservableSubscription.html" title="IObservableSubscription" class="">IObservableSubscription</a>
+                          </li>
+                          <li class="">
+                            <a href="DxFeed.Graal.Net.Api.Osub.TimeSeriesSubscriptionSymbol.html" title="TimeSeriesSubscriptionSymbol" class="">TimeSeriesSubscriptionSymbol</a>
+                          </li>
+                          <li class="">
+                            <a href="DxFeed.Graal.Net.Api.Osub.TimeSeriesSubscriptionSymbol-1.html" title="TimeSeriesSubscriptionSymbol&lt;T&gt;" class="">TimeSeriesSubscriptionSymbol&lt;T&gt;</a>
+                          </li>
+                          <li class="">
+                            <a href="DxFeed.Graal.Net.Api.Osub.WildcardSymbol.html" title="WildcardSymbol" class="">WildcardSymbol</a>
+                          </li>
+                        </ul>                    </li>
+                    <li class="">
+                      <span class="expand-stub"></span>
+                      <a href="DxFeed.Graal.Net.Events.html" title="DxFeed.Graal.Net.Events" class="">DxFeed.Graal.Net.Events</a>
+
+                        <ul class="nav level2">
+                          <li class="">
+                            <a href="DxFeed.Graal.Net.Events.EventCodeAttribute.html" title="EventCodeAttribute" class="">EventCodeAttribute</a>
+                          </li>
+                          <li class="">
+                            <a href="DxFeed.Graal.Net.Events.IEventType.html" title="IEventType" class="">IEventType</a>
+                          </li>
+                          <li class="">
+                            <a href="DxFeed.Graal.Net.Events.IIndexedEvent.html" title="IIndexedEvent" class="">IIndexedEvent</a>
+                          </li>
+                          <li class="">
+                            <a href="DxFeed.Graal.Net.Events.ILastingEvent.html" title="ILastingEvent" class="">ILastingEvent</a>
+                          </li>
+                          <li class="">
+                            <a href="DxFeed.Graal.Net.Events.IndexedEventSource.html" title="IndexedEventSource" class="">IndexedEventSource</a>
+                          </li>
+                          <li class="">
+                            <a href="DxFeed.Graal.Net.Events.ITimeSeriesEvent.html" title="ITimeSeriesEvent" class="">ITimeSeriesEvent</a>
+                          </li>
+                        </ul>                    </li>
+                    <li class="">
+                      <span class="expand-stub"></span>
+                      <a href="DxFeed.Graal.Net.Events.Candles.html" title="DxFeed.Graal.Net.Events.Candles" class="">DxFeed.Graal.Net.Events.Candles</a>
+
+                        <ul class="nav level2">
+                          <li class="">
+                            <a href="DxFeed.Graal.Net.Events.Candles.Candle.html" title="Candle" class="">Candle</a>
+                          </li>
+                          <li class="">
+                            <a href="DxFeed.Graal.Net.Events.Candles.CandleAlignment.html" title="CandleAlignment" class="">CandleAlignment</a>
+                          </li>
+                          <li class="">
+                            <a href="DxFeed.Graal.Net.Events.Candles.CandleAlignment.CandleAlignmentId.html" title="CandleAlignment.CandleAlignmentId" class="">CandleAlignment.CandleAlignmentId</a>
+                          </li>
+                          <li class="">
+                            <a href="DxFeed.Graal.Net.Events.Candles.CandleExchange.html" title="CandleExchange" class="">CandleExchange</a>
+                          </li>
+                          <li class="">
+                            <a href="DxFeed.Graal.Net.Events.Candles.CandlePeriod.html" title="CandlePeriod" class="">CandlePeriod</a>
+                          </li>
+                          <li class="">
+                            <a href="DxFeed.Graal.Net.Events.Candles.CandlePrice.html" title="CandlePrice" class="">CandlePrice</a>
+                          </li>
+                          <li class="">
+                            <a href="DxFeed.Graal.Net.Events.Candles.CandlePrice.CandlePriceId.html" title="CandlePrice.CandlePriceId" class="">CandlePrice.CandlePriceId</a>
+                          </li>
+                          <li class="">
+                            <a href="DxFeed.Graal.Net.Events.Candles.CandlePriceLevel.html" title="CandlePriceLevel" class="">CandlePriceLevel</a>
+                          </li>
+                          <li class="">
+                            <a href="DxFeed.Graal.Net.Events.Candles.CandleSession.html" title="CandleSession" class="">CandleSession</a>
+                          </li>
+                          <li class="">
+                            <a href="DxFeed.Graal.Net.Events.Candles.CandleSession.CandleSessionId.html" title="CandleSession.CandleSessionId" class="">CandleSession.CandleSessionId</a>
+                          </li>
+                          <li class="">
+                            <a href="DxFeed.Graal.Net.Events.Candles.CandleSymbol.html" title="CandleSymbol" class="">CandleSymbol</a>
+                          </li>
+                          <li class="">
+                            <a href="DxFeed.Graal.Net.Events.Candles.CandleType.html" title="CandleType" class="">CandleType</a>
+                          </li>
+                          <li class="">
+                            <a href="DxFeed.Graal.Net.Events.Candles.CandleType.CandleTypeId.html" title="CandleType.CandleTypeId" class="">CandleType.CandleTypeId</a>
+                          </li>
+                          <li class="">
+                            <a href="DxFeed.Graal.Net.Events.Candles.ICandleSymbolProperty.html" title="ICandleSymbolProperty" class="">ICandleSymbolProperty</a>
+                          </li>
+                        </ul>                    </li>
+                    <li class="">
+                      <span class="expand-stub"></span>
+                      <a href="DxFeed.Graal.Net.Events.Market.html" title="DxFeed.Graal.Net.Events.Market" class="">DxFeed.Graal.Net.Events.Market</a>
+
+                        <ul class="nav level2">
+                          <li class="">
+                            <a href="DxFeed.Graal.Net.Events.Market.AnalyticOrder.html" title="AnalyticOrder" class="">AnalyticOrder</a>
+                          </li>
+                          <li class="">
+                            <a href="DxFeed.Graal.Net.Events.Market.Direction.html" title="Direction" class="">Direction</a>
+                          </li>
+                          <li class="">
+                            <a href="DxFeed.Graal.Net.Events.Market.IcebergType.html" title="IcebergType" class="">IcebergType</a>
+                          </li>
+                          <li class="">
+                            <a href="DxFeed.Graal.Net.Events.Market.MarketEvent.html" title="MarketEvent" class="">MarketEvent</a>
+                          </li>
+                          <li class="">
+                            <a href="DxFeed.Graal.Net.Events.Market.MarketEventSymbols.html" title="MarketEventSymbols" class="">MarketEventSymbols</a>
+                          </li>
+                          <li class="">
+                            <a href="DxFeed.Graal.Net.Events.Market.OptionSale.html" title="OptionSale" class="">OptionSale</a>
+                          </li>
+                          <li class="">
+                            <a href="DxFeed.Graal.Net.Events.Market.Order.html" title="Order" class="">Order</a>
+                          </li>
+                          <li class="">
+                            <a href="DxFeed.Graal.Net.Events.Market.OrderAction.html" title="OrderAction" class="">OrderAction</a>
+                          </li>
+                          <li class="">
+                            <a href="DxFeed.Graal.Net.Events.Market.OrderBase.html" title="OrderBase" class="">OrderBase</a>
+                          </li>
+                          <li class="">
+                            <a href="DxFeed.Graal.Net.Events.Market.OrderSource.html" title="OrderSource" class="">OrderSource</a>
+                          </li>
+                          <li class="">
+                            <a href="DxFeed.Graal.Net.Events.Market.PriceType.html" title="PriceType" class="">PriceType</a>
+                          </li>
+                          <li class="">
+                            <a href="DxFeed.Graal.Net.Events.Market.Profile.html" title="Profile" class="">Profile</a>
+                          </li>
+                          <li class="">
+                            <a href="DxFeed.Graal.Net.Events.Market.Quote.html" title="Quote" class="">Quote</a>
+                          </li>
+                          <li class="">
+                            <a href="DxFeed.Graal.Net.Events.Market.Scope.html" title="Scope" class="">Scope</a>
+                          </li>
+                          <li class="">
+                            <a href="DxFeed.Graal.Net.Events.Market.ShortSaleRestriction.html" title="ShortSaleRestriction" class="">ShortSaleRestriction</a>
+                          </li>
+                          <li class="">
+                            <a href="DxFeed.Graal.Net.Events.Market.Side.html" title="Side" class="">Side</a>
+                          </li>
+                          <li class="">
+                            <a href="DxFeed.Graal.Net.Events.Market.SpreadOrder.html" title="SpreadOrder" class="">SpreadOrder</a>
+                          </li>
+                          <li class="">
+                            <a href="DxFeed.Graal.Net.Events.Market.Summary.html" title="Summary" class="">Summary</a>
+                          </li>
+                          <li class="">
+                            <a href="DxFeed.Graal.Net.Events.Market.TimeAndSale.html" title="TimeAndSale" class="">TimeAndSale</a>
+                          </li>
+                          <li class="">
+                            <a href="DxFeed.Graal.Net.Events.Market.TimeAndSaleType.html" title="TimeAndSaleType" class="">TimeAndSaleType</a>
+                          </li>
+                          <li class="">
+                            <a href="DxFeed.Graal.Net.Events.Market.Trade.html" title="Trade" class="">Trade</a>
+                          </li>
+                          <li class="">
+                            <a href="DxFeed.Graal.Net.Events.Market.TradeBase.html" title="TradeBase" class="">TradeBase</a>
+                          </li>
+                          <li class="">
+                            <a href="DxFeed.Graal.Net.Events.Market.TradeETH.html" title="TradeETH" class="">TradeETH</a>
+                          </li>
+                          <li class="">
+                            <a href="DxFeed.Graal.Net.Events.Market.TradingStatus.html" title="TradingStatus" class="">TradingStatus</a>
+                          </li>
+                        </ul>                    </li>
+                    <li class="">
+                      <span class="expand-stub"></span>
+                      <a href="DxFeed.Graal.Net.Events.Options.html" title="DxFeed.Graal.Net.Events.Options" class="">DxFeed.Graal.Net.Events.Options</a>
+
+                        <ul class="nav level2">
+                          <li class="">
+                            <a href="DxFeed.Graal.Net.Events.Options.Greeks.html" title="Greeks" class="">Greeks</a>
+                          </li>
+                          <li class="">
+                            <a href="DxFeed.Graal.Net.Events.Options.Series.html" title="Series" class="">Series</a>
+                          </li>
+                          <li class="">
+                            <a href="DxFeed.Graal.Net.Events.Options.TheoPrice.html" title="TheoPrice" class="">TheoPrice</a>
+                          </li>
+                          <li class="">
+                            <a href="DxFeed.Graal.Net.Events.Options.Underlying.html" title="Underlying" class="">Underlying</a>
+                          </li>
+                        </ul>                    </li>
+                    <li class="">
+                      <span class="expand-stub"></span>
+                      <a href="DxFeed.Graal.Net.Native.ErrorHandling.html" title="DxFeed.Graal.Net.Native.ErrorHandling" class="">DxFeed.Graal.Net.Native.ErrorHandling</a>
+
+                        <ul class="nav level2">
+                          <li class="">
+                            <a href="DxFeed.Graal.Net.Native.ErrorHandling.GraalErrorCode.html" title="GraalErrorCode" class="">GraalErrorCode</a>
+                          </li>
+                          <li class="">
+                            <a href="DxFeed.Graal.Net.Native.ErrorHandling.GraalException.html" title="GraalException" class="">GraalException</a>
+                          </li>
+                          <li class="">
+                            <a href="DxFeed.Graal.Net.Native.ErrorHandling.JavaException.html" title="JavaException" class="">JavaException</a>
+                          </li>
+                        </ul>                    </li>
+                    <li class="">
+                      <span class="expand-stub"></span>
+                      <a href="DxFeed.Graal.Net.Native.Events.html" title="DxFeed.Graal.Net.Native.Events" class="">DxFeed.Graal.Net.Native.Events</a>
+
+                        <ul class="nav level2">
+                          <li class="">
+                            <a href="DxFeed.Graal.Net.Native.Events.EventCodeNative.html" title="EventCodeNative" class="">EventCodeNative</a>
+                          </li>
+                        </ul>                    </li>
+                    <li class="">
+                      <span class="expand-stub"></span>
+                      <a href="DxFeed.Graal.Net.Utils.html" title="DxFeed.Graal.Net.Utils" class="">DxFeed.Graal.Net.Utils</a>
+
+                        <ul class="nav level2">
+                          <li class="">
+                            <a href="DxFeed.Graal.Net.Utils.AttributeUtil.html" title="AttributeUtil" class="">AttributeUtil</a>
+                          </li>
+                          <li class="">
+                            <a href="DxFeed.Graal.Net.Utils.BitUtil.html" title="BitUtil" class="">BitUtil</a>
+                          </li>
+                          <li class="">
+                            <a href="DxFeed.Graal.Net.Utils.CmdArgsUtil.html" title="CmdArgsUtil" class="">CmdArgsUtil</a>
+                          </li>
+                          <li class="">
+                            <a href="DxFeed.Graal.Net.Utils.DayUtil.html" title="DayUtil" class="">DayUtil</a>
+                          </li>
+                          <li class="">
+                            <a href="DxFeed.Graal.Net.Utils.EnumUtil.html" title="EnumUtil" class="">EnumUtil</a>
+                          </li>
+                          <li class="">
+                            <a href="DxFeed.Graal.Net.Utils.MathUtil.html" title="MathUtil" class="">MathUtil</a>
+                          </li>
+                          <li class="">
+                            <a href="DxFeed.Graal.Net.Utils.PlatformUtils.html" title="PlatformUtils" class="">PlatformUtils</a>
+                          </li>
+                          <li class="">
+                            <a href="DxFeed.Graal.Net.Utils.ReflectionUtil.html" title="ReflectionUtil" class="">ReflectionUtil</a>
+                          </li>
+                          <li class="">
+                            <a href="DxFeed.Graal.Net.Utils.StringUtil.html" title="StringUtil" class="">StringUtil</a>
+                          </li>
+                          <li class="">
+                            <a href="DxFeed.Graal.Net.Utils.TimeFormat.html" title="TimeFormat" class="">TimeFormat</a>
+                          </li>
+                          <li class="">
+                            <a href="DxFeed.Graal.Net.Utils.TimeNanosUtil.html" title="TimeNanosUtil" class="">TimeNanosUtil</a>
+                          </li>
+                          <li class="">
+                            <a href="DxFeed.Graal.Net.Utils.TimeUtil.html" title="TimeUtil" class="">TimeUtil</a>
+                          </li>
+                        </ul>                    </li>
+                  </ul>                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="DxFeed.Graal.Net.Api.DXEndpoint">
+
+
+  <h1 id="DxFeed_Graal_Net_Api_DXEndpoint" data-uid="DxFeed.Graal.Net.Api.DXEndpoint" class="text-break">Class DXEndpoint
+</h1>
+  <div class="markdown level0 summary"><p>Manages network connections to <a class="xref" href="DxFeed.Graal.Net.Api.DXFeed.html">DXFeed</a> or <a class="xref" href="DxFeed.Graal.Net.Api.DXPublisher.html">DXPublisher</a>.
+<br>
+There are ready-to-use singleton instances that are available with
+<a class="xref" href="DxFeed.Graal.Net.Api.DXEndpoint.html#DxFeed_Graal_Net_Api_DXEndpoint_GetInstance">GetInstance()</a> and <a class="xref" href="DxFeed.Graal.Net.Api.DXEndpoint.html#DxFeed_Graal_Net_Api_DXEndpoint_GetInstance_DxFeed_Graal_Net_Api_DXEndpoint_Role_">GetInstance(Role)</a> methods as wel as
+factory methods <a class="xref" href="DxFeed.Graal.Net.Api.DXEndpoint.html#DxFeed_Graal_Net_Api_DXEndpoint_Create">Create()</a> and <a class="xref" href="DxFeed.Graal.Net.Api.DXEndpoint.html#DxFeed_Graal_Net_Api_DXEndpoint_Create_DxFeed_Graal_Net_Api_DXEndpoint_Role_">Create(Role)</a>, and a number of configuration methods.
+<br>
+Advanced properties can be configured with <a class="xref" href="DxFeed.Graal.Net.Api.DXEndpoint.Builder.html">DXEndpoint.Builder</a> (creates with <a class="xref" href="DxFeed.Graal.Net.Api.DXEndpoint.html#DxFeed_Graal_Net_Api_DXEndpoint_NewBuilder">NewBuilder()</a>).
+<br>
+This class is a wrapper for <span class="xref">DxFeed.Graal.Net.Native.Endpoint.EndpointNative</span>.
+<br>
+For more details see <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/api/DXEndpoint.html">Javadoc</a>.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+    <div class="level1"><span class="xref">DXEndpoint</span></div>
+  </div>
+  <div class="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.idisposable">IDisposable</a></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode#system-object-gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype#system-object-gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals#system-object-referenceequals(system-object-system-object)">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring#system-object-tostring">object.ToString()</a>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <span class="xref">DxFeed</span>.<span class="xref">Graal</span>.<a class="xref" href="DxFeed.Graal.Net.html">Net</a>.<a class="xref" href="DxFeed.Graal.Net.Api.html">Api</a></h6>
+  <h6><strong>Assembly</strong>: DxFeed.Graal.Net.dll</h6>
+  <h5 id="DxFeed_Graal_Net_Api_DXEndpoint_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public sealed class DXEndpoint : IDisposable</code></pre>
+  </div>
+  <h5 id="DxFeed_Graal_Net_Api_DXEndpoint_examples"><strong>Examples</strong></h5>
+  <pre><code>DXFeed feed = DXEndpoint.Create()
+    .User(&quot;demo&quot;).Password(&quot;demo&quot;)
+    .Connect(&quot;demo.dxfeed.com:7300&quot;)
+    .GetFeed();</code></pre>
+
+  <h3 id="fields">Fields
+</h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.2.1/apiSpec/new?filename=DxFeed_Graal_Net_Api_DXEndpoint_DXEndpointEventTimeProperty.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Api.DXEndpoint.DXEndpointEventTimeProperty%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.2.1/src/DxFeed.Graal.Net/Api/DXEndpoint.cs/#L159">View Source</a>
+  </span>
+  <h4 id="DxFeed_Graal_Net_Api_DXEndpoint_DXEndpointEventTimeProperty" data-uid="DxFeed.Graal.Net.Api.DXEndpoint.DXEndpointEventTimeProperty">DXEndpointEventTimeProperty</h4>
+  <div class="markdown level1 summary"><p>Set this property to true to enable <a class="xref" href="DxFeed.Graal.Net.Events.IEventType.html#DxFeed_Graal_Net_Events_IEventType_EventTime">EventTime</a> support.
+By default, the endpoint does not support event time.
+<br>
+The event time is available only when the corresponding <a class="xref" href="DxFeed.Graal.Net.Api.DXEndpoint.html">DXEndpoint</a>
+is created with this property and the data source has embedded event times.
+This is typically <code>true</code> only for data events that are read from historical tape files.
+Events that are coming from a network connections do not have an embedded event time
+information and event time is not available for them anyway.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const string DXEndpointEventTimeProperty = &quot;dxendpoint.eventTime&quot;</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.2.1/apiSpec/new?filename=DxFeed_Graal_Net_Api_DXEndpoint_DXEndpointStoreEverythingProperty.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Api.DXEndpoint.DXEndpointStoreEverythingProperty%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.2.1/src/DxFeed.Graal.Net/Api/DXEndpoint.cs/#L171">View Source</a>
+  </span>
+  <h4 id="DxFeed_Graal_Net_Api_DXEndpoint_DXEndpointStoreEverythingProperty" data-uid="DxFeed.Graal.Net.Api.DXEndpoint.DXEndpointStoreEverythingProperty">DXEndpointStoreEverythingProperty</h4>
+  <div class="markdown level1 summary"><p>Set this property to to store all <a class="xref" href="DxFeed.Graal.Net.Events.ILastingEvent.html">ILastingEvent</a>
+and <a class="xref" href="DxFeed.Graal.Net.Events.ILastingEvent.html">ILastingEvent</a> events
+even when there is no subscription on them. By default, the endpoint stores only events from subscriptions.
+It works in the same way both for <a class="xref" href="DxFeed.Graal.Net.Api.DXFeed.html">DXFeed</a> and <a class="xref" href="DxFeed.Graal.Net.Api.DXPublisher.html">DXPublisher</a>.
+<br>
+Use this property with extreme care, since API does not currently provide any means to remove those events
+from the storage and there might be an effective memory leak
+if the spaces of symbols on which events are published grows without bound.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const string DXEndpointStoreEverythingProperty = &quot;dxendpoint.storeEverything&quot;</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.2.1/apiSpec/new?filename=DxFeed_Graal_Net_Api_DXEndpoint_DXFeedAddressProperty.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Api.DXEndpoint.DXFeedAddressProperty%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.2.1/src/DxFeed.Graal.Net/Api/DXEndpoint.cs/#L78">View Source</a>
+  </span>
+  <h4 id="DxFeed_Graal_Net_Api_DXEndpoint_DXFeedAddressProperty" data-uid="DxFeed.Graal.Net.Api.DXEndpoint.DXFeedAddressProperty">DXFeedAddressProperty</h4>
+  <div class="markdown level1 summary"><p>Defines default connection address for an endpoint with role
+<a class="xref" href="DxFeed.Graal.Net.Api.DXEndpoint.Role.html#DxFeed_Graal_Net_Api_DXEndpoint_Role_Feed">Feed</a> or <a class="xref" href="DxFeed.Graal.Net.Api.DXEndpoint.Role.html#DxFeed_Graal_Net_Api_DXEndpoint_Role_OnDemandFeed">OnDemandFeed</a>.
+Connection is established to this address by role <a class="xref" href="DxFeed.Graal.Net.Api.DXEndpoint.Role.html#DxFeed_Graal_Net_Api_DXEndpoint_Role_Feed">Feed</a> as soon as endpoint is created.
+<br>
+By default, without this property, connection is not established until <a class="xref" href="DxFeed.Graal.Net.Api.DXEndpoint.html#DxFeed_Graal_Net_Api_DXEndpoint_Connect_System_String_">Connect(string)</a> is invoked.
+<br>
+Credentials for access to premium services may be configured with
+<a class="xref" href="DxFeed.Graal.Net.Api.DXEndpoint.html#DxFeed_Graal_Net_Api_DXEndpoint_DXFeedUserProperty">DXFeedUserProperty</a> and <a class="xref" href="DxFeed.Graal.Net.Api.DXEndpoint.html#DxFeed_Graal_Net_Api_DXEndpoint_DXFeedPasswordProperty">DXFeedPasswordProperty</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const string DXFeedAddressProperty = &quot;dxfeed.address&quot;</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="DxFeed_Graal_Net_Api_DXEndpoint_DXFeedAddressProperty_seealso">See Also</h5>
+  <div class="seealso">
+      <div><a class="xref" href="DxFeed.Graal.Net.Api.DXEndpoint.Builder.html#DxFeed_Graal_Net_Api_DXEndpoint_Builder_WithProperty_System_String_System_String_">WithProperty(string, string)</a></div>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.2.1/apiSpec/new?filename=DxFeed_Graal_Net_Api_DXEndpoint_DXFeedAggregationPeriodProperty.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Api.DXEndpoint.DXFeedAggregationPeriodProperty%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.2.1/src/DxFeed.Graal.Net/Api/DXEndpoint.cs/#L107">View Source</a>
+  </span>
+  <h4 id="DxFeed_Graal_Net_Api_DXEndpoint_DXFeedAggregationPeriodProperty" data-uid="DxFeed.Graal.Net.Api.DXEndpoint.DXFeedAggregationPeriodProperty">DXFeedAggregationPeriodProperty</h4>
+  <div class="markdown level1 summary"><p>Defines data aggregation period an endpoint with role <a class="xref" href="DxFeed.Graal.Net.Api.DXEndpoint.Role.html#DxFeed_Graal_Net_Api_DXEndpoint_Role_Feed">Feed</a> that
+limits the rate of data notifications. For example, setting the value of this property
+to &quot;0.1s&quot; limits notification to once every 100ms (at most 10 per second).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const string DXFeedAggregationPeriodProperty = &quot;dxfeed.aggregationPeriod&quot;</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="DxFeed_Graal_Net_Api_DXEndpoint_DXFeedAggregationPeriodProperty_seealso">See Also</h5>
+  <div class="seealso">
+      <div><a class="xref" href="DxFeed.Graal.Net.Api.DXEndpoint.Builder.html#DxFeed_Graal_Net_Api_DXEndpoint_Builder_WithProperty_System_String_System_String_">WithProperty(string, string)</a></div>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.2.1/apiSpec/new?filename=DxFeed_Graal_Net_Api_DXEndpoint_DXFeedPasswordProperty.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Api.DXEndpoint.DXFeedPasswordProperty%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.2.1/src/DxFeed.Graal.Net/Api/DXEndpoint.cs/#L92">View Source</a>
+  </span>
+  <h4 id="DxFeed_Graal_Net_Api_DXEndpoint_DXFeedPasswordProperty" data-uid="DxFeed.Graal.Net.Api.DXEndpoint.DXFeedPasswordProperty">DXFeedPasswordProperty</h4>
+  <div class="markdown level1 summary"><p>Defines default password for an endpoint with role
+<a class="xref" href="DxFeed.Graal.Net.Api.DXEndpoint.Role.html#DxFeed_Graal_Net_Api_DXEndpoint_Role_Feed">Feed</a> or <a class="xref" href="DxFeed.Graal.Net.Api.DXEndpoint.Role.html#DxFeed_Graal_Net_Api_DXEndpoint_Role_OnDemandFeed">OnDemandFeed</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const string DXFeedPasswordProperty = &quot;dxfeed.password&quot;</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="DxFeed_Graal_Net_Api_DXEndpoint_DXFeedPasswordProperty_seealso">See Also</h5>
+  <div class="seealso">
+      <div><a class="xref" href="DxFeed.Graal.Net.Api.DXEndpoint.html#DxFeed_Graal_Net_Api_DXEndpoint_Password_System_String_">Password(string)</a></div>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.2.1/apiSpec/new?filename=DxFeed_Graal_Net_Api_DXEndpoint_DXFeedPropertiesProperty.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Api.DXEndpoint.DXFeedPropertiesProperty%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.2.1/src/DxFeed.Graal.Net/Api/DXEndpoint.cs/#L65">View Source</a>
+  </span>
+  <h4 id="DxFeed_Graal_Net_Api_DXEndpoint_DXFeedPropertiesProperty" data-uid="DxFeed.Graal.Net.Api.DXEndpoint.DXFeedPropertiesProperty">DXFeedPropertiesProperty</h4>
+  <div class="markdown level1 summary"><p>Defines path to a file with properties for an endpoint with role
+<a class="xref" href="DxFeed.Graal.Net.Api.DXEndpoint.Role.html#DxFeed_Graal_Net_Api_DXEndpoint_Role_Feed">Feed</a> or <a class="xref" href="DxFeed.Graal.Net.Api.DXEndpoint.Role.html#DxFeed_Graal_Net_Api_DXEndpoint_Role_OnDemandFeed">OnDemandFeed</a>.
+<br>
+This file must be in the <a href="https://en.wikipedia.org/wiki/.properties">Java properties file format</a>.
+<br>
+This property can also be set using <a class="xref" href="DxFeed.Graal.Net.SystemProperty.html#DxFeed_Graal_Net_SystemProperty_SetProperty_System_String_System_String_">SetProperty(string, string)</a>,
+as the default property for all instances <a class="xref" href="DxFeed.Graal.Net.Api.DXEndpoint.html">DXEndpoint</a> with <a class="xref" href="DxFeed.Graal.Net.Api.DXEndpoint.Role.html#DxFeed_Graal_Net_Api_DXEndpoint_Role_Feed">Feed</a> or
+or <a class="xref" href="DxFeed.Graal.Net.Api.DXEndpoint.Role.html#DxFeed_Graal_Net_Api_DXEndpoint_Role_OnDemandFeed">OnDemandFeed</a> role.
+<br>
+When the path to this properties file not provided (<a class="xref" href="DxFeed.Graal.Net.SystemProperty.html#DxFeed_Graal_Net_SystemProperty_SetProperty_System_String_System_String_">SetProperty(string, string)</a>
+and <a class="xref" href="DxFeed.Graal.Net.Api.DXEndpoint.Builder.html#DxFeed_Graal_Net_Api_DXEndpoint_Builder_WithProperty_System_String_System_String_">WithProperty(string, string)</a>),
+the file &quot;dxfeed.properties&quot; loaded from current runtime directory.
+It means that the corresponding file can be placed into the current directory with any need
+to specify additional properties.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const string DXFeedPropertiesProperty = &quot;dxfeed.properties&quot;</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="DxFeed_Graal_Net_Api_DXEndpoint_DXFeedPropertiesProperty_seealso">See Also</h5>
+  <div class="seealso">
+      <div><a class="xref" href="DxFeed.Graal.Net.Api.DXEndpoint.Builder.html#DxFeed_Graal_Net_Api_DXEndpoint_Builder_WithProperty_System_String_System_String_">WithProperty(string, string)</a></div>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.2.1/apiSpec/new?filename=DxFeed_Graal_Net_Api_DXEndpoint_DXFeedThreadPoolSizeProperty.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Api.DXEndpoint.DXFeedThreadPoolSizeProperty%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.2.1/src/DxFeed.Graal.Net/Api/DXEndpoint.cs/#L99">View Source</a>
+  </span>
+  <h4 id="DxFeed_Graal_Net_Api_DXEndpoint_DXFeedThreadPoolSizeProperty" data-uid="DxFeed.Graal.Net.Api.DXEndpoint.DXFeedThreadPoolSizeProperty">DXFeedThreadPoolSizeProperty</h4>
+  <div class="markdown level1 summary"><p>Defines thread pool size for an endpoint with role <a class="xref" href="DxFeed.Graal.Net.Api.DXEndpoint.Role.html#DxFeed_Graal_Net_Api_DXEndpoint_Role_Feed">Feed</a>.
+By default, the thread pool size is equal to the number of available processors.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const string DXFeedThreadPoolSizeProperty = &quot;dxfeed.threadPoolSize&quot;</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="DxFeed_Graal_Net_Api_DXEndpoint_DXFeedThreadPoolSizeProperty_seealso">See Also</h5>
+  <div class="seealso">
+      <div><a class="xref" href="DxFeed.Graal.Net.Api.DXEndpoint.Builder.html#DxFeed_Graal_Net_Api_DXEndpoint_Builder_WithProperty_System_String_System_String_">WithProperty(string, string)</a></div>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.2.1/apiSpec/new?filename=DxFeed_Graal_Net_Api_DXEndpoint_DXFeedUserProperty.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Api.DXEndpoint.DXFeedUserProperty%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.2.1/src/DxFeed.Graal.Net/Api/DXEndpoint.cs/#L85">View Source</a>
+  </span>
+  <h4 id="DxFeed_Graal_Net_Api_DXEndpoint_DXFeedUserProperty" data-uid="DxFeed.Graal.Net.Api.DXEndpoint.DXFeedUserProperty">DXFeedUserProperty</h4>
+  <div class="markdown level1 summary"><p>Defines default user name for an endpoint with role
+<a class="xref" href="DxFeed.Graal.Net.Api.DXEndpoint.Role.html#DxFeed_Graal_Net_Api_DXEndpoint_Role_Feed">Feed</a> or <a class="xref" href="DxFeed.Graal.Net.Api.DXEndpoint.Role.html#DxFeed_Graal_Net_Api_DXEndpoint_Role_OnDemandFeed">OnDemandFeed</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const string DXFeedUserProperty = &quot;dxfeed.user&quot;</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="DxFeed_Graal_Net_Api_DXEndpoint_DXFeedUserProperty_seealso">See Also</h5>
+  <div class="seealso">
+      <div><a class="xref" href="DxFeed.Graal.Net.Api.DXEndpoint.html#DxFeed_Graal_Net_Api_DXEndpoint_User_System_String_">User(string)</a></div>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.2.1/apiSpec/new?filename=DxFeed_Graal_Net_Api_DXEndpoint_DXFeedWildcardEnableProperty.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Api.DXEndpoint.DXFeedWildcardEnableProperty%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.2.1/src/DxFeed.Graal.Net/Api/DXEndpoint.cs/#L115">View Source</a>
+  </span>
+  <h4 id="DxFeed_Graal_Net_Api_DXEndpoint_DXFeedWildcardEnableProperty" data-uid="DxFeed.Graal.Net.Api.DXEndpoint.DXFeedWildcardEnableProperty">DXFeedWildcardEnableProperty</h4>
+  <div class="markdown level1 summary"><p>Set this property to <code>true</code> to turns on wildcard support.
+By default, the endpoint does not support wildcards. This property is needed for
+<a class="xref" href="DxFeed.Graal.Net.Api.Osub.WildcardSymbol.html">WildcardSymbol</a> support and for the use of &quot;tape:...&quot; address in <a class="xref" href="DxFeed.Graal.Net.Api.DXPublisher.html">DXPublisher</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const string DXFeedWildcardEnableProperty = &quot;dxfeed.wildcard.enable&quot;</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="DxFeed_Graal_Net_Api_DXEndpoint_DXFeedWildcardEnableProperty_seealso">See Also</h5>
+  <div class="seealso">
+      <div><a class="xref" href="DxFeed.Graal.Net.Api.DXEndpoint.Builder.html#DxFeed_Graal_Net_Api_DXEndpoint_Builder_WithProperty_System_String_System_String_">WithProperty(string, string)</a></div>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.2.1/apiSpec/new?filename=DxFeed_Graal_Net_Api_DXEndpoint_DXPublisherAddressProperty.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Api.DXEndpoint.DXPublisherAddressProperty%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.2.1/src/DxFeed.Graal.Net/Api/DXEndpoint.cs/#L140">View Source</a>
+  </span>
+  <h4 id="DxFeed_Graal_Net_Api_DXEndpoint_DXPublisherAddressProperty" data-uid="DxFeed.Graal.Net.Api.DXEndpoint.DXPublisherAddressProperty">DXPublisherAddressProperty</h4>
+  <div class="markdown level1 summary"><p>Defines default connection address for an endpoint with role <a class="xref" href="DxFeed.Graal.Net.Api.DXEndpoint.Role.html#DxFeed_Graal_Net_Api_DXEndpoint_Role_Publisher">Publisher</a>.
+Connection is established to this address as soon as endpoint is created.
+By default, connection is not established until <a class="xref" href="DxFeed.Graal.Net.Api.DXEndpoint.html#DxFeed_Graal_Net_Api_DXEndpoint_Connect_System_String_">Connect(string)</a> is invoked.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const string DXPublisherAddressProperty = &quot;dxpublisher.address&quot;</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="DxFeed_Graal_Net_Api_DXEndpoint_DXPublisherAddressProperty_seealso">See Also</h5>
+  <div class="seealso">
+      <div><a class="xref" href="DxFeed.Graal.Net.Api.DXEndpoint.Builder.html#DxFeed_Graal_Net_Api_DXEndpoint_Builder_WithProperty_System_String_System_String_">WithProperty(string, string)</a></div>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.2.1/apiSpec/new?filename=DxFeed_Graal_Net_Api_DXEndpoint_DXPublisherPropertiesProperty.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Api.DXEndpoint.DXPublisherPropertiesProperty%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.2.1/src/DxFeed.Graal.Net/Api/DXEndpoint.cs/#L132">View Source</a>
+  </span>
+  <h4 id="DxFeed_Graal_Net_Api_DXEndpoint_DXPublisherPropertiesProperty" data-uid="DxFeed.Graal.Net.Api.DXEndpoint.DXPublisherPropertiesProperty">DXPublisherPropertiesProperty</h4>
+  <div class="markdown level1 summary"><p>Defines path to a file with properties for an endpoint with role <a class="xref" href="DxFeed.Graal.Net.Api.DXEndpoint.Role.html#DxFeed_Graal_Net_Api_DXEndpoint_Role_Publisher">Publisher</a>.
+<br>
+This file must be in the <a href="https://en.wikipedia.org/wiki/.properties">Java properties file format</a>.
+<br>
+This property can also be set using <a class="xref" href="DxFeed.Graal.Net.SystemProperty.html#DxFeed_Graal_Net_SystemProperty_SetProperty_System_String_System_String_">SetProperty(string, string)</a>,
+as the default property for all instances <a class="xref" href="DxFeed.Graal.Net.Api.DXEndpoint.html">DXEndpoint</a> with <a class="xref" href="DxFeed.Graal.Net.Api.DXEndpoint.Role.html#DxFeed_Graal_Net_Api_DXEndpoint_Role_Publisher">Publisher</a> role.
+<br>
+When the path to this properties file not provided (<a class="xref" href="DxFeed.Graal.Net.SystemProperty.html#DxFeed_Graal_Net_SystemProperty_SetProperty_System_String_System_String_">SetProperty(string, string)</a>
+and <a class="xref" href="DxFeed.Graal.Net.Api.DXEndpoint.Builder.html#DxFeed_Graal_Net_Api_DXEndpoint_Builder_WithProperty_System_String_System_String_">WithProperty(string, string)</a>),
+the file &quot;dxpublisher.properties&quot; loaded from current runtime directory.
+It means that the corresponding file can be placed into the current directory with any need
+to specify additional properties.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const string DXPublisherPropertiesProperty = &quot;dxpublisher.properties&quot;</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="DxFeed_Graal_Net_Api_DXEndpoint_DXPublisherPropertiesProperty_seealso">See Also</h5>
+  <div class="seealso">
+      <div><a class="xref" href="DxFeed.Graal.Net.Api.DXEndpoint.Builder.html#DxFeed_Graal_Net_Api_DXEndpoint_Builder_WithProperty_System_String_System_String_">WithProperty(string, string)</a></div>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.2.1/apiSpec/new?filename=DxFeed_Graal_Net_Api_DXEndpoint_DXPublisherThreadPoolSizeProperty.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Api.DXEndpoint.DXPublisherThreadPoolSizeProperty%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.2.1/src/DxFeed.Graal.Net/Api/DXEndpoint.cs/#L147">View Source</a>
+  </span>
+  <h4 id="DxFeed_Graal_Net_Api_DXEndpoint_DXPublisherThreadPoolSizeProperty" data-uid="DxFeed.Graal.Net.Api.DXEndpoint.DXPublisherThreadPoolSizeProperty">DXPublisherThreadPoolSizeProperty</h4>
+  <div class="markdown level1 summary"><p>Defines thread pool size for an endpoint with role <a class="xref" href="DxFeed.Graal.Net.Api.DXEndpoint.Role.html#DxFeed_Graal_Net_Api_DXEndpoint_Role_Publisher">Publisher</a>.
+By default, the thread pool size is equal to the number of available processors.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const string DXPublisherThreadPoolSizeProperty = &quot;dxpublisher.threadPoolSize&quot;</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="DxFeed_Graal_Net_Api_DXEndpoint_DXPublisherThreadPoolSizeProperty_seealso">See Also</h5>
+  <div class="seealso">
+      <div><a class="xref" href="DxFeed.Graal.Net.Api.DXEndpoint.Builder.html#DxFeed_Graal_Net_Api_DXEndpoint_Builder_WithProperty_System_String_System_String_">WithProperty(string, string)</a></div>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.2.1/apiSpec/new?filename=DxFeed_Graal_Net_Api_DXEndpoint_DXSchemeEnabledPropertyPrefix.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Api.DXEndpoint.DXSchemeEnabledPropertyPrefix%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.2.1/src/DxFeed.Graal.Net/Api/DXEndpoint.cs/#L202">View Source</a>
+  </span>
+  <h4 id="DxFeed_Graal_Net_Api_DXEndpoint_DXSchemeEnabledPropertyPrefix" data-uid="DxFeed.Graal.Net.Api.DXEndpoint.DXSchemeEnabledPropertyPrefix">DXSchemeEnabledPropertyPrefix</h4>
+  <div class="markdown level1 summary"><p>Defines whether a specified field from the scheme should be enabled instead of it's default behaviour.
+<br>
+Use it according to following format:
+<br>
+<code>dxscheme.enabled.field_property_name=event_name_mask_glob</code>
+<br>
+For example, <strong>dxscheme.enabled.TimeNanoPart=Trade</strong> enables <code>NanoTimePart</code>
+internal field only in Trade events.
+There is a shortcut for turning on nano-time support using <a class="xref" href="DxFeed.Graal.Net.Api.DXEndpoint.html#DxFeed_Graal_Net_Api_DXEndpoint_DXSchemeNanoTimeProperty">DXSchemeNanoTimeProperty</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const string DXSchemeEnabledPropertyPrefix = &quot;dxscheme.enabled.&quot;</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.2.1/apiSpec/new?filename=DxFeed_Graal_Net_Api_DXEndpoint_DXSchemeNanoTimeProperty.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Api.DXEndpoint.DXSchemeNanoTimeProperty%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.2.1/src/DxFeed.Graal.Net/Api/DXEndpoint.cs/#L189">View Source</a>
+  </span>
+  <h4 id="DxFeed_Graal_Net_Api_DXEndpoint_DXSchemeNanoTimeProperty" data-uid="DxFeed.Graal.Net.Api.DXEndpoint.DXSchemeNanoTimeProperty">DXSchemeNanoTimeProperty</h4>
+  <div class="markdown level1 summary"><p>Set this property to <code>true</code> to turn on nanoseconds precision business time.
+By default, this feature is turned off.
+Business time in most events is available with millisecond precision by default,
+while <a class="xref" href="DxFeed.Graal.Net.Events.Market.Quote.html">Quote</a> events business <a class="xref" href="DxFeed.Graal.Net.Events.Market.Quote.html#DxFeed_Graal_Net_Events_Market_Quote_Time">Time</a>
+is available with seconds precision.
+<br>
+This method provides a higher-level control than turning on individual properties that are responsible
+for nano-time via <a class="xref" href="DxFeed.Graal.Net.Api.DXEndpoint.html#DxFeed_Graal_Net_Api_DXEndpoint_DXSchemeEnabledPropertyPrefix">DXSchemeEnabledPropertyPrefix</a>.
+The later can be used to override of fine-time nano-time support for individual fields.
+Setting this property to <code>true</code> is essentially equivalent to setting:</p>
+<pre><code>dxscheme.enabled.Sequence=*
+dxscheme.enabled.TimeNanoPart=*</code></pre>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const string DXSchemeNanoTimeProperty = &quot;dxscheme.nanoTime&quot;</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.2.1/apiSpec/new?filename=DxFeed_Graal_Net_Api_DXEndpoint_NameProperty.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Api.DXEndpoint.NameProperty%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.2.1/src/DxFeed.Graal.Net/Api/DXEndpoint.cs/#L46">View Source</a>
+  </span>
+  <h4 id="DxFeed_Graal_Net_Api_DXEndpoint_NameProperty" data-uid="DxFeed.Graal.Net.Api.DXEndpoint.NameProperty">NameProperty</h4>
+  <div class="markdown level1 summary"><p>Defines property for endpoint name that is used to distinguish multiple endpoints
+in the same JVM in logs and in other diagnostic means.
+Use <a class="xref" href="DxFeed.Graal.Net.Api.DXEndpoint.Builder.html#DxFeed_Graal_Net_Api_DXEndpoint_Builder_WithProperty_System_String_System_String_">WithProperty(string, string)</a> method.
+This property is also changed by <a class="xref" href="DxFeed.Graal.Net.Api.DXEndpoint.Builder.html#DxFeed_Graal_Net_Api_DXEndpoint_Builder_WithName_System_String_">WithName(string)</a> method.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const string NameProperty = &quot;name&quot;</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+</h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.2.1/apiSpec/new?filename=DxFeed_Graal_Net_Api_DXEndpoint_AddStateChangeListener_DxFeed_Graal_Net_Api_DXEndpoint_OnStateChangeListener_.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Api.DXEndpoint.AddStateChangeListener(DxFeed.Graal.Net.Api.DXEndpoint.OnStateChangeListener)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.2.1/src/DxFeed.Graal.Net/Api/DXEndpoint.cs/#L587">View Source</a>
+  </span>
+  <a id="DxFeed_Graal_Net_Api_DXEndpoint_AddStateChangeListener_" data-uid="DxFeed.Graal.Net.Api.DXEndpoint.AddStateChangeListener*"></a>
+  <h4 id="DxFeed_Graal_Net_Api_DXEndpoint_AddStateChangeListener_DxFeed_Graal_Net_Api_DXEndpoint_OnStateChangeListener_" data-uid="DxFeed.Graal.Net.Api.DXEndpoint.AddStateChangeListener(DxFeed.Graal.Net.Api.DXEndpoint.OnStateChangeListener)">AddStateChangeListener(OnStateChangeListener)</h4>
+  <div class="markdown level1 summary"><p>Adds listener that is notified about changes in <a class="xref" href="DxFeed.Graal.Net.Api.DXEndpoint.html#DxFeed_Graal_Net_Api_DXEndpoint_GetState">GetState()</a> property.
+It removes the listener that was previously installed with <a class="xref" href="DxFeed.Graal.Net.Api.DXEndpoint.html#DxFeed_Graal_Net_Api_DXEndpoint_RemoveStateChangeListener_DxFeed_Graal_Net_Api_DXEndpoint_OnStateChangeListener_">RemoveStateChangeListener(OnStateChangeListener)</a> method.
+<a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/api/DXEndpoint.html#addStateChangeListener-java.beans.PropertyChangeListener-">Javadoc.</a></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void AddStateChangeListener(DXEndpoint.OnStateChangeListener listener)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="DxFeed.Graal.Net.Api.DXEndpoint.html">DXEndpoint</a>.<a class="xref" href="DxFeed.Graal.Net.Api.DXEndpoint.OnStateChangeListener.html">OnStateChangeListener</a></td>
+        <td><span class="parametername">listener</span></td>
+        <td><p>The listener to add.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.2.1/apiSpec/new?filename=DxFeed_Graal_Net_Api_DXEndpoint_AwaitNotConnected.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Api.DXEndpoint.AwaitNotConnected%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.2.1/src/DxFeed.Graal.Net/Api/DXEndpoint.cs/#L578">View Source</a>
+  </span>
+  <a id="DxFeed_Graal_Net_Api_DXEndpoint_AwaitNotConnected_" data-uid="DxFeed.Graal.Net.Api.DXEndpoint.AwaitNotConnected*"></a>
+  <h4 id="DxFeed_Graal_Net_Api_DXEndpoint_AwaitNotConnected" data-uid="DxFeed.Graal.Net.Api.DXEndpoint.AwaitNotConnected">AwaitNotConnected()</h4>
+  <div class="markdown level1 summary"><p>Waits while this endpoint <a class="xref" href="DxFeed.Graal.Net.Api.DXEndpoint.State.html">DXEndpoint.State</a> becomes <a class="xref" href="DxFeed.Graal.Net.Api.DXEndpoint.State.html#DxFeed_Graal_Net_Api_DXEndpoint_State_NotConnected">NotConnected</a> or
+<a class="xref" href="DxFeed.Graal.Net.Api.DXEndpoint.State.html#DxFeed_Graal_Net_Api_DXEndpoint_State_Closed">Closed</a>. It is a signal that any files that were opened with
+<a class="xref" href="DxFeed.Graal.Net.Api.DXEndpoint.html#DxFeed_Graal_Net_Api_DXEndpoint_Connect_System_String_">Connect(&quot;file:...&quot;)</a> method were finished reading, but not necessary were completely
+processed by the corresponding subscription listeners. Use <a class="xref" href="DxFeed.Graal.Net.Api.DXEndpoint.html#DxFeed_Graal_Net_Api_DXEndpoint_CloseAndAwaitTermination">CloseAndAwaitTermination()</a> after
+this method returns to make sure that all processing has completed.
+<a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/api/DXEndpoint.html#awaitNotConnected--">Javadoc.</a></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void AwaitNotConnected()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.2.1/apiSpec/new?filename=DxFeed_Graal_Net_Api_DXEndpoint_AwaitProcessed.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Api.DXEndpoint.AwaitProcessed%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.2.1/src/DxFeed.Graal.Net/Api/DXEndpoint.cs/#L567">View Source</a>
+  </span>
+  <a id="DxFeed_Graal_Net_Api_DXEndpoint_AwaitProcessed_" data-uid="DxFeed.Graal.Net.Api.DXEndpoint.AwaitProcessed*"></a>
+  <h4 id="DxFeed_Graal_Net_Api_DXEndpoint_AwaitProcessed" data-uid="DxFeed.Graal.Net.Api.DXEndpoint.AwaitProcessed">AwaitProcessed()</h4>
+  <div class="markdown level1 summary"><p>Waits until this endpoint stops processing data (becomes quiescent).
+This is important when writing data to file via &quot;tape:...&quot; connector to make sure that
+all published data was written before closing this endpoint.
+<a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/api/DXEndpoint.html#awaitProcessed--">Javadoc.</a></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void AwaitProcessed()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.2.1/apiSpec/new?filename=DxFeed_Graal_Net_Api_DXEndpoint_Close.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Api.DXEndpoint.Close%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.2.1/src/DxFeed.Graal.Net/Api/DXEndpoint.cs/#L442">View Source</a>
+  </span>
+  <a id="DxFeed_Graal_Net_Api_DXEndpoint_Close_" data-uid="DxFeed.Graal.Net.Api.DXEndpoint.Close*"></a>
+  <h4 id="DxFeed_Graal_Net_Api_DXEndpoint_Close" data-uid="DxFeed.Graal.Net.Api.DXEndpoint.Close">Close()</h4>
+  <div class="markdown level1 summary"><p>Closes this endpoint. All network connection are terminated as with
+<a class="xref" href="DxFeed.Graal.Net.Api.DXEndpoint.html#DxFeed_Graal_Net_Api_DXEndpoint_Disconnect">Disconnect()</a> method and no further connections can be established.
+The endpoint <a class="xref" href="DxFeed.Graal.Net.Api.DXEndpoint.State.html">DXEndpoint.State</a> immediately becomes <a class="xref" href="DxFeed.Graal.Net.Api.DXEndpoint.State.html#DxFeed_Graal_Net_Api_DXEndpoint_State_Closed">Closed</a>.
+<a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/api/DXEndpoint.html#close--">Javadoc.</a></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Close()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.2.1/apiSpec/new?filename=DxFeed_Graal_Net_Api_DXEndpoint_CloseAndAwaitTermination.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Api.DXEndpoint.CloseAndAwaitTermination%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.2.1/src/DxFeed.Graal.Net/Api/DXEndpoint.cs/#L456">View Source</a>
+  </span>
+  <a id="DxFeed_Graal_Net_Api_DXEndpoint_CloseAndAwaitTermination_" data-uid="DxFeed.Graal.Net.Api.DXEndpoint.CloseAndAwaitTermination*"></a>
+  <h4 id="DxFeed_Graal_Net_Api_DXEndpoint_CloseAndAwaitTermination" data-uid="DxFeed.Graal.Net.Api.DXEndpoint.CloseAndAwaitTermination">CloseAndAwaitTermination()</h4>
+  <div class="markdown level1 summary"><p>Closes this endpoint and wait until all pending data processing tasks are completed.
+This  method performs the same actions as close <a class="xref" href="DxFeed.Graal.Net.Api.DXEndpoint.html#DxFeed_Graal_Net_Api_DXEndpoint_Close">Close()</a>, but also awaits
+termination of all outstanding data processing tasks. It is designed to be used
+with <a class="xref" href="DxFeed.Graal.Net.Api.DXEndpoint.Role.html#DxFeed_Graal_Net_Api_DXEndpoint_Role_StreamFeed">StreamFeed</a> role after <a class="xref" href="DxFeed.Graal.Net.Api.DXEndpoint.html#DxFeed_Graal_Net_Api_DXEndpoint_AwaitNotConnected">AwaitNotConnected()</a> method returns
+to make sure that file was completely processed.
+<a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/api/DXEndpoint.html#closeAndAwaitTermination--">Javadoc.</a></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void CloseAndAwaitTermination()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.2.1/apiSpec/new?filename=DxFeed_Graal_Net_Api_DXEndpoint_Connect_System_String_.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Api.DXEndpoint.Connect(System.String)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.2.1/src/DxFeed.Graal.Net/Api/DXEndpoint.cs/#L530">View Source</a>
+  </span>
+  <a id="DxFeed_Graal_Net_Api_DXEndpoint_Connect_" data-uid="DxFeed.Graal.Net.Api.DXEndpoint.Connect*"></a>
+  <h4 id="DxFeed_Graal_Net_Api_DXEndpoint_Connect_System_String_" data-uid="DxFeed.Graal.Net.Api.DXEndpoint.Connect(System.String)">Connect(string)</h4>
+  <div class="markdown level1 summary"><p>Connects to the specified remote address. Previously established connections are closed if
+the new address is different from the old one.
+This method does nothing if address does not change or if this endpoint is <a class="xref" href="DxFeed.Graal.Net.Api.DXEndpoint.State.html#DxFeed_Graal_Net_Api_DXEndpoint_State_Closed">Closed</a>.
+The endpoint <a class="xref" href="DxFeed.Graal.Net.Api.DXEndpoint.State.html">DXEndpoint.State</a> immediately becomes <a class="xref" href="DxFeed.Graal.Net.Api.DXEndpoint.State.html#DxFeed_Graal_Net_Api_DXEndpoint_State_Connecting">Connecting</a>  otherwise.
+<a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/api/DXEndpoint.html#connect-java.lang.String-">Javadoc.</a></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public DXEndpoint Connect(string address)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">address</span></td>
+        <td><p>The data source address.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="DxFeed.Graal.Net.Api.DXEndpoint.html">DXEndpoint</a></td>
+        <td><p>Returns this <a class="xref" href="DxFeed.Graal.Net.Api.DXEndpoint.html">DXEndpoint</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.2.1/apiSpec/new?filename=DxFeed_Graal_Net_Api_DXEndpoint_Create.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Api.DXEndpoint.Create%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.2.1/src/DxFeed.Graal.Net/Api/DXEndpoint.cs/#L421">View Source</a>
+  </span>
+  <a id="DxFeed_Graal_Net_Api_DXEndpoint_Create_" data-uid="DxFeed.Graal.Net.Api.DXEndpoint.Create*"></a>
+  <h4 id="DxFeed_Graal_Net_Api_DXEndpoint_Create" data-uid="DxFeed.Graal.Net.Api.DXEndpoint.Create">Create()</h4>
+  <div class="markdown level1 summary"><p>Creates an endpoint with a role <a class="xref" href="DxFeed.Graal.Net.Api.DXEndpoint.Role.html#DxFeed_Graal_Net_Api_DXEndpoint_Role_Feed">Feed</a>.
+<a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/api/DXEndpoint.html#create--">Javadoc.</a></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static DXEndpoint Create()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="DxFeed.Graal.Net.Api.DXEndpoint.html">DXEndpoint</a></td>
+        <td><p>The created <a class="xref" href="DxFeed.Graal.Net.Api.DXEndpoint.html">DXEndpoint</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.2.1/apiSpec/new?filename=DxFeed_Graal_Net_Api_DXEndpoint_Create_DxFeed_Graal_Net_Api_DXEndpoint_Role_.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Api.DXEndpoint.Create(DxFeed.Graal.Net.Api.DXEndpoint.Role)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.2.1/src/DxFeed.Graal.Net/Api/DXEndpoint.cs/#L430">View Source</a>
+  </span>
+  <a id="DxFeed_Graal_Net_Api_DXEndpoint_Create_" data-uid="DxFeed.Graal.Net.Api.DXEndpoint.Create*"></a>
+  <h4 id="DxFeed_Graal_Net_Api_DXEndpoint_Create_DxFeed_Graal_Net_Api_DXEndpoint_Role_" data-uid="DxFeed.Graal.Net.Api.DXEndpoint.Create(DxFeed.Graal.Net.Api.DXEndpoint.Role)">Create(Role)</h4>
+  <div class="markdown level1 summary"><p>Creates an endpoint with a specified <a class="xref" href="DxFeed.Graal.Net.Api.DXEndpoint.Role.html">DXEndpoint.Role</a>.
+<a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/api/DXEndpoint.html#create-com.dxfeed.api.DXEndpoint.Role-">Javadoc.</a></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static DXEndpoint Create(DXEndpoint.Role role)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="DxFeed.Graal.Net.Api.DXEndpoint.html">DXEndpoint</a>.<a class="xref" href="DxFeed.Graal.Net.Api.DXEndpoint.Role.html">Role</a></td>
+        <td><span class="parametername">role</span></td>
+        <td><p>The specified <a class="xref" href="DxFeed.Graal.Net.Api.DXEndpoint.Role.html">DXEndpoint.Role</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="DxFeed.Graal.Net.Api.DXEndpoint.html">DXEndpoint</a></td>
+        <td><p>The created <a class="xref" href="DxFeed.Graal.Net.Api.DXEndpoint.html">DXEndpoint</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.2.1/apiSpec/new?filename=DxFeed_Graal_Net_Api_DXEndpoint_Disconnect.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Api.DXEndpoint.Disconnect%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.2.1/src/DxFeed.Graal.Net/Api/DXEndpoint.cs/#L549">View Source</a>
+  </span>
+  <a id="DxFeed_Graal_Net_Api_DXEndpoint_Disconnect_" data-uid="DxFeed.Graal.Net.Api.DXEndpoint.Disconnect*"></a>
+  <h4 id="DxFeed_Graal_Net_Api_DXEndpoint_Disconnect" data-uid="DxFeed.Graal.Net.Api.DXEndpoint.Disconnect">Disconnect()</h4>
+  <div class="markdown level1 summary"><p>Terminates all remote network connections.
+This method does nothing if this endpoint is <a class="xref" href="DxFeed.Graal.Net.Api.DXEndpoint.State.html#DxFeed_Graal_Net_Api_DXEndpoint_State_Closed">Closed</a>.
+The endpoint <a class="xref" href="DxFeed.Graal.Net.Api.DXEndpoint.State.html">DXEndpoint.State</a> immediately becomes <a class="xref" href="DxFeed.Graal.Net.Api.DXEndpoint.State.html#DxFeed_Graal_Net_Api_DXEndpoint_State_NotConnected">NotConnected</a> otherwise.
+<a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/api/DXEndpoint.html#disconnect--">Javadoc.</a></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Disconnect()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.2.1/apiSpec/new?filename=DxFeed_Graal_Net_Api_DXEndpoint_DisconnectAndClear.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Api.DXEndpoint.DisconnectAndClear%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.2.1/src/DxFeed.Graal.Net/Api/DXEndpoint.cs/#L558">View Source</a>
+  </span>
+  <a id="DxFeed_Graal_Net_Api_DXEndpoint_DisconnectAndClear_" data-uid="DxFeed.Graal.Net.Api.DXEndpoint.DisconnectAndClear*"></a>
+  <h4 id="DxFeed_Graal_Net_Api_DXEndpoint_DisconnectAndClear" data-uid="DxFeed.Graal.Net.Api.DXEndpoint.DisconnectAndClear">DisconnectAndClear()</h4>
+  <div class="markdown level1 summary"><p>Terminates all remote network connections and clears stored data.
+This method does nothing if this endpoint is <a class="xref" href="DxFeed.Graal.Net.Api.DXEndpoint.State.html#DxFeed_Graal_Net_Api_DXEndpoint_State_Closed">Closed</a>.
+The endpoint <a class="xref" href="DxFeed.Graal.Net.Api.DXEndpoint.State.html">DXEndpoint.State</a> immediately becomes <a class="xref" href="DxFeed.Graal.Net.Api.DXEndpoint.State.html#DxFeed_Graal_Net_Api_DXEndpoint_State_NotConnected">NotConnected</a> otherwise.
+<a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/api/DXEndpoint.html#disconnectAndClear--">Javadoc.</a></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void DisconnectAndClear()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.2.1/apiSpec/new?filename=DxFeed_Graal_Net_Api_DXEndpoint_Dispose.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Api.DXEndpoint.Dispose%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.2.1/src/DxFeed.Graal.Net/Api/DXEndpoint.cs/#L629">View Source</a>
+  </span>
+  <a id="DxFeed_Graal_Net_Api_DXEndpoint_Dispose_" data-uid="DxFeed.Graal.Net.Api.DXEndpoint.Dispose*"></a>
+  <h4 id="DxFeed_Graal_Net_Api_DXEndpoint_Dispose" data-uid="DxFeed.Graal.Net.Api.DXEndpoint.Dispose">Dispose()</h4>
+  <div class="markdown level1 summary"><p>Closes this endpoint and releases all resources used
+by the current instance of the <a class="xref" href="DxFeed.Graal.Net.Api.DXEndpoint.html">DXEndpoint</a> class.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Dispose()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.2.1/apiSpec/new?filename=DxFeed_Graal_Net_Api_DXEndpoint_GetFeed.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Api.DXEndpoint.GetFeed%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.2.1/src/DxFeed.Graal.Net/Api/DXEndpoint.cs/#L614">View Source</a>
+  </span>
+  <a id="DxFeed_Graal_Net_Api_DXEndpoint_GetFeed_" data-uid="DxFeed.Graal.Net.Api.DXEndpoint.GetFeed*"></a>
+  <h4 id="DxFeed_Graal_Net_Api_DXEndpoint_GetFeed" data-uid="DxFeed.Graal.Net.Api.DXEndpoint.GetFeed">GetFeed()</h4>
+  <div class="markdown level1 summary"><p>Gets <a class="xref" href="DxFeed.Graal.Net.Api.DXFeed.html">DXFeed</a> that is associated with this endpoint.
+<a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/api/DXEndpoint.html#getFeed--">Javadoc.</a></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public DXFeed GetFeed()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="DxFeed.Graal.Net.Api.DXFeed.html">DXFeed</a></td>
+        <td><p>The <a class="xref" href="DxFeed.Graal.Net.Api.DXFeed.html">DXFeed</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.2.1/apiSpec/new?filename=DxFeed_Graal_Net_Api_DXEndpoint_GetInstance.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Api.DXEndpoint.GetInstance%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.2.1/src/DxFeed.Graal.Net/Api/DXEndpoint.cs/#L381">View Source</a>
+  </span>
+  <a id="DxFeed_Graal_Net_Api_DXEndpoint_GetInstance_" data-uid="DxFeed.Graal.Net.Api.DXEndpoint.GetInstance*"></a>
+  <h4 id="DxFeed_Graal_Net_Api_DXEndpoint_GetInstance" data-uid="DxFeed.Graal.Net.Api.DXEndpoint.GetInstance">GetInstance()</h4>
+  <div class="markdown level1 summary"><p>Gets a default application-wide singleton instance of DXEndpoint with a <a class="xref" href="DxFeed.Graal.Net.Api.DXEndpoint.Role.html#DxFeed_Graal_Net_Api_DXEndpoint_Role_Feed">Feed</a> role.
+Most applications use only a single data-source and should rely on this method to get one.
+<a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/api/DXEndpoint.html#getInstance--">Javadoc.</a></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static DXEndpoint GetInstance()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="DxFeed.Graal.Net.Api.DXEndpoint.html">DXEndpoint</a></td>
+        <td><p>Returns singleton instance of <a class="xref" href="DxFeed.Graal.Net.Api.DXEndpoint.html">DXEndpoint</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.2.1/apiSpec/new?filename=DxFeed_Graal_Net_Api_DXEndpoint_GetInstance_DxFeed_Graal_Net_Api_DXEndpoint_Role_.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Api.DXEndpoint.GetInstance(DxFeed.Graal.Net.Api.DXEndpoint.Role)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.2.1/src/DxFeed.Graal.Net/Api/DXEndpoint.cs/#L391">View Source</a>
+  </span>
+  <a id="DxFeed_Graal_Net_Api_DXEndpoint_GetInstance_" data-uid="DxFeed.Graal.Net.Api.DXEndpoint.GetInstance*"></a>
+  <h4 id="DxFeed_Graal_Net_Api_DXEndpoint_GetInstance_DxFeed_Graal_Net_Api_DXEndpoint_Role_" data-uid="DxFeed.Graal.Net.Api.DXEndpoint.GetInstance(DxFeed.Graal.Net.Api.DXEndpoint.Role)">GetInstance(Role)</h4>
+  <div class="markdown level1 summary"><p>Gets a default application-wide singleton instance of DXEndpoint with a specific <a class="xref" href="DxFeed.Graal.Net.Api.DXEndpoint.Role.html">DXEndpoint.Role</a>.
+Most applications use only a single data-source and should rely on this method to get one.
+<a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/api/DXEndpoint.html#getInstance-com.dxfeed.api.DXEndpoint.Role-">Javadoc.</a></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static DXEndpoint GetInstance(DXEndpoint.Role role)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="DxFeed.Graal.Net.Api.DXEndpoint.html">DXEndpoint</a>.<a class="xref" href="DxFeed.Graal.Net.Api.DXEndpoint.Role.html">Role</a></td>
+        <td><span class="parametername">role</span></td>
+        <td><p>The <a class="xref" href="DxFeed.Graal.Net.Api.DXEndpoint.Role.html">DXEndpoint.Role</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="DxFeed.Graal.Net.Api.DXEndpoint.html">DXEndpoint</a></td>
+        <td><p>Returns singleton instance of <a class="xref" href="DxFeed.Graal.Net.Api.DXEndpoint.html">DXEndpoint</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.2.1/apiSpec/new?filename=DxFeed_Graal_Net_Api_DXEndpoint_GetName.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Api.DXEndpoint.GetName%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.2.1/src/DxFeed.Graal.Net/Api/DXEndpoint.cs/#L490">View Source</a>
+  </span>
+  <a id="DxFeed_Graal_Net_Api_DXEndpoint_GetName_" data-uid="DxFeed.Graal.Net.Api.DXEndpoint.GetName*"></a>
+  <h4 id="DxFeed_Graal_Net_Api_DXEndpoint_GetName" data-uid="DxFeed.Graal.Net.Api.DXEndpoint.GetName">GetName()</h4>
+  <div class="markdown level1 summary"><p>Gets user-defined endpoint name.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string? GetName()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><p>Returns endpoint name, or <code>null</code> if name was not set.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.2.1/apiSpec/new?filename=DxFeed_Graal_Net_Api_DXEndpoint_GetPublisher.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Api.DXEndpoint.GetPublisher%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.2.1/src/DxFeed.Graal.Net/Api/DXEndpoint.cs/#L622">View Source</a>
+  </span>
+  <a id="DxFeed_Graal_Net_Api_DXEndpoint_GetPublisher_" data-uid="DxFeed.Graal.Net.Api.DXEndpoint.GetPublisher*"></a>
+  <h4 id="DxFeed_Graal_Net_Api_DXEndpoint_GetPublisher" data-uid="DxFeed.Graal.Net.Api.DXEndpoint.GetPublisher">GetPublisher()</h4>
+  <div class="markdown level1 summary"><p>Gets <a class="xref" href="DxFeed.Graal.Net.Api.DXPublisher.html">DXPublisher</a> that is associated with this endpoint.
+<a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/api/DXEndpoint.html#getPublisher--">Javadoc.</a></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public DXPublisher GetPublisher()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="DxFeed.Graal.Net.Api.DXPublisher.html">DXPublisher</a></td>
+        <td><p>The <a class="xref" href="DxFeed.Graal.Net.Api.DXPublisher.html">DXPublisher</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.2.1/apiSpec/new?filename=DxFeed_Graal_Net_Api_DXEndpoint_GetRole.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Api.DXEndpoint.GetRole%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.2.1/src/DxFeed.Graal.Net/Api/DXEndpoint.cs/#L467">View Source</a>
+  </span>
+  <a id="DxFeed_Graal_Net_Api_DXEndpoint_GetRole_" data-uid="DxFeed.Graal.Net.Api.DXEndpoint.GetRole*"></a>
+  <h4 id="DxFeed_Graal_Net_Api_DXEndpoint_GetRole" data-uid="DxFeed.Graal.Net.Api.DXEndpoint.GetRole">GetRole()</h4>
+  <div class="markdown level1 summary"><p>Gets the <a class="xref" href="DxFeed.Graal.Net.Api.DXEndpoint.Role.html">DXEndpoint.Role</a> of this endpoint.
+<a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/api/DXEndpoint.html#getRole--">Javadoc.</a></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public DXEndpoint.Role GetRole()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="DxFeed.Graal.Net.Api.DXEndpoint.html">DXEndpoint</a>.<a class="xref" href="DxFeed.Graal.Net.Api.DXEndpoint.Role.html">Role</a></td>
+        <td><p>The <a class="xref" href="DxFeed.Graal.Net.Api.DXEndpoint.Role.html">DXEndpoint.Role</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.2.1/apiSpec/new?filename=DxFeed_Graal_Net_Api_DXEndpoint_GetState.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Api.DXEndpoint.GetState%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.2.1/src/DxFeed.Graal.Net/Api/DXEndpoint.cs/#L475">View Source</a>
+  </span>
+  <a id="DxFeed_Graal_Net_Api_DXEndpoint_GetState_" data-uid="DxFeed.Graal.Net.Api.DXEndpoint.GetState*"></a>
+  <h4 id="DxFeed_Graal_Net_Api_DXEndpoint_GetState" data-uid="DxFeed.Graal.Net.Api.DXEndpoint.GetState">GetState()</h4>
+  <div class="markdown level1 summary"><p>Gets the <a class="xref" href="DxFeed.Graal.Net.Api.DXEndpoint.State.html">DXEndpoint.State</a> of this endpoint.
+<a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/api/DXEndpoint.html#getState--">Javadoc.</a></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public DXEndpoint.State GetState()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="DxFeed.Graal.Net.Api.DXEndpoint.html">DXEndpoint</a>.<a class="xref" href="DxFeed.Graal.Net.Api.DXEndpoint.State.html">State</a></td>
+        <td><p>The <a class="xref" href="DxFeed.Graal.Net.Api.DXEndpoint.State.html">DXEndpoint.State</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.2.1/apiSpec/new?filename=DxFeed_Graal_Net_Api_DXEndpoint_IsClosed.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Api.DXEndpoint.IsClosed%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.2.1/src/DxFeed.Graal.Net/Api/DXEndpoint.cs/#L483">View Source</a>
+  </span>
+  <a id="DxFeed_Graal_Net_Api_DXEndpoint_IsClosed_" data-uid="DxFeed.Graal.Net.Api.DXEndpoint.IsClosed*"></a>
+  <h4 id="DxFeed_Graal_Net_Api_DXEndpoint_IsClosed" data-uid="DxFeed.Graal.Net.Api.DXEndpoint.IsClosed">IsClosed()</h4>
+  <div class="markdown level1 summary"><p>Gets a value indicating whether if this endpoint is closed.
+There is a shortcut for <code><a class="xref" href="DxFeed.Graal.Net.Api.DXEndpoint.html#DxFeed_Graal_Net_Api_DXEndpoint_GetState">GetState()</a> == <a class="xref" href="DxFeed.Graal.Net.Api.DXEndpoint.State.html#DxFeed_Graal_Net_Api_DXEndpoint_State_Closed">Closed</a></code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsClosed()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><p>Returns <code>true</code> if this endpoint is closed.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.2.1/apiSpec/new?filename=DxFeed_Graal_Net_Api_DXEndpoint_NewBuilder.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Api.DXEndpoint.NewBuilder%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.2.1/src/DxFeed.Graal.Net/Api/DXEndpoint.cs/#L413">View Source</a>
+  </span>
+  <a id="DxFeed_Graal_Net_Api_DXEndpoint_NewBuilder_" data-uid="DxFeed.Graal.Net.Api.DXEndpoint.NewBuilder*"></a>
+  <h4 id="DxFeed_Graal_Net_Api_DXEndpoint_NewBuilder" data-uid="DxFeed.Graal.Net.Api.DXEndpoint.NewBuilder">NewBuilder()</h4>
+  <div class="markdown level1 summary"><p>Creates new <a class="xref" href="DxFeed.Graal.Net.Api.DXEndpoint.Builder.html">DXEndpoint.Builder</a> instance.
+Use <a class="xref" href="DxFeed.Graal.Net.Api.DXEndpoint.Builder.html#DxFeed_Graal_Net_Api_DXEndpoint_Builder_Build">Build()</a> to build an instance of <a class="xref" href="DxFeed.Graal.Net.Api.DXEndpoint.html">DXEndpoint</a> when
+all configuration properties were set.
+<a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/api/DXEndpoint.html#newBuilder--">Javadoc.</a></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static DXEndpoint.Builder NewBuilder()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="DxFeed.Graal.Net.Api.DXEndpoint.html">DXEndpoint</a>.<a class="xref" href="DxFeed.Graal.Net.Api.DXEndpoint.Builder.html">Builder</a></td>
+        <td><p>The created <a class="xref" href="DxFeed.Graal.Net.Api.DXEndpoint.Builder.html">DXEndpoint.Builder</a> instance.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.2.1/apiSpec/new?filename=DxFeed_Graal_Net_Api_DXEndpoint_Password_System_String_.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Api.DXEndpoint.Password(System.String)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.2.1/src/DxFeed.Graal.Net/Api/DXEndpoint.cs/#L515">View Source</a>
+  </span>
+  <a id="DxFeed_Graal_Net_Api_DXEndpoint_Password_" data-uid="DxFeed.Graal.Net.Api.DXEndpoint.Password*"></a>
+  <h4 id="DxFeed_Graal_Net_Api_DXEndpoint_Password_System_String_" data-uid="DxFeed.Graal.Net.Api.DXEndpoint.Password(System.String)">Password(string)</h4>
+  <div class="markdown level1 summary"><p>Changes password for this endpoint.
+This method shall be called before <a class="xref" href="DxFeed.Graal.Net.Api.DXEndpoint.html#DxFeed_Graal_Net_Api_DXEndpoint_Connect_System_String_">Connect(string)</a> together
+with <a class="xref" href="DxFeed.Graal.Net.Api.DXEndpoint.html#DxFeed_Graal_Net_Api_DXEndpoint_User_System_String_">User(string)</a> to configure service access credentials.
+<a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/api/DXEndpoint.html#password-java.lang.String-">Javadoc.</a></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public DXEndpoint Password(string password)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">password</span></td>
+        <td><p>The user password.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="DxFeed.Graal.Net.Api.DXEndpoint.html">DXEndpoint</a></td>
+        <td><p>Returns this <a class="xref" href="DxFeed.Graal.Net.Api.DXEndpoint.html">DXEndpoint</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.2.1/apiSpec/new?filename=DxFeed_Graal_Net_Api_DXEndpoint_Reconnect.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Api.DXEndpoint.Reconnect%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.2.1/src/DxFeed.Graal.Net/Api/DXEndpoint.cs/#L540">View Source</a>
+  </span>
+  <a id="DxFeed_Graal_Net_Api_DXEndpoint_Reconnect_" data-uid="DxFeed.Graal.Net.Api.DXEndpoint.Reconnect*"></a>
+  <h4 id="DxFeed_Graal_Net_Api_DXEndpoint_Reconnect" data-uid="DxFeed.Graal.Net.Api.DXEndpoint.Reconnect">Reconnect()</h4>
+  <div class="markdown level1 summary"><p>Terminates all established network connections and initiates connecting again with the same address.
+<a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/api/DXEndpoint.html#reconnect--">Javadoc.</a></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Reconnect()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.2.1/apiSpec/new?filename=DxFeed_Graal_Net_Api_DXEndpoint_RemoveStateChangeListener_DxFeed_Graal_Net_Api_DXEndpoint_OnStateChangeListener_.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Api.DXEndpoint.RemoveStateChangeListener(DxFeed.Graal.Net.Api.DXEndpoint.OnStateChangeListener)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.2.1/src/DxFeed.Graal.Net/Api/DXEndpoint.cs/#L601">View Source</a>
+  </span>
+  <a id="DxFeed_Graal_Net_Api_DXEndpoint_RemoveStateChangeListener_" data-uid="DxFeed.Graal.Net.Api.DXEndpoint.RemoveStateChangeListener*"></a>
+  <h4 id="DxFeed_Graal_Net_Api_DXEndpoint_RemoveStateChangeListener_DxFeed_Graal_Net_Api_DXEndpoint_OnStateChangeListener_" data-uid="DxFeed.Graal.Net.Api.DXEndpoint.RemoveStateChangeListener(DxFeed.Graal.Net.Api.DXEndpoint.OnStateChangeListener)">RemoveStateChangeListener(OnStateChangeListener)</h4>
+  <div class="markdown level1 summary"><p>Removes listener that is notified about changes in <a class="xref" href="DxFeed.Graal.Net.Api.DXEndpoint.html#DxFeed_Graal_Net_Api_DXEndpoint_GetState">GetState()</a> property.
+It removes the listener that was previously installed with <a class="xref" href="DxFeed.Graal.Net.Api.DXEndpoint.html#DxFeed_Graal_Net_Api_DXEndpoint_AddStateChangeListener_DxFeed_Graal_Net_Api_DXEndpoint_OnStateChangeListener_">AddStateChangeListener(OnStateChangeListener)</a> method.
+<a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/api/DXEndpoint.html#removeStateChangeListener-java.beans.PropertyChangeListener-">Javadoc.</a></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void RemoveStateChangeListener(DXEndpoint.OnStateChangeListener listener)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="DxFeed.Graal.Net.Api.DXEndpoint.html">DXEndpoint</a>.<a class="xref" href="DxFeed.Graal.Net.Api.DXEndpoint.OnStateChangeListener.html">OnStateChangeListener</a></td>
+        <td><span class="parametername">listener</span></td>
+        <td><p>The listener to remove.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.2.1/apiSpec/new?filename=DxFeed_Graal_Net_Api_DXEndpoint_User_System_String_.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Api.DXEndpoint.User(System.String)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.2.1/src/DxFeed.Graal.Net/Api/DXEndpoint.cs/#L501">View Source</a>
+  </span>
+  <a id="DxFeed_Graal_Net_Api_DXEndpoint_User_" data-uid="DxFeed.Graal.Net.Api.DXEndpoint.User*"></a>
+  <h4 id="DxFeed_Graal_Net_Api_DXEndpoint_User_System_String_" data-uid="DxFeed.Graal.Net.Api.DXEndpoint.User(System.String)">User(string)</h4>
+  <div class="markdown level1 summary"><p>Changes user name for this endpoint.
+This method shall be called before <a class="xref" href="DxFeed.Graal.Net.Api.DXEndpoint.html#DxFeed_Graal_Net_Api_DXEndpoint_Connect_System_String_">Connect(string)</a> together
+with <a class="xref" href="DxFeed.Graal.Net.Api.DXEndpoint.html#DxFeed_Graal_Net_Api_DXEndpoint_Password_System_String_">Password(string)</a> to configure service access credentials.
+<a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/api/DXEndpoint.html#user-java.lang.String-">Javadoc.</a></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public DXEndpoint User(string user)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">user</span></td>
+        <td><p>The user name.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="DxFeed.Graal.Net.Api.DXEndpoint.html">DXEndpoint</a></td>
+        <td><p>Returns this <a class="xref" href="DxFeed.Graal.Net.Api.DXEndpoint.html">DXEndpoint</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.idisposable">System.IDisposable</a>
+  </div>
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.2.1/apiSpec/new?filename=DxFeed_Graal_Net_Api_DXEndpoint.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Api.DXEndpoint%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.2.1/src/DxFeed.Graal.Net/Api/DXEndpoint.cs/#L38" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      <span>Copyright © 2022 Devexperts LLC</span>
+      
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

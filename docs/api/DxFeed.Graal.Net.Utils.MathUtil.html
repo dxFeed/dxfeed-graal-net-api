@@ -1,0 +1,819 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class MathUtil
+ | dxFeed Graal .NET API </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class MathUtil
+ | dxFeed Graal .NET API ">
+    <meta name="generator" content="docfx ">
+  
+    <link rel="shortcut icon" href="../../docs/images/favicon.png">
+    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../styles/docfx.css">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"> 
+    <meta property="docfx:navrel" content="../../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+  
+  <meta property="docfx:rel" content="../../">
+  <meta property="docfx:newtab" content="true">
+  </head>  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../docs/images/logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+
+                <ul class="nav level1 navbar-nav">
+                      <li>
+                          <a href="../../docs/api/index.html" title="API Documentation">API Documentation</a>
+                      </li>
+                </ul>            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div>
+              <div class="sidefilter">
+                <form class="toc-filter">
+                  <span class="glyphicon glyphicon-filter filter-icon"></span>
+                  <input type="text" id="toc_filter_input" placeholder="Enter here to filter..." onkeypress="if(event.keyCode==13) {return false;}">
+                </form>
+              </div>
+              <div class="sidetoc">
+                <div class="toc" id="toc">
+
+                  <ul class="nav level1">
+                    <li class="">
+                      <span class="expand-stub"></span>
+                      <a href="DxFeed.Graal.Net.html" title="DxFeed.Graal.Net" class="">DxFeed.Graal.Net</a>
+
+                        <ul class="nav level2">
+                          <li class="">
+                            <a href="DxFeed.Graal.Net.SystemProperty.html" title="SystemProperty" class="">SystemProperty</a>
+                          </li>
+                        </ul>                    </li>
+                    <li class="">
+                      <span class="expand-stub"></span>
+                      <a href="DxFeed.Graal.Net.Api.html" title="DxFeed.Graal.Net.Api" class="">DxFeed.Graal.Net.Api</a>
+
+                        <ul class="nav level2">
+                          <li class="">
+                            <a href="DxFeed.Graal.Net.Api.DXEndpoint.html" title="DXEndpoint" class="">DXEndpoint</a>
+                          </li>
+                          <li class="">
+                            <a href="DxFeed.Graal.Net.Api.DXEndpoint.Builder.html" title="DXEndpoint.Builder" class="">DXEndpoint.Builder</a>
+                          </li>
+                          <li class="">
+                            <a href="DxFeed.Graal.Net.Api.DXEndpoint.OnStateChangeListener.html" title="DXEndpoint.OnStateChangeListener" class="">DXEndpoint.OnStateChangeListener</a>
+                          </li>
+                          <li class="">
+                            <a href="DxFeed.Graal.Net.Api.DXEndpoint.Role.html" title="DXEndpoint.Role" class="">DXEndpoint.Role</a>
+                          </li>
+                          <li class="">
+                            <a href="DxFeed.Graal.Net.Api.DXEndpoint.State.html" title="DXEndpoint.State" class="">DXEndpoint.State</a>
+                          </li>
+                          <li class="">
+                            <a href="DxFeed.Graal.Net.Api.DXFeed.html" title="DXFeed" class="">DXFeed</a>
+                          </li>
+                          <li class="">
+                            <a href="DxFeed.Graal.Net.Api.DXFeedEventListener.html" title="DXFeedEventListener" class="">DXFeedEventListener</a>
+                          </li>
+                          <li class="">
+                            <a href="DxFeed.Graal.Net.Api.DXFeedSubscription.html" title="DXFeedSubscription" class="">DXFeedSubscription</a>
+                          </li>
+                          <li class="">
+                            <a href="DxFeed.Graal.Net.Api.DXPublisher.html" title="DXPublisher" class="">DXPublisher</a>
+                          </li>
+                        </ul>                    </li>
+                    <li class="">
+                      <span class="expand-stub"></span>
+                      <a href="DxFeed.Graal.Net.Api.Osub.html" title="DxFeed.Graal.Net.Api.Osub" class="">DxFeed.Graal.Net.Api.Osub</a>
+
+                        <ul class="nav level2">
+                          <li class="">
+                            <a href="DxFeed.Graal.Net.Api.Osub.IndexedEventSubscriptionSymbol.html" title="IndexedEventSubscriptionSymbol" class="">IndexedEventSubscriptionSymbol</a>
+                          </li>
+                          <li class="">
+                            <a href="DxFeed.Graal.Net.Api.Osub.IndexedEventSubscriptionSymbol-1.html" title="IndexedEventSubscriptionSymbol&lt;T&gt;" class="">IndexedEventSubscriptionSymbol&lt;T&gt;</a>
+                          </li>
+                          <li class="">
+                            <a href="DxFeed.Graal.Net.Api.Osub.IObservableSubscription.html" title="IObservableSubscription" class="">IObservableSubscription</a>
+                          </li>
+                          <li class="">
+                            <a href="DxFeed.Graal.Net.Api.Osub.TimeSeriesSubscriptionSymbol.html" title="TimeSeriesSubscriptionSymbol" class="">TimeSeriesSubscriptionSymbol</a>
+                          </li>
+                          <li class="">
+                            <a href="DxFeed.Graal.Net.Api.Osub.TimeSeriesSubscriptionSymbol-1.html" title="TimeSeriesSubscriptionSymbol&lt;T&gt;" class="">TimeSeriesSubscriptionSymbol&lt;T&gt;</a>
+                          </li>
+                          <li class="">
+                            <a href="DxFeed.Graal.Net.Api.Osub.WildcardSymbol.html" title="WildcardSymbol" class="">WildcardSymbol</a>
+                          </li>
+                        </ul>                    </li>
+                    <li class="">
+                      <span class="expand-stub"></span>
+                      <a href="DxFeed.Graal.Net.Events.html" title="DxFeed.Graal.Net.Events" class="">DxFeed.Graal.Net.Events</a>
+
+                        <ul class="nav level2">
+                          <li class="">
+                            <a href="DxFeed.Graal.Net.Events.EventCodeAttribute.html" title="EventCodeAttribute" class="">EventCodeAttribute</a>
+                          </li>
+                          <li class="">
+                            <a href="DxFeed.Graal.Net.Events.IEventType.html" title="IEventType" class="">IEventType</a>
+                          </li>
+                          <li class="">
+                            <a href="DxFeed.Graal.Net.Events.IIndexedEvent.html" title="IIndexedEvent" class="">IIndexedEvent</a>
+                          </li>
+                          <li class="">
+                            <a href="DxFeed.Graal.Net.Events.ILastingEvent.html" title="ILastingEvent" class="">ILastingEvent</a>
+                          </li>
+                          <li class="">
+                            <a href="DxFeed.Graal.Net.Events.IndexedEventSource.html" title="IndexedEventSource" class="">IndexedEventSource</a>
+                          </li>
+                          <li class="">
+                            <a href="DxFeed.Graal.Net.Events.ITimeSeriesEvent.html" title="ITimeSeriesEvent" class="">ITimeSeriesEvent</a>
+                          </li>
+                        </ul>                    </li>
+                    <li class="">
+                      <span class="expand-stub"></span>
+                      <a href="DxFeed.Graal.Net.Events.Candles.html" title="DxFeed.Graal.Net.Events.Candles" class="">DxFeed.Graal.Net.Events.Candles</a>
+
+                        <ul class="nav level2">
+                          <li class="">
+                            <a href="DxFeed.Graal.Net.Events.Candles.Candle.html" title="Candle" class="">Candle</a>
+                          </li>
+                          <li class="">
+                            <a href="DxFeed.Graal.Net.Events.Candles.CandleAlignment.html" title="CandleAlignment" class="">CandleAlignment</a>
+                          </li>
+                          <li class="">
+                            <a href="DxFeed.Graal.Net.Events.Candles.CandleAlignment.CandleAlignmentId.html" title="CandleAlignment.CandleAlignmentId" class="">CandleAlignment.CandleAlignmentId</a>
+                          </li>
+                          <li class="">
+                            <a href="DxFeed.Graal.Net.Events.Candles.CandleExchange.html" title="CandleExchange" class="">CandleExchange</a>
+                          </li>
+                          <li class="">
+                            <a href="DxFeed.Graal.Net.Events.Candles.CandlePeriod.html" title="CandlePeriod" class="">CandlePeriod</a>
+                          </li>
+                          <li class="">
+                            <a href="DxFeed.Graal.Net.Events.Candles.CandlePrice.html" title="CandlePrice" class="">CandlePrice</a>
+                          </li>
+                          <li class="">
+                            <a href="DxFeed.Graal.Net.Events.Candles.CandlePrice.CandlePriceId.html" title="CandlePrice.CandlePriceId" class="">CandlePrice.CandlePriceId</a>
+                          </li>
+                          <li class="">
+                            <a href="DxFeed.Graal.Net.Events.Candles.CandlePriceLevel.html" title="CandlePriceLevel" class="">CandlePriceLevel</a>
+                          </li>
+                          <li class="">
+                            <a href="DxFeed.Graal.Net.Events.Candles.CandleSession.html" title="CandleSession" class="">CandleSession</a>
+                          </li>
+                          <li class="">
+                            <a href="DxFeed.Graal.Net.Events.Candles.CandleSession.CandleSessionId.html" title="CandleSession.CandleSessionId" class="">CandleSession.CandleSessionId</a>
+                          </li>
+                          <li class="">
+                            <a href="DxFeed.Graal.Net.Events.Candles.CandleSymbol.html" title="CandleSymbol" class="">CandleSymbol</a>
+                          </li>
+                          <li class="">
+                            <a href="DxFeed.Graal.Net.Events.Candles.CandleType.html" title="CandleType" class="">CandleType</a>
+                          </li>
+                          <li class="">
+                            <a href="DxFeed.Graal.Net.Events.Candles.CandleType.CandleTypeId.html" title="CandleType.CandleTypeId" class="">CandleType.CandleTypeId</a>
+                          </li>
+                          <li class="">
+                            <a href="DxFeed.Graal.Net.Events.Candles.ICandleSymbolProperty.html" title="ICandleSymbolProperty" class="">ICandleSymbolProperty</a>
+                          </li>
+                        </ul>                    </li>
+                    <li class="">
+                      <span class="expand-stub"></span>
+                      <a href="DxFeed.Graal.Net.Events.Market.html" title="DxFeed.Graal.Net.Events.Market" class="">DxFeed.Graal.Net.Events.Market</a>
+
+                        <ul class="nav level2">
+                          <li class="">
+                            <a href="DxFeed.Graal.Net.Events.Market.AnalyticOrder.html" title="AnalyticOrder" class="">AnalyticOrder</a>
+                          </li>
+                          <li class="">
+                            <a href="DxFeed.Graal.Net.Events.Market.Direction.html" title="Direction" class="">Direction</a>
+                          </li>
+                          <li class="">
+                            <a href="DxFeed.Graal.Net.Events.Market.IcebergType.html" title="IcebergType" class="">IcebergType</a>
+                          </li>
+                          <li class="">
+                            <a href="DxFeed.Graal.Net.Events.Market.MarketEvent.html" title="MarketEvent" class="">MarketEvent</a>
+                          </li>
+                          <li class="">
+                            <a href="DxFeed.Graal.Net.Events.Market.MarketEventSymbols.html" title="MarketEventSymbols" class="">MarketEventSymbols</a>
+                          </li>
+                          <li class="">
+                            <a href="DxFeed.Graal.Net.Events.Market.OptionSale.html" title="OptionSale" class="">OptionSale</a>
+                          </li>
+                          <li class="">
+                            <a href="DxFeed.Graal.Net.Events.Market.Order.html" title="Order" class="">Order</a>
+                          </li>
+                          <li class="">
+                            <a href="DxFeed.Graal.Net.Events.Market.OrderAction.html" title="OrderAction" class="">OrderAction</a>
+                          </li>
+                          <li class="">
+                            <a href="DxFeed.Graal.Net.Events.Market.OrderBase.html" title="OrderBase" class="">OrderBase</a>
+                          </li>
+                          <li class="">
+                            <a href="DxFeed.Graal.Net.Events.Market.OrderSource.html" title="OrderSource" class="">OrderSource</a>
+                          </li>
+                          <li class="">
+                            <a href="DxFeed.Graal.Net.Events.Market.PriceType.html" title="PriceType" class="">PriceType</a>
+                          </li>
+                          <li class="">
+                            <a href="DxFeed.Graal.Net.Events.Market.Profile.html" title="Profile" class="">Profile</a>
+                          </li>
+                          <li class="">
+                            <a href="DxFeed.Graal.Net.Events.Market.Quote.html" title="Quote" class="">Quote</a>
+                          </li>
+                          <li class="">
+                            <a href="DxFeed.Graal.Net.Events.Market.Scope.html" title="Scope" class="">Scope</a>
+                          </li>
+                          <li class="">
+                            <a href="DxFeed.Graal.Net.Events.Market.ShortSaleRestriction.html" title="ShortSaleRestriction" class="">ShortSaleRestriction</a>
+                          </li>
+                          <li class="">
+                            <a href="DxFeed.Graal.Net.Events.Market.Side.html" title="Side" class="">Side</a>
+                          </li>
+                          <li class="">
+                            <a href="DxFeed.Graal.Net.Events.Market.SpreadOrder.html" title="SpreadOrder" class="">SpreadOrder</a>
+                          </li>
+                          <li class="">
+                            <a href="DxFeed.Graal.Net.Events.Market.Summary.html" title="Summary" class="">Summary</a>
+                          </li>
+                          <li class="">
+                            <a href="DxFeed.Graal.Net.Events.Market.TimeAndSale.html" title="TimeAndSale" class="">TimeAndSale</a>
+                          </li>
+                          <li class="">
+                            <a href="DxFeed.Graal.Net.Events.Market.TimeAndSaleType.html" title="TimeAndSaleType" class="">TimeAndSaleType</a>
+                          </li>
+                          <li class="">
+                            <a href="DxFeed.Graal.Net.Events.Market.Trade.html" title="Trade" class="">Trade</a>
+                          </li>
+                          <li class="">
+                            <a href="DxFeed.Graal.Net.Events.Market.TradeBase.html" title="TradeBase" class="">TradeBase</a>
+                          </li>
+                          <li class="">
+                            <a href="DxFeed.Graal.Net.Events.Market.TradeETH.html" title="TradeETH" class="">TradeETH</a>
+                          </li>
+                          <li class="">
+                            <a href="DxFeed.Graal.Net.Events.Market.TradingStatus.html" title="TradingStatus" class="">TradingStatus</a>
+                          </li>
+                        </ul>                    </li>
+                    <li class="">
+                      <span class="expand-stub"></span>
+                      <a href="DxFeed.Graal.Net.Events.Options.html" title="DxFeed.Graal.Net.Events.Options" class="">DxFeed.Graal.Net.Events.Options</a>
+
+                        <ul class="nav level2">
+                          <li class="">
+                            <a href="DxFeed.Graal.Net.Events.Options.Greeks.html" title="Greeks" class="">Greeks</a>
+                          </li>
+                          <li class="">
+                            <a href="DxFeed.Graal.Net.Events.Options.Series.html" title="Series" class="">Series</a>
+                          </li>
+                          <li class="">
+                            <a href="DxFeed.Graal.Net.Events.Options.TheoPrice.html" title="TheoPrice" class="">TheoPrice</a>
+                          </li>
+                          <li class="">
+                            <a href="DxFeed.Graal.Net.Events.Options.Underlying.html" title="Underlying" class="">Underlying</a>
+                          </li>
+                        </ul>                    </li>
+                    <li class="">
+                      <span class="expand-stub"></span>
+                      <a href="DxFeed.Graal.Net.Native.ErrorHandling.html" title="DxFeed.Graal.Net.Native.ErrorHandling" class="">DxFeed.Graal.Net.Native.ErrorHandling</a>
+
+                        <ul class="nav level2">
+                          <li class="">
+                            <a href="DxFeed.Graal.Net.Native.ErrorHandling.GraalErrorCode.html" title="GraalErrorCode" class="">GraalErrorCode</a>
+                          </li>
+                          <li class="">
+                            <a href="DxFeed.Graal.Net.Native.ErrorHandling.GraalException.html" title="GraalException" class="">GraalException</a>
+                          </li>
+                          <li class="">
+                            <a href="DxFeed.Graal.Net.Native.ErrorHandling.JavaException.html" title="JavaException" class="">JavaException</a>
+                          </li>
+                        </ul>                    </li>
+                    <li class="">
+                      <span class="expand-stub"></span>
+                      <a href="DxFeed.Graal.Net.Native.Events.html" title="DxFeed.Graal.Net.Native.Events" class="">DxFeed.Graal.Net.Native.Events</a>
+
+                        <ul class="nav level2">
+                          <li class="">
+                            <a href="DxFeed.Graal.Net.Native.Events.EventCodeNative.html" title="EventCodeNative" class="">EventCodeNative</a>
+                          </li>
+                        </ul>                    </li>
+                    <li class="">
+                      <span class="expand-stub"></span>
+                      <a href="DxFeed.Graal.Net.Utils.html" title="DxFeed.Graal.Net.Utils" class="">DxFeed.Graal.Net.Utils</a>
+
+                        <ul class="nav level2">
+                          <li class="">
+                            <a href="DxFeed.Graal.Net.Utils.AttributeUtil.html" title="AttributeUtil" class="">AttributeUtil</a>
+                          </li>
+                          <li class="">
+                            <a href="DxFeed.Graal.Net.Utils.BitUtil.html" title="BitUtil" class="">BitUtil</a>
+                          </li>
+                          <li class="">
+                            <a href="DxFeed.Graal.Net.Utils.CmdArgsUtil.html" title="CmdArgsUtil" class="">CmdArgsUtil</a>
+                          </li>
+                          <li class="">
+                            <a href="DxFeed.Graal.Net.Utils.DayUtil.html" title="DayUtil" class="">DayUtil</a>
+                          </li>
+                          <li class="">
+                            <a href="DxFeed.Graal.Net.Utils.EnumUtil.html" title="EnumUtil" class="">EnumUtil</a>
+                          </li>
+                          <li class="active">
+                            <a href="DxFeed.Graal.Net.Utils.MathUtil.html" title="MathUtil" class="active">MathUtil</a>
+                          </li>
+                          <li class="">
+                            <a href="DxFeed.Graal.Net.Utils.PlatformUtils.html" title="PlatformUtils" class="">PlatformUtils</a>
+                          </li>
+                          <li class="">
+                            <a href="DxFeed.Graal.Net.Utils.ReflectionUtil.html" title="ReflectionUtil" class="">ReflectionUtil</a>
+                          </li>
+                          <li class="">
+                            <a href="DxFeed.Graal.Net.Utils.StringUtil.html" title="StringUtil" class="">StringUtil</a>
+                          </li>
+                          <li class="">
+                            <a href="DxFeed.Graal.Net.Utils.TimeFormat.html" title="TimeFormat" class="">TimeFormat</a>
+                          </li>
+                          <li class="">
+                            <a href="DxFeed.Graal.Net.Utils.TimeNanosUtil.html" title="TimeNanosUtil" class="">TimeNanosUtil</a>
+                          </li>
+                          <li class="">
+                            <a href="DxFeed.Graal.Net.Utils.TimeUtil.html" title="TimeUtil" class="">TimeUtil</a>
+                          </li>
+                        </ul>                    </li>
+                  </ul>                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="DxFeed.Graal.Net.Utils.MathUtil">
+
+
+  <h1 id="DxFeed_Graal_Net_Utils_MathUtil" data-uid="DxFeed.Graal.Net.Utils.MathUtil" class="text-break">Class MathUtil
+</h1>
+  <div class="markdown level0 summary"><p>A collection of static utility methods for mathematics.
+<br>
+Porting Java class <code>java.lang.Math</code> and <code>com.devexperts.util.MathUtil</code>.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+    <div class="level1"><span class="xref">MathUtil</span></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode#system-object-gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype#system-object-gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone#system-object-memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals#system-object-referenceequals(system-object-system-object)">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring#system-object-tostring">object.ToString()</a>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <span class="xref">DxFeed</span>.<span class="xref">Graal</span>.<a class="xref" href="DxFeed.Graal.Net.html">Net</a>.<a class="xref" href="DxFeed.Graal.Net.Utils.html">Utils</a></h6>
+  <h6><strong>Assembly</strong>: DxFeed.Graal.Net.dll</h6>
+  <h5 id="DxFeed_Graal_Net_Utils_MathUtil_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static class MathUtil</code></pre>
+  </div>
+  <h3 id="methods">Methods
+</h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.2.1/apiSpec/new?filename=DxFeed_Graal_Net_Utils_MathUtil_Abs_System_Int32_.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Utils.MathUtil.Abs(System.Int32)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.2.1/src/DxFeed.Graal.Net/Utils/MathUtil.cs/#L35">View Source</a>
+  </span>
+  <a id="DxFeed_Graal_Net_Utils_MathUtil_Abs_" data-uid="DxFeed.Graal.Net.Utils.MathUtil.Abs*"></a>
+  <h4 id="DxFeed_Graal_Net_Utils_MathUtil_Abs_System_Int32_" data-uid="DxFeed.Graal.Net.Utils.MathUtil.Abs(System.Int32)">Abs(int)</h4>
+  <div class="markdown level1 summary"><p>Method like a <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.math.abs#system-math-abs(system-int32)">Abs(Int32)</a>, but not throws <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.overflowexception">OverflowException</a> exception,
+when argument the argument is equal to the value of <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32.minvalue">MinValue</a>.
+Returns the absolute value of an int value.
+If the argument is not negative, the argument is returned.
+If the argument is negative, the negation of the argument is returned.
+Note that if the argument is equal to the value of <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32.minvalue">MinValue</a>,
+the most negative representable int value, the result is that same value, which is negative.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static int Abs(int a)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">a</span></td>
+        <td><p>The argument whose absolute value is to be determined.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><p>The absolute value of the argument.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.2.1/apiSpec/new?filename=DxFeed_Graal_Net_Utils_MathUtil_Div_System_Int32_System_Int32_.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Utils.MathUtil.Div(System.Int32%2CSystem.Int32)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.2.1/src/DxFeed.Graal.Net/Utils/MathUtil.cs/#L44">View Source</a>
+  </span>
+  <a id="DxFeed_Graal_Net_Utils_MathUtil_Div_" data-uid="DxFeed.Graal.Net.Utils.MathUtil.Div*"></a>
+  <h4 id="DxFeed_Graal_Net_Utils_MathUtil_Div_System_Int32_System_Int32_" data-uid="DxFeed.Graal.Net.Utils.MathUtil.Div(System.Int32,System.Int32)">Div(int, int)</h4>
+  <div class="markdown level1 summary"><p>Returns quotient according to number theory - i.e. when remainder is zero or positive.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static int Div(int a, int b)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">a</span></td>
+        <td><p>The dividend.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">b</span></td>
+        <td><p>The divisor.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><p>The quotient according to number theory.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.2.1/apiSpec/new?filename=DxFeed_Graal_Net_Utils_MathUtil_FloorDiv_System_Int64_System_Int64_.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Utils.MathUtil.FloorDiv(System.Int64%2CSystem.Int64)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.2.1/src/DxFeed.Graal.Net/Utils/MathUtil.cs/#L75">View Source</a>
+  </span>
+  <a id="DxFeed_Graal_Net_Utils_MathUtil_FloorDiv_" data-uid="DxFeed.Graal.Net.Utils.MathUtil.FloorDiv*"></a>
+  <h4 id="DxFeed_Graal_Net_Utils_MathUtil_FloorDiv_System_Int64_System_Int64_" data-uid="DxFeed.Graal.Net.Utils.MathUtil.FloorDiv(System.Int64,System.Int64)">FloorDiv(long, long)</h4>
+  <div class="markdown level1 summary"><p>Returns the largest (closest to positive infinity) <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">Int64</a> value that is less than
+or equal to the algebraic quotient.
+There is one special case, if the dividend is the <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">Int64</a>.<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64.minvalue">MinValue</a>
+and the divisor is <code>-1</code>,
+then integer overflow occurs and the result is equal to the <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">Int64</a>.<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64.minvalue">MinValue</a>.
+Normal integer division operates under the round to zero rounding mode (truncation).
+This operation instead acts under the round toward negative infinity (floor) rounding mode.
+The floor rounding mode gives different results than truncation when the exact result is negative.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static long FloorDiv(long x, long y)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></td>
+        <td><span class="parametername">x</span></td>
+        <td><p>The dividend.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></td>
+        <td><span class="parametername">y</span></td>
+        <td><p>The divisor.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></td>
+        <td><p>The largest (closest to positive infinity) <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">Int64</a> value that is less than
+or equal to the algebraic quotient.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.2.1/apiSpec/new?filename=DxFeed_Graal_Net_Utils_MathUtil_FloorMod_System_Int64_System_Int64_.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Utils.MathUtil.FloorMod(System.Int64%2CSystem.Int64)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.2.1/src/DxFeed.Graal.Net/Utils/MathUtil.cs/#L96">View Source</a>
+  </span>
+  <a id="DxFeed_Graal_Net_Utils_MathUtil_FloorMod_" data-uid="DxFeed.Graal.Net.Utils.MathUtil.FloorMod*"></a>
+  <h4 id="DxFeed_Graal_Net_Utils_MathUtil_FloorMod_System_Int64_System_Int64_" data-uid="DxFeed.Graal.Net.Utils.MathUtil.FloorMod(System.Int64,System.Int64)">FloorMod(long, long)</h4>
+  <div class="markdown level1 summary"><p>Returns the floor modulus of the int arguments.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static long FloorMod(long x, long y)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></td>
+        <td><span class="parametername">x</span></td>
+        <td><p>The dividend.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></td>
+        <td><span class="parametername">y</span></td>
+        <td><p>The divisor.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></td>
+        <td><p>The floor modulus: <pre><code>x - (FloorDiv(x, y) * y)</code></pre>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.2.1/apiSpec/new?filename=DxFeed_Graal_Net_Utils_MathUtil_IsNegativeZero_System_Double_.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Utils.MathUtil.IsNegativeZero(System.Double)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.2.1/src/DxFeed.Graal.Net/Utils/MathUtil.cs/#L112">View Source</a>
+  </span>
+  <a id="DxFeed_Graal_Net_Utils_MathUtil_IsNegativeZero_" data-uid="DxFeed.Graal.Net.Utils.MathUtil.IsNegativeZero*"></a>
+  <h4 id="DxFeed_Graal_Net_Utils_MathUtil_IsNegativeZero_System_Double_" data-uid="DxFeed.Graal.Net.Utils.MathUtil.IsNegativeZero(System.Double)">IsNegativeZero(double)</h4>
+  <div class="markdown level1 summary"><p>Checks if the specified number is a -0.0 (negative zero).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool IsNegativeZero(double x)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></td>
+        <td><span class="parametername">x</span></td>
+        <td><p>The specified number.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><p>Returns <code>true</code> if x is equals -0.0.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.2.1/apiSpec/new?filename=DxFeed_Graal_Net_Utils_MathUtil_IsPowerOfTwo_System_Int64_.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Utils.MathUtil.IsPowerOfTwo(System.Int64)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.2.1/src/DxFeed.Graal.Net/Utils/MathUtil.cs/#L104">View Source</a>
+  </span>
+  <a id="DxFeed_Graal_Net_Utils_MathUtil_IsPowerOfTwo_" data-uid="DxFeed.Graal.Net.Utils.MathUtil.IsPowerOfTwo*"></a>
+  <h4 id="DxFeed_Graal_Net_Utils_MathUtil_IsPowerOfTwo_System_Int64_" data-uid="DxFeed.Graal.Net.Utils.MathUtil.IsPowerOfTwo(System.Int64)">IsPowerOfTwo(long)</h4>
+  <div class="markdown level1 summary"><p>Checks if the specified number is a power of two.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool IsPowerOfTwo(long x)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></td>
+        <td><span class="parametername">x</span></td>
+        <td><p>The specified number.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><p>Returns <code>true</code> if x represents a power of two.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.2.1/apiSpec/new?filename=DxFeed_Graal_Net_Utils_MathUtil.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Utils.MathUtil%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.2.1/src/DxFeed.Graal.Net/Utils/MathUtil.cs/#L16" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In This Article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      <span>Copyright © 2022 Devexperts LLC</span>
+      
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>
