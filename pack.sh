@@ -1,2 +1,2 @@
 #!/bin/sh
-dotnet pack -c Release --property:PackageOutputPath=artifacts/Packages
+dotnet pack -c Release -o artifacts/Packages

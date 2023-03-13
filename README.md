@@ -18,7 +18,7 @@ the [Overview](#overview) section.<br>
 [![NET](https://img.shields.io/badge/.net%20version-net6.0-blueviolet)](https://dotnet.microsoft.com/en-us/download/dotnet/6.0)
 ![Platform](https://img.shields.io/badge/platform-win--x64%20%7C%20linux--x64%20%7C%20osx--x64%20%7C%20osx--arm64-lightgrey)
 [![License](https://img.shields.io/badge/license-MPL--2.0-orange)](https://github.com/dxFeed/dxfeed-graal-net-api/blob/master/LICENSE)
-[![Nuget](https://img.shields.io/badge/nuget-0.2.0-blue)](https://dxfeed.jfrog.io/artifactory/nuget-open/com/dxfeed/graal-net/)
+[![Nuget](https://img.shields.io/badge/nuget-0.2.1-blue)](https://dxfeed.jfrog.io/artifactory/nuget-open/com/dxfeed/graal-net/)
 
 ## Table of Contents
 
