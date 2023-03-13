@@ -12,7 +12,7 @@ using DxFeed.Graal.Net.Utils;
 namespace DxFeed.Graal.Net.Samples;
 
 /// <summary>
-/// Converts one tape file into another tape file with optional intermediate processing or filtering.
+/// Reads events form a tape file.
 /// </summary>
 internal abstract class DxFeedFileParser
 {
@@ -59,7 +59,7 @@ Where:
             }
         });
 
-        // Add symbols/
+        // Add symbols.
         sub.AddSymbols(argSymbol);
 
         // Connect endpoint to a file.
