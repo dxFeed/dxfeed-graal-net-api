@@ -87,7 +87,7 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Pack NuGet
-        run: dotnet pack -c Release --property:PackageOutputPath=artifacts/Packages
+        run: dotnet pack -c Release --property:PackageOutputPath=${{ github.workspace }}/artifacts/Packages
 
       - name: Upload NuGet
         run: |

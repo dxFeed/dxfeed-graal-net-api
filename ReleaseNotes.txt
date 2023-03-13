@@ -1,3 +1,11 @@
+## Version 0.2.1
+
+## What's Changed
+* Feature: Add CodeQL analysis CI/CD step
+* Feature: Add DocFX generation
+* Fix: Update readme
+* Feature: Add docs (available at https://dxfeed.github.io/dxfeed-graal-net-api/)
+
 ## Version 0.2.0
 
 ## What's Changed
