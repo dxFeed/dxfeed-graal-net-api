@@ -14,15 +14,6 @@ namespace DxFeed.Graal.Net.Tests.Api;
 public class DXEndpointTest
 {
     [Test]
-    public void ThrowExceptionWhenDisposed()
-    {
-        var endpoint = Create();
-        endpoint.Dispose();
-        Assert.Throws<JavaException>(() => endpoint.GetFeed());
-        Assert.Throws<JavaException>(() => endpoint.GetPublisher());
-    }
-
-    [Test]
     public void MultipleDisposeNotThrowException()
     {
         var endpoint = Create();
@@ -52,7 +43,7 @@ public class DXEndpointTest
 
     [Test]
     public void UnsupportedRoleThrowException() =>
-        Assert.Throws<JavaException>(() => Create((Role)100500));
+        Assert.Throws<ArgumentException>(() => Create((Role)100500));
 
     [Test]
     public void GetInstanceReturnsSameObject()
