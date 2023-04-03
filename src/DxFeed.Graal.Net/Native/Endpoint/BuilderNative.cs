@@ -10,10 +10,10 @@ using DxFeed.Graal.Net.Api;
 namespace DxFeed.Graal.Net.Native.Endpoint;
 
 /// <summary>
-/// Native wrapper over the Java <c>com.dxfeed.api.DXEndpoint.Builder</c> class.
-/// The location of the imported functions is in the header files <c>"dxfg_endpoint.h"</c>.
+/// This class is implemented as a thin wrapper over <see cref="BuilderSafeHandle"/>.
+/// Contains only managed resources.
 /// </summary>
-internal sealed unsafe class BuilderNative : IDisposable
+internal sealed class BuilderNative : IDisposable
 {
     private readonly BuilderSafeHandle _builderHandle;
 
