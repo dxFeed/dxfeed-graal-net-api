@@ -35,7 +35,7 @@ public enum ShortSaleRestriction
 /// </summary>
 internal static class ShortSaleRestrictionExt
 {
-    private static readonly ShortSaleRestriction[] Values = EnumUtil.BuildEnumBitMaskArrayByValue(Undefined);
+    private static readonly ShortSaleRestriction[] Values = EnumUtil.CreateEnumBitMaskArrayByValue(Undefined);
 
     /// <summary>
     /// Returns an enum constant of the <see cref="ShortSaleRestriction"/> by integer code bit pattern.

@@ -56,7 +56,7 @@ public enum Direction
 /// </summary>
 internal static class DirectionExt
 {
-    private static readonly Direction[] Values = EnumUtil.BuildEnumBitMaskArrayByValue(Undefined);
+    private static readonly Direction[] Values = EnumUtil.CreateEnumBitMaskArrayByValue(Undefined);
 
     /// <summary>
     /// Returns an enum constant of the <see cref="Direction"/> by integer code bit pattern.

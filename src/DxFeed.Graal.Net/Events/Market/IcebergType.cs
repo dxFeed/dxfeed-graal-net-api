@@ -35,7 +35,7 @@ public enum IcebergType
 /// </summary>
 internal static class IcebergTypeExt
 {
-    private static readonly IcebergType[] Values = EnumUtil.BuildEnumBitMaskArrayByValue(Undefined);
+    private static readonly IcebergType[] Values = EnumUtil.CreateEnumBitMaskArrayByValue(Undefined);
 
     /// <summary>
     /// Returns an enum constant of the <see cref="IcebergType"/> by integer code bit pattern.

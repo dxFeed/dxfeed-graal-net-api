@@ -40,7 +40,7 @@ public enum PriceType
 /// </summary>
 internal static class PriceTypeExt
 {
-    private static readonly PriceType[] Values = EnumUtil.BuildEnumBitMaskArrayByValue(Regular);
+    private static readonly PriceType[] Values = EnumUtil.CreateEnumBitMaskArrayByValue(Regular);
 
     /// <summary>
     /// Returns an enum constant of the <see cref="PriceType"/> by integer code bit pattern.

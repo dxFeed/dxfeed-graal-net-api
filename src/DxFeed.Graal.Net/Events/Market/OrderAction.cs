@@ -153,7 +153,7 @@ public enum OrderAction
 /// </summary>
 internal static class OrderActionExt
 {
-    private static readonly OrderAction[] Values = EnumUtil.BuildEnumBitMaskArrayByValue(Undefined);
+    private static readonly OrderAction[] Values = EnumUtil.CreateEnumBitMaskArrayByValue(Undefined);
 
     /// <summary>
     /// Returns an enum constant of the <see cref="OrderAction"/> by integer code bit pattern.
