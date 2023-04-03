@@ -5,9 +5,7 @@
 // </copyright>
 
 using System;
-using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using DxFeed.Graal.Net.Api;
 using DxFeed.Graal.Net.Native.Feed;
 using DxFeed.Graal.Net.Native.Publisher;
 

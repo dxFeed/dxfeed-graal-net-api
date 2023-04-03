@@ -71,7 +71,7 @@ internal sealed unsafe class BuilderSafeHandle : SafeHandleZeroIsInvalid
         {
             var thread = Isolate.CurrentThread;
             ErrorCheck.NativeCall(thread, NativeRelease(thread, (BuilderHandle*)handle));
-            handle = (nint)0;
+            handle = (IntPtr)0;
             return true;
         }
         catch (Exception e)

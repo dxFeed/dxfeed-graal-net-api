@@ -51,7 +51,7 @@ internal sealed unsafe class StateChangeListenerSafeHandle : SafeHandleZeroIsInv
         {
             var thread = Isolate.CurrentThread;
             ErrorCheck.NativeCall(thread, NativeRelease(thread, (StateChangeListenerHandle*)handle));
-            handle = (nint)0;
+            handle = (IntPtr)0;
             return true;
         }
         catch (Exception e)

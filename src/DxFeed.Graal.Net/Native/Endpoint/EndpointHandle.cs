@@ -136,7 +136,7 @@ internal sealed unsafe class EndpointSafeHandle : SafeHandleZeroIsInvalid
         {
             var thread = Isolate.CurrentThread;
             ErrorCheck.NativeCall(thread, NativeRelease(thread, (EndpointHandle*)handle));
-            handle = (nint)0;
+            handle = (IntPtr)0;
             return true;
         }
         catch (Exception e)

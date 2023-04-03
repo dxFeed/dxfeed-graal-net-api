@@ -703,7 +703,7 @@ public sealed class DXEndpoint : IDisposable
     /// <see cref="Role.OnDemandFeed"/> and <see cref="Role.Publisher"/> role.
     /// The default properties file is loaded only if there are no system properties (<see cref="SystemProperty"/>)
     /// or user properties (<see cref="WithProperty(string,string)"/>) set with the same key
-    /// (<see cref="DXEndpoint.DXFeedPropertiesProperty"/>, <see cref="DXEndpoint.DXPublisherPropertiesProperty"/>)
+    /// (<see cref="DXFeedPropertiesProperty"/>, <see cref="DXPublisherPropertiesProperty"/>)
     /// and the file exists and is readable.
     /// <br/>
     /// This file must be in the <a href="https://en.wikipedia.org/wiki/.properties">Java properties file format</a>.
@@ -728,7 +728,7 @@ public sealed class DXEndpoint : IDisposable
         /// This lazy builder instance is used only to define supported properties.
         /// This instance is created only when the <see cref="SupportsProperty"/> method is called.
         /// When it is created, it will be correctly deleted later,
-        /// using the finalizer (<see cref="System.Runtime.InteropServices.SafeHandle"/>).
+        /// using the finalizer (<see cref="SafeHandle"/>).
         /// The implementation of the definition of supported properties may change in the future.
         /// </summary>
         private readonly Lazy<BuilderNative> _builderForDefineSupportProperties = new(BuilderNative.Create);
@@ -779,16 +779,9 @@ public sealed class DXEndpoint : IDisposable
         /// <exception cref="ArgumentNullException">If key or value is null.</exception>
         public Builder WithProperty(string key, string value)
         {
-            // ReSharper disable once JoinNullCheckWithUsage - Code Style.
-            if (key == null)
+            if (key == null || value == null)
             {
-                throw new ArgumentNullException(nameof(key));
-            }
-
-            // ReSharper disable once JoinNullCheckWithUsage - Code Style.
-            if (value == null)
-            {
-                throw new ArgumentNullException(nameof(value));
+                throw new ArgumentNullException(key == null ? nameof(key) : nameof(value));
             }
 
             _props[key] = value;
@@ -809,7 +802,7 @@ public sealed class DXEndpoint : IDisposable
         }
 
         /// <summary>
-        /// Sets the specified properties from the provided key-value collection. Unsupported properties are ignored.
+        /// Sets the specified properties from the provided key-value collection. Unsupported prkoperties are ignored.
         /// </summary>
         /// <param name="properties">The key-value collection.</param>
         /// <returns>Returns this <see cref="Builder"/>.</returns>
