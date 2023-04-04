@@ -1,4 +1,4 @@
-// <copyright file="EndpointHandle.cs" company="Devexperts LLC">
+// <copyright file="EndpointSafeHandle" company="Devexperts LLC">
 // Copyright © 2022 Devexperts LLC. All rights reserved.
 // This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 // If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
@@ -12,17 +12,7 @@ using DxFeed.Graal.Net.Native.Graal;
 using DxFeed.Graal.Net.Native.Interop;
 using DxFeed.Graal.Net.Native.Publisher;
 
-namespace DxFeed.Graal.Net.Native.Endpoint;
-
-/// <summary>
-/// A handle that represents a Java <c>com.dxfeed.api.DXEndpoint</c> object.
-/// </summary>
-[StructLayout(LayoutKind.Sequential)]
-internal readonly struct EndpointHandle
-{
-    // ReSharper disable once MemberCanBePrivate.Global
-    public readonly JavaObjectHandle JavaHandle;
-}
+namespace DxFeed.Graal.Net.Native.Endpoint.Handles;
 
 /// <summary>
 /// This class wraps an unsafe handler <see cref="BuilderHandle"/>.
@@ -108,14 +98,6 @@ internal sealed unsafe class EndpointSafeHandle : SafeHandleZeroIsInvalid
         ErrorCheck.NativeCall(
             thread,
             NativeAddStateChangeListener(thread, this, stateChangeListenerHandle, 0, 0));
-    }
-
-    public void RemoveStateChangeListener(StateChangeListenerSafeHandle stateChangeListenerHandle)
-    {
-        var thread = Isolate.CurrentThread;
-        ErrorCheck.NativeCall(
-            thread,
-            NativeRemoveStateChangeListener(thread, this, stateChangeListenerHandle));
     }
 
     public FeedHandle* GetFeed()
@@ -279,16 +261,6 @@ internal sealed unsafe class EndpointSafeHandle : SafeHandleZeroIsInvalid
         StateChangeListenerHandle* listenerHandle,
         nint endpointFinalize,
         nint userData);
-
-    [DllImport(
-        ImportInfo.DllName,
-        CallingConvention = CallingConvention.Cdecl,
-        CharSet = CharSet.Ansi,
-        EntryPoint = "dxfg_DXEndpoint_removeStateChangeListener")]
-    private static extern int NativeRemoveStateChangeListener(
-        nint thread,
-        EndpointHandle* endpointHandle,
-        StateChangeListenerHandle* listenerHandle);
 
     [DllImport(
         ImportInfo.DllName,

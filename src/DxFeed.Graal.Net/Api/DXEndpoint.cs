@@ -49,6 +49,7 @@ namespace DxFeed.Graal.Net.Api;
 /// <see cref="DXFeed"/> and <see cref="DXPublisher"/> have no public resource release methods,
 /// and exist as long as <see cref="DXEndpoint"/> exists.
 /// </summary>
+///
 /// <example>
 /// <code>
 /// DXFeed feed = DXEndpoint.Create()
@@ -224,7 +225,7 @@ public sealed class DXEndpoint : IDisposable
     public const string DXSchemeEnabledPropertyPrefix = "dxscheme.enabled.";
 
     /// <summary>
-    /// List of singleton <see cref="DXEndpoint"/> instances with different roles.
+    /// A list of singleton <see cref="DXEndpoint"/> instances with different roles.
     /// </summary>
     private static readonly ConcurrentDictionary<Role, Lazy<DXEndpoint>> Instances = new();
 
@@ -254,9 +255,9 @@ public sealed class DXEndpoint : IDisposable
     private readonly Lazy<DXPublisher> _publisher;
 
     /// <summary>
-    /// List of state change listeners.
+    /// A list of state change listeners callback.
     /// </summary>
-    private ImmutableList<StateChangeListener> _listeners = ImmutableList.Create<StateChangeListener>();
+    private ImmutableList<StateChangeListenerCallback> _listeners = ImmutableList.Create<StateChangeListenerCallback>();
 
     /// <summary>
     /// Initializes a new instance of the <see cref="DXEndpoint"/>
@@ -276,6 +277,8 @@ public sealed class DXEndpoint : IDisposable
 
         unsafe
         {
+            // Add a listener and create a GCHandle to avoid garbage collection.
+            // GCHandle will be released when the listener receives the Closed state.
             _endpointNative.AddStateChangeListener(&OnStateChanges, GCHandle.Alloc(this));
         }
     }
@@ -285,12 +288,11 @@ public sealed class DXEndpoint : IDisposable
     /// </summary>
     /// <param name="oldState">The old state of endpoint.</param>
     /// <param name="newState">The new state of endpoint.</param>
-    public delegate void StateChangeListener(State oldState, State newState);
+    public delegate void StateChangeListenerCallback(State oldState, State newState);
 
     /// <summary>
-    /// List of endpoint roles.
+    /// A list of endpoint roles.
     /// </summary>
-    /// <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/api/DXEndpoint.Role.html">Javadoc.</a>
     public enum Role
     {
         /// <summary>
@@ -337,14 +339,15 @@ public sealed class DXEndpoint : IDisposable
 
         /// <summary>
         /// <c>LocalHub</c> endpoint is a local hub without ability to establish network connections.
+        /// Events that are published via <see cref="DXEndpoint.GetPublisher"/> are delivered to local
+        /// <see cref="DXEndpoint.GetFeed"/> only.
         /// </summary>
         LocalHub,
     }
 
     /// <summary>
-    /// List of endpoint states.
+    /// A list of endpoint states.
     /// </summary>
-    /// <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/api/DXEndpoint.State.html">Javadoc.</a>
     public enum State
     {
         /// <summary>
@@ -378,7 +381,8 @@ public sealed class DXEndpoint : IDisposable
         GetInstance(Role.Feed);
 
     /// <summary>
-    /// Gets a default application-wide singleton instance of DXEndpoint with a specific <see cref="Role"/>.
+    /// Gets a default application-wide singleton instance of <see cref="DXEndpoint"/>
+    /// with a specific <see cref="Role"/>.
     /// Most applications use only a single data-source and should rely on this method to get one.
     /// </summary>
     /// <param name="role">The <see cref="Role"/>.</param>
@@ -415,7 +419,8 @@ public sealed class DXEndpoint : IDisposable
     /// <see cref="Disconnect"/> method and no further connections can be established.
     /// The endpoint <see cref="State"/> immediately becomes <see cref="State.Closed"/>.
     /// <br/>
-    /// <b>This method is blocking.</b>
+    /// This method ensures that <see cref="DXEndpoint"/> can be safely garbage-collected
+    /// when all outside references to it are lost.
     /// </summary>
     public void Close()
     {
@@ -431,6 +436,9 @@ public sealed class DXEndpoint : IDisposable
     /// to make sure that file was completely processed.
     /// <br/>
     /// <b>This method is blocking.</b>
+    /// <br/>
+    /// This method ensures that <see cref="DXEndpoint"/> can be safely garbage-collected
+    /// when all outside references to it are lost.
     /// </summary>
     public void CloseAndAwaitTermination()
     {
@@ -454,7 +462,7 @@ public sealed class DXEndpoint : IDisposable
 
     /// <summary>
     /// Gets a value indicating whether if this endpoint is closed.
-    /// There is a shortcut for <c><see cref="GetState"/> == <see cref="State.Closed"/></c>.
+    /// There is a shortcut for <see cref="GetState"/> == <see cref="State.Closed"/>.
     /// </summary>
     /// <returns>Returns <c>true</c> if this endpoint is closed.</returns>
     public bool IsClosed() =>
@@ -474,8 +482,14 @@ public sealed class DXEndpoint : IDisposable
     /// </summary>
     /// <param name="user">The user name.</param>
     /// <returns>Returns this <see cref="DXEndpoint"/>.</returns>
+    /// <exception cref="ArgumentNullException">If user is null.</exception>
     public DXEndpoint User(string user)
     {
+        if (user == null)
+        {
+            throw new ArgumentNullException(nameof(user));
+        }
+
         _endpointNative.User(user);
         return this;
     }
@@ -487,8 +501,14 @@ public sealed class DXEndpoint : IDisposable
     /// </summary>
     /// <param name="password">The user password.</param>
     /// <returns>Returns this <see cref="DXEndpoint"/>.</returns>
+    /// <exception cref="ArgumentNullException">If password is null.</exception>
     public DXEndpoint Password(string password)
     {
+        if (password == null)
+        {
+            throw new ArgumentNullException(nameof(password));
+        }
+
         _endpointNative.Password(password);
         return this;
     }
@@ -514,13 +534,20 @@ public sealed class DXEndpoint : IDisposable
     /// <b>This method does not wait until connection actually gets established</b>. The actual connection establishment
     /// happens asynchronously after the invocation of this method. However, this method waits until notification
     /// about state transition from <see cref="State.NotConnected"/> to <see cref="State.Connecting"/>
-    /// gets processed by all <see cref="StateChangeListener"/> that were installed via
+    /// gets processed by all <see cref="StateChangeListenerCallback"/> that were installed via
     /// <see cref="AddStateChangeListener"/> method.
     /// </summary>
     /// <param name="address">The data source address.</param>
     /// <returns>Returns this <see cref="DXEndpoint"/>.</returns>
+    /// <exception cref="ArgumentNullException">If address is null.</exception>
+    /// <exception cref="JavaException">If address string is malformed.</exception>
     public DXEndpoint Connect(string address)
     {
+        if (address == null)
+        {
+            throw new ArgumentNullException(nameof(address));
+        }
+
         _endpointNative.Connect(address);
         return this;
     }
@@ -548,7 +575,8 @@ public sealed class DXEndpoint : IDisposable
     /// The endpoint <see cref="State"/> immediately becomes <see cref="State.NotConnected"/> otherwise.
     /// <br/>
     /// This method does not release all resources that are associated with this endpoint.
-    /// Use <see cref="Close"/> or <see cref="Dispose"/> methods to release all resources.
+    /// Use <see cref="Close"/>, <see cref="Dispose"/> or <see cref="CloseAndAwaitTermination"/>
+    /// methods to release all resources.
     /// </summary>
     public void Disconnect() =>
         _endpointNative.Disconnect();
@@ -559,7 +587,8 @@ public sealed class DXEndpoint : IDisposable
     /// The endpoint <see cref="State"/> immediately becomes <see cref="State.NotConnected"/> otherwise.
     /// <br/>
     /// This method does not release all resources that are associated with this endpoint.
-    /// Use <see cref="Close"/> or <see cref="Dispose"/> methods to release all resources.
+    /// Use <see cref="Close"/>, <see cref="Dispose"/> or <see cref="CloseAndAwaitTermination"/>
+    /// methods to release all resources.
     /// </summary>
     public void DisconnectAndClear() =>
         _endpointNative.DisconnectAndClear();
@@ -592,7 +621,7 @@ public sealed class DXEndpoint : IDisposable
     /// Installed listener can be removed with <see cref="RemoveStateChangeListener"/> method.
     /// </summary>
     /// <param name="listener">The listener to add.</param>
-    public void AddStateChangeListener(StateChangeListener listener) =>
+    public void AddStateChangeListener(StateChangeListenerCallback listener) =>
         ImmutableInterlocked.Update(ref _listeners, (list, added) => list.Add(added), listener);
 
     /// <summary>
@@ -601,7 +630,7 @@ public sealed class DXEndpoint : IDisposable
     /// It removes the listener that was previously installed with <see cref="AddStateChangeListener"/> method.
     /// </summary>
     /// <param name="listener">The listener to remove.</param>
-    public void RemoveStateChangeListener(StateChangeListener listener) =>
+    public void RemoveStateChangeListener(StateChangeListenerCallback listener) =>
         ImmutableInterlocked.Update(ref _listeners, (list, removed) => list.Remove(removed), listener);
 
     /// <summary>
@@ -644,8 +673,7 @@ public sealed class DXEndpoint : IDisposable
         var endpoint = handle.Target as DXEndpoint;
         endpoint?.FireStateChanges((State)oldState, (State)newState);
 
-        // If a closed state occurs, we can free handle.
-        // After that, the OnStateChanges cannot be called from native code with this handle.
+        // If a closed state occurs, we can free self handle.
         if ((State)newState == State.Closed)
         {
             handle.Free();
@@ -669,7 +697,7 @@ public sealed class DXEndpoint : IDisposable
             catch (Exception e)
             {
                 // ToDo Add log entry.
-                Console.Error.WriteLine($"Exception in {_name} endpoint state change listener: {e}");
+                Console.Error.WriteLine($"Exception in {_name} endpoint state change listener({listener.Method}): {e}");
             }
         }
     }
@@ -682,11 +710,6 @@ public sealed class DXEndpoint : IDisposable
         if (_feed.IsValueCreated)
         {
             _feed.Value.Close();
-        }
-
-        if (_publisher.IsValueCreated)
-        {
-            _publisher.Value.Close();
         }
     }
 
@@ -712,6 +735,7 @@ public sealed class DXEndpoint : IDisposable
     ///
     /// If no endpoint name has been specified (<see cref="WithName"/>), the default name will be used.
     /// The default name includes a counter that increments each time an endpoint is created ("qdnet", "qdnet-1", etc.).
+    /// To get the name of the created endpoint, call the <see cref="DXEndpoint.GetName"/> method.
     ///
     /// <h3>Threads and locks</h3>
     ///
@@ -764,7 +788,7 @@ public sealed class DXEndpoint : IDisposable
         /// <exception cref="ArgumentException"> If the role does not exist.</exception>
         public Builder WithRole(Role role)
         {
-            // Checkable assignment.
+            // Verifiable assignment.
             _role = EnumUtil.ValueOf(role);
 
             return this;
@@ -802,7 +826,7 @@ public sealed class DXEndpoint : IDisposable
         }
 
         /// <summary>
-        /// Sets the specified properties from the provided key-value collection. Unsupported prkoperties are ignored.
+        /// Sets the specified properties from the provided key-value collection. Unsupported properties are ignored.
         /// </summary>
         /// <param name="properties">The key-value collection.</param>
         /// <returns>Returns this <see cref="Builder"/>.</returns>
@@ -846,9 +870,10 @@ public sealed class DXEndpoint : IDisposable
         {
             using var builder = BuilderNative.Create();
             var role = _role;
-            builder.WithRole(role);
+            builder.WithRole((int)role);
 
             // Create properties snapshot.
+            // This ensures that the properties will not be changed from another thread.
             var props = new Dictionary<string, string>();
             foreach (var prop in _props)
             {
@@ -885,10 +910,10 @@ public sealed class DXEndpoint : IDisposable
 
         /// <summary>
         /// Tries to load a default properties file for the specified builder,
-        /// with the specified role and properties.
+        /// with the specified role.
         /// <param name="builder">The specified builder.</param>
         /// <param name="role">The current builder role.</param>
-        /// <param name="props">The user-defined properties.</param>
+        /// <param name="props">The user-defined properties for this builder.</param>
         /// </summary>
         private static void LoadDefaultPropertiesFileIfNeeded(
             BuilderNative builder,
@@ -919,7 +944,7 @@ public sealed class DXEndpoint : IDisposable
             }
 
             // If there is no propFileKey in the user-defined properties,
-            // try loading the default properties file from the current runtime directory if the file exists.
+            // tries loading the default properties file from the current runtime directory if the file exists.
             if (!props.ContainsKey(propFileKey) && File.Exists(propFileKey))
             {
                 // The default property file has the same value as the key.

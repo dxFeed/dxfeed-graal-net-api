@@ -5,13 +5,12 @@
 // </copyright>
 
 using System;
-using DxFeed.Graal.Net.Api;
+using DxFeed.Graal.Net.Native.Endpoint.Handles;
 
 namespace DxFeed.Graal.Net.Native.Endpoint;
 
 /// <summary>
-/// This class is implemented as a thin wrapper over <see cref="BuilderSafeHandle"/>.
-/// Contains only managed resources.
+/// Native wrapper over the Java <c>com.dxfeed.api.DXEndpoint.Builder</c> class.
 /// </summary>
 internal sealed class BuilderNative : IDisposable
 {
@@ -23,7 +22,7 @@ internal sealed class BuilderNative : IDisposable
     public static BuilderNative Create() =>
         new(BuilderSafeHandle.Create());
 
-    public void WithRole(DXEndpoint.Role role) =>
+    public void WithRole(int role) =>
         _builderHandle.WithRole(role);
 
     public void WithProperty(string key, string value) =>

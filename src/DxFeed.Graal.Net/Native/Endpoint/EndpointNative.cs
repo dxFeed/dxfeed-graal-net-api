@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using DxFeed.Graal.Net.Native.Endpoint.Handles;
 using DxFeed.Graal.Net.Native.Feed;
 using DxFeed.Graal.Net.Native.Publisher;
 
@@ -13,22 +14,18 @@ namespace DxFeed.Graal.Net.Native.Endpoint;
 
 /// <summary>
 /// Native wrapper over the Java <c>com.dxfeed.api.DXEndpoint</c> class.
-/// The location of the imported functions is in the header files <c>"dxfg_endpoint.h"</c>.
 /// </summary>
 internal sealed unsafe class EndpointNative : IDisposable
 {
     private readonly EndpointSafeHandle _endpointHandle;
     private readonly Lazy<FeedNative> _feedNative;
     private readonly Lazy<PublisherNative> _publisherNative;
-    private StateChangeListenerSafeHandle? _stateChangeListenerHandle;
 
     internal EndpointNative(EndpointSafeHandle endpointHandle)
     {
         _endpointHandle = endpointHandle;
-        _feedNative = new Lazy<FeedNative>(() =>
-            new FeedNative(_endpointHandle.GetFeed()));
-        _publisherNative = new Lazy<PublisherNative>(() =>
-            new PublisherNative(_endpointHandle.GetPublisher()));
+        _feedNative = new Lazy<FeedNative>(() => new FeedNative(_endpointHandle.GetFeed()));
+        _publisherNative = new Lazy<PublisherNative>(() => new PublisherNative(_endpointHandle.GetPublisher()));
     }
 
     public void Close() =>
@@ -64,32 +61,12 @@ internal sealed unsafe class EndpointNative : IDisposable
     public int GetState() =>
         _endpointHandle.GetState();
 
-    /// <summary>
-    /// Sets state change listener.
-    /// Previously added listener will be removed.
-    /// Only one listener allowed in this level.
-    /// </summary>
-    /// <param name="self">The function pointer to the endpoint state change listener.</param>
-    public void AddStateChangeListener(delegate* unmanaged[Cdecl]<nint, int, int, nint, void> func, GCHandle self)
+    public void AddStateChangeListener(
+        delegate* unmanaged[Cdecl]<nint, int, int, nint, void> listener,
+        GCHandle userData)
     {
-        _stateChangeListenerHandle = StateChangeListenerSafeHandle.Create(func, self);
-        _endpointHandle.AddStateChangeListener(_stateChangeListenerHandle);
-    }
-
-    /// <summary>
-    /// Removes a previously added listener.
-    /// If no listener was added, nothing happened.
-    /// </summary>
-    public void ClearStateChangeListener()
-    {
-        if (_stateChangeListenerHandle == null)
-        {
-            return;
-        }
-
-        _endpointHandle.RemoveStateChangeListener(_stateChangeListenerHandle);
-        _stateChangeListenerHandle.Dispose();
-        _stateChangeListenerHandle = null;
+        using var stateChangeListenerHandle = StateChangeListenerSafeHandle.Create(listener, userData);
+        _endpointHandle.AddStateChangeListener(stateChangeListenerHandle);
     }
 
     public FeedNative GetFeed() =>
@@ -98,9 +75,6 @@ internal sealed unsafe class EndpointNative : IDisposable
     public PublisherNative GetPublisher() =>
         _publisherNative.Value;
 
-    public void Dispose()
-    {
+    public void Dispose() =>
         _endpointHandle.Dispose();
-        _stateChangeListenerHandle?.Dispose();
-    }
 }

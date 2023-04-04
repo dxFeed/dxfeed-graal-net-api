@@ -10,18 +10,7 @@ using DxFeed.Graal.Net.Native.ErrorHandling;
 using DxFeed.Graal.Net.Native.Graal;
 using DxFeed.Graal.Net.Native.Interop;
 
-namespace DxFeed.Graal.Net.Native.Endpoint;
-
-/// <summary>
-/// A handle that represents a Java <c>java.beans.PropertyChangeListener</c> object.
-/// Used to store <see cref="StateChangeListenerFunc"/>.
-/// </summary>
-[StructLayout(LayoutKind.Sequential)]
-internal readonly struct StateChangeListenerHandle
-{
-    // ReSharper disable once MemberCanBePrivate.Global
-    public readonly JavaObjectHandle JavaHandle;
-}
+namespace DxFeed.Graal.Net.Native.Endpoint.Handles;
 
 /// <summary>
 /// This class wraps an unsafe handler <see cref="StateChangeListenerHandle"/>.

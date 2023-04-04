@@ -6,22 +6,11 @@
 
 using System;
 using System.Runtime.InteropServices;
-using DxFeed.Graal.Net.Api;
 using DxFeed.Graal.Net.Native.ErrorHandling;
 using DxFeed.Graal.Net.Native.Graal;
 using DxFeed.Graal.Net.Native.Interop;
 
-namespace DxFeed.Graal.Net.Native.Endpoint;
-
-/// <summary>
-/// A handle that represents a Java <c>com.dxfeed.api.DXEndpoint.Builder</c> object.
-/// </summary>
-[StructLayout(LayoutKind.Sequential)]
-internal readonly struct BuilderHandle
-{
-    // ReSharper disable once MemberCanBePrivate.Global
-    public readonly JavaObjectHandle Handle;
-}
+namespace DxFeed.Graal.Net.Native.Endpoint.Handles;
 
 /// <summary>
 /// This class wraps an unsafe handler <see cref="BuilderHandle"/>.
@@ -41,10 +30,10 @@ internal sealed unsafe class BuilderSafeHandle : SafeHandleZeroIsInvalid
         return new(ErrorCheck.NativeCall(thread, NativeCreate(thread)));
     }
 
-    public void WithRole(DXEndpoint.Role role)
+    public void WithRole(int role)
     {
         var thread = Isolate.CurrentThread;
-        ErrorCheck.NativeCall(thread, NativeWithRole(thread, this, (int)role));
+        ErrorCheck.NativeCall(thread, NativeWithRole(thread, this, role));
     }
 
     public void WithProperty(string key, string value)
