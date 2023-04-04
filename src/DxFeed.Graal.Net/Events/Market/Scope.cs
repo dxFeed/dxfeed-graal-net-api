@@ -41,7 +41,7 @@ public enum Scope
 /// </summary>
 internal static class ScopeExt
 {
-    private static readonly Scope[] Values = EnumUtil.BuildEnumBitMaskArrayByValue(Composite);
+    private static readonly Scope[] Values = EnumUtil.CreateEnumBitMaskArrayByValue(Composite);
 
     /// <summary>
     /// Returns an enum constant of the <see cref="Scope"/> by integer code bit pattern.

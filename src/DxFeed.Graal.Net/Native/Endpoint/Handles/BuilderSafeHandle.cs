@@ -6,13 +6,16 @@
 
 using System;
 using System.Runtime.InteropServices;
-using DxFeed.Graal.Net.Api;
 using DxFeed.Graal.Net.Native.ErrorHandling;
 using DxFeed.Graal.Net.Native.Graal;
 using DxFeed.Graal.Net.Native.Interop;
 
-namespace DxFeed.Graal.Net.Native.Endpoint;
+namespace DxFeed.Graal.Net.Native.Endpoint.Handles;
 
+/// <summary>
+/// This class wraps an unsafe handler <see cref="BuilderHandle"/>.
+/// The location of the imported functions is in the header files <c>"dxfg_endpoint.h"</c>.
+/// </summary>
 internal sealed unsafe class BuilderSafeHandle : SafeHandleZeroIsInvalid
 {
     private BuilderSafeHandle(BuilderHandle* handle) =>
@@ -24,13 +27,13 @@ internal sealed unsafe class BuilderSafeHandle : SafeHandleZeroIsInvalid
     public static BuilderSafeHandle Create()
     {
         var thread = Isolate.CurrentThread;
-        return new(ErrorCheck.NativeCall(thread, Create(thread)));
+        return new(ErrorCheck.NativeCall(thread, NativeCreate(thread)));
     }
 
-    public void WithRole(DXEndpoint.Role role)
+    public void WithRole(int role)
     {
         var thread = Isolate.CurrentThread;
-        ErrorCheck.NativeCall(thread, NativeWithRole(thread, this, (int)role));
+        ErrorCheck.NativeCall(thread, NativeWithRole(thread, this, role));
     }
 
     public void WithProperty(string key, string value)
@@ -45,10 +48,10 @@ internal sealed unsafe class BuilderSafeHandle : SafeHandleZeroIsInvalid
         return ErrorCheck.NativeCall(thread, NativeSupportsProperty(thread, this, key)) != 0;
     }
 
-    public EndpointHandle* Build()
+    public EndpointSafeHandle Build()
     {
         var thread = Isolate.CurrentThread;
-        return ErrorCheck.NativeCall(thread, NativeBuild(thread, this));
+        return new EndpointSafeHandle(ErrorCheck.NativeCall(thread, NativeBuild(thread, this)));
     }
 
     protected override bool ReleaseHandle()
@@ -56,14 +59,14 @@ internal sealed unsafe class BuilderSafeHandle : SafeHandleZeroIsInvalid
         try
         {
             var thread = Isolate.CurrentThread;
-            ErrorCheck.NativeCall(thread, Release(thread, (BuilderHandle*)handle));
+            ErrorCheck.NativeCall(thread, NativeRelease(thread, (BuilderHandle*)handle));
             handle = (IntPtr)0;
             return true;
         }
         catch (Exception e)
         {
             // ToDo Add a log entry.
-            Console.Error.WriteLine($"Exception in BuilderSafeHandle when releasing resource: {e}");
+            Console.Error.WriteLine($"Exception in {GetType().Name} when releasing resource: {e}");
         }
 
         return false;
@@ -74,14 +77,14 @@ internal sealed unsafe class BuilderSafeHandle : SafeHandleZeroIsInvalid
         CallingConvention = CallingConvention.Cdecl,
         CharSet = CharSet.Ansi,
         EntryPoint = "dxfg_DXEndpoint_newBuilder")]
-    private static extern BuilderHandle* Create(nint thread);
+    private static extern BuilderHandle* NativeCreate(nint thread);
 
     [DllImport(
         ImportInfo.DllName,
         CallingConvention = CallingConvention.Cdecl,
         CharSet = CharSet.Ansi,
         EntryPoint = "dxfg_JavaObjectHandler_release")]
-    private static extern int Release(
+    private static extern int NativeRelease(
         nint thread,
         BuilderHandle* builderHandle);
 
@@ -130,14 +133,4 @@ internal sealed unsafe class BuilderSafeHandle : SafeHandleZeroIsInvalid
     private static extern EndpointHandle* NativeBuild(
         nint thread,
         BuilderHandle* builderHandle);
-
-    /// <summary>
-    /// A handle that represents a Java <c>com.dxfeed.api.DXEndpoint.Builder</c> object.
-    /// </summary>
-    [StructLayout(LayoutKind.Sequential)]
-    internal readonly struct BuilderHandle
-    {
-        // ReSharper disable once MemberCanBePrivate.Global
-        public readonly JavaObjectHandle Handle;
-    }
 }
