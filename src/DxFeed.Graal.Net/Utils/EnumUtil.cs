@@ -15,7 +15,9 @@ namespace DxFeed.Graal.Net.Utils;
 public static class EnumUtil
 {
     /// <summary>
-    /// Returns an enum constant of the specified enum type with the specified value.
+    /// Returns an enum constant of the specified enum type with the specified value,
+    /// or throws <see cref="ArgumentException"/> if the specified enum type does not have
+    /// a constant with the specified value.
     /// </summary>
     /// <param name="value">The specified value.</param>
     /// <typeparam name="T">The specified enum type.</typeparam>
@@ -23,21 +25,21 @@ public static class EnumUtil
     /// <exception cref="ArgumentException">
     /// If the specified enum type does not have a constant with the specified value.
     /// </exception>
-    public static T ValueOf<T>(int value)
-        where T : Enum
+    public static T ValueOf<T>(T value)
+        where T : struct, Enum
     {
-        var enumType = typeof(T);
-        if (Enum.IsDefined(enumType, value))
+        if (Enum.IsDefined(value))
         {
-            return (T)Enum.ToObject(enumType, value);
+            return value;
         }
 
-        throw new ArgumentException($"{enumType} has no value({value})", nameof(value));
+        throw new ArgumentException($"{typeof(T)} has no value({value})", nameof(value));
     }
 
     /// <summary>
     /// Returns an enum constant of the specified enum type with the specified value,
-    /// or a default value if the specified enum type does not have a constant with the specified value.
+    /// or a default value if the specified enum type does not have
+    /// a constant with the specified value.
     /// </summary>
     /// <param name="value">The specified value.</param>
     /// <param name="defaultValue">The default enum value.</param>
@@ -46,17 +48,9 @@ public static class EnumUtil
     /// The enum constant of the specified enum type with the specified value
     /// or default value, if specified enum type has no constant with the specified value.
     /// </returns>
-    public static T ValueOf<T>(int value, T defaultValue)
-        where T : Enum
-    {
-        var enumType = typeof(T);
-        if (Enum.IsDefined(enumType, value))
-        {
-            return (T)Enum.ToObject(enumType, value);
-        }
-
-        return defaultValue;
-    }
+    public static T ValueOf<T>(T value, T defaultValue)
+        where T : struct, Enum =>
+        Enum.IsDefined(value) ? value : defaultValue;
 
     /// <summary>
     /// Gets the number of values for the specified enum type.
@@ -64,34 +58,31 @@ public static class EnumUtil
     /// <typeparam name="T">The specified enum type.</typeparam>
     /// <returns>Returns the number of values of the specified enum type.</returns>
     public static int GetCountValues<T>()
-        where T : Enum =>
+        where T : struct, Enum =>
         Enum.GetValues(typeof(T)).Length;
 
     /// <summary>
-    /// Creates an array containing elements of the specified enum type T,
-    /// of the specified length.
+    /// Creates an array containing elements of the specified enum type T, of the specified length.
     /// If the length is greater than the number of enum values,
     /// the remaining elements are filled with a default value, otherwise array are truncated.
     /// </summary>
     /// <param name="defaultValue">
-    /// The default value that will fill the elements of an array
-    /// if its size is greater than the number of enum values.
+    /// The default value that will fill the elements of an array if its size is greater than the number of enum values.
     /// </param>
-    /// <param name="length">The length of result array, must be power of 2.</param>
+    /// <param name="length">The length of result array.</param>
     /// <typeparam name="T">The specified enum type.</typeparam>
     /// <returns>The created array.</returns>
-    /// <exception cref="ArgumentException">If length is not power of 2.</exception>
+    /// <exception cref="ArgumentException">If length is less than zero.</exception>
     /// <remarks>
     /// The elements of the array are sorted by the binary values of the enumeration constants
     /// (that is, by their unsigned magnitude).
     /// </remarks>
-    /// <seealso cref="BuildEnumBitMaskArrayByValue{T}(T)"/>
-    public static T[] BuildEnumBitMaskArrayByValue<T>(T defaultValue, int length)
+    public static T[] CreateEnumArrayByValue<T>(T defaultValue, int length)
         where T : Enum
     {
-        if (!MathUtil.IsPowerOfTwo(length))
+        if (length < 0)
         {
-            throw new ArgumentException("Length must be power of 2", nameof(length));
+            throw new ArgumentException($"Length must be greater than zero({length})", nameof(length));
         }
 
         var values = (T[])Enum.GetValues(typeof(T));
@@ -107,7 +98,7 @@ public static class EnumUtil
     /// which is greater than or equal to the number of enum values.
     /// If the calculated length is greater than the number of enum values,
     /// the remaining elements are filled with a default value.
-    /// The idea is to quickly convert an int value to an enum value, simply by array index.
+    /// The idea is to quickly convert an <c>int</c> value to an enum value, simply by array index.
     /// But the size of the array is limited by a bit mask, so if the number of enum values
     /// is not a multiple of a power of two, you need to expand the array and fill in new elements with a default value.
     /// </summary>
@@ -121,10 +112,10 @@ public static class EnumUtil
     /// The elements of the array are sorted by the binary values of the enumeration constants
     /// (that is, by their unsigned magnitude).
     /// </remarks>
-    /// <seealso cref="BuildEnumBitMaskArrayByValue{T}(T,int)"/>
-    public static T[] BuildEnumBitMaskArrayByValue<T>(T defaultValue)
-        where T : Enum =>
-        BuildEnumBitMaskArrayByValue(
+    /// <seealso cref="CreateEnumArrayByValue{T}"/>
+    public static T[] CreateEnumBitMaskArrayByValue<T>(T defaultValue)
+        where T : struct, Enum =>
+        CreateEnumArrayByValue(
             defaultValue,
             (int)BitOperations.RoundUpToPowerOf2((uint)GetCountValues<T>()));
 }

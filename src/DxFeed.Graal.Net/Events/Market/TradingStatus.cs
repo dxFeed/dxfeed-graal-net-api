@@ -35,7 +35,7 @@ public enum TradingStatus
 /// </summary>
 internal static class TradingStatusExt
 {
-    private static readonly TradingStatus[] Values = EnumUtil.BuildEnumBitMaskArrayByValue(Undefined);
+    private static readonly TradingStatus[] Values = EnumUtil.CreateEnumBitMaskArrayByValue(Undefined);
 
     /// <summary>
     /// Returns an enum constant of the <see cref="TradingStatus"/> by integer code bit pattern.

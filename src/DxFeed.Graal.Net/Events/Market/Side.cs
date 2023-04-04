@@ -37,7 +37,7 @@ public enum Side
 /// </summary>
 internal static class SideExt
 {
-    private static readonly Side[] Values = EnumUtil.BuildEnumBitMaskArrayByValue(Undefined);
+    private static readonly Side[] Values = EnumUtil.CreateEnumBitMaskArrayByValue(Undefined);
 
     /// <summary>
     /// Returns an enum constant of the <see cref="Side"/> by integer code bit pattern.

@@ -4,7 +4,6 @@
 // If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
 // </copyright>
 
-using DxFeed.Graal.Net.Native.ErrorHandling;
 using static DxFeed.Graal.Net.Api.DXEndpoint;
 using static DxFeed.Graal.Net.Api.DXEndpoint.Role;
 
@@ -14,49 +13,32 @@ namespace DxFeed.Graal.Net.Tests.Api;
 public class DXEndpointBuilderTest
 {
     [Test]
-    public void ThrowExceptionWhenDisposed()
+    public void DefaultEndpointRoleIsFeed()
     {
-        var builder = NewBuilder();
-        builder.Dispose();
-        Assert.Throws<JavaException>(() => builder.Build());
-        Assert.Throws<JavaException>(() => builder.Build());
+        using var endpoint = NewBuilder().Build();
+        Assert.That(endpoint.GetRole(), Is.EqualTo(Feed));
     }
-
-    [Test]
-    public void MultipleDisposeNotThrowException()
-    {
-        using var builder = NewBuilder();
-        Assert.DoesNotThrow(() => builder.Dispose());
-        Assert.DoesNotThrow(() => builder.Dispose());
-    }
-
-    [Test]
-    public void DefaultEndpointRoleIsFeed() =>
-        Assert.That(NewBuilder().Build().GetRole(), Is.EqualTo(Feed));
 
     [Test]
     public void WithRoleMethodBuildCorrectEndpointRole() =>
         Assert.Multiple(() =>
         {
-            Assert.That(new Builder().WithRole(Feed).Build().GetRole(), Is.EqualTo(Feed));
-            Assert.That(new Builder().WithRole(OnDemandFeed).Build().GetRole(), Is.EqualTo(OnDemandFeed));
-            Assert.That(new Builder().WithRole(StreamFeed).Build().GetRole(), Is.EqualTo(StreamFeed));
-            Assert.That(new Builder().WithRole(Publisher).Build().GetRole(), Is.EqualTo(Publisher));
-            Assert.That(new Builder().WithRole(StreamPublisher).Build().GetRole(), Is.EqualTo(StreamPublisher));
-            Assert.That(new Builder().WithRole(LocalHub).Build().GetRole(), Is.EqualTo(LocalHub));
+            Assert.That(NewBuilder().WithRole(Feed).Build().GetRole(), Is.EqualTo(Feed));
+            Assert.That(NewBuilder().WithRole(OnDemandFeed).Build().GetRole(), Is.EqualTo(OnDemandFeed));
+            Assert.That(NewBuilder().WithRole(StreamFeed).Build().GetRole(), Is.EqualTo(StreamFeed));
+            Assert.That(NewBuilder().WithRole(Publisher).Build().GetRole(), Is.EqualTo(Publisher));
+            Assert.That(NewBuilder().WithRole(StreamPublisher).Build().GetRole(), Is.EqualTo(StreamPublisher));
+            Assert.That(NewBuilder().WithRole(LocalHub).Build().GetRole(), Is.EqualTo(LocalHub));
         });
 
     [Test]
-    public void UnsupportedRoleThrowException()
-    {
-        using var builder = NewBuilder();
-        Assert.Throws<JavaException>(() => builder.WithRole((Role)100500));
-    }
+    public void UnsupportedRoleThrowException() =>
+        Assert.Throws<ArgumentException>(() => NewBuilder().WithRole((Role)100500));
 
     [Test]
     public void CheckSupportsProperty()
     {
-        using var builder = NewBuilder();
+        var builder = NewBuilder();
         Assert.Multiple(() =>
         {
             // Supported property returns true.
@@ -78,14 +60,14 @@ public class DXEndpointBuilderTest
             // Unsupported property returns false.
             Assert.That(builder.SupportsProperty("unsupported-property"), Is.False);
             // Null-key throws JavaException.
-            Assert.Throws<JavaException>(() => builder.SupportsProperty(null!));
+            Assert.Throws<ArgumentNullException>(() => builder.SupportsProperty(null!));
         });
     }
 
     [Test]
     public void SetUnsupportedPropertyNotThrowException()
     {
-        using var builder = NewBuilder();
+        var builder = NewBuilder();
         Assert.DoesNotThrow(() => builder.WithProperty("unsupported-property", "unsupported-value"));
         Assert.DoesNotThrow(() => builder.Build());
     }
@@ -94,7 +76,8 @@ public class DXEndpointBuilderTest
     public void CheckWithName() =>
         Assert.Multiple(() =>
         {
-            Assert.That(NewBuilder().Build().GetName(), Is.Null);
+            var defaultName = NewBuilder().Build().GetName();
+            Assert.That(defaultName, Does.Contain("qdnet"));
             Assert.That(NewBuilder().WithName("Test").Build().GetName(), Is.EqualTo("Test"));
         });
 
@@ -113,13 +96,13 @@ public class DXEndpointBuilderTest
     }
 
     [Test]
-    public void OneBuilderInstanceCannotCreateMoreThanOneEndpoint()
+    public void OneBuilderInstanceCanCreateMoreThanOneEndpoint()
     {
-        using var builder = NewBuilder();
+        var builder = NewBuilder();
         Assert.Multiple(() =>
         {
             Assert.DoesNotThrow(() => builder.Build());
-            Assert.Throws<JavaException>(() => builder.Build());
+            Assert.DoesNotThrow(() => builder.Build());
         });
     }
 
