@@ -13,8 +13,10 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Threading;
 using DxFeed.Graal.Net.Api.Osub;
+using DxFeed.Graal.Net.Native;
 using DxFeed.Graal.Net.Native.Endpoint;
 using DxFeed.Graal.Net.Native.ErrorHandling;
+using DxFeed.Graal.Net.Native.Graal;
 using DxFeed.Graal.Net.Utils;
 
 namespace DxFeed.Graal.Net.Api;
@@ -743,6 +745,8 @@ public sealed class DXEndpoint : IDisposable
     /// </summary>
     public class Builder
     {
+        private const string JavaHomeStr = "JAVA_HOME";
+
         /// <summary>
         /// A counter that is incremented every time an endpoint is created.
         /// </summary>
@@ -868,6 +872,13 @@ public sealed class DXEndpoint : IDisposable
         /// <exception cref="JavaException">If the error occurred on the java side.</exception>
         public DXEndpoint Build()
         {
+            _props.TryGetValue(JavaHomeStr, out var javaHome);
+            if (javaHome != null)
+            {
+                var intPtr = VmOptions.Alloc(javaHome);
+                Isolate.SetVmOptions(intPtr);
+            }
+
             using var builder = BuilderNative.Create();
             var role = _role;
             builder.WithRole((int)role);
@@ -877,6 +888,11 @@ public sealed class DXEndpoint : IDisposable
             var props = new Dictionary<string, string>();
             foreach (var prop in _props)
             {
+                if (JavaHomeStr.Equals(prop.Key, StringComparison.OrdinalIgnoreCase))
+                {
+                    continue;
+                }
+
                 builder.WithProperty(prop.Key, prop.Value);
                 props[prop.Key] = prop.Value;
             }

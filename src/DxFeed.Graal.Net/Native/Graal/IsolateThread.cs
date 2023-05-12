@@ -36,7 +36,7 @@ internal class IsolateThread
     /// All <see cref="IsolateThread"/> attached to <see cref="Isolate"/> singleton.
     /// </summary>
     private static readonly ThreadLocal<IsolateThread> IsolateThreads =
-        new(() => GetOrAttachIsolateThread(Isolate.Instance));
+        new(() => GetOrAttachIsolateThread(Isolate.Instance()));
 
     /// <summary>
     /// Opaque pointer to such a structure can be passed to an entry point as the execution context,

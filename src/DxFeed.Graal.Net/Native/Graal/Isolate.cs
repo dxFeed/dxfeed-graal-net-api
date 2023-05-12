@@ -35,7 +35,12 @@ internal class Isolate
     /// <summary>
     /// A singleton lazy-initialization instance of <see cref="Isolate"/>.
     /// </summary>
-    private static readonly Lazy<Isolate> LazyInstance = new(CreateIsolate);
+    private static IntPtr _vmOptionsPtr = IntPtr.Zero;
+
+    /// <summary>
+    /// A singleton lazy-initialization instance of <see cref="Isolate"/>.
+    /// </summary>
+    private static Lazy<Isolate>? _lazyInstance;
 
     /// <summary>
     /// Opaque pointer to the runtime data structure for an isolate.
@@ -54,9 +59,12 @@ internal class Isolate
     /// <summary>
     /// Gets a default application-wide singleton instance of <see cref="Isolate"/>.
     /// </summary>
-    /// <value>Returns singleton instance of <see cref="Isolate"/>.</value>
-    public static Isolate Instance =>
-        LazyInstance.Value;
+    /// <returns>Returns singleton instance of <see cref="Isolate"/>.</returns>
+    public static Isolate Instance()
+    {
+        _lazyInstance ??= new Lazy<Isolate>(CreateIsolate());
+        return _lazyInstance.Value;
+    }
 
     /// <summary>
     /// Gets the <see cref="IsolateThread"/> associated with the <see cref="Isolate"/> singleton
@@ -80,13 +88,22 @@ internal class Isolate
         value._isolateHandle;
 
     /// <summary>
+    /// Sets <see cref="VmOptions"/> to create <see cref="Isolate"/>.
+    /// </summary>
+    /// <param name="vmOptions">
+    /// The specified isolate handle obtained using <see cref="VmOptions"/>
+    /// </param>
+    public static void SetVmOptions(IntPtr vmOptions) => _vmOptionsPtr = vmOptions;
+
+    /// <summary>
     /// Creates a new <see cref="Isolate"/> without parameters.
     /// The attached isolated thread is ignored.
     /// </summary>
     /// <returns>Returns <see cref="Isolate"/>.</returns>
     private static Isolate CreateIsolate()
     {
-        ErrorCheck.GraalCall(GraalCreateIsolate(0, out var isolate, out _));
+        var vmOptionsPtr = _vmOptionsPtr;
+        ErrorCheck.GraalCall(GraalCreateIsolate(vmOptionsPtr, out var isolate, out _));
         return new Isolate(isolate);
     }
 
