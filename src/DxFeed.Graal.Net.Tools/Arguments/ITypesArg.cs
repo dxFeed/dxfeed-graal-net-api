@@ -12,12 +12,19 @@ public interface ITypesArg
 {
     public const int Index = 1;
     public const string MetaName = "types";
-    public const bool IsRequired = true;
 
-    public const string HelpText = @"
-Comma-separated list of dxfeed event types (e.g. Quote,TimeAndSale).
-Use ""feed"" for all available events.";
+    public const string HelpText =
+        """
+        Comma-separated list of dxfeed event types (e.g. Quote, TimeAndSale).
+        Use "all" for all available event types.
+        """;
 
-    [Value(Index, MetaName = MetaName, Required = IsRequired, HelpText = HelpText)]
+    [Value(Index, MetaName = MetaName, HelpText = HelpText, Required = false)]
     public string? Types { get; set; }
+}
+
+public interface ITypesArgRequired : ITypesArg
+{
+    [Value(Index, MetaName = MetaName, HelpText = HelpText, Required = true)]
+    public new string? Types { get; set; }
 }

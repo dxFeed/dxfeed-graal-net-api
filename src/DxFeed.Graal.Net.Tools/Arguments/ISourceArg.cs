@@ -12,10 +12,12 @@ public interface ISourceArg
 {
     public const char ShortName = 's';
     public const string LongName = "source";
-    public const bool IsRequired = false;
 
-    public const string HelpText = "Order source for the indexed subscription (e.g. NTV, ntv).";
+    public const string HelpText =
+        """
+        Order source for the indexed subscription (e.g. NTV, ntv).
+        """;
 
-    [Option(ShortName, LongName, Required = IsRequired, HelpText = HelpText)]
+    [Option(ShortName, LongName, HelpText = HelpText, Required = false)]
     string? Source { get; set; }
 }
