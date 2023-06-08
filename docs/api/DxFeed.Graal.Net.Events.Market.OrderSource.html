@@ -109,13 +109,13 @@
                             <a href="DxFeed.Graal.Net.Api.DXEndpoint.Builder.html" title="DXEndpoint.Builder" class="">DXEndpoint.Builder</a>
                           </li>
                           <li class="">
-                            <a href="DxFeed.Graal.Net.Api.DXEndpoint.OnStateChangeListener.html" title="DXEndpoint.OnStateChangeListener" class="">DXEndpoint.OnStateChangeListener</a>
-                          </li>
-                          <li class="">
                             <a href="DxFeed.Graal.Net.Api.DXEndpoint.Role.html" title="DXEndpoint.Role" class="">DXEndpoint.Role</a>
                           </li>
                           <li class="">
                             <a href="DxFeed.Graal.Net.Api.DXEndpoint.State.html" title="DXEndpoint.State" class="">DXEndpoint.State</a>
+                          </li>
+                          <li class="">
+                            <a href="DxFeed.Graal.Net.Api.DXEndpoint.StateChangeListenerCallback.html" title="DXEndpoint.StateChangeListenerCallback" class="">DXEndpoint.StateChangeListenerCallback</a>
                           </li>
                           <li class="">
                             <a href="DxFeed.Graal.Net.Api.DXFeed.html" title="DXFeed" class="">DXFeed</a>
@@ -361,6 +361,9 @@
                             <a href="DxFeed.Graal.Net.Utils.CmdArgsUtil.html" title="CmdArgsUtil" class="">CmdArgsUtil</a>
                           </li>
                           <li class="">
+                            <a href="DxFeed.Graal.Net.Utils.ConcurrentSet-1.html" title="ConcurrentSet&lt;T&gt;" class="">ConcurrentSet&lt;T&gt;</a>
+                          </li>
+                          <li class="">
                             <a href="DxFeed.Graal.Net.Utils.DayUtil.html" title="DayUtil" class="">DayUtil</a>
                           </li>
                           <li class="">
@@ -398,14 +401,15 @@
             <article class="content wrap" id="_content" data-uid="DxFeed.Graal.Net.Events.Market.OrderSource">
 
 
+
   <h1 id="DxFeed_Graal_Net_Events_Market_OrderSource" data-uid="DxFeed.Graal.Net.Events.Market.OrderSource" class="text-break">Class OrderSource
 </h1>
   <div class="markdown level0 summary"><p>Identifies source of <a class="xref" href="DxFeed.Graal.Net.Events.Market.Order.html">Order</a>, <a class="xref" href="DxFeed.Graal.Net.Events.Market.AnalyticOrder.html">AnalyticOrder</a> and <a class="xref" href="DxFeed.Graal.Net.Events.Market.SpreadOrder.html">SpreadOrder</a> events.</p>
 <ul>
 <li>
 <em>Synthetic</em> sources <a class="xref" href="DxFeed.Graal.Net.Events.Market.OrderSource.html#DxFeed_Graal_Net_Events_Market_OrderSource_COMPOSITE_BID">COMPOSITE_BID</a>, <a class="xref" href="DxFeed.Graal.Net.Events.Market.OrderSource.html#DxFeed_Graal_Net_Events_Market_OrderSource_COMPOSITE_ASK">COMPOSITE_ASK</a>,
-<a class="xref" href="DxFeed.Graal.Net.Events.Market.OrderSource.html#DxFeed_Graal_Net_Events_Market_OrderSource_REGIONAL_BID">REGIONAL_BID</a> and <a class="xref" href="DxFeed.Graal.Net.Events.Market.OrderSource.html#DxFeed_Graal_Net_Events_Market_OrderSource_REGIONAL_ASK">REGIONAL_ASK</a> are provided for convenience of a consolidated
-order book and are automatically generated based on the corresponding <a class="xref" href="DxFeed.Graal.Net.Events.Market.Quote.html">Quote</a> events.
+    <a class="xref" href="DxFeed.Graal.Net.Events.Market.OrderSource.html#DxFeed_Graal_Net_Events_Market_OrderSource_REGIONAL_BID">REGIONAL_BID</a> and <a class="xref" href="DxFeed.Graal.Net.Events.Market.OrderSource.html#DxFeed_Graal_Net_Events_Market_OrderSource_REGIONAL_ASK">REGIONAL_ASK</a> are provided for convenience of a consolidated
+    order book and are automatically generated based on the corresponding <a class="xref" href="DxFeed.Graal.Net.Events.Market.Quote.html">Quote</a> events.
 </li>
 <li>
 <em>Aggregate</em> sources <a class="xref" href="DxFeed.Graal.Net.Events.Market.OrderSource.html#DxFeed_Graal_Net_Events_Market_OrderSource_AGGREGATE_BID">AGGREGATE_BID</a>  and <a class="xref" href="DxFeed.Graal.Net.Events.Market.OrderSource.html#DxFeed_Graal_Net_Events_Market_OrderSource_AGGREGATE_ASK">AGGREGATE_ASK</a>  provide
@@ -447,16 +451,16 @@ For more details see <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/even
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
     </div>
     <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype#system-object-gettype">object.GetType()</a>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
     </div>
     <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone#system-object-memberwiseclone">object.MemberwiseClone()</a>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
     </div>
     <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals#system-object-referenceequals(system-object-system-object)">object.ReferenceEquals(object, object)</a>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
     </div>
   </div>
-  <h6><strong>Namespace</strong>: <span class="xref">DxFeed</span>.<span class="xref">Graal</span>.<a class="xref" href="DxFeed.Graal.Net.html">Net</a>.<a class="xref" href="DxFeed.Graal.Net.Events.html">Events</a>.<a class="xref" href="DxFeed.Graal.Net.Events.Market.html">Market</a></h6>
+  <h6><strong>Namespace</strong>: <a class="xref" href="DxFeed.html">DxFeed</a>.<a class="xref" href="DxFeed.Graal.html">Graal</a>.<a class="xref" href="DxFeed.Graal.Net.html">Net</a>.<a class="xref" href="DxFeed.Graal.Net.Events.html">Events</a>.<a class="xref" href="DxFeed.Graal.Net.Events.Market.html">Market</a></h6>
   <h6><strong>Assembly</strong>: DxFeed.Graal.Net.dll</h6>
   <h5 id="DxFeed_Graal_Net_Events_Market_OrderSource_syntax">Syntax</h5>
   <div class="codewrapper">
@@ -466,10 +470,10 @@ For more details see <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/even
 </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.2.1/apiSpec/new?filename=DxFeed_Graal_Net_Events_Market_OrderSource_ABE.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Market.OrderSource.ABE%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.3.0/apiSpec/new?filename=DxFeed_Graal_Net_Events_Market_OrderSource_ABE.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Market.OrderSource.ABE%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.2.1/src/DxFeed.Graal.Net/Events/Market/OrderSource.cs/#L181">View Source</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.3.0/src/DxFeed.Graal.Net/Events/Market/OrderSource.cs/#L181">View Source</a>
   </span>
   <h4 id="DxFeed_Graal_Net_Events_Market_OrderSource_ABE" data-uid="DxFeed.Graal.Net.Events.Market.OrderSource.ABE">ABE</h4>
   <div class="markdown level1 summary"><p>ABE (abe.io) exchange.</p>
@@ -480,7 +484,7 @@ For more details see <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/even
     <pre><code class="lang-csharp hljs">public static readonly OrderSource ABE</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -496,10 +500,10 @@ For more details see <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/even
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.2.1/apiSpec/new?filename=DxFeed_Graal_Net_Events_Market_OrderSource_AGGREGATE_ASK.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Market.OrderSource.AGGREGATE_ASK%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.3.0/apiSpec/new?filename=DxFeed_Graal_Net_Events_Market_OrderSource_AGGREGATE_ASK.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Market.OrderSource.AGGREGATE_ASK%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.2.1/src/DxFeed.Graal.Net/Events/Market/OrderSource.cs/#L91">View Source</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.3.0/src/DxFeed.Graal.Net/Events/Market/OrderSource.cs/#L91">View Source</a>
   </span>
   <h4 id="DxFeed_Graal_Net_Events_Market_OrderSource_AGGREGATE_ASK" data-uid="DxFeed.Graal.Net.Events.Market.OrderSource.AGGREGATE_ASK">AGGREGATE_ASK</h4>
   <div class="markdown level1 summary"><p>Ask side of an aggregate order book (futures depth and NASDAQ Level II).
@@ -511,7 +515,7 @@ This source cannot be directly published via dxFeed API, but otherwise it is ful
     <pre><code class="lang-csharp hljs">public static readonly OrderSource AGGREGATE_ASK</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -527,10 +531,10 @@ This source cannot be directly published via dxFeed API, but otherwise it is ful
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.2.1/apiSpec/new?filename=DxFeed_Graal_Net_Events_Market_OrderSource_AGGREGATE_BID.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Market.OrderSource.AGGREGATE_BID%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.3.0/apiSpec/new?filename=DxFeed_Graal_Net_Events_Market_OrderSource_AGGREGATE_BID.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Market.OrderSource.AGGREGATE_BID%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.2.1/src/DxFeed.Graal.Net/Events/Market/OrderSource.cs/#L85">View Source</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.3.0/src/DxFeed.Graal.Net/Events/Market/OrderSource.cs/#L85">View Source</a>
   </span>
   <h4 id="DxFeed_Graal_Net_Events_Market_OrderSource_AGGREGATE_BID" data-uid="DxFeed.Graal.Net.Events.Market.OrderSource.AGGREGATE_BID">AGGREGATE_BID</h4>
   <div class="markdown level1 summary"><p>Bid side of an aggregate order book (futures depth and NASDAQ Level II).
@@ -542,7 +546,7 @@ This source cannot be directly published via dxFeed API, but otherwise it is ful
     <pre><code class="lang-csharp hljs">public static readonly OrderSource AGGREGATE_BID</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -558,10 +562,10 @@ This source cannot be directly published via dxFeed API, but otherwise it is ful
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.2.1/apiSpec/new?filename=DxFeed_Graal_Net_Events_Market_OrderSource_BATE.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Market.OrderSource.BATE%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.3.0/apiSpec/new?filename=DxFeed_Graal_Net_Events_Market_OrderSource_BATE.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Market.OrderSource.BATE%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.2.1/src/DxFeed.Graal.Net/Events/Market/OrderSource.cs/#L151">View Source</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.3.0/src/DxFeed.Graal.Net/Events/Market/OrderSource.cs/#L151">View Source</a>
   </span>
   <h4 id="DxFeed_Graal_Net_Events_Market_OrderSource_BATE" data-uid="DxFeed.Graal.Net.Events.Market.OrderSource.BATE">BATE</h4>
   <div class="markdown level1 summary"><p>Bats Europe BXE Exchange.</p>
@@ -572,7 +576,7 @@ This source cannot be directly published via dxFeed API, but otherwise it is ful
     <pre><code class="lang-csharp hljs">public static readonly OrderSource BATE</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -588,10 +592,10 @@ This source cannot be directly published via dxFeed API, but otherwise it is ful
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.2.1/apiSpec/new?filename=DxFeed_Graal_Net_Events_Market_OrderSource_BI20.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Market.OrderSource.BI20%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.3.0/apiSpec/new?filename=DxFeed_Graal_Net_Events_Market_OrderSource_BI20.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Market.OrderSource.BI20%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.2.1/src/DxFeed.Graal.Net/Events/Market/OrderSource.cs/#L176">View Source</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.3.0/src/DxFeed.Graal.Net/Events/Market/OrderSource.cs/#L176">View Source</a>
   </span>
   <h4 id="DxFeed_Graal_Net_Events_Market_OrderSource_BI20" data-uid="DxFeed.Graal.Net.Events.Market.OrderSource.BI20">BI20</h4>
   <div class="markdown level1 summary"><p>Borsa Istanbul Exchange. Record for particular top 20 order book.</p>
@@ -602,7 +606,7 @@ This source cannot be directly published via dxFeed API, but otherwise it is ful
     <pre><code class="lang-csharp hljs">public static readonly OrderSource BI20</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -618,10 +622,10 @@ This source cannot be directly published via dxFeed API, but otherwise it is ful
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.2.1/apiSpec/new?filename=DxFeed_Graal_Net_Events_Market_OrderSource_BXTR.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Market.OrderSource.BXTR%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.3.0/apiSpec/new?filename=DxFeed_Graal_Net_Events_Market_OrderSource_BXTR.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Market.OrderSource.BXTR%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.2.1/src/DxFeed.Graal.Net/Events/Market/OrderSource.cs/#L166">View Source</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.3.0/src/DxFeed.Graal.Net/Events/Market/OrderSource.cs/#L166">View Source</a>
   </span>
   <h4 id="DxFeed_Graal_Net_Events_Market_OrderSource_BXTR" data-uid="DxFeed.Graal.Net.Events.Market.OrderSource.BXTR">BXTR</h4>
   <div class="markdown level1 summary"><p>Bats Europe TRF.</p>
@@ -632,7 +636,7 @@ This source cannot be directly published via dxFeed API, but otherwise it is ful
     <pre><code class="lang-csharp hljs">public static readonly OrderSource BXTR</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -648,10 +652,10 @@ This source cannot be directly published via dxFeed API, but otherwise it is ful
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.2.1/apiSpec/new?filename=DxFeed_Graal_Net_Events_Market_OrderSource_BYX.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Market.OrderSource.BYX%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.3.0/apiSpec/new?filename=DxFeed_Graal_Net_Events_Market_OrderSource_BYX.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Market.OrderSource.BYX%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.2.1/src/DxFeed.Graal.Net/Events/Market/OrderSource.cs/#L141">View Source</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.3.0/src/DxFeed.Graal.Net/Events/Market/OrderSource.cs/#L141">View Source</a>
   </span>
   <h4 id="DxFeed_Graal_Net_Events_Market_OrderSource_BYX" data-uid="DxFeed.Graal.Net.Events.Market.OrderSource.BYX">BYX</h4>
   <div class="markdown level1 summary"><p>Bats BYX Exchange.</p>
@@ -662,7 +666,7 @@ This source cannot be directly published via dxFeed API, but otherwise it is ful
     <pre><code class="lang-csharp hljs">public static readonly OrderSource BYX</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -678,10 +682,10 @@ This source cannot be directly published via dxFeed API, but otherwise it is ful
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.2.1/apiSpec/new?filename=DxFeed_Graal_Net_Events_Market_OrderSource_BZX.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Market.OrderSource.BZX%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.3.0/apiSpec/new?filename=DxFeed_Graal_Net_Events_Market_OrderSource_BZX.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Market.OrderSource.BZX%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.2.1/src/DxFeed.Graal.Net/Events/Market/OrderSource.cs/#L146">View Source</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.3.0/src/DxFeed.Graal.Net/Events/Market/OrderSource.cs/#L146">View Source</a>
   </span>
   <h4 id="DxFeed_Graal_Net_Events_Market_OrderSource_BZX" data-uid="DxFeed.Graal.Net.Events.Market.OrderSource.BZX">BZX</h4>
   <div class="markdown level1 summary"><p>Bats BZX Exchange.</p>
@@ -692,7 +696,7 @@ This source cannot be directly published via dxFeed API, but otherwise it is ful
     <pre><code class="lang-csharp hljs">public static readonly OrderSource BZX</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -708,10 +712,10 @@ This source cannot be directly published via dxFeed API, but otherwise it is ful
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.2.1/apiSpec/new?filename=DxFeed_Graal_Net_Events_Market_OrderSource_C2OX.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Market.OrderSource.C2OX%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.3.0/apiSpec/new?filename=DxFeed_Graal_Net_Events_Market_OrderSource_C2OX.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Market.OrderSource.C2OX%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.2.1/src/DxFeed.Graal.Net/Events/Market/OrderSource.cs/#L221">View Source</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.3.0/src/DxFeed.Graal.Net/Events/Market/OrderSource.cs/#L221">View Source</a>
   </span>
   <h4 id="DxFeed_Graal_Net_Events_Market_OrderSource_C2OX" data-uid="DxFeed.Graal.Net.Events.Market.OrderSource.C2OX">C2OX</h4>
   <div class="markdown level1 summary"><p>CBOE Options C2 Exchange.</p>
@@ -722,7 +726,7 @@ This source cannot be directly published via dxFeed API, but otherwise it is ful
     <pre><code class="lang-csharp hljs">public static readonly OrderSource C2OX</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -738,10 +742,10 @@ This source cannot be directly published via dxFeed API, but otherwise it is ful
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.2.1/apiSpec/new?filename=DxFeed_Graal_Net_Events_Market_OrderSource_CEUX.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Market.OrderSource.CEUX%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.3.0/apiSpec/new?filename=DxFeed_Graal_Net_Events_Market_OrderSource_CEUX.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Market.OrderSource.CEUX%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.2.1/src/DxFeed.Graal.Net/Events/Market/OrderSource.cs/#L161">View Source</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.3.0/src/DxFeed.Graal.Net/Events/Market/OrderSource.cs/#L161">View Source</a>
   </span>
   <h4 id="DxFeed_Graal_Net_Events_Market_OrderSource_CEUX" data-uid="DxFeed.Graal.Net.Events.Market.OrderSource.CEUX">CEUX</h4>
   <div class="markdown level1 summary"><p>Bats Europe DXE Exchange.</p>
@@ -752,7 +756,7 @@ This source cannot be directly published via dxFeed API, but otherwise it is ful
     <pre><code class="lang-csharp hljs">public static readonly OrderSource CEUX</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -768,10 +772,10 @@ This source cannot be directly published via dxFeed API, but otherwise it is ful
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.2.1/apiSpec/new?filename=DxFeed_Graal_Net_Events_Market_OrderSource_CFE.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Market.OrderSource.CFE%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.3.0/apiSpec/new?filename=DxFeed_Graal_Net_Events_Market_OrderSource_CFE.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Market.OrderSource.CFE%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.2.1/src/DxFeed.Graal.Net/Events/Market/OrderSource.cs/#L216">View Source</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.3.0/src/DxFeed.Graal.Net/Events/Market/OrderSource.cs/#L216">View Source</a>
   </span>
   <h4 id="DxFeed_Graal_Net_Events_Market_OrderSource_CFE" data-uid="DxFeed.Graal.Net.Events.Market.OrderSource.CFE">CFE</h4>
   <div class="markdown level1 summary"><p>CBOE Futures Exchange.</p>
@@ -782,7 +786,7 @@ This source cannot be directly published via dxFeed API, but otherwise it is ful
     <pre><code class="lang-csharp hljs">public static readonly OrderSource CFE</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -798,10 +802,10 @@ This source cannot be directly published via dxFeed API, but otherwise it is ful
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.2.1/apiSpec/new?filename=DxFeed_Graal_Net_Events_Market_OrderSource_CHIX.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Market.OrderSource.CHIX%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.3.0/apiSpec/new?filename=DxFeed_Graal_Net_Events_Market_OrderSource_CHIX.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Market.OrderSource.CHIX%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.2.1/src/DxFeed.Graal.Net/Events/Market/OrderSource.cs/#L156">View Source</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.3.0/src/DxFeed.Graal.Net/Events/Market/OrderSource.cs/#L156">View Source</a>
   </span>
   <h4 id="DxFeed_Graal_Net_Events_Market_OrderSource_CHIX" data-uid="DxFeed.Graal.Net.Events.Market.OrderSource.CHIX">CHIX</h4>
   <div class="markdown level1 summary"><p>Bats Europe CXE Exchange.</p>
@@ -812,7 +816,7 @@ This source cannot be directly published via dxFeed API, but otherwise it is ful
     <pre><code class="lang-csharp hljs">public static readonly OrderSource CHIX</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -828,10 +832,10 @@ This source cannot be directly published via dxFeed API, but otherwise it is ful
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.2.1/apiSpec/new?filename=DxFeed_Graal_Net_Events_Market_OrderSource_COMPOSITE_ASK.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Market.OrderSource.COMPOSITE_ASK%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.3.0/apiSpec/new?filename=DxFeed_Graal_Net_Events_Market_OrderSource_COMPOSITE_ASK.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Market.OrderSource.COMPOSITE_ASK%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.2.1/src/DxFeed.Graal.Net/Events/Market/OrderSource.cs/#L65">View Source</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.3.0/src/DxFeed.Graal.Net/Events/Market/OrderSource.cs/#L65">View Source</a>
   </span>
   <h4 id="DxFeed_Graal_Net_Events_Market_OrderSource_COMPOSITE_ASK" data-uid="DxFeed.Graal.Net.Events.Market.OrderSource.COMPOSITE_ASK">COMPOSITE_ASK</h4>
   <div class="markdown level1 summary"><p>Ask side of a composite <a class="xref" href="DxFeed.Graal.Net.Events.Market.Quote.html">Quote</a>.
@@ -844,7 +848,7 @@ The subscription on composite <a class="xref" href="DxFeed.Graal.Net.Events.Mark
     <pre><code class="lang-csharp hljs">public static readonly OrderSource COMPOSITE_ASK</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -860,10 +864,10 @@ The subscription on composite <a class="xref" href="DxFeed.Graal.Net.Events.Mark
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.2.1/apiSpec/new?filename=DxFeed_Graal_Net_Events_Market_OrderSource_COMPOSITE_BID.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Market.OrderSource.COMPOSITE_BID%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.3.0/apiSpec/new?filename=DxFeed_Graal_Net_Events_Market_OrderSource_COMPOSITE_BID.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Market.OrderSource.COMPOSITE_BID%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.2.1/src/DxFeed.Graal.Net/Events/Market/OrderSource.cs/#L58">View Source</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.3.0/src/DxFeed.Graal.Net/Events/Market/OrderSource.cs/#L58">View Source</a>
   </span>
   <h4 id="DxFeed_Graal_Net_Events_Market_OrderSource_COMPOSITE_BID" data-uid="DxFeed.Graal.Net.Events.Market.OrderSource.COMPOSITE_BID">COMPOSITE_BID</h4>
   <div class="markdown level1 summary"><p>Bid side of a composite <a class="xref" href="DxFeed.Graal.Net.Events.Market.Quote.html">Quote</a>.
@@ -876,7 +880,7 @@ The subscription on composite <a class="xref" href="DxFeed.Graal.Net.Events.Mark
     <pre><code class="lang-csharp hljs">public static readonly OrderSource COMPOSITE_BID</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -892,10 +896,10 @@ The subscription on composite <a class="xref" href="DxFeed.Graal.Net.Events.Mark
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.2.1/apiSpec/new?filename=DxFeed_Graal_Net_Events_Market_OrderSource_DEA.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Market.OrderSource.DEA%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.3.0/apiSpec/new?filename=DxFeed_Graal_Net_Events_Market_OrderSource_DEA.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Market.OrderSource.DEA%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.2.1/src/DxFeed.Graal.Net/Events/Market/OrderSource.cs/#L131">View Source</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.3.0/src/DxFeed.Graal.Net/Events/Market/OrderSource.cs/#L131">View Source</a>
   </span>
   <h4 id="DxFeed_Graal_Net_Events_Market_OrderSource_DEA" data-uid="DxFeed.Graal.Net.Events.Market.OrderSource.DEA">DEA</h4>
   <div class="markdown level1 summary"><p>Direct-Edge EDGA Exchange.</p>
@@ -906,7 +910,7 @@ The subscription on composite <a class="xref" href="DxFeed.Graal.Net.Events.Mark
     <pre><code class="lang-csharp hljs">public static readonly OrderSource DEA</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -922,10 +926,10 @@ The subscription on composite <a class="xref" href="DxFeed.Graal.Net.Events.Mark
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.2.1/apiSpec/new?filename=DxFeed_Graal_Net_Events_Market_OrderSource_DEFAULT.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Market.OrderSource.DEFAULT%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.3.0/apiSpec/new?filename=DxFeed_Graal_Net_Events_Market_OrderSource_DEFAULT.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Market.OrderSource.DEFAULT%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.2.1/src/DxFeed.Graal.Net/Events/Market/OrderSource.cs/#L50">View Source</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.3.0/src/DxFeed.Graal.Net/Events/Market/OrderSource.cs/#L50">View Source</a>
   </span>
   <h4 id="DxFeed_Graal_Net_Events_Market_OrderSource_DEFAULT" data-uid="DxFeed.Graal.Net.Events.Market.OrderSource.DEFAULT">DEFAULT</h4>
   <div class="markdown level1 summary"><p>Default source for publishing custom order books.</p>
@@ -936,7 +940,7 @@ The subscription on composite <a class="xref" href="DxFeed.Graal.Net.Events.Mark
     <pre><code class="lang-csharp hljs">public static readonly OrderSource DEFAULT</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -952,10 +956,10 @@ The subscription on composite <a class="xref" href="DxFeed.Graal.Net.Events.Mark
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.2.1/apiSpec/new?filename=DxFeed_Graal_Net_Events_Market_OrderSource_DEX.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Market.OrderSource.DEX%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.3.0/apiSpec/new?filename=DxFeed_Graal_Net_Events_Market_OrderSource_DEX.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Market.OrderSource.DEX%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.2.1/src/DxFeed.Graal.Net/Events/Market/OrderSource.cs/#L136">View Source</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.3.0/src/DxFeed.Graal.Net/Events/Market/OrderSource.cs/#L136">View Source</a>
   </span>
   <h4 id="DxFeed_Graal_Net_Events_Market_OrderSource_DEX" data-uid="DxFeed.Graal.Net.Events.Market.OrderSource.DEX">DEX</h4>
   <div class="markdown level1 summary"><p>Direct-Edge EDGX Exchange.</p>
@@ -966,7 +970,7 @@ The subscription on composite <a class="xref" href="DxFeed.Graal.Net.Events.Mark
     <pre><code class="lang-csharp hljs">public static readonly OrderSource DEX</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -982,10 +986,10 @@ The subscription on composite <a class="xref" href="DxFeed.Graal.Net.Events.Mark
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.2.1/apiSpec/new?filename=DxFeed_Graal_Net_Events_Market_OrderSource_ERIS.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Market.OrderSource.ERIS%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.3.0/apiSpec/new?filename=DxFeed_Graal_Net_Events_Market_OrderSource_ERIS.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Market.OrderSource.ERIS%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.2.1/src/DxFeed.Graal.Net/Events/Market/OrderSource.cs/#L201">View Source</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.3.0/src/DxFeed.Graal.Net/Events/Market/OrderSource.cs/#L201">View Source</a>
   </span>
   <h4 id="DxFeed_Graal_Net_Events_Market_OrderSource_ERIS" data-uid="DxFeed.Graal.Net.Events.Market.OrderSource.ERIS">ERIS</h4>
   <div class="markdown level1 summary"><p>Eris Exchange group of companies.</p>
@@ -996,7 +1000,7 @@ The subscription on composite <a class="xref" href="DxFeed.Graal.Net.Events.Mark
     <pre><code class="lang-csharp hljs">public static readonly OrderSource ERIS</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -1012,10 +1016,10 @@ The subscription on composite <a class="xref" href="DxFeed.Graal.Net.Events.Mark
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.2.1/apiSpec/new?filename=DxFeed_Graal_Net_Events_Market_OrderSource_ESPD.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Market.OrderSource.ESPD%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.3.0/apiSpec/new?filename=DxFeed_Graal_Net_Events_Market_OrderSource_ESPD.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Market.OrderSource.ESPD%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.2.1/src/DxFeed.Graal.Net/Events/Market/OrderSource.cs/#L111">View Source</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.3.0/src/DxFeed.Graal.Net/Events/Market/OrderSource.cs/#L111">View Source</a>
   </span>
   <h4 id="DxFeed_Graal_Net_Events_Market_OrderSource_ESPD" data-uid="DxFeed.Graal.Net.Events.Market.OrderSource.ESPD">ESPD</h4>
   <div class="markdown level1 summary"><p>NASDAQ eSpeed.</p>
@@ -1026,7 +1030,7 @@ The subscription on composite <a class="xref" href="DxFeed.Graal.Net.Events.Mark
     <pre><code class="lang-csharp hljs">public static readonly OrderSource ESPD</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -1042,10 +1046,10 @@ The subscription on composite <a class="xref" href="DxFeed.Graal.Net.Events.Mark
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.2.1/apiSpec/new?filename=DxFeed_Graal_Net_Events_Market_OrderSource_FAIR.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Market.OrderSource.FAIR%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.3.0/apiSpec/new?filename=DxFeed_Graal_Net_Events_Market_OrderSource_FAIR.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Market.OrderSource.FAIR%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.2.1/src/DxFeed.Graal.Net/Events/Market/OrderSource.cs/#L186">View Source</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.3.0/src/DxFeed.Graal.Net/Events/Market/OrderSource.cs/#L186">View Source</a>
   </span>
   <h4 id="DxFeed_Graal_Net_Events_Market_OrderSource_FAIR" data-uid="DxFeed.Graal.Net.Events.Market.OrderSource.FAIR">FAIR</h4>
   <div class="markdown level1 summary"><p>FAIR (FairX) exchange.</p>
@@ -1056,7 +1060,7 @@ The subscription on composite <a class="xref" href="DxFeed.Graal.Net.Events.Mark
     <pre><code class="lang-csharp hljs">public static readonly OrderSource FAIR</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -1072,40 +1076,10 @@ The subscription on composite <a class="xref" href="DxFeed.Graal.Net.Events.Mark
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.2.1/apiSpec/new?filename=DxFeed_Graal_Net_Events_Market_OrderSource_glbx.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Market.OrderSource.glbx%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.3.0/apiSpec/new?filename=DxFeed_Graal_Net_Events_Market_OrderSource_GLBX.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Market.OrderSource.GLBX%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.2.1/src/DxFeed.Graal.Net/Events/Market/OrderSource.cs/#L196">View Source</a>
-  </span>
-  <h4 id="DxFeed_Graal_Net_Events_Market_OrderSource_glbx" data-uid="DxFeed.Graal.Net.Events.Market.OrderSource.glbx">glbx</h4>
-  <div class="markdown level1 summary"><p>CME Globex. Record for price level book.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static readonly OrderSource glbx</code></pre>
-  </div>
-  <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="DxFeed.Graal.Net.Events.Market.OrderSource.html">OrderSource</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.2.1/apiSpec/new?filename=DxFeed_Graal_Net_Events_Market_OrderSource_GLBX.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Market.OrderSource.GLBX%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.2.1/src/DxFeed.Graal.Net/Events/Market/OrderSource.cs/#L191">View Source</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.3.0/src/DxFeed.Graal.Net/Events/Market/OrderSource.cs/#L191">View Source</a>
   </span>
   <h4 id="DxFeed_Graal_Net_Events_Market_OrderSource_GLBX" data-uid="DxFeed.Graal.Net.Events.Market.OrderSource.GLBX">GLBX</h4>
   <div class="markdown level1 summary"><p>CME Globex.</p>
@@ -1116,7 +1090,7 @@ The subscription on composite <a class="xref" href="DxFeed.Graal.Net.Events.Mark
     <pre><code class="lang-csharp hljs">public static readonly OrderSource GLBX</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -1132,10 +1106,10 @@ The subscription on composite <a class="xref" href="DxFeed.Graal.Net.Events.Mark
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.2.1/apiSpec/new?filename=DxFeed_Graal_Net_Events_Market_OrderSource_ICE.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Market.OrderSource.ICE%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.3.0/apiSpec/new?filename=DxFeed_Graal_Net_Events_Market_OrderSource_ICE.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Market.OrderSource.ICE%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.2.1/src/DxFeed.Graal.Net/Events/Market/OrderSource.cs/#L121">View Source</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.3.0/src/DxFeed.Graal.Net/Events/Market/OrderSource.cs/#L121">View Source</a>
   </span>
   <h4 id="DxFeed_Graal_Net_Events_Market_OrderSource_ICE" data-uid="DxFeed.Graal.Net.Events.Market.OrderSource.ICE">ICE</h4>
   <div class="markdown level1 summary"><p>Intercontinental Exchange.</p>
@@ -1146,7 +1120,7 @@ The subscription on composite <a class="xref" href="DxFeed.Graal.Net.Events.Mark
     <pre><code class="lang-csharp hljs">public static readonly OrderSource ICE</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -1162,40 +1136,10 @@ The subscription on composite <a class="xref" href="DxFeed.Graal.Net.Events.Mark
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.2.1/apiSpec/new?filename=DxFeed_Graal_Net_Events_Market_OrderSource_iex.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Market.OrderSource.iex%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.3.0/apiSpec/new?filename=DxFeed_Graal_Net_Events_Market_OrderSource_ISE.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Market.OrderSource.ISE%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.2.1/src/DxFeed.Graal.Net/Events/Market/OrderSource.cs/#L236">View Source</a>
-  </span>
-  <h4 id="DxFeed_Graal_Net_Events_Market_OrderSource_iex" data-uid="DxFeed.Graal.Net.Events.Market.OrderSource.iex">iex</h4>
-  <div class="markdown level1 summary"><p>Investors exchange. Record for price level book.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static readonly OrderSource iex</code></pre>
-  </div>
-  <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="DxFeed.Graal.Net.Events.Market.OrderSource.html">OrderSource</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.2.1/apiSpec/new?filename=DxFeed_Graal_Net_Events_Market_OrderSource_ISE.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Market.OrderSource.ISE%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.2.1/src/DxFeed.Graal.Net/Events/Market/OrderSource.cs/#L126">View Source</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.3.0/src/DxFeed.Graal.Net/Events/Market/OrderSource.cs/#L126">View Source</a>
   </span>
   <h4 id="DxFeed_Graal_Net_Events_Market_OrderSource_ISE" data-uid="DxFeed.Graal.Net.Events.Market.OrderSource.ISE">ISE</h4>
   <div class="markdown level1 summary"><p>International Securities Exchange.</p>
@@ -1206,7 +1150,7 @@ The subscription on composite <a class="xref" href="DxFeed.Graal.Net.Events.Mark
     <pre><code class="lang-csharp hljs">public static readonly OrderSource ISE</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -1222,10 +1166,10 @@ The subscription on composite <a class="xref" href="DxFeed.Graal.Net.Events.Mark
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.2.1/apiSpec/new?filename=DxFeed_Graal_Net_Events_Market_OrderSource_IST.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Market.OrderSource.IST%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.3.0/apiSpec/new?filename=DxFeed_Graal_Net_Events_Market_OrderSource_IST.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Market.OrderSource.IST%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.2.1/src/DxFeed.Graal.Net/Events/Market/OrderSource.cs/#L171">View Source</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.3.0/src/DxFeed.Graal.Net/Events/Market/OrderSource.cs/#L171">View Source</a>
   </span>
   <h4 id="DxFeed_Graal_Net_Events_Market_OrderSource_IST" data-uid="DxFeed.Graal.Net.Events.Market.OrderSource.IST">IST</h4>
   <div class="markdown level1 summary"><p>Borsa Istanbul Exchange.</p>
@@ -1236,7 +1180,7 @@ The subscription on composite <a class="xref" href="DxFeed.Graal.Net.Events.Mark
     <pre><code class="lang-csharp hljs">public static readonly OrderSource IST</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -1252,40 +1196,10 @@ The subscription on composite <a class="xref" href="DxFeed.Graal.Net.Events.Mark
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.2.1/apiSpec/new?filename=DxFeed_Graal_Net_Events_Market_OrderSource_memx.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Market.OrderSource.memx%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.3.0/apiSpec/new?filename=DxFeed_Graal_Net_Events_Market_OrderSource_MEMX.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Market.OrderSource.MEMX%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.2.1/src/DxFeed.Graal.Net/Events/Market/OrderSource.cs/#L246">View Source</a>
-  </span>
-  <h4 id="DxFeed_Graal_Net_Events_Market_OrderSource_memx" data-uid="DxFeed.Graal.Net.Events.Market.OrderSource.memx">memx</h4>
-  <div class="markdown level1 summary"><p>Members Exchange. Record for price level book.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static readonly OrderSource memx</code></pre>
-  </div>
-  <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="DxFeed.Graal.Net.Events.Market.OrderSource.html">OrderSource</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.2.1/apiSpec/new?filename=DxFeed_Graal_Net_Events_Market_OrderSource_MEMX.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Market.OrderSource.MEMX%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.2.1/src/DxFeed.Graal.Net/Events/Market/OrderSource.cs/#L241">View Source</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.3.0/src/DxFeed.Graal.Net/Events/Market/OrderSource.cs/#L241">View Source</a>
   </span>
   <h4 id="DxFeed_Graal_Net_Events_Market_OrderSource_MEMX" data-uid="DxFeed.Graal.Net.Events.Market.OrderSource.MEMX">MEMX</h4>
   <div class="markdown level1 summary"><p>Members Exchange.</p>
@@ -1296,7 +1210,7 @@ The subscription on composite <a class="xref" href="DxFeed.Graal.Net.Events.Mark
     <pre><code class="lang-csharp hljs">public static readonly OrderSource MEMX</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -1312,10 +1226,10 @@ The subscription on composite <a class="xref" href="DxFeed.Graal.Net.Events.Mark
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.2.1/apiSpec/new?filename=DxFeed_Graal_Net_Events_Market_OrderSource_NFX.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Market.OrderSource.NFX%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.3.0/apiSpec/new?filename=DxFeed_Graal_Net_Events_Market_OrderSource_NFX.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Market.OrderSource.NFX%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.2.1/src/DxFeed.Graal.Net/Events/Market/OrderSource.cs/#L106">View Source</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.3.0/src/DxFeed.Graal.Net/Events/Market/OrderSource.cs/#L106">View Source</a>
   </span>
   <h4 id="DxFeed_Graal_Net_Events_Market_OrderSource_NFX" data-uid="DxFeed.Graal.Net.Events.Market.OrderSource.NFX">NFX</h4>
   <div class="markdown level1 summary"><p>NASDAQ Futures Exchange.</p>
@@ -1326,7 +1240,7 @@ The subscription on composite <a class="xref" href="DxFeed.Graal.Net.Events.Mark
     <pre><code class="lang-csharp hljs">public static readonly OrderSource NFX</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -1342,40 +1256,10 @@ The subscription on composite <a class="xref" href="DxFeed.Graal.Net.Events.Mark
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.2.1/apiSpec/new?filename=DxFeed_Graal_Net_Events_Market_OrderSource_ntv.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Market.OrderSource.ntv%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.3.0/apiSpec/new?filename=DxFeed_Graal_Net_Events_Market_OrderSource_NTV.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Market.OrderSource.NTV%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.2.1/src/DxFeed.Graal.Net/Events/Market/OrderSource.cs/#L101">View Source</a>
-  </span>
-  <h4 id="DxFeed_Graal_Net_Events_Market_OrderSource_ntv" data-uid="DxFeed.Graal.Net.Events.Market.OrderSource.ntv">ntv</h4>
-  <div class="markdown level1 summary"><p>NASDAQ Total View. Record for price level book.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static readonly OrderSource ntv</code></pre>
-  </div>
-  <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="DxFeed.Graal.Net.Events.Market.OrderSource.html">OrderSource</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.2.1/apiSpec/new?filename=DxFeed_Graal_Net_Events_Market_OrderSource_NTV.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Market.OrderSource.NTV%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.2.1/src/DxFeed.Graal.Net/Events/Market/OrderSource.cs/#L96">View Source</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.3.0/src/DxFeed.Graal.Net/Events/Market/OrderSource.cs/#L96">View Source</a>
   </span>
   <h4 id="DxFeed_Graal_Net_Events_Market_OrderSource_NTV" data-uid="DxFeed.Graal.Net.Events.Market.OrderSource.NTV">NTV</h4>
   <div class="markdown level1 summary"><p>NASDAQ Total View.</p>
@@ -1386,7 +1270,7 @@ The subscription on composite <a class="xref" href="DxFeed.Graal.Net.Events.Mark
     <pre><code class="lang-csharp hljs">public static readonly OrderSource NTV</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -1402,10 +1286,10 @@ The subscription on composite <a class="xref" href="DxFeed.Graal.Net.Events.Mark
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.2.1/apiSpec/new?filename=DxFeed_Graal_Net_Events_Market_OrderSource_REGIONAL_ASK.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Market.OrderSource.REGIONAL_ASK%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.3.0/apiSpec/new?filename=DxFeed_Graal_Net_Events_Market_OrderSource_REGIONAL_ASK.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Market.OrderSource.REGIONAL_ASK%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.2.1/src/DxFeed.Graal.Net/Events/Market/OrderSource.cs/#L79">View Source</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.3.0/src/DxFeed.Graal.Net/Events/Market/OrderSource.cs/#L79">View Source</a>
   </span>
   <h4 id="DxFeed_Graal_Net_Events_Market_OrderSource_REGIONAL_ASK" data-uid="DxFeed.Graal.Net.Events.Market.OrderSource.REGIONAL_ASK">REGIONAL_ASK</h4>
   <div class="markdown level1 summary"><p>Ask side of a regional <a class="xref" href="DxFeed.Graal.Net.Events.Market.Quote.html">Quote</a>.
@@ -1418,7 +1302,7 @@ The subscription on regional <a class="xref" href="DxFeed.Graal.Net.Events.Marke
     <pre><code class="lang-csharp hljs">public static readonly OrderSource REGIONAL_ASK</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -1434,10 +1318,10 @@ The subscription on regional <a class="xref" href="DxFeed.Graal.Net.Events.Marke
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.2.1/apiSpec/new?filename=DxFeed_Graal_Net_Events_Market_OrderSource_REGIONAL_BID.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Market.OrderSource.REGIONAL_BID%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.3.0/apiSpec/new?filename=DxFeed_Graal_Net_Events_Market_OrderSource_REGIONAL_BID.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Market.OrderSource.REGIONAL_BID%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.2.1/src/DxFeed.Graal.Net/Events/Market/OrderSource.cs/#L72">View Source</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.3.0/src/DxFeed.Graal.Net/Events/Market/OrderSource.cs/#L72">View Source</a>
   </span>
   <h4 id="DxFeed_Graal_Net_Events_Market_OrderSource_REGIONAL_BID" data-uid="DxFeed.Graal.Net.Events.Market.OrderSource.REGIONAL_BID">REGIONAL_BID</h4>
   <div class="markdown level1 summary"><p>Bid side of a regional <a class="xref" href="DxFeed.Graal.Net.Events.Market.Quote.html">Quote</a>.
@@ -1450,7 +1334,7 @@ The subscription on regional <a class="xref" href="DxFeed.Graal.Net.Events.Marke
     <pre><code class="lang-csharp hljs">public static readonly OrderSource REGIONAL_BID</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -1466,40 +1350,10 @@ The subscription on regional <a class="xref" href="DxFeed.Graal.Net.Events.Marke
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.2.1/apiSpec/new?filename=DxFeed_Graal_Net_Events_Market_OrderSource_smfe.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Market.OrderSource.smfe%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.3.0/apiSpec/new?filename=DxFeed_Graal_Net_Events_Market_OrderSource_SMFE.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Market.OrderSource.SMFE%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.2.1/src/DxFeed.Graal.Net/Events/Market/OrderSource.cs/#L231">View Source</a>
-  </span>
-  <h4 id="DxFeed_Graal_Net_Events_Market_OrderSource_smfe" data-uid="DxFeed.Graal.Net.Events.Market.OrderSource.smfe">smfe</h4>
-  <div class="markdown level1 summary"><p>Small Exchange. Record for price level book.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static readonly OrderSource smfe</code></pre>
-  </div>
-  <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="DxFeed.Graal.Net.Events.Market.OrderSource.html">OrderSource</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.2.1/apiSpec/new?filename=DxFeed_Graal_Net_Events_Market_OrderSource_SMFE.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Market.OrderSource.SMFE%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.2.1/src/DxFeed.Graal.Net/Events/Market/OrderSource.cs/#L226">View Source</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.3.0/src/DxFeed.Graal.Net/Events/Market/OrderSource.cs/#L226">View Source</a>
   </span>
   <h4 id="DxFeed_Graal_Net_Events_Market_OrderSource_SMFE" data-uid="DxFeed.Graal.Net.Events.Market.OrderSource.SMFE">SMFE</h4>
   <div class="markdown level1 summary"><p>Small Exchange.</p>
@@ -1510,7 +1364,7 @@ The subscription on regional <a class="xref" href="DxFeed.Graal.Net.Events.Marke
     <pre><code class="lang-csharp hljs">public static readonly OrderSource SMFE</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -1526,40 +1380,10 @@ The subscription on regional <a class="xref" href="DxFeed.Graal.Net.Events.Marke
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.2.1/apiSpec/new?filename=DxFeed_Graal_Net_Events_Market_OrderSource_xeur.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Market.OrderSource.xeur%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.3.0/apiSpec/new?filename=DxFeed_Graal_Net_Events_Market_OrderSource_XEUR.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Market.OrderSource.XEUR%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.2.1/src/DxFeed.Graal.Net/Events/Market/OrderSource.cs/#L211">View Source</a>
-  </span>
-  <h4 id="DxFeed_Graal_Net_Events_Market_OrderSource_xeur" data-uid="DxFeed.Graal.Net.Events.Market.OrderSource.xeur">xeur</h4>
-  <div class="markdown level1 summary"><p>Eurex Exchange. Record for price level book.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static readonly OrderSource xeur</code></pre>
-  </div>
-  <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="DxFeed.Graal.Net.Events.Market.OrderSource.html">OrderSource</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.2.1/apiSpec/new?filename=DxFeed_Graal_Net_Events_Market_OrderSource_XEUR.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Market.OrderSource.XEUR%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.2.1/src/DxFeed.Graal.Net/Events/Market/OrderSource.cs/#L206">View Source</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.3.0/src/DxFeed.Graal.Net/Events/Market/OrderSource.cs/#L206">View Source</a>
   </span>
   <h4 id="DxFeed_Graal_Net_Events_Market_OrderSource_XEUR" data-uid="DxFeed.Graal.Net.Events.Market.OrderSource.XEUR">XEUR</h4>
   <div class="markdown level1 summary"><p>Eurex Exchange.</p>
@@ -1570,7 +1394,7 @@ The subscription on regional <a class="xref" href="DxFeed.Graal.Net.Events.Marke
     <pre><code class="lang-csharp hljs">public static readonly OrderSource XEUR</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -1586,10 +1410,10 @@ The subscription on regional <a class="xref" href="DxFeed.Graal.Net.Events.Marke
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.2.1/apiSpec/new?filename=DxFeed_Graal_Net_Events_Market_OrderSource_XNFI.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Market.OrderSource.XNFI%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.3.0/apiSpec/new?filename=DxFeed_Graal_Net_Events_Market_OrderSource_XNFI.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Market.OrderSource.XNFI%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.2.1/src/DxFeed.Graal.Net/Events/Market/OrderSource.cs/#L116">View Source</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.3.0/src/DxFeed.Graal.Net/Events/Market/OrderSource.cs/#L116">View Source</a>
   </span>
   <h4 id="DxFeed_Graal_Net_Events_Market_OrderSource_XNFI" data-uid="DxFeed.Graal.Net.Events.Market.OrderSource.XNFI">XNFI</h4>
   <div class="markdown level1 summary"><p>NASDAQ Fixed Income.</p>
@@ -1600,7 +1424,187 @@ The subscription on regional <a class="xref" href="DxFeed.Graal.Net.Events.Marke
     <pre><code class="lang-csharp hljs">public static readonly OrderSource XNFI</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="DxFeed.Graal.Net.Events.Market.OrderSource.html">OrderSource</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.3.0/apiSpec/new?filename=DxFeed_Graal_Net_Events_Market_OrderSource_glbx.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Market.OrderSource.glbx%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.3.0/src/DxFeed.Graal.Net/Events/Market/OrderSource.cs/#L196">View Source</a>
+  </span>
+  <h4 id="DxFeed_Graal_Net_Events_Market_OrderSource_glbx" data-uid="DxFeed.Graal.Net.Events.Market.OrderSource.glbx">glbx</h4>
+  <div class="markdown level1 summary"><p>CME Globex. Record for price level book.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly OrderSource glbx</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="DxFeed.Graal.Net.Events.Market.OrderSource.html">OrderSource</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.3.0/apiSpec/new?filename=DxFeed_Graal_Net_Events_Market_OrderSource_iex.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Market.OrderSource.iex%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.3.0/src/DxFeed.Graal.Net/Events/Market/OrderSource.cs/#L236">View Source</a>
+  </span>
+  <h4 id="DxFeed_Graal_Net_Events_Market_OrderSource_iex" data-uid="DxFeed.Graal.Net.Events.Market.OrderSource.iex">iex</h4>
+  <div class="markdown level1 summary"><p>Investors exchange. Record for price level book.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly OrderSource iex</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="DxFeed.Graal.Net.Events.Market.OrderSource.html">OrderSource</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.3.0/apiSpec/new?filename=DxFeed_Graal_Net_Events_Market_OrderSource_memx.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Market.OrderSource.memx%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.3.0/src/DxFeed.Graal.Net/Events/Market/OrderSource.cs/#L246">View Source</a>
+  </span>
+  <h4 id="DxFeed_Graal_Net_Events_Market_OrderSource_memx" data-uid="DxFeed.Graal.Net.Events.Market.OrderSource.memx">memx</h4>
+  <div class="markdown level1 summary"><p>Members Exchange. Record for price level book.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly OrderSource memx</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="DxFeed.Graal.Net.Events.Market.OrderSource.html">OrderSource</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.3.0/apiSpec/new?filename=DxFeed_Graal_Net_Events_Market_OrderSource_ntv.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Market.OrderSource.ntv%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.3.0/src/DxFeed.Graal.Net/Events/Market/OrderSource.cs/#L101">View Source</a>
+  </span>
+  <h4 id="DxFeed_Graal_Net_Events_Market_OrderSource_ntv" data-uid="DxFeed.Graal.Net.Events.Market.OrderSource.ntv">ntv</h4>
+  <div class="markdown level1 summary"><p>NASDAQ Total View. Record for price level book.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly OrderSource ntv</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="DxFeed.Graal.Net.Events.Market.OrderSource.html">OrderSource</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.3.0/apiSpec/new?filename=DxFeed_Graal_Net_Events_Market_OrderSource_smfe.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Market.OrderSource.smfe%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.3.0/src/DxFeed.Graal.Net/Events/Market/OrderSource.cs/#L231">View Source</a>
+  </span>
+  <h4 id="DxFeed_Graal_Net_Events_Market_OrderSource_smfe" data-uid="DxFeed.Graal.Net.Events.Market.OrderSource.smfe">smfe</h4>
+  <div class="markdown level1 summary"><p>Small Exchange. Record for price level book.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly OrderSource smfe</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="DxFeed.Graal.Net.Events.Market.OrderSource.html">OrderSource</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.3.0/apiSpec/new?filename=DxFeed_Graal_Net_Events_Market_OrderSource_xeur.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Market.OrderSource.xeur%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.3.0/src/DxFeed.Graal.Net/Events/Market/OrderSource.cs/#L211">View Source</a>
+  </span>
+  <h4 id="DxFeed_Graal_Net_Events_Market_OrderSource_xeur" data-uid="DxFeed.Graal.Net.Events.Market.OrderSource.xeur">xeur</h4>
+  <div class="markdown level1 summary"><p>Eurex Exchange. Record for price level book.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly OrderSource xeur</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -1618,10 +1622,10 @@ The subscription on regional <a class="xref" href="DxFeed.Graal.Net.Events.Marke
 </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.2.1/apiSpec/new?filename=DxFeed_Graal_Net_Events_Market_OrderSource_IsFullOrderBook.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Market.OrderSource.IsFullOrderBook%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.3.0/apiSpec/new?filename=DxFeed_Graal_Net_Events_Market_OrderSource_IsFullOrderBook.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Market.OrderSource.IsFullOrderBook%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.2.1/src/DxFeed.Graal.Net/Events/Market/OrderSource.cs/#L329">View Source</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.3.0/src/DxFeed.Graal.Net/Events/Market/OrderSource.cs/#L329">View Source</a>
   </span>
   <a id="DxFeed_Graal_Net_Events_Market_OrderSource_IsFullOrderBook_" data-uid="DxFeed.Graal.Net.Events.Market.OrderSource.IsFullOrderBook*"></a>
   <h4 id="DxFeed_Graal_Net_Events_Market_OrderSource_IsFullOrderBook" data-uid="DxFeed.Graal.Net.Events.Market.OrderSource.IsFullOrderBook">IsFullOrderBook</h4>
@@ -1633,7 +1637,7 @@ The subscription on regional <a class="xref" href="DxFeed.Graal.Net.Events.Marke
     <pre><code class="lang-csharp hljs">public bool IsFullOrderBook { get; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -1651,10 +1655,10 @@ The subscription on regional <a class="xref" href="DxFeed.Graal.Net.Events.Marke
 </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.2.1/apiSpec/new?filename=DxFeed_Graal_Net_Events_Market_OrderSource_GetEventTypeMask_System_Type_.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Market.OrderSource.GetEventTypeMask(System.Type)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.3.0/apiSpec/new?filename=DxFeed_Graal_Net_Events_Market_OrderSource_GetEventTypeMask_System_Type_.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Market.OrderSource.GetEventTypeMask(System.Type)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.2.1/src/DxFeed.Graal.Net/Events/Market/OrderSource.cs/#L368">View Source</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.3.0/src/DxFeed.Graal.Net/Events/Market/OrderSource.cs/#L368">View Source</a>
   </span>
   <a id="DxFeed_Graal_Net_Events_Market_OrderSource_GetEventTypeMask_" data-uid="DxFeed.Graal.Net.Events.Market.OrderSource.GetEventTypeMask*"></a>
   <h4 id="DxFeed_Graal_Net_Events_Market_OrderSource_GetEventTypeMask_System_Type_" data-uid="DxFeed.Graal.Net.Events.Market.OrderSource.GetEventTypeMask(System.Type)">GetEventTypeMask(Type)</h4>
@@ -1666,7 +1670,7 @@ The subscription on regional <a class="xref" href="DxFeed.Graal.Net.Events.Marke
     <pre><code class="lang-csharp hljs">public static int GetEventTypeMask(Type eventType)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -1684,7 +1688,7 @@ The subscription on regional <a class="xref" href="DxFeed.Graal.Net.Events.Marke
     </tbody>
   </table>
   <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -1700,7 +1704,7 @@ The subscription on regional <a class="xref" href="DxFeed.Graal.Net.Events.Marke
     </tbody>
   </table>
   <h5 class="exceptions">Exceptions</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -1717,10 +1721,10 @@ The subscription on regional <a class="xref" href="DxFeed.Graal.Net.Events.Marke
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.2.1/apiSpec/new?filename=DxFeed_Graal_Net_Events_Market_OrderSource_IsPublishable_System_Type_.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Market.OrderSource.IsPublishable(System.Type)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.3.0/apiSpec/new?filename=DxFeed_Graal_Net_Events_Market_OrderSource_IsPublishable_System_Type_.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Market.OrderSource.IsPublishable(System.Type)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.2.1/src/DxFeed.Graal.Net/Events/Market/OrderSource.cs/#L403">View Source</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.3.0/src/DxFeed.Graal.Net/Events/Market/OrderSource.cs/#L403">View Source</a>
   </span>
   <a id="DxFeed_Graal_Net_Events_Market_OrderSource_IsPublishable_" data-uid="DxFeed.Graal.Net.Events.Market.OrderSource.IsPublishable*"></a>
   <h4 id="DxFeed_Graal_Net_Events_Market_OrderSource_IsPublishable_System_Type_" data-uid="DxFeed.Graal.Net.Events.Market.OrderSource.IsPublishable(System.Type)">IsPublishable(Type)</h4>
@@ -1734,7 +1738,7 @@ Subscription on such sources is observed via instances of <a class="xref" href="
     <pre><code class="lang-csharp hljs">public bool IsPublishable(Type eventType)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -1752,7 +1756,7 @@ Subscription on such sources is observed via instances of <a class="xref" href="
     </tbody>
   </table>
   <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -1769,7 +1773,7 @@ events can be directly published with this source.</p>
     </tbody>
   </table>
   <h5 class="exceptions">Exceptions</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -1786,10 +1790,10 @@ events can be directly published with this source.</p>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.2.1/apiSpec/new?filename=DxFeed_Graal_Net_Events_Market_OrderSource_IsSpecialSourceId_System_Int32_.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Market.OrderSource.IsSpecialSourceId(System.Int32)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.3.0/apiSpec/new?filename=DxFeed_Graal_Net_Events_Market_OrderSource_IsSpecialSourceId_System_Int32_.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Market.OrderSource.IsSpecialSourceId(System.Int32)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.2.1/src/DxFeed.Graal.Net/Events/Market/OrderSource.cs/#L338">View Source</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.3.0/src/DxFeed.Graal.Net/Events/Market/OrderSource.cs/#L338">View Source</a>
   </span>
   <a id="DxFeed_Graal_Net_Events_Market_OrderSource_IsSpecialSourceId_" data-uid="DxFeed.Graal.Net.Events.Market.OrderSource.IsSpecialSourceId*"></a>
   <h4 id="DxFeed_Graal_Net_Events_Market_OrderSource_IsSpecialSourceId_System_Int32_" data-uid="DxFeed.Graal.Net.Events.Market.OrderSource.IsSpecialSourceId(System.Int32)">IsSpecialSourceId(int)</h4>
@@ -1802,7 +1806,7 @@ Special order sources are used for wrapping non-order events into order events.<
     <pre><code class="lang-csharp hljs">public static bool IsSpecialSourceId(int sourceId)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -1820,7 +1824,7 @@ Special order sources are used for wrapping non-order events into order events.<
     </tbody>
   </table>
   <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -1837,10 +1841,10 @@ Special order sources are used for wrapping non-order events into order events.<
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.2.1/apiSpec/new?filename=DxFeed_Graal_Net_Events_Market_OrderSource_ValueOf_System_Int32_.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Market.OrderSource.ValueOf(System.Int32)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.3.0/apiSpec/new?filename=DxFeed_Graal_Net_Events_Market_OrderSource_ValueOf_System_Int32_.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Market.OrderSource.ValueOf(System.Int32)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.2.1/src/DxFeed.Graal.Net/Events/Market/OrderSource.cs/#L347">View Source</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.3.0/src/DxFeed.Graal.Net/Events/Market/OrderSource.cs/#L347">View Source</a>
   </span>
   <a id="DxFeed_Graal_Net_Events_Market_OrderSource_ValueOf_" data-uid="DxFeed.Graal.Net.Events.Market.OrderSource.ValueOf*"></a>
   <h4 id="DxFeed_Graal_Net_Events_Market_OrderSource_ValueOf_System_Int32_" data-uid="DxFeed.Graal.Net.Events.Market.OrderSource.ValueOf(System.Int32)">ValueOf(int)</h4>
@@ -1852,7 +1856,7 @@ Special order sources are used for wrapping non-order events into order events.<
     <pre><code class="lang-csharp hljs">public static OrderSource ValueOf(int sourceId)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -1870,7 +1874,7 @@ Special order sources are used for wrapping non-order events into order events.<
     </tbody>
   </table>
   <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -1886,7 +1890,7 @@ Special order sources are used for wrapping non-order events into order events.<
     </tbody>
   </table>
   <h5 class="exceptions">Exceptions</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -1903,10 +1907,10 @@ Special order sources are used for wrapping non-order events into order events.<
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.2.1/apiSpec/new?filename=DxFeed_Graal_Net_Events_Market_OrderSource_ValueOf_System_String_.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Market.OrderSource.ValueOf(System.String)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.3.0/apiSpec/new?filename=DxFeed_Graal_Net_Events_Market_OrderSource_ValueOf_System_String_.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Market.OrderSource.ValueOf(System.String)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.2.1/src/DxFeed.Graal.Net/Events/Market/OrderSource.cs/#L357">View Source</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.3.0/src/DxFeed.Graal.Net/Events/Market/OrderSource.cs/#L357">View Source</a>
   </span>
   <a id="DxFeed_Graal_Net_Events_Market_OrderSource_ValueOf_" data-uid="DxFeed.Graal.Net.Events.Market.OrderSource.ValueOf*"></a>
   <h4 id="DxFeed_Graal_Net_Events_Market_OrderSource_ValueOf_System_String_" data-uid="DxFeed.Graal.Net.Events.Market.OrderSource.ValueOf(System.String)">ValueOf(string)</h4>
@@ -1919,7 +1923,7 @@ The name must be either predefined, or contain at most 4 alphanumeric characters
     <pre><code class="lang-csharp hljs">public static OrderSource ValueOf(string name)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -1937,7 +1941,7 @@ The name must be either predefined, or contain at most 4 alphanumeric characters
     </tbody>
   </table>
   <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -1953,7 +1957,7 @@ The name must be either predefined, or contain at most 4 alphanumeric characters
     </tbody>
   </table>
   <h5 class="exceptions">Exceptions</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -1968,6 +1972,7 @@ The name must be either predefined, or contain at most 4 alphanumeric characters
       </tr>
     </tbody>
   </table>
+
 </article>
           </div>
 
@@ -1976,10 +1981,10 @@ The name must be either predefined, or contain at most 4 alphanumeric characters
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.2.1/apiSpec/new?filename=DxFeed_Graal_Net_Events_Market_OrderSource.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Market.OrderSource%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.3.0/apiSpec/new?filename=DxFeed_Graal_Net_Events_Market_OrderSource.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Market.OrderSource%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.2.1/src/DxFeed.Graal.Net/Events/Market/OrderSource.cs/#L38" class="contribution-link">View Source</a>
+                    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.3.0/src/DxFeed.Graal.Net/Events/Market/OrderSource.cs/#L38" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>
@@ -2006,7 +2011,7 @@ The name must be either predefined, or contain at most 4 alphanumeric characters
       </footer>
     </div>
 
-    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.vendor.min.js"></script>
     <script type="text/javascript" src="../../styles/docfx.js"></script>
     <script type="text/javascript" src="../../styles/main.js"></script>
   </body>

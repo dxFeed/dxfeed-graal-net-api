@@ -19,12 +19,12 @@ references:
   commentId: T:DxFeed.Graal.Net.Api.DXEndpoint
   fullName: DxFeed.Graal.Net.Api.DXEndpoint
   nameWithType: DXEndpoint
-- uid: DxFeed.Graal.Net.Api.DXEndpoint.AddStateChangeListener(DxFeed.Graal.Net.Api.DXEndpoint.OnStateChangeListener)
-  name: AddStateChangeListener(OnStateChangeListener)
-  href: docs/api/DxFeed.Graal.Net.Api.DXEndpoint.html#DxFeed_Graal_Net_Api_DXEndpoint_AddStateChangeListener_DxFeed_Graal_Net_Api_DXEndpoint_OnStateChangeListener_
-  commentId: M:DxFeed.Graal.Net.Api.DXEndpoint.AddStateChangeListener(DxFeed.Graal.Net.Api.DXEndpoint.OnStateChangeListener)
-  fullName: DxFeed.Graal.Net.Api.DXEndpoint.AddStateChangeListener(DxFeed.Graal.Net.Api.DXEndpoint.OnStateChangeListener)
-  nameWithType: DXEndpoint.AddStateChangeListener(DXEndpoint.OnStateChangeListener)
+- uid: DxFeed.Graal.Net.Api.DXEndpoint.AddStateChangeListener(DxFeed.Graal.Net.Api.DXEndpoint.StateChangeListenerCallback)
+  name: AddStateChangeListener(StateChangeListenerCallback)
+  href: docs/api/DxFeed.Graal.Net.Api.DXEndpoint.html#DxFeed_Graal_Net_Api_DXEndpoint_AddStateChangeListener_DxFeed_Graal_Net_Api_DXEndpoint_StateChangeListenerCallback_
+  commentId: M:DxFeed.Graal.Net.Api.DXEndpoint.AddStateChangeListener(DxFeed.Graal.Net.Api.DXEndpoint.StateChangeListenerCallback)
+  fullName: DxFeed.Graal.Net.Api.DXEndpoint.AddStateChangeListener(DxFeed.Graal.Net.Api.DXEndpoint.StateChangeListenerCallback)
+  nameWithType: DXEndpoint.AddStateChangeListener(DXEndpoint.StateChangeListenerCallback)
 - uid: DxFeed.Graal.Net.Api.DXEndpoint.AddStateChangeListener*
   name: AddStateChangeListener
   href: docs/api/DxFeed.Graal.Net.Api.DXEndpoint.html#DxFeed_Graal_Net_Api_DXEndpoint_AddStateChangeListener_
@@ -64,25 +64,6 @@ references:
   commentId: T:DxFeed.Graal.Net.Api.DXEndpoint.Builder
   fullName: DxFeed.Graal.Net.Api.DXEndpoint.Builder
   nameWithType: DXEndpoint.Builder
-- uid: DxFeed.Graal.Net.Api.DXEndpoint.Builder.#ctor
-  name: Builder()
-  href: docs/api/DxFeed.Graal.Net.Api.DXEndpoint.Builder.html#DxFeed_Graal_Net_Api_DXEndpoint_Builder__ctor
-  commentId: M:DxFeed.Graal.Net.Api.DXEndpoint.Builder.#ctor
-  name.vb: New()
-  fullName: DxFeed.Graal.Net.Api.DXEndpoint.Builder.Builder()
-  fullName.vb: DxFeed.Graal.Net.Api.DXEndpoint.Builder.New()
-  nameWithType: DXEndpoint.Builder.Builder()
-  nameWithType.vb: DXEndpoint.Builder.New()
-- uid: DxFeed.Graal.Net.Api.DXEndpoint.Builder.#ctor*
-  name: Builder
-  href: docs/api/DxFeed.Graal.Net.Api.DXEndpoint.Builder.html#DxFeed_Graal_Net_Api_DXEndpoint_Builder__ctor_
-  commentId: Overload:DxFeed.Graal.Net.Api.DXEndpoint.Builder.#ctor
-  isSpec: "True"
-  name.vb: New
-  fullName: DxFeed.Graal.Net.Api.DXEndpoint.Builder.Builder
-  fullName.vb: DxFeed.Graal.Net.Api.DXEndpoint.Builder.New
-  nameWithType: DXEndpoint.Builder.Builder
-  nameWithType.vb: DXEndpoint.Builder.New
 - uid: DxFeed.Graal.Net.Api.DXEndpoint.Builder.Build
   name: Build()
   href: docs/api/DxFeed.Graal.Net.Api.DXEndpoint.Builder.html#DxFeed_Graal_Net_Api_DXEndpoint_Builder_Build
@@ -96,19 +77,6 @@ references:
   isSpec: "True"
   fullName: DxFeed.Graal.Net.Api.DXEndpoint.Builder.Build
   nameWithType: DXEndpoint.Builder.Build
-- uid: DxFeed.Graal.Net.Api.DXEndpoint.Builder.Dispose
-  name: Dispose()
-  href: docs/api/DxFeed.Graal.Net.Api.DXEndpoint.Builder.html#DxFeed_Graal_Net_Api_DXEndpoint_Builder_Dispose
-  commentId: M:DxFeed.Graal.Net.Api.DXEndpoint.Builder.Dispose
-  fullName: DxFeed.Graal.Net.Api.DXEndpoint.Builder.Dispose()
-  nameWithType: DXEndpoint.Builder.Dispose()
-- uid: DxFeed.Graal.Net.Api.DXEndpoint.Builder.Dispose*
-  name: Dispose
-  href: docs/api/DxFeed.Graal.Net.Api.DXEndpoint.Builder.html#DxFeed_Graal_Net_Api_DXEndpoint_Builder_Dispose_
-  commentId: Overload:DxFeed.Graal.Net.Api.DXEndpoint.Builder.Dispose
-  isSpec: "True"
-  fullName: DxFeed.Graal.Net.Api.DXEndpoint.Builder.Dispose
-  nameWithType: DXEndpoint.Builder.Dispose
 - uid: DxFeed.Graal.Net.Api.DXEndpoint.Builder.SupportsProperty(System.String)
   name: SupportsProperty(string)
   href: docs/api/DxFeed.Graal.Net.Api.DXEndpoint.Builder.html#DxFeed_Graal_Net_Api_DXEndpoint_Builder_SupportsProperty_System_String_
@@ -495,12 +463,6 @@ references:
   isSpec: "True"
   fullName: DxFeed.Graal.Net.Api.DXEndpoint.NewBuilder
   nameWithType: DXEndpoint.NewBuilder
-- uid: DxFeed.Graal.Net.Api.DXEndpoint.OnStateChangeListener
-  name: DXEndpoint.OnStateChangeListener
-  href: docs/api/DxFeed.Graal.Net.Api.DXEndpoint.OnStateChangeListener.html
-  commentId: T:DxFeed.Graal.Net.Api.DXEndpoint.OnStateChangeListener
-  fullName: DxFeed.Graal.Net.Api.DXEndpoint.OnStateChangeListener
-  nameWithType: DXEndpoint.OnStateChangeListener
 - uid: DxFeed.Graal.Net.Api.DXEndpoint.Password(System.String)
   name: Password(string)
   href: docs/api/DxFeed.Graal.Net.Api.DXEndpoint.html#DxFeed_Graal_Net_Api_DXEndpoint_Password_System_String_
@@ -530,12 +492,12 @@ references:
   isSpec: "True"
   fullName: DxFeed.Graal.Net.Api.DXEndpoint.Reconnect
   nameWithType: DXEndpoint.Reconnect
-- uid: DxFeed.Graal.Net.Api.DXEndpoint.RemoveStateChangeListener(DxFeed.Graal.Net.Api.DXEndpoint.OnStateChangeListener)
-  name: RemoveStateChangeListener(OnStateChangeListener)
-  href: docs/api/DxFeed.Graal.Net.Api.DXEndpoint.html#DxFeed_Graal_Net_Api_DXEndpoint_RemoveStateChangeListener_DxFeed_Graal_Net_Api_DXEndpoint_OnStateChangeListener_
-  commentId: M:DxFeed.Graal.Net.Api.DXEndpoint.RemoveStateChangeListener(DxFeed.Graal.Net.Api.DXEndpoint.OnStateChangeListener)
-  fullName: DxFeed.Graal.Net.Api.DXEndpoint.RemoveStateChangeListener(DxFeed.Graal.Net.Api.DXEndpoint.OnStateChangeListener)
-  nameWithType: DXEndpoint.RemoveStateChangeListener(DXEndpoint.OnStateChangeListener)
+- uid: DxFeed.Graal.Net.Api.DXEndpoint.RemoveStateChangeListener(DxFeed.Graal.Net.Api.DXEndpoint.StateChangeListenerCallback)
+  name: RemoveStateChangeListener(StateChangeListenerCallback)
+  href: docs/api/DxFeed.Graal.Net.Api.DXEndpoint.html#DxFeed_Graal_Net_Api_DXEndpoint_RemoveStateChangeListener_DxFeed_Graal_Net_Api_DXEndpoint_StateChangeListenerCallback_
+  commentId: M:DxFeed.Graal.Net.Api.DXEndpoint.RemoveStateChangeListener(DxFeed.Graal.Net.Api.DXEndpoint.StateChangeListenerCallback)
+  fullName: DxFeed.Graal.Net.Api.DXEndpoint.RemoveStateChangeListener(DxFeed.Graal.Net.Api.DXEndpoint.StateChangeListenerCallback)
+  nameWithType: DXEndpoint.RemoveStateChangeListener(DXEndpoint.StateChangeListenerCallback)
 - uid: DxFeed.Graal.Net.Api.DXEndpoint.RemoveStateChangeListener*
   name: RemoveStateChangeListener
   href: docs/api/DxFeed.Graal.Net.Api.DXEndpoint.html#DxFeed_Graal_Net_Api_DXEndpoint_RemoveStateChangeListener_
@@ -615,6 +577,12 @@ references:
   commentId: F:DxFeed.Graal.Net.Api.DXEndpoint.State.NotConnected
   fullName: DxFeed.Graal.Net.Api.DXEndpoint.State.NotConnected
   nameWithType: DXEndpoint.State.NotConnected
+- uid: DxFeed.Graal.Net.Api.DXEndpoint.StateChangeListenerCallback
+  name: DXEndpoint.StateChangeListenerCallback
+  href: docs/api/DxFeed.Graal.Net.Api.DXEndpoint.StateChangeListenerCallback.html
+  commentId: T:DxFeed.Graal.Net.Api.DXEndpoint.StateChangeListenerCallback
+  fullName: DxFeed.Graal.Net.Api.DXEndpoint.StateChangeListenerCallback
+  nameWithType: DXEndpoint.StateChangeListenerCallback
 - uid: DxFeed.Graal.Net.Api.DXEndpoint.User(System.String)
   name: User(string)
   href: docs/api/DxFeed.Graal.Net.Api.DXEndpoint.html#DxFeed_Graal_Net_Api_DXEndpoint_User_System_String_
@@ -8357,6 +8325,171 @@ references:
   isSpec: "True"
   fullName: DxFeed.Graal.Net.Utils.CmdArgsUtil.ParseTypes
   nameWithType: CmdArgsUtil.ParseTypes
+- uid: DxFeed.Graal.Net.Utils.ConcurrentSet`1
+  name: ConcurrentSet<T>
+  href: docs/api/DxFeed.Graal.Net.Utils.ConcurrentSet-1.html
+  commentId: T:DxFeed.Graal.Net.Utils.ConcurrentSet`1
+  name.vb: ConcurrentSet(Of T)
+  fullName: DxFeed.Graal.Net.Utils.ConcurrentSet<T>
+  fullName.vb: DxFeed.Graal.Net.Utils.ConcurrentSet(Of T)
+  nameWithType: ConcurrentSet<T>
+  nameWithType.vb: ConcurrentSet(Of T)
+- uid: DxFeed.Graal.Net.Utils.ConcurrentSet`1.#ctor
+  name: ConcurrentSet()
+  href: docs/api/DxFeed.Graal.Net.Utils.ConcurrentSet-1.html#DxFeed_Graal_Net_Utils_ConcurrentSet_1__ctor
+  commentId: M:DxFeed.Graal.Net.Utils.ConcurrentSet`1.#ctor
+  name.vb: New()
+  fullName: DxFeed.Graal.Net.Utils.ConcurrentSet<T>.ConcurrentSet()
+  fullName.vb: DxFeed.Graal.Net.Utils.ConcurrentSet(Of T).New()
+  nameWithType: ConcurrentSet<T>.ConcurrentSet()
+  nameWithType.vb: ConcurrentSet(Of T).New()
+- uid: DxFeed.Graal.Net.Utils.ConcurrentSet`1.#ctor*
+  name: ConcurrentSet
+  href: docs/api/DxFeed.Graal.Net.Utils.ConcurrentSet-1.html#DxFeed_Graal_Net_Utils_ConcurrentSet_1__ctor_
+  commentId: Overload:DxFeed.Graal.Net.Utils.ConcurrentSet`1.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: DxFeed.Graal.Net.Utils.ConcurrentSet<T>.ConcurrentSet
+  fullName.vb: DxFeed.Graal.Net.Utils.ConcurrentSet(Of T).New
+  nameWithType: ConcurrentSet<T>.ConcurrentSet
+  nameWithType.vb: ConcurrentSet(Of T).New
+- uid: DxFeed.Graal.Net.Utils.ConcurrentSet`1.Add(`0)
+  name: Add(T)
+  href: docs/api/DxFeed.Graal.Net.Utils.ConcurrentSet-1.html#DxFeed_Graal_Net_Utils_ConcurrentSet_1_Add__0_
+  commentId: M:DxFeed.Graal.Net.Utils.ConcurrentSet`1.Add(`0)
+  fullName: DxFeed.Graal.Net.Utils.ConcurrentSet<T>.Add(T)
+  fullName.vb: DxFeed.Graal.Net.Utils.ConcurrentSet(Of T).Add(T)
+  nameWithType: ConcurrentSet<T>.Add(T)
+  nameWithType.vb: ConcurrentSet(Of T).Add(T)
+- uid: DxFeed.Graal.Net.Utils.ConcurrentSet`1.Add*
+  name: Add
+  href: docs/api/DxFeed.Graal.Net.Utils.ConcurrentSet-1.html#DxFeed_Graal_Net_Utils_ConcurrentSet_1_Add_
+  commentId: Overload:DxFeed.Graal.Net.Utils.ConcurrentSet`1.Add
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Utils.ConcurrentSet<T>.Add
+  fullName.vb: DxFeed.Graal.Net.Utils.ConcurrentSet(Of T).Add
+  nameWithType: ConcurrentSet<T>.Add
+  nameWithType.vb: ConcurrentSet(Of T).Add
+- uid: DxFeed.Graal.Net.Utils.ConcurrentSet`1.Clear
+  name: Clear()
+  href: docs/api/DxFeed.Graal.Net.Utils.ConcurrentSet-1.html#DxFeed_Graal_Net_Utils_ConcurrentSet_1_Clear
+  commentId: M:DxFeed.Graal.Net.Utils.ConcurrentSet`1.Clear
+  fullName: DxFeed.Graal.Net.Utils.ConcurrentSet<T>.Clear()
+  fullName.vb: DxFeed.Graal.Net.Utils.ConcurrentSet(Of T).Clear()
+  nameWithType: ConcurrentSet<T>.Clear()
+  nameWithType.vb: ConcurrentSet(Of T).Clear()
+- uid: DxFeed.Graal.Net.Utils.ConcurrentSet`1.Clear*
+  name: Clear
+  href: docs/api/DxFeed.Graal.Net.Utils.ConcurrentSet-1.html#DxFeed_Graal_Net_Utils_ConcurrentSet_1_Clear_
+  commentId: Overload:DxFeed.Graal.Net.Utils.ConcurrentSet`1.Clear
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Utils.ConcurrentSet<T>.Clear
+  fullName.vb: DxFeed.Graal.Net.Utils.ConcurrentSet(Of T).Clear
+  nameWithType: ConcurrentSet<T>.Clear
+  nameWithType.vb: ConcurrentSet(Of T).Clear
+- uid: DxFeed.Graal.Net.Utils.ConcurrentSet`1.Contains(`0)
+  name: Contains(T)
+  href: docs/api/DxFeed.Graal.Net.Utils.ConcurrentSet-1.html#DxFeed_Graal_Net_Utils_ConcurrentSet_1_Contains__0_
+  commentId: M:DxFeed.Graal.Net.Utils.ConcurrentSet`1.Contains(`0)
+  fullName: DxFeed.Graal.Net.Utils.ConcurrentSet<T>.Contains(T)
+  fullName.vb: DxFeed.Graal.Net.Utils.ConcurrentSet(Of T).Contains(T)
+  nameWithType: ConcurrentSet<T>.Contains(T)
+  nameWithType.vb: ConcurrentSet(Of T).Contains(T)
+- uid: DxFeed.Graal.Net.Utils.ConcurrentSet`1.Contains*
+  name: Contains
+  href: docs/api/DxFeed.Graal.Net.Utils.ConcurrentSet-1.html#DxFeed_Graal_Net_Utils_ConcurrentSet_1_Contains_
+  commentId: Overload:DxFeed.Graal.Net.Utils.ConcurrentSet`1.Contains
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Utils.ConcurrentSet<T>.Contains
+  fullName.vb: DxFeed.Graal.Net.Utils.ConcurrentSet(Of T).Contains
+  nameWithType: ConcurrentSet<T>.Contains
+  nameWithType.vb: ConcurrentSet(Of T).Contains
+- uid: DxFeed.Graal.Net.Utils.ConcurrentSet`1.CopyTo(`0[],System.Int32)
+  name: CopyTo(T[], int)
+  href: docs/api/DxFeed.Graal.Net.Utils.ConcurrentSet-1.html#DxFeed_Graal_Net_Utils_ConcurrentSet_1_CopyTo__0___System_Int32_
+  commentId: M:DxFeed.Graal.Net.Utils.ConcurrentSet`1.CopyTo(`0[],System.Int32)
+  name.vb: CopyTo(T(), Integer)
+  fullName: DxFeed.Graal.Net.Utils.ConcurrentSet<T>.CopyTo(T[], int)
+  fullName.vb: DxFeed.Graal.Net.Utils.ConcurrentSet(Of T).CopyTo(T(), Integer)
+  nameWithType: ConcurrentSet<T>.CopyTo(T[], int)
+  nameWithType.vb: ConcurrentSet(Of T).CopyTo(T(), Integer)
+- uid: DxFeed.Graal.Net.Utils.ConcurrentSet`1.CopyTo*
+  name: CopyTo
+  href: docs/api/DxFeed.Graal.Net.Utils.ConcurrentSet-1.html#DxFeed_Graal_Net_Utils_ConcurrentSet_1_CopyTo_
+  commentId: Overload:DxFeed.Graal.Net.Utils.ConcurrentSet`1.CopyTo
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Utils.ConcurrentSet<T>.CopyTo
+  fullName.vb: DxFeed.Graal.Net.Utils.ConcurrentSet(Of T).CopyTo
+  nameWithType: ConcurrentSet<T>.CopyTo
+  nameWithType.vb: ConcurrentSet(Of T).CopyTo
+- uid: DxFeed.Graal.Net.Utils.ConcurrentSet`1.Count
+  name: Count
+  href: docs/api/DxFeed.Graal.Net.Utils.ConcurrentSet-1.html#DxFeed_Graal_Net_Utils_ConcurrentSet_1_Count
+  commentId: P:DxFeed.Graal.Net.Utils.ConcurrentSet`1.Count
+  fullName: DxFeed.Graal.Net.Utils.ConcurrentSet<T>.Count
+  fullName.vb: DxFeed.Graal.Net.Utils.ConcurrentSet(Of T).Count
+  nameWithType: ConcurrentSet<T>.Count
+  nameWithType.vb: ConcurrentSet(Of T).Count
+- uid: DxFeed.Graal.Net.Utils.ConcurrentSet`1.Count*
+  name: Count
+  href: docs/api/DxFeed.Graal.Net.Utils.ConcurrentSet-1.html#DxFeed_Graal_Net_Utils_ConcurrentSet_1_Count_
+  commentId: Overload:DxFeed.Graal.Net.Utils.ConcurrentSet`1.Count
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Utils.ConcurrentSet<T>.Count
+  fullName.vb: DxFeed.Graal.Net.Utils.ConcurrentSet(Of T).Count
+  nameWithType: ConcurrentSet<T>.Count
+  nameWithType.vb: ConcurrentSet(Of T).Count
+- uid: DxFeed.Graal.Net.Utils.ConcurrentSet`1.GetEnumerator
+  name: GetEnumerator()
+  href: docs/api/DxFeed.Graal.Net.Utils.ConcurrentSet-1.html#DxFeed_Graal_Net_Utils_ConcurrentSet_1_GetEnumerator
+  commentId: M:DxFeed.Graal.Net.Utils.ConcurrentSet`1.GetEnumerator
+  fullName: DxFeed.Graal.Net.Utils.ConcurrentSet<T>.GetEnumerator()
+  fullName.vb: DxFeed.Graal.Net.Utils.ConcurrentSet(Of T).GetEnumerator()
+  nameWithType: ConcurrentSet<T>.GetEnumerator()
+  nameWithType.vb: ConcurrentSet(Of T).GetEnumerator()
+- uid: DxFeed.Graal.Net.Utils.ConcurrentSet`1.GetEnumerator*
+  name: GetEnumerator
+  href: docs/api/DxFeed.Graal.Net.Utils.ConcurrentSet-1.html#DxFeed_Graal_Net_Utils_ConcurrentSet_1_GetEnumerator_
+  commentId: Overload:DxFeed.Graal.Net.Utils.ConcurrentSet`1.GetEnumerator
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Utils.ConcurrentSet<T>.GetEnumerator
+  fullName.vb: DxFeed.Graal.Net.Utils.ConcurrentSet(Of T).GetEnumerator
+  nameWithType: ConcurrentSet<T>.GetEnumerator
+  nameWithType.vb: ConcurrentSet(Of T).GetEnumerator
+- uid: DxFeed.Graal.Net.Utils.ConcurrentSet`1.IsReadOnly
+  name: IsReadOnly
+  href: docs/api/DxFeed.Graal.Net.Utils.ConcurrentSet-1.html#DxFeed_Graal_Net_Utils_ConcurrentSet_1_IsReadOnly
+  commentId: P:DxFeed.Graal.Net.Utils.ConcurrentSet`1.IsReadOnly
+  fullName: DxFeed.Graal.Net.Utils.ConcurrentSet<T>.IsReadOnly
+  fullName.vb: DxFeed.Graal.Net.Utils.ConcurrentSet(Of T).IsReadOnly
+  nameWithType: ConcurrentSet<T>.IsReadOnly
+  nameWithType.vb: ConcurrentSet(Of T).IsReadOnly
+- uid: DxFeed.Graal.Net.Utils.ConcurrentSet`1.IsReadOnly*
+  name: IsReadOnly
+  href: docs/api/DxFeed.Graal.Net.Utils.ConcurrentSet-1.html#DxFeed_Graal_Net_Utils_ConcurrentSet_1_IsReadOnly_
+  commentId: Overload:DxFeed.Graal.Net.Utils.ConcurrentSet`1.IsReadOnly
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Utils.ConcurrentSet<T>.IsReadOnly
+  fullName.vb: DxFeed.Graal.Net.Utils.ConcurrentSet(Of T).IsReadOnly
+  nameWithType: ConcurrentSet<T>.IsReadOnly
+  nameWithType.vb: ConcurrentSet(Of T).IsReadOnly
+- uid: DxFeed.Graal.Net.Utils.ConcurrentSet`1.Remove(`0)
+  name: Remove(T)
+  href: docs/api/DxFeed.Graal.Net.Utils.ConcurrentSet-1.html#DxFeed_Graal_Net_Utils_ConcurrentSet_1_Remove__0_
+  commentId: M:DxFeed.Graal.Net.Utils.ConcurrentSet`1.Remove(`0)
+  fullName: DxFeed.Graal.Net.Utils.ConcurrentSet<T>.Remove(T)
+  fullName.vb: DxFeed.Graal.Net.Utils.ConcurrentSet(Of T).Remove(T)
+  nameWithType: ConcurrentSet<T>.Remove(T)
+  nameWithType.vb: ConcurrentSet(Of T).Remove(T)
+- uid: DxFeed.Graal.Net.Utils.ConcurrentSet`1.Remove*
+  name: Remove
+  href: docs/api/DxFeed.Graal.Net.Utils.ConcurrentSet-1.html#DxFeed_Graal_Net_Utils_ConcurrentSet_1_Remove_
+  commentId: Overload:DxFeed.Graal.Net.Utils.ConcurrentSet`1.Remove
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Utils.ConcurrentSet<T>.Remove
+  fullName.vb: DxFeed.Graal.Net.Utils.ConcurrentSet(Of T).Remove
+  nameWithType: ConcurrentSet<T>.Remove
+  nameWithType.vb: ConcurrentSet(Of T).Remove
 - uid: DxFeed.Graal.Net.Utils.DayUtil
   name: DayUtil
   href: docs/api/DxFeed.Graal.Net.Utils.DayUtil.html
@@ -8410,31 +8543,38 @@ references:
   commentId: T:DxFeed.Graal.Net.Utils.EnumUtil
   fullName: DxFeed.Graal.Net.Utils.EnumUtil
   nameWithType: EnumUtil
-- uid: DxFeed.Graal.Net.Utils.EnumUtil.BuildEnumBitMaskArrayByValue*
-  name: BuildEnumBitMaskArrayByValue
-  href: docs/api/DxFeed.Graal.Net.Utils.EnumUtil.html#DxFeed_Graal_Net_Utils_EnumUtil_BuildEnumBitMaskArrayByValue_
-  commentId: Overload:DxFeed.Graal.Net.Utils.EnumUtil.BuildEnumBitMaskArrayByValue
+- uid: DxFeed.Graal.Net.Utils.EnumUtil.CreateEnumArrayByValue*
+  name: CreateEnumArrayByValue
+  href: docs/api/DxFeed.Graal.Net.Utils.EnumUtil.html#DxFeed_Graal_Net_Utils_EnumUtil_CreateEnumArrayByValue_
+  commentId: Overload:DxFeed.Graal.Net.Utils.EnumUtil.CreateEnumArrayByValue
   isSpec: "True"
-  fullName: DxFeed.Graal.Net.Utils.EnumUtil.BuildEnumBitMaskArrayByValue
-  nameWithType: EnumUtil.BuildEnumBitMaskArrayByValue
-- uid: DxFeed.Graal.Net.Utils.EnumUtil.BuildEnumBitMaskArrayByValue``1(``0,System.Int32)
-  name: BuildEnumBitMaskArrayByValue<T>(T, int)
-  href: docs/api/DxFeed.Graal.Net.Utils.EnumUtil.html#DxFeed_Graal_Net_Utils_EnumUtil_BuildEnumBitMaskArrayByValue__1___0_System_Int32_
-  commentId: M:DxFeed.Graal.Net.Utils.EnumUtil.BuildEnumBitMaskArrayByValue``1(``0,System.Int32)
-  name.vb: BuildEnumBitMaskArrayByValue(Of T)(T, Integer)
-  fullName: DxFeed.Graal.Net.Utils.EnumUtil.BuildEnumBitMaskArrayByValue<T>(T, int)
-  fullName.vb: DxFeed.Graal.Net.Utils.EnumUtil.BuildEnumBitMaskArrayByValue(Of T)(T, Integer)
-  nameWithType: EnumUtil.BuildEnumBitMaskArrayByValue<T>(T, int)
-  nameWithType.vb: EnumUtil.BuildEnumBitMaskArrayByValue(Of T)(T, Integer)
-- uid: DxFeed.Graal.Net.Utils.EnumUtil.BuildEnumBitMaskArrayByValue``1(``0)
-  name: BuildEnumBitMaskArrayByValue<T>(T)
-  href: docs/api/DxFeed.Graal.Net.Utils.EnumUtil.html#DxFeed_Graal_Net_Utils_EnumUtil_BuildEnumBitMaskArrayByValue__1___0_
-  commentId: M:DxFeed.Graal.Net.Utils.EnumUtil.BuildEnumBitMaskArrayByValue``1(``0)
-  name.vb: BuildEnumBitMaskArrayByValue(Of T)(T)
-  fullName: DxFeed.Graal.Net.Utils.EnumUtil.BuildEnumBitMaskArrayByValue<T>(T)
-  fullName.vb: DxFeed.Graal.Net.Utils.EnumUtil.BuildEnumBitMaskArrayByValue(Of T)(T)
-  nameWithType: EnumUtil.BuildEnumBitMaskArrayByValue<T>(T)
-  nameWithType.vb: EnumUtil.BuildEnumBitMaskArrayByValue(Of T)(T)
+  fullName: DxFeed.Graal.Net.Utils.EnumUtil.CreateEnumArrayByValue
+  nameWithType: EnumUtil.CreateEnumArrayByValue
+- uid: DxFeed.Graal.Net.Utils.EnumUtil.CreateEnumArrayByValue``1(``0,System.Int32)
+  name: CreateEnumArrayByValue<T>(T, int)
+  href: docs/api/DxFeed.Graal.Net.Utils.EnumUtil.html#DxFeed_Graal_Net_Utils_EnumUtil_CreateEnumArrayByValue__1___0_System_Int32_
+  commentId: M:DxFeed.Graal.Net.Utils.EnumUtil.CreateEnumArrayByValue``1(``0,System.Int32)
+  name.vb: CreateEnumArrayByValue(Of T)(T, Integer)
+  fullName: DxFeed.Graal.Net.Utils.EnumUtil.CreateEnumArrayByValue<T>(T, int)
+  fullName.vb: DxFeed.Graal.Net.Utils.EnumUtil.CreateEnumArrayByValue(Of T)(T, Integer)
+  nameWithType: EnumUtil.CreateEnumArrayByValue<T>(T, int)
+  nameWithType.vb: EnumUtil.CreateEnumArrayByValue(Of T)(T, Integer)
+- uid: DxFeed.Graal.Net.Utils.EnumUtil.CreateEnumBitMaskArrayByValue*
+  name: CreateEnumBitMaskArrayByValue
+  href: docs/api/DxFeed.Graal.Net.Utils.EnumUtil.html#DxFeed_Graal_Net_Utils_EnumUtil_CreateEnumBitMaskArrayByValue_
+  commentId: Overload:DxFeed.Graal.Net.Utils.EnumUtil.CreateEnumBitMaskArrayByValue
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Utils.EnumUtil.CreateEnumBitMaskArrayByValue
+  nameWithType: EnumUtil.CreateEnumBitMaskArrayByValue
+- uid: DxFeed.Graal.Net.Utils.EnumUtil.CreateEnumBitMaskArrayByValue``1(``0)
+  name: CreateEnumBitMaskArrayByValue<T>(T)
+  href: docs/api/DxFeed.Graal.Net.Utils.EnumUtil.html#DxFeed_Graal_Net_Utils_EnumUtil_CreateEnumBitMaskArrayByValue__1___0_
+  commentId: M:DxFeed.Graal.Net.Utils.EnumUtil.CreateEnumBitMaskArrayByValue``1(``0)
+  name.vb: CreateEnumBitMaskArrayByValue(Of T)(T)
+  fullName: DxFeed.Graal.Net.Utils.EnumUtil.CreateEnumBitMaskArrayByValue<T>(T)
+  fullName.vb: DxFeed.Graal.Net.Utils.EnumUtil.CreateEnumBitMaskArrayByValue(Of T)(T)
+  nameWithType: EnumUtil.CreateEnumBitMaskArrayByValue<T>(T)
+  nameWithType.vb: EnumUtil.CreateEnumBitMaskArrayByValue(Of T)(T)
 - uid: DxFeed.Graal.Net.Utils.EnumUtil.GetCountValues*
   name: GetCountValues
   href: docs/api/DxFeed.Graal.Net.Utils.EnumUtil.html#DxFeed_Graal_Net_Utils_EnumUtil_GetCountValues_
@@ -8458,24 +8598,24 @@ references:
   isSpec: "True"
   fullName: DxFeed.Graal.Net.Utils.EnumUtil.ValueOf
   nameWithType: EnumUtil.ValueOf
-- uid: DxFeed.Graal.Net.Utils.EnumUtil.ValueOf``1(System.Int32,``0)
-  name: ValueOf<T>(int, T)
-  href: docs/api/DxFeed.Graal.Net.Utils.EnumUtil.html#DxFeed_Graal_Net_Utils_EnumUtil_ValueOf__1_System_Int32___0_
-  commentId: M:DxFeed.Graal.Net.Utils.EnumUtil.ValueOf``1(System.Int32,``0)
-  name.vb: ValueOf(Of T)(Integer, T)
-  fullName: DxFeed.Graal.Net.Utils.EnumUtil.ValueOf<T>(int, T)
-  fullName.vb: DxFeed.Graal.Net.Utils.EnumUtil.ValueOf(Of T)(Integer, T)
-  nameWithType: EnumUtil.ValueOf<T>(int, T)
-  nameWithType.vb: EnumUtil.ValueOf(Of T)(Integer, T)
-- uid: DxFeed.Graal.Net.Utils.EnumUtil.ValueOf``1(System.Int32)
-  name: ValueOf<T>(int)
-  href: docs/api/DxFeed.Graal.Net.Utils.EnumUtil.html#DxFeed_Graal_Net_Utils_EnumUtil_ValueOf__1_System_Int32_
-  commentId: M:DxFeed.Graal.Net.Utils.EnumUtil.ValueOf``1(System.Int32)
-  name.vb: ValueOf(Of T)(Integer)
-  fullName: DxFeed.Graal.Net.Utils.EnumUtil.ValueOf<T>(int)
-  fullName.vb: DxFeed.Graal.Net.Utils.EnumUtil.ValueOf(Of T)(Integer)
-  nameWithType: EnumUtil.ValueOf<T>(int)
-  nameWithType.vb: EnumUtil.ValueOf(Of T)(Integer)
+- uid: DxFeed.Graal.Net.Utils.EnumUtil.ValueOf``1(``0,``0)
+  name: ValueOf<T>(T, T)
+  href: docs/api/DxFeed.Graal.Net.Utils.EnumUtil.html#DxFeed_Graal_Net_Utils_EnumUtil_ValueOf__1___0___0_
+  commentId: M:DxFeed.Graal.Net.Utils.EnumUtil.ValueOf``1(``0,``0)
+  name.vb: ValueOf(Of T)(T, T)
+  fullName: DxFeed.Graal.Net.Utils.EnumUtil.ValueOf<T>(T, T)
+  fullName.vb: DxFeed.Graal.Net.Utils.EnumUtil.ValueOf(Of T)(T, T)
+  nameWithType: EnumUtil.ValueOf<T>(T, T)
+  nameWithType.vb: EnumUtil.ValueOf(Of T)(T, T)
+- uid: DxFeed.Graal.Net.Utils.EnumUtil.ValueOf``1(``0)
+  name: ValueOf<T>(T)
+  href: docs/api/DxFeed.Graal.Net.Utils.EnumUtil.html#DxFeed_Graal_Net_Utils_EnumUtil_ValueOf__1___0_
+  commentId: M:DxFeed.Graal.Net.Utils.EnumUtil.ValueOf``1(``0)
+  name.vb: ValueOf(Of T)(T)
+  fullName: DxFeed.Graal.Net.Utils.EnumUtil.ValueOf<T>(T)
+  fullName.vb: DxFeed.Graal.Net.Utils.EnumUtil.ValueOf(Of T)(T)
+  nameWithType: EnumUtil.ValueOf<T>(T)
+  nameWithType.vb: EnumUtil.ValueOf(Of T)(T)
 - uid: DxFeed.Graal.Net.Utils.MathUtil
   name: MathUtil
   href: docs/api/DxFeed.Graal.Net.Utils.MathUtil.html

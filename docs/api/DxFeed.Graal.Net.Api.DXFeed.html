@@ -109,13 +109,13 @@
                             <a href="DxFeed.Graal.Net.Api.DXEndpoint.Builder.html" title="DXEndpoint.Builder" class="">DXEndpoint.Builder</a>
                           </li>
                           <li class="">
-                            <a href="DxFeed.Graal.Net.Api.DXEndpoint.OnStateChangeListener.html" title="DXEndpoint.OnStateChangeListener" class="">DXEndpoint.OnStateChangeListener</a>
-                          </li>
-                          <li class="">
                             <a href="DxFeed.Graal.Net.Api.DXEndpoint.Role.html" title="DXEndpoint.Role" class="">DXEndpoint.Role</a>
                           </li>
                           <li class="">
                             <a href="DxFeed.Graal.Net.Api.DXEndpoint.State.html" title="DXEndpoint.State" class="">DXEndpoint.State</a>
+                          </li>
+                          <li class="">
+                            <a href="DxFeed.Graal.Net.Api.DXEndpoint.StateChangeListenerCallback.html" title="DXEndpoint.StateChangeListenerCallback" class="">DXEndpoint.StateChangeListenerCallback</a>
                           </li>
                           <li class="active">
                             <a href="DxFeed.Graal.Net.Api.DXFeed.html" title="DXFeed" class="active">DXFeed</a>
@@ -361,6 +361,9 @@
                             <a href="DxFeed.Graal.Net.Utils.CmdArgsUtil.html" title="CmdArgsUtil" class="">CmdArgsUtil</a>
                           </li>
                           <li class="">
+                            <a href="DxFeed.Graal.Net.Utils.ConcurrentSet-1.html" title="ConcurrentSet&lt;T&gt;" class="">ConcurrentSet&lt;T&gt;</a>
+                          </li>
+                          <li class="">
                             <a href="DxFeed.Graal.Net.Utils.DayUtil.html" title="DayUtil" class="">DayUtil</a>
                           </li>
                           <li class="">
@@ -398,12 +401,13 @@
             <article class="content wrap" id="_content" data-uid="DxFeed.Graal.Net.Api.DXFeed">
 
 
+
   <h1 id="DxFeed_Graal_Net_Api_DXFeed" data-uid="DxFeed.Graal.Net.Api.DXFeed" class="text-break">Class DXFeed
 </h1>
   <div class="markdown level0 summary"><p>Main entry class for dxFeed API.
-This class is a wrapper for <span class="xref">DxFeed.Graal.Net.Native.Feed.FeedNative</span>.
+This class is a wrapper for <a class="xref" href="DxFeed.Graal.Net.Native.Feed.FeedNative.html">FeedNative</a>.
 <br>
-<a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/api/DXFeed.html"><strong>Read it first Javadoc.</strong></a></p>
+<a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/api/DXFeed.html"><b>Read it first Javadoc.</b></a></p>
 </div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
@@ -420,22 +424,22 @@ This class is a wrapper for <span class="xref">DxFeed.Graal.Net.Native.Feed.Feed
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
     </div>
     <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode#system-object-gethashcode">object.GetHashCode()</a>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
     </div>
     <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype#system-object-gettype">object.GetType()</a>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
     </div>
     <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone#system-object-memberwiseclone">object.MemberwiseClone()</a>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
     </div>
     <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals#system-object-referenceequals(system-object-system-object)">object.ReferenceEquals(object, object)</a>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
     </div>
     <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring#system-object-tostring">object.ToString()</a>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
     </div>
   </div>
-  <h6><strong>Namespace</strong>: <span class="xref">DxFeed</span>.<span class="xref">Graal</span>.<a class="xref" href="DxFeed.Graal.Net.html">Net</a>.<a class="xref" href="DxFeed.Graal.Net.Api.html">Api</a></h6>
+  <h6><strong>Namespace</strong>: <a class="xref" href="DxFeed.html">DxFeed</a>.<a class="xref" href="DxFeed.Graal.html">Graal</a>.<a class="xref" href="DxFeed.Graal.Net.html">Net</a>.<a class="xref" href="DxFeed.Graal.Net.Api.html">Api</a></h6>
   <h6><strong>Assembly</strong>: DxFeed.Graal.Net.dll</h6>
   <h5 id="DxFeed_Graal_Net_Api_DXFeed_syntax">Syntax</h5>
   <div class="codewrapper">
@@ -445,10 +449,10 @@ This class is a wrapper for <span class="xref">DxFeed.Graal.Net.Native.Feed.Feed
 </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.2.1/apiSpec/new?filename=DxFeed_Graal_Net_Api_DXFeed_AttachSubscription_DxFeed_Graal_Net_Api_DXFeedSubscription_.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Api.DXFeed.AttachSubscription(DxFeed.Graal.Net.Api.DXFeedSubscription)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.3.0/apiSpec/new?filename=DxFeed_Graal_Net_Api_DXFeed_AttachSubscription_DxFeed_Graal_Net_Api_DXFeedSubscription_.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Api.DXFeed.AttachSubscription(DxFeed.Graal.Net.Api.DXFeedSubscription)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.2.1/src/DxFeed.Graal.Net/Api/DXFeed.cs/#L90">View Source</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.3.0/src/DxFeed.Graal.Net/Api/DXFeed.cs/#L90">View Source</a>
   </span>
   <a id="DxFeed_Graal_Net_Api_DXFeed_AttachSubscription_" data-uid="DxFeed.Graal.Net.Api.DXFeed.AttachSubscription*"></a>
   <h4 id="DxFeed_Graal_Net_Api_DXFeed_AttachSubscription_DxFeed_Graal_Net_Api_DXFeedSubscription_" data-uid="DxFeed.Graal.Net.Api.DXFeed.AttachSubscription(DxFeed.Graal.Net.Api.DXFeedSubscription)">AttachSubscription(DXFeedSubscription)</h4>
@@ -462,7 +466,7 @@ corresponding subscription is already attached to this feed.
     <pre><code class="lang-csharp hljs">public void AttachSubscription(DXFeedSubscription subscription)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -481,14 +485,14 @@ corresponding subscription is already attached to this feed.
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.2.1/apiSpec/new?filename=DxFeed_Graal_Net_Api_DXFeed_CreateSubscription_System_Collections_Generic_IEnumerable_System_Type__.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Api.DXFeed.CreateSubscription(System.Collections.Generic.IEnumerable%7BSystem.Type%7D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.3.0/apiSpec/new?filename=DxFeed_Graal_Net_Api_DXFeed_CreateSubscription_System_Collections_Generic_IEnumerable_System_Type__.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Api.DXFeed.CreateSubscription(System.Collections.Generic.IEnumerable%7BSystem.Type%7D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.2.1/src/DxFeed.Graal.Net/Api/DXFeed.cs/#L81">View Source</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.3.0/src/DxFeed.Graal.Net/Api/DXFeed.cs/#L81">View Source</a>
   </span>
   <a id="DxFeed_Graal_Net_Api_DXFeed_CreateSubscription_" data-uid="DxFeed.Graal.Net.Api.DXFeed.CreateSubscription*"></a>
   <h4 id="DxFeed_Graal_Net_Api_DXFeed_CreateSubscription_System_Collections_Generic_IEnumerable_System_Type__" data-uid="DxFeed.Graal.Net.Api.DXFeed.CreateSubscription(System.Collections.Generic.IEnumerable{System.Type})">CreateSubscription(IEnumerable&lt;Type&gt;)</h4>
-  <div class="markdown level1 summary"><p>Creates new subscription for a list of event types that is <em>attached</em> to this feed.
+  <div class="markdown level1 summary"><p>Creates new subscription for a list of event types that is <i>attached</i> to this feed.
 <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/api/DXFeed.html#createSubscription-java.lang.Class-">Javadoc.</a></p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -497,7 +501,7 @@ corresponding subscription is already attached to this feed.
     <pre><code class="lang-csharp hljs">public DXFeedSubscription CreateSubscription(IEnumerable&lt;Type&gt; eventTypes)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -516,7 +520,7 @@ Events types must be implement <a class="xref" href="DxFeed.Graal.Net.Events.IEv
     </tbody>
   </table>
   <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -532,7 +536,7 @@ Events types must be implement <a class="xref" href="DxFeed.Graal.Net.Events.IEv
     </tbody>
   </table>
   <h5 class="exceptions">Exceptions</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -549,14 +553,14 @@ Events types must be implement <a class="xref" href="DxFeed.Graal.Net.Events.IEv
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.2.1/apiSpec/new?filename=DxFeed_Graal_Net_Api_DXFeed_CreateSubscription_System_Type___.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Api.DXFeed.CreateSubscription(System.Type%5B%5D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.3.0/apiSpec/new?filename=DxFeed_Graal_Net_Api_DXFeed_CreateSubscription_System_Type___.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Api.DXFeed.CreateSubscription(System.Type%5B%5D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.2.1/src/DxFeed.Graal.Net/Api/DXFeed.cs/#L61">View Source</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.3.0/src/DxFeed.Graal.Net/Api/DXFeed.cs/#L61">View Source</a>
   </span>
   <a id="DxFeed_Graal_Net_Api_DXFeed_CreateSubscription_" data-uid="DxFeed.Graal.Net.Api.DXFeed.CreateSubscription*"></a>
   <h4 id="DxFeed_Graal_Net_Api_DXFeed_CreateSubscription_System_Type___" data-uid="DxFeed.Graal.Net.Api.DXFeed.CreateSubscription(System.Type[])">CreateSubscription(params Type[])</h4>
-  <div class="markdown level1 summary"><p>Creates new subscription for a list of event types that is <em>attached</em> to this feed.
+  <div class="markdown level1 summary"><p>Creates new subscription for a list of event types that is <i>attached</i> to this feed.
 <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/api/DXFeed.html#createSubscription-java.lang.Class-">Javadoc.</a></p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -565,7 +569,7 @@ Events types must be implement <a class="xref" href="DxFeed.Graal.Net.Events.IEv
     <pre><code class="lang-csharp hljs">public DXFeedSubscription CreateSubscription(params Type[] eventTypes)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -584,7 +588,7 @@ Events types must be implement <a class="xref" href="DxFeed.Graal.Net.Events.IEv
     </tbody>
   </table>
   <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -600,7 +604,7 @@ Events types must be implement <a class="xref" href="DxFeed.Graal.Net.Events.IEv
     </tbody>
   </table>
   <h5 class="exceptions">Exceptions</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -617,10 +621,10 @@ Events types must be implement <a class="xref" href="DxFeed.Graal.Net.Events.IEv
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.2.1/apiSpec/new?filename=DxFeed_Graal_Net_Api_DXFeed_DetachSubscription_DxFeed_Graal_Net_Api_DXFeedSubscription_.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Api.DXFeed.DetachSubscription(DxFeed.Graal.Net.Api.DXFeedSubscription)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.3.0/apiSpec/new?filename=DxFeed_Graal_Net_Api_DXFeed_DetachSubscription_DxFeed_Graal_Net_Api_DXFeedSubscription_.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Api.DXFeed.DetachSubscription(DxFeed.Graal.Net.Api.DXFeedSubscription)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.2.1/src/DxFeed.Graal.Net/Api/DXFeed.cs/#L103">View Source</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.3.0/src/DxFeed.Graal.Net/Api/DXFeed.cs/#L103">View Source</a>
   </span>
   <a id="DxFeed_Graal_Net_Api_DXFeed_DetachSubscription_" data-uid="DxFeed.Graal.Net.Api.DXFeed.DetachSubscription*"></a>
   <h4 id="DxFeed_Graal_Net_Api_DXFeed_DetachSubscription_DxFeed_Graal_Net_Api_DXFeedSubscription_" data-uid="DxFeed.Graal.Net.Api.DXFeed.DetachSubscription(DxFeed.Graal.Net.Api.DXFeedSubscription)">DetachSubscription(DXFeedSubscription)</h4>
@@ -635,7 +639,7 @@ This method does nothing if the corresponding subscription is not attached to th
     <pre><code class="lang-csharp hljs">public void DetachSubscription(DXFeedSubscription subscription)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -654,10 +658,10 @@ This method does nothing if the corresponding subscription is not attached to th
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.2.1/apiSpec/new?filename=DxFeed_Graal_Net_Api_DXFeed_DetachSubscriptionAndClear_DxFeed_Graal_Net_Api_DXFeedSubscription_.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Api.DXFeed.DetachSubscriptionAndClear(DxFeed.Graal.Net.Api.DXFeedSubscription)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.3.0/apiSpec/new?filename=DxFeed_Graal_Net_Api_DXFeed_DetachSubscriptionAndClear_DxFeed_Graal_Net_Api_DXFeedSubscription_.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Api.DXFeed.DetachSubscriptionAndClear(DxFeed.Graal.Net.Api.DXFeedSubscription)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.2.1/src/DxFeed.Graal.Net/Api/DXFeed.cs/#L116">View Source</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.3.0/src/DxFeed.Graal.Net/Api/DXFeed.cs/#L116">View Source</a>
   </span>
   <a id="DxFeed_Graal_Net_Api_DXFeed_DetachSubscriptionAndClear_" data-uid="DxFeed.Graal.Net.Api.DXFeed.DetachSubscriptionAndClear*"></a>
   <h4 id="DxFeed_Graal_Net_Api_DXFeed_DetachSubscriptionAndClear_DxFeed_Graal_Net_Api_DXFeedSubscription_" data-uid="DxFeed.Graal.Net.Api.DXFeed.DetachSubscriptionAndClear(DxFeed.Graal.Net.Api.DXFeedSubscription)">DetachSubscriptionAndClear(DXFeedSubscription)</h4>
@@ -672,7 +676,7 @@ This method does nothing if the corresponding subscription is not attached to th
     <pre><code class="lang-csharp hljs">public void DetachSubscriptionAndClear(DXFeedSubscription subscription)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -691,10 +695,10 @@ This method does nothing if the corresponding subscription is not attached to th
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.2.1/apiSpec/new?filename=DxFeed_Graal_Net_Api_DXFeed_GetInstance.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Api.DXFeed.GetInstance%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.3.0/apiSpec/new?filename=DxFeed_Graal_Net_Api_DXFeed_GetInstance.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Api.DXFeed.GetInstance%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.2.1/src/DxFeed.Graal.Net/Api/DXFeed.cs/#L46">View Source</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.3.0/src/DxFeed.Graal.Net/Api/DXFeed.cs/#L46">View Source</a>
   </span>
   <a id="DxFeed_Graal_Net_Api_DXFeed_GetInstance_" data-uid="DxFeed.Graal.Net.Api.DXFeed.GetInstance*"></a>
   <h4 id="DxFeed_Graal_Net_Api_DXFeed_GetInstance" data-uid="DxFeed.Graal.Net.Api.DXFeed.GetInstance">GetInstance()</h4>
@@ -708,7 +712,7 @@ Most applications use only a single data-source and should rely on this method t
     <pre><code class="lang-csharp hljs">public static DXFeed GetInstance()</code></pre>
   </div>
   <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -723,6 +727,7 @@ Most applications use only a single data-source and should rely on this method t
       </tr>
     </tbody>
   </table>
+
 </article>
           </div>
 
@@ -731,10 +736,10 @@ Most applications use only a single data-source and should rely on this method t
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.2.1/apiSpec/new?filename=DxFeed_Graal_Net_Api_DXFeed.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Api.DXFeed%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.3.0/apiSpec/new?filename=DxFeed_Graal_Net_Api_DXFeed.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Api.DXFeed%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.2.1/src/DxFeed.Graal.Net/Api/DXFeed.cs/#L23" class="contribution-link">View Source</a>
+                    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.3.0/src/DxFeed.Graal.Net/Api/DXFeed.cs/#L23" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>
@@ -761,7 +766,7 @@ Most applications use only a single data-source and should rely on this method t
       </footer>
     </div>
 
-    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.vendor.min.js"></script>
     <script type="text/javascript" src="../../styles/docfx.js"></script>
     <script type="text/javascript" src="../../styles/main.js"></script>
   </body>

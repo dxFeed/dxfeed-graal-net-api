@@ -109,13 +109,13 @@
                             <a href="DxFeed.Graal.Net.Api.DXEndpoint.Builder.html" title="DXEndpoint.Builder" class="">DXEndpoint.Builder</a>
                           </li>
                           <li class="">
-                            <a href="DxFeed.Graal.Net.Api.DXEndpoint.OnStateChangeListener.html" title="DXEndpoint.OnStateChangeListener" class="">DXEndpoint.OnStateChangeListener</a>
-                          </li>
-                          <li class="">
                             <a href="DxFeed.Graal.Net.Api.DXEndpoint.Role.html" title="DXEndpoint.Role" class="">DXEndpoint.Role</a>
                           </li>
                           <li class="">
                             <a href="DxFeed.Graal.Net.Api.DXEndpoint.State.html" title="DXEndpoint.State" class="">DXEndpoint.State</a>
+                          </li>
+                          <li class="">
+                            <a href="DxFeed.Graal.Net.Api.DXEndpoint.StateChangeListenerCallback.html" title="DXEndpoint.StateChangeListenerCallback" class="">DXEndpoint.StateChangeListenerCallback</a>
                           </li>
                           <li class="">
                             <a href="DxFeed.Graal.Net.Api.DXFeed.html" title="DXFeed" class="">DXFeed</a>
@@ -361,6 +361,9 @@
                             <a href="DxFeed.Graal.Net.Utils.CmdArgsUtil.html" title="CmdArgsUtil" class="">CmdArgsUtil</a>
                           </li>
                           <li class="">
+                            <a href="DxFeed.Graal.Net.Utils.ConcurrentSet-1.html" title="ConcurrentSet&lt;T&gt;" class="">ConcurrentSet&lt;T&gt;</a>
+                          </li>
+                          <li class="">
                             <a href="DxFeed.Graal.Net.Utils.DayUtil.html" title="DayUtil" class="">DayUtil</a>
                           </li>
                           <li class="">
@@ -398,6 +401,7 @@
             <article class="content wrap" id="_content" data-uid="DxFeed.Graal.Net.Events.IIndexedEvent">
 
 
+
   <h1 id="DxFeed_Graal_Net_Events_IIndexedEvent" data-uid="DxFeed.Graal.Net.Events.IIndexedEvent" class="text-break">Interface IIndexedEvent
 </h1>
   <div class="markdown level0 summary"><p>Represents an indexed collection of up-to-date information about some
@@ -421,7 +425,7 @@ For more details see <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/even
       <a class="xref" href="DxFeed.Graal.Net.Events.IEventType.html#DxFeed_Graal_Net_Events_IEventType_GetEventTypes">IEventType.GetEventTypes()</a>
     </div>
   </div>
-  <h6><strong>Namespace</strong>: <span class="xref">DxFeed</span>.<span class="xref">Graal</span>.<a class="xref" href="DxFeed.Graal.Net.html">Net</a>.<a class="xref" href="DxFeed.Graal.Net.Events.html">Events</a></h6>
+  <h6><strong>Namespace</strong>: <a class="xref" href="DxFeed.html">DxFeed</a>.<a class="xref" href="DxFeed.Graal.html">Graal</a>.<a class="xref" href="DxFeed.Graal.Net.html">Net</a>.<a class="xref" href="DxFeed.Graal.Net.Events.html">Events</a></h6>
   <h6><strong>Assembly</strong>: DxFeed.Graal.Net.dll</h6>
   <h5 id="DxFeed_Graal_Net_Events_IIndexedEvent_syntax">Syntax</h5>
   <div class="codewrapper">
@@ -431,10 +435,10 @@ For more details see <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/even
 </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.2.1/apiSpec/new?filename=DxFeed_Graal_Net_Events_IIndexedEvent_RemoveEvent.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.IIndexedEvent.RemoveEvent%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.3.0/apiSpec/new?filename=DxFeed_Graal_Net_Events_IIndexedEvent_RemoveEvent.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.IIndexedEvent.RemoveEvent%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.2.1/src/DxFeed.Graal.Net/Events/IIndexedEvent.cs/#L31">View Source</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.3.0/src/DxFeed.Graal.Net/Events/IIndexedEvent.cs/#L31">View Source</a>
   </span>
   <h4 id="DxFeed_Graal_Net_Events_IIndexedEvent_RemoveEvent" data-uid="DxFeed.Graal.Net.Events.IIndexedEvent.RemoveEvent">RemoveEvent</h4>
   <div class="markdown level1 summary"><p>Indicates that the event with the corresponding index has to be removed.</p>
@@ -445,7 +449,7 @@ For more details see <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/even
     <pre><code class="lang-csharp hljs">public const int RemoveEvent = 2</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -461,10 +465,43 @@ For more details see <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/even
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.2.1/apiSpec/new?filename=DxFeed_Graal_Net_Events_IIndexedEvent_SnapshotBegin.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.IIndexedEvent.SnapshotBegin%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.3.0/apiSpec/new?filename=DxFeed_Graal_Net_Events_IIndexedEvent_SnapShotMode.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.IIndexedEvent.SnapShotMode%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.2.1/src/DxFeed.Graal.Net/Events/IIndexedEvent.cs/#L36">View Source</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.3.0/src/DxFeed.Graal.Net/Events/IIndexedEvent.cs/#L64">View Source</a>
+  </span>
+  <h4 id="DxFeed_Graal_Net_Events_IIndexedEvent_SnapShotMode" data-uid="DxFeed.Graal.Net.Events.IIndexedEvent.SnapShotMode">SnapShotMode</h4>
+  <div class="markdown level1 summary"><p>Is used to instruct dxFeed to use snapshot mode.
+It is intended to be used only for publishing to activate (if not yet activated) snapshot mode.
+The difference from <a class="xref" href="DxFeed.Graal.Net.Events.IIndexedEvent.html#DxFeed_Graal_Net_Events_IIndexedEvent_SnapshotBegin">SnapshotBegin</a> flag is that <a class="xref" href="DxFeed.Graal.Net.Events.IIndexedEvent.html#DxFeed_Graal_Net_Events_IIndexedEvent_SnapShotMode">SnapShotMode</a>
+only switches on snapshot mode without starting snapshot synchronization protocol.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const int SnapShotMode = 64</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.3.0/apiSpec/new?filename=DxFeed_Graal_Net_Events_IIndexedEvent_SnapshotBegin.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.IIndexedEvent.SnapshotBegin%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.3.0/src/DxFeed.Graal.Net/Events/IIndexedEvent.cs/#L36">View Source</a>
   </span>
   <h4 id="DxFeed_Graal_Net_Events_IIndexedEvent_SnapshotBegin" data-uid="DxFeed.Graal.Net.Events.IIndexedEvent.SnapshotBegin">SnapshotBegin</h4>
   <div class="markdown level1 summary"><p>Indicates when the loading of a snapshot starts.</p>
@@ -475,7 +512,7 @@ For more details see <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/even
     <pre><code class="lang-csharp hljs">public const int SnapshotBegin = 4</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -491,10 +528,10 @@ For more details see <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/even
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.2.1/apiSpec/new?filename=DxFeed_Graal_Net_Events_IIndexedEvent_SnapshotEnd.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.IIndexedEvent.SnapshotEnd%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.3.0/apiSpec/new?filename=DxFeed_Graal_Net_Events_IIndexedEvent_SnapshotEnd.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.IIndexedEvent.SnapshotEnd%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.2.1/src/DxFeed.Graal.Net/Events/IIndexedEvent.cs/#L46">View Source</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.3.0/src/DxFeed.Graal.Net/Events/IIndexedEvent.cs/#L46">View Source</a>
   </span>
   <h4 id="DxFeed_Graal_Net_Events_IIndexedEvent_SnapshotEnd" data-uid="DxFeed.Graal.Net.Events.IIndexedEvent.SnapshotEnd">SnapshotEnd</h4>
   <div class="markdown level1 summary"><p><a class="xref" href="DxFeed.Graal.Net.Events.IIndexedEvent.html#DxFeed_Graal_Net_Events_IIndexedEvent_SnapshotEnd">SnapshotEnd</a> or <a class="xref" href="DxFeed.Graal.Net.Events.IIndexedEvent.html#DxFeed_Graal_Net_Events_IIndexedEvent_SnapshotSnip">SnapshotSnip</a> indicates the end of a snapshot.
@@ -510,7 +547,7 @@ and while there still might be more data available, it will not be provided.</p>
     <pre><code class="lang-csharp hljs">public const int SnapshotEnd = 8</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -526,43 +563,10 @@ and while there still might be more data available, it will not be provided.</p>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.2.1/apiSpec/new?filename=DxFeed_Graal_Net_Events_IIndexedEvent_SnapShotMode.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.IIndexedEvent.SnapShotMode%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.3.0/apiSpec/new?filename=DxFeed_Graal_Net_Events_IIndexedEvent_SnapshotSnip.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.IIndexedEvent.SnapshotSnip%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.2.1/src/DxFeed.Graal.Net/Events/IIndexedEvent.cs/#L64">View Source</a>
-  </span>
-  <h4 id="DxFeed_Graal_Net_Events_IIndexedEvent_SnapShotMode" data-uid="DxFeed.Graal.Net.Events.IIndexedEvent.SnapShotMode">SnapShotMode</h4>
-  <div class="markdown level1 summary"><p>Is used to instruct dxFeed to use snapshot mode.
-It is intended to be used only for publishing to activate (if not yet activated) snapshot mode.
-The difference from <a class="xref" href="DxFeed.Graal.Net.Events.IIndexedEvent.html#DxFeed_Graal_Net_Events_IIndexedEvent_SnapshotBegin">SnapshotBegin</a> flag is that <a class="xref" href="DxFeed.Graal.Net.Events.IIndexedEvent.html#DxFeed_Graal_Net_Events_IIndexedEvent_SnapShotMode">SnapShotMode</a>
-only switches on snapshot mode without starting snapshot synchronization protocol.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const int SnapShotMode = 64</code></pre>
-  </div>
-  <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.2.1/apiSpec/new?filename=DxFeed_Graal_Net_Events_IIndexedEvent_SnapshotSnip.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.IIndexedEvent.SnapshotSnip%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.2.1/src/DxFeed.Graal.Net/Events/IIndexedEvent.cs/#L56">View Source</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.3.0/src/DxFeed.Graal.Net/Events/IIndexedEvent.cs/#L56">View Source</a>
   </span>
   <h4 id="DxFeed_Graal_Net_Events_IIndexedEvent_SnapshotSnip" data-uid="DxFeed.Graal.Net.Events.IIndexedEvent.SnapshotSnip">SnapshotSnip</h4>
   <div class="markdown level1 summary"><p><a class="xref" href="DxFeed.Graal.Net.Events.IIndexedEvent.html#DxFeed_Graal_Net_Events_IIndexedEvent_SnapshotEnd">SnapshotEnd</a> or <a class="xref" href="DxFeed.Graal.Net.Events.IIndexedEvent.html#DxFeed_Graal_Net_Events_IIndexedEvent_SnapshotSnip">SnapshotSnip</a> indicates the end of a snapshot.
@@ -578,7 +582,7 @@ and while there still might be more data available, it will not be provided.</p>
     <pre><code class="lang-csharp hljs">public const int SnapshotSnip = 16</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -594,10 +598,10 @@ and while there still might be more data available, it will not be provided.</p>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.2.1/apiSpec/new?filename=DxFeed_Graal_Net_Events_IIndexedEvent_TxPending.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.IIndexedEvent.TxPending%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.3.0/apiSpec/new?filename=DxFeed_Graal_Net_Events_IIndexedEvent_TxPending.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.IIndexedEvent.TxPending%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.2.1/src/DxFeed.Graal.Net/Events/IIndexedEvent.cs/#L26">View Source</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.3.0/src/DxFeed.Graal.Net/Events/IIndexedEvent.cs/#L26">View Source</a>
   </span>
   <h4 id="DxFeed_Graal_Net_Events_IIndexedEvent_TxPending" data-uid="DxFeed.Graal.Net.Events.IIndexedEvent.TxPending">TxPending</h4>
   <div class="markdown level1 summary"><p>Indicates a pending transactional update. When <a class="xref" href="DxFeed.Graal.Net.Events.IIndexedEvent.html#DxFeed_Graal_Net_Events_IIndexedEvent_TxPending">TxPending</a> is 1,
@@ -609,7 +613,7 @@ it means that an ongoing transaction update, that spans multiple events, is in p
     <pre><code class="lang-csharp hljs">public const int TxPending = 1</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -627,10 +631,10 @@ it means that an ongoing transaction update, that spans multiple events, is in p
 </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.2.1/apiSpec/new?filename=DxFeed_Graal_Net_Events_IIndexedEvent_EventFlags.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.IIndexedEvent.EventFlags%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.3.0/apiSpec/new?filename=DxFeed_Graal_Net_Events_IIndexedEvent_EventFlags.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.IIndexedEvent.EventFlags%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.2.1/src/DxFeed.Graal.Net/Events/IIndexedEvent.cs/#L74">View Source</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.3.0/src/DxFeed.Graal.Net/Events/IIndexedEvent.cs/#L74">View Source</a>
   </span>
   <a id="DxFeed_Graal_Net_Events_IIndexedEvent_EventFlags_" data-uid="DxFeed.Graal.Net.Events.IIndexedEvent.EventFlags*"></a>
   <h4 id="DxFeed_Graal_Net_Events_IIndexedEvent_EventFlags" data-uid="DxFeed.Graal.Net.Events.IIndexedEvent.EventFlags">EventFlags</h4>
@@ -642,7 +646,7 @@ it means that an ongoing transaction update, that spans multiple events, is in p
     <pre><code class="lang-csharp hljs">int EventFlags { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -658,10 +662,10 @@ it means that an ongoing transaction update, that spans multiple events, is in p
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.2.1/apiSpec/new?filename=DxFeed_Graal_Net_Events_IIndexedEvent_EventSource.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.IIndexedEvent.EventSource%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.3.0/apiSpec/new?filename=DxFeed_Graal_Net_Events_IIndexedEvent_EventSource.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.IIndexedEvent.EventSource%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.2.1/src/DxFeed.Graal.Net/Events/IIndexedEvent.cs/#L69">View Source</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.3.0/src/DxFeed.Graal.Net/Events/IIndexedEvent.cs/#L69">View Source</a>
   </span>
   <a id="DxFeed_Graal_Net_Events_IIndexedEvent_EventSource_" data-uid="DxFeed.Graal.Net.Events.IIndexedEvent.EventSource*"></a>
   <h4 id="DxFeed_Graal_Net_Events_IIndexedEvent_EventSource" data-uid="DxFeed.Graal.Net.Events.IIndexedEvent.EventSource">EventSource</h4>
@@ -673,7 +677,7 @@ it means that an ongoing transaction update, that spans multiple events, is in p
     <pre><code class="lang-csharp hljs">IndexedEventSource EventSource { get; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -689,10 +693,10 @@ it means that an ongoing transaction update, that spans multiple events, is in p
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.2.1/apiSpec/new?filename=DxFeed_Graal_Net_Events_IIndexedEvent_Index.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.IIndexedEvent.Index%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.3.0/apiSpec/new?filename=DxFeed_Graal_Net_Events_IIndexedEvent_Index.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.IIndexedEvent.Index%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.2.1/src/DxFeed.Graal.Net/Events/IIndexedEvent.cs/#L79">View Source</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.3.0/src/DxFeed.Graal.Net/Events/IIndexedEvent.cs/#L79">View Source</a>
   </span>
   <a id="DxFeed_Graal_Net_Events_IIndexedEvent_Index_" data-uid="DxFeed.Graal.Net.Events.IIndexedEvent.Index*"></a>
   <h4 id="DxFeed_Graal_Net_Events_IIndexedEvent_Index" data-uid="DxFeed.Graal.Net.Events.IIndexedEvent.Index">Index</h4>
@@ -704,7 +708,7 @@ it means that an ongoing transaction update, that spans multiple events, is in p
     <pre><code class="lang-csharp hljs">long Index { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -718,6 +722,7 @@ it means that an ongoing transaction update, that spans multiple events, is in p
       </tr>
     </tbody>
   </table>
+
 </article>
           </div>
 
@@ -726,10 +731,10 @@ it means that an ongoing transaction update, that spans multiple events, is in p
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.2.1/apiSpec/new?filename=DxFeed_Graal_Net_Events_IIndexedEvent.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.IIndexedEvent%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.3.0/apiSpec/new?filename=DxFeed_Graal_Net_Events_IIndexedEvent.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.IIndexedEvent%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.2.1/src/DxFeed.Graal.Net/Events/IIndexedEvent.cs/#L20" class="contribution-link">View Source</a>
+                    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.3.0/src/DxFeed.Graal.Net/Events/IIndexedEvent.cs/#L20" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>
@@ -756,7 +761,7 @@ it means that an ongoing transaction update, that spans multiple events, is in p
       </footer>
     </div>
 
-    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.vendor.min.js"></script>
     <script type="text/javascript" src="../../styles/docfx.js"></script>
     <script type="text/javascript" src="../../styles/main.js"></script>
   </body>

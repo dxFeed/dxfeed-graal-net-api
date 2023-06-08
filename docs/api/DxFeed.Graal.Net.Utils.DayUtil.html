@@ -109,13 +109,13 @@
                             <a href="DxFeed.Graal.Net.Api.DXEndpoint.Builder.html" title="DXEndpoint.Builder" class="">DXEndpoint.Builder</a>
                           </li>
                           <li class="">
-                            <a href="DxFeed.Graal.Net.Api.DXEndpoint.OnStateChangeListener.html" title="DXEndpoint.OnStateChangeListener" class="">DXEndpoint.OnStateChangeListener</a>
-                          </li>
-                          <li class="">
                             <a href="DxFeed.Graal.Net.Api.DXEndpoint.Role.html" title="DXEndpoint.Role" class="">DXEndpoint.Role</a>
                           </li>
                           <li class="">
                             <a href="DxFeed.Graal.Net.Api.DXEndpoint.State.html" title="DXEndpoint.State" class="">DXEndpoint.State</a>
+                          </li>
+                          <li class="">
+                            <a href="DxFeed.Graal.Net.Api.DXEndpoint.StateChangeListenerCallback.html" title="DXEndpoint.StateChangeListenerCallback" class="">DXEndpoint.StateChangeListenerCallback</a>
                           </li>
                           <li class="">
                             <a href="DxFeed.Graal.Net.Api.DXFeed.html" title="DXFeed" class="">DXFeed</a>
@@ -360,6 +360,9 @@
                           <li class="">
                             <a href="DxFeed.Graal.Net.Utils.CmdArgsUtil.html" title="CmdArgsUtil" class="">CmdArgsUtil</a>
                           </li>
+                          <li class="">
+                            <a href="DxFeed.Graal.Net.Utils.ConcurrentSet-1.html" title="ConcurrentSet&lt;T&gt;" class="">ConcurrentSet&lt;T&gt;</a>
+                          </li>
                           <li class="active">
                             <a href="DxFeed.Graal.Net.Utils.DayUtil.html" title="DayUtil" class="active">DayUtil</a>
                           </li>
@@ -398,9 +401,10 @@
             <article class="content wrap" id="_content" data-uid="DxFeed.Graal.Net.Utils.DayUtil">
 
 
+
   <h1 id="DxFeed_Graal_Net_Utils_DayUtil" data-uid="DxFeed.Graal.Net.Utils.DayUtil" class="text-break">Class DayUtil
 </h1>
-  <div class="markdown level0 summary"><p>A collection of static utility methods for manipulation of <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">Int32</a> day id,
+  <div class="markdown level0 summary"><p>A collection of static utility methods for manipulation of <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a> day id,
 that is the number of days since Unix epoch of January 1, 1970.
 <br>
 Porting Java class <code>com.devexperts.util.DayUtil</code>.</p>
@@ -420,22 +424,22 @@ Porting Java class <code>com.devexperts.util.DayUtil</code>.</p>
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
     </div>
     <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode#system-object-gethashcode">object.GetHashCode()</a>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
     </div>
     <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype#system-object-gettype">object.GetType()</a>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
     </div>
     <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone#system-object-memberwiseclone">object.MemberwiseClone()</a>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
     </div>
     <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals#system-object-referenceequals(system-object-system-object)">object.ReferenceEquals(object, object)</a>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
     </div>
     <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring#system-object-tostring">object.ToString()</a>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
     </div>
   </div>
-  <h6><strong>Namespace</strong>: <span class="xref">DxFeed</span>.<span class="xref">Graal</span>.<a class="xref" href="DxFeed.Graal.Net.html">Net</a>.<a class="xref" href="DxFeed.Graal.Net.Utils.html">Utils</a></h6>
+  <h6><strong>Namespace</strong>: <a class="xref" href="DxFeed.html">DxFeed</a>.<a class="xref" href="DxFeed.Graal.html">Graal</a>.<a class="xref" href="DxFeed.Graal.Net.html">Net</a>.<a class="xref" href="DxFeed.Graal.Net.Utils.html">Utils</a></h6>
   <h6><strong>Assembly</strong>: DxFeed.Graal.Net.dll</h6>
   <h5 id="DxFeed_Graal_Net_Utils_DayUtil_syntax">Syntax</h5>
   <div class="codewrapper">
@@ -445,10 +449,73 @@ Porting Java class <code>com.devexperts.util.DayUtil</code>.</p>
 </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.2.1/apiSpec/new?filename=DxFeed_Graal_Net_Utils_DayUtil_GetDayIdByYearMonthDay_System_Int32_System_Int32_System_Int32_.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Utils.DayUtil.GetDayIdByYearMonthDay(System.Int32%2CSystem.Int32%2CSystem.Int32)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.3.0/apiSpec/new?filename=DxFeed_Graal_Net_Utils_DayUtil_GetDayIdByYearMonthDay_System_Int32_.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Utils.DayUtil.GetDayIdByYearMonthDay(System.Int32)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.2.1/src/DxFeed.Graal.Net/Utils/DayUtil.cs/#L39">View Source</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.3.0/src/DxFeed.Graal.Net/Utils/DayUtil.cs/#L76">View Source</a>
+  </span>
+  <a id="DxFeed_Graal_Net_Utils_DayUtil_GetDayIdByYearMonthDay_" data-uid="DxFeed.Graal.Net.Utils.DayUtil.GetDayIdByYearMonthDay*"></a>
+  <h4 id="DxFeed_Graal_Net_Utils_DayUtil_GetDayIdByYearMonthDay_System_Int32_" data-uid="DxFeed.Graal.Net.Utils.DayUtil.GetDayIdByYearMonthDay(System.Int32)">GetDayIdByYearMonthDay(int)</h4>
+  <div class="markdown level1 summary"><p>Returns day identifier for specified <code>yyyymmdd</code>  integer in Gregorian calendar.
+The day identifier is defined as the number of days since Unix epoch of January 1, 1970.
+The <code>yyyymmdd</code>  integer is equal to <code>yearSign * (abs(year) * 10000 + month * 100 + day)</code>,
+where year, month, and day are in Gregorian calendar,
+month is between 1 and 12 inclusive, and day is counted from 1.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static int GetDayIdByYearMonthDay(int yyyymmdd)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">yyyymmdd</span></td>
+        <td><p>The <code>yyyymmdd</code> integer in Gregorian calendar.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><p>The day id.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="DxFeed_Graal_Net_Utils_DayUtil_GetDayIdByYearMonthDay_System_Int32__examples">Examples</h5>
+  <pre><code class="lang-csharp">DayUtil.GetDayIdByYearMonthDay(19691231) == -1
+DayUtil.GetDayIdByYearMonthDay(19700101) ==  0
+DayUtil.GetDayIdByYearMonthDay(19700102) ==  1</code></pre>
+
+  <h5 id="DxFeed_Graal_Net_Utils_DayUtil_GetDayIdByYearMonthDay_System_Int32__seealso">See Also</h5>
+  <div class="seealso">
+      <div><a class="xref" href="DxFeed.Graal.Net.Utils.DayUtil.html#DxFeed_Graal_Net_Utils_DayUtil_GetDayIdByYearMonthDay_System_Int32_System_Int32_System_Int32_">GetDayIdByYearMonthDay(int, int, int)</a></div>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.3.0/apiSpec/new?filename=DxFeed_Graal_Net_Utils_DayUtil_GetDayIdByYearMonthDay_System_Int32_System_Int32_System_Int32_.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Utils.DayUtil.GetDayIdByYearMonthDay(System.Int32%2CSystem.Int32%2CSystem.Int32)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.3.0/src/DxFeed.Graal.Net/Utils/DayUtil.cs/#L39">View Source</a>
   </span>
   <a id="DxFeed_Graal_Net_Utils_DayUtil_GetDayIdByYearMonthDay_" data-uid="DxFeed.Graal.Net.Utils.DayUtil.GetDayIdByYearMonthDay*"></a>
   <h4 id="DxFeed_Graal_Net_Utils_DayUtil_GetDayIdByYearMonthDay_System_Int32_System_Int32_System_Int32_" data-uid="DxFeed.Graal.Net.Utils.DayUtil.GetDayIdByYearMonthDay(System.Int32,System.Int32,System.Int32)">GetDayIdByYearMonthDay(int, int, int)</h4>
@@ -457,7 +524,7 @@ The day identifier is defined as the number of days since Unix epoch of January 
 Month must be between 1 and 12 inclusive.
 Year and day might take arbitrary values assuming proleptic Gregorian calendar.
 The value returned by this method for an arbitrary day value always satisfies the following equality:</p>
-<pre><code>GetDayIdByYearMonthDay(year, month, day) == GetDayIdByYearMonthDay(year, month, 0) + day</code></pre>
+<pre><code class="lang-csharp">GetDayIdByYearMonthDay(year, month, day) == GetDayIdByYearMonthDay(year, month, 0) + day</code></pre>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
@@ -465,7 +532,7 @@ The value returned by this method for an arbitrary day value always satisfies th
     <pre><code class="lang-csharp hljs">public static int GetDayIdByYearMonthDay(int year, int month, int day)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -495,7 +562,7 @@ The value returned by this method for an arbitrary day value always satisfies th
     </tbody>
   </table>
   <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -511,7 +578,7 @@ The value returned by this method for an arbitrary day value always satisfies th
     </tbody>
   </table>
   <h5 class="exceptions">Exceptions</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -528,80 +595,17 @@ The value returned by this method for an arbitrary day value always satisfies th
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.2.1/apiSpec/new?filename=DxFeed_Graal_Net_Utils_DayUtil_GetDayIdByYearMonthDay_System_Int32_.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Utils.DayUtil.GetDayIdByYearMonthDay(System.Int32)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.3.0/apiSpec/new?filename=DxFeed_Graal_Net_Utils_DayUtil_GetYearMonthDayByDayId_System_Int32_.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Utils.DayUtil.GetYearMonthDayByDayId(System.Int32)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.2.1/src/DxFeed.Graal.Net/Utils/DayUtil.cs/#L76">View Source</a>
-  </span>
-  <a id="DxFeed_Graal_Net_Utils_DayUtil_GetDayIdByYearMonthDay_" data-uid="DxFeed.Graal.Net.Utils.DayUtil.GetDayIdByYearMonthDay*"></a>
-  <h4 id="DxFeed_Graal_Net_Utils_DayUtil_GetDayIdByYearMonthDay_System_Int32_" data-uid="DxFeed.Graal.Net.Utils.DayUtil.GetDayIdByYearMonthDay(System.Int32)">GetDayIdByYearMonthDay(int)</h4>
-  <div class="markdown level1 summary"><p>Returns day identifier for specified <code>yyyymmdd</code>  integer in Gregorian calendar.
-The day identifier is defined as the number of days since Unix epoch of January 1, 1970.
-The <code>yyyymmdd</code>  integer is equal to <code>yearSign * (abs(year) * 10000 + month * 100 + day)</code>,
-where year, month, and day are in Gregorian calendar,
-month is between 1 and 12 inclusive, and day is counted from 1.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static int GetDayIdByYearMonthDay(int yyyymmdd)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
-        <td><span class="parametername">yyyymmdd</span></td>
-        <td><p>The <code>yyyymmdd</code> integer in Gregorian calendar.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
-        <td><p>The day id.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 id="DxFeed_Graal_Net_Utils_DayUtil_GetDayIdByYearMonthDay_System_Int32__examples">Examples</h5>
-  <pre><code>DayUtil.GetDayIdByYearMonthDay(19691231) == -1
-DayUtil.GetDayIdByYearMonthDay(19700101) ==  0
-DayUtil.GetDayIdByYearMonthDay(19700102) ==  1</code></pre>
-
-  <h5 id="DxFeed_Graal_Net_Utils_DayUtil_GetDayIdByYearMonthDay_System_Int32__seealso">See Also</h5>
-  <div class="seealso">
-      <div><a class="xref" href="DxFeed.Graal.Net.Utils.DayUtil.html#DxFeed_Graal_Net_Utils_DayUtil_GetDayIdByYearMonthDay_System_Int32_System_Int32_System_Int32_">GetDayIdByYearMonthDay(int, int, int)</a></div>
-  </div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.2.1/apiSpec/new?filename=DxFeed_Graal_Net_Utils_DayUtil_GetYearMonthDayByDayId_System_Int32_.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Utils.DayUtil.GetYearMonthDayByDayId(System.Int32)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.2.1/src/DxFeed.Graal.Net/Utils/DayUtil.cs/#L98">View Source</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.3.0/src/DxFeed.Graal.Net/Utils/DayUtil.cs/#L98">View Source</a>
   </span>
   <a id="DxFeed_Graal_Net_Utils_DayUtil_GetYearMonthDayByDayId_" data-uid="DxFeed.Graal.Net.Utils.DayUtil.GetYearMonthDayByDayId*"></a>
   <h4 id="DxFeed_Graal_Net_Utils_DayUtil_GetYearMonthDayByDayId_System_Int32_" data-uid="DxFeed.Graal.Net.Utils.DayUtil.GetYearMonthDayByDayId(System.Int32)">GetYearMonthDayByDayId(int)</h4>
   <div class="markdown level1 summary"><p>Gets <code>yyyymmdd</code> integer in Gregorian calendar for a specified day identifier.
 The day identifier is defined as the number of days since Unix epoch of January 1, 1970.
 The result is equal to:</p>
-<pre><code>yearSign * (abs(year) * 10000 + month * 100 + day)</code></pre>
+<pre><code class="lang-csharp">yearSign * (abs(year) * 10000 + month * 100 + day)</code></pre>
 <p>where year, month, and day are in Gregorian calendar,
 month is between 1 and 12 inclusive, and day is counted from 1.</p>
 </div>
@@ -611,7 +615,7 @@ month is between 1 and 12 inclusive, and day is counted from 1.</p>
     <pre><code class="lang-csharp hljs">public static int GetYearMonthDayByDayId(int dayId)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -629,7 +633,7 @@ month is between 1 and 12 inclusive, and day is counted from 1.</p>
     </tbody>
   </table>
   <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -645,9 +649,10 @@ month is between 1 and 12 inclusive, and day is counted from 1.</p>
     </tbody>
   </table>
   <h5 id="DxFeed_Graal_Net_Utils_DayUtil_GetYearMonthDayByDayId_System_Int32__examples">Examples</h5>
-  <pre><code>DayUtil.GetYearMonthDayByDayId(-1) == 19691231
+  <pre><code class="lang-csharp">DayUtil.GetYearMonthDayByDayId(-1) == 19691231
 DayUtil.GetYearMonthDayByDayId(0)  == 19700101
 DayUtil.GetYearMonthDayByDayId(1)  == 19700102</code></pre>
+
 
 </article>
           </div>
@@ -657,10 +662,10 @@ DayUtil.GetYearMonthDayByDayId(1)  == 19700102</code></pre>
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.2.1/apiSpec/new?filename=DxFeed_Graal_Net_Utils_DayUtil.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Utils.DayUtil%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.3.0/apiSpec/new?filename=DxFeed_Graal_Net_Utils_DayUtil.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Utils.DayUtil%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.2.1/src/DxFeed.Graal.Net/Utils/DayUtil.cs/#L20" class="contribution-link">View Source</a>
+                    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.3.0/src/DxFeed.Graal.Net/Utils/DayUtil.cs/#L20" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>
@@ -687,7 +692,7 @@ DayUtil.GetYearMonthDayByDayId(1)  == 19700102</code></pre>
       </footer>
     </div>
 
-    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.vendor.min.js"></script>
     <script type="text/javascript" src="../../styles/docfx.js"></script>
     <script type="text/javascript" src="../../styles/main.js"></script>
   </body>

@@ -109,13 +109,13 @@
                             <a href="DxFeed.Graal.Net.Api.DXEndpoint.Builder.html" title="DXEndpoint.Builder" class="">DXEndpoint.Builder</a>
                           </li>
                           <li class="">
-                            <a href="DxFeed.Graal.Net.Api.DXEndpoint.OnStateChangeListener.html" title="DXEndpoint.OnStateChangeListener" class="">DXEndpoint.OnStateChangeListener</a>
-                          </li>
-                          <li class="">
                             <a href="DxFeed.Graal.Net.Api.DXEndpoint.Role.html" title="DXEndpoint.Role" class="">DXEndpoint.Role</a>
                           </li>
                           <li class="">
                             <a href="DxFeed.Graal.Net.Api.DXEndpoint.State.html" title="DXEndpoint.State" class="">DXEndpoint.State</a>
+                          </li>
+                          <li class="">
+                            <a href="DxFeed.Graal.Net.Api.DXEndpoint.StateChangeListenerCallback.html" title="DXEndpoint.StateChangeListenerCallback" class="">DXEndpoint.StateChangeListenerCallback</a>
                           </li>
                           <li class="">
                             <a href="DxFeed.Graal.Net.Api.DXFeed.html" title="DXFeed" class="">DXFeed</a>
@@ -361,6 +361,9 @@
                             <a href="DxFeed.Graal.Net.Utils.CmdArgsUtil.html" title="CmdArgsUtil" class="">CmdArgsUtil</a>
                           </li>
                           <li class="">
+                            <a href="DxFeed.Graal.Net.Utils.ConcurrentSet-1.html" title="ConcurrentSet&lt;T&gt;" class="">ConcurrentSet&lt;T&gt;</a>
+                          </li>
+                          <li class="">
                             <a href="DxFeed.Graal.Net.Utils.DayUtil.html" title="DayUtil" class="">DayUtil</a>
                           </li>
                           <li class="">
@@ -398,12 +401,13 @@
             <article class="content wrap" id="_content" data-uid="DxFeed.Graal.Net.Events.Market.TradeETH">
 
 
+
   <h1 id="DxFeed_Graal_Net_Events_Market_TradeETH" data-uid="DxFeed.Graal.Net.Events.Market.TradeETH" class="text-break">Class TradeETH
 </h1>
   <div class="markdown level0 summary"><p>TradeETH event is a snapshot of the price and size of the last trade during
 extended trading hours and the extended trading hours day volume and day turnover.
 This event is defined only for symbols (typically stocks and ETFs) with a designated
-<strong>extended trading hours</strong> (ETH, pre market and post market trading sessions).
+<b>extended trading hours</b> (ETH, pre market and post market trading sessions).
 It represents the most recent information that is available about
 ETH last trade on the market at any given moment of time.
 <br>
@@ -485,19 +489,19 @@ For more details see <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/even
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
     </div>
     <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode#system-object-gethashcode">object.GetHashCode()</a>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
     </div>
     <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype#system-object-gettype">object.GetType()</a>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
     </div>
     <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone#system-object-memberwiseclone">object.MemberwiseClone()</a>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
     </div>
     <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals#system-object-referenceequals(system-object-system-object)">object.ReferenceEquals(object, object)</a>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
     </div>
   </div>
-  <h6><strong>Namespace</strong>: <span class="xref">DxFeed</span>.<span class="xref">Graal</span>.<a class="xref" href="DxFeed.Graal.Net.html">Net</a>.<a class="xref" href="DxFeed.Graal.Net.Events.html">Events</a>.<a class="xref" href="DxFeed.Graal.Net.Events.Market.html">Market</a></h6>
+  <h6><strong>Namespace</strong>: <a class="xref" href="DxFeed.html">DxFeed</a>.<a class="xref" href="DxFeed.Graal.html">Graal</a>.<a class="xref" href="DxFeed.Graal.Net.html">Net</a>.<a class="xref" href="DxFeed.Graal.Net.Events.html">Events</a>.<a class="xref" href="DxFeed.Graal.Net.Events.Market.html">Market</a></h6>
   <h6><strong>Assembly</strong>: DxFeed.Graal.Net.dll</h6>
   <h5 id="DxFeed_Graal_Net_Events_Market_TradeETH_syntax">Syntax</h5>
   <div class="codewrapper">
@@ -508,10 +512,10 @@ public class TradeETH : TradeBase, ILastingEvent, IEventType</code></pre>
 </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.2.1/apiSpec/new?filename=DxFeed_Graal_Net_Events_Market_TradeETH__ctor.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Market.TradeETH.%23ctor%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.3.0/apiSpec/new?filename=DxFeed_Graal_Net_Events_Market_TradeETH__ctor.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Market.TradeETH.%23ctor%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.2.1/src/DxFeed.Graal.Net/Events/Market/TradeETH.cs/#L30">View Source</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.3.0/src/DxFeed.Graal.Net/Events/Market/TradeETH.cs/#L30">View Source</a>
   </span>
   <a id="DxFeed_Graal_Net_Events_Market_TradeETH__ctor_" data-uid="DxFeed.Graal.Net.Events.Market.TradeETH.#ctor*"></a>
   <h4 id="DxFeed_Graal_Net_Events_Market_TradeETH__ctor" data-uid="DxFeed.Graal.Net.Events.Market.TradeETH.#ctor">TradeETH()</h4>
@@ -524,10 +528,10 @@ public class TradeETH : TradeBase, ILastingEvent, IEventType</code></pre>
   </div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.2.1/apiSpec/new?filename=DxFeed_Graal_Net_Events_Market_TradeETH__ctor_System_String_.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Market.TradeETH.%23ctor(System.String)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.3.0/apiSpec/new?filename=DxFeed_Graal_Net_Events_Market_TradeETH__ctor_System_String_.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Market.TradeETH.%23ctor(System.String)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.2.1/src/DxFeed.Graal.Net/Events/Market/TradeETH.cs/#L38">View Source</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.3.0/src/DxFeed.Graal.Net/Events/Market/TradeETH.cs/#L38">View Source</a>
   </span>
   <a id="DxFeed_Graal_Net_Events_Market_TradeETH__ctor_" data-uid="DxFeed.Graal.Net.Events.Market.TradeETH.#ctor*"></a>
   <h4 id="DxFeed_Graal_Net_Events_Market_TradeETH__ctor_System_String_" data-uid="DxFeed.Graal.Net.Events.Market.TradeETH.#ctor(System.String)">TradeETH(string?)</h4>
@@ -539,7 +543,7 @@ public class TradeETH : TradeBase, ILastingEvent, IEventType</code></pre>
     <pre><code class="lang-csharp hljs">public TradeETH(string? eventSymbol)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -560,10 +564,10 @@ public class TradeETH : TradeBase, ILastingEvent, IEventType</code></pre>
 </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.2.1/apiSpec/new?filename=DxFeed_Graal_Net_Events_Market_TradeETH_ToString.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Market.TradeETH.ToString%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.3.0/apiSpec/new?filename=DxFeed_Graal_Net_Events_Market_TradeETH_ToString.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Market.TradeETH.ToString%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.2.1/src/DxFeed.Graal.Net/Events/Market/TradeETH.cs/#L47">View Source</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.3.0/src/DxFeed.Graal.Net/Events/Market/TradeETH.cs/#L47">View Source</a>
   </span>
   <a id="DxFeed_Graal_Net_Events_Market_TradeETH_ToString_" data-uid="DxFeed.Graal.Net.Events.Market.TradeETH.ToString*"></a>
   <h4 id="DxFeed_Graal_Net_Events_Market_TradeETH_ToString" data-uid="DxFeed.Graal.Net.Events.Market.TradeETH.ToString">ToString()</h4>
@@ -575,7 +579,7 @@ public class TradeETH : TradeBase, ILastingEvent, IEventType</code></pre>
     <pre><code class="lang-csharp hljs">public override string ToString()</code></pre>
   </div>
   <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -599,6 +603,7 @@ public class TradeETH : TradeBase, ILastingEvent, IEventType</code></pre>
   <div>
       <a class="xref" href="DxFeed.Graal.Net.Events.IEventType.html">IEventType</a>
   </div>
+
 </article>
           </div>
 
@@ -607,10 +612,10 @@ public class TradeETH : TradeBase, ILastingEvent, IEventType</code></pre>
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.2.1/apiSpec/new?filename=DxFeed_Graal_Net_Events_Market_TradeETH.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Market.TradeETH%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.3.0/apiSpec/new?filename=DxFeed_Graal_Net_Events_Market_TradeETH.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Market.TradeETH%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.2.1/src/DxFeed.Graal.Net/Events/Market/TradeETH.cs/#L24" class="contribution-link">View Source</a>
+                    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.3.0/src/DxFeed.Graal.Net/Events/Market/TradeETH.cs/#L24" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>
@@ -637,7 +642,7 @@ public class TradeETH : TradeBase, ILastingEvent, IEventType</code></pre>
       </footer>
     </div>
 
-    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.vendor.min.js"></script>
     <script type="text/javascript" src="../../styles/docfx.js"></script>
     <script type="text/javascript" src="../../styles/main.js"></script>
   </body>

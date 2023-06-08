@@ -93,7 +93,7 @@ the <a href="#overview">Overview</a> section.<br>
 <a href="https://dotnet.microsoft.com/en-us/download/dotnet/6.0"><img src="https://img.shields.io/badge/.net%20version-net6.0-blueviolet" alt="NET"></a>
 <img src="https://img.shields.io/badge/platform-win--x64%20%7C%20linux--x64%20%7C%20osx--x64%20%7C%20osx--arm64-lightgrey" alt="Platform">
 <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/master/LICENSE"><img src="https://img.shields.io/badge/license-MPL--2.0-orange" alt="License"></a>
-<a href="https://dxfeed.jfrog.io/artifactory/nuget-open/com/dxfeed/graal-net/"><img src="https://img.shields.io/badge/nuget-0.2.1-blue" alt="Nuget"></a></p>
+<a href="https://dxfeed.jfrog.io/artifactory/nuget-open/com/dxfeed/graal-net/"><img src="https://img.shields.io/badge/nuget-0.3.0-blue" alt="Nuget"></a></p>
 <h2 id="table-of-contents">Table of Contents</h2>
 <ul>
 <li><a href="#overview">Overview</a>
@@ -133,7 +133,7 @@ API.</p>
 <p>We expect the new repository to go into production in Q2’2023.
 At the same time, the old version will be considered deprecated, and at the end of 2024, we plan to end the service.
 If you’re already our customer and have difficulty with a future transition, please contact us via
-our <a href="https://jira.in.devexperts.com/servicedesk/customer/portal/1/create/122">customer portal</a>.</p>
+our <a href="https://jira.in.devexperts.com/servicedesk/customer/portal/1">customer portal</a>.</p>
 <h3 id="future-development">Future Development</h3>
 <p>Features planned with <strong>high priority</strong>:</p>
 <ul>
@@ -176,61 +176,61 @@ ready to answer any questions and help with the transition.</p>
 <td style="text-align: center;">1</td>
 <td style="text-align: left;">How to subscribe to <code>Quote</code>, <code>Trade</code>, <code>TradeETH</code>, <code>Order</code>, <code>SpreadOrder</code>, <code>AnalyticOrder</code>, <code>TimeAndSale</code> events</td>
 <td style="text-align: left;"><a href="https://github.com/dxFeed/dxfeed-net-api/tree/master/samples/dxf_events_sample">dxf_events_sample</a></td>
-<td style="text-align: left;"><a href="samples/EventSample">DxFeed.Graal.Net.Samples.EventsSample</a></td>
+<td style="text-align: left;"><a href="samples/DxFeedConnect">DxFeed.Graal.Net.Samples.DxFeedConnect</a></td>
 </tr>
 <tr>
 <td style="text-align: center;">2</td>
 <td style="text-align: left;">How to subscribe to <code>Candle</code> event</td>
 <td style="text-align: left;"><a href="https://github.com/dxFeed/dxfeed-net-api/tree/master/samples/dxf_candle_sample">dxf_candle_sample</a></td>
-<td style="text-align: left;">early <em>Q1’2023</em>, please see <a href="#future-development">TBD</a> section</td>
+<td style="text-align: left;"><a href="samples/CandleSample">DxFeed.Graal.Net.Samples.CandleSample</a></td>
 </tr>
 <tr>
 <td style="text-align: center;">3</td>
 <td style="text-align: left;">How to receive IPF data from URL or file</td>
 <td style="text-align: left;"><a href="https://github.com/dxFeed/dxfeed-net-api/tree/master/samples/dxf_instrument_profile_sample">dxf_instrument_profile_sample</a></td>
-<td style="text-align: left;"><em>Q1’2023</em>, please see <a href="#future-development">TBD</a> section</td>
+<td style="text-align: left;"><em>Q3’2023</em>, please see <a href="#future-development">TBD</a> section</td>
 </tr>
 <tr>
 <td style="text-align: center;">4</td>
 <td style="text-align: left;">How to subscribe to IPF live updates</td>
 <td style="text-align: left;"><a href="https://github.com/dxFeed/dxfeed-net-api/tree/master/samples/dxf_instrument_profile_live_sample">dxf_instrument_profile_live_sample</a></td>
-<td style="text-align: left;"><em>Q1’2023</em>, please see <a href="#future-development">TBD</a> section</td>
+<td style="text-align: left;"><em>Q3’2023</em>, please see <a href="#future-development">TBD</a> section</td>
 </tr>
 <tr>
 <td style="text-align: center;">5</td>
 <td style="text-align: left;">How to subscribe to <code>Order</code>, <code>SpreadOrder</code>, <code>Candle</code>, <code>TimeAndSale</code>, <code>Greeks</code>, <code>Series</code> snapshots</td>
 <td style="text-align: left;"><a href="https://github.com/dxFeed/dxfeed-net-api/tree/master/samples/dxf_snapshot_sample">dxf_snapshot_sample</a></td>
-<td style="text-align: left;"><em>Q1’2023</em>, please see <a href="#future-development">TBD</a> section</td>
+<td style="text-align: left;"><em>Q4’2023</em>, please see <a href="#future-development">TBD</a> section</td>
 </tr>
 <tr>
 <td style="text-align: center;">6</td>
 <td style="text-align: left;">How to subscribe to depth of market</td>
 <td style="text-align: left;"><a href="https://github.com/dxFeed/dxfeed-net-api/tree/master/samples/dxf_price_level_book_sample">dxf_price_level_book_sample</a></td>
-<td style="text-align: left;"><em>Q1’2023</em>, please see <a href="#future-development">TBD</a> section</td>
+<td style="text-align: left;"><em>Q4’2023</em>, please see <a href="#future-development">TBD</a> section</td>
 </tr>
 <tr>
 <td style="text-align: center;">7</td>
 <td style="text-align: left;">How to receive snapshots of <code>TimeAndSale</code>, <code>Candle</code>, <code>Series</code>, <code>Greeks</code> events on a given time interval without live subscription</td>
 <td style="text-align: left;"><a href="https://github.com/dxFeed/dxfeed-net-api/tree/master/samples/dxf_simple_data_retrieving_sample">dxf_simple_data_retrieving_sample</a></td>
-<td style="text-align: left;"><em>Q1’2023</em>, please see <a href="#future-development">TBD</a> section</td>
+<td style="text-align: left;"><em>Q4’2023</em>, please see <a href="#future-development">TBD</a> section</td>
 </tr>
 <tr>
 <td style="text-align: center;">8</td>
 <td style="text-align: left;">How to subscribe to order snapshot with incremental updates</td>
 <td style="text-align: left;"><a href="https://github.com/dxFeed/dxfeed-net-api/tree/master/samples/dxf_inc_order_snapshot_sample">dxf_inc_order_snapshot_sample</a></td>
-<td style="text-align: left;"><em>Q2’2023</em>, please see <a href="#future-development">TBD</a> section</td>
+<td style="text-align: left;"><em>Q4’2023</em>, please see <a href="#future-development">TBD</a> section</td>
 </tr>
 <tr>
 <td style="text-align: center;">9</td>
 <td style="text-align: left;">How to retrieve <code>Candle</code> data from the candle web service</td>
 <td style="text-align: left;"><a href="https://github.com/dxFeed/dxfeed-net-api/tree/master/samples/dxf_candle_data_retrieving_sample">dxf_candle_data_retrieving_sample</a></td>
-<td style="text-align: left;"><em>Q2’2023</em>, please see <a href="#future-development">TBD</a> section</td>
+<td style="text-align: left;"><em>Q4’2023</em>, please see <a href="#future-development">TBD</a> section</td>
 </tr>
 <tr>
 <td style="text-align: center;">10</td>
 <td style="text-align: left;">How to retrieve <code>TimeAndSale</code> data from the candle web service</td>
 <td style="text-align: left;"><a href="https://github.com/dxFeed/dxfeed-net-api/tree/master/samples/dxf_tns_data_retrieving_sample">dxf_tns_data_retrieving_sample</a></td>
-<td style="text-align: left;"><em>Q2’2023</em>, please see <a href="#future-development">TBD</a> section</td>
+<td style="text-align: left;"><em>Q4’2023</em>, please see <a href="#future-development">TBD</a> section</td>
 </tr>
 </tbody>
 </table>
@@ -315,7 +315,7 @@ will be amended, <em>&quot;best practices&quot;</em>, specific language restrict
 <h2 id="documentation">Documentation</h2>
 <p>Find useful information in our self-service dxFeed Knowledge Base or .NET API documentation:</p>
 <ul>
-<li><a href="">dxFeed Graal .NET API documentation</a></li>
+<li><a href="https://dxfeed.github.io/dxfeed-graal-net-api/">dxFeed Graal .NET API documentation</a></li>
 <li><a href="https://kb.dxfeed.com/index.html?lang=en">dxFeed Knowledge Base</a>
 <ul>
 <li><a href="https://kb.dxfeed.com/en/getting-started.html">Getting Started</a></li>
@@ -337,9 +337,9 @@ For example, you can create a <a href="NuGet.Config">NuGet.Config</a> file in yo
 <pre><code class="lang-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
 
 &lt;configuration&gt;
-  &lt;packageSources&gt;
-    &lt;add key=&quot;dxFeed&quot; value=&quot;https://dxfeed.jfrog.io/artifactory/api/nuget/v3/nuget-open&quot; protocolVersion=&quot;3&quot;/&gt;
-  &lt;/packageSources&gt;
+    &lt;packageSources&gt;
+        &lt;add key=&quot;dxFeed&quot; value=&quot;https://dxfeed.jfrog.io/artifactory/api/nuget/v3/nuget-open&quot; protocolVersion=&quot;3&quot;/&gt;
+    &lt;/packageSources&gt;
 &lt;/configuration&gt;
 </code></pre>
 <p>Then add the <em>DxFeed.Graal.Net</em> package to your project using the NuGet package manager.</p>
@@ -377,34 +377,35 @@ Quote{AAPL, eventTime=0, time=20221219-223312.000, timeNanoPart=0, sequence=0, b
 </details>
 <h2 id="tools">Tools</h2>
 <p><a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/main/src/DxFeed.Graal.Net.Tools/">DxFeed.Graal.Net.Tools</a>
-a collection of tools that allow you to subscribe to various market events for the specified symbols. Tools can be
+is a collection of tools that allow you to subscribe to various market events for the specified symbols. The tools can
+be
 downloaded
-from <a href="https://github.com/dxFeed/dxfeed-graal-net-api/releases">Release</a> (including self-contained versions, not
-requiring installation .NET)</p>
+from <a href="https://github.com/dxFeed/dxfeed-graal-net-api/releases">Release</a> (including self-contained versions, that do not
+require .NET installation)</p>
 <ul>
 <li><a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/main/src/DxFeed.Graal.Net.Tools/Connect/ConnectTool.cs">Connect</a>
-connects to the specified address(es) and subscribe to the specified events with the specified symbol</li>
+connects to the specified address(es) and subscribes to the specified events with the specified symbol</li>
 <li><a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/main/src/DxFeed.Graal.Net.Tools/Dump/DumpTool.cs">Dump</a>
-dumps all events received from address. This was designed to receive data from a file</li>
+dumps all events received from address. This was designed to retrieve data from a file</li>
 <li><a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/main/src/DxFeed.Graal.Net.Tools/PerfTest/PerfTestTool.cs">PerfTest</a>
-connects to the specified address(es) and calculates performance counters (events per second, memory usage, cpu usage,
+connects to the specified address(es) and calculates performance counters (events per second, memory usage, CPU usage,
 etc.)</li>
 </ul>
 <h2 id="samples">Samples</h2>
 <ul>
 <li><a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/main/samples/ConvertTapeFile/Program.cs">DxFeed.Graal.Net.Samples.ConvertTapeFile</a>
-demonstrates how to converts one tape file into another tape file with optional intermediate processing or filtering</li>
+demonstrates how to convert one tape file to another tape file with optional intermediate processing or filtering</li>
 <li><a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/main/samples/DxFeedConnect/Program.cs">DxFeed.Graal.Net.Samples.DxFeedConnect</a>
 demonstrates how to subscribe various market events for the specified symbols</li>
 <li><a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/main/samples/DxFeedFileParser/Program.cs">DxFeed.Graal.Net.Samples.DxFeedFileParser</a>
-a simple demonstration of how reads events form a tape file</li>
+is a simple demonstration of how events are read form a tape file</li>
 <li><a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/main/samples/DxFeedSample/Program.cs">DxFeed.Graal.Net.Samples.DxFeedSample</a>
-a simple demonstration of how to creates multiple event listeners and subscribe to <code>Quote</code> and <code>Trade</code> events</li>
+is a simple demonstration of how to create multiple event listeners and subscribe to <code>Quote</code> and <code>Trade</code> events</li>
 <li><a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/main/samples/PrintQuoteEvents/Program.cs">DxFeed.Graal.Net.Samples.PrintQuoteEvents</a>
-a simple demonstration of how to subscribe to the <code>Quote</code> event, using a singleton instance <code>DxFeed</code>
+is a simple demonstration of how to subscribe to the <code>Quote</code> event, using a <code>DxFeed</code> instance singleton
 and <code>dxfeed.properties</code> file</li>
 <li><a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/main/samples/WriteTapeFile/Program.cs">DxFeed.Graal.Net.Samples.WriteTapeFile</a>
-a simple demonstration of how to writes events to a tape file</li>
+is a simple demonstration of how to write events to a tape file</li>
 </ul>
 <h2 id="current-state">Current State</h2>
 <h3 id="endpoint-roles">Endpoint Roles</h3>
@@ -446,7 +447,7 @@ is a snapshot of the full available market depth for a symbol</p>
 is a snapshot of the full available market depth for all spreads</p>
 </li>
 <li class="task-list-item"><p><input disabled="disabled" type="checkbox" checked="checked"> <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/event/market/AnalyticOrder.html">AnalyticOrder</a>
-represents an extension of <code>Order</code> introducing analytic information, e.g., adding iceberg-related information to this
+is an <code>Order</code> extension that introduces analytic information, such as adding iceberg-related information to a given
 order</p>
 </li>
 <li class="task-list-item"><p><input disabled="disabled" type="checkbox" checked="checked"> <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/event/market/Trade.html">Trade</a>
@@ -470,7 +471,7 @@ is a snapshot that contains the security instrument description</p>
 is a snapshot of the trading session, including session highs, lows, etc.</p>
 </li>
 <li class="task-list-item"><p><input disabled="disabled" type="checkbox" checked="checked"> <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/event/market/TimeAndSale.html">TimeAndSale</a>
-represents a trade or other market event with price, like market open/close price, etc.</p>
+represents a trade or other market event with price, such as the open/close price of a market, etc.</p>
 </li>
 <li class="task-list-item"><p><input disabled="disabled" type="checkbox" checked="checked"> <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/event/option/Greeks.html">Greeks</a>
 is a snapshot of the option price, Black-Scholes volatility, and greeks</p>
@@ -500,7 +501,7 @@ is an event with an application-specific attachment</p>
 <h3 id="subscription-symbols">Subscription Symbols</h3>
 <ul class="contains-task-list">
 <li class="task-list-item"><p><input disabled="disabled" type="checkbox" checked="checked"> <a href="https://learn.microsoft.com/en-us/dotnet/api/system.string?view=net-6.0">String</a>
-a string representation of the symbol</p>
+is a string representation of the symbol</p>
 </li>
 <li class="task-list-item"><p><input disabled="disabled" type="checkbox" checked="checked"> <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/api/osub/TimeSeriesSubscriptionSymbol.html">TimeSeriesSubscriptionSymbol</a>
 represents subscription to time-series events</p>
@@ -511,18 +512,18 @@ represents subscription to a specific source of indexed events</p>
 <li class="task-list-item"><p><input disabled="disabled" type="checkbox" checked="checked"> <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/api/osub/WildcardSymbol.html">WildcardSymbol.ALL</a>
 represents a  <em>wildcard</em> subscription to all events of the specific event type</p>
 </li>
-<li class="task-list-item"><p><input disabled="disabled" type="checkbox"> <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/event/candle/CandleSymbol.html">CandleSymbol</a>
-is symbol used with <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/api/DXFeedSubscription.html">DXFeedSubscription</a>
+<li class="task-list-item"><p><input disabled="disabled" type="checkbox" checked="checked"> <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/event/candle/CandleSymbol.html">CandleSymbol</a>
+is a symbol used with <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/api/DXFeedSubscription.html">DXFeedSubscription</a>
 class to subscribe for <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/event/candle/Candle.html">Candle</a> events</p>
 </li>
 </ul>
 <h3 id="subscriptions--models">Subscriptions &amp; Models</h3>
 <ul class="contains-task-list">
 <li class="task-list-item"><p><input disabled="disabled" type="checkbox" checked="checked"> <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/api/DXFeedSubscription.html">DXFeedSubscription</a>
-subscription for a set of symbols and event types</p>
+is a subscription for a set of symbols and event types</p>
 </li>
 <li class="task-list-item"><p><input disabled="disabled" type="checkbox"> <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/api/DXFeedTimeSeriesSubscription.html">DXFeedTimeSeriesSubscription</a>
-extends <code>DXFeedSubscription</code> to conveniently subscribe to time series of events for a set of symbols and event types
+extends <code>DXFeedSubscription</code> to conveniently subscribe to time series events for a set of symbols and event types
 (<a href="https://github.com/devexperts/QD/blob/master/dxfeed-samples/src/main/java/com/dxfeed/sample/api/DXFeedConnect.java">Java API sample</a>)</p>
 </li>
 <li class="task-list-item"><p><input disabled="disabled" type="checkbox"> <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/api/DXFeed.html#getLastEvent-E-">GetLastEvent</a>
@@ -546,21 +547,21 @@ returns the last event for the specified event type and symbol if there’s a su
 requests an indexed events list for the specified event type, symbol, and source</p>
 </li>
 <li class="task-list-item"><p><input disabled="disabled" type="checkbox"> <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/api/DXFeed.html#getIndexedEventsIfSubscribed-java.lang.Class-java.lang.Object-com.dxfeed.event.IndexedEventSource-">GetIndexedEventsIfSubscribed</a>
-returns an indexed events list for the specified event type, symbol, and source if there’s a subscription for it</p>
+returns a list of indexed events for the specified event type, symbol, and source, if there’s a subscription for it</p>
 </li>
 <li class="task-list-item"><p><input disabled="disabled" type="checkbox"> <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/api/DXFeed.html#getTimeSeriesPromise-java.lang.Class-java.lang.Object-long-long-">GetTimeSeriesPromise</a>
-requests time series of events for the specified event type, symbol, and time range
+requests time series events for the specified event type, symbol, and time range
 (<a href="https://github.com/devexperts/QD/blob/master/dxfeed-samples/src/main/java/com/dxfeed/sample/_simple_/FetchDailyCandles.java">Java API sample</a>)</p>
 </li>
 <li class="task-list-item"><p><input disabled="disabled" type="checkbox"> <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/api/DXFeed.html#getTimeSeriesIfSubscribed-java.lang.Class-java.lang.Object-long-long-">GetTimeSeriesIfSubscribed</a>
-requests time series of events for the specified event type, symbol, and time range if there’s a subscription for it</p>
+requests time series events for the specified event type, symbol, and time range if there’s a subscription for it</p>
 </li>
 <li class="task-list-item"><p><input disabled="disabled" type="checkbox"> <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/model/TimeSeriesEventModel.html">TimeSeriesEventModel</a>
 is a model of a list of time series events
 (<a href="https://github.com/devexperts/QD/blob/master/dxfeed-samples/src/main/java/com/dxfeed/sample/ui/swing/DXFeedCandleChart.java">Java API sample</a>)</p>
 </li>
 <li class="task-list-item"><p><input disabled="disabled" type="checkbox"> <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/model/IndexedEventModel.html">IndexedEventModel</a>
-is a model of a list of indexed events
+is an indexed event list model
 (<a href="https://github.com/devexperts/QD/blob/master/dxfeed-samples/src/main/java/com/dxfeed/sample/ui/swing/DXFeedTimeAndSales.java">Java API sample</a>)</p>
 </li>
 <li class="task-list-item"><p><input disabled="disabled" type="checkbox"> <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/model/market/OrderBookModel.html">OrderBookModel</a>
@@ -579,7 +580,8 @@ collects instrument profile updates and provides the live instrument profiles li
 (<a href="https://github.com/devexperts/QD/blob/master/dxfeed-samples/src/main/java/com/dxfeed/sample/ipf/DXFeedLiveIpfSample.java">Java API sample</a>)</p>
 </li>
 <li class="task-list-item"><p><input disabled="disabled" type="checkbox"> <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/schedule/Schedule.html">Schedule</a>
-provides API to retrieve and explore various exchanges trading schedules and different financial instrument classes
+provides an API to retrieving and exploring the trading schedules of various exchanges and different financial
+instrument classes
 (<a href="https://github.com/devexperts/QD/blob/master/dxfeed-samples/src/main/java/com/dxfeed/sample/schedule/ScheduleSample.java">Java API sample</a>)</p>
 </li>
 </ul>
@@ -597,7 +599,7 @@ provides on-demand historical tick data replay controls
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.2.1/index.md/#L1" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.3.0/index.md/#L1" class="contribution-link">Improve this Doc</a>
                   </li>
                 </ul>
               </div>
@@ -624,7 +626,7 @@ provides on-demand historical tick data replay controls
       </footer>
     </div>
 
-    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.vendor.min.js"></script>
     <script type="text/javascript" src="styles/docfx.js"></script>
     <script type="text/javascript" src="styles/main.js"></script>
   </body>

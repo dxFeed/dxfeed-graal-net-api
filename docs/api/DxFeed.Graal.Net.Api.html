@@ -109,13 +109,13 @@
                             <a href="DxFeed.Graal.Net.Api.DXEndpoint.Builder.html" title="DXEndpoint.Builder" class="">DXEndpoint.Builder</a>
                           </li>
                           <li class="">
-                            <a href="DxFeed.Graal.Net.Api.DXEndpoint.OnStateChangeListener.html" title="DXEndpoint.OnStateChangeListener" class="">DXEndpoint.OnStateChangeListener</a>
-                          </li>
-                          <li class="">
                             <a href="DxFeed.Graal.Net.Api.DXEndpoint.Role.html" title="DXEndpoint.Role" class="">DXEndpoint.Role</a>
                           </li>
                           <li class="">
                             <a href="DxFeed.Graal.Net.Api.DXEndpoint.State.html" title="DXEndpoint.State" class="">DXEndpoint.State</a>
+                          </li>
+                          <li class="">
+                            <a href="DxFeed.Graal.Net.Api.DXEndpoint.StateChangeListenerCallback.html" title="DXEndpoint.StateChangeListenerCallback" class="">DXEndpoint.StateChangeListenerCallback</a>
                           </li>
                           <li class="">
                             <a href="DxFeed.Graal.Net.Api.DXFeed.html" title="DXFeed" class="">DXFeed</a>
@@ -361,6 +361,9 @@
                             <a href="DxFeed.Graal.Net.Utils.CmdArgsUtil.html" title="CmdArgsUtil" class="">CmdArgsUtil</a>
                           </li>
                           <li class="">
+                            <a href="DxFeed.Graal.Net.Utils.ConcurrentSet-1.html" title="ConcurrentSet&lt;T&gt;" class="">ConcurrentSet&lt;T&gt;</a>
+                          </li>
+                          <li class="">
                             <a href="DxFeed.Graal.Net.Utils.DayUtil.html" title="DayUtil" class="">DayUtil</a>
                           </li>
                           <li class="">
@@ -402,61 +405,95 @@
   <div class="markdown level0 summary"></div>
   <div class="markdown level0 conceptual"></div>
   <div class="markdown level0 remarks"></div>
-    <h3 id="classes">Classes
+    <h3 id="classes">
+Classes
 </h3>
       <h4><a class="xref" href="DxFeed.Graal.Net.Api.DXEndpoint.html">DXEndpoint</a></h4>
       <section><p>Manages network connections to <a class="xref" href="DxFeed.Graal.Net.Api.DXFeed.html">DXFeed</a> or <a class="xref" href="DxFeed.Graal.Net.Api.DXPublisher.html">DXPublisher</a>.
+<br>
+Porting a Java class <code>com.dxfeed.api.DXEndpoint</code>.
+<br>
+For more details see <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/api/DXEndpoint.html">Javadoc</a>.
 <br>
 There are ready-to-use singleton instances that are available with
 <a class="xref" href="DxFeed.Graal.Net.Api.DXEndpoint.html#DxFeed_Graal_Net_Api_DXEndpoint_GetInstance">GetInstance()</a> and <a class="xref" href="DxFeed.Graal.Net.Api.DXEndpoint.html#DxFeed_Graal_Net_Api_DXEndpoint_GetInstance_DxFeed_Graal_Net_Api_DXEndpoint_Role_">GetInstance(Role)</a> methods as wel as
 factory methods <a class="xref" href="DxFeed.Graal.Net.Api.DXEndpoint.html#DxFeed_Graal_Net_Api_DXEndpoint_Create">Create()</a> and <a class="xref" href="DxFeed.Graal.Net.Api.DXEndpoint.html#DxFeed_Graal_Net_Api_DXEndpoint_Create_DxFeed_Graal_Net_Api_DXEndpoint_Role_">Create(Role)</a>, and a number of configuration methods.
 <br>
-Advanced properties can be configured with <a class="xref" href="DxFeed.Graal.Net.Api.DXEndpoint.Builder.html">DXEndpoint.Builder</a> (creates with <a class="xref" href="DxFeed.Graal.Net.Api.DXEndpoint.html#DxFeed_Graal_Net_Api_DXEndpoint_NewBuilder">NewBuilder()</a>).
-<br>
-This class is a wrapper for <span class="xref">DxFeed.Graal.Net.Native.Endpoint.EndpointNative</span>.
-<br>
-For more details see <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/api/DXEndpoint.html">Javadoc</a>.</p>
+Advanced properties can be configured with <a class="xref" href="DxFeed.Graal.Net.Api.DXEndpoint.Builder.html">DXEndpoint.Builder</a> (creates with <a class="xref" href="DxFeed.Graal.Net.Api.DXEndpoint.html#DxFeed_Graal_Net_Api_DXEndpoint_NewBuilder">NewBuilder()</a>).</p>
+<h3>Threads and locks</h3>
+<p>This class is thread-safe and can be used concurrently from multiple threads without external synchronization.</p>
+<h3>Lifetimes</h3>
+<p>This class will not be garbage-collected and its resources will not be freed until <a class="xref" href="DxFeed.Graal.Net.Api.DXEndpoint.html#DxFeed_Graal_Net_Api_DXEndpoint_Dispose">Dispose()</a>,
+<a class="xref" href="DxFeed.Graal.Net.Api.DXEndpoint.html#DxFeed_Graal_Net_Api_DXEndpoint_Close">Close()</a> or <a class="xref" href="DxFeed.Graal.Net.Api.DXEndpoint.html#DxFeed_Graal_Net_Api_DXEndpoint_CloseAndAwaitTermination">CloseAndAwaitTermination()</a> methods are called. Calling these methods
+ensures that instance can be safely garbage-collected when all outside references to it are lost.
+If a reference to an instance of this class is lost before calling the above methods,
+it causes a memory/resource leak.
+This behavior was implemented intentionally.
+Inner instances of <a class="xref" href="DxFeed.Graal.Net.Api.DXFeed.html">DXFeed</a> and <a class="xref" href="DxFeed.Graal.Net.Api.DXPublisher.html">DXPublisher</a> have the same lifetime
+as <a class="xref" href="DxFeed.Graal.Net.Api.DXEndpoint.html">DXEndpoint</a>.
+<a class="xref" href="DxFeed.Graal.Net.Api.DXFeed.html">DXFeed</a> and <a class="xref" href="DxFeed.Graal.Net.Api.DXPublisher.html">DXPublisher</a> have no public resource release methods,
+and exist as long as <a class="xref" href="DxFeed.Graal.Net.Api.DXEndpoint.html">DXEndpoint</a> exists.</p>
 </section>
       <h4><a class="xref" href="DxFeed.Graal.Net.Api.DXEndpoint.Builder.html">DXEndpoint.Builder</a></h4>
       <section><p>Builder class for <a class="xref" href="DxFeed.Graal.Net.Api.DXEndpoint.html">DXEndpoint</a> that supports additional configuration properties.
-This class uses <span class="xref">DxFeed.Graal.Net.Native.Endpoint.BuilderNative</span> for passing calls to native code.
+<br>
+Porting a Java class <code>com.dxfeed.api.DXEndpoint.Builder</code>.
 <br>
 For more details see <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/api/DXEndpoint.Builder.html">Javadoc</a>.</p>
+<h3>Default properties file</h3>
+<p>The <a class="xref" href="DxFeed.Graal.Net.Api.DXEndpoint.Builder.html#DxFeed_Graal_Net_Api_DXEndpoint_Builder_Build">Build()</a> method tries to load the default property file for the <a class="xref" href="DxFeed.Graal.Net.Api.DXEndpoint.Role.html#DxFeed_Graal_Net_Api_DXEndpoint_Role_Feed">Feed</a>,
+<a class="xref" href="DxFeed.Graal.Net.Api.DXEndpoint.Role.html#DxFeed_Graal_Net_Api_DXEndpoint_Role_OnDemandFeed">OnDemandFeed</a> and <a class="xref" href="DxFeed.Graal.Net.Api.DXEndpoint.Role.html#DxFeed_Graal_Net_Api_DXEndpoint_Role_Publisher">Publisher</a> role.
+The default properties file is loaded only if there are no system properties (<a class="xref" href="DxFeed.Graal.Net.SystemProperty.html">SystemProperty</a>)
+or user properties (<a class="xref" href="DxFeed.Graal.Net.Api.DXEndpoint.Builder.html#DxFeed_Graal_Net_Api_DXEndpoint_Builder_WithProperty_System_String_System_String_">WithProperty(string, string)</a>) set with the same key
+(<a class="xref" href="DxFeed.Graal.Net.Api.DXEndpoint.html#DxFeed_Graal_Net_Api_DXEndpoint_DXFeedPropertiesProperty">DXFeedPropertiesProperty</a>, <a class="xref" href="DxFeed.Graal.Net.Api.DXEndpoint.html#DxFeed_Graal_Net_Api_DXEndpoint_DXPublisherPropertiesProperty">DXPublisherPropertiesProperty</a>)
+and the file exists and is readable.
+<br>
+This file must be in the <a href="https://en.wikipedia.org/wiki/.properties">Java properties file format</a>.</p>
+<h3>Endpoint name</h3>
+<p>If no endpoint name has been specified (<a class="xref" href="DxFeed.Graal.Net.Api.DXEndpoint.Builder.html#DxFeed_Graal_Net_Api_DXEndpoint_Builder_WithName_System_String_">WithName(string)</a>), the default name will be used.
+The default name includes a counter that increments each time an endpoint is created (&quot;qdnet&quot;, &quot;qdnet-1&quot;, etc.).
+To get the name of the created endpoint, call the <a class="xref" href="DxFeed.Graal.Net.Api.DXEndpoint.html#DxFeed_Graal_Net_Api_DXEndpoint_GetName">GetName()</a> method.</p>
+<h3>Threads and locks</h3>
+<p>This class is thread-safe and can be used concurrently from multiple threads without external synchronization.</p>
 </section>
       <h4><a class="xref" href="DxFeed.Graal.Net.Api.DXFeed.html">DXFeed</a></h4>
       <section><p>Main entry class for dxFeed API.
-This class is a wrapper for <span class="xref">DxFeed.Graal.Net.Native.Feed.FeedNative</span>.
+This class is a wrapper for <a class="xref" href="DxFeed.Graal.Net.Native.Feed.FeedNative.html">FeedNative</a>.
 <br>
-<a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/api/DXFeed.html"><strong>Read it first Javadoc.</strong></a></p>
+<a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/api/DXFeed.html"><b>Read it first Javadoc.</b></a></p>
 </section>
       <h4><a class="xref" href="DxFeed.Graal.Net.Api.DXFeedSubscription.html">DXFeedSubscription</a></h4>
       <section><p>Subscription for a set of symbols and event types.
-This class is a wrapper for <span class="xref">DxFeed.Graal.Net.Native.Subscription.SubscriptionNative</span>.
+This class is a wrapper for <a class="xref" href="DxFeed.Graal.Net.Native.Subscription.SubscriptionNative.html">SubscriptionNative</a>.
 For more details see <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/api/DXFeedSubscription.html">Javadoc</a>.</p>
 </section>
       <h4><a class="xref" href="DxFeed.Graal.Net.Api.DXPublisher.html">DXPublisher</a></h4>
       <section><p>Provides API for publishing of events to local or remote <a class="xref" href="DxFeed.Graal.Net.Api.DXFeed.html">DXFeed</a>.
-This class is a wrapper for <span class="xref">DxFeed.Graal.Net.Native.Publisher.PublisherNative</span>.
+This class is a wrapper for <a class="xref" href="DxFeed.Graal.Net.Native.Publisher.PublisherNative.html">PublisherNative</a>.
 <br>
 For more details see <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/api/DXPublisher.html">Javadoc</a>.</p>
 </section>
-    <h3 id="enums">Enums
+    <h3 id="enums">
+Enums
 </h3>
       <h4><a class="xref" href="DxFeed.Graal.Net.Api.DXEndpoint.Role.html">DXEndpoint.Role</a></h4>
-      <section><p>List of endpoint roles.</p>
+      <section><p>A list of endpoint roles.</p>
 </section>
       <h4><a class="xref" href="DxFeed.Graal.Net.Api.DXEndpoint.State.html">DXEndpoint.State</a></h4>
-      <section><p>List of endpoint states.</p>
+      <section><p>A list of endpoint states.</p>
 </section>
-    <h3 id="delegates">Delegates
+    <h3 id="delegates">
+Delegates
 </h3>
-      <h4><a class="xref" href="DxFeed.Graal.Net.Api.DXEndpoint.OnStateChangeListener.html">DXEndpoint.OnStateChangeListener</a></h4>
+      <h4><a class="xref" href="DxFeed.Graal.Net.Api.DXEndpoint.StateChangeListenerCallback.html">DXEndpoint.StateChangeListenerCallback</a></h4>
       <section><p>Notifies a change in the state of this endpoint.</p>
 </section>
       <h4><a class="xref" href="DxFeed.Graal.Net.Api.DXFeedEventListener.html">DXFeedEventListener</a></h4>
       <section><p>The listener delegate for receiving events.
 Invoked when events of type are received.</p>
 </section>
+
+
 </article>
           </div>
 
@@ -489,7 +526,7 @@ Invoked when events of type are received.</p>
       </footer>
     </div>
 
-    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.vendor.min.js"></script>
     <script type="text/javascript" src="../../styles/docfx.js"></script>
     <script type="text/javascript" src="../../styles/main.js"></script>
   </body>

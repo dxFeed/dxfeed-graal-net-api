@@ -109,13 +109,13 @@
                             <a href="DxFeed.Graal.Net.Api.DXEndpoint.Builder.html" title="DXEndpoint.Builder" class="">DXEndpoint.Builder</a>
                           </li>
                           <li class="">
-                            <a href="DxFeed.Graal.Net.Api.DXEndpoint.OnStateChangeListener.html" title="DXEndpoint.OnStateChangeListener" class="">DXEndpoint.OnStateChangeListener</a>
-                          </li>
-                          <li class="">
                             <a href="DxFeed.Graal.Net.Api.DXEndpoint.Role.html" title="DXEndpoint.Role" class="">DXEndpoint.Role</a>
                           </li>
                           <li class="">
                             <a href="DxFeed.Graal.Net.Api.DXEndpoint.State.html" title="DXEndpoint.State" class="">DXEndpoint.State</a>
+                          </li>
+                          <li class="">
+                            <a href="DxFeed.Graal.Net.Api.DXEndpoint.StateChangeListenerCallback.html" title="DXEndpoint.StateChangeListenerCallback" class="">DXEndpoint.StateChangeListenerCallback</a>
                           </li>
                           <li class="">
                             <a href="DxFeed.Graal.Net.Api.DXFeed.html" title="DXFeed" class="">DXFeed</a>
@@ -361,6 +361,9 @@
                             <a href="DxFeed.Graal.Net.Utils.CmdArgsUtil.html" title="CmdArgsUtil" class="">CmdArgsUtil</a>
                           </li>
                           <li class="">
+                            <a href="DxFeed.Graal.Net.Utils.ConcurrentSet-1.html" title="ConcurrentSet&lt;T&gt;" class="">ConcurrentSet&lt;T&gt;</a>
+                          </li>
+                          <li class="">
                             <a href="DxFeed.Graal.Net.Utils.DayUtil.html" title="DayUtil" class="">DayUtil</a>
                           </li>
                           <li class="">
@@ -398,6 +401,7 @@
             <article class="content wrap" id="_content" data-uid="DxFeed.Graal.Net.Events.Market.Quote">
 
 
+
   <h1 id="DxFeed_Graal_Net_Events_Market_Quote" data-uid="DxFeed.Graal.Net.Events.Market.Quote" class="text-break">Class Quote
 </h1>
   <div class="markdown level0 summary"><p>Quote event is a snapshot of the best bid and ask prices, and other fields that change with each quote.
@@ -433,19 +437,19 @@ For more details see <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/even
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
     </div>
     <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode#system-object-gethashcode">object.GetHashCode()</a>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
     </div>
     <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype#system-object-gettype">object.GetType()</a>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
     </div>
     <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone#system-object-memberwiseclone">object.MemberwiseClone()</a>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
     </div>
     <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals#system-object-referenceequals(system-object-system-object)">object.ReferenceEquals(object, object)</a>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
     </div>
   </div>
-  <h6><strong>Namespace</strong>: <span class="xref">DxFeed</span>.<span class="xref">Graal</span>.<a class="xref" href="DxFeed.Graal.Net.html">Net</a>.<a class="xref" href="DxFeed.Graal.Net.Events.html">Events</a>.<a class="xref" href="DxFeed.Graal.Net.Events.Market.html">Market</a></h6>
+  <h6><strong>Namespace</strong>: <a class="xref" href="DxFeed.html">DxFeed</a>.<a class="xref" href="DxFeed.Graal.html">Graal</a>.<a class="xref" href="DxFeed.Graal.Net.html">Net</a>.<a class="xref" href="DxFeed.Graal.Net.Events.html">Events</a>.<a class="xref" href="DxFeed.Graal.Net.Events.Market.html">Market</a></h6>
   <h6><strong>Assembly</strong>: DxFeed.Graal.Net.dll</h6>
   <h5 id="DxFeed_Graal_Net_Events_Market_Quote_syntax">Syntax</h5>
   <div class="codewrapper">
@@ -456,10 +460,10 @@ public class Quote : MarketEvent, ILastingEvent, IEventType</code></pre>
 </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.2.1/apiSpec/new?filename=DxFeed_Graal_Net_Events_Market_Quote__ctor.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Market.Quote.%23ctor%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.3.0/apiSpec/new?filename=DxFeed_Graal_Net_Events_Market_Quote__ctor.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Market.Quote.%23ctor%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.2.1/src/DxFeed.Graal.Net/Events/Market/Quote.cs/#L35">View Source</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.3.0/src/DxFeed.Graal.Net/Events/Market/Quote.cs/#L35">View Source</a>
   </span>
   <a id="DxFeed_Graal_Net_Events_Market_Quote__ctor_" data-uid="DxFeed.Graal.Net.Events.Market.Quote.#ctor*"></a>
   <h4 id="DxFeed_Graal_Net_Events_Market_Quote__ctor" data-uid="DxFeed.Graal.Net.Events.Market.Quote.#ctor">Quote()</h4>
@@ -472,10 +476,10 @@ public class Quote : MarketEvent, ILastingEvent, IEventType</code></pre>
   </div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.2.1/apiSpec/new?filename=DxFeed_Graal_Net_Events_Market_Quote__ctor_System_String_.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Market.Quote.%23ctor(System.String)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.3.0/apiSpec/new?filename=DxFeed_Graal_Net_Events_Market_Quote__ctor_System_String_.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Market.Quote.%23ctor(System.String)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.2.1/src/DxFeed.Graal.Net/Events/Market/Quote.cs/#L43">View Source</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.3.0/src/DxFeed.Graal.Net/Events/Market/Quote.cs/#L43">View Source</a>
   </span>
   <a id="DxFeed_Graal_Net_Events_Market_Quote__ctor_" data-uid="DxFeed.Graal.Net.Events.Market.Quote.#ctor*"></a>
   <h4 id="DxFeed_Graal_Net_Events_Market_Quote__ctor_System_String_" data-uid="DxFeed.Graal.Net.Events.Market.Quote.#ctor(System.String)">Quote(string?)</h4>
@@ -487,7 +491,7 @@ public class Quote : MarketEvent, ILastingEvent, IEventType</code></pre>
     <pre><code class="lang-csharp hljs">public Quote(string? eventSymbol)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -508,10 +512,10 @@ public class Quote : MarketEvent, ILastingEvent, IEventType</code></pre>
 </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.2.1/apiSpec/new?filename=DxFeed_Graal_Net_Events_Market_Quote_MaxSequence.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Market.Quote.MaxSequence%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.3.0/apiSpec/new?filename=DxFeed_Graal_Net_Events_Market_Quote_MaxSequence.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Market.Quote.MaxSequence%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.2.1/src/DxFeed.Graal.Net/Events/Market/Quote.cs/#L27">View Source</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.3.0/src/DxFeed.Graal.Net/Events/Market/Quote.cs/#L27">View Source</a>
   </span>
   <h4 id="DxFeed_Graal_Net_Events_Market_Quote_MaxSequence" data-uid="DxFeed.Graal.Net.Events.Market.Quote.MaxSequence">MaxSequence</h4>
   <div class="markdown level1 summary"><p>Maximum allowed sequence value.
@@ -523,7 +527,7 @@ public class Quote : MarketEvent, ILastingEvent, IEventType</code></pre>
     <pre><code class="lang-csharp hljs">public const int MaxSequence = 4194303</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -541,10 +545,10 @@ public class Quote : MarketEvent, ILastingEvent, IEventType</code></pre>
 </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.2.1/apiSpec/new?filename=DxFeed_Graal_Net_Events_Market_Quote_AskExchangeCode.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Market.Quote.AskExchangeCode%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.3.0/apiSpec/new?filename=DxFeed_Graal_Net_Events_Market_Quote_AskExchangeCode.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Market.Quote.AskExchangeCode%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.2.1/src/DxFeed.Graal.Net/Events/Market/Quote.cs/#L144">View Source</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.3.0/src/DxFeed.Graal.Net/Events/Market/Quote.cs/#L144">View Source</a>
   </span>
   <a id="DxFeed_Graal_Net_Events_Market_Quote_AskExchangeCode_" data-uid="DxFeed.Graal.Net.Events.Market.Quote.AskExchangeCode*"></a>
   <h4 id="DxFeed_Graal_Net_Events_Market_Quote_AskExchangeCode" data-uid="DxFeed.Graal.Net.Events.Market.Quote.AskExchangeCode">AskExchangeCode</h4>
@@ -556,7 +560,7 @@ public class Quote : MarketEvent, ILastingEvent, IEventType</code></pre>
     <pre><code class="lang-csharp hljs">public char AskExchangeCode { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -572,10 +576,10 @@ public class Quote : MarketEvent, ILastingEvent, IEventType</code></pre>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.2.1/apiSpec/new?filename=DxFeed_Graal_Net_Events_Market_Quote_AskPrice.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Market.Quote.AskPrice%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.3.0/apiSpec/new?filename=DxFeed_Graal_Net_Events_Market_Quote_AskPrice.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Market.Quote.AskPrice%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.2.1/src/DxFeed.Graal.Net/Events/Market/Quote.cs/#L149">View Source</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.3.0/src/DxFeed.Graal.Net/Events/Market/Quote.cs/#L149">View Source</a>
   </span>
   <a id="DxFeed_Graal_Net_Events_Market_Quote_AskPrice_" data-uid="DxFeed.Graal.Net.Events.Market.Quote.AskPrice*"></a>
   <h4 id="DxFeed_Graal_Net_Events_Market_Quote_AskPrice" data-uid="DxFeed.Graal.Net.Events.Market.Quote.AskPrice">AskPrice</h4>
@@ -587,7 +591,7 @@ public class Quote : MarketEvent, ILastingEvent, IEventType</code></pre>
     <pre><code class="lang-csharp hljs">public double AskPrice { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -603,10 +607,10 @@ public class Quote : MarketEvent, ILastingEvent, IEventType</code></pre>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.2.1/apiSpec/new?filename=DxFeed_Graal_Net_Events_Market_Quote_AskSize.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Market.Quote.AskSize%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.3.0/apiSpec/new?filename=DxFeed_Graal_Net_Events_Market_Quote_AskSize.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Market.Quote.AskSize%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.2.1/src/DxFeed.Graal.Net/Events/Market/Quote.cs/#L154">View Source</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.3.0/src/DxFeed.Graal.Net/Events/Market/Quote.cs/#L154">View Source</a>
   </span>
   <a id="DxFeed_Graal_Net_Events_Market_Quote_AskSize_" data-uid="DxFeed.Graal.Net.Events.Market.Quote.AskSize*"></a>
   <h4 id="DxFeed_Graal_Net_Events_Market_Quote_AskSize" data-uid="DxFeed.Graal.Net.Events.Market.Quote.AskSize">AskSize</h4>
@@ -618,7 +622,7 @@ public class Quote : MarketEvent, ILastingEvent, IEventType</code></pre>
     <pre><code class="lang-csharp hljs">public double AskSize { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -634,17 +638,17 @@ public class Quote : MarketEvent, ILastingEvent, IEventType</code></pre>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.2.1/apiSpec/new?filename=DxFeed_Graal_Net_Events_Market_Quote_AskTime.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Market.Quote.AskTime%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.3.0/apiSpec/new?filename=DxFeed_Graal_Net_Events_Market_Quote_AskTime.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Market.Quote.AskTime%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.2.1/src/DxFeed.Graal.Net/Events/Market/Quote.cs/#L131">View Source</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.3.0/src/DxFeed.Graal.Net/Events/Market/Quote.cs/#L131">View Source</a>
   </span>
   <a id="DxFeed_Graal_Net_Events_Market_Quote_AskTime_" data-uid="DxFeed.Graal.Net.Events.Market.Quote.AskTime*"></a>
   <h4 id="DxFeed_Graal_Net_Events_Market_Quote_AskTime" data-uid="DxFeed.Graal.Net.Events.Market.Quote.AskTime">AskTime</h4>
   <div class="markdown level1 summary"><p>Gets or sets time of the last ask change.
 Time is measured in milliseconds between the current time and midnight, January 1, 1970 UTC.
-<strong>This time is always transmitted with seconds precision, so the result of this method is
-usually a multiple of 1000.</strong>
+<b>This time is always transmitted with seconds precision, so the result of this method is
+usually a multiple of 1000.</b>
 <br>
 You can set the actual millisecond-precision time here to publish event and
 the millisecond part will make the time of this quote even precise up to a millisecond.</p>
@@ -655,7 +659,7 @@ the millisecond part will make the time of this quote even precise up to a milli
     <pre><code class="lang-csharp hljs">public long AskTime { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -671,10 +675,10 @@ the millisecond part will make the time of this quote even precise up to a milli
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.2.1/apiSpec/new?filename=DxFeed_Graal_Net_Events_Market_Quote_BidExchangeCode.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Market.Quote.BidExchangeCode%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.3.0/apiSpec/new?filename=DxFeed_Graal_Net_Events_Market_Quote_BidExchangeCode.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Market.Quote.BidExchangeCode%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.2.1/src/DxFeed.Graal.Net/Events/Market/Quote.cs/#L110">View Source</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.3.0/src/DxFeed.Graal.Net/Events/Market/Quote.cs/#L110">View Source</a>
   </span>
   <a id="DxFeed_Graal_Net_Events_Market_Quote_BidExchangeCode_" data-uid="DxFeed.Graal.Net.Events.Market.Quote.BidExchangeCode*"></a>
   <h4 id="DxFeed_Graal_Net_Events_Market_Quote_BidExchangeCode" data-uid="DxFeed.Graal.Net.Events.Market.Quote.BidExchangeCode">BidExchangeCode</h4>
@@ -686,7 +690,7 @@ the millisecond part will make the time of this quote even precise up to a milli
     <pre><code class="lang-csharp hljs">public char BidExchangeCode { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -702,10 +706,10 @@ the millisecond part will make the time of this quote even precise up to a milli
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.2.1/apiSpec/new?filename=DxFeed_Graal_Net_Events_Market_Quote_BidPrice.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Market.Quote.BidPrice%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.3.0/apiSpec/new?filename=DxFeed_Graal_Net_Events_Market_Quote_BidPrice.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Market.Quote.BidPrice%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.2.1/src/DxFeed.Graal.Net/Events/Market/Quote.cs/#L115">View Source</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.3.0/src/DxFeed.Graal.Net/Events/Market/Quote.cs/#L115">View Source</a>
   </span>
   <a id="DxFeed_Graal_Net_Events_Market_Quote_BidPrice_" data-uid="DxFeed.Graal.Net.Events.Market.Quote.BidPrice*"></a>
   <h4 id="DxFeed_Graal_Net_Events_Market_Quote_BidPrice" data-uid="DxFeed.Graal.Net.Events.Market.Quote.BidPrice">BidPrice</h4>
@@ -717,7 +721,7 @@ the millisecond part will make the time of this quote even precise up to a milli
     <pre><code class="lang-csharp hljs">public double BidPrice { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -733,10 +737,10 @@ the millisecond part will make the time of this quote even precise up to a milli
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.2.1/apiSpec/new?filename=DxFeed_Graal_Net_Events_Market_Quote_BidSize.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Market.Quote.BidSize%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.3.0/apiSpec/new?filename=DxFeed_Graal_Net_Events_Market_Quote_BidSize.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Market.Quote.BidSize%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.2.1/src/DxFeed.Graal.Net/Events/Market/Quote.cs/#L120">View Source</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.3.0/src/DxFeed.Graal.Net/Events/Market/Quote.cs/#L120">View Source</a>
   </span>
   <a id="DxFeed_Graal_Net_Events_Market_Quote_BidSize_" data-uid="DxFeed.Graal.Net.Events.Market.Quote.BidSize*"></a>
   <h4 id="DxFeed_Graal_Net_Events_Market_Quote_BidSize" data-uid="DxFeed.Graal.Net.Events.Market.Quote.BidSize">BidSize</h4>
@@ -748,7 +752,7 @@ the millisecond part will make the time of this quote even precise up to a milli
     <pre><code class="lang-csharp hljs">public double BidSize { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -764,17 +768,17 @@ the millisecond part will make the time of this quote even precise up to a milli
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.2.1/apiSpec/new?filename=DxFeed_Graal_Net_Events_Market_Quote_BidTime.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Market.Quote.BidTime%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.3.0/apiSpec/new?filename=DxFeed_Graal_Net_Events_Market_Quote_BidTime.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Market.Quote.BidTime%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.2.1/src/DxFeed.Graal.Net/Events/Market/Quote.cs/#L97">View Source</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.3.0/src/DxFeed.Graal.Net/Events/Market/Quote.cs/#L97">View Source</a>
   </span>
   <a id="DxFeed_Graal_Net_Events_Market_Quote_BidTime_" data-uid="DxFeed.Graal.Net.Events.Market.Quote.BidTime*"></a>
   <h4 id="DxFeed_Graal_Net_Events_Market_Quote_BidTime" data-uid="DxFeed.Graal.Net.Events.Market.Quote.BidTime">BidTime</h4>
   <div class="markdown level1 summary"><p>Gets or sets time of the last bid change.
 Time is measured in milliseconds between the current time and midnight, January 1, 1970 UTC.
-<strong>This time is always transmitted with seconds precision, so the result of this method is
-usually a multiple of 1000.</strong>
+<b>This time is always transmitted with seconds precision, so the result of this method is
+usually a multiple of 1000.</b>
 <br>
 You can set the actual millisecond-precision time here to publish event and
 the millisecond part will make the time of this quote even precise up to a millisecond.</p>
@@ -785,7 +789,7 @@ the millisecond part will make the time of this quote even precise up to a milli
     <pre><code class="lang-csharp hljs">public long BidTime { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -801,10 +805,10 @@ the millisecond part will make the time of this quote even precise up to a milli
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.2.1/apiSpec/new?filename=DxFeed_Graal_Net_Events_Market_Quote_Sequence.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Market.Quote.Sequence%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.3.0/apiSpec/new?filename=DxFeed_Graal_Net_Events_Market_Quote_Sequence.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Market.Quote.Sequence%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.2.1/src/DxFeed.Graal.Net/Events/Market/Quote.cs/#L54">View Source</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.3.0/src/DxFeed.Graal.Net/Events/Market/Quote.cs/#L54">View Source</a>
   </span>
   <a id="DxFeed_Graal_Net_Events_Market_Quote_Sequence_" data-uid="DxFeed.Graal.Net.Events.Market.Quote.Sequence*"></a>
   <h4 id="DxFeed_Graal_Net_Events_Market_Quote_Sequence" data-uid="DxFeed.Graal.Net.Events.Market.Quote.Sequence">Sequence</h4>
@@ -818,7 +822,7 @@ does not need to be sequential. Sequence can range from 0 to <a class="xref" hre
     <pre><code class="lang-csharp hljs">public int Sequence { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -833,7 +837,7 @@ does not need to be sequential. Sequence can range from 0 to <a class="xref" hre
     </tbody>
   </table>
   <h5 class="exceptions">Exceptions</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -850,10 +854,10 @@ does not need to be sequential. Sequence can range from 0 to <a class="xref" hre
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.2.1/apiSpec/new?filename=DxFeed_Graal_Net_Events_Market_Quote_Time.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Market.Quote.Time%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.3.0/apiSpec/new?filename=DxFeed_Graal_Net_Events_Market_Quote_Time.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Market.Quote.Time%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.2.1/src/DxFeed.Graal.Net/Events/Market/Quote.cs/#L72">View Source</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.3.0/src/DxFeed.Graal.Net/Events/Market/Quote.cs/#L72">View Source</a>
   </span>
   <a id="DxFeed_Graal_Net_Events_Market_Quote_Time_" data-uid="DxFeed.Graal.Net.Events.Market.Quote.Time*"></a>
   <h4 id="DxFeed_Graal_Net_Events_Market_Quote_Time" data-uid="DxFeed.Graal.Net.Events.Market.Quote.Time">Time</h4>
@@ -866,7 +870,7 @@ Time is measured in milliseconds between the current time and midnight, January 
     <pre><code class="lang-csharp hljs">public long Time { get; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -882,15 +886,15 @@ Time is measured in milliseconds between the current time and midnight, January 
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.2.1/apiSpec/new?filename=DxFeed_Graal_Net_Events_Market_Quote_TimeNanoPart.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Market.Quote.TimeNanoPart%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.3.0/apiSpec/new?filename=DxFeed_Graal_Net_Events_Market_Quote_TimeNanoPart.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Market.Quote.TimeNanoPart%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.2.1/src/DxFeed.Graal.Net/Events/Market/Quote.cs/#L86">View Source</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.3.0/src/DxFeed.Graal.Net/Events/Market/Quote.cs/#L86">View Source</a>
   </span>
   <a id="DxFeed_Graal_Net_Events_Market_Quote_TimeNanoPart_" data-uid="DxFeed.Graal.Net.Events.Market.Quote.TimeNanoPart*"></a>
   <h4 id="DxFeed_Graal_Net_Events_Market_Quote_TimeNanoPart" data-uid="DxFeed.Graal.Net.Events.Market.Quote.TimeNanoPart">TimeNanoPart</h4>
   <div class="markdown level1 summary"><p>Gets or sets microseconds and nanoseconds part of time of the last bid or ask change.
-<strong>This method changes <a class="xref" href="DxFeed.Graal.Net.Events.Market.Quote.html#DxFeed_Graal_Net_Events_Market_Quote_TimeNanos">TimeNanos</a> result.</strong></p>
+<b>This method changes <a class="xref" href="DxFeed.Graal.Net.Events.Market.Quote.html#DxFeed_Graal_Net_Events_Market_Quote_TimeNanos">TimeNanos</a> result.</b></p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
@@ -898,7 +902,7 @@ Time is measured in milliseconds between the current time and midnight, January 
     <pre><code class="lang-csharp hljs">public int TimeNanoPart { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -914,10 +918,10 @@ Time is measured in milliseconds between the current time and midnight, January 
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.2.1/apiSpec/new?filename=DxFeed_Graal_Net_Events_Market_Quote_TimeNanos.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Market.Quote.TimeNanos%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.3.0/apiSpec/new?filename=DxFeed_Graal_Net_Events_Market_Quote_TimeNanos.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Market.Quote.TimeNanos%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.2.1/src/DxFeed.Graal.Net/Events/Market/Quote.cs/#L79">View Source</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.3.0/src/DxFeed.Graal.Net/Events/Market/Quote.cs/#L79">View Source</a>
   </span>
   <a id="DxFeed_Graal_Net_Events_Market_Quote_TimeNanos_" data-uid="DxFeed.Graal.Net.Events.Market.Quote.TimeNanos*"></a>
   <h4 id="DxFeed_Graal_Net_Events_Market_Quote_TimeNanos" data-uid="DxFeed.Graal.Net.Events.Market.Quote.TimeNanos">TimeNanos</h4>
@@ -930,7 +934,7 @@ Time is measured in nanoseconds between the current time and midnight, January 1
     <pre><code class="lang-csharp hljs">public long TimeNanos { get; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -948,10 +952,10 @@ Time is measured in nanoseconds between the current time and midnight, January 1
 </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.2.1/apiSpec/new?filename=DxFeed_Graal_Net_Events_Market_Quote_ToString.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Market.Quote.ToString%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.3.0/apiSpec/new?filename=DxFeed_Graal_Net_Events_Market_Quote_ToString.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Market.Quote.ToString%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.2.1/src/DxFeed.Graal.Net/Events/Market/Quote.cs/#L167">View Source</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.3.0/src/DxFeed.Graal.Net/Events/Market/Quote.cs/#L167">View Source</a>
   </span>
   <a id="DxFeed_Graal_Net_Events_Market_Quote_ToString_" data-uid="DxFeed.Graal.Net.Events.Market.Quote.ToString*"></a>
   <h4 id="DxFeed_Graal_Net_Events_Market_Quote_ToString" data-uid="DxFeed.Graal.Net.Events.Market.Quote.ToString">ToString()</h4>
@@ -963,7 +967,7 @@ Time is measured in nanoseconds between the current time and midnight, January 1
     <pre><code class="lang-csharp hljs">public override string ToString()</code></pre>
   </div>
   <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -979,7 +983,7 @@ Time is measured in nanoseconds between the current time and midnight, January 1
     </tbody>
   </table>
   <h5 class="overrides">Overrides</h5>
-  <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring#system-object-tostring">Object.ToString()</a></div>
+  <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a></div>
   <h3 id="implements">Implements</h3>
   <div>
       <a class="xref" href="DxFeed.Graal.Net.Events.ILastingEvent.html">ILastingEvent</a>
@@ -987,6 +991,7 @@ Time is measured in nanoseconds between the current time and midnight, January 1
   <div>
       <a class="xref" href="DxFeed.Graal.Net.Events.IEventType.html">IEventType</a>
   </div>
+
 </article>
           </div>
 
@@ -995,10 +1000,10 @@ Time is measured in nanoseconds between the current time and midnight, January 1
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.2.1/apiSpec/new?filename=DxFeed_Graal_Net_Events_Market_Quote.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Market.Quote%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.3.0/apiSpec/new?filename=DxFeed_Graal_Net_Events_Market_Quote.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Market.Quote%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.2.1/src/DxFeed.Graal.Net/Events/Market/Quote.cs/#L20" class="contribution-link">View Source</a>
+                    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.3.0/src/DxFeed.Graal.Net/Events/Market/Quote.cs/#L20" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>
@@ -1025,7 +1030,7 @@ Time is measured in nanoseconds between the current time and midnight, January 1
       </footer>
     </div>
 
-    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.vendor.min.js"></script>
     <script type="text/javascript" src="../../styles/docfx.js"></script>
     <script type="text/javascript" src="../../styles/main.js"></script>
   </body>

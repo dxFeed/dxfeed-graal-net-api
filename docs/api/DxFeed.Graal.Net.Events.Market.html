@@ -109,13 +109,13 @@
                             <a href="DxFeed.Graal.Net.Api.DXEndpoint.Builder.html" title="DXEndpoint.Builder" class="">DXEndpoint.Builder</a>
                           </li>
                           <li class="">
-                            <a href="DxFeed.Graal.Net.Api.DXEndpoint.OnStateChangeListener.html" title="DXEndpoint.OnStateChangeListener" class="">DXEndpoint.OnStateChangeListener</a>
-                          </li>
-                          <li class="">
                             <a href="DxFeed.Graal.Net.Api.DXEndpoint.Role.html" title="DXEndpoint.Role" class="">DXEndpoint.Role</a>
                           </li>
                           <li class="">
                             <a href="DxFeed.Graal.Net.Api.DXEndpoint.State.html" title="DXEndpoint.State" class="">DXEndpoint.State</a>
+                          </li>
+                          <li class="">
+                            <a href="DxFeed.Graal.Net.Api.DXEndpoint.StateChangeListenerCallback.html" title="DXEndpoint.StateChangeListenerCallback" class="">DXEndpoint.StateChangeListenerCallback</a>
                           </li>
                           <li class="">
                             <a href="DxFeed.Graal.Net.Api.DXFeed.html" title="DXFeed" class="">DXFeed</a>
@@ -361,6 +361,9 @@
                             <a href="DxFeed.Graal.Net.Utils.CmdArgsUtil.html" title="CmdArgsUtil" class="">CmdArgsUtil</a>
                           </li>
                           <li class="">
+                            <a href="DxFeed.Graal.Net.Utils.ConcurrentSet-1.html" title="ConcurrentSet&lt;T&gt;" class="">ConcurrentSet&lt;T&gt;</a>
+                          </li>
+                          <li class="">
                             <a href="DxFeed.Graal.Net.Utils.DayUtil.html" title="DayUtil" class="">DayUtil</a>
                           </li>
                           <li class="">
@@ -402,7 +405,8 @@
   <div class="markdown level0 summary"></div>
   <div class="markdown level0 conceptual"></div>
   <div class="markdown level0 remarks"></div>
-    <h3 id="classes">Classes
+    <h3 id="classes">
+Classes
 </h3>
       <h4><a class="xref" href="DxFeed.Graal.Net.Events.Market.AnalyticOrder.html">AnalyticOrder</a></h4>
       <section><p>Represents an extension of <a class="xref" href="DxFeed.Graal.Net.Events.Market.Order.html">Order</a> introducing analytics information,
@@ -426,18 +430,18 @@ For more details see <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/even
 <h3>Regional symbols</h3>
 <p>Regional symbol subscription receives events only from a designated exchange, marketplace, or venue
 instead of receiving composite events from all venues (by default). Regional symbol is composed from a
-<em>base symbol</em>, ampersand character ('&amp;'), and an exchange code character. For example,</p>
+<i>base symbol</i>, ampersand character ('&amp;'), and an exchange code character. For example,</p>
 <ul>
-<li>&quot;SPY&quot; is the symbol for composite events for SPDR S&amp;P 500 ETF from all exchanges,</li>
-<li>&quot;SPY&amp;N&quot; is the symbol for event for SPDR S&amp;P 500 ETF that originate only from NYSE marketplace.</li>
+<li>"SPY" is the symbol for composite events for SPDR S&amp;P 500 ETF from all exchanges,</li>
+<li>"SPY&amp;N" is the symbol for event for SPDR S&amp;P 500 ETF that originate only from NYSE marketplace.</li>
 </ul>
 <h3>Symbol attributes</h3>
 <p>Market event symbols can have a number of attributes attached to then in curly braces
 with &quot;&lt;key&gt;=&lt;value&gt;&quot; paris separated by commas. For example,</p>
 <ul>
-<li>&quot;SPY{price=bid}&quot; is the market symbol &quot;SPY&quot; with an attribute key &quot;price&quot; set to value &quot;bid&quot;.</li>
-<li>&quot;SPY(=5m,tho=true}&quot; is the market symbol &quot;SPY&quot; with two attributes. One has an empty key and
-value &quot;5m&quot;, while the other has key &quot;tho&quot; and value &quot;true&quot;.</li>
+<li>"SPY{price=bid}" is the market symbol "SPY" with an attribute key "price" set to value "bid".</li>
+<li>"SPY(=5m,tho=true}" is the market symbol "SPY" with two attributes. One has an empty key and
+value "5m", while the other has key "tho" and value "true".</li>
 </ul>
 The methods in this class always maintain attribute keys in alphabetic order.
 <br>
@@ -446,7 +450,7 @@ For more details see <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/even
       <h4><a class="xref" href="DxFeed.Graal.Net.Events.Market.OptionSale.html">OptionSale</a></h4>
       <section><p>Option Sale event represents a trade or another market event with the price
 (for example, market open/close price, etc.) for each option symbol listed under the specified Underlying.
-Option Sales are intended to provide information about option trades <strong>in a continuous time slice</strong> with
+Option Sales are intended to provide information about option trades <b>in a continuous time slice</b> with
 the additional metrics, like Option Volatility, Option Delta, and Underlying Price.
 <br> Option Sale events have unique <a class="xref" href="DxFeed.Graal.Net.Events.Market.OptionSale.html#DxFeed_Graal_Net_Events_Market_OptionSale_Index">Index</a>
 which can be used for later correction/cancellation processing.
@@ -469,12 +473,12 @@ Order events represent a snapshot for a full available market depth for a symbol
 The collection of order events of a symbol represents the most recent information that is
 available about orders on the market at any given moment of time.
 <br>
-<a class="xref" href="DxFeed.Graal.Net.Events.Market.Order.html">Order</a> event represents market depth for a <strong>specific symbol</strong>.
+<a class="xref" href="DxFeed.Graal.Net.Events.Market.Order.html">Order</a> event represents market depth for a <b>specific symbol</b>.
 <br>
-<a class="xref" href="DxFeed.Graal.Net.Events.Market.AnalyticOrder.html">AnalyticOrder</a> event represents market depth for a <strong>specific symbol</strong>
+<a class="xref" href="DxFeed.Graal.Net.Events.Market.AnalyticOrder.html">AnalyticOrder</a> event represents market depth for a <b>specific symbol</b>
 extended with an analytic information, for example, whether particular order represent an iceberg or not.
 <br>
-<a class="xref" href="DxFeed.Graal.Net.Events.Market.SpreadOrder.html">SpreadOrder</a> event represents market depth for <strong>all spreads on a given underlying symbol</strong>.
+<a class="xref" href="DxFeed.Graal.Net.Events.Market.SpreadOrder.html">SpreadOrder</a> event represents market depth for <b>all spreads on a given underlying symbol</b>.
 <br>
 For more details see <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/event/market/OrderBase.html">Javadoc</a>.</p>
 </section>
@@ -483,8 +487,8 @@ For more details see <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/even
 <ul>
 <li>
 <em>Synthetic</em> sources <a class="xref" href="DxFeed.Graal.Net.Events.Market.OrderSource.html#DxFeed_Graal_Net_Events_Market_OrderSource_COMPOSITE_BID">COMPOSITE_BID</a>, <a class="xref" href="DxFeed.Graal.Net.Events.Market.OrderSource.html#DxFeed_Graal_Net_Events_Market_OrderSource_COMPOSITE_ASK">COMPOSITE_ASK</a>,
-<a class="xref" href="DxFeed.Graal.Net.Events.Market.OrderSource.html#DxFeed_Graal_Net_Events_Market_OrderSource_REGIONAL_BID">REGIONAL_BID</a> and <a class="xref" href="DxFeed.Graal.Net.Events.Market.OrderSource.html#DxFeed_Graal_Net_Events_Market_OrderSource_REGIONAL_ASK">REGIONAL_ASK</a> are provided for convenience of a consolidated
-order book and are automatically generated based on the corresponding <a class="xref" href="DxFeed.Graal.Net.Events.Market.Quote.html">Quote</a> events.
+    <a class="xref" href="DxFeed.Graal.Net.Events.Market.OrderSource.html#DxFeed_Graal_Net_Events_Market_OrderSource_REGIONAL_BID">REGIONAL_BID</a> and <a class="xref" href="DxFeed.Graal.Net.Events.Market.OrderSource.html#DxFeed_Graal_Net_Events_Market_OrderSource_REGIONAL_ASK">REGIONAL_ASK</a> are provided for convenience of a consolidated
+    order book and are automatically generated based on the corresponding <a class="xref" href="DxFeed.Graal.Net.Events.Market.Quote.html">Quote</a> events.
 </li>
 <li>
 <em>Aggregate</em> sources <a class="xref" href="DxFeed.Graal.Net.Events.Market.OrderSource.html#DxFeed_Graal_Net_Events_Market_OrderSource_AGGREGATE_BID">AGGREGATE_BID</a>  and <a class="xref" href="DxFeed.Graal.Net.Events.Market.OrderSource.html#DxFeed_Graal_Net_Events_Market_OrderSource_AGGREGATE_ASK">AGGREGATE_ASK</a>  provide
@@ -534,8 +538,8 @@ For more details see <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/even
 </section>
       <h4><a class="xref" href="DxFeed.Graal.Net.Events.Market.TimeAndSale.html">TimeAndSale</a></h4>
       <section><p>Time and Sale represents a trade or other market event with price, like market open/close price, etc.
-Time and Sales are intended to provide information about trades <strong>in a continuous time slice</strong>
-(unlike <a class="xref" href="DxFeed.Graal.Net.Events.Market.Trade.html">Trade</a> events which are supposed to provide snapshot about the <strong>current last</strong> trade).
+Time and Sales are intended to provide information about trades <b>in a continuous time slice</b>
+(unlike <a class="xref" href="DxFeed.Graal.Net.Events.Market.Trade.html">Trade</a> events which are supposed to provide snapshot about the <b>current last</b> trade).
 <br> Time and Sale events have unique <a class="xref" href="DxFeed.Graal.Net.Events.Market.TimeAndSale.html#DxFeed_Graal_Net_Events_Market_TimeAndSale_Index">Index</a>
 which can be used for later correction/cancellation processing.
 <br>
@@ -560,13 +564,14 @@ For more details see <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/even
       <section><p>TradeETH event is a snapshot of the price and size of the last trade during
 extended trading hours and the extended trading hours day volume and day turnover.
 This event is defined only for symbols (typically stocks and ETFs) with a designated
-<strong>extended trading hours</strong> (ETH, pre market and post market trading sessions).
+<b>extended trading hours</b> (ETH, pre market and post market trading sessions).
 It represents the most recent information that is available about
 ETH last trade on the market at any given moment of time.
 <br>
 For more details see <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/event/market/TradeETH.html">Javadoc</a>.</p>
 </section>
-    <h3 id="enums">Enums
+    <h3 id="enums">
+Enums
 </h3>
       <h4><a class="xref" href="DxFeed.Graal.Net.Events.Market.Direction.html">Direction</a></h4>
       <section><p>Direction of the price movement. For example tick direction for last trade price.
@@ -602,6 +607,8 @@ For more details see <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/even
       <h4><a class="xref" href="DxFeed.Graal.Net.Events.Market.TradingStatus.html">TradingStatus</a></h4>
       <section><p>Trading status of an instrument.</p>
 </section>
+
+
 </article>
           </div>
 
@@ -634,7 +641,7 @@ For more details see <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/even
       </footer>
     </div>
 
-    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.vendor.min.js"></script>
     <script type="text/javascript" src="../../styles/docfx.js"></script>
     <script type="text/javascript" src="../../styles/main.js"></script>
   </body>

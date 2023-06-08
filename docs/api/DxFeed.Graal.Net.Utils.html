@@ -109,13 +109,13 @@
                             <a href="DxFeed.Graal.Net.Api.DXEndpoint.Builder.html" title="DXEndpoint.Builder" class="">DXEndpoint.Builder</a>
                           </li>
                           <li class="">
-                            <a href="DxFeed.Graal.Net.Api.DXEndpoint.OnStateChangeListener.html" title="DXEndpoint.OnStateChangeListener" class="">DXEndpoint.OnStateChangeListener</a>
-                          </li>
-                          <li class="">
                             <a href="DxFeed.Graal.Net.Api.DXEndpoint.Role.html" title="DXEndpoint.Role" class="">DXEndpoint.Role</a>
                           </li>
                           <li class="">
                             <a href="DxFeed.Graal.Net.Api.DXEndpoint.State.html" title="DXEndpoint.State" class="">DXEndpoint.State</a>
+                          </li>
+                          <li class="">
+                            <a href="DxFeed.Graal.Net.Api.DXEndpoint.StateChangeListenerCallback.html" title="DXEndpoint.StateChangeListenerCallback" class="">DXEndpoint.StateChangeListenerCallback</a>
                           </li>
                           <li class="">
                             <a href="DxFeed.Graal.Net.Api.DXFeed.html" title="DXFeed" class="">DXFeed</a>
@@ -361,6 +361,9 @@
                             <a href="DxFeed.Graal.Net.Utils.CmdArgsUtil.html" title="CmdArgsUtil" class="">CmdArgsUtil</a>
                           </li>
                           <li class="">
+                            <a href="DxFeed.Graal.Net.Utils.ConcurrentSet-1.html" title="ConcurrentSet&lt;T&gt;" class="">ConcurrentSet&lt;T&gt;</a>
+                          </li>
+                          <li class="">
                             <a href="DxFeed.Graal.Net.Utils.DayUtil.html" title="DayUtil" class="">DayUtil</a>
                           </li>
                           <li class="">
@@ -402,7 +405,8 @@
   <div class="markdown level0 summary"></div>
   <div class="markdown level0 conceptual"></div>
   <div class="markdown level0 remarks"></div>
-    <h3 id="classes">Classes
+    <h3 id="classes">
+Classes
 </h3>
       <h4><a class="xref" href="DxFeed.Graal.Net.Utils.AttributeUtil.html">AttributeUtil</a></h4>
       <section><p>Provides utility methods for manipulating an <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.attribute">Attribute</a>.</p>
@@ -415,8 +419,13 @@ Porting Java class <code>com.dxfeed.event.market.Util</code>.</p>
       <h4><a class="xref" href="DxFeed.Graal.Net.Utils.CmdArgsUtil.html">CmdArgsUtil</a></h4>
       <section><p>A collection of static helper methods for parses command-line arguments.</p>
 </section>
+      <h4><a class="xref" href="DxFeed.Graal.Net.Utils.ConcurrentSet-1.html">ConcurrentSet&lt;T&gt;</a></h4>
+      <section><p>This is a simple wrapper over <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.concurrent.concurrentdictionary-2">ConcurrentDictionary&lt;TKey, TValue&gt;</a>,
+to provide an interface as a <code>Set</code> (.NET does not provide a built-in concurrent hashset type)
+for more consistent.</p>
+</section>
       <h4><a class="xref" href="DxFeed.Graal.Net.Utils.DayUtil.html">DayUtil</a></h4>
-      <section><p>A collection of static utility methods for manipulation of <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">Int32</a> day id,
+      <section><p>A collection of static utility methods for manipulation of <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a> day id,
 that is the number of days since Unix epoch of January 1, 1970.
 <br>
 Porting Java class <code>com.devexperts.util.DayUtil</code>.</p>
@@ -452,6 +461,8 @@ Porting Java class <code>com.dxfeed.event.impl.TimeNanosUtil</code>.</p>
 <br>
 Porting Java class <code>com.devexperts.util.TimeUtil</code>.</p>
 </section>
+
+
 </article>
           </div>
 
@@ -484,7 +495,7 @@ Porting Java class <code>com.devexperts.util.TimeUtil</code>.</p>
       </footer>
     </div>
 
-    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.vendor.min.js"></script>
     <script type="text/javascript" src="../../styles/docfx.js"></script>
     <script type="text/javascript" src="../../styles/main.js"></script>
   </body>

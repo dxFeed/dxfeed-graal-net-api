@@ -109,13 +109,13 @@
                             <a href="DxFeed.Graal.Net.Api.DXEndpoint.Builder.html" title="DXEndpoint.Builder" class="">DXEndpoint.Builder</a>
                           </li>
                           <li class="">
-                            <a href="DxFeed.Graal.Net.Api.DXEndpoint.OnStateChangeListener.html" title="DXEndpoint.OnStateChangeListener" class="">DXEndpoint.OnStateChangeListener</a>
-                          </li>
-                          <li class="">
                             <a href="DxFeed.Graal.Net.Api.DXEndpoint.Role.html" title="DXEndpoint.Role" class="">DXEndpoint.Role</a>
                           </li>
                           <li class="">
                             <a href="DxFeed.Graal.Net.Api.DXEndpoint.State.html" title="DXEndpoint.State" class="">DXEndpoint.State</a>
+                          </li>
+                          <li class="">
+                            <a href="DxFeed.Graal.Net.Api.DXEndpoint.StateChangeListenerCallback.html" title="DXEndpoint.StateChangeListenerCallback" class="">DXEndpoint.StateChangeListenerCallback</a>
                           </li>
                           <li class="">
                             <a href="DxFeed.Graal.Net.Api.DXFeed.html" title="DXFeed" class="">DXFeed</a>
@@ -361,6 +361,9 @@
                             <a href="DxFeed.Graal.Net.Utils.CmdArgsUtil.html" title="CmdArgsUtil" class="">CmdArgsUtil</a>
                           </li>
                           <li class="">
+                            <a href="DxFeed.Graal.Net.Utils.ConcurrentSet-1.html" title="ConcurrentSet&lt;T&gt;" class="">ConcurrentSet&lt;T&gt;</a>
+                          </li>
+                          <li class="">
                             <a href="DxFeed.Graal.Net.Utils.DayUtil.html" title="DayUtil" class="">DayUtil</a>
                           </li>
                           <li class="">
@@ -398,11 +401,12 @@
             <article class="content wrap" id="_content" data-uid="DxFeed.Graal.Net.Events.Market.OptionSale">
 
 
+
   <h1 id="DxFeed_Graal_Net_Events_Market_OptionSale" data-uid="DxFeed.Graal.Net.Events.Market.OptionSale" class="text-break">Class OptionSale
 </h1>
   <div class="markdown level0 summary"><p>Option Sale event represents a trade or another market event with the price
 (for example, market open/close price, etc.) for each option symbol listed under the specified Underlying.
-Option Sales are intended to provide information about option trades <strong>in a continuous time slice</strong> with
+Option Sales are intended to provide information about option trades <b>in a continuous time slice</b> with
 the additional metrics, like Option Volatility, Option Delta, and Underlying Price.
 <br> Option Sale events have unique <a class="xref" href="DxFeed.Graal.Net.Events.Market.OptionSale.html#DxFeed_Graal_Net_Events_Market_OptionSale_Index">Index</a>
 which can be used for later correction/cancellation processing.
@@ -436,19 +440,19 @@ For more details see <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/even
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
     </div>
     <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode#system-object-gethashcode">object.GetHashCode()</a>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
     </div>
     <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype#system-object-gettype">object.GetType()</a>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
     </div>
     <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone#system-object-memberwiseclone">object.MemberwiseClone()</a>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
     </div>
     <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals#system-object-referenceequals(system-object-system-object)">object.ReferenceEquals(object, object)</a>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
     </div>
   </div>
-  <h6><strong>Namespace</strong>: <span class="xref">DxFeed</span>.<span class="xref">Graal</span>.<a class="xref" href="DxFeed.Graal.Net.html">Net</a>.<a class="xref" href="DxFeed.Graal.Net.Events.html">Events</a>.<a class="xref" href="DxFeed.Graal.Net.Events.Market.html">Market</a></h6>
+  <h6><strong>Namespace</strong>: <a class="xref" href="DxFeed.html">DxFeed</a>.<a class="xref" href="DxFeed.Graal.html">Graal</a>.<a class="xref" href="DxFeed.Graal.Net.html">Net</a>.<a class="xref" href="DxFeed.Graal.Net.Events.html">Events</a>.<a class="xref" href="DxFeed.Graal.Net.Events.Market.html">Market</a></h6>
   <h6><strong>Assembly</strong>: DxFeed.Graal.Net.dll</h6>
   <h5 id="DxFeed_Graal_Net_Events_Market_OptionSale_syntax">Syntax</h5>
   <div class="codewrapper">
@@ -459,10 +463,10 @@ public class OptionSale : MarketEvent, IIndexedEvent, IEventType</code></pre>
 </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.2.1/apiSpec/new?filename=DxFeed_Graal_Net_Events_Market_OptionSale__ctor.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Market.OptionSale.%23ctor%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.3.0/apiSpec/new?filename=DxFeed_Graal_Net_Events_Market_OptionSale__ctor.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Market.OptionSale.%23ctor%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.2.1/src/DxFeed.Graal.Net/Events/Market/OptionSale.cs/#L45">View Source</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.3.0/src/DxFeed.Graal.Net/Events/Market/OptionSale.cs/#L45">View Source</a>
   </span>
   <a id="DxFeed_Graal_Net_Events_Market_OptionSale__ctor_" data-uid="DxFeed.Graal.Net.Events.Market.OptionSale.#ctor*"></a>
   <h4 id="DxFeed_Graal_Net_Events_Market_OptionSale__ctor" data-uid="DxFeed.Graal.Net.Events.Market.OptionSale.#ctor">OptionSale()</h4>
@@ -475,10 +479,10 @@ public class OptionSale : MarketEvent, IIndexedEvent, IEventType</code></pre>
   </div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.2.1/apiSpec/new?filename=DxFeed_Graal_Net_Events_Market_OptionSale__ctor_System_String_.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Market.OptionSale.%23ctor(System.String)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.3.0/apiSpec/new?filename=DxFeed_Graal_Net_Events_Market_OptionSale__ctor_System_String_.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Market.OptionSale.%23ctor(System.String)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.2.1/src/DxFeed.Graal.Net/Events/Market/OptionSale.cs/#L53">View Source</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.3.0/src/DxFeed.Graal.Net/Events/Market/OptionSale.cs/#L53">View Source</a>
   </span>
   <a id="DxFeed_Graal_Net_Events_Market_OptionSale__ctor_" data-uid="DxFeed.Graal.Net.Events.Market.OptionSale.#ctor*"></a>
   <h4 id="DxFeed_Graal_Net_Events_Market_OptionSale__ctor_System_String_" data-uid="DxFeed.Graal.Net.Events.Market.OptionSale.#ctor(System.String)">OptionSale(string?)</h4>
@@ -490,7 +494,7 @@ public class OptionSale : MarketEvent, IIndexedEvent, IEventType</code></pre>
     <pre><code class="lang-csharp hljs">public OptionSale(string? eventSymbol)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -511,10 +515,10 @@ public class OptionSale : MarketEvent, IIndexedEvent, IEventType</code></pre>
 </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.2.1/apiSpec/new?filename=DxFeed_Graal_Net_Events_Market_OptionSale_MaxSequence.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Market.OptionSale.MaxSequence%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.3.0/apiSpec/new?filename=DxFeed_Graal_Net_Events_Market_OptionSale_MaxSequence.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Market.OptionSale.MaxSequence%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.2.1/src/DxFeed.Graal.Net/Events/Market/OptionSale.cs/#L32">View Source</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.3.0/src/DxFeed.Graal.Net/Events/Market/OptionSale.cs/#L32">View Source</a>
   </span>
   <h4 id="DxFeed_Graal_Net_Events_Market_OptionSale_MaxSequence" data-uid="DxFeed.Graal.Net.Events.Market.OptionSale.MaxSequence">MaxSequence</h4>
   <div class="markdown level1 summary"><p>Maximum allowed sequence value.
@@ -526,7 +530,7 @@ public class OptionSale : MarketEvent, IIndexedEvent, IEventType</code></pre>
     <pre><code class="lang-csharp hljs">public const int MaxSequence = 4194303</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -544,10 +548,10 @@ public class OptionSale : MarketEvent, IIndexedEvent, IEventType</code></pre>
 </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.2.1/apiSpec/new?filename=DxFeed_Graal_Net_Events_Market_OptionSale_AggressorSide.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Market.OptionSale.AggressorSide%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.3.0/apiSpec/new?filename=DxFeed_Graal_Net_Events_Market_OptionSale_AggressorSide.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Market.OptionSale.AggressorSide%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.2.1/src/DxFeed.Graal.Net/Events/Market/OptionSale.cs/#L174">View Source</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.3.0/src/DxFeed.Graal.Net/Events/Market/OptionSale.cs/#L174">View Source</a>
   </span>
   <a id="DxFeed_Graal_Net_Events_Market_OptionSale_AggressorSide_" data-uid="DxFeed.Graal.Net.Events.Market.OptionSale.AggressorSide*"></a>
   <h4 id="DxFeed_Graal_Net_Events_Market_OptionSale_AggressorSide" data-uid="DxFeed.Graal.Net.Events.Market.OptionSale.AggressorSide">AggressorSide</h4>
@@ -559,7 +563,7 @@ public class OptionSale : MarketEvent, IIndexedEvent, IEventType</code></pre>
     <pre><code class="lang-csharp hljs">public Side AggressorSide { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -575,10 +579,10 @@ public class OptionSale : MarketEvent, IIndexedEvent, IEventType</code></pre>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.2.1/apiSpec/new?filename=DxFeed_Graal_Net_Events_Market_OptionSale_AskPrice.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Market.OptionSale.AskPrice%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.3.0/apiSpec/new?filename=DxFeed_Graal_Net_Events_Market_OptionSale_AskPrice.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Market.OptionSale.AskPrice%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.2.1/src/DxFeed.Graal.Net/Events/Market/OptionSale.cs/#L150">View Source</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.3.0/src/DxFeed.Graal.Net/Events/Market/OptionSale.cs/#L150">View Source</a>
   </span>
   <a id="DxFeed_Graal_Net_Events_Market_OptionSale_AskPrice_" data-uid="DxFeed.Graal.Net.Events.Market.OptionSale.AskPrice*"></a>
   <h4 id="DxFeed_Graal_Net_Events_Market_OptionSale_AskPrice" data-uid="DxFeed.Graal.Net.Events.Market.OptionSale.AskPrice">AskPrice</h4>
@@ -590,7 +594,7 @@ public class OptionSale : MarketEvent, IIndexedEvent, IEventType</code></pre>
     <pre><code class="lang-csharp hljs">public double AskPrice { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -606,10 +610,10 @@ public class OptionSale : MarketEvent, IIndexedEvent, IEventType</code></pre>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.2.1/apiSpec/new?filename=DxFeed_Graal_Net_Events_Market_OptionSale_BidPrice.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Market.OptionSale.BidPrice%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.3.0/apiSpec/new?filename=DxFeed_Graal_Net_Events_Market_OptionSale_BidPrice.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Market.OptionSale.BidPrice%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.2.1/src/DxFeed.Graal.Net/Events/Market/OptionSale.cs/#L145">View Source</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.3.0/src/DxFeed.Graal.Net/Events/Market/OptionSale.cs/#L145">View Source</a>
   </span>
   <a id="DxFeed_Graal_Net_Events_Market_OptionSale_BidPrice_" data-uid="DxFeed.Graal.Net.Events.Market.OptionSale.BidPrice*"></a>
   <h4 id="DxFeed_Graal_Net_Events_Market_OptionSale_BidPrice" data-uid="DxFeed.Graal.Net.Events.Market.OptionSale.BidPrice">BidPrice</h4>
@@ -621,7 +625,7 @@ public class OptionSale : MarketEvent, IIndexedEvent, IEventType</code></pre>
     <pre><code class="lang-csharp hljs">public double BidPrice { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -637,10 +641,10 @@ public class OptionSale : MarketEvent, IIndexedEvent, IEventType</code></pre>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.2.1/apiSpec/new?filename=DxFeed_Graal_Net_Events_Market_OptionSale_Delta.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Market.OptionSale.Delta%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.3.0/apiSpec/new?filename=DxFeed_Graal_Net_Events_Market_OptionSale_Delta.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Market.OptionSale.Delta%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.2.1/src/DxFeed.Graal.Net/Events/Market/OptionSale.cs/#L255">View Source</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.3.0/src/DxFeed.Graal.Net/Events/Market/OptionSale.cs/#L255">View Source</a>
   </span>
   <a id="DxFeed_Graal_Net_Events_Market_OptionSale_Delta_" data-uid="DxFeed.Graal.Net.Events.Market.OptionSale.Delta*"></a>
   <h4 id="DxFeed_Graal_Net_Events_Market_OptionSale_Delta" data-uid="DxFeed.Graal.Net.Events.Market.OptionSale.Delta">Delta</h4>
@@ -653,7 +657,7 @@ Delta is the first derivative of an option price by an underlying price.</p>
     <pre><code class="lang-csharp hljs">public double Delta { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -669,10 +673,10 @@ Delta is the first derivative of an option price by an underlying price.</p>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.2.1/apiSpec/new?filename=DxFeed_Graal_Net_Events_Market_OptionSale_EventFlags.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Market.OptionSale.EventFlags%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.3.0/apiSpec/new?filename=DxFeed_Graal_Net_Events_Market_OptionSale_EventFlags.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Market.OptionSale.EventFlags%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.2.1/src/DxFeed.Graal.Net/Events/Market/OptionSale.cs/#L63">View Source</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.3.0/src/DxFeed.Graal.Net/Events/Market/OptionSale.cs/#L63">View Source</a>
   </span>
   <a id="DxFeed_Graal_Net_Events_Market_OptionSale_EventFlags_" data-uid="DxFeed.Graal.Net.Events.Market.OptionSale.EventFlags*"></a>
   <h4 id="DxFeed_Graal_Net_Events_Market_OptionSale_EventFlags" data-uid="DxFeed.Graal.Net.Events.Market.OptionSale.EventFlags">EventFlags</h4>
@@ -684,7 +688,7 @@ Delta is the first derivative of an option price by an underlying price.</p>
     <pre><code class="lang-csharp hljs">public int EventFlags { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -700,10 +704,10 @@ Delta is the first derivative of an option price by an underlying price.</p>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.2.1/apiSpec/new?filename=DxFeed_Graal_Net_Events_Market_OptionSale_EventSource.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Market.OptionSale.EventSource%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.3.0/apiSpec/new?filename=DxFeed_Graal_Net_Events_Market_OptionSale_EventSource.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Market.OptionSale.EventSource%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.2.1/src/DxFeed.Graal.Net/Events/Market/OptionSale.cs/#L59">View Source</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.3.0/src/DxFeed.Graal.Net/Events/Market/OptionSale.cs/#L59">View Source</a>
   </span>
   <a id="DxFeed_Graal_Net_Events_Market_OptionSale_EventSource_" data-uid="DxFeed.Graal.Net.Events.Market.OptionSale.EventSource*"></a>
   <h4 id="DxFeed_Graal_Net_Events_Market_OptionSale_EventSource" data-uid="DxFeed.Graal.Net.Events.Market.OptionSale.EventSource">EventSource</h4>
@@ -716,7 +720,7 @@ which is always <a class="xref" href="DxFeed.Graal.Net.Events.IndexedEventSource
     <pre><code class="lang-csharp hljs">public IndexedEventSource EventSource { get; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -732,10 +736,10 @@ which is always <a class="xref" href="DxFeed.Graal.Net.Events.IndexedEventSource
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.2.1/apiSpec/new?filename=DxFeed_Graal_Net_Events_Market_OptionSale_ExchangeCode.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Market.OptionSale.ExchangeCode%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.3.0/apiSpec/new?filename=DxFeed_Graal_Net_Events_Market_OptionSale_ExchangeCode.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Market.OptionSale.ExchangeCode%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.2.1/src/DxFeed.Graal.Net/Events/Market/OptionSale.cs/#L130">View Source</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.3.0/src/DxFeed.Graal.Net/Events/Market/OptionSale.cs/#L130">View Source</a>
   </span>
   <a id="DxFeed_Graal_Net_Events_Market_OptionSale_ExchangeCode_" data-uid="DxFeed.Graal.Net.Events.Market.OptionSale.ExchangeCode*"></a>
   <h4 id="DxFeed_Graal_Net_Events_Market_OptionSale_ExchangeCode" data-uid="DxFeed.Graal.Net.Events.Market.OptionSale.ExchangeCode">ExchangeCode</h4>
@@ -747,7 +751,7 @@ which is always <a class="xref" href="DxFeed.Graal.Net.Events.IndexedEventSource
     <pre><code class="lang-csharp hljs">public char ExchangeCode { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -763,10 +767,10 @@ which is always <a class="xref" href="DxFeed.Graal.Net.Events.IndexedEventSource
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.2.1/apiSpec/new?filename=DxFeed_Graal_Net_Events_Market_OptionSale_ExchangeSaleConditions.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Market.OptionSale.ExchangeSaleConditions%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.3.0/apiSpec/new?filename=DxFeed_Graal_Net_Events_Market_OptionSale_ExchangeSaleConditions.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Market.OptionSale.ExchangeSaleConditions%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.2.1/src/DxFeed.Graal.Net/Events/Market/OptionSale.cs/#L156">View Source</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.3.0/src/DxFeed.Graal.Net/Events/Market/OptionSale.cs/#L156">View Source</a>
   </span>
   <a id="DxFeed_Graal_Net_Events_Market_OptionSale_ExchangeSaleConditions_" data-uid="DxFeed.Graal.Net.Events.Market.OptionSale.ExchangeSaleConditions*"></a>
   <h4 id="DxFeed_Graal_Net_Events_Market_OptionSale_ExchangeSaleConditions" data-uid="DxFeed.Graal.Net.Events.Market.OptionSale.ExchangeSaleConditions">ExchangeSaleConditions</h4>
@@ -779,7 +783,7 @@ This field format is specific for every particular data feed.</p>
     <pre><code class="lang-csharp hljs">public string? ExchangeSaleConditions { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -795,10 +799,10 @@ This field format is specific for every particular data feed.</p>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.2.1/apiSpec/new?filename=DxFeed_Graal_Net_Events_Market_OptionSale_Index.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Market.OptionSale.Index%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.3.0/apiSpec/new?filename=DxFeed_Graal_Net_Events_Market_OptionSale_Index.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Market.OptionSale.Index%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.2.1/src/DxFeed.Graal.Net/Events/Market/OptionSale.cs/#L68">View Source</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.3.0/src/DxFeed.Graal.Net/Events/Market/OptionSale.cs/#L68">View Source</a>
   </span>
   <a id="DxFeed_Graal_Net_Events_Market_OptionSale_Index_" data-uid="DxFeed.Graal.Net.Events.Market.OptionSale.Index*"></a>
   <h4 id="DxFeed_Graal_Net_Events_Market_OptionSale_Index" data-uid="DxFeed.Graal.Net.Events.Market.OptionSale.Index">Index</h4>
@@ -810,7 +814,7 @@ This field format is specific for every particular data feed.</p>
     <pre><code class="lang-csharp hljs">public long Index { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -826,10 +830,10 @@ This field format is specific for every particular data feed.</p>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.2.1/apiSpec/new?filename=DxFeed_Graal_Net_Events_Market_OptionSale_IsCancel.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Market.OptionSale.IsCancel%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.3.0/apiSpec/new?filename=DxFeed_Graal_Net_Events_Market_OptionSale_IsCancel.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Market.OptionSale.IsCancel%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.2.1/src/DxFeed.Graal.Net/Events/Market/OptionSale.cs/#L238">View Source</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.3.0/src/DxFeed.Graal.Net/Events/Market/OptionSale.cs/#L238">View Source</a>
   </span>
   <a id="DxFeed_Graal_Net_Events_Market_OptionSale_IsCancel_" data-uid="DxFeed.Graal.Net.Events.Market.OptionSale.IsCancel*"></a>
   <h4 id="DxFeed_Graal_Net_Events_Market_OptionSale_IsCancel" data-uid="DxFeed.Graal.Net.Events.Market.OptionSale.IsCancel">IsCancel</h4>
@@ -843,7 +847,7 @@ It is <code>false</code> for newly created option sale event.
     <pre><code class="lang-csharp hljs">public bool IsCancel { get; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -859,10 +863,10 @@ It is <code>false</code> for newly created option sale event.
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.2.1/apiSpec/new?filename=DxFeed_Graal_Net_Events_Market_OptionSale_IsCorrection.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Market.OptionSale.IsCorrection%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.3.0/apiSpec/new?filename=DxFeed_Graal_Net_Events_Market_OptionSale_IsCorrection.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Market.OptionSale.IsCorrection%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.2.1/src/DxFeed.Graal.Net/Events/Market/OptionSale.cs/#L230">View Source</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.3.0/src/DxFeed.Graal.Net/Events/Market/OptionSale.cs/#L230">View Source</a>
   </span>
   <a id="DxFeed_Graal_Net_Events_Market_OptionSale_IsCorrection_" data-uid="DxFeed.Graal.Net.Events.Market.OptionSale.IsCorrection*"></a>
   <h4 id="DxFeed_Graal_Net_Events_Market_OptionSale_IsCorrection" data-uid="DxFeed.Graal.Net.Events.Market.OptionSale.IsCorrection">IsCorrection</h4>
@@ -876,7 +880,7 @@ It is <code>false</code> for newly created optionsale event.
     <pre><code class="lang-csharp hljs">public bool IsCorrection { get; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -892,10 +896,10 @@ It is <code>false</code> for newly created optionsale event.
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.2.1/apiSpec/new?filename=DxFeed_Graal_Net_Events_Market_OptionSale_IsExtendedTradingHours.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Market.OptionSale.IsExtendedTradingHours%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.3.0/apiSpec/new?filename=DxFeed_Graal_Net_Events_Market_OptionSale_IsExtendedTradingHours.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Market.OptionSale.IsExtendedTradingHours%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.2.1/src/DxFeed.Graal.Net/Events/Market/OptionSale.cs/#L192">View Source</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.3.0/src/DxFeed.Graal.Net/Events/Market/OptionSale.cs/#L192">View Source</a>
   </span>
   <a id="DxFeed_Graal_Net_Events_Market_OptionSale_IsExtendedTradingHours_" data-uid="DxFeed.Graal.Net.Events.Market.OptionSale.IsExtendedTradingHours*"></a>
   <h4 id="DxFeed_Graal_Net_Events_Market_OptionSale_IsExtendedTradingHours" data-uid="DxFeed.Graal.Net.Events.Market.OptionSale.IsExtendedTradingHours">IsExtendedTradingHours</h4>
@@ -907,7 +911,7 @@ It is <code>false</code> for newly created optionsale event.
     <pre><code class="lang-csharp hljs">public bool IsExtendedTradingHours { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -923,10 +927,10 @@ It is <code>false</code> for newly created optionsale event.
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.2.1/apiSpec/new?filename=DxFeed_Graal_Net_Events_Market_OptionSale_IsNew.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Market.OptionSale.IsNew%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.3.0/apiSpec/new?filename=DxFeed_Graal_Net_Events_Market_OptionSale_IsNew.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Market.OptionSale.IsNew%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.2.1/src/DxFeed.Graal.Net/Events/Market/OptionSale.cs/#L222">View Source</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.3.0/src/DxFeed.Graal.Net/Events/Market/OptionSale.cs/#L222">View Source</a>
   </span>
   <a id="DxFeed_Graal_Net_Events_Market_OptionSale_IsNew_" data-uid="DxFeed.Graal.Net.Events.Market.OptionSale.IsNew*"></a>
   <h4 id="DxFeed_Graal_Net_Events_Market_OptionSale_IsNew" data-uid="DxFeed.Graal.Net.Events.Market.OptionSale.IsNew">IsNew</h4>
@@ -939,7 +943,7 @@ It is <code>true</code> for newly created option sale event.</p>
     <pre><code class="lang-csharp hljs">public bool IsNew { get; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -955,10 +959,10 @@ It is <code>true</code> for newly created option sale event.</p>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.2.1/apiSpec/new?filename=DxFeed_Graal_Net_Events_Market_OptionSale_IsSpreadLeg.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Market.OptionSale.IsSpreadLeg%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.3.0/apiSpec/new?filename=DxFeed_Graal_Net_Events_Market_OptionSale_IsSpreadLeg.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Market.OptionSale.IsSpreadLeg%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.2.1/src/DxFeed.Graal.Net/Events/Market/OptionSale.cs/#L183">View Source</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.3.0/src/DxFeed.Graal.Net/Events/Market/OptionSale.cs/#L183">View Source</a>
   </span>
   <a id="DxFeed_Graal_Net_Events_Market_OptionSale_IsSpreadLeg_" data-uid="DxFeed.Graal.Net.Events.Market.OptionSale.IsSpreadLeg*"></a>
   <h4 id="DxFeed_Graal_Net_Events_Market_OptionSale_IsSpreadLeg" data-uid="DxFeed.Graal.Net.Events.Market.OptionSale.IsSpreadLeg">IsSpreadLeg</h4>
@@ -970,7 +974,7 @@ It is <code>true</code> for newly created option sale event.</p>
     <pre><code class="lang-csharp hljs">public bool IsSpreadLeg { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -986,10 +990,10 @@ It is <code>true</code> for newly created option sale event.</p>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.2.1/apiSpec/new?filename=DxFeed_Graal_Net_Events_Market_OptionSale_IsValidTick.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Market.OptionSale.IsValidTick%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.3.0/apiSpec/new?filename=DxFeed_Graal_Net_Events_Market_OptionSale_IsValidTick.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Market.OptionSale.IsValidTick%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.2.1/src/DxFeed.Graal.Net/Events/Market/OptionSale.cs/#L203">View Source</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.3.0/src/DxFeed.Graal.Net/Events/Market/OptionSale.cs/#L203">View Source</a>
   </span>
   <a id="DxFeed_Graal_Net_Events_Market_OptionSale_IsValidTick_" data-uid="DxFeed.Graal.Net.Events.Market.OptionSale.IsValidTick*"></a>
   <h4 id="DxFeed_Graal_Net_Events_Market_OptionSale_IsValidTick" data-uid="DxFeed.Graal.Net.Events.Market.OptionSale.IsValidTick">IsValidTick</h4>
@@ -1003,7 +1007,7 @@ but a cancellation of a previous valid tick does not.</p>
     <pre><code class="lang-csharp hljs">public bool IsValidTick { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -1019,10 +1023,10 @@ but a cancellation of a previous valid tick does not.</p>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.2.1/apiSpec/new?filename=DxFeed_Graal_Net_Events_Market_OptionSale_OptionSymbol.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Market.OptionSale.OptionSymbol%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.3.0/apiSpec/new?filename=DxFeed_Graal_Net_Events_Market_OptionSale_OptionSymbol.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Market.OptionSale.OptionSymbol%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.2.1/src/DxFeed.Graal.Net/Events/Market/OptionSale.cs/#L260">View Source</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.3.0/src/DxFeed.Graal.Net/Events/Market/OptionSale.cs/#L260">View Source</a>
   </span>
   <a id="DxFeed_Graal_Net_Events_Market_OptionSale_OptionSymbol_" data-uid="DxFeed.Graal.Net.Events.Market.OptionSale.OptionSymbol*"></a>
   <h4 id="DxFeed_Graal_Net_Events_Market_OptionSale_OptionSymbol" data-uid="DxFeed.Graal.Net.Events.Market.OptionSale.OptionSymbol">OptionSymbol</h4>
@@ -1034,7 +1038,7 @@ but a cancellation of a previous valid tick does not.</p>
     <pre><code class="lang-csharp hljs">public string? OptionSymbol { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -1050,10 +1054,10 @@ but a cancellation of a previous valid tick does not.</p>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.2.1/apiSpec/new?filename=DxFeed_Graal_Net_Events_Market_OptionSale_Price.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Market.OptionSale.Price%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.3.0/apiSpec/new?filename=DxFeed_Graal_Net_Events_Market_OptionSale_Price.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Market.OptionSale.Price%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.2.1/src/DxFeed.Graal.Net/Events/Market/OptionSale.cs/#L135">View Source</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.3.0/src/DxFeed.Graal.Net/Events/Market/OptionSale.cs/#L135">View Source</a>
   </span>
   <a id="DxFeed_Graal_Net_Events_Market_OptionSale_Price_" data-uid="DxFeed.Graal.Net.Events.Market.OptionSale.Price*"></a>
   <h4 id="DxFeed_Graal_Net_Events_Market_OptionSale_Price" data-uid="DxFeed.Graal.Net.Events.Market.OptionSale.Price">Price</h4>
@@ -1065,7 +1069,7 @@ but a cancellation of a previous valid tick does not.</p>
     <pre><code class="lang-csharp hljs">public double Price { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -1081,10 +1085,10 @@ but a cancellation of a previous valid tick does not.</p>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.2.1/apiSpec/new?filename=DxFeed_Graal_Net_Events_Market_OptionSale_Sequence.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Market.OptionSale.Sequence%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.3.0/apiSpec/new?filename=DxFeed_Graal_Net_Events_Market_OptionSale_Sequence.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Market.OptionSale.Sequence%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.2.1/src/DxFeed.Graal.Net/Events/Market/OptionSale.cs/#L113">View Source</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.3.0/src/DxFeed.Graal.Net/Events/Market/OptionSale.cs/#L113">View Source</a>
   </span>
   <a id="DxFeed_Graal_Net_Events_Market_OptionSale_Sequence_" data-uid="DxFeed.Graal.Net.Events.Market.OptionSale.Sequence*"></a>
   <h4 id="DxFeed_Graal_Net_Events_Market_OptionSale_Sequence" data-uid="DxFeed.Graal.Net.Events.Market.OptionSale.Sequence">Sequence</h4>
@@ -1098,7 +1102,7 @@ does not need to be sequential. Sequence can range from 0 to <a class="xref" hre
     <pre><code class="lang-csharp hljs">public int Sequence { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -1113,7 +1117,7 @@ does not need to be sequential. Sequence can range from 0 to <a class="xref" hre
     </tbody>
   </table>
   <h5 class="exceptions">Exceptions</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -1130,10 +1134,10 @@ does not need to be sequential. Sequence can range from 0 to <a class="xref" hre
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.2.1/apiSpec/new?filename=DxFeed_Graal_Net_Events_Market_OptionSale_Size.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Market.OptionSale.Size%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.3.0/apiSpec/new?filename=DxFeed_Graal_Net_Events_Market_OptionSale_Size.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Market.OptionSale.Size%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.2.1/src/DxFeed.Graal.Net/Events/Market/OptionSale.cs/#L140">View Source</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.3.0/src/DxFeed.Graal.Net/Events/Market/OptionSale.cs/#L140">View Source</a>
   </span>
   <a id="DxFeed_Graal_Net_Events_Market_OptionSale_Size_" data-uid="DxFeed.Graal.Net.Events.Market.OptionSale.Size*"></a>
   <h4 id="DxFeed_Graal_Net_Events_Market_OptionSale_Size" data-uid="DxFeed.Graal.Net.Events.Market.OptionSale.Size">Size</h4>
@@ -1145,7 +1149,7 @@ does not need to be sequential. Sequence can range from 0 to <a class="xref" hre
     <pre><code class="lang-csharp hljs">public double Size { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -1161,10 +1165,10 @@ does not need to be sequential. Sequence can range from 0 to <a class="xref" hre
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.2.1/apiSpec/new?filename=DxFeed_Graal_Net_Events_Market_OptionSale_Time.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Market.OptionSale.Time%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.3.0/apiSpec/new?filename=DxFeed_Graal_Net_Events_Market_OptionSale_Time.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Market.OptionSale.Time%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.2.1/src/DxFeed.Graal.Net/Events/Market/OptionSale.cs/#L81">View Source</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.3.0/src/DxFeed.Graal.Net/Events/Market/OptionSale.cs/#L81">View Source</a>
   </span>
   <a id="DxFeed_Graal_Net_Events_Market_OptionSale_Time_" data-uid="DxFeed.Graal.Net.Events.Market.OptionSale.Time*"></a>
   <h4 id="DxFeed_Graal_Net_Events_Market_OptionSale_Time" data-uid="DxFeed.Graal.Net.Events.Market.OptionSale.Time">Time</h4>
@@ -1177,7 +1181,7 @@ Time is measured in milliseconds between the current time and midnight, January 
     <pre><code class="lang-csharp hljs">public long Time { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -1193,10 +1197,10 @@ Time is measured in milliseconds between the current time and midnight, January 
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.2.1/apiSpec/new?filename=DxFeed_Graal_Net_Events_Market_OptionSale_TimeNanoPart.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Market.OptionSale.TimeNanoPart%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.3.0/apiSpec/new?filename=DxFeed_Graal_Net_Events_Market_OptionSale_TimeNanoPart.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Market.OptionSale.TimeNanoPart%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.2.1/src/DxFeed.Graal.Net/Events/Market/OptionSale.cs/#L105">View Source</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.3.0/src/DxFeed.Graal.Net/Events/Market/OptionSale.cs/#L105">View Source</a>
   </span>
   <a id="DxFeed_Graal_Net_Events_Market_OptionSale_TimeNanoPart_" data-uid="DxFeed.Graal.Net.Events.Market.OptionSale.TimeNanoPart*"></a>
   <h4 id="DxFeed_Graal_Net_Events_Market_OptionSale_TimeNanoPart" data-uid="DxFeed.Graal.Net.Events.Market.OptionSale.TimeNanoPart">TimeNanoPart</h4>
@@ -1208,7 +1212,7 @@ Time is measured in milliseconds between the current time and midnight, January 
     <pre><code class="lang-csharp hljs">public int TimeNanoPart { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -1224,10 +1228,10 @@ Time is measured in milliseconds between the current time and midnight, January 
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.2.1/apiSpec/new?filename=DxFeed_Graal_Net_Events_Market_OptionSale_TimeNanos.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Market.OptionSale.TimeNanos%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.3.0/apiSpec/new?filename=DxFeed_Graal_Net_Events_Market_OptionSale_TimeNanos.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Market.OptionSale.TimeNanos%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.2.1/src/DxFeed.Graal.Net/Events/Market/OptionSale.cs/#L92">View Source</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.3.0/src/DxFeed.Graal.Net/Events/Market/OptionSale.cs/#L92">View Source</a>
   </span>
   <a id="DxFeed_Graal_Net_Events_Market_OptionSale_TimeNanos_" data-uid="DxFeed.Graal.Net.Events.Market.OptionSale.TimeNanos*"></a>
   <h4 id="DxFeed_Graal_Net_Events_Market_OptionSale_TimeNanos" data-uid="DxFeed.Graal.Net.Events.Market.OptionSale.TimeNanos">TimeNanos</h4>
@@ -1240,7 +1244,7 @@ Time is measured in nanoseconds between the current time and midnight, January 1
     <pre><code class="lang-csharp hljs">public long TimeNanos { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -1256,15 +1260,15 @@ Time is measured in nanoseconds between the current time and midnight, January 1
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.2.1/apiSpec/new?filename=DxFeed_Graal_Net_Events_Market_OptionSale_TimeSequence.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Market.OptionSale.TimeSequence%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.3.0/apiSpec/new?filename=DxFeed_Graal_Net_Events_Market_OptionSale_TimeSequence.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Market.OptionSale.TimeSequence%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.2.1/src/DxFeed.Graal.Net/Events/Market/OptionSale.cs/#L75">View Source</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.3.0/src/DxFeed.Graal.Net/Events/Market/OptionSale.cs/#L75">View Source</a>
   </span>
   <a id="DxFeed_Graal_Net_Events_Market_OptionSale_TimeSequence_" data-uid="DxFeed.Graal.Net.Events.Market.OptionSale.TimeSequence*"></a>
   <h4 id="DxFeed_Graal_Net_Events_Market_OptionSale_TimeSequence" data-uid="DxFeed.Graal.Net.Events.Market.OptionSale.TimeSequence">TimeSequence</h4>
   <div class="markdown level1 summary"><p>Gets or sets time and sequence of of this event.
-<strong>Do not set this property directly.</strong>
+<b>Do not set this property directly.</b>
 Sets <a class="xref" href="DxFeed.Graal.Net.Events.Market.OptionSale.html#DxFeed_Graal_Net_Events_Market_OptionSale_Time">Time</a> and/or <a class="xref" href="DxFeed.Graal.Net.Events.Market.OptionSale.html#DxFeed_Graal_Net_Events_Market_OptionSale_Sequence">Sequence</a>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -1273,7 +1277,7 @@ Sets <a class="xref" href="DxFeed.Graal.Net.Events.Market.OptionSale.html#DxFeed
     <pre><code class="lang-csharp hljs">public long TimeSequence { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -1289,10 +1293,10 @@ Sets <a class="xref" href="DxFeed.Graal.Net.Events.Market.OptionSale.html#DxFeed
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.2.1/apiSpec/new?filename=DxFeed_Graal_Net_Events_Market_OptionSale_TradeThroughExempt.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Market.OptionSale.TradeThroughExempt%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.3.0/apiSpec/new?filename=DxFeed_Graal_Net_Events_Market_OptionSale_TradeThroughExempt.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Market.OptionSale.TradeThroughExempt%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.2.1/src/DxFeed.Graal.Net/Events/Market/OptionSale.cs/#L161">View Source</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.3.0/src/DxFeed.Graal.Net/Events/Market/OptionSale.cs/#L161">View Source</a>
   </span>
   <a id="DxFeed_Graal_Net_Events_Market_OptionSale_TradeThroughExempt_" data-uid="DxFeed.Graal.Net.Events.Market.OptionSale.TradeThroughExempt*"></a>
   <h4 id="DxFeed_Graal_Net_Events_Market_OptionSale_TradeThroughExempt" data-uid="DxFeed.Graal.Net.Events.Market.OptionSale.TradeThroughExempt">TradeThroughExempt</h4>
@@ -1304,7 +1308,7 @@ Sets <a class="xref" href="DxFeed.Graal.Net.Events.Market.OptionSale.html#DxFeed
     <pre><code class="lang-csharp hljs">public char TradeThroughExempt { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -1320,10 +1324,10 @@ Sets <a class="xref" href="DxFeed.Graal.Net.Events.Market.OptionSale.html#DxFeed
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.2.1/apiSpec/new?filename=DxFeed_Graal_Net_Events_Market_OptionSale_Type.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Market.OptionSale.Type%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.3.0/apiSpec/new?filename=DxFeed_Graal_Net_Events_Market_OptionSale_Type.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Market.OptionSale.Type%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.2.1/src/DxFeed.Graal.Net/Events/Market/OptionSale.cs/#L212">View Source</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.3.0/src/DxFeed.Graal.Net/Events/Market/OptionSale.cs/#L212">View Source</a>
   </span>
   <a id="DxFeed_Graal_Net_Events_Market_OptionSale_Type_" data-uid="DxFeed.Graal.Net.Events.Market.OptionSale.Type*"></a>
   <h4 id="DxFeed_Graal_Net_Events_Market_OptionSale_Type" data-uid="DxFeed.Graal.Net.Events.Market.OptionSale.Type">Type</h4>
@@ -1335,7 +1339,7 @@ Sets <a class="xref" href="DxFeed.Graal.Net.Events.Market.OptionSale.html#DxFeed
     <pre><code class="lang-csharp hljs">public TimeAndSaleType Type { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -1351,10 +1355,10 @@ Sets <a class="xref" href="DxFeed.Graal.Net.Events.Market.OptionSale.html#DxFeed
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.2.1/apiSpec/new?filename=DxFeed_Graal_Net_Events_Market_OptionSale_UnderlyingPrice.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Market.OptionSale.UnderlyingPrice%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.3.0/apiSpec/new?filename=DxFeed_Graal_Net_Events_Market_OptionSale_UnderlyingPrice.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Market.OptionSale.UnderlyingPrice%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.2.1/src/DxFeed.Graal.Net/Events/Market/OptionSale.cs/#L244">View Source</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.3.0/src/DxFeed.Graal.Net/Events/Market/OptionSale.cs/#L244">View Source</a>
   </span>
   <a id="DxFeed_Graal_Net_Events_Market_OptionSale_UnderlyingPrice_" data-uid="DxFeed.Graal.Net.Events.Market.OptionSale.UnderlyingPrice*"></a>
   <h4 id="DxFeed_Graal_Net_Events_Market_OptionSale_UnderlyingPrice" data-uid="DxFeed.Graal.Net.Events.Market.OptionSale.UnderlyingPrice">UnderlyingPrice</h4>
@@ -1366,7 +1370,7 @@ Sets <a class="xref" href="DxFeed.Graal.Net.Events.Market.OptionSale.html#DxFeed
     <pre><code class="lang-csharp hljs">public double UnderlyingPrice { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -1382,10 +1386,10 @@ Sets <a class="xref" href="DxFeed.Graal.Net.Events.Market.OptionSale.html#DxFeed
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.2.1/apiSpec/new?filename=DxFeed_Graal_Net_Events_Market_OptionSale_Volatility.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Market.OptionSale.Volatility%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.3.0/apiSpec/new?filename=DxFeed_Graal_Net_Events_Market_OptionSale_Volatility.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Market.OptionSale.Volatility%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.2.1/src/DxFeed.Graal.Net/Events/Market/OptionSale.cs/#L249">View Source</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.3.0/src/DxFeed.Graal.Net/Events/Market/OptionSale.cs/#L249">View Source</a>
   </span>
   <a id="DxFeed_Graal_Net_Events_Market_OptionSale_Volatility_" data-uid="DxFeed.Graal.Net.Events.Market.OptionSale.Volatility*"></a>
   <h4 id="DxFeed_Graal_Net_Events_Market_OptionSale_Volatility" data-uid="DxFeed.Graal.Net.Events.Market.OptionSale.Volatility">Volatility</h4>
@@ -1397,7 +1401,7 @@ Sets <a class="xref" href="DxFeed.Graal.Net.Events.Market.OptionSale.html#DxFeed
     <pre><code class="lang-csharp hljs">public double Volatility { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -1415,10 +1419,10 @@ Sets <a class="xref" href="DxFeed.Graal.Net.Events.Market.OptionSale.html#DxFeed
 </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.2.1/apiSpec/new?filename=DxFeed_Graal_Net_Events_Market_OptionSale_ToString.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Market.OptionSale.ToString%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.3.0/apiSpec/new?filename=DxFeed_Graal_Net_Events_Market_OptionSale_ToString.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Market.OptionSale.ToString%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.2.1/src/DxFeed.Graal.Net/Events/Market/OptionSale.cs/#L272">View Source</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.3.0/src/DxFeed.Graal.Net/Events/Market/OptionSale.cs/#L272">View Source</a>
   </span>
   <a id="DxFeed_Graal_Net_Events_Market_OptionSale_ToString_" data-uid="DxFeed.Graal.Net.Events.Market.OptionSale.ToString*"></a>
   <h4 id="DxFeed_Graal_Net_Events_Market_OptionSale_ToString" data-uid="DxFeed.Graal.Net.Events.Market.OptionSale.ToString">ToString()</h4>
@@ -1430,7 +1434,7 @@ Sets <a class="xref" href="DxFeed.Graal.Net.Events.Market.OptionSale.html#DxFeed
     <pre><code class="lang-csharp hljs">public override string ToString()</code></pre>
   </div>
   <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
+  <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
@@ -1446,7 +1450,7 @@ Sets <a class="xref" href="DxFeed.Graal.Net.Events.Market.OptionSale.html#DxFeed
     </tbody>
   </table>
   <h5 class="overrides">Overrides</h5>
-  <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring#system-object-tostring">Object.ToString()</a></div>
+  <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a></div>
   <h3 id="implements">Implements</h3>
   <div>
       <a class="xref" href="DxFeed.Graal.Net.Events.IIndexedEvent.html">IIndexedEvent</a>
@@ -1454,6 +1458,7 @@ Sets <a class="xref" href="DxFeed.Graal.Net.Events.Market.OptionSale.html#DxFeed
   <div>
       <a class="xref" href="DxFeed.Graal.Net.Events.IEventType.html">IEventType</a>
   </div>
+
 </article>
           </div>
 
@@ -1462,10 +1467,10 @@ Sets <a class="xref" href="DxFeed.Graal.Net.Events.Market.OptionSale.html#DxFeed
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.2.1/apiSpec/new?filename=DxFeed_Graal_Net_Events_Market_OptionSale.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Market.OptionSale%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.3.0/apiSpec/new?filename=DxFeed_Graal_Net_Events_Market_OptionSale.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Market.OptionSale%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.2.1/src/DxFeed.Graal.Net/Events/Market/OptionSale.cs/#L25" class="contribution-link">View Source</a>
+                    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.3.0/src/DxFeed.Graal.Net/Events/Market/OptionSale.cs/#L25" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>
@@ -1492,7 +1497,7 @@ Sets <a class="xref" href="DxFeed.Graal.Net.Events.Market.OptionSale.html#DxFeed
       </footer>
     </div>
 
-    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.vendor.min.js"></script>
     <script type="text/javascript" src="../../styles/docfx.js"></script>
     <script type="text/javascript" src="../../styles/main.js"></script>
   </body>
