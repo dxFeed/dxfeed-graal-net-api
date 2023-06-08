@@ -8,6 +8,8 @@ using System;
 using System.Threading;
 using System.Threading.Tasks;
 using DxFeed.Graal.Net.Api;
+using DxFeed.Graal.Net.Api.Osub;
+using DxFeed.Graal.Net.Events.Candles;
 using DxFeed.Graal.Net.Events.Market;
 
 namespace DxFeed.Graal.Net.Samples;
@@ -27,7 +29,7 @@ internal abstract class Program
 
         // Creates a subscription attached to a default DXFeed with a Quote event type.
         // The endpoint address to use is stored in the "dxfeed.properties" file.
-        var sub = DXFeed.GetInstance().CreateSubscription(typeof(Quote));
+        var sub = DXFeed.GetInstance().CreateSubscription(typeof(Candle));
 
         // Listener must be attached before symbols are added.
         sub.AddEventListener(events =>
@@ -39,8 +41,9 @@ internal abstract class Program
             }
         });
 
+        var a = CandleSymbol.ValueOf("AAPL",  CandlePeriod.ValueOf(1, CandleType.Hour));
         // Adds specified symbol.
-        sub.AddSymbols(symbol);
+        sub.AddSymbols(new TimeSeriesSubscriptionSymbol(a, 0));
 
         await Task.Delay(Timeout.Infinite);
     }
