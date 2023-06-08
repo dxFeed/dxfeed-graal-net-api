@@ -61,7 +61,7 @@ API.
 We expect the new repository to go into production in Q2’2023.
 At the same time, the old version will be considered deprecated, and at the end of 2024, we plan to end the service.
 If you’re already our customer and have difficulty with a future transition, please contact us via
-our [customer portal](https://jira.in.devexperts.com/servicedesk/customer/portal/1/create/122).
+our [customer portal](https://jira.in.devexperts.com/servicedesk/customer/portal/1).
 
 ### Future Development
 
