@@ -10,6 +10,8 @@ namespace DxFeed.Graal.Net.Tools.Attributes;
 
 public class ToolInfoAttribute : VerbAttribute
 {
+    private string? _description;
+
     public ToolInfoAttribute(string name)
         : base(name)
     {
@@ -21,7 +23,11 @@ public class ToolInfoAttribute : VerbAttribute
         set => HelpText = value;
     }
 
-    public string? Description { get; set; }
+    public string? Description
+    {
+        get => _description ?? ShortDescription;
+        set => _description = value;
+    }
 
     public string[]? Usage { get; set; }
 

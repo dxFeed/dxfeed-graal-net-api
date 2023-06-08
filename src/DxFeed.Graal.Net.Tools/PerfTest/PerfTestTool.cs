@@ -184,14 +184,14 @@ public class PerfTestTool : AbstractTool<PerfTestArgs>
             Console.WriteLine();
             Console.WriteLine(DiagnosticHeader);
             Console.WriteLine(@"----------------------------------------------");
-            Console.WriteLine(@$"  Events                   : {FormatDouble(eventsPerSec)} (per/sec)");
-            Console.WriteLine(@$"  Listener Calls           : {FormatDouble(listenerCallsPerSec)} (per/sec)");
-            Console.WriteLine(@$"  Average Number of Events : {FormatDouble(eventsPerSec / listenerCallsPerSec)}");
-            Console.WriteLine(@$"  Current Memory Usage     : {currentMemoryUsage} (Mbyte)");
-            Console.WriteLine(@$"  Peak Memory Usage        : {_peakMemoryUsage} (Mbyte)");
-            Console.WriteLine(@$"  Current CPU Usage        : {currentCpuUsage:P2}");
-            Console.WriteLine(@$"  Peak CPU Usage           : {_peakCpuUsage:P2}");
-            Console.WriteLine(@$"  Running Time             : {_runningDiff.Elapsed}");
+            Console.WriteLine(@$"  Rate of events (avg)           : {FormatDouble(eventsPerSec)} (events/s)");
+            Console.WriteLine(@$"  Rate of listener calls         : {FormatDouble(listenerCallsPerSec)} (calls/s)");
+            Console.WriteLine(@$"  Number of events in call (avg) : {FormatDouble(eventsPerSec / listenerCallsPerSec)} (events)");
+            Console.WriteLine(@$"  Current memory usage           : {currentMemoryUsage} (Mbyte)");
+            Console.WriteLine(@$"  Peak memory usage              : {_peakMemoryUsage} (Mbyte)");
+            Console.WriteLine(@$"  Current CPU usage              : {currentCpuUsage:P2}");
+            Console.WriteLine(@$"  Peak CPU usage                 : {_peakCpuUsage:P2}");
+            Console.WriteLine(@$"  Running time                   : {_runningDiff.Elapsed}");
 
             _timerDiff.Restart();
         }
