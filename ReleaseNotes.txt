@@ -1,3 +1,13 @@
+## Version 0.3.0
+
+## What's Changed
+* Feature: Add Help Tool
+* Feature: Add Help articles
+* Feature: Add LatencyTest tool
+* Fix: CandleSymbol
+* Feature: Add Candle Sample
+* Fix: Update readme
+
 ## Version 0.2.1
 
 ## What's Changed
