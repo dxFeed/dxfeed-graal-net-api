@@ -13,76 +13,79 @@ using System.Threading.Tasks;
 using DxFeed.Graal.Net.Api;
 using DxFeed.Graal.Net.Api.Osub;
 using DxFeed.Graal.Net.Events.Market;
+using DxFeed.Graal.Net.Tools.Attributes;
 using DxFeed.Graal.Net.Utils;
 
 namespace DxFeed.Graal.Net.Tools.Connect;
 
-internal abstract class ConnectTool
+[ToolInfo(
+    "Connect",
+    ShortDescription = "Connects to specified address(es).",
+    Description = "Connects to the specified address(es) and subscribes to the specified symbols.",
+    Usage = new[] { "Connect <address> <types> <symbols> [<options>]" })]
+public sealed class ConnectTool : AbstractTool<ConnectArgs>, IDisposable
 {
-    private static readonly StreamWriter Output = new(Console.OpenStandardOutput());
+    private readonly StreamWriter _output = new(Console.OpenStandardOutput());
 
-    public static void Run(IEnumerable<string> args)
+    public override void Run(ConnectArgs args)
     {
-        var cmdArgs = new ConnectArgs().ParseArgs(args);
-        if (cmdArgs == null)
-        {
-            return;
-        }
-
         using var endpoint = DXEndpoint
             .NewBuilder()
             .WithRole(DXEndpoint.Role.Feed)
-            .WithProperties(ParseHelper.ParseProperties(cmdArgs.Properties))
+            .WithProperties(ParseProperties(args.Properties))
             .WithName(nameof(ConnectTool))
             .Build();
 
         using var sub = endpoint
             .GetFeed()
-            .CreateSubscription(ParseHelper.ParseEventTypes(cmdArgs.Types!));
+            .CreateSubscription(ParseEventTypes(args.Types!));
 
-        if (!cmdArgs.IsQuite)
+        if (!args.IsQuite)
         {
             sub.AddEventListener(events =>
             {
                 foreach (var e in events)
                 {
-                    Output.WriteLine(e);
+                    _output.WriteLine(e);
                 }
 
-                Output.Flush();
+                _output.Flush();
             });
         }
 
-        IEnumerable<object> symbols = ParseHelper.ParseSymbols(cmdArgs.Symbols!).ToList();
-        if (cmdArgs.FromTime != null)
+        IEnumerable<object> symbols = ParseSymbols(args.Symbols!).ToList();
+        if (args.FromTime != null)
         {
-            var fromTime = CmdArgsUtil.ParseFromTime(cmdArgs.FromTime);
+            var fromTime = CmdArgsUtil.ParseFromTime(args.FromTime);
             symbols = symbols.Select(s => new TimeSeriesSubscriptionSymbol(s, fromTime));
         }
-        else if (cmdArgs.Source != null)
+        else if (args.Source != null)
         {
             symbols = symbols.Select(s =>
-                new IndexedEventSubscriptionSymbol(s, OrderSource.ValueOf(cmdArgs.Source)));
+                new IndexedEventSubscriptionSymbol(s, OrderSource.ValueOf(args.Source)));
         }
 
-        if (cmdArgs.Tape != null)
+        if (args.Tape != null)
         {
             var pub = DXEndpoint
                 .NewBuilder()
                 .WithRole(DXEndpoint.Role.StreamPublisher)
                 .WithProperty(DXEndpoint.DXFeedWildcardEnableProperty, "true") // Enabled by default.
-                .WithProperties(ParseHelper.ParseProperties(cmdArgs.Properties))
+                .WithProperties(ParseProperties(args.Properties))
                 .WithName(nameof(ConnectTool))
                 .Build()
-                .Connect(cmdArgs.Tape.StartsWith("tape:") ? cmdArgs.Tape : $"tape:{cmdArgs.Tape}").GetPublisher();
+                .Connect(args.Tape.StartsWith("tape:") ? args.Tape : $"tape:{args.Tape}").GetPublisher();
 
-            sub.AddEventListener(events => pub.PublishEvents(events));
+            sub.AddEventListener(pub.PublishEvents);
         }
 
         sub.AddSymbols(symbols);
 
-        endpoint.Connect(cmdArgs.Address);
+        endpoint.Connect(args.Address);
 
         Task.Delay(Timeout.Infinite).Wait();
     }
+
+    public void Dispose() =>
+        _output.Dispose();
 }

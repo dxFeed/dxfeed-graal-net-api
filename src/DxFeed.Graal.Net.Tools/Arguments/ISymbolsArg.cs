@@ -12,12 +12,20 @@ public interface ISymbolsArg
 {
     public const int Index = 2;
     public const string MetaName = "symbols";
-    public const bool IsRequired = true;
 
-    public const string HelpText = @"
-Comma-separated list of symbol names to get events for (e.g. ""IBM,AAPL,MSFT"").
-Use ""all"" for wildcard subscription. For this, the dxfeed.wildcard.enable property must be set to true.";
+    public const string HelpText =
+        """
+        Comma-separated list of symbol names to get events for (e.g. "IBM, AAPL, MSFT").
+        Use "all" for wildcard subscription.
+        The "dxfeed.wildcard.enable" property must be set to true to enable wildcard subscription.
+        """;
 
-    [Value(Index, MetaName = MetaName, Required = IsRequired, HelpText = HelpText)]
+    [Value(Index, MetaName = MetaName, HelpText = HelpText, Required = false)]
     public string? Symbols { get; set; }
+}
+
+public interface ISymbolsArgRequired : ISymbolsArg
+{
+    [Value(Index, MetaName = MetaName, HelpText = HelpText, Required = true)]
+    public new string? Symbols { get; set; }
 }

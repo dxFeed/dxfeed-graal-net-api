@@ -12,19 +12,12 @@ public interface ITapeArg
 {
     public const char ShortName = 't';
     public const string LongName = "tape";
-    public const bool IsRequired = false;
 
-    public const string HelpText = @"
-Tape all incoming data into the spcified file.
-This option has several parameters:
+    public const string HelpText =
+        """
+        Tape all incoming data into the spcified file (see "Help Tape").
+        """;
 
-""format"" parameter defines format of stored data. Its value can be one of ""text"", ""binary"" or
-""blob:<record>:<symbol>"" (binary format is used by default).
-Blob is a special format that is used for compact store of a single-record, single-symbol data stream.
-
-""saveas"" parameter overrides the type of stored messages.
-Data messages can be stored as ""ticker_data"", ""stream_data"",""history_data"", or ""raw_data"".";
-
-    [Option(ShortName, LongName, Required = IsRequired, HelpText = HelpText)]
+    [Option(ShortName, LongName, HelpText = HelpText, Required = false)]
     public string? Tape { get; set; }
 }

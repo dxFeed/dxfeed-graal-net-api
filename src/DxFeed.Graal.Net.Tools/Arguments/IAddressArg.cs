@@ -12,15 +12,19 @@ public interface IAddressArg
 {
     public const int Index = 0;
     public const string MetaName = "address";
-    public const bool IsRequired = true;
 
-    public const string HelpText = @"
-The address to connect to retrieve data (remote host or local tape file).
-If you do not specify a prefix (tcp: or file:) it will try to automatically determine the connector.
-Examples:
-    <tcp:hostname:port> - for remote host.
-    <file:path_to_file> - for local file.";
+    public const string HelpText =
+        """
+        The address(es) to connect to retrieve data (see "Help address").
+        For Token-Based Authorization, use the following format: "<address>:<port>[login=entitle:<token>]".
+        """;
 
-    [Value(Index, MetaName = MetaName, Required = IsRequired, HelpText = HelpText)]
+    [Value(Index, MetaName = MetaName, HelpText = HelpText, Required = false)]
     public string Address { get; set; }
+}
+
+public interface IAddressArgRequired : IAddressArg
+{
+    [Value(Index, MetaName = MetaName, HelpText = HelpText, Required = true)]
+    public new string Address { get; set; }
 }

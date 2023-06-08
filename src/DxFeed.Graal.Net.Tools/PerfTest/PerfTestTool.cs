@@ -5,7 +5,6 @@
 // </copyright>
 
 using System;
-using System.Collections.Generic;
 using System.Diagnostics;
 using System.Globalization;
 using System.IO;
@@ -13,6 +12,7 @@ using System.Linq;
 using System.Threading;
 using DxFeed.Graal.Net.Api;
 using DxFeed.Graal.Net.Events;
+using DxFeed.Graal.Net.Tools.Attributes;
 using DxFeed.Graal.Net.Utils;
 
 // ReSharper disable NonAtomicCompoundOperator
@@ -20,10 +20,59 @@ using DxFeed.Graal.Net.Utils;
 
 namespace DxFeed.Graal.Net.Tools.PerfTest;
 
-internal abstract class PerfTestTool
+[ToolInfo(
+    "PerfTest",
+    ShortDescription = "Connects to specified address and calculates performance counters.",
+    Description = """
+    Connects to the specified address(es) and calculates performance counters (events per second, cpu usage, etc).
+    """,
+    Usage = new[] { "PerfTest <address> <types> <symbols> [<options>]" })]
+public class PerfTestTool : AbstractTool<PerfTestArgs>
 {
     private static readonly StreamWriter Output = new(new MemoryStream());
     private static volatile int _blackHoleHashCode;
+
+    public override void Run(PerfTestArgs args)
+    {
+        using var endpoint = DXEndpoint
+            .NewBuilder()
+            .WithRole(args.ForceStream ? DXEndpoint.Role.StreamFeed : DXEndpoint.Role.Feed)
+            .WithProperty(DXEndpoint.DXFeedWildcardEnableProperty, "true") // Enabled by default.
+            .WithProperties(ParseProperties(args.Properties))
+            .WithName(nameof(PerfTestTool))
+            .Build();
+
+        using var sub = endpoint
+            .GetFeed()
+            .CreateSubscription(ParseEventTypes(args.Types!));
+
+        var measurementPeriod = new TimeSpan(0, 0, 2);
+        using var diagnostic =
+            new Diagnostic(Process.GetCurrentProcess(), measurementPeriod, args.ShowCpuUsageByCore);
+
+        if (!args.DetachListener)
+        {
+            sub.AddEventListener(events =>
+            {
+                var eventTypes = events as IEventType[] ?? events.ToArray();
+                diagnostic.AddListenerCounter(1);
+                diagnostic.AddEventCounter(eventTypes.Length);
+                foreach (var e in eventTypes)
+                {
+                    _blackHoleHashCode += e.GetHashCode();
+                }
+            });
+        }
+
+        sub.AddSymbols(ParseSymbols(args.Symbols!).ToList());
+
+        endpoint.Connect(args.Address);
+
+        endpoint.AwaitNotConnected();
+        endpoint.CloseAndAwaitTermination();
+
+        Output.WriteLine(_blackHoleHashCode);
+    }
 
     private sealed class Diagnostic : IDisposable
     {
@@ -91,6 +140,9 @@ internal abstract class PerfTestTool
             return 1;
         }
 
+        private static string FormatDouble(double value) =>
+            double.IsNaN(value) ? "0" : value.ToString("N2", SpaceNumFormat);
+
         private double GetEventsPerSec() =>
             GetAndResetEventCounter() / _timerDiff.Elapsed.TotalSeconds;
 
@@ -118,9 +170,6 @@ internal abstract class PerfTestTool
         private long GetAndResetListenerCounter() =>
             Interlocked.Exchange(ref _listenerCounter, 0);
 
-        private static string FormatDouble(double value) =>
-            double.IsNaN(value) ? "0" : value.ToString("N2", SpaceNumFormat);
-
         private void TimerCallback(object? _)
         {
             var eventsPerSec = GetEventsPerSec();
@@ -134,65 +183,17 @@ internal abstract class PerfTestTool
 
             Console.WriteLine();
             Console.WriteLine(DiagnosticHeader);
-            Console.WriteLine("----------------------------------------------");
-            Console.WriteLine($"  Events                   : {FormatDouble(eventsPerSec)} (per/sec)");
-            Console.WriteLine($"  Listener Calls           : {FormatDouble(listenerCallsPerSec)} (per/sec)");
-            Console.WriteLine($"  Average Number of Events : {FormatDouble(eventsPerSec / listenerCallsPerSec)}");
-            Console.WriteLine($"  Current Memory Usage     : {currentMemoryUsage} (Mbyte)");
-            Console.WriteLine($"  Peak Memory Usage        : {_peakMemoryUsage} (Mbyte)");
-            Console.WriteLine($"  Current CPU Usage        : {currentCpuUsage:P2}");
-            Console.WriteLine($"  Peak CPU Usage           : {_peakCpuUsage:P2}");
-            Console.WriteLine($"  Running Time             : {_runningDiff.Elapsed}");
+            Console.WriteLine(@"----------------------------------------------");
+            Console.WriteLine(@$"  Events                   : {FormatDouble(eventsPerSec)} (per/sec)");
+            Console.WriteLine(@$"  Listener Calls           : {FormatDouble(listenerCallsPerSec)} (per/sec)");
+            Console.WriteLine(@$"  Average Number of Events : {FormatDouble(eventsPerSec / listenerCallsPerSec)}");
+            Console.WriteLine(@$"  Current Memory Usage     : {currentMemoryUsage} (Mbyte)");
+            Console.WriteLine(@$"  Peak Memory Usage        : {_peakMemoryUsage} (Mbyte)");
+            Console.WriteLine(@$"  Current CPU Usage        : {currentCpuUsage:P2}");
+            Console.WriteLine(@$"  Peak CPU Usage           : {_peakCpuUsage:P2}");
+            Console.WriteLine(@$"  Running Time             : {_runningDiff.Elapsed}");
 
             _timerDiff.Restart();
         }
-    }
-
-    public static void Run(IEnumerable<string> args)
-    {
-        var cmdArgs = new PerfTestArgs().ParseArgs(args);
-        if (cmdArgs == null)
-        {
-            return;
-        }
-
-        using var endpoint = DXEndpoint
-            .NewBuilder()
-            .WithRole(cmdArgs.ForceStream ? DXEndpoint.Role.StreamFeed : DXEndpoint.Role.Feed)
-            .WithProperty(DXEndpoint.DXFeedWildcardEnableProperty, "true") // Enabled by default.
-            .WithProperties(ParseHelper.ParseProperties(cmdArgs.Properties))
-            .WithName(nameof(PerfTestTool))
-            .Build();
-
-        using var sub = endpoint
-            .GetFeed()
-            .CreateSubscription(ParseHelper.ParseEventTypes(cmdArgs.Types!));
-
-        var measurementPeriod = new TimeSpan(0, 0, 2);
-        using var diagnostic =
-            new Diagnostic(Process.GetCurrentProcess(), measurementPeriod, cmdArgs.ShowCpuUsageByCore);
-
-        if (!cmdArgs.DetachListener)
-        {
-            sub.AddEventListener(events =>
-            {
-                var eventTypes = events as IEventType[] ?? events.ToArray();
-                diagnostic.AddListenerCounter(1);
-                diagnostic.AddEventCounter(eventTypes.Length);
-                foreach (var e in eventTypes)
-                {
-                    _blackHoleHashCode += e.GetHashCode();
-                }
-            });
-        }
-
-        sub.AddSymbols(ParseHelper.ParseSymbols(cmdArgs.Symbols!).ToList());
-
-        endpoint.Connect(cmdArgs.Address);
-
-        endpoint.AwaitNotConnected();
-        endpoint.CloseAndAwaitTermination();
-
-        Output.WriteLine(_blackHoleHashCode);
     }
 }

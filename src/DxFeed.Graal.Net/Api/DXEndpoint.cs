@@ -339,8 +339,8 @@ public sealed class DXEndpoint : IDisposable
 
         /// <summary>
         /// <c>LocalHub</c> endpoint is a local hub without ability to establish network connections.
-        /// Events that are published via <see cref="DXEndpoint.GetPublisher"/> are delivered to local
-        /// <see cref="DXEndpoint.GetFeed"/> only.
+        /// Events that are published via <see cref="GetPublisher"/> are delivered to local
+        /// <see cref="GetFeed"/> only.
         /// </summary>
         LocalHub,
     }
@@ -735,7 +735,7 @@ public sealed class DXEndpoint : IDisposable
     ///
     /// If no endpoint name has been specified (<see cref="WithName"/>), the default name will be used.
     /// The default name includes a counter that increments each time an endpoint is created ("qdnet", "qdnet-1", etc.).
-    /// To get the name of the created endpoint, call the <see cref="DXEndpoint.GetName"/> method.
+    /// To get the name of the created endpoint, call the <see cref="GetName"/> method.
     ///
     /// <h3>Threads and locks</h3>
     ///
