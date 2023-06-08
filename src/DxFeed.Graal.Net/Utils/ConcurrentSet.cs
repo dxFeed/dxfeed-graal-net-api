@@ -16,7 +16,7 @@ namespace DxFeed.Graal.Net.Utils;
 /// for more consistent.
 /// </summary>
 /// <typeparam name="T">The type of elements in the set.</typeparam>
-internal class ConcurrentSet<T> : ICollection<T>
+public class ConcurrentSet<T> : ICollection<T>
     where T : notnull
 {
     private readonly ConcurrentDictionary<T, int> _inner;
