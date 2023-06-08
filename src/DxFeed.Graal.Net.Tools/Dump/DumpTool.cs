@@ -5,41 +5,51 @@
 // </copyright>
 
 using System;
-using System.Collections.Generic;
 using System.IO;
 using DxFeed.Graal.Net.Api;
 using DxFeed.Graal.Net.Api.Osub;
 using DxFeed.Graal.Net.Events;
+using DxFeed.Graal.Net.Tools.Attributes;
 
 namespace DxFeed.Graal.Net.Tools.Dump;
 
-public abstract class DumpTool
+[ToolInfo(
+    "Dump",
+    ShortDescription = "Dumps all events received from address.",
+    Description = """
+    Dumps all events received from address.
+    Enforces a streaming contract for subscription. A wildcard enabled by default.
+    This was designed to receive data from a file.
+    If <types> is not specified, creates a subscription for all available event types.
+    If <symbol> is not specified, the wildcard symbol is used.
+    """,
+    Usage = new[]
+    {
+        "Dump <address> [<options>]",
+        "Dump <address> <types> [<options>]",
+        "Dump <address> <types> <symbols> [<options>]",
+    })]
+public class DumpTool : AbstractTool<DumpArgs>
 {
     private static readonly StreamWriter Output = new(Console.OpenStandardOutput());
 
-    public static void Run(IEnumerable<string> args)
+    public override void Run(DumpArgs args)
     {
-        var cmdArgs = new DumpArgs().ParseArgs(args);
-        if (cmdArgs == null)
-        {
-            return;
-        }
-
         using var inputEndpoint = DXEndpoint
             .NewBuilder()
             .WithRole(DXEndpoint.Role.StreamFeed)
             .WithProperty(DXEndpoint.DXFeedWildcardEnableProperty, "true") // Enabled by default.
-            .WithProperties(ParseHelper.ParseProperties(cmdArgs.Properties))
+            .WithProperties(ParseProperties(args.Properties))
             .WithName(nameof(DumpTool))
             .Build();
 
         using var sub = inputEndpoint
             .GetFeed()
-            .CreateSubscription(cmdArgs.Types == null
+            .CreateSubscription(args.Types == null
                 ? IEventType.GetEventTypes()
-                : ParseHelper.ParseEventTypes(cmdArgs.Types));
+                : ParseEventTypes(args.Types));
 
-        if (!cmdArgs.IsQuite)
+        if (!args.IsQuite)
         {
             sub.AddEventListener(events =>
             {
@@ -53,25 +63,25 @@ public abstract class DumpTool
         }
 
         DXEndpoint? outputEndpoint = null;
-        if (cmdArgs.Tape != null)
+        if (args.Tape != null)
         {
             outputEndpoint = DXEndpoint
                 .NewBuilder()
                 .WithRole(DXEndpoint.Role.StreamPublisher)
                 .WithProperty(DXEndpoint.DXFeedWildcardEnableProperty, "true") // Enabled by default.
-                .WithProperties(ParseHelper.ParseProperties(cmdArgs.Properties))
+                .WithProperties(ParseProperties(args.Properties))
                 .WithName(nameof(DumpTool))
                 .Build()
-                .Connect(cmdArgs.Tape.StartsWith("tape:") ? cmdArgs.Tape : $"tape:{cmdArgs.Tape}");
+                .Connect(args.Tape.StartsWith("tape:") ? args.Tape : $"tape:{args.Tape}");
 
             sub.AddEventListener(events => outputEndpoint.GetPublisher().PublishEvents(events));
         }
 
-        sub.AddSymbols(cmdArgs.Symbols == null
+        sub.AddSymbols(args.Symbols == null
             ? new[] { WildcardSymbol.All }
-            : ParseHelper.ParseSymbols(cmdArgs.Symbols));
+            : ParseSymbols(args.Symbols));
 
-        inputEndpoint.Connect(cmdArgs.Address);
+        inputEndpoint.Connect(args.Address);
 
         inputEndpoint.AwaitNotConnected();
         inputEndpoint.CloseAndAwaitTermination();

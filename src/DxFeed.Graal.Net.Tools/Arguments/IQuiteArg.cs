@@ -12,10 +12,12 @@ public interface IQuiteArg
 {
     public const char ShortName = 'q';
     public const string LongName = "quite";
-    public const bool IsRequired = false;
 
-    public const string HelpText = "Be quiet, event printing is disabled.";
+    public const string HelpText =
+        """
+        Be quiet, event printing is disabled.
+        """;
 
-    [Option(ShortName, LongName, Required = IsRequired, HelpText = HelpText)]
+    [Option(ShortName, LongName, HelpText = HelpText, Required = false)]
     public bool IsQuite { get; set; }
 }

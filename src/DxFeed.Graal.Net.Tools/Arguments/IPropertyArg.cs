@@ -12,14 +12,12 @@ public interface IPropertyArg
 {
     public const char ShortName = 'p';
     public const string LongName = "properties";
-    public const bool IsRequired = false;
 
-    public const string HelpText = @"
-Comma-separated list of properties.
-Examples:
-    -p dxfeed.aggregationPeriod=5s - to set the aggregation period.
-    -p dxfeed.wildcard.enable=true - to enable the wildcard symbol.";
+    public const string HelpText =
+        """
+        Comma-separated list of properties (key-value pair separated by an equals sign).
+        """;
 
-    [Option(ShortName, LongName, Required = IsRequired, HelpText = HelpText)]
+    [Option(ShortName, LongName, HelpText = HelpText, Required = false)]
     public string? Properties { get; set; }
 }
