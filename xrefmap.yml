@@ -224,45 +224,6 @@ references:
   isSpec: "True"
   fullName: DxFeed.Graal.Net.Api.DXEndpoint.Create
   nameWithType: DXEndpoint.Create
-- uid: DxFeed.Graal.Net.Api.DXEndpoint.Disconnect
-  name: Disconnect()
-  href: docs/api/DxFeed.Graal.Net.Api.DXEndpoint.html#DxFeed_Graal_Net_Api_DXEndpoint_Disconnect
-  commentId: M:DxFeed.Graal.Net.Api.DXEndpoint.Disconnect
-  fullName: DxFeed.Graal.Net.Api.DXEndpoint.Disconnect()
-  nameWithType: DXEndpoint.Disconnect()
-- uid: DxFeed.Graal.Net.Api.DXEndpoint.Disconnect*
-  name: Disconnect
-  href: docs/api/DxFeed.Graal.Net.Api.DXEndpoint.html#DxFeed_Graal_Net_Api_DXEndpoint_Disconnect_
-  commentId: Overload:DxFeed.Graal.Net.Api.DXEndpoint.Disconnect
-  isSpec: "True"
-  fullName: DxFeed.Graal.Net.Api.DXEndpoint.Disconnect
-  nameWithType: DXEndpoint.Disconnect
-- uid: DxFeed.Graal.Net.Api.DXEndpoint.DisconnectAndClear
-  name: DisconnectAndClear()
-  href: docs/api/DxFeed.Graal.Net.Api.DXEndpoint.html#DxFeed_Graal_Net_Api_DXEndpoint_DisconnectAndClear
-  commentId: M:DxFeed.Graal.Net.Api.DXEndpoint.DisconnectAndClear
-  fullName: DxFeed.Graal.Net.Api.DXEndpoint.DisconnectAndClear()
-  nameWithType: DXEndpoint.DisconnectAndClear()
-- uid: DxFeed.Graal.Net.Api.DXEndpoint.DisconnectAndClear*
-  name: DisconnectAndClear
-  href: docs/api/DxFeed.Graal.Net.Api.DXEndpoint.html#DxFeed_Graal_Net_Api_DXEndpoint_DisconnectAndClear_
-  commentId: Overload:DxFeed.Graal.Net.Api.DXEndpoint.DisconnectAndClear
-  isSpec: "True"
-  fullName: DxFeed.Graal.Net.Api.DXEndpoint.DisconnectAndClear
-  nameWithType: DXEndpoint.DisconnectAndClear
-- uid: DxFeed.Graal.Net.Api.DXEndpoint.Dispose
-  name: Dispose()
-  href: docs/api/DxFeed.Graal.Net.Api.DXEndpoint.html#DxFeed_Graal_Net_Api_DXEndpoint_Dispose
-  commentId: M:DxFeed.Graal.Net.Api.DXEndpoint.Dispose
-  fullName: DxFeed.Graal.Net.Api.DXEndpoint.Dispose()
-  nameWithType: DXEndpoint.Dispose()
-- uid: DxFeed.Graal.Net.Api.DXEndpoint.Dispose*
-  name: Dispose
-  href: docs/api/DxFeed.Graal.Net.Api.DXEndpoint.html#DxFeed_Graal_Net_Api_DXEndpoint_Dispose_
-  commentId: Overload:DxFeed.Graal.Net.Api.DXEndpoint.Dispose
-  isSpec: "True"
-  fullName: DxFeed.Graal.Net.Api.DXEndpoint.Dispose
-  nameWithType: DXEndpoint.Dispose
 - uid: DxFeed.Graal.Net.Api.DXEndpoint.DXEndpointEventTimeProperty
   name: DXEndpointEventTimeProperty
   href: docs/api/DxFeed.Graal.Net.Api.DXEndpoint.html#DxFeed_Graal_Net_Api_DXEndpoint_DXEndpointEventTimeProperty
@@ -347,6 +308,45 @@ references:
   commentId: F:DxFeed.Graal.Net.Api.DXEndpoint.DXSchemeNanoTimeProperty
   fullName: DxFeed.Graal.Net.Api.DXEndpoint.DXSchemeNanoTimeProperty
   nameWithType: DXEndpoint.DXSchemeNanoTimeProperty
+- uid: DxFeed.Graal.Net.Api.DXEndpoint.Disconnect
+  name: Disconnect()
+  href: docs/api/DxFeed.Graal.Net.Api.DXEndpoint.html#DxFeed_Graal_Net_Api_DXEndpoint_Disconnect
+  commentId: M:DxFeed.Graal.Net.Api.DXEndpoint.Disconnect
+  fullName: DxFeed.Graal.Net.Api.DXEndpoint.Disconnect()
+  nameWithType: DXEndpoint.Disconnect()
+- uid: DxFeed.Graal.Net.Api.DXEndpoint.Disconnect*
+  name: Disconnect
+  href: docs/api/DxFeed.Graal.Net.Api.DXEndpoint.html#DxFeed_Graal_Net_Api_DXEndpoint_Disconnect_
+  commentId: Overload:DxFeed.Graal.Net.Api.DXEndpoint.Disconnect
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Api.DXEndpoint.Disconnect
+  nameWithType: DXEndpoint.Disconnect
+- uid: DxFeed.Graal.Net.Api.DXEndpoint.DisconnectAndClear
+  name: DisconnectAndClear()
+  href: docs/api/DxFeed.Graal.Net.Api.DXEndpoint.html#DxFeed_Graal_Net_Api_DXEndpoint_DisconnectAndClear
+  commentId: M:DxFeed.Graal.Net.Api.DXEndpoint.DisconnectAndClear
+  fullName: DxFeed.Graal.Net.Api.DXEndpoint.DisconnectAndClear()
+  nameWithType: DXEndpoint.DisconnectAndClear()
+- uid: DxFeed.Graal.Net.Api.DXEndpoint.DisconnectAndClear*
+  name: DisconnectAndClear
+  href: docs/api/DxFeed.Graal.Net.Api.DXEndpoint.html#DxFeed_Graal_Net_Api_DXEndpoint_DisconnectAndClear_
+  commentId: Overload:DxFeed.Graal.Net.Api.DXEndpoint.DisconnectAndClear
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Api.DXEndpoint.DisconnectAndClear
+  nameWithType: DXEndpoint.DisconnectAndClear
+- uid: DxFeed.Graal.Net.Api.DXEndpoint.Dispose
+  name: Dispose()
+  href: docs/api/DxFeed.Graal.Net.Api.DXEndpoint.html#DxFeed_Graal_Net_Api_DXEndpoint_Dispose
+  commentId: M:DxFeed.Graal.Net.Api.DXEndpoint.Dispose
+  fullName: DxFeed.Graal.Net.Api.DXEndpoint.Dispose()
+  nameWithType: DXEndpoint.Dispose()
+- uid: DxFeed.Graal.Net.Api.DXEndpoint.Dispose*
+  name: Dispose
+  href: docs/api/DxFeed.Graal.Net.Api.DXEndpoint.html#DxFeed_Graal_Net_Api_DXEndpoint_Dispose_
+  commentId: Overload:DxFeed.Graal.Net.Api.DXEndpoint.Dispose
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Api.DXEndpoint.Dispose
+  nameWithType: DXEndpoint.Dispose
 - uid: DxFeed.Graal.Net.Api.DXEndpoint.GetFeed
   name: GetFeed()
   href: docs/api/DxFeed.Graal.Net.Api.DXEndpoint.html#DxFeed_Graal_Net_Api_DXEndpoint_GetFeed
@@ -924,6 +924,51 @@ references:
   commentId: N:DxFeed.Graal.Net.Api.Osub
   fullName: DxFeed.Graal.Net.Api.Osub
   nameWithType: DxFeed.Graal.Net.Api.Osub
+- uid: DxFeed.Graal.Net.Api.Osub.IObservableSubscription
+  name: IObservableSubscription
+  href: docs/api/DxFeed.Graal.Net.Api.Osub.IObservableSubscription.html
+  commentId: T:DxFeed.Graal.Net.Api.Osub.IObservableSubscription
+  fullName: DxFeed.Graal.Net.Api.Osub.IObservableSubscription
+  nameWithType: IObservableSubscription
+- uid: DxFeed.Graal.Net.Api.Osub.IObservableSubscription.GetEventTypes
+  name: GetEventTypes()
+  href: docs/api/DxFeed.Graal.Net.Api.Osub.IObservableSubscription.html#DxFeed_Graal_Net_Api_Osub_IObservableSubscription_GetEventTypes
+  commentId: M:DxFeed.Graal.Net.Api.Osub.IObservableSubscription.GetEventTypes
+  fullName: DxFeed.Graal.Net.Api.Osub.IObservableSubscription.GetEventTypes()
+  nameWithType: IObservableSubscription.GetEventTypes()
+- uid: DxFeed.Graal.Net.Api.Osub.IObservableSubscription.GetEventTypes*
+  name: GetEventTypes
+  href: docs/api/DxFeed.Graal.Net.Api.Osub.IObservableSubscription.html#DxFeed_Graal_Net_Api_Osub_IObservableSubscription_GetEventTypes_
+  commentId: Overload:DxFeed.Graal.Net.Api.Osub.IObservableSubscription.GetEventTypes
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Api.Osub.IObservableSubscription.GetEventTypes
+  nameWithType: IObservableSubscription.GetEventTypes
+- uid: DxFeed.Graal.Net.Api.Osub.IObservableSubscription.IsClosed
+  name: IsClosed
+  href: docs/api/DxFeed.Graal.Net.Api.Osub.IObservableSubscription.html#DxFeed_Graal_Net_Api_Osub_IObservableSubscription_IsClosed
+  commentId: P:DxFeed.Graal.Net.Api.Osub.IObservableSubscription.IsClosed
+  fullName: DxFeed.Graal.Net.Api.Osub.IObservableSubscription.IsClosed
+  nameWithType: IObservableSubscription.IsClosed
+- uid: DxFeed.Graal.Net.Api.Osub.IObservableSubscription.IsClosed*
+  name: IsClosed
+  href: docs/api/DxFeed.Graal.Net.Api.Osub.IObservableSubscription.html#DxFeed_Graal_Net_Api_Osub_IObservableSubscription_IsClosed_
+  commentId: Overload:DxFeed.Graal.Net.Api.Osub.IObservableSubscription.IsClosed
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Api.Osub.IObservableSubscription.IsClosed
+  nameWithType: IObservableSubscription.IsClosed
+- uid: DxFeed.Graal.Net.Api.Osub.IObservableSubscription.IsContainsEventType(System.Type)
+  name: IsContainsEventType(Type)
+  href: docs/api/DxFeed.Graal.Net.Api.Osub.IObservableSubscription.html#DxFeed_Graal_Net_Api_Osub_IObservableSubscription_IsContainsEventType_System_Type_
+  commentId: M:DxFeed.Graal.Net.Api.Osub.IObservableSubscription.IsContainsEventType(System.Type)
+  fullName: DxFeed.Graal.Net.Api.Osub.IObservableSubscription.IsContainsEventType(System.Type)
+  nameWithType: IObservableSubscription.IsContainsEventType(Type)
+- uid: DxFeed.Graal.Net.Api.Osub.IObservableSubscription.IsContainsEventType*
+  name: IsContainsEventType
+  href: docs/api/DxFeed.Graal.Net.Api.Osub.IObservableSubscription.html#DxFeed_Graal_Net_Api_Osub_IObservableSubscription_IsContainsEventType_
+  commentId: Overload:DxFeed.Graal.Net.Api.Osub.IObservableSubscription.IsContainsEventType
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Api.Osub.IObservableSubscription.IsContainsEventType
+  nameWithType: IObservableSubscription.IsContainsEventType
 - uid: DxFeed.Graal.Net.Api.Osub.IndexedEventSubscriptionSymbol
   name: IndexedEventSubscriptionSymbol
   href: docs/api/DxFeed.Graal.Net.Api.Osub.IndexedEventSubscriptionSymbol.html
@@ -1063,51 +1108,6 @@ references:
   fullName.vb: DxFeed.Graal.Net.Api.Osub.IndexedEventSubscriptionSymbol(Of T).ToString
   nameWithType: IndexedEventSubscriptionSymbol<T>.ToString
   nameWithType.vb: IndexedEventSubscriptionSymbol(Of T).ToString
-- uid: DxFeed.Graal.Net.Api.Osub.IObservableSubscription
-  name: IObservableSubscription
-  href: docs/api/DxFeed.Graal.Net.Api.Osub.IObservableSubscription.html
-  commentId: T:DxFeed.Graal.Net.Api.Osub.IObservableSubscription
-  fullName: DxFeed.Graal.Net.Api.Osub.IObservableSubscription
-  nameWithType: IObservableSubscription
-- uid: DxFeed.Graal.Net.Api.Osub.IObservableSubscription.GetEventTypes
-  name: GetEventTypes()
-  href: docs/api/DxFeed.Graal.Net.Api.Osub.IObservableSubscription.html#DxFeed_Graal_Net_Api_Osub_IObservableSubscription_GetEventTypes
-  commentId: M:DxFeed.Graal.Net.Api.Osub.IObservableSubscription.GetEventTypes
-  fullName: DxFeed.Graal.Net.Api.Osub.IObservableSubscription.GetEventTypes()
-  nameWithType: IObservableSubscription.GetEventTypes()
-- uid: DxFeed.Graal.Net.Api.Osub.IObservableSubscription.GetEventTypes*
-  name: GetEventTypes
-  href: docs/api/DxFeed.Graal.Net.Api.Osub.IObservableSubscription.html#DxFeed_Graal_Net_Api_Osub_IObservableSubscription_GetEventTypes_
-  commentId: Overload:DxFeed.Graal.Net.Api.Osub.IObservableSubscription.GetEventTypes
-  isSpec: "True"
-  fullName: DxFeed.Graal.Net.Api.Osub.IObservableSubscription.GetEventTypes
-  nameWithType: IObservableSubscription.GetEventTypes
-- uid: DxFeed.Graal.Net.Api.Osub.IObservableSubscription.IsClosed
-  name: IsClosed
-  href: docs/api/DxFeed.Graal.Net.Api.Osub.IObservableSubscription.html#DxFeed_Graal_Net_Api_Osub_IObservableSubscription_IsClosed
-  commentId: P:DxFeed.Graal.Net.Api.Osub.IObservableSubscription.IsClosed
-  fullName: DxFeed.Graal.Net.Api.Osub.IObservableSubscription.IsClosed
-  nameWithType: IObservableSubscription.IsClosed
-- uid: DxFeed.Graal.Net.Api.Osub.IObservableSubscription.IsClosed*
-  name: IsClosed
-  href: docs/api/DxFeed.Graal.Net.Api.Osub.IObservableSubscription.html#DxFeed_Graal_Net_Api_Osub_IObservableSubscription_IsClosed_
-  commentId: Overload:DxFeed.Graal.Net.Api.Osub.IObservableSubscription.IsClosed
-  isSpec: "True"
-  fullName: DxFeed.Graal.Net.Api.Osub.IObservableSubscription.IsClosed
-  nameWithType: IObservableSubscription.IsClosed
-- uid: DxFeed.Graal.Net.Api.Osub.IObservableSubscription.IsContainsEventType(System.Type)
-  name: IsContainsEventType(Type)
-  href: docs/api/DxFeed.Graal.Net.Api.Osub.IObservableSubscription.html#DxFeed_Graal_Net_Api_Osub_IObservableSubscription_IsContainsEventType_System_Type_
-  commentId: M:DxFeed.Graal.Net.Api.Osub.IObservableSubscription.IsContainsEventType(System.Type)
-  fullName: DxFeed.Graal.Net.Api.Osub.IObservableSubscription.IsContainsEventType(System.Type)
-  nameWithType: IObservableSubscription.IsContainsEventType(Type)
-- uid: DxFeed.Graal.Net.Api.Osub.IObservableSubscription.IsContainsEventType*
-  name: IsContainsEventType
-  href: docs/api/DxFeed.Graal.Net.Api.Osub.IObservableSubscription.html#DxFeed_Graal_Net_Api_Osub_IObservableSubscription_IsContainsEventType_
-  commentId: Overload:DxFeed.Graal.Net.Api.Osub.IObservableSubscription.IsContainsEventType
-  isSpec: "True"
-  fullName: DxFeed.Graal.Net.Api.Osub.IObservableSubscription.IsContainsEventType
-  nameWithType: IObservableSubscription.IsContainsEventType
 - uid: DxFeed.Graal.Net.Api.Osub.TimeSeriesSubscriptionSymbol
   name: TimeSeriesSubscriptionSymbol
   href: docs/api/DxFeed.Graal.Net.Api.Osub.TimeSeriesSubscriptionSymbol.html
@@ -1607,19 +1607,6 @@ references:
   isSpec: "True"
   fullName: DxFeed.Graal.Net.Events.Candles.Candle.ToString
   nameWithType: Candle.ToString
-- uid: DxFeed.Graal.Net.Events.Candles.Candle.Volume
-  name: Volume
-  href: docs/api/DxFeed.Graal.Net.Events.Candles.Candle.html#DxFeed_Graal_Net_Events_Candles_Candle_Volume
-  commentId: P:DxFeed.Graal.Net.Events.Candles.Candle.Volume
-  fullName: DxFeed.Graal.Net.Events.Candles.Candle.Volume
-  nameWithType: Candle.Volume
-- uid: DxFeed.Graal.Net.Events.Candles.Candle.Volume*
-  name: Volume
-  href: docs/api/DxFeed.Graal.Net.Events.Candles.Candle.html#DxFeed_Graal_Net_Events_Candles_Candle_Volume_
-  commentId: Overload:DxFeed.Graal.Net.Events.Candles.Candle.Volume
-  isSpec: "True"
-  fullName: DxFeed.Graal.Net.Events.Candles.Candle.Volume
-  nameWithType: Candle.Volume
 - uid: DxFeed.Graal.Net.Events.Candles.Candle.VWAP
   name: VWAP
   href: docs/api/DxFeed.Graal.Net.Events.Candles.Candle.html#DxFeed_Graal_Net_Events_Candles_Candle_VWAP
@@ -1633,6 +1620,19 @@ references:
   isSpec: "True"
   fullName: DxFeed.Graal.Net.Events.Candles.Candle.VWAP
   nameWithType: Candle.VWAP
+- uid: DxFeed.Graal.Net.Events.Candles.Candle.Volume
+  name: Volume
+  href: docs/api/DxFeed.Graal.Net.Events.Candles.Candle.html#DxFeed_Graal_Net_Events_Candles_Candle_Volume
+  commentId: P:DxFeed.Graal.Net.Events.Candles.Candle.Volume
+  fullName: DxFeed.Graal.Net.Events.Candles.Candle.Volume
+  nameWithType: Candle.Volume
+- uid: DxFeed.Graal.Net.Events.Candles.Candle.Volume*
+  name: Volume
+  href: docs/api/DxFeed.Graal.Net.Events.Candles.Candle.html#DxFeed_Graal_Net_Events_Candles_Candle_Volume_
+  commentId: Overload:DxFeed.Graal.Net.Events.Candles.Candle.Volume
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Events.Candles.Candle.Volume
+  nameWithType: Candle.Volume
 - uid: DxFeed.Graal.Net.Events.Candles.CandleAlignment
   name: CandleAlignment
   href: docs/api/DxFeed.Graal.Net.Events.Candles.CandleAlignment.html
@@ -2934,15 +2934,6 @@ references:
   isSpec: "True"
   fullName: DxFeed.Graal.Net.Events.Candles.CandleSymbol.ToString
   nameWithType: CandleSymbol.ToString
-- uid: DxFeed.Graal.Net.Events.Candles.CandleSymbol.ValueOf(System.String,DxFeed.Graal.Net.Events.Candles.ICandleSymbolProperty[])
-  name: ValueOf(string?, params ICandleSymbolProperty[])
-  href: docs/api/DxFeed.Graal.Net.Events.Candles.CandleSymbol.html#DxFeed_Graal_Net_Events_Candles_CandleSymbol_ValueOf_System_String_DxFeed_Graal_Net_Events_Candles_ICandleSymbolProperty___
-  commentId: M:DxFeed.Graal.Net.Events.Candles.CandleSymbol.ValueOf(System.String,DxFeed.Graal.Net.Events.Candles.ICandleSymbolProperty[])
-  name.vb: ValueOf(String, ParamArray ICandleSymbolProperty())
-  fullName: DxFeed.Graal.Net.Events.Candles.CandleSymbol.ValueOf(string?, params DxFeed.Graal.Net.Events.Candles.ICandleSymbolProperty[])
-  fullName.vb: DxFeed.Graal.Net.Events.Candles.CandleSymbol.ValueOf(String, ParamArray DxFeed.Graal.Net.Events.Candles.ICandleSymbolProperty())
-  nameWithType: CandleSymbol.ValueOf(string?, params ICandleSymbolProperty[])
-  nameWithType.vb: CandleSymbol.ValueOf(String, ParamArray ICandleSymbolProperty())
 - uid: DxFeed.Graal.Net.Events.Candles.CandleSymbol.ValueOf(System.String)
   name: ValueOf(string?)
   href: docs/api/DxFeed.Graal.Net.Events.Candles.CandleSymbol.html#DxFeed_Graal_Net_Events_Candles_CandleSymbol_ValueOf_System_String_
@@ -2952,6 +2943,15 @@ references:
   fullName.vb: DxFeed.Graal.Net.Events.Candles.CandleSymbol.ValueOf(String)
   nameWithType: CandleSymbol.ValueOf(string?)
   nameWithType.vb: CandleSymbol.ValueOf(String)
+- uid: DxFeed.Graal.Net.Events.Candles.CandleSymbol.ValueOf(System.String,DxFeed.Graal.Net.Events.Candles.ICandleSymbolProperty[])
+  name: ValueOf(string?, params ICandleSymbolProperty[])
+  href: docs/api/DxFeed.Graal.Net.Events.Candles.CandleSymbol.html#DxFeed_Graal_Net_Events_Candles_CandleSymbol_ValueOf_System_String_DxFeed_Graal_Net_Events_Candles_ICandleSymbolProperty___
+  commentId: M:DxFeed.Graal.Net.Events.Candles.CandleSymbol.ValueOf(System.String,DxFeed.Graal.Net.Events.Candles.ICandleSymbolProperty[])
+  name.vb: ValueOf(String, ParamArray ICandleSymbolProperty())
+  fullName: DxFeed.Graal.Net.Events.Candles.CandleSymbol.ValueOf(string?, params DxFeed.Graal.Net.Events.Candles.ICandleSymbolProperty[])
+  fullName.vb: DxFeed.Graal.Net.Events.Candles.CandleSymbol.ValueOf(String, ParamArray DxFeed.Graal.Net.Events.Candles.ICandleSymbolProperty())
+  nameWithType: CandleSymbol.ValueOf(string?, params ICandleSymbolProperty[])
+  nameWithType.vb: CandleSymbol.ValueOf(String, ParamArray ICandleSymbolProperty())
 - uid: DxFeed.Graal.Net.Events.Candles.CandleSymbol.ValueOf*
   name: ValueOf
   href: docs/api/DxFeed.Graal.Net.Events.Candles.CandleSymbol.html#DxFeed_Graal_Net_Events_Candles_CandleSymbol_ValueOf_
@@ -3419,6 +3419,12 @@ references:
   commentId: F:DxFeed.Graal.Net.Events.IIndexedEvent.RemoveEvent
   fullName: DxFeed.Graal.Net.Events.IIndexedEvent.RemoveEvent
   nameWithType: IIndexedEvent.RemoveEvent
+- uid: DxFeed.Graal.Net.Events.IIndexedEvent.SnapShotMode
+  name: SnapShotMode
+  href: docs/api/DxFeed.Graal.Net.Events.IIndexedEvent.html#DxFeed_Graal_Net_Events_IIndexedEvent_SnapShotMode
+  commentId: F:DxFeed.Graal.Net.Events.IIndexedEvent.SnapShotMode
+  fullName: DxFeed.Graal.Net.Events.IIndexedEvent.SnapShotMode
+  nameWithType: IIndexedEvent.SnapShotMode
 - uid: DxFeed.Graal.Net.Events.IIndexedEvent.SnapshotBegin
   name: SnapshotBegin
   href: docs/api/DxFeed.Graal.Net.Events.IIndexedEvent.html#DxFeed_Graal_Net_Events_IIndexedEvent_SnapshotBegin
@@ -3431,12 +3437,6 @@ references:
   commentId: F:DxFeed.Graal.Net.Events.IIndexedEvent.SnapshotEnd
   fullName: DxFeed.Graal.Net.Events.IIndexedEvent.SnapshotEnd
   nameWithType: IIndexedEvent.SnapshotEnd
-- uid: DxFeed.Graal.Net.Events.IIndexedEvent.SnapShotMode
-  name: SnapShotMode
-  href: docs/api/DxFeed.Graal.Net.Events.IIndexedEvent.html#DxFeed_Graal_Net_Events_IIndexedEvent_SnapShotMode
-  commentId: F:DxFeed.Graal.Net.Events.IIndexedEvent.SnapShotMode
-  fullName: DxFeed.Graal.Net.Events.IIndexedEvent.SnapShotMode
-  nameWithType: IIndexedEvent.SnapShotMode
 - uid: DxFeed.Graal.Net.Events.IIndexedEvent.SnapshotSnip
   name: SnapshotSnip
   href: docs/api/DxFeed.Graal.Net.Events.IIndexedEvent.html#DxFeed_Graal_Net_Events_IIndexedEvent_SnapshotSnip
@@ -3455,6 +3455,51 @@ references:
   commentId: T:DxFeed.Graal.Net.Events.ILastingEvent
   fullName: DxFeed.Graal.Net.Events.ILastingEvent
   nameWithType: ILastingEvent
+- uid: DxFeed.Graal.Net.Events.ITimeSeriesEvent
+  name: ITimeSeriesEvent
+  href: docs/api/DxFeed.Graal.Net.Events.ITimeSeriesEvent.html
+  commentId: T:DxFeed.Graal.Net.Events.ITimeSeriesEvent
+  fullName: DxFeed.Graal.Net.Events.ITimeSeriesEvent
+  nameWithType: ITimeSeriesEvent
+- uid: DxFeed.Graal.Net.Events.ITimeSeriesEvent.EventSource
+  name: EventSource
+  href: docs/api/DxFeed.Graal.Net.Events.ITimeSeriesEvent.html#DxFeed_Graal_Net_Events_ITimeSeriesEvent_EventSource
+  commentId: P:DxFeed.Graal.Net.Events.ITimeSeriesEvent.EventSource
+  fullName: DxFeed.Graal.Net.Events.ITimeSeriesEvent.EventSource
+  nameWithType: ITimeSeriesEvent.EventSource
+- uid: DxFeed.Graal.Net.Events.ITimeSeriesEvent.EventSource*
+  name: EventSource
+  href: docs/api/DxFeed.Graal.Net.Events.ITimeSeriesEvent.html#DxFeed_Graal_Net_Events_ITimeSeriesEvent_EventSource_
+  commentId: Overload:DxFeed.Graal.Net.Events.ITimeSeriesEvent.EventSource
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Events.ITimeSeriesEvent.EventSource
+  nameWithType: ITimeSeriesEvent.EventSource
+- uid: DxFeed.Graal.Net.Events.ITimeSeriesEvent.Index
+  name: Index
+  href: docs/api/DxFeed.Graal.Net.Events.ITimeSeriesEvent.html#DxFeed_Graal_Net_Events_ITimeSeriesEvent_Index
+  commentId: P:DxFeed.Graal.Net.Events.ITimeSeriesEvent.Index
+  fullName: DxFeed.Graal.Net.Events.ITimeSeriesEvent.Index
+  nameWithType: ITimeSeriesEvent.Index
+- uid: DxFeed.Graal.Net.Events.ITimeSeriesEvent.Index*
+  name: Index
+  href: docs/api/DxFeed.Graal.Net.Events.ITimeSeriesEvent.html#DxFeed_Graal_Net_Events_ITimeSeriesEvent_Index_
+  commentId: Overload:DxFeed.Graal.Net.Events.ITimeSeriesEvent.Index
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Events.ITimeSeriesEvent.Index
+  nameWithType: ITimeSeriesEvent.Index
+- uid: DxFeed.Graal.Net.Events.ITimeSeriesEvent.Time
+  name: Time
+  href: docs/api/DxFeed.Graal.Net.Events.ITimeSeriesEvent.html#DxFeed_Graal_Net_Events_ITimeSeriesEvent_Time
+  commentId: P:DxFeed.Graal.Net.Events.ITimeSeriesEvent.Time
+  fullName: DxFeed.Graal.Net.Events.ITimeSeriesEvent.Time
+  nameWithType: ITimeSeriesEvent.Time
+- uid: DxFeed.Graal.Net.Events.ITimeSeriesEvent.Time*
+  name: Time
+  href: docs/api/DxFeed.Graal.Net.Events.ITimeSeriesEvent.html#DxFeed_Graal_Net_Events_ITimeSeriesEvent_Time_
+  commentId: Overload:DxFeed.Graal.Net.Events.ITimeSeriesEvent.Time
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Events.ITimeSeriesEvent.Time
+  nameWithType: ITimeSeriesEvent.Time
 - uid: DxFeed.Graal.Net.Events.IndexedEventSource
   name: IndexedEventSource
   href: docs/api/DxFeed.Graal.Net.Events.IndexedEventSource.html
@@ -3554,51 +3599,6 @@ references:
   isSpec: "True"
   fullName: DxFeed.Graal.Net.Events.IndexedEventSource.ToString
   nameWithType: IndexedEventSource.ToString
-- uid: DxFeed.Graal.Net.Events.ITimeSeriesEvent
-  name: ITimeSeriesEvent
-  href: docs/api/DxFeed.Graal.Net.Events.ITimeSeriesEvent.html
-  commentId: T:DxFeed.Graal.Net.Events.ITimeSeriesEvent
-  fullName: DxFeed.Graal.Net.Events.ITimeSeriesEvent
-  nameWithType: ITimeSeriesEvent
-- uid: DxFeed.Graal.Net.Events.ITimeSeriesEvent.EventSource
-  name: EventSource
-  href: docs/api/DxFeed.Graal.Net.Events.ITimeSeriesEvent.html#DxFeed_Graal_Net_Events_ITimeSeriesEvent_EventSource
-  commentId: P:DxFeed.Graal.Net.Events.ITimeSeriesEvent.EventSource
-  fullName: DxFeed.Graal.Net.Events.ITimeSeriesEvent.EventSource
-  nameWithType: ITimeSeriesEvent.EventSource
-- uid: DxFeed.Graal.Net.Events.ITimeSeriesEvent.EventSource*
-  name: EventSource
-  href: docs/api/DxFeed.Graal.Net.Events.ITimeSeriesEvent.html#DxFeed_Graal_Net_Events_ITimeSeriesEvent_EventSource_
-  commentId: Overload:DxFeed.Graal.Net.Events.ITimeSeriesEvent.EventSource
-  isSpec: "True"
-  fullName: DxFeed.Graal.Net.Events.ITimeSeriesEvent.EventSource
-  nameWithType: ITimeSeriesEvent.EventSource
-- uid: DxFeed.Graal.Net.Events.ITimeSeriesEvent.Index
-  name: Index
-  href: docs/api/DxFeed.Graal.Net.Events.ITimeSeriesEvent.html#DxFeed_Graal_Net_Events_ITimeSeriesEvent_Index
-  commentId: P:DxFeed.Graal.Net.Events.ITimeSeriesEvent.Index
-  fullName: DxFeed.Graal.Net.Events.ITimeSeriesEvent.Index
-  nameWithType: ITimeSeriesEvent.Index
-- uid: DxFeed.Graal.Net.Events.ITimeSeriesEvent.Index*
-  name: Index
-  href: docs/api/DxFeed.Graal.Net.Events.ITimeSeriesEvent.html#DxFeed_Graal_Net_Events_ITimeSeriesEvent_Index_
-  commentId: Overload:DxFeed.Graal.Net.Events.ITimeSeriesEvent.Index
-  isSpec: "True"
-  fullName: DxFeed.Graal.Net.Events.ITimeSeriesEvent.Index
-  nameWithType: ITimeSeriesEvent.Index
-- uid: DxFeed.Graal.Net.Events.ITimeSeriesEvent.Time
-  name: Time
-  href: docs/api/DxFeed.Graal.Net.Events.ITimeSeriesEvent.html#DxFeed_Graal_Net_Events_ITimeSeriesEvent_Time
-  commentId: P:DxFeed.Graal.Net.Events.ITimeSeriesEvent.Time
-  fullName: DxFeed.Graal.Net.Events.ITimeSeriesEvent.Time
-  nameWithType: ITimeSeriesEvent.Time
-- uid: DxFeed.Graal.Net.Events.ITimeSeriesEvent.Time*
-  name: Time
-  href: docs/api/DxFeed.Graal.Net.Events.ITimeSeriesEvent.html#DxFeed_Graal_Net_Events_ITimeSeriesEvent_Time_
-  commentId: Overload:DxFeed.Graal.Net.Events.ITimeSeriesEvent.Time
-  isSpec: "True"
-  fullName: DxFeed.Graal.Net.Events.ITimeSeriesEvent.Time
-  nameWithType: ITimeSeriesEvent.Time
 - uid: DxFeed.Graal.Net.Events.Market
   name: DxFeed.Graal.Net.Events.Market
   href: docs/api/DxFeed.Graal.Net.Events.Market.html
@@ -4995,6 +4995,12 @@ references:
   commentId: F:DxFeed.Graal.Net.Events.Market.OrderSource.FAIR
   fullName: DxFeed.Graal.Net.Events.Market.OrderSource.FAIR
   nameWithType: OrderSource.FAIR
+- uid: DxFeed.Graal.Net.Events.Market.OrderSource.GLBX
+  name: GLBX
+  href: docs/api/DxFeed.Graal.Net.Events.Market.OrderSource.html#DxFeed_Graal_Net_Events_Market_OrderSource_GLBX
+  commentId: F:DxFeed.Graal.Net.Events.Market.OrderSource.GLBX
+  fullName: DxFeed.Graal.Net.Events.Market.OrderSource.GLBX
+  nameWithType: OrderSource.GLBX
 - uid: DxFeed.Graal.Net.Events.Market.OrderSource.GetEventTypeMask(System.Type)
   name: GetEventTypeMask(Type)
   href: docs/api/DxFeed.Graal.Net.Events.Market.OrderSource.html#DxFeed_Graal_Net_Events_Market_OrderSource_GetEventTypeMask_System_Type_
@@ -5008,36 +5014,24 @@ references:
   isSpec: "True"
   fullName: DxFeed.Graal.Net.Events.Market.OrderSource.GetEventTypeMask
   nameWithType: OrderSource.GetEventTypeMask
-- uid: DxFeed.Graal.Net.Events.Market.OrderSource.glbx
-  name: glbx
-  href: docs/api/DxFeed.Graal.Net.Events.Market.OrderSource.html#DxFeed_Graal_Net_Events_Market_OrderSource_glbx
-  commentId: F:DxFeed.Graal.Net.Events.Market.OrderSource.glbx
-  fullName: DxFeed.Graal.Net.Events.Market.OrderSource.glbx
-  nameWithType: OrderSource.glbx
-- uid: DxFeed.Graal.Net.Events.Market.OrderSource.GLBX
-  name: GLBX
-  href: docs/api/DxFeed.Graal.Net.Events.Market.OrderSource.html#DxFeed_Graal_Net_Events_Market_OrderSource_GLBX
-  commentId: F:DxFeed.Graal.Net.Events.Market.OrderSource.GLBX
-  fullName: DxFeed.Graal.Net.Events.Market.OrderSource.GLBX
-  nameWithType: OrderSource.GLBX
 - uid: DxFeed.Graal.Net.Events.Market.OrderSource.ICE
   name: ICE
   href: docs/api/DxFeed.Graal.Net.Events.Market.OrderSource.html#DxFeed_Graal_Net_Events_Market_OrderSource_ICE
   commentId: F:DxFeed.Graal.Net.Events.Market.OrderSource.ICE
   fullName: DxFeed.Graal.Net.Events.Market.OrderSource.ICE
   nameWithType: OrderSource.ICE
-- uid: DxFeed.Graal.Net.Events.Market.OrderSource.iex
-  name: iex
-  href: docs/api/DxFeed.Graal.Net.Events.Market.OrderSource.html#DxFeed_Graal_Net_Events_Market_OrderSource_iex
-  commentId: F:DxFeed.Graal.Net.Events.Market.OrderSource.iex
-  fullName: DxFeed.Graal.Net.Events.Market.OrderSource.iex
-  nameWithType: OrderSource.iex
 - uid: DxFeed.Graal.Net.Events.Market.OrderSource.ISE
   name: ISE
   href: docs/api/DxFeed.Graal.Net.Events.Market.OrderSource.html#DxFeed_Graal_Net_Events_Market_OrderSource_ISE
   commentId: F:DxFeed.Graal.Net.Events.Market.OrderSource.ISE
   fullName: DxFeed.Graal.Net.Events.Market.OrderSource.ISE
   nameWithType: OrderSource.ISE
+- uid: DxFeed.Graal.Net.Events.Market.OrderSource.IST
+  name: IST
+  href: docs/api/DxFeed.Graal.Net.Events.Market.OrderSource.html#DxFeed_Graal_Net_Events_Market_OrderSource_IST
+  commentId: F:DxFeed.Graal.Net.Events.Market.OrderSource.IST
+  fullName: DxFeed.Graal.Net.Events.Market.OrderSource.IST
+  nameWithType: OrderSource.IST
 - uid: DxFeed.Graal.Net.Events.Market.OrderSource.IsFullOrderBook
   name: IsFullOrderBook
   href: docs/api/DxFeed.Graal.Net.Events.Market.OrderSource.html#DxFeed_Graal_Net_Events_Market_OrderSource_IsFullOrderBook
@@ -5080,18 +5074,6 @@ references:
   isSpec: "True"
   fullName: DxFeed.Graal.Net.Events.Market.OrderSource.IsSpecialSourceId
   nameWithType: OrderSource.IsSpecialSourceId
-- uid: DxFeed.Graal.Net.Events.Market.OrderSource.IST
-  name: IST
-  href: docs/api/DxFeed.Graal.Net.Events.Market.OrderSource.html#DxFeed_Graal_Net_Events_Market_OrderSource_IST
-  commentId: F:DxFeed.Graal.Net.Events.Market.OrderSource.IST
-  fullName: DxFeed.Graal.Net.Events.Market.OrderSource.IST
-  nameWithType: OrderSource.IST
-- uid: DxFeed.Graal.Net.Events.Market.OrderSource.memx
-  name: memx
-  href: docs/api/DxFeed.Graal.Net.Events.Market.OrderSource.html#DxFeed_Graal_Net_Events_Market_OrderSource_memx
-  commentId: F:DxFeed.Graal.Net.Events.Market.OrderSource.memx
-  fullName: DxFeed.Graal.Net.Events.Market.OrderSource.memx
-  nameWithType: OrderSource.memx
 - uid: DxFeed.Graal.Net.Events.Market.OrderSource.MEMX
   name: MEMX
   href: docs/api/DxFeed.Graal.Net.Events.Market.OrderSource.html#DxFeed_Graal_Net_Events_Market_OrderSource_MEMX
@@ -5104,12 +5086,6 @@ references:
   commentId: F:DxFeed.Graal.Net.Events.Market.OrderSource.NFX
   fullName: DxFeed.Graal.Net.Events.Market.OrderSource.NFX
   nameWithType: OrderSource.NFX
-- uid: DxFeed.Graal.Net.Events.Market.OrderSource.ntv
-  name: ntv
-  href: docs/api/DxFeed.Graal.Net.Events.Market.OrderSource.html#DxFeed_Graal_Net_Events_Market_OrderSource_ntv
-  commentId: F:DxFeed.Graal.Net.Events.Market.OrderSource.ntv
-  fullName: DxFeed.Graal.Net.Events.Market.OrderSource.ntv
-  nameWithType: OrderSource.ntv
 - uid: DxFeed.Graal.Net.Events.Market.OrderSource.NTV
   name: NTV
   href: docs/api/DxFeed.Graal.Net.Events.Market.OrderSource.html#DxFeed_Graal_Net_Events_Market_OrderSource_NTV
@@ -5128,12 +5104,6 @@ references:
   commentId: F:DxFeed.Graal.Net.Events.Market.OrderSource.REGIONAL_BID
   fullName: DxFeed.Graal.Net.Events.Market.OrderSource.REGIONAL_BID
   nameWithType: OrderSource.REGIONAL_BID
-- uid: DxFeed.Graal.Net.Events.Market.OrderSource.smfe
-  name: smfe
-  href: docs/api/DxFeed.Graal.Net.Events.Market.OrderSource.html#DxFeed_Graal_Net_Events_Market_OrderSource_smfe
-  commentId: F:DxFeed.Graal.Net.Events.Market.OrderSource.smfe
-  fullName: DxFeed.Graal.Net.Events.Market.OrderSource.smfe
-  nameWithType: OrderSource.smfe
 - uid: DxFeed.Graal.Net.Events.Market.OrderSource.SMFE
   name: SMFE
   href: docs/api/DxFeed.Graal.Net.Events.Market.OrderSource.html#DxFeed_Graal_Net_Events_Market_OrderSource_SMFE
@@ -5165,12 +5135,6 @@ references:
   isSpec: "True"
   fullName: DxFeed.Graal.Net.Events.Market.OrderSource.ValueOf
   nameWithType: OrderSource.ValueOf
-- uid: DxFeed.Graal.Net.Events.Market.OrderSource.xeur
-  name: xeur
-  href: docs/api/DxFeed.Graal.Net.Events.Market.OrderSource.html#DxFeed_Graal_Net_Events_Market_OrderSource_xeur
-  commentId: F:DxFeed.Graal.Net.Events.Market.OrderSource.xeur
-  fullName: DxFeed.Graal.Net.Events.Market.OrderSource.xeur
-  nameWithType: OrderSource.xeur
 - uid: DxFeed.Graal.Net.Events.Market.OrderSource.XEUR
   name: XEUR
   href: docs/api/DxFeed.Graal.Net.Events.Market.OrderSource.html#DxFeed_Graal_Net_Events_Market_OrderSource_XEUR
@@ -5183,6 +5147,42 @@ references:
   commentId: F:DxFeed.Graal.Net.Events.Market.OrderSource.XNFI
   fullName: DxFeed.Graal.Net.Events.Market.OrderSource.XNFI
   nameWithType: OrderSource.XNFI
+- uid: DxFeed.Graal.Net.Events.Market.OrderSource.glbx
+  name: glbx
+  href: docs/api/DxFeed.Graal.Net.Events.Market.OrderSource.html#DxFeed_Graal_Net_Events_Market_OrderSource_glbx
+  commentId: F:DxFeed.Graal.Net.Events.Market.OrderSource.glbx
+  fullName: DxFeed.Graal.Net.Events.Market.OrderSource.glbx
+  nameWithType: OrderSource.glbx
+- uid: DxFeed.Graal.Net.Events.Market.OrderSource.iex
+  name: iex
+  href: docs/api/DxFeed.Graal.Net.Events.Market.OrderSource.html#DxFeed_Graal_Net_Events_Market_OrderSource_iex
+  commentId: F:DxFeed.Graal.Net.Events.Market.OrderSource.iex
+  fullName: DxFeed.Graal.Net.Events.Market.OrderSource.iex
+  nameWithType: OrderSource.iex
+- uid: DxFeed.Graal.Net.Events.Market.OrderSource.memx
+  name: memx
+  href: docs/api/DxFeed.Graal.Net.Events.Market.OrderSource.html#DxFeed_Graal_Net_Events_Market_OrderSource_memx
+  commentId: F:DxFeed.Graal.Net.Events.Market.OrderSource.memx
+  fullName: DxFeed.Graal.Net.Events.Market.OrderSource.memx
+  nameWithType: OrderSource.memx
+- uid: DxFeed.Graal.Net.Events.Market.OrderSource.ntv
+  name: ntv
+  href: docs/api/DxFeed.Graal.Net.Events.Market.OrderSource.html#DxFeed_Graal_Net_Events_Market_OrderSource_ntv
+  commentId: F:DxFeed.Graal.Net.Events.Market.OrderSource.ntv
+  fullName: DxFeed.Graal.Net.Events.Market.OrderSource.ntv
+  nameWithType: OrderSource.ntv
+- uid: DxFeed.Graal.Net.Events.Market.OrderSource.smfe
+  name: smfe
+  href: docs/api/DxFeed.Graal.Net.Events.Market.OrderSource.html#DxFeed_Graal_Net_Events_Market_OrderSource_smfe
+  commentId: F:DxFeed.Graal.Net.Events.Market.OrderSource.smfe
+  fullName: DxFeed.Graal.Net.Events.Market.OrderSource.smfe
+  nameWithType: OrderSource.smfe
+- uid: DxFeed.Graal.Net.Events.Market.OrderSource.xeur
+  name: xeur
+  href: docs/api/DxFeed.Graal.Net.Events.Market.OrderSource.html#DxFeed_Graal_Net_Events_Market_OrderSource_xeur
+  commentId: F:DxFeed.Graal.Net.Events.Market.OrderSource.xeur
+  fullName: DxFeed.Graal.Net.Events.Market.OrderSource.xeur
+  nameWithType: OrderSource.xeur
 - uid: DxFeed.Graal.Net.Events.Market.PriceType
   name: PriceType
   href: docs/api/DxFeed.Graal.Net.Events.Market.PriceType.html
@@ -8496,15 +8496,6 @@ references:
   commentId: T:DxFeed.Graal.Net.Utils.DayUtil
   fullName: DxFeed.Graal.Net.Utils.DayUtil
   nameWithType: DayUtil
-- uid: DxFeed.Graal.Net.Utils.DayUtil.GetDayIdByYearMonthDay(System.Int32,System.Int32,System.Int32)
-  name: GetDayIdByYearMonthDay(int, int, int)
-  href: docs/api/DxFeed.Graal.Net.Utils.DayUtil.html#DxFeed_Graal_Net_Utils_DayUtil_GetDayIdByYearMonthDay_System_Int32_System_Int32_System_Int32_
-  commentId: M:DxFeed.Graal.Net.Utils.DayUtil.GetDayIdByYearMonthDay(System.Int32,System.Int32,System.Int32)
-  name.vb: GetDayIdByYearMonthDay(Integer, Integer, Integer)
-  fullName: DxFeed.Graal.Net.Utils.DayUtil.GetDayIdByYearMonthDay(int, int, int)
-  fullName.vb: DxFeed.Graal.Net.Utils.DayUtil.GetDayIdByYearMonthDay(Integer, Integer, Integer)
-  nameWithType: DayUtil.GetDayIdByYearMonthDay(int, int, int)
-  nameWithType.vb: DayUtil.GetDayIdByYearMonthDay(Integer, Integer, Integer)
 - uid: DxFeed.Graal.Net.Utils.DayUtil.GetDayIdByYearMonthDay(System.Int32)
   name: GetDayIdByYearMonthDay(int)
   href: docs/api/DxFeed.Graal.Net.Utils.DayUtil.html#DxFeed_Graal_Net_Utils_DayUtil_GetDayIdByYearMonthDay_System_Int32_
@@ -8514,6 +8505,15 @@ references:
   fullName.vb: DxFeed.Graal.Net.Utils.DayUtil.GetDayIdByYearMonthDay(Integer)
   nameWithType: DayUtil.GetDayIdByYearMonthDay(int)
   nameWithType.vb: DayUtil.GetDayIdByYearMonthDay(Integer)
+- uid: DxFeed.Graal.Net.Utils.DayUtil.GetDayIdByYearMonthDay(System.Int32,System.Int32,System.Int32)
+  name: GetDayIdByYearMonthDay(int, int, int)
+  href: docs/api/DxFeed.Graal.Net.Utils.DayUtil.html#DxFeed_Graal_Net_Utils_DayUtil_GetDayIdByYearMonthDay_System_Int32_System_Int32_System_Int32_
+  commentId: M:DxFeed.Graal.Net.Utils.DayUtil.GetDayIdByYearMonthDay(System.Int32,System.Int32,System.Int32)
+  name.vb: GetDayIdByYearMonthDay(Integer, Integer, Integer)
+  fullName: DxFeed.Graal.Net.Utils.DayUtil.GetDayIdByYearMonthDay(int, int, int)
+  fullName.vb: DxFeed.Graal.Net.Utils.DayUtil.GetDayIdByYearMonthDay(Integer, Integer, Integer)
+  nameWithType: DayUtil.GetDayIdByYearMonthDay(int, int, int)
+  nameWithType.vb: DayUtil.GetDayIdByYearMonthDay(Integer, Integer, Integer)
 - uid: DxFeed.Graal.Net.Utils.DayUtil.GetDayIdByYearMonthDay*
   name: GetDayIdByYearMonthDay
   href: docs/api/DxFeed.Graal.Net.Utils.DayUtil.html#DxFeed_Graal_Net_Utils_DayUtil_GetDayIdByYearMonthDay_
@@ -8598,15 +8598,6 @@ references:
   isSpec: "True"
   fullName: DxFeed.Graal.Net.Utils.EnumUtil.ValueOf
   nameWithType: EnumUtil.ValueOf
-- uid: DxFeed.Graal.Net.Utils.EnumUtil.ValueOf``1(``0,``0)
-  name: ValueOf<T>(T, T)
-  href: docs/api/DxFeed.Graal.Net.Utils.EnumUtil.html#DxFeed_Graal_Net_Utils_EnumUtil_ValueOf__1___0___0_
-  commentId: M:DxFeed.Graal.Net.Utils.EnumUtil.ValueOf``1(``0,``0)
-  name.vb: ValueOf(Of T)(T, T)
-  fullName: DxFeed.Graal.Net.Utils.EnumUtil.ValueOf<T>(T, T)
-  fullName.vb: DxFeed.Graal.Net.Utils.EnumUtil.ValueOf(Of T)(T, T)
-  nameWithType: EnumUtil.ValueOf<T>(T, T)
-  nameWithType.vb: EnumUtil.ValueOf(Of T)(T, T)
 - uid: DxFeed.Graal.Net.Utils.EnumUtil.ValueOf``1(``0)
   name: ValueOf<T>(T)
   href: docs/api/DxFeed.Graal.Net.Utils.EnumUtil.html#DxFeed_Graal_Net_Utils_EnumUtil_ValueOf__1___0_
@@ -8616,6 +8607,15 @@ references:
   fullName.vb: DxFeed.Graal.Net.Utils.EnumUtil.ValueOf(Of T)(T)
   nameWithType: EnumUtil.ValueOf<T>(T)
   nameWithType.vb: EnumUtil.ValueOf(Of T)(T)
+- uid: DxFeed.Graal.Net.Utils.EnumUtil.ValueOf``1(``0,``0)
+  name: ValueOf<T>(T, T)
+  href: docs/api/DxFeed.Graal.Net.Utils.EnumUtil.html#DxFeed_Graal_Net_Utils_EnumUtil_ValueOf__1___0___0_
+  commentId: M:DxFeed.Graal.Net.Utils.EnumUtil.ValueOf``1(``0,``0)
+  name.vb: ValueOf(Of T)(T, T)
+  fullName: DxFeed.Graal.Net.Utils.EnumUtil.ValueOf<T>(T, T)
+  fullName.vb: DxFeed.Graal.Net.Utils.EnumUtil.ValueOf(Of T)(T, T)
+  nameWithType: EnumUtil.ValueOf<T>(T, T)
+  nameWithType.vb: EnumUtil.ValueOf(Of T)(T, T)
 - uid: DxFeed.Graal.Net.Utils.MathUtil
   name: MathUtil
   href: docs/api/DxFeed.Graal.Net.Utils.MathUtil.html
