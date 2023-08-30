@@ -11,7 +11,7 @@ and [dxFeed Java API](https://docs.dxfeed.com/dxfeed/api/overview-summary.html) 
 
 :information_source: If you already use [dxFeed .NET API](https://github.com/dxFeed/dxfeed-net-api), please see
 the [Overview](#overview) section.<br>
-:warning: It’s an **beta** version and still under active development.
+:warning: It’s a **beta** version and still under active development.
 
 ![Build](https://github.com/dxFeed/dxfeed-graal-net-api/actions/workflows/build.yml/badge.svg)
 ![CodeQL](https://github.com/dxFeed/dxfeed-graal-net-api/actions/workflows/codeql.yml/badge.svg)
@@ -235,6 +235,8 @@ require .NET installation)
 * [PerfTest](https://github.com/dxFeed/dxfeed-graal-net-api/blob/main/src/DxFeed.Graal.Net.Tools/PerfTest/PerfTestTool.cs)
   connects to the specified address(es) and calculates performance counters (events per second, memory usage, CPU usage,
   etc.)
+* [LatencyTest](https://github.com/dxFeed/dxfeed-graal-net-api/blob/main/src/DxFeed.Graal.Net.Tools/LatencyTest/LatencyTestTool.cs)
+  connects to the specified address(es) and calculates latency.
 
 ## Samples
 
@@ -251,6 +253,8 @@ require .NET installation)
   and `dxfeed.properties` file
 * [DxFeed.Graal.Net.Samples.WriteTapeFile](https://github.com/dxFeed/dxfeed-graal-net-api/blob/main/samples/WriteTapeFile/Program.cs)
   is a simple demonstration of how to write events to a tape file
+* [DxFeed.Graal.Net.Samples.CandleSample](https://github.com/dxFeed/dxfeed-graal-net-api/blob/main/samples/CandleSample/Program.cs)
+  demonstrates how to subscribe to candle events.
 
 ## Current State
 
