@@ -27,4 +27,7 @@ public class LatencyTestArgs : IAddressArg, ITypesArg, ISymbolsArg, IPropertyArg
 
     [Option("interval", Required = false, HelpText = "Measurement interval in seconds.")]
     public int Interval { get; set; } = 2;
+
+    [Option("ignore-exchanges", Required = false, HelpText = "Ignoring next exchanges.")]
+    public string? IgnoreExchanges { get; set; } = null!;
 }

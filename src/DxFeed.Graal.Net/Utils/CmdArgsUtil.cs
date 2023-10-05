@@ -8,7 +8,10 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using DxFeed.Graal.Net.Events;
+using DxFeed.Graal.Net.Events.Market;
+using DxFeed.Graal.Net.Ipf;
 
 namespace DxFeed.Graal.Net.Utils;
 
@@ -28,7 +31,22 @@ public static class CmdArgsUtil
 
         void AddSymbol(string symbol)
         {
-            if (!string.IsNullOrWhiteSpace(symbol))
+            if (string.IsNullOrWhiteSpace(symbol))
+            {
+                return;
+            }
+
+            if (symbol.StartsWith("ipf[", StringComparison.InvariantCulture) &&
+                symbol.EndsWith($"]", StringComparison.InvariantCulture))
+            {
+                var profiles = new InstrumentProfileReader()
+                    .ReadFromFile(Regex.Match(symbol, @"\[([^)]*)\]").Groups[1].Value);
+                foreach (var profile in profiles)
+                {
+                    result.Add(profile.Symbol);
+                }
+            }
+            else
             {
                 result.Add(symbol.Trim());
             }

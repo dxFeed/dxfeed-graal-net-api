@@ -34,6 +34,25 @@ internal static class ErrorCheck
     }
 
     /// <summary>
+    /// Checks for a call to a native function that returns an <see cref="long"/>.
+    /// Throws <see cref="JavaExceptionInfo"/> if error occured.
+    /// If there is no error, the result will be transmitted transparently.
+    /// </summary>
+    /// <param name="thread">The current isolate thread.</param>
+    /// <param name="result">The resul of native call.</param>
+    /// <returns>The passed <see cref="long"/> result of the native call.</returns>
+    /// <exception cref="JavaException">If error occured.</exception>
+    public static long NativeCall(nint thread, long result)
+    {
+        if (result < 0)
+        {
+            ThrowThreadJavaExceptionIfExist(thread);
+        }
+
+        return result;
+    }
+
+    /// <summary>
     /// Checks for a call to a native function that returns an T* (unmanaged pointer type).
     /// Throws <see cref="JavaExceptionInfo"/> if error occured.
     /// If there is no error, the result will be transmitted transparently.

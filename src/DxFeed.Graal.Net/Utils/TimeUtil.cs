@@ -11,7 +11,7 @@ namespace DxFeed.Graal.Net.Utils;
 /// <summary>
 /// A collection of static utility methods for manipulation of time measured in milliseconds since Unix epoch.
 /// <br/>
-/// Porting Java class <c>com.devexperts.util.TimeUtil</c>.
+/// Porting a Java class <c>com.devexperts.util.TimeUtil</c>.
 /// </summary>
 public static class TimeUtil
 {
@@ -40,7 +40,7 @@ public static class TimeUtil
     /// Idea is that number of milliseconds shall be within [0..999] interval
     /// so that the following equation always holds:
     /// <code>GetSecondsFromTime(timeMillis) * 1000L + GetMillisFromTime(timeMillis) == timeMillis</code>
-    /// as as long the time in seconds fits into <see cref="int"/>.
+    /// as long the time in seconds fits into <see cref="int"/>.
     /// <seealso cref="GetMillisFromTime(long)"/>
     /// </summary>
     /// <param name="timeMillis">The time measured in milliseconds since Unix epoch.</param>
@@ -55,7 +55,7 @@ public static class TimeUtil
     /// Idea is that number of milliseconds shall be within [0..999] interval
     /// so that the following equation always holds:
     /// <code>GetSecondsFromTime(timeMillis) * 1000L + GetMillisFromTime(timeMillis) == timeMillis</code>
-    /// as as long the time in seconds fits into <see cref="int"/>.
+    /// as long the time in seconds fits into <see cref="int"/>.
     /// <seealso cref="GetSecondsFromTime(long)"/>
     /// </summary>
     /// <param name="timeMillis">The time measured in milliseconds since Unix epoch.</param>

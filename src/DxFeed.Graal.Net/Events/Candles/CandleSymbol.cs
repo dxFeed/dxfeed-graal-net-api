@@ -34,6 +34,8 @@ public class CandleSymbol
         {
             attribute.CheckInAttribute(this);
         }
+
+        InitInternal();
     }
 
     /// <inheritdoc cref="ToString"/>
