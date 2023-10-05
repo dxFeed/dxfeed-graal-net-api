@@ -1,5 +1,4 @@
 {
-  "homepages": [],
   "source_base_path": "D:/a/dxfeed-graal-net-api/dxfeed-graal-net-api",
   "xrefmap": "xrefmap.yml",
   "files": [
@@ -703,6 +702,36 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "docs/api/DxFeed.Graal.Net.Ipf.InstrumentProfile.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/api/DxFeed.Graal.Net.Ipf.InstrumentProfile.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/DxFeed.Graal.Net.Ipf.InstrumentProfileReader.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/api/DxFeed.Graal.Net.Ipf.InstrumentProfileReader.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/DxFeed.Graal.Net.Ipf.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/api/DxFeed.Graal.Net.Ipf.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "docs/api/DxFeed.Graal.Net.Native.ErrorHandling.GraalErrorCode.yml",
       "output": {
         ".html": {
@@ -757,6 +786,26 @@
       "output": {
         ".html": {
           "relative_path": "docs/api/DxFeed.Graal.Net.Native.Events.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/DxFeed.Graal.Net.Native.Ipf.InstrumentProfileReaderNative.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/api/DxFeed.Graal.Net.Native.Ipf.InstrumentProfileReaderNative.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/DxFeed.Graal.Net.Native.Ipf.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/api/DxFeed.Graal.Net.Native.Ipf.html"
         }
       },
       "version": ""
@@ -1025,7 +1074,6 @@
       "version": ""
     }
   ],
-  "version_info": {},
   "groups": [
     {
       "xrefmap": "xrefmap.yml"

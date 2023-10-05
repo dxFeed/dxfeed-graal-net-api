@@ -87,13 +87,13 @@ which was compiled with <a href="https://www.graalvm.org/latest/reference-manual
 and <a href="https://docs.dxfeed.com/dxfeed/api/overview-summary.html">dxFeed Java API</a> (our flagman API).</p>
 <p>ℹ️ If you already use <a href="https://github.com/dxFeed/dxfeed-net-api">dxFeed .NET API</a>, please see
 the <a href="#overview">Overview</a> section.<br>
-⚠️ It’s an <strong>beta</strong> version and still under active development.</p>
+⚠️ It’s a <strong>beta</strong> version and still under active development.</p>
 <p><img src="https://github.com/dxFeed/dxfeed-graal-net-api/actions/workflows/build.yml/badge.svg" alt="Build">
 <img src="https://github.com/dxFeed/dxfeed-graal-net-api/actions/workflows/codeql.yml/badge.svg" alt="CodeQL">
 <a href="https://dotnet.microsoft.com/en-us/download/dotnet/6.0"><img src="https://img.shields.io/badge/.net%20version-net6.0-blueviolet" alt="NET"></a>
 <img src="https://img.shields.io/badge/platform-win--x64%20%7C%20linux--x64%20%7C%20osx--x64%20%7C%20osx--arm64-lightgrey" alt="Platform">
 <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/master/LICENSE"><img src="https://img.shields.io/badge/license-MPL--2.0-orange" alt="License"></a>
-<a href="https://dxfeed.jfrog.io/artifactory/nuget-open/com/dxfeed/graal-net/"><img src="https://img.shields.io/badge/nuget-0.4.0-blue" alt="Nuget"></a></p>
+<a href="https://dxfeed.jfrog.io/artifactory/nuget-open/com/dxfeed/graal-net/"><img src="https://img.shields.io/badge/nuget-0.5.0-blue" alt="Nuget"></a></p>
 <h2 id="table-of-contents">Table of Contents</h2>
 <ul>
 <li><a href="#overview">Overview</a>
@@ -390,6 +390,8 @@ dumps all events received from address. This was designed to retrieve data from 
 <li><a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/main/src/DxFeed.Graal.Net.Tools/PerfTest/PerfTestTool.cs">PerfTest</a>
 connects to the specified address(es) and calculates performance counters (events per second, memory usage, CPU usage,
 etc.)</li>
+<li><a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/main/src/DxFeed.Graal.Net.Tools/LatencyTest/LatencyTestTool.cs">LatencyTest</a>
+connects to the specified address(es) and calculates latency.</li>
 </ul>
 <h2 id="samples">Samples</h2>
 <ul>
@@ -406,6 +408,8 @@ is a simple demonstration of how to subscribe to the <code>Quote</code> event, u
 and <code>dxfeed.properties</code> file</li>
 <li><a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/main/samples/WriteTapeFile/Program.cs">DxFeed.Graal.Net.Samples.WriteTapeFile</a>
 is a simple demonstration of how to write events to a tape file</li>
+<li><a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/main/samples/CandleSample/Program.cs">DxFeed.Graal.Net.Samples.CandleSample</a>
+demonstrates how to subscribe to candle events.</li>
 </ul>
 <h2 id="current-state">Current State</h2>
 <h3 id="endpoint-roles">Endpoint Roles</h3>
@@ -599,12 +603,12 @@ provides on-demand historical tick data replay controls
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.4.0/index.md/#L1" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.5.0/index.md/#L1" class="contribution-link">Edit this page</a>
                   </li>
                 </ul>
               </div>
               <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
-                <h5>In This Article</h5>
+                <h5>In this article</h5>
                 <div></div>
               </nav>
             </div>
