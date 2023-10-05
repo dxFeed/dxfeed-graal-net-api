@@ -33,6 +33,8 @@ public class LatencyTestTool : AbstractTool<LatencyTestArgs>
         private static readonly string DiagnosticHeader = PlatformUtils.PlatformDiagInfo;
         private static readonly NumberFormatInfo SpaceNumFormat = new() { NumberGroupSeparator = " " };
 
+        private readonly LatencyTestArgs args;
+        private readonly List<string> ignoringExhanges = new();
         private readonly Timer _timer;
 
         private readonly Stopwatch _timerDiff = new();
@@ -48,13 +50,22 @@ public class LatencyTestTool : AbstractTool<LatencyTestArgs>
         private double _stdErr = double.NaN;
         private long _sampleSize;
 
+
+        private double _minTotal = double.MaxValue;
+        private double _maxTotal = double.MinValue;
+
         private readonly ConcurrentSet<string?> _symbols = new();
         private readonly ConcurrentBag<long> _deltaTime = new();
 
         private readonly TimeSpan _measurementPeriod;
 
-        public Diagnostic(TimeSpan measurementPeriod)
+        public Diagnostic(LatencyTestArgs args, TimeSpan measurementPeriod)
         {
+            if (args.IgnoreExchanges != null)
+            {
+                ignoringExhanges = args.IgnoreExchanges.Split(',').ToList();
+            }
+
             _timerDiff.Restart();
             _runningDiff.Restart();
             _measurementPeriod = measurementPeriod;
@@ -77,12 +88,22 @@ public class LatencyTestTool : AbstractTool<LatencyTestArgs>
                 switch (e)
                 {
                     case Quote quote:
+                        if (ignoringExhanges.Count !=0 && (ignoringExhanges.Contains(quote.AskExchangeCode.ToString()) || ignoringExhanges.Contains(quote.BidExchangeCode.ToString())))
+                        {
+                            continue;
+                        }
+
                         deltaTime = time - quote.Time;
                         ++validEvent;
                         _deltaTime.Add(deltaTime);
                         _symbols.Add(e.EventSymbol);
                         break;
                     case Trade trade:
+                        if (ignoringExhanges.Count !=0 && ignoringExhanges.Contains(trade.ExchangeCode.ToString()))
+                        {
+                            continue;
+                        }
+
                         deltaTime = time - trade.Time;
                         ++validEvent;
                         _deltaTime.Add(deltaTime);
@@ -95,6 +116,10 @@ public class LatencyTestTool : AbstractTool<LatencyTestArgs>
                         _symbols.Add(e.EventSymbol);
                         break;
                     case TimeAndSale timeAndSale:
+                        if (ignoringExhanges.Count !=0 && (ignoringExhanges.Contains(timeAndSale.ExchangeCode.ToString())))
+                        {
+                            continue;
+                        }
                         if (!timeAndSale.IsNew || !timeAndSale.IsValidTick)
                         {
                             continue;
@@ -120,8 +145,10 @@ public class LatencyTestTool : AbstractTool<LatencyTestArgs>
         private long GetAndResetEventCounter() =>
             Interlocked.Exchange(ref _eventCounter, 0);
 
-        private static string FormatDouble(double value) =>
-            double.IsNaN(value) ? "---" : value.ToString("N2", SpaceNumFormat);
+        private static string FormatDouble(double value)
+        {
+            return (double.IsNaN(value) || value == double.MaxValue || value == double.MinValue) ? "---" : value.ToString("N2", SpaceNumFormat);
+        }
 
         private void TimerCallback(object? _)
         {
@@ -138,6 +165,8 @@ public class LatencyTestTool : AbstractTool<LatencyTestArgs>
                 _stdDev = CalcStdDev(deltas);
                 _stdErr = CalcStdErr(deltas, _stdDev);
                 _sampleSize = deltas.Count;
+                _minTotal = Math.Min(_min, _minTotal);
+                _maxTotal = Math.Max(_max, _maxTotal);
             }
 
             var uniqueSymbols = _symbols.Count;
@@ -146,17 +175,20 @@ public class LatencyTestTool : AbstractTool<LatencyTestArgs>
             Console.WriteLine();
             Console.WriteLine(DiagnosticHeader);
             Console.WriteLine(@"----------------------------------------------");
-            Console.WriteLine(@$"  Rate of events (avg)     : {FormatDouble(eventsPerSec)} (events/s)");
-            Console.WriteLine(@$"  Rate of unique symbols   : {uniqueSymbols} (symbols/interval)");
-            Console.WriteLine(@$"  Min                      : {FormatDouble(_min)} (ms)");
-            Console.WriteLine(@$"  Max                      : {FormatDouble(_max)} (ms)");
-            Console.WriteLine(@$"  99th percentile          : {FormatDouble(_percentile)} (ms)");
-            Console.WriteLine(@$"  Mean                     : {FormatDouble(_mean)} (ms)");
-            Console.WriteLine(@$"  StdDev                   : {FormatDouble(_stdDev)} (ms)");
-            Console.WriteLine(@$"  Error                    : {FormatDouble(_stdErr)} (ms)");
-            Console.WriteLine(@$"  Sample size (N)          : {_sampleSize} (events)");
-            Console.WriteLine(@$"  Measurement interval     : {_measurementPeriod.Seconds} (s)");
-            Console.WriteLine(@$"  Running time             : {_runningDiff.Elapsed}");
+            Console.WriteLine(@$"  Rate of events (avg)      : {FormatDouble(eventsPerSec)} (events/s)");
+            Console.WriteLine(@$"  Rate of unique symbols    : {uniqueSymbols} (symbols/interval)");
+            Console.WriteLine(@$"  Min current               : {FormatDouble(_min)} (ms)");
+            Console.WriteLine(@$"  Max current               : {FormatDouble(_max)} (ms)");
+            Console.WriteLine(@$"  Min total                 : {FormatDouble(_minTotal)} (ms)");
+            Console.WriteLine(@$"  Max total                 : {FormatDouble(_maxTotal)} (ms)");
+            Console.WriteLine(@$"  99th percentile           : {FormatDouble(_percentile)} (ms)");
+            Console.WriteLine(@$"  Mean                      : {FormatDouble(_mean)} (ms)");
+            Console.WriteLine(@$"  StdDev                    : {FormatDouble(_stdDev)} (ms)");
+            Console.WriteLine(@$"  Error                     : {FormatDouble(_stdErr)} (ms)");
+            Console.WriteLine(@$"  Sample size (N)           : {_sampleSize} (events)");
+            Console.WriteLine(@$"  Measurement interval      : {_measurementPeriod.Seconds} (s)");
+            Console.WriteLine(@$"  Running time              : {_runningDiff.Elapsed}");
+            Console.WriteLine(@$"  Timestamp                 : {TimeFormat.Local.WithMillis().WithTimeZone().Format(DateTimeOffset.Now)}");
 
             _min = double.NaN;
             _mean = double.NaN;
@@ -237,8 +269,7 @@ public class LatencyTestTool : AbstractTool<LatencyTestArgs>
             .CreateSubscription(ParseEventTypes(args.Types!));
 
         var measurementPeriod = new TimeSpan(0, 0, args.Interval);
-        using var diagnostic = new Diagnostic(measurementPeriod);
-
+        using var diagnostic = new Diagnostic(args, measurementPeriod);
 
         sub.AddEventListener(events =>
         {

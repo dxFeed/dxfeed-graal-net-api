@@ -83,7 +83,7 @@ dotnet_analyzer_diagnostic.severity = warning
 # Underscore with private fields
 dotnet_naming_rule.private_members_with_underscore.symbols  = private_fields
 dotnet_naming_rule.private_members_with_underscore.style    = prefix_underscore
-dotnet_naming_rule.private_members_with_underscore.severity = suggestion
+dotnet_naming_rule.private_members_with_underscore.severity = none
 dotnet_naming_symbols.private_fields.applicable_kinds           = field
 dotnet_naming_symbols.private_fields.applicable_accessibilities = private
 dotnet_naming_style.prefix_underscore.capitalization = camel_case
@@ -400,7 +400,7 @@ dotnet_naming_rule.sanity_check_uncovered_field_case_rule.severity = error
 dotnet_naming_symbols.element_group.applicable_kinds = namespace, class, enum, struct, delegate, event, method, property
 dotnet_naming_rule.element_rule.symbols              = element_group
 dotnet_naming_rule.element_rule.style                = pascal_case_style
-dotnet_naming_rule.element_rule.severity             = warning
+dotnet_naming_rule.element_rule.severity             = none
 
 # Interfaces use PascalCase and are prefixed with uppercase 'I'
 # https://docs.microsoft.com/dotnet/standard/design-guidelines/names-of-classes-structs-and-interfaces

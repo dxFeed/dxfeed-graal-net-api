@@ -14,7 +14,7 @@ namespace DxFeed.Graal.Net.Tools;
 
 public class HelpScreen : HelpText
 {
-    private readonly Comparison<ComparableOption> _orderOnShortNameAndValuesBeforeOptions = (x, y) =>
+    private readonly Comparison<ComparableOption> orderOnShortNameAndValuesBeforeOptions = (x, y) =>
     {
         switch (x.IsValue)
         {
@@ -54,7 +54,7 @@ public class HelpScreen : HelpText
         AddNewLineBetweenHelpSections = true;
         AdditionalNewLineAfterOption = false;
         AddDashesToOption = true;
-        OptionComparison = _orderOnShortNameAndValuesBeforeOptions;
+        OptionComparison = orderOnShortNameAndValuesBeforeOptions;
         TypeScreen = ScreenTypes.Plain;
         Indent = 2;
     }
