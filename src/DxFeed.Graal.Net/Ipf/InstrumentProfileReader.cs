@@ -28,6 +28,19 @@ public class InstrumentProfileReader
 {
     private readonly InstrumentProfileReaderNative ipfReaderNative = InstrumentProfileReaderNative.Create();
 
+    /// <summary>
+    /// Resolves the given address specification into its corresponding URL format, particularly transforming
+    /// simple "host:port" address specifications into a full HTTP URL.
+    /// </summary>
+    /// <remarks>
+    /// If the provided address appears to be a "host:port" pattern without any forward slashes,
+    /// this method will attempt to convert it to a standardized HTTP URL format targeting an
+    /// "ipf/all.ipf.gz" endpoint. If the address contains a query parameter (e.g., "host:port?param=value"),
+    /// the parameter will be preserved in the resulting URL. Addresses that do not fit the "host:port"
+    /// pattern, or that have invalid port numbers, are returned unchanged.
+    /// </remarks>
+    /// <param name="address">The address specification to be resolved into a URL.</param>
+    /// <returns>The resolved URL corresponding to the specified address.</returns>
     public static string? ResolveSourceUrl(string address) =>
         InstrumentProfileReaderNative.ResolveSourceUrl(address);
 

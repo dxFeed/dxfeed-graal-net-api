@@ -31,8 +31,10 @@ the [Overview](#overview) section.<br>
     * [Implementation Details](#implementation-details)
     * [Architectural Restrictions and Other Limitations in the Old Version](#architectural-restrictions-and-other-limitations-of-the-old-version)
 - [Documentation](#documentation)
+- [Requirements](#requirements)
 - [Installation](#installation)
 - [Usage](#usage)
+- [Tools](#tools)
 - [Samples](#samples)
 - [Current State](#current-state)
 
@@ -58,7 +60,7 @@ prevent us from providing a state-of-the-art technological solution.
 Feature development has already stopped for the [old version](https://github.com/dxFeed/dxfeed-net-api) of dxFeed .NET
 API.
 
-We expect the new repository to go into production in Q2’2023.
+We expect the new repository to go into production in Q4’2023.
 At the same time, the old version will be considered deprecated, and at the end of 2024, we plan to end the service.
 If you’re already our customer and have difficulty with a future transition, please contact us via
 our [customer portal](https://jira.in.devexperts.com/servicedesk/customer/portal/1).
@@ -96,18 +98,18 @@ ready to answer any questions and help with the transition.
 
 #### Sample Mapping
 
-| #  | Sample                                                                                                                            | Old Version                                                                                                                           | New Version                                                     |
-|:--:|:----------------------------------------------------------------------------------------------------------------------------------|:--------------------------------------------------------------------------------------------------------------------------------------|:----------------------------------------------------------------|
-| 1  | How to subscribe to `Quote`, `Trade`, `TradeETH`, `Order`, `SpreadOrder`, `AnalyticOrder`, `TimeAndSale` events                   | [dxf_events_sample](https://github.com/dxFeed/dxfeed-net-api/tree/master/samples/dxf_events_sample)                                   | [DxFeed.Graal.Net.Samples.DxFeedConnect](samples/DxFeedConnect) |
-| 2  | How to subscribe to `Candle` event                                                                                                | [dxf_candle_sample](https://github.com/dxFeed/dxfeed-net-api/tree/master/samples/dxf_candle_sample)                                   | [DxFeed.Graal.Net.Samples.CandleSample](samples/CandleSample)   |
-| 3  | How to receive IPF data from URL or file                                                                                          | [dxf_instrument_profile_sample](https://github.com/dxFeed/dxfeed-net-api/tree/master/samples/dxf_instrument_profile_sample)           | *Q3’2023*, please see [TBD](#future-development) section        |
-| 4  | How to subscribe to IPF live updates                                                                                              | [dxf_instrument_profile_live_sample](https://github.com/dxFeed/dxfeed-net-api/tree/master/samples/dxf_instrument_profile_live_sample) | *Q3’2023*, please see [TBD](#future-development) section        |
-| 5  | How to subscribe to `Order`, `SpreadOrder`, `Candle`, `TimeAndSale`, `Greeks`, `Series` snapshots                                 | [dxf_snapshot_sample](https://github.com/dxFeed/dxfeed-net-api/tree/master/samples/dxf_snapshot_sample)                               | *Q4’2023*, please see [TBD](#future-development) section        |
-| 6  | How to subscribe to depth of market                                                                                               | [dxf_price_level_book_sample](https://github.com/dxFeed/dxfeed-net-api/tree/master/samples/dxf_price_level_book_sample)               | *Q4’2023*, please see [TBD](#future-development) section        |
-| 7  | How to receive snapshots of `TimeAndSale`, `Candle`, `Series`, `Greeks` events on a given time interval without live subscription | [dxf_simple_data_retrieving_sample](https://github.com/dxFeed/dxfeed-net-api/tree/master/samples/dxf_simple_data_retrieving_sample)   | *Q4’2023*, please see [TBD](#future-development) section        |
-| 8  | How to subscribe to order snapshot with incremental updates                                                                       | [dxf_inc_order_snapshot_sample](https://github.com/dxFeed/dxfeed-net-api/tree/master/samples/dxf_inc_order_snapshot_sample)           | *Q4’2023*, please see [TBD](#future-development) section        |
-| 9  | How to retrieve `Candle` data from the candle web service                                                                         | [dxf_candle_data_retrieving_sample](https://github.com/dxFeed/dxfeed-net-api/tree/master/samples/dxf_candle_data_retrieving_sample)   | *Q4’2023*, please see [TBD](#future-development) section        |
-| 10 | How to retrieve `TimeAndSale` data from the candle web service                                                                    | [dxf_tns_data_retrieving_sample](https://github.com/dxFeed/dxfeed-net-api/tree/master/samples/dxf_tns_data_retrieving_sample)         | *Q4’2023*, please see [TBD](#future-development) section        |
+| #  | Sample                                                                                                                            | Old Version                                                                                                                           | New Version                                                           |
+|:--:|:----------------------------------------------------------------------------------------------------------------------------------|:--------------------------------------------------------------------------------------------------------------------------------------|:----------------------------------------------------------------------|
+| 1  | How to subscribe to `Quote`, `Trade`, `TradeETH`, `Order`, `SpreadOrder`, `AnalyticOrder`, `TimeAndSale` events                   | [dxf_events_sample](https://github.com/dxFeed/dxfeed-net-api/tree/master/samples/dxf_events_sample)                                   | [DxFeed.Graal.Net.Samples.DxFeedConnect](samples/DxFeedConnect)       |
+| 2  | How to subscribe to `Candle` event                                                                                                | [dxf_candle_sample](https://github.com/dxFeed/dxfeed-net-api/tree/master/samples/dxf_candle_sample)                                   | [DxFeed.Graal.Net.Samples.CandleSample](samples/CandleSample)         |
+| 3  | How to receive IPF data from URL or file                                                                                          | [dxf_instrument_profile_sample](https://github.com/dxFeed/dxfeed-net-api/tree/master/samples/dxf_instrument_profile_sample)           | [DxFeed.Graal.Net.Samples.DXFeedIpfConnect](samples/DXFeedIpfConnect) |
+| 4  | How to subscribe to IPF live updates                                                                                              | [dxf_instrument_profile_live_sample](https://github.com/dxFeed/dxfeed-net-api/tree/master/samples/dxf_instrument_profile_live_sample) | *Q4’2023*, please see [TBD](#future-development) section              |
+| 5  | How to subscribe to `Order`, `SpreadOrder`, `Candle`, `TimeAndSale`, `Greeks`, `Series` snapshots                                 | [dxf_snapshot_sample](https://github.com/dxFeed/dxfeed-net-api/tree/master/samples/dxf_snapshot_sample)                               | *Q2’2024*, please see [TBD](#future-development) section              |
+| 6  | How to subscribe to depth of market                                                                                               | [dxf_price_level_book_sample](https://github.com/dxFeed/dxfeed-net-api/tree/master/samples/dxf_price_level_book_sample)               | *Q2’2024*, please see [TBD](#future-development) section              |
+| 7  | How to receive snapshots of `TimeAndSale`, `Candle`, `Series`, `Greeks` events on a given time interval without live subscription | [dxf_simple_data_retrieving_sample](https://github.com/dxFeed/dxfeed-net-api/tree/master/samples/dxf_simple_data_retrieving_sample)   | *Q2’2024*, please see [TBD](#future-development) section              |
+| 8  | How to subscribe to order snapshot with incremental updates                                                                       | [dxf_inc_order_snapshot_sample](https://github.com/dxFeed/dxfeed-net-api/tree/master/samples/dxf_inc_order_snapshot_sample)           | *Q2’2024*, please see [TBD](#future-development) section              |
+| 9  | How to retrieve `Candle` data from the candle web service                                                                         | [dxf_candle_data_retrieving_sample](https://github.com/dxFeed/dxfeed-net-api/tree/master/samples/dxf_candle_data_retrieving_sample)   | *Q4’2024*, please see [TBD](#future-development) section              |
+| 10 | How to retrieve `TimeAndSale` data from the candle web service                                                                    | [dxf_tns_data_retrieving_sample](https://github.com/dxFeed/dxfeed-net-api/tree/master/samples/dxf_tns_data_retrieving_sample)         | *Q4’2024*, please see [TBD](#future-development) section              |
 
 ### Implementation Details
 
@@ -161,6 +163,72 @@ Find useful information in our self-service dxFeed Knowledge Base or .NET API do
     * [Order Sources](https://kb.dxfeed.com/en/data-model/qd-model-of-market-events.html#order-x)
     * [Order Book reconstruction](https://kb.dxfeed.com/en/data-model/dxfeed-order-book/order-book-reconstruction.html)
     * [Symbology Guide](https://kb.dxfeed.com/en/data-model/symbology-guide.html)
+
+## Requirements
+
+### Windows
+
+Only x64 versions are supported.
+
+| OS                                    | Version        | Architectures |
+|---------------------------------------|----------------|---------------|
+| [Windows][Windows-client]             | 8, 8.1         | x64           |
+| [Windows 10][Windows-client]          | Version 1607+  | x64           |
+| [Windows 11][Windows-client]          | Version 22000+ | x64           |
+| [Windows Server][Windows-Server]      | 2012+          | x64           |
+| [Windows Server Core][Windows-Server] | 2012+          | x64           |
+| [Nano Server][Nano-Server]            | Version 1809+  | x64           |
+
+#### Requirements
+
+* [.NET 6][.NET 6] (not required for self-contained assemblies)
+* [Visual C++ Redistributable for Visual Studio 2015][vc_redist]
+
+[Windows-client]: https://www.microsoft.com/windows/
+
+[Windows-Server]: https://learn.microsoft.com/windows-server/
+
+[Nano-Server]: https://learn.microsoft.com/windows-server/get-started/getting-started-with-nano-server
+
+[vc_redist]: [https://aka.ms/vs/17/release/vc_redist.x64.exe]
+
+### Linux
+
+Only x64 versions are supported.
+
+#### Requirements
+
+* [.NET 6][.NET 6] (not required for self-contained assemblies)
+
+#### Libc compatibility
+
+- [glibc][glibc]: 2.35+ (from Ubuntu 22.04)
+- [musl][musl]: temporarily unsupported
+
+#### Libpthread compatibility
+
+A symlink on libpthread.so, libpthread.so.0, or libcoreclr.so must exist.
+
+[glibc]: https://www.gnu.org/software/libc/
+
+[musl]: https://musl.libc.org/
+
+### macOS
+
+| OS             | Version | Architectures |
+|----------------|---------|---------------|
+| [macOS][macOS] | 10.15+  | x64           |
+| [macOS][macOS] | 11+     | Arm64         |
+
+Is supported in the Rosetta 2 x64 emulator.
+
+[macOS]: https://support.apple.com/macos
+
+#### Requirements
+
+* [.NET 6][.NET 6] (not required for self-contained assemblies)
+
+[.NET 6]: [https://dotnet.microsoft.com/en-us/download/dotnet/6.0]
 
 ## Installation
 
@@ -237,6 +305,12 @@ require .NET installation)
   etc.)
 * [LatencyTest](https://github.com/dxFeed/dxfeed-graal-net-api/blob/main/src/DxFeed.Graal.Net.Tools/LatencyTest/LatencyTestTool.cs)
   connects to the specified address(es) and calculates latency.
+
+To run tools on macOs, it may be necessary to unquarantine them:
+
+```
+sudo /usr/bin/xattr -r -d com.apple.quarantine <directory_with_tools>
+```
 
 ## Samples
 
