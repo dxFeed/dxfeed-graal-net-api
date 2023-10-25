@@ -10,7 +10,7 @@ using DxFeed.Graal.Net.Native.Interop;
 
 namespace DxFeed.Graal.Net.Native.Ipf.Handles;
 
-internal abstract class InstrumentProfileCollectorHandle : JavaSafeHandle
+internal class InstrumentProfileCollectorHandle : JavaSafeHandle
 {
     public static InstrumentProfileCollectorHandle Create() =>
         ErrorCheck.NativeCall(CurrentThread, NativeCreate(CurrentThread));
