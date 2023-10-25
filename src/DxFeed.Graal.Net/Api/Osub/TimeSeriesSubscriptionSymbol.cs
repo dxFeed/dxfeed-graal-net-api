@@ -15,7 +15,7 @@ namespace DxFeed.Graal.Net.Api.Osub;
 
 /// <summary>
 /// Represents subscription to time-series of events.
-/// Instances of this class can be used with {@link DXFeedSubscription} to specify subscription
+/// Instances of this class can be used with <see cref="DXFeedSubscription"/> to specify subscription
 /// for time series events from a specific time. By default, subscribing to time-series events by
 /// their event symbol object, the subscription is performed to a stream of new events as they happen only.
 /// <br/>
@@ -24,8 +24,6 @@ namespace DxFeed.Graal.Net.Api.Osub;
 /// <typeparam name="T">The type of event symbol.</typeparam>
 public class TimeSeriesSubscriptionSymbol<T> : IndexedEventSubscriptionSymbol<T>
 {
-    // ToDo Add a constructor overload to pass fromTime as DateTimeOffset.
-
     /// <summary>
     /// Initializes a new instance of the <see cref="TimeSeriesSubscriptionSymbol{T}"/> class
     /// with a specified event symbol and from time in milliseconds since Unix epoch.
