@@ -217,7 +217,7 @@ public abstract class OrderBase : MarketEvent, IIndexedEvent
     public OrderAction Action
     {
         get => OrderActionExt.ValueOf(BitUtil.GetBits(Flags, ActionMask, ActionShift));
-        set => BitUtil.SetBits(Flags, ActionMask, ActionShift, (int)value);
+        set => Flags = BitUtil.SetBits(Flags, ActionMask, ActionShift, (int)value);
     }
 
     /// <summary>

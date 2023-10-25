@@ -62,7 +62,7 @@ public class DXEndpointTest
     }
 
     [Test]
-    public void GetGePublisherReturnsSameObject()
+    public void GetPublisherReturnsSameObject()
     {
         var publisher = GetInstance().GetPublisher();
         Assert.That(publisher, Is.EqualTo(GetInstance().GetPublisher()));

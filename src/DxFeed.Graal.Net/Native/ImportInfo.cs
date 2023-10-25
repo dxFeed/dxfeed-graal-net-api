@@ -14,5 +14,5 @@ internal static class ImportInfo
     /// <summary>
     /// Path to imported DLL.
     /// </summary>
-    public const string DllName = "DxFeedGraalNativeApi";
+    public const string DllName = "DxFeedGraalNativeSdk";
 }
