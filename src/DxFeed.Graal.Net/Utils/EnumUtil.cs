@@ -10,7 +10,7 @@ using System.Numerics;
 namespace DxFeed.Graal.Net.Utils;
 
 /// <summary>
-/// Provides utility methods for manipulating <see cref="Enum"/>.
+/// Provides utility methods for manipulating enumerations.
 /// </summary>
 public static class EnumUtil
 {
@@ -33,7 +33,7 @@ public static class EnumUtil
             return value;
         }
 
-        throw new ArgumentException($"{typeof(T)} has no value({value})", nameof(value));
+        throw new ArgumentException($"{typeof(T)} has no value: {value}", nameof(value));
     }
 
     /// <summary>
@@ -62,7 +62,34 @@ public static class EnumUtil
         Enum.GetValues(typeof(T)).Length;
 
     /// <summary>
-    /// Creates an array containing elements of the specified enum type T, of the specified length.
+    /// Creates an array containing elements of the specified enum type <c>T</c>,
+    /// where the length of the array is rounded to the nearest power of two,
+    /// which is greater than or equal to the number of enum values.
+    /// If the calculated length is greater than the number of enum values,
+    /// the remaining elements are filled with a default value.
+    /// The idea is to quickly convert an <c>int</c> value to an enum value by using the array index.
+    /// However, the size of the array is limited by a bit mask. If the number of enum values
+    /// isn't a power of two, the array is expanded and the additional elements are filled with the default value.
+    /// </summary>
+    /// <param name="defaultValue">
+    /// The default value that will fill the elements of an array
+    /// if its size is greater than the number of enum values.
+    /// </param>
+    /// <typeparam name="T">The specified enum type.</typeparam>
+    /// <returns>The created array.</returns>
+    /// <remarks>
+    /// The elements of the array are sorted by the binary values of the enumeration constants
+    /// (that is, by their unsigned magnitude).
+    /// </remarks>
+    /// <seealso cref="CreateEnumArrayByValue{T}"/>
+    public static T[] CreateEnumBitMaskArrayByValue<T>(T defaultValue)
+        where T : struct, Enum =>
+        CreateEnumArrayByValue(
+            defaultValue,
+            (int)BitOperations.RoundUpToPowerOf2((uint)GetCountValues<T>()));
+
+    /// <summary>
+    /// Creates an array containing elements of the specified enum type <c>T</c>, of the specified length.
     /// If the length is greater than the number of enum values,
     /// the remaining elements are filled with a default value, otherwise array are truncated.
     /// </summary>
@@ -91,31 +118,4 @@ public static class EnumUtil
         Array.Copy(values, result, Math.Min(values.Length, length));
         return result;
     }
-
-    /// <summary>
-    /// Creates an array containing elements of the specified enum type T,
-    /// where the length of the array is rounded to the nearest power of two,
-    /// which is greater than or equal to the number of enum values.
-    /// If the calculated length is greater than the number of enum values,
-    /// the remaining elements are filled with a default value.
-    /// The idea is to quickly convert an <c>int</c> value to an enum value, simply by array index.
-    /// But the size of the array is limited by a bit mask, so if the number of enum values
-    /// is not a multiple of a power of two, you need to expand the array and fill in new elements with a default value.
-    /// </summary>
-    /// <param name="defaultValue">
-    /// The default value that will fill the elements of an array
-    /// if its size is greater than the number of enum values.
-    /// </param>
-    /// <typeparam name="T">The specified enum type.</typeparam>
-    /// <returns>The created array.</returns>
-    /// <remarks>
-    /// The elements of the array are sorted by the binary values of the enumeration constants
-    /// (that is, by their unsigned magnitude).
-    /// </remarks>
-    /// <seealso cref="CreateEnumArrayByValue{T}"/>
-    public static T[] CreateEnumBitMaskArrayByValue<T>(T defaultValue)
-        where T : struct, Enum =>
-        CreateEnumArrayByValue(
-            defaultValue,
-            (int)BitOperations.RoundUpToPowerOf2((uint)GetCountValues<T>()));
 }

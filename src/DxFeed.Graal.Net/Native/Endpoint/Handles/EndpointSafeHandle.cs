@@ -97,7 +97,7 @@ internal sealed unsafe class EndpointSafeHandle : SafeHandleZeroIsInvalid
         var thread = Isolate.CurrentThread;
         ErrorCheck.NativeCall(
             thread,
-            NativeAddStateChangeListener(thread, this, stateChangeListenerHandle, 0, 0));
+            NativeAddStateChangeListener(thread, this, stateChangeListenerHandle));
     }
 
     public FeedHandle* GetFeed()
@@ -258,9 +258,7 @@ internal sealed unsafe class EndpointSafeHandle : SafeHandleZeroIsInvalid
     private static extern int NativeAddStateChangeListener(
         nint thread,
         EndpointHandle* endpointHandle,
-        StateChangeListenerHandle* listenerHandle,
-        nint endpointFinalize,
-        nint userData);
+        StateChangeListenerHandle* listenerHandle);
 
     [DllImport(
         ImportInfo.DllName,

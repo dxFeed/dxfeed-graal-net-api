@@ -198,12 +198,12 @@ public class InstrumentProfile
     /// Gets or sets list of exchanges where instrument is quoted or traded.
     /// Its shall use the following format:
     /// <code>
-    /// &lt;VALUE&gt; ::= &lt;empty&gt; | &lt;LIST&gt;
-    /// &lt;IST&gt; ::= &lt;MIC&gt; | &lt;MIC&gt; &lt;semicolon&gt;
+    ///     &lt;VALUE&gt; ::= &lt;empty&gt; | &lt;LIST&gt;
+    ///     &lt;IST&gt; ::= &lt;MIC&gt; | &lt;MIC&gt; &lt;semicolon&gt;
     /// </code>
     /// &lt;LIST&gt; the list shall be sorted by MIC.
     /// </summary>
-    /// <example>"ARCX;CBSX ;XNAS;XNYS".</example>
+    /// <example>"ARCX;CBSX;XNAS;XNYS".</example>
     public string Exchanges
     {
         get => exchanges;
@@ -460,6 +460,7 @@ public class InstrumentProfile
     /// </code>
     /// the list shall be sorted by &lt;UPPER_LIMIT&gt;.
     /// </summary>
+    /// <example>"0.25", "0.01 3; 0.05".</example>
     public string PriceIncrements
     {
         get => priceIncrements;
@@ -480,5 +481,5 @@ public class InstrumentProfile
     /// </summary>
     /// <returns>The string representation.</returns>
     public override string ToString() =>
-        $"{type} {symbol}";
+        $"{Type} {Symbol}";
 }

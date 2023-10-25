@@ -9,28 +9,28 @@ namespace DxFeed.Graal.Net.Utils;
 /// <summary>
 /// A collection of utility methods for bitwise operations.
 /// <br/>
-/// Porting Java class <c>com.dxfeed.event.market.Util</c>.
+/// Ports the Java class <c>com.dxfeed.event.market.Util</c>.
 /// </summary>
 public static class BitUtil
 {
     /// <summary>
     /// Extracts bits from the specified value.
     /// </summary>
-    /// <param name="value">The specified value.</param>
+    /// <param name="value">The specified value from which bits are extracted.</param>
     /// <param name="mask">The bit mask.</param>
-    /// <param name="shift">The bit shift.</param>
+    /// <param name="shift">The number of positions to shift the value.</param>
     /// <returns>The extracted bits.</returns>
     public static int GetBits(int value, int mask, int shift) =>
         (value >> shift) & mask;
 
     /// <summary>
-    /// Sets bits to the specified value.
+    /// Sets bits in the specified value.
     /// </summary>
-    /// <param name="value">The specified value.</param>
+    /// <param name="value">The specified value in which bits are to be set.</param>
     /// <param name="mask">The bit mask.</param>
-    /// <param name="shift">The bit shift.</param>
-    /// <param name="bits">The bits set.</param>
-    /// <returns>Returns a value with bits set.</returns>
+    /// <param name="shift">The number of positions to shift the value.</param>
+    /// <param name="bits">The bits to be set.</param>
+    /// <returns>A value with the specified bits set.</returns>
     public static int SetBits(int value, int mask, int shift, int bits) =>
         (value & ~(mask << shift)) | ((bits & mask) << shift);
 }

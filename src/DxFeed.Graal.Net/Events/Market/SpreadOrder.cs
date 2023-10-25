@@ -51,7 +51,7 @@ public class SpreadOrder : OrderBase
     /// </summary>
     /// <returns>The string representation.</returns>
     public override string ToString() =>
-        "Order{" + BaseFieldsToString() +
+        "SpreadOrder{" + BaseFieldsToString() +
         ", spreadSymbol='" + StringUtil.EncodeNullableString(SpreadSymbol) + "'" +
         "}";
 }
