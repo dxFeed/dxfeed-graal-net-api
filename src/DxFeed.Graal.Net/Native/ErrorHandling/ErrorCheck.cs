@@ -52,6 +52,17 @@ internal static class ErrorCheck
         return result;
     }
 
+    public static T NativeCall<T>(nint thread, T result)
+    where T : SafeHandle
+    {
+        if (result.IsInvalid)
+        {
+            ThrowThreadJavaExceptionIfExist(thread);
+        }
+
+        return result;
+    }
+
     /// <summary>
     /// Checks for a call to a native function that returns an T* (unmanaged pointer type).
     /// Throws <see cref="JavaExceptionInfo"/> if error occured.
