@@ -7,7 +7,9 @@
     <Rule Id="SA1309" Action="None"/><!-- FieldNamesMustNotBeginWithUnderscore -->
     <Rule Id="SA1108" Action="None"/><!-- BlockStatementsMustNotContainEmbeddedComments -->
     <Rule Id="SA1011" Action="None"/><!-- ClosingSquareBracketsMustBeSpacedCorrectly -->
-    <Rule Id="SA1600" Action="None"/><!-- Elements should be documented -->
-    <Rule Id="SA1649" Action="None"/><!-- File name must match type name -->
+    <Rule Id="SA1600" Action="None"/><!-- ElementsMustBeDocumented -->
+    <Rule Id="SA1649" Action="None"/><!-- FileNameMustMatchTypeName -->
+    <Rule Id="SA1310" Action="None"/><!-- FieldNamesMustNotContainUnderscore -->
+    <Rule Id="SA1629" Action="None"/><!-- DocumentationTextMustEndWithAPeriod -->
   </Rules>
 </RuleSet>
