@@ -4,26 +4,60 @@
 // If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
 // </copyright>
 
+using System;
+using System.Diagnostics.CodeAnalysis;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using DxFeed.Graal.Net.Ipf.Live;
 using DxFeed.Graal.Net.Native.ErrorHandling;
 using DxFeed.Graal.Net.Native.Interop;
 
 namespace DxFeed.Graal.Net.Native.Ipf.Handles;
 
-internal abstract unsafe class InstrumentProfileUpdateListenerHandle : JavaFinalizeSafeHandle
+[SuppressMessage("ReSharper", "ClassNeverInstantiated.Global", Justification = "Created by marshaller")]
+internal sealed unsafe class InstrumentProfileUpdateListenerHandle : JavaHandle
 {
-    public static InstrumentProfileUpdateListenerHandle Create(
-        delegate* unmanaged[Cdecl]<nint, IterableInstrumentProfileHandle, void> listener,
-        GCHandle handle) =>
-        ErrorCheck.NativeCall(CurrentThread, NativeCreate(CurrentThread, listener, GCHandle.ToIntPtr(handle)));
+    public static InstrumentProfileUpdateListenerHandle Create(InstrumentProfileUpdateListener listener)
+    {
+        var netHandle = GCHandle.Alloc(listener, GCHandleType.Normal);
+        InstrumentProfileUpdateListenerHandle? javaHandle = null;
+        try
+        {
+            javaHandle = ErrorCheck.NativeCall(CurrentThread, Import.New(CurrentThread, &OnUpdate, netHandle));
+            javaHandle.RegisterFinalize(netHandle);
+            return javaHandle;
+        }
+        catch (Exception)
+        {
+            javaHandle?.Dispose();
+            netHandle.Free();
+            throw;
+        }
+    }
 
-    [DllImport(
-        ImportInfo.DllName,
-        CallingConvention = CallingConvention.Cdecl,
-        CharSet = CharSet.Ansi,
-        EntryPoint = "dxfg_InstrumentProfileUpdateListener_new")]
-    private static extern InstrumentProfileUpdateListenerHandle NativeCreate(
-        nint thread,
-        delegate* unmanaged[Cdecl]<nint, IterableInstrumentProfileHandle, void> listener,
-        nint handle);
+    [UnmanagedCallersOnly(CallConvs = new[] { typeof(CallConvCdecl) })]
+    private static void OnUpdate(nint thread, nint iterator, GCHandle netHandle)
+    {
+        if (!netHandle.IsAllocated)
+        {
+            return;
+        }
+
+        using var it = new IterableInstrumentProfileHandle(iterator, false);
+        var listener = netHandle.Target as InstrumentProfileUpdateListener;
+        listener?.Invoke(it.ToList());
+    }
+
+    private static class Import
+    {
+        [DllImport(
+            ImportInfo.DllName,
+            CallingConvention = CallingConvention.Cdecl,
+            CharSet = CharSet.Ansi,
+            EntryPoint = "dxfg_InstrumentProfileUpdateListener_new")]
+        public static extern InstrumentProfileUpdateListenerHandle New(
+            nint thread,
+            delegate* unmanaged[Cdecl]<nint, nint, GCHandle, void> listener,
+            GCHandle netHandle);
+    }
 }
