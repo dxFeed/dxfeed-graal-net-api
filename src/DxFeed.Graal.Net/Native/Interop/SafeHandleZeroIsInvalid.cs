@@ -20,22 +20,32 @@ internal abstract class SafeHandleZeroIsInvalid : SafeHandle
     /// Initializes a new instance of the <see cref="SafeHandleZeroIsInvalid"/> class.
     /// By default, this class assumes ownership of the handle.
     /// </summary>
-    protected SafeHandleZeroIsInvalid()
-        : base(IntPtr.Zero, true)
-    {
-    }
-
-    protected SafeHandleZeroIsInvalid(bool ownHandle)
-        : base(IntPtr.Zero, ownHandle)
+    /// <param name="isOwnHandle">
+    /// <c>true</c> to reliably let release the handle during the finalization phase; otherwise, <c>false</c>.
+    /// </param>
+    protected SafeHandleZeroIsInvalid(bool isOwnHandle = true)
+        : base(IntPtr.Zero, isOwnHandle)
     {
     }
 
     /// <summary>
+    /// Initializes a new instance of the <see cref="SafeHandleZeroIsInvalid"/> class with a specified handle value.
+    /// By its default setting, this class assumes ownership of the handle.
+    /// </summary>
+    /// <param name="handle">The handle value to set.</param>
+    /// <param name="isOwnHandle">
+    /// <c>true</c> to reliably let release the handle during the finalization phase; otherwise, <c>false</c>.
+    /// </param>
+    protected SafeHandleZeroIsInvalid(IntPtr handle, bool isOwnHandle = true)
+        : base(IntPtr.Zero, isOwnHandle) =>
+        SetHandle(handle);
+
+    /// <summary>
     /// Gets a value indicating whether the handle is invalid.
     /// </summary>
-    /// <value>
+    /// <returns>
     /// <c>true</c> if the handle is considered invalid (i.e., has a value of zero); otherwise, <c>false</c>.
-    /// </value>
+    /// </returns>
     public override bool IsInvalid =>
         handle == IntPtr.Zero;
 }

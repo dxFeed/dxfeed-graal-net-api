@@ -14,7 +14,7 @@ using DxFeed.Graal.Net.Native.Interop;
 
 namespace DxFeed.Graal.Net.Native.Ipf;
 
-internal class InstrumentProfileListNative : JavaSafeHandle
+internal class InstrumentProfileListNative : JavaHandle
 {
     public unsafe List<InstrumentProfile> ToList()
     {
