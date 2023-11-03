@@ -4,28 +4,53 @@
 // If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
 // </copyright>
 
+using System.Collections.Concurrent;
+using System.Collections.Generic;
 using System.Runtime.InteropServices;
+using DxFeed.Graal.Net.Ipf;
+using DxFeed.Graal.Net.Ipf.Live;
 using DxFeed.Graal.Net.Native.ErrorHandling;
 using DxFeed.Graal.Net.Native.Interop;
+using DxFeed.Graal.Net.Native.Ipf.Handles;
 
-namespace DxFeed.Graal.Net.Native.Ipf.Handles;
+namespace DxFeed.Graal.Net.Native.Ipf;
 
-internal class InstrumentProfileCollectorHandle : JavaSafeHandle
+internal sealed class InstrumentProfileCollectorHandle : JavaHandle
 {
+    private static readonly
+        ConcurrentDictionary<InstrumentProfileUpdateListener, InstrumentProfileUpdateListenerHandle> Listeners = new();
+
     public static InstrumentProfileCollectorHandle Create() =>
         ErrorCheck.NativeCall(CurrentThread, NativeCreate(CurrentThread));
 
     public long GetLastUpdateTime() =>
         ErrorCheck.NativeCall(CurrentThread, NativeGetLastUpdateTime(CurrentThread, this));
 
-    public IterableInstrumentProfileHandle View() =>
-        ErrorCheck.NativeCall(CurrentThread, NativeView(CurrentThread, this));
+    public IEnumerable<InstrumentProfile> View()
+    {
+        using var it = ErrorCheck.NativeCall(CurrentThread, NativeView(CurrentThread, this));
+        return it.ToList();
+    }
 
-    public void AddUpdateListener(InstrumentProfileUpdateListenerHandle listener) =>
-        ErrorCheck.NativeCall(CurrentThread, NativeAddUpdateListener(CurrentThread, this, listener));
+    public void AddUpdateListener(InstrumentProfileUpdateListener listener)
+    {
+        if (Listeners.ContainsKey(listener))
+        {
+            return;
+        }
 
-    public void RemoveUpdateListener(InstrumentProfileUpdateListenerHandle listener) =>
-        ErrorCheck.NativeCall(CurrentThread, NativeRemoveUpdateListener(CurrentThread, this, listener));
+        var l = InstrumentProfileUpdateListenerHandle.Create(listener);
+        Listeners.TryAdd(listener, l);
+        ErrorCheck.NativeCall(CurrentThread, NativeAddUpdateListener(CurrentThread, this, l));
+    }
+
+    public void RemoveUpdateListener(InstrumentProfileUpdateListener listener)
+    {
+        if (Listeners.TryRemove(listener, out var l))
+        {
+            ErrorCheck.NativeCall(CurrentThread, NativeRemoveUpdateListener(CurrentThread, this, l));
+        }
+    }
 
     [DllImport(
         ImportInfo.DllName,

@@ -1,3 +1,6 @@
+## Version 0.6.0
+* Feature: Add IpfConnection
+
 ## Version 0.5.0
 
 ## What's Changed

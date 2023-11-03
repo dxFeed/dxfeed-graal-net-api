@@ -15,7 +15,7 @@ using static DxFeed.Graal.Net.Native.ErrorHandling.ErrorCheck;
 
 namespace DxFeed.Graal.Net.Native.Ipf;
 
-internal class InstrumentProfileReaderNative : JavaSafeHandle
+internal class InstrumentProfileReaderNative : JavaHandle
 {
     public static string? ResolveSourceUrl(string address)
     {
@@ -46,7 +46,7 @@ internal class InstrumentProfileReaderNative : JavaSafeHandle
         BestFitMapping = false,
         ThrowOnUnmappableChar = true,
         EntryPoint = "dxfg_InstrumentProfileReader_resolveSourceURL")]
-    private static extern JavaStringSafeHandle NativeResolveSourceUrl(
+    private static extern JavaStringHandle NativeResolveSourceUrl(
         nint thread,
         [MarshalAs(UnmanagedType.LPUTF8Str)] string address);
 

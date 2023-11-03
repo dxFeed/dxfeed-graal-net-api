@@ -5,6 +5,7 @@
 // </copyright>
 
 using System;
+using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using DxFeed.Graal.Net.Ipf;
 using DxFeed.Graal.Net.Native.ErrorHandling;
@@ -12,8 +13,28 @@ using DxFeed.Graal.Net.Native.Interop;
 
 namespace DxFeed.Graal.Net.Native.Ipf.Handles;
 
-internal abstract unsafe class IterableInstrumentProfileHandle : JavaSafeHandle
+internal sealed unsafe class IterableInstrumentProfileHandle : JavaHandle
 {
+    public IterableInstrumentProfileHandle()
+    {
+    }
+
+    public IterableInstrumentProfileHandle(IntPtr handle, bool isOwnHandle = true)
+        : base(handle, isOwnHandle)
+    {
+    }
+
+    public List<InstrumentProfile> ToList()
+    {
+        var list = new List<InstrumentProfile>();
+        while (HasNext())
+        {
+            list.Add(Next()!);
+        }
+
+        return list;
+    }
+
     public bool HasNext() =>
         ErrorCheck.NativeCall(CurrentThread, NativeHasNext(CurrentThread, this)) != 0;
 
