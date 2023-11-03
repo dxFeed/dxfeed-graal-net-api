@@ -49,7 +49,8 @@
                       <li>
                           <a href="docs/api/index.html" title="API Documentation">API Documentation</a>
                       </li>
-                </ul>            </div>
+                </ul>
+            </div>
           </div>
         </nav>
 
@@ -93,7 +94,7 @@ the <a href="#overview">Overview</a> section.<br>
 <a href="https://dotnet.microsoft.com/en-us/download/dotnet/6.0"><img src="https://img.shields.io/badge/.net%20version-net6.0-blueviolet" alt="NET"></a>
 <img src="https://img.shields.io/badge/platform-win--x64%20%7C%20linux--x64%20%7C%20osx--x64%20%7C%20osx--arm64-lightgrey" alt="Platform">
 <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/master/LICENSE"><img src="https://img.shields.io/badge/license-MPL--2.0-orange" alt="License"></a>
-<a href="https://dxfeed.jfrog.io/artifactory/nuget-open/com/dxfeed/graal-net/"><img src="https://img.shields.io/badge/nuget-0.5.0-blue" alt="Nuget"></a></p>
+<a href="https://dxfeed.jfrog.io/artifactory/nuget-open/com/dxfeed/graal-net/"><img src="https://img.shields.io/badge/nuget-0.6.0-blue" alt="Nuget"></a></p>
 <h2 id="table-of-contents">Table of Contents</h2>
 <ul>
 <li><a href="#overview">Overview</a>
@@ -108,8 +109,10 @@ the <a href="#overview">Overview</a> section.<br>
 </ul>
 </li>
 <li><a href="#documentation">Documentation</a></li>
+<li><a href="#requirements">Requirements</a></li>
 <li><a href="#installation">Installation</a></li>
 <li><a href="#usage">Usage</a></li>
+<li><a href="#tools">Tools</a></li>
 <li><a href="#samples">Samples</a></li>
 <li><a href="#current-state">Current State</a></li>
 </ul>
@@ -130,7 +133,7 @@ prevent us from providing a state-of-the-art technological solution.</p>
 <h3 id="milestones">Milestones</h3>
 <p>Feature development has already stopped for the <a href="https://github.com/dxFeed/dxfeed-net-api">old version</a> of dxFeed .NET
 API.</p>
-<p>We expect the new repository to go into production in Q2’2023.
+<p>We expect the new repository to go into production in Q4’2023.
 At the same time, the old version will be considered deprecated, and at the end of 2024, we plan to end the service.
 If you’re already our customer and have difficulty with a future transition, please contact us via
 our <a href="https://jira.in.devexperts.com/servicedesk/customer/portal/1">customer portal</a>.</p>
@@ -188,49 +191,49 @@ ready to answer any questions and help with the transition.</p>
 <td style="text-align: center;">3</td>
 <td style="text-align: left;">How to receive IPF data from URL or file</td>
 <td style="text-align: left;"><a href="https://github.com/dxFeed/dxfeed-net-api/tree/master/samples/dxf_instrument_profile_sample">dxf_instrument_profile_sample</a></td>
-<td style="text-align: left;"><em>Q3’2023</em>, please see <a href="#future-development">TBD</a> section</td>
+<td style="text-align: left;"><a href="samples/DxFeedIpfConnect">DxFeed.Graal.Net.Samples.DxFeedIpfConnect</a></td>
 </tr>
 <tr>
 <td style="text-align: center;">4</td>
 <td style="text-align: left;">How to subscribe to IPF live updates</td>
 <td style="text-align: left;"><a href="https://github.com/dxFeed/dxfeed-net-api/tree/master/samples/dxf_instrument_profile_live_sample">dxf_instrument_profile_live_sample</a></td>
-<td style="text-align: left;"><em>Q3’2023</em>, please see <a href="#future-development">TBD</a> section</td>
+<td style="text-align: left;"><a href="samples/DxFeedLiveIpfSample">DxFeed.Graal.Net.Samples.DxFeedLiveIpfSample</a></td>
 </tr>
 <tr>
 <td style="text-align: center;">5</td>
 <td style="text-align: left;">How to subscribe to <code>Order</code>, <code>SpreadOrder</code>, <code>Candle</code>, <code>TimeAndSale</code>, <code>Greeks</code>, <code>Series</code> snapshots</td>
 <td style="text-align: left;"><a href="https://github.com/dxFeed/dxfeed-net-api/tree/master/samples/dxf_snapshot_sample">dxf_snapshot_sample</a></td>
-<td style="text-align: left;"><em>Q4’2023</em>, please see <a href="#future-development">TBD</a> section</td>
+<td style="text-align: left;"><em>Q2’2024</em>, please see <a href="#future-development">TBD</a> section</td>
 </tr>
 <tr>
 <td style="text-align: center;">6</td>
 <td style="text-align: left;">How to subscribe to depth of market</td>
 <td style="text-align: left;"><a href="https://github.com/dxFeed/dxfeed-net-api/tree/master/samples/dxf_price_level_book_sample">dxf_price_level_book_sample</a></td>
-<td style="text-align: left;"><em>Q4’2023</em>, please see <a href="#future-development">TBD</a> section</td>
+<td style="text-align: left;"><em>Q2’2024</em>, please see <a href="#future-development">TBD</a> section</td>
 </tr>
 <tr>
 <td style="text-align: center;">7</td>
 <td style="text-align: left;">How to receive snapshots of <code>TimeAndSale</code>, <code>Candle</code>, <code>Series</code>, <code>Greeks</code> events on a given time interval without live subscription</td>
 <td style="text-align: left;"><a href="https://github.com/dxFeed/dxfeed-net-api/tree/master/samples/dxf_simple_data_retrieving_sample">dxf_simple_data_retrieving_sample</a></td>
-<td style="text-align: left;"><em>Q4’2023</em>, please see <a href="#future-development">TBD</a> section</td>
+<td style="text-align: left;"><em>Q2’2024</em>, please see <a href="#future-development">TBD</a> section</td>
 </tr>
 <tr>
 <td style="text-align: center;">8</td>
 <td style="text-align: left;">How to subscribe to order snapshot with incremental updates</td>
 <td style="text-align: left;"><a href="https://github.com/dxFeed/dxfeed-net-api/tree/master/samples/dxf_inc_order_snapshot_sample">dxf_inc_order_snapshot_sample</a></td>
-<td style="text-align: left;"><em>Q4’2023</em>, please see <a href="#future-development">TBD</a> section</td>
+<td style="text-align: left;"><em>Q2’2024</em>, please see <a href="#future-development">TBD</a> section</td>
 </tr>
 <tr>
 <td style="text-align: center;">9</td>
 <td style="text-align: left;">How to retrieve <code>Candle</code> data from the candle web service</td>
 <td style="text-align: left;"><a href="https://github.com/dxFeed/dxfeed-net-api/tree/master/samples/dxf_candle_data_retrieving_sample">dxf_candle_data_retrieving_sample</a></td>
-<td style="text-align: left;"><em>Q4’2023</em>, please see <a href="#future-development">TBD</a> section</td>
+<td style="text-align: left;"><em>Q4’2024</em>, please see <a href="#future-development">TBD</a> section</td>
 </tr>
 <tr>
 <td style="text-align: center;">10</td>
 <td style="text-align: left;">How to retrieve <code>TimeAndSale</code> data from the candle web service</td>
 <td style="text-align: left;"><a href="https://github.com/dxFeed/dxfeed-net-api/tree/master/samples/dxf_tns_data_retrieving_sample">dxf_tns_data_retrieving_sample</a></td>
-<td style="text-align: left;"><em>Q4’2023</em>, please see <a href="#future-development">TBD</a> section</td>
+<td style="text-align: left;"><em>Q4’2024</em>, please see <a href="#future-development">TBD</a> section</td>
 </tr>
 </tbody>
 </table>
@@ -330,6 +333,95 @@ will be amended, <em>&quot;best practices&quot;</em>, specific language restrict
 </ul>
 </li>
 </ul>
+<h2 id="requirements">Requirements</h2>
+<h3 id="windows">Windows</h3>
+<p>Only x64 versions are supported.</p>
+<table>
+<thead>
+<tr>
+<th>OS</th>
+<th>Version</th>
+<th>Architectures</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://www.microsoft.com/windows/">Windows</a></td>
+<td>8, 8.1</td>
+<td>x64</td>
+</tr>
+<tr>
+<td><a href="https://www.microsoft.com/windows/">Windows 10</a></td>
+<td>Version 1607+</td>
+<td>x64</td>
+</tr>
+<tr>
+<td><a href="https://www.microsoft.com/windows/">Windows 11</a></td>
+<td>Version 22000+</td>
+<td>x64</td>
+</tr>
+<tr>
+<td><a href="https://learn.microsoft.com/windows-server/">Windows Server</a></td>
+<td>2012+</td>
+<td>x64</td>
+</tr>
+<tr>
+<td><a href="https://learn.microsoft.com/windows-server/">Windows Server Core</a></td>
+<td>2012+</td>
+<td>x64</td>
+</tr>
+<tr>
+<td><a href="https://learn.microsoft.com/windows-server/get-started/getting-started-with-nano-server">Nano Server</a></td>
+<td>Version 1809+</td>
+<td>x64</td>
+</tr>
+</tbody>
+</table>
+<h4 id="requirements-1">Requirements</h4>
+<ul>
+<li><a href="%5Bhttps://dotnet.microsoft.com/en-us/download/dotnet/6.0%5D">.NET 6</a> (not required for self-contained assemblies)</li>
+<li><a href="%5Bhttps://aka.ms/vs/17/release/vc_redist.x64.exe%5D">Visual C++ Redistributable for Visual Studio 2015</a></li>
+</ul>
+<h3 id="linux">Linux</h3>
+<p>Only x64 versions are supported.</p>
+<h4 id="requirements-2">Requirements</h4>
+<ul>
+<li><a href="%5Bhttps://dotnet.microsoft.com/en-us/download/dotnet/6.0%5D">.NET 6</a> (not required for self-contained assemblies)</li>
+</ul>
+<h4 id="libc-compatibility">Libc compatibility</h4>
+<ul>
+<li><a href="https://www.gnu.org/software/libc/">glibc</a>: 2.35+ (from Ubuntu 22.04)</li>
+<li><a href="https://musl.libc.org/">musl</a>: temporarily unsupported</li>
+</ul>
+<h4 id="libpthread-compatibility">Libpthread compatibility</h4>
+<p>A symlink on libpthread.so, libpthread.so.0, or libcoreclr.so must exist.</p>
+<h3 id="macos">macOS</h3>
+<table>
+<thead>
+<tr>
+<th>OS</th>
+<th>Version</th>
+<th>Architectures</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://support.apple.com/macos">macOS</a></td>
+<td>10.15+</td>
+<td>x64</td>
+</tr>
+<tr>
+<td><a href="https://support.apple.com/macos">macOS</a></td>
+<td>11+</td>
+<td>Arm64</td>
+</tr>
+</tbody>
+</table>
+<p>Is supported in the Rosetta 2 x64 emulator.</p>
+<h4 id="requirements-3">Requirements</h4>
+<ul>
+<li><a href="%5Bhttps://dotnet.microsoft.com/en-us/download/dotnet/6.0%5D">.NET 6</a> (not required for self-contained assemblies)</li>
+</ul>
 <h2 id="installation">Installation</h2>
 <p>Add this <a href="https://dxfeed.jfrog.io/artifactory/api/nuget/v3/nuget-open">package source</a> to NuGet config.
 <br>
@@ -393,6 +485,9 @@ etc.)</li>
 <li><a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/main/src/DxFeed.Graal.Net.Tools/LatencyTest/LatencyTestTool.cs">LatencyTest</a>
 connects to the specified address(es) and calculates latency.</li>
 </ul>
+<p>To run tools on macOs, it may be necessary to unquarantine them:</p>
+<pre><code>sudo /usr/bin/xattr -r -d com.apple.quarantine &lt;directory_with_tools&gt;
+</code></pre>
 <h2 id="samples">Samples</h2>
 <ul>
 <li><a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/main/samples/ConvertTapeFile/Program.cs">DxFeed.Graal.Net.Samples.ConvertTapeFile</a>
@@ -579,7 +674,7 @@ is a model of convenient Order Book management
 represents basic profile information about a market instrument
 (<a href="https://github.com/devexperts/QD/blob/master/dxfeed-samples/src/main/java/com/dxfeed/sample/ipf/DXFeedIpfConnect.java">Java API sample</a>)</p>
 </li>
-<li class="task-list-item"><p><input disabled="disabled" type="checkbox"> <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/ipf/live/InstrumentProfileCollector.html">InstrumentProfileCollector</a>
+<li class="task-list-item"><p><input disabled="disabled" type="checkbox" checked="checked"> <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/ipf/live/InstrumentProfileCollector.html">InstrumentProfileCollector</a>
 collects instrument profile updates and provides the live instrument profiles list
 (<a href="https://github.com/devexperts/QD/blob/master/dxfeed-samples/src/main/java/com/dxfeed/sample/ipf/DXFeedLiveIpfSample.java">Java API sample</a>)</p>
 </li>
@@ -595,6 +690,7 @@ instrument classes
 provides on-demand historical tick data replay controls
 (<a href="https://github.com/devexperts/QD/blob/master/dxfeed-samples/src/main/java/com/dxfeed/sample/ondemand/OnDemandSample.java">Java API sample</a>)</li>
 </ul>
+
 </article>
           </div>
 
@@ -603,7 +699,7 @@ provides on-demand historical tick data replay controls
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.5.0/index.md/#L1" class="contribution-link">Edit this page</a>
+                    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.6.0/index.md/#L1" class="contribution-link">Edit this page</a>
                   </li>
                 </ul>
               </div>

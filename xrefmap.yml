@@ -8206,6 +8206,22 @@ references:
   isSpec: "True"
   fullName: DxFeed.Graal.Net.Ipf.InstrumentProfileReader.ReadFromFile
   nameWithType: InstrumentProfileReader.ReadFromFile
+- uid: DxFeed.Graal.Net.Ipf.InstrumentProfileReader.ResolveSourceUrl(System.String)
+  name: ResolveSourceUrl(string)
+  href: docs/api/DxFeed.Graal.Net.Ipf.InstrumentProfileReader.html#DxFeed_Graal_Net_Ipf_InstrumentProfileReader_ResolveSourceUrl_System_String_
+  commentId: M:DxFeed.Graal.Net.Ipf.InstrumentProfileReader.ResolveSourceUrl(System.String)
+  name.vb: ResolveSourceUrl(String)
+  fullName: DxFeed.Graal.Net.Ipf.InstrumentProfileReader.ResolveSourceUrl(string)
+  fullName.vb: DxFeed.Graal.Net.Ipf.InstrumentProfileReader.ResolveSourceUrl(String)
+  nameWithType: InstrumentProfileReader.ResolveSourceUrl(string)
+  nameWithType.vb: InstrumentProfileReader.ResolveSourceUrl(String)
+- uid: DxFeed.Graal.Net.Ipf.InstrumentProfileReader.ResolveSourceUrl*
+  name: ResolveSourceUrl
+  href: docs/api/DxFeed.Graal.Net.Ipf.InstrumentProfileReader.html#DxFeed_Graal_Net_Ipf_InstrumentProfileReader_ResolveSourceUrl_
+  commentId: Overload:DxFeed.Graal.Net.Ipf.InstrumentProfileReader.ResolveSourceUrl
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Ipf.InstrumentProfileReader.ResolveSourceUrl
+  nameWithType: InstrumentProfileReader.ResolveSourceUrl
 - uid: DxFeed.Graal.Net.Ipf.InstrumentProfileReader.WasComplete
   name: WasComplete()
   href: docs/api/DxFeed.Graal.Net.Ipf.InstrumentProfileReader.html#DxFeed_Graal_Net_Ipf_InstrumentProfileReader_WasComplete
@@ -8219,6 +8235,326 @@ references:
   isSpec: "True"
   fullName: DxFeed.Graal.Net.Ipf.InstrumentProfileReader.WasComplete
   nameWithType: InstrumentProfileReader.WasComplete
+- uid: DxFeed.Graal.Net.Ipf.InstrumentProfileType
+  name: InstrumentProfileType
+  href: docs/api/DxFeed.Graal.Net.Ipf.InstrumentProfileType.html
+  commentId: T:DxFeed.Graal.Net.Ipf.InstrumentProfileType
+  fullName: DxFeed.Graal.Net.Ipf.InstrumentProfileType
+  nameWithType: InstrumentProfileType
+- uid: DxFeed.Graal.Net.Ipf.InstrumentProfileType.BOND
+  name: BOND
+  href: docs/api/DxFeed.Graal.Net.Ipf.InstrumentProfileType.html#DxFeed_Graal_Net_Ipf_InstrumentProfileType_BOND
+  commentId: F:DxFeed.Graal.Net.Ipf.InstrumentProfileType.BOND
+  fullName: DxFeed.Graal.Net.Ipf.InstrumentProfileType.BOND
+  nameWithType: InstrumentProfileType.BOND
+- uid: DxFeed.Graal.Net.Ipf.InstrumentProfileType.CFD
+  name: CFD
+  href: docs/api/DxFeed.Graal.Net.Ipf.InstrumentProfileType.html#DxFeed_Graal_Net_Ipf_InstrumentProfileType_CFD
+  commentId: F:DxFeed.Graal.Net.Ipf.InstrumentProfileType.CFD
+  fullName: DxFeed.Graal.Net.Ipf.InstrumentProfileType.CFD
+  nameWithType: InstrumentProfileType.CFD
+- uid: DxFeed.Graal.Net.Ipf.InstrumentProfileType.CURRENCY
+  name: CURRENCY
+  href: docs/api/DxFeed.Graal.Net.Ipf.InstrumentProfileType.html#DxFeed_Graal_Net_Ipf_InstrumentProfileType_CURRENCY
+  commentId: F:DxFeed.Graal.Net.Ipf.InstrumentProfileType.CURRENCY
+  fullName: DxFeed.Graal.Net.Ipf.InstrumentProfileType.CURRENCY
+  nameWithType: InstrumentProfileType.CURRENCY
+- uid: DxFeed.Graal.Net.Ipf.InstrumentProfileType.CompareTypes(System.String,System.String)
+  name: CompareTypes(string, string)
+  href: docs/api/DxFeed.Graal.Net.Ipf.InstrumentProfileType.html#DxFeed_Graal_Net_Ipf_InstrumentProfileType_CompareTypes_System_String_System_String_
+  commentId: M:DxFeed.Graal.Net.Ipf.InstrumentProfileType.CompareTypes(System.String,System.String)
+  name.vb: CompareTypes(String, String)
+  fullName: DxFeed.Graal.Net.Ipf.InstrumentProfileType.CompareTypes(string, string)
+  fullName.vb: DxFeed.Graal.Net.Ipf.InstrumentProfileType.CompareTypes(String, String)
+  nameWithType: InstrumentProfileType.CompareTypes(string, string)
+  nameWithType.vb: InstrumentProfileType.CompareTypes(String, String)
+- uid: DxFeed.Graal.Net.Ipf.InstrumentProfileType.CompareTypes*
+  name: CompareTypes
+  href: docs/api/DxFeed.Graal.Net.Ipf.InstrumentProfileType.html#DxFeed_Graal_Net_Ipf_InstrumentProfileType_CompareTypes_
+  commentId: Overload:DxFeed.Graal.Net.Ipf.InstrumentProfileType.CompareTypes
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Ipf.InstrumentProfileType.CompareTypes
+  nameWithType: InstrumentProfileType.CompareTypes
+- uid: DxFeed.Graal.Net.Ipf.InstrumentProfileType.ETF
+  name: ETF
+  href: docs/api/DxFeed.Graal.Net.Ipf.InstrumentProfileType.html#DxFeed_Graal_Net_Ipf_InstrumentProfileType_ETF
+  commentId: F:DxFeed.Graal.Net.Ipf.InstrumentProfileType.ETF
+  fullName: DxFeed.Graal.Net.Ipf.InstrumentProfileType.ETF
+  nameWithType: InstrumentProfileType.ETF
+- uid: DxFeed.Graal.Net.Ipf.InstrumentProfileType.FOREX
+  name: FOREX
+  href: docs/api/DxFeed.Graal.Net.Ipf.InstrumentProfileType.html#DxFeed_Graal_Net_Ipf_InstrumentProfileType_FOREX
+  commentId: F:DxFeed.Graal.Net.Ipf.InstrumentProfileType.FOREX
+  fullName: DxFeed.Graal.Net.Ipf.InstrumentProfileType.FOREX
+  nameWithType: InstrumentProfileType.FOREX
+- uid: DxFeed.Graal.Net.Ipf.InstrumentProfileType.FUTURE
+  name: FUTURE
+  href: docs/api/DxFeed.Graal.Net.Ipf.InstrumentProfileType.html#DxFeed_Graal_Net_Ipf_InstrumentProfileType_FUTURE
+  commentId: F:DxFeed.Graal.Net.Ipf.InstrumentProfileType.FUTURE
+  fullName: DxFeed.Graal.Net.Ipf.InstrumentProfileType.FUTURE
+  nameWithType: InstrumentProfileType.FUTURE
+- uid: DxFeed.Graal.Net.Ipf.InstrumentProfileType.Find(System.String)
+  name: Find(string)
+  href: docs/api/DxFeed.Graal.Net.Ipf.InstrumentProfileType.html#DxFeed_Graal_Net_Ipf_InstrumentProfileType_Find_System_String_
+  commentId: M:DxFeed.Graal.Net.Ipf.InstrumentProfileType.Find(System.String)
+  name.vb: Find(String)
+  fullName: DxFeed.Graal.Net.Ipf.InstrumentProfileType.Find(string)
+  fullName.vb: DxFeed.Graal.Net.Ipf.InstrumentProfileType.Find(String)
+  nameWithType: InstrumentProfileType.Find(string)
+  nameWithType.vb: InstrumentProfileType.Find(String)
+- uid: DxFeed.Graal.Net.Ipf.InstrumentProfileType.Find*
+  name: Find
+  href: docs/api/DxFeed.Graal.Net.Ipf.InstrumentProfileType.html#DxFeed_Graal_Net_Ipf_InstrumentProfileType_Find_
+  commentId: Overload:DxFeed.Graal.Net.Ipf.InstrumentProfileType.Find
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Ipf.InstrumentProfileType.Find
+  nameWithType: InstrumentProfileType.Find
+- uid: DxFeed.Graal.Net.Ipf.InstrumentProfileType.INDEX
+  name: INDEX
+  href: docs/api/DxFeed.Graal.Net.Ipf.InstrumentProfileType.html#DxFeed_Graal_Net_Ipf_InstrumentProfileType_INDEX
+  commentId: F:DxFeed.Graal.Net.Ipf.InstrumentProfileType.INDEX
+  fullName: DxFeed.Graal.Net.Ipf.InstrumentProfileType.INDEX
+  nameWithType: InstrumentProfileType.INDEX
+- uid: DxFeed.Graal.Net.Ipf.InstrumentProfileType.MONEY_MARKET_FUND
+  name: MONEY_MARKET_FUND
+  href: docs/api/DxFeed.Graal.Net.Ipf.InstrumentProfileType.html#DxFeed_Graal_Net_Ipf_InstrumentProfileType_MONEY_MARKET_FUND
+  commentId: F:DxFeed.Graal.Net.Ipf.InstrumentProfileType.MONEY_MARKET_FUND
+  fullName: DxFeed.Graal.Net.Ipf.InstrumentProfileType.MONEY_MARKET_FUND
+  nameWithType: InstrumentProfileType.MONEY_MARKET_FUND
+- uid: DxFeed.Graal.Net.Ipf.InstrumentProfileType.MUTUAL_FUND
+  name: MUTUAL_FUND
+  href: docs/api/DxFeed.Graal.Net.Ipf.InstrumentProfileType.html#DxFeed_Graal_Net_Ipf_InstrumentProfileType_MUTUAL_FUND
+  commentId: F:DxFeed.Graal.Net.Ipf.InstrumentProfileType.MUTUAL_FUND
+  fullName: DxFeed.Graal.Net.Ipf.InstrumentProfileType.MUTUAL_FUND
+  nameWithType: InstrumentProfileType.MUTUAL_FUND
+- uid: DxFeed.Graal.Net.Ipf.InstrumentProfileType.Name
+  name: Name
+  href: docs/api/DxFeed.Graal.Net.Ipf.InstrumentProfileType.html#DxFeed_Graal_Net_Ipf_InstrumentProfileType_Name
+  commentId: P:DxFeed.Graal.Net.Ipf.InstrumentProfileType.Name
+  fullName: DxFeed.Graal.Net.Ipf.InstrumentProfileType.Name
+  nameWithType: InstrumentProfileType.Name
+- uid: DxFeed.Graal.Net.Ipf.InstrumentProfileType.Name*
+  name: Name
+  href: docs/api/DxFeed.Graal.Net.Ipf.InstrumentProfileType.html#DxFeed_Graal_Net_Ipf_InstrumentProfileType_Name_
+  commentId: Overload:DxFeed.Graal.Net.Ipf.InstrumentProfileType.Name
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Ipf.InstrumentProfileType.Name
+  nameWithType: InstrumentProfileType.Name
+- uid: DxFeed.Graal.Net.Ipf.InstrumentProfileType.OPTION
+  name: OPTION
+  href: docs/api/DxFeed.Graal.Net.Ipf.InstrumentProfileType.html#DxFeed_Graal_Net_Ipf_InstrumentProfileType_OPTION
+  commentId: F:DxFeed.Graal.Net.Ipf.InstrumentProfileType.OPTION
+  fullName: DxFeed.Graal.Net.Ipf.InstrumentProfileType.OPTION
+  nameWithType: InstrumentProfileType.OPTION
+- uid: DxFeed.Graal.Net.Ipf.InstrumentProfileType.OTHER
+  name: OTHER
+  href: docs/api/DxFeed.Graal.Net.Ipf.InstrumentProfileType.html#DxFeed_Graal_Net_Ipf_InstrumentProfileType_OTHER
+  commentId: F:DxFeed.Graal.Net.Ipf.InstrumentProfileType.OTHER
+  fullName: DxFeed.Graal.Net.Ipf.InstrumentProfileType.OTHER
+  nameWithType: InstrumentProfileType.OTHER
+- uid: DxFeed.Graal.Net.Ipf.InstrumentProfileType.PRODUCT
+  name: PRODUCT
+  href: docs/api/DxFeed.Graal.Net.Ipf.InstrumentProfileType.html#DxFeed_Graal_Net_Ipf_InstrumentProfileType_PRODUCT
+  commentId: F:DxFeed.Graal.Net.Ipf.InstrumentProfileType.PRODUCT
+  fullName: DxFeed.Graal.Net.Ipf.InstrumentProfileType.PRODUCT
+  nameWithType: InstrumentProfileType.PRODUCT
+- uid: DxFeed.Graal.Net.Ipf.InstrumentProfileType.REMOVED
+  name: REMOVED
+  href: docs/api/DxFeed.Graal.Net.Ipf.InstrumentProfileType.html#DxFeed_Graal_Net_Ipf_InstrumentProfileType_REMOVED
+  commentId: F:DxFeed.Graal.Net.Ipf.InstrumentProfileType.REMOVED
+  fullName: DxFeed.Graal.Net.Ipf.InstrumentProfileType.REMOVED
+  nameWithType: InstrumentProfileType.REMOVED
+- uid: DxFeed.Graal.Net.Ipf.InstrumentProfileType.SPREAD
+  name: SPREAD
+  href: docs/api/DxFeed.Graal.Net.Ipf.InstrumentProfileType.html#DxFeed_Graal_Net_Ipf_InstrumentProfileType_SPREAD
+  commentId: F:DxFeed.Graal.Net.Ipf.InstrumentProfileType.SPREAD
+  fullName: DxFeed.Graal.Net.Ipf.InstrumentProfileType.SPREAD
+  nameWithType: InstrumentProfileType.SPREAD
+- uid: DxFeed.Graal.Net.Ipf.InstrumentProfileType.STOCK
+  name: STOCK
+  href: docs/api/DxFeed.Graal.Net.Ipf.InstrumentProfileType.html#DxFeed_Graal_Net_Ipf_InstrumentProfileType_STOCK
+  commentId: F:DxFeed.Graal.Net.Ipf.InstrumentProfileType.STOCK
+  fullName: DxFeed.Graal.Net.Ipf.InstrumentProfileType.STOCK
+  nameWithType: InstrumentProfileType.STOCK
+- uid: DxFeed.Graal.Net.Ipf.InstrumentProfileType.WARRANT
+  name: WARRANT
+  href: docs/api/DxFeed.Graal.Net.Ipf.InstrumentProfileType.html#DxFeed_Graal_Net_Ipf_InstrumentProfileType_WARRANT
+  commentId: F:DxFeed.Graal.Net.Ipf.InstrumentProfileType.WARRANT
+  fullName: DxFeed.Graal.Net.Ipf.InstrumentProfileType.WARRANT
+  nameWithType: InstrumentProfileType.WARRANT
+- uid: DxFeed.Graal.Net.Ipf.Live
+  name: DxFeed.Graal.Net.Ipf.Live
+  href: docs/api/DxFeed.Graal.Net.Ipf.Live.html
+  commentId: N:DxFeed.Graal.Net.Ipf.Live
+  fullName: DxFeed.Graal.Net.Ipf.Live
+  nameWithType: DxFeed.Graal.Net.Ipf.Live
+- uid: DxFeed.Graal.Net.Ipf.Live.InstrumentProfileCollector
+  name: InstrumentProfileCollector
+  href: docs/api/DxFeed.Graal.Net.Ipf.Live.InstrumentProfileCollector.html
+  commentId: T:DxFeed.Graal.Net.Ipf.Live.InstrumentProfileCollector
+  fullName: DxFeed.Graal.Net.Ipf.Live.InstrumentProfileCollector
+  nameWithType: InstrumentProfileCollector
+- uid: DxFeed.Graal.Net.Ipf.Live.InstrumentProfileCollector.AddUpdateListener(DxFeed.Graal.Net.Ipf.Live.InstrumentProfileUpdateListener)
+  name: AddUpdateListener(InstrumentProfileUpdateListener)
+  href: docs/api/DxFeed.Graal.Net.Ipf.Live.InstrumentProfileCollector.html#DxFeed_Graal_Net_Ipf_Live_InstrumentProfileCollector_AddUpdateListener_DxFeed_Graal_Net_Ipf_Live_InstrumentProfileUpdateListener_
+  commentId: M:DxFeed.Graal.Net.Ipf.Live.InstrumentProfileCollector.AddUpdateListener(DxFeed.Graal.Net.Ipf.Live.InstrumentProfileUpdateListener)
+  fullName: DxFeed.Graal.Net.Ipf.Live.InstrumentProfileCollector.AddUpdateListener(DxFeed.Graal.Net.Ipf.Live.InstrumentProfileUpdateListener)
+  nameWithType: InstrumentProfileCollector.AddUpdateListener(InstrumentProfileUpdateListener)
+- uid: DxFeed.Graal.Net.Ipf.Live.InstrumentProfileCollector.AddUpdateListener*
+  name: AddUpdateListener
+  href: docs/api/DxFeed.Graal.Net.Ipf.Live.InstrumentProfileCollector.html#DxFeed_Graal_Net_Ipf_Live_InstrumentProfileCollector_AddUpdateListener_
+  commentId: Overload:DxFeed.Graal.Net.Ipf.Live.InstrumentProfileCollector.AddUpdateListener
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Ipf.Live.InstrumentProfileCollector.AddUpdateListener
+  nameWithType: InstrumentProfileCollector.AddUpdateListener
+- uid: DxFeed.Graal.Net.Ipf.Live.InstrumentProfileCollector.GetLastUpdateTime
+  name: GetLastUpdateTime()
+  href: docs/api/DxFeed.Graal.Net.Ipf.Live.InstrumentProfileCollector.html#DxFeed_Graal_Net_Ipf_Live_InstrumentProfileCollector_GetLastUpdateTime
+  commentId: M:DxFeed.Graal.Net.Ipf.Live.InstrumentProfileCollector.GetLastUpdateTime
+  fullName: DxFeed.Graal.Net.Ipf.Live.InstrumentProfileCollector.GetLastUpdateTime()
+  nameWithType: InstrumentProfileCollector.GetLastUpdateTime()
+- uid: DxFeed.Graal.Net.Ipf.Live.InstrumentProfileCollector.GetLastUpdateTime*
+  name: GetLastUpdateTime
+  href: docs/api/DxFeed.Graal.Net.Ipf.Live.InstrumentProfileCollector.html#DxFeed_Graal_Net_Ipf_Live_InstrumentProfileCollector_GetLastUpdateTime_
+  commentId: Overload:DxFeed.Graal.Net.Ipf.Live.InstrumentProfileCollector.GetLastUpdateTime
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Ipf.Live.InstrumentProfileCollector.GetLastUpdateTime
+  nameWithType: InstrumentProfileCollector.GetLastUpdateTime
+- uid: DxFeed.Graal.Net.Ipf.Live.InstrumentProfileCollector.RemoveUpdateListener(DxFeed.Graal.Net.Ipf.Live.InstrumentProfileUpdateListener)
+  name: RemoveUpdateListener(InstrumentProfileUpdateListener)
+  href: docs/api/DxFeed.Graal.Net.Ipf.Live.InstrumentProfileCollector.html#DxFeed_Graal_Net_Ipf_Live_InstrumentProfileCollector_RemoveUpdateListener_DxFeed_Graal_Net_Ipf_Live_InstrumentProfileUpdateListener_
+  commentId: M:DxFeed.Graal.Net.Ipf.Live.InstrumentProfileCollector.RemoveUpdateListener(DxFeed.Graal.Net.Ipf.Live.InstrumentProfileUpdateListener)
+  fullName: DxFeed.Graal.Net.Ipf.Live.InstrumentProfileCollector.RemoveUpdateListener(DxFeed.Graal.Net.Ipf.Live.InstrumentProfileUpdateListener)
+  nameWithType: InstrumentProfileCollector.RemoveUpdateListener(InstrumentProfileUpdateListener)
+- uid: DxFeed.Graal.Net.Ipf.Live.InstrumentProfileCollector.RemoveUpdateListener*
+  name: RemoveUpdateListener
+  href: docs/api/DxFeed.Graal.Net.Ipf.Live.InstrumentProfileCollector.html#DxFeed_Graal_Net_Ipf_Live_InstrumentProfileCollector_RemoveUpdateListener_
+  commentId: Overload:DxFeed.Graal.Net.Ipf.Live.InstrumentProfileCollector.RemoveUpdateListener
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Ipf.Live.InstrumentProfileCollector.RemoveUpdateListener
+  nameWithType: InstrumentProfileCollector.RemoveUpdateListener
+- uid: DxFeed.Graal.Net.Ipf.Live.InstrumentProfileCollector.View
+  name: View()
+  href: docs/api/DxFeed.Graal.Net.Ipf.Live.InstrumentProfileCollector.html#DxFeed_Graal_Net_Ipf_Live_InstrumentProfileCollector_View
+  commentId: M:DxFeed.Graal.Net.Ipf.Live.InstrumentProfileCollector.View
+  fullName: DxFeed.Graal.Net.Ipf.Live.InstrumentProfileCollector.View()
+  nameWithType: InstrumentProfileCollector.View()
+- uid: DxFeed.Graal.Net.Ipf.Live.InstrumentProfileCollector.View*
+  name: View
+  href: docs/api/DxFeed.Graal.Net.Ipf.Live.InstrumentProfileCollector.html#DxFeed_Graal_Net_Ipf_Live_InstrumentProfileCollector_View_
+  commentId: Overload:DxFeed.Graal.Net.Ipf.Live.InstrumentProfileCollector.View
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Ipf.Live.InstrumentProfileCollector.View
+  nameWithType: InstrumentProfileCollector.View
+- uid: DxFeed.Graal.Net.Ipf.Live.InstrumentProfileConnection
+  name: InstrumentProfileConnection
+  href: docs/api/DxFeed.Graal.Net.Ipf.Live.InstrumentProfileConnection.html
+  commentId: T:DxFeed.Graal.Net.Ipf.Live.InstrumentProfileConnection
+  fullName: DxFeed.Graal.Net.Ipf.Live.InstrumentProfileConnection
+  nameWithType: InstrumentProfileConnection
+- uid: DxFeed.Graal.Net.Ipf.Live.InstrumentProfileConnection.Close
+  name: Close()
+  href: docs/api/DxFeed.Graal.Net.Ipf.Live.InstrumentProfileConnection.html#DxFeed_Graal_Net_Ipf_Live_InstrumentProfileConnection_Close
+  commentId: M:DxFeed.Graal.Net.Ipf.Live.InstrumentProfileConnection.Close
+  fullName: DxFeed.Graal.Net.Ipf.Live.InstrumentProfileConnection.Close()
+  nameWithType: InstrumentProfileConnection.Close()
+- uid: DxFeed.Graal.Net.Ipf.Live.InstrumentProfileConnection.Close*
+  name: Close
+  href: docs/api/DxFeed.Graal.Net.Ipf.Live.InstrumentProfileConnection.html#DxFeed_Graal_Net_Ipf_Live_InstrumentProfileConnection_Close_
+  commentId: Overload:DxFeed.Graal.Net.Ipf.Live.InstrumentProfileConnection.Close
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Ipf.Live.InstrumentProfileConnection.Close
+  nameWithType: InstrumentProfileConnection.Close
+- uid: DxFeed.Graal.Net.Ipf.Live.InstrumentProfileConnection.CreateConnection(System.String,DxFeed.Graal.Net.Ipf.Live.InstrumentProfileCollector)
+  name: CreateConnection(string, InstrumentProfileCollector)
+  href: docs/api/DxFeed.Graal.Net.Ipf.Live.InstrumentProfileConnection.html#DxFeed_Graal_Net_Ipf_Live_InstrumentProfileConnection_CreateConnection_System_String_DxFeed_Graal_Net_Ipf_Live_InstrumentProfileCollector_
+  commentId: M:DxFeed.Graal.Net.Ipf.Live.InstrumentProfileConnection.CreateConnection(System.String,DxFeed.Graal.Net.Ipf.Live.InstrumentProfileCollector)
+  name.vb: CreateConnection(String, InstrumentProfileCollector)
+  fullName: DxFeed.Graal.Net.Ipf.Live.InstrumentProfileConnection.CreateConnection(string, DxFeed.Graal.Net.Ipf.Live.InstrumentProfileCollector)
+  fullName.vb: DxFeed.Graal.Net.Ipf.Live.InstrumentProfileConnection.CreateConnection(String, DxFeed.Graal.Net.Ipf.Live.InstrumentProfileCollector)
+  nameWithType: InstrumentProfileConnection.CreateConnection(string, InstrumentProfileCollector)
+  nameWithType.vb: InstrumentProfileConnection.CreateConnection(String, InstrumentProfileCollector)
+- uid: DxFeed.Graal.Net.Ipf.Live.InstrumentProfileConnection.CreateConnection*
+  name: CreateConnection
+  href: docs/api/DxFeed.Graal.Net.Ipf.Live.InstrumentProfileConnection.html#DxFeed_Graal_Net_Ipf_Live_InstrumentProfileConnection_CreateConnection_
+  commentId: Overload:DxFeed.Graal.Net.Ipf.Live.InstrumentProfileConnection.CreateConnection
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Ipf.Live.InstrumentProfileConnection.CreateConnection
+  nameWithType: InstrumentProfileConnection.CreateConnection
+- uid: DxFeed.Graal.Net.Ipf.Live.InstrumentProfileConnection.GetAddress
+  name: GetAddress()
+  href: docs/api/DxFeed.Graal.Net.Ipf.Live.InstrumentProfileConnection.html#DxFeed_Graal_Net_Ipf_Live_InstrumentProfileConnection_GetAddress
+  commentId: M:DxFeed.Graal.Net.Ipf.Live.InstrumentProfileConnection.GetAddress
+  fullName: DxFeed.Graal.Net.Ipf.Live.InstrumentProfileConnection.GetAddress()
+  nameWithType: InstrumentProfileConnection.GetAddress()
+- uid: DxFeed.Graal.Net.Ipf.Live.InstrumentProfileConnection.GetAddress*
+  name: GetAddress
+  href: docs/api/DxFeed.Graal.Net.Ipf.Live.InstrumentProfileConnection.html#DxFeed_Graal_Net_Ipf_Live_InstrumentProfileConnection_GetAddress_
+  commentId: Overload:DxFeed.Graal.Net.Ipf.Live.InstrumentProfileConnection.GetAddress
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Ipf.Live.InstrumentProfileConnection.GetAddress
+  nameWithType: InstrumentProfileConnection.GetAddress
+- uid: DxFeed.Graal.Net.Ipf.Live.InstrumentProfileConnection.GetLastModified
+  name: GetLastModified()
+  href: docs/api/DxFeed.Graal.Net.Ipf.Live.InstrumentProfileConnection.html#DxFeed_Graal_Net_Ipf_Live_InstrumentProfileConnection_GetLastModified
+  commentId: M:DxFeed.Graal.Net.Ipf.Live.InstrumentProfileConnection.GetLastModified
+  fullName: DxFeed.Graal.Net.Ipf.Live.InstrumentProfileConnection.GetLastModified()
+  nameWithType: InstrumentProfileConnection.GetLastModified()
+- uid: DxFeed.Graal.Net.Ipf.Live.InstrumentProfileConnection.GetLastModified*
+  name: GetLastModified
+  href: docs/api/DxFeed.Graal.Net.Ipf.Live.InstrumentProfileConnection.html#DxFeed_Graal_Net_Ipf_Live_InstrumentProfileConnection_GetLastModified_
+  commentId: Overload:DxFeed.Graal.Net.Ipf.Live.InstrumentProfileConnection.GetLastModified
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Ipf.Live.InstrumentProfileConnection.GetLastModified
+  nameWithType: InstrumentProfileConnection.GetLastModified
+- uid: DxFeed.Graal.Net.Ipf.Live.InstrumentProfileConnection.GetUpdatePeriod
+  name: GetUpdatePeriod()
+  href: docs/api/DxFeed.Graal.Net.Ipf.Live.InstrumentProfileConnection.html#DxFeed_Graal_Net_Ipf_Live_InstrumentProfileConnection_GetUpdatePeriod
+  commentId: M:DxFeed.Graal.Net.Ipf.Live.InstrumentProfileConnection.GetUpdatePeriod
+  fullName: DxFeed.Graal.Net.Ipf.Live.InstrumentProfileConnection.GetUpdatePeriod()
+  nameWithType: InstrumentProfileConnection.GetUpdatePeriod()
+- uid: DxFeed.Graal.Net.Ipf.Live.InstrumentProfileConnection.GetUpdatePeriod*
+  name: GetUpdatePeriod
+  href: docs/api/DxFeed.Graal.Net.Ipf.Live.InstrumentProfileConnection.html#DxFeed_Graal_Net_Ipf_Live_InstrumentProfileConnection_GetUpdatePeriod_
+  commentId: Overload:DxFeed.Graal.Net.Ipf.Live.InstrumentProfileConnection.GetUpdatePeriod
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Ipf.Live.InstrumentProfileConnection.GetUpdatePeriod
+  nameWithType: InstrumentProfileConnection.GetUpdatePeriod
+- uid: DxFeed.Graal.Net.Ipf.Live.InstrumentProfileConnection.SetUpdatePeriod(System.Int64)
+  name: SetUpdatePeriod(long)
+  href: docs/api/DxFeed.Graal.Net.Ipf.Live.InstrumentProfileConnection.html#DxFeed_Graal_Net_Ipf_Live_InstrumentProfileConnection_SetUpdatePeriod_System_Int64_
+  commentId: M:DxFeed.Graal.Net.Ipf.Live.InstrumentProfileConnection.SetUpdatePeriod(System.Int64)
+  name.vb: SetUpdatePeriod(Long)
+  fullName: DxFeed.Graal.Net.Ipf.Live.InstrumentProfileConnection.SetUpdatePeriod(long)
+  fullName.vb: DxFeed.Graal.Net.Ipf.Live.InstrumentProfileConnection.SetUpdatePeriod(Long)
+  nameWithType: InstrumentProfileConnection.SetUpdatePeriod(long)
+  nameWithType.vb: InstrumentProfileConnection.SetUpdatePeriod(Long)
+- uid: DxFeed.Graal.Net.Ipf.Live.InstrumentProfileConnection.SetUpdatePeriod*
+  name: SetUpdatePeriod
+  href: docs/api/DxFeed.Graal.Net.Ipf.Live.InstrumentProfileConnection.html#DxFeed_Graal_Net_Ipf_Live_InstrumentProfileConnection_SetUpdatePeriod_
+  commentId: Overload:DxFeed.Graal.Net.Ipf.Live.InstrumentProfileConnection.SetUpdatePeriod
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Ipf.Live.InstrumentProfileConnection.SetUpdatePeriod
+  nameWithType: InstrumentProfileConnection.SetUpdatePeriod
+- uid: DxFeed.Graal.Net.Ipf.Live.InstrumentProfileConnection.Start
+  name: Start()
+  href: docs/api/DxFeed.Graal.Net.Ipf.Live.InstrumentProfileConnection.html#DxFeed_Graal_Net_Ipf_Live_InstrumentProfileConnection_Start
+  commentId: M:DxFeed.Graal.Net.Ipf.Live.InstrumentProfileConnection.Start
+  fullName: DxFeed.Graal.Net.Ipf.Live.InstrumentProfileConnection.Start()
+  nameWithType: InstrumentProfileConnection.Start()
+- uid: DxFeed.Graal.Net.Ipf.Live.InstrumentProfileConnection.Start*
+  name: Start
+  href: docs/api/DxFeed.Graal.Net.Ipf.Live.InstrumentProfileConnection.html#DxFeed_Graal_Net_Ipf_Live_InstrumentProfileConnection_Start_
+  commentId: Overload:DxFeed.Graal.Net.Ipf.Live.InstrumentProfileConnection.Start
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Ipf.Live.InstrumentProfileConnection.Start
+  nameWithType: InstrumentProfileConnection.Start
+- uid: DxFeed.Graal.Net.Ipf.Live.InstrumentProfileUpdateListener
+  name: InstrumentProfileUpdateListener
+  href: docs/api/DxFeed.Graal.Net.Ipf.Live.InstrumentProfileUpdateListener.html
+  commentId: T:DxFeed.Graal.Net.Ipf.Live.InstrumentProfileUpdateListener
+  fullName: DxFeed.Graal.Net.Ipf.Live.InstrumentProfileUpdateListener
+  nameWithType: InstrumentProfileUpdateListener
 - uid: DxFeed.Graal.Net.Native.ErrorHandling
   name: DxFeed.Graal.Net.Native.ErrorHandling
   href: docs/api/DxFeed.Graal.Net.Native.ErrorHandling.html
@@ -8648,86 +8984,6 @@ references:
   commentId: F:DxFeed.Graal.Net.Native.Events.EventCodeNative.Underlying
   fullName: DxFeed.Graal.Net.Native.Events.EventCodeNative.Underlying
   nameWithType: EventCodeNative.Underlying
-- uid: DxFeed.Graal.Net.Native.Ipf
-  name: DxFeed.Graal.Net.Native.Ipf
-  href: docs/api/DxFeed.Graal.Net.Native.Ipf.html
-  commentId: N:DxFeed.Graal.Net.Native.Ipf
-  fullName: DxFeed.Graal.Net.Native.Ipf
-  nameWithType: DxFeed.Graal.Net.Native.Ipf
-- uid: DxFeed.Graal.Net.Native.Ipf.InstrumentProfileReaderNative
-  name: InstrumentProfileReaderNative
-  href: docs/api/DxFeed.Graal.Net.Native.Ipf.InstrumentProfileReaderNative.html
-  commentId: T:DxFeed.Graal.Net.Native.Ipf.InstrumentProfileReaderNative
-  fullName: DxFeed.Graal.Net.Native.Ipf.InstrumentProfileReaderNative
-  nameWithType: InstrumentProfileReaderNative
-- uid: DxFeed.Graal.Net.Native.Ipf.InstrumentProfileReaderNative.Create
-  name: Create()
-  href: docs/api/DxFeed.Graal.Net.Native.Ipf.InstrumentProfileReaderNative.html#DxFeed_Graal_Net_Native_Ipf_InstrumentProfileReaderNative_Create
-  commentId: M:DxFeed.Graal.Net.Native.Ipf.InstrumentProfileReaderNative.Create
-  fullName: DxFeed.Graal.Net.Native.Ipf.InstrumentProfileReaderNative.Create()
-  nameWithType: InstrumentProfileReaderNative.Create()
-- uid: DxFeed.Graal.Net.Native.Ipf.InstrumentProfileReaderNative.Create*
-  name: Create
-  href: docs/api/DxFeed.Graal.Net.Native.Ipf.InstrumentProfileReaderNative.html#DxFeed_Graal_Net_Native_Ipf_InstrumentProfileReaderNative_Create_
-  commentId: Overload:DxFeed.Graal.Net.Native.Ipf.InstrumentProfileReaderNative.Create
-  isSpec: "True"
-  fullName: DxFeed.Graal.Net.Native.Ipf.InstrumentProfileReaderNative.Create
-  nameWithType: InstrumentProfileReaderNative.Create
-- uid: DxFeed.Graal.Net.Native.Ipf.InstrumentProfileReaderNative.Dispose
-  name: Dispose()
-  href: docs/api/DxFeed.Graal.Net.Native.Ipf.InstrumentProfileReaderNative.html#DxFeed_Graal_Net_Native_Ipf_InstrumentProfileReaderNative_Dispose
-  commentId: M:DxFeed.Graal.Net.Native.Ipf.InstrumentProfileReaderNative.Dispose
-  fullName: DxFeed.Graal.Net.Native.Ipf.InstrumentProfileReaderNative.Dispose()
-  nameWithType: InstrumentProfileReaderNative.Dispose()
-- uid: DxFeed.Graal.Net.Native.Ipf.InstrumentProfileReaderNative.Dispose*
-  name: Dispose
-  href: docs/api/DxFeed.Graal.Net.Native.Ipf.InstrumentProfileReaderNative.html#DxFeed_Graal_Net_Native_Ipf_InstrumentProfileReaderNative_Dispose_
-  commentId: Overload:DxFeed.Graal.Net.Native.Ipf.InstrumentProfileReaderNative.Dispose
-  isSpec: "True"
-  fullName: DxFeed.Graal.Net.Native.Ipf.InstrumentProfileReaderNative.Dispose
-  nameWithType: InstrumentProfileReaderNative.Dispose
-- uid: DxFeed.Graal.Net.Native.Ipf.InstrumentProfileReaderNative.GetLastModified
-  name: GetLastModified()
-  href: docs/api/DxFeed.Graal.Net.Native.Ipf.InstrumentProfileReaderNative.html#DxFeed_Graal_Net_Native_Ipf_InstrumentProfileReaderNative_GetLastModified
-  commentId: M:DxFeed.Graal.Net.Native.Ipf.InstrumentProfileReaderNative.GetLastModified
-  fullName: DxFeed.Graal.Net.Native.Ipf.InstrumentProfileReaderNative.GetLastModified()
-  nameWithType: InstrumentProfileReaderNative.GetLastModified()
-- uid: DxFeed.Graal.Net.Native.Ipf.InstrumentProfileReaderNative.GetLastModified*
-  name: GetLastModified
-  href: docs/api/DxFeed.Graal.Net.Native.Ipf.InstrumentProfileReaderNative.html#DxFeed_Graal_Net_Native_Ipf_InstrumentProfileReaderNative_GetLastModified_
-  commentId: Overload:DxFeed.Graal.Net.Native.Ipf.InstrumentProfileReaderNative.GetLastModified
-  isSpec: "True"
-  fullName: DxFeed.Graal.Net.Native.Ipf.InstrumentProfileReaderNative.GetLastModified
-  nameWithType: InstrumentProfileReaderNative.GetLastModified
-- uid: DxFeed.Graal.Net.Native.Ipf.InstrumentProfileReaderNative.ReadFromFile(System.String,System.String,System.String)
-  name: ReadFromFile(string, string, string)
-  href: docs/api/DxFeed.Graal.Net.Native.Ipf.InstrumentProfileReaderNative.html#DxFeed_Graal_Net_Native_Ipf_InstrumentProfileReaderNative_ReadFromFile_System_String_System_String_System_String_
-  commentId: M:DxFeed.Graal.Net.Native.Ipf.InstrumentProfileReaderNative.ReadFromFile(System.String,System.String,System.String)
-  name.vb: ReadFromFile(String, String, String)
-  fullName: DxFeed.Graal.Net.Native.Ipf.InstrumentProfileReaderNative.ReadFromFile(string, string, string)
-  fullName.vb: DxFeed.Graal.Net.Native.Ipf.InstrumentProfileReaderNative.ReadFromFile(String, String, String)
-  nameWithType: InstrumentProfileReaderNative.ReadFromFile(string, string, string)
-  nameWithType.vb: InstrumentProfileReaderNative.ReadFromFile(String, String, String)
-- uid: DxFeed.Graal.Net.Native.Ipf.InstrumentProfileReaderNative.ReadFromFile*
-  name: ReadFromFile
-  href: docs/api/DxFeed.Graal.Net.Native.Ipf.InstrumentProfileReaderNative.html#DxFeed_Graal_Net_Native_Ipf_InstrumentProfileReaderNative_ReadFromFile_
-  commentId: Overload:DxFeed.Graal.Net.Native.Ipf.InstrumentProfileReaderNative.ReadFromFile
-  isSpec: "True"
-  fullName: DxFeed.Graal.Net.Native.Ipf.InstrumentProfileReaderNative.ReadFromFile
-  nameWithType: InstrumentProfileReaderNative.ReadFromFile
-- uid: DxFeed.Graal.Net.Native.Ipf.InstrumentProfileReaderNative.WasComplete
-  name: WasComplete()
-  href: docs/api/DxFeed.Graal.Net.Native.Ipf.InstrumentProfileReaderNative.html#DxFeed_Graal_Net_Native_Ipf_InstrumentProfileReaderNative_WasComplete
-  commentId: M:DxFeed.Graal.Net.Native.Ipf.InstrumentProfileReaderNative.WasComplete
-  fullName: DxFeed.Graal.Net.Native.Ipf.InstrumentProfileReaderNative.WasComplete()
-  nameWithType: InstrumentProfileReaderNative.WasComplete()
-- uid: DxFeed.Graal.Net.Native.Ipf.InstrumentProfileReaderNative.WasComplete*
-  name: WasComplete
-  href: docs/api/DxFeed.Graal.Net.Native.Ipf.InstrumentProfileReaderNative.html#DxFeed_Graal_Net_Native_Ipf_InstrumentProfileReaderNative_WasComplete_
-  commentId: Overload:DxFeed.Graal.Net.Native.Ipf.InstrumentProfileReaderNative.WasComplete
-  isSpec: "True"
-  fullName: DxFeed.Graal.Net.Native.Ipf.InstrumentProfileReaderNative.WasComplete
-  nameWithType: InstrumentProfileReaderNative.WasComplete
 - uid: DxFeed.Graal.Net.SystemProperty
   name: SystemProperty
   href: docs/api/DxFeed.Graal.Net.SystemProperty.html
@@ -8810,6 +9066,15 @@ references:
   fullName.vb: DxFeed.Graal.Net.Utils.AttributeUtil.GetCustomAttribute(Of T)(System.Type)
   nameWithType: AttributeUtil.GetCustomAttribute<T>(Type)
   nameWithType.vb: AttributeUtil.GetCustomAttribute(Of T)(Type)
+- uid: DxFeed.Graal.Net.Utils.AttributeUtil.GetCustomAttribute``1(System.Type,System.Boolean)
+  name: GetCustomAttribute<T>(Type, bool)
+  href: docs/api/DxFeed.Graal.Net.Utils.AttributeUtil.html#DxFeed_Graal_Net_Utils_AttributeUtil_GetCustomAttribute__1_System_Type_System_Boolean_
+  commentId: M:DxFeed.Graal.Net.Utils.AttributeUtil.GetCustomAttribute``1(System.Type,System.Boolean)
+  name.vb: GetCustomAttribute(Of T)(Type, Boolean)
+  fullName: DxFeed.Graal.Net.Utils.AttributeUtil.GetCustomAttribute<T>(System.Type, bool)
+  fullName.vb: DxFeed.Graal.Net.Utils.AttributeUtil.GetCustomAttribute(Of T)(System.Type, Boolean)
+  nameWithType: AttributeUtil.GetCustomAttribute<T>(Type, bool)
+  nameWithType.vb: AttributeUtil.GetCustomAttribute(Of T)(Type, Boolean)
 - uid: DxFeed.Graal.Net.Utils.BitUtil
   name: BitUtil
   href: docs/api/DxFeed.Graal.Net.Utils.BitUtil.html

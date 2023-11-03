@@ -5,10 +5,10 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Enum DXEndpoint.State
+    <title>Class InstrumentProfileCollector
  | dxFeed Graal .NET API </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Enum DXEndpoint.State
+    <meta name="title" content="Class InstrumentProfileCollector
  | dxFeed Graal .NET API ">
     <meta name="generator" content="docfx ">
   
@@ -113,8 +113,8 @@
                           <li class="">
                             <a href="DxFeed.Graal.Net.Api.DXEndpoint.Role.html" title="DXEndpoint.Role" class="">DXEndpoint.Role</a>
                           </li>
-                          <li class="active">
-                            <a href="DxFeed.Graal.Net.Api.DXEndpoint.State.html" title="DXEndpoint.State" class="active">DXEndpoint.State</a>
+                          <li class="">
+                            <a href="DxFeed.Graal.Net.Api.DXEndpoint.State.html" title="DXEndpoint.State" class="">DXEndpoint.State</a>
                           </li>
                           <li class="">
                             <a href="DxFeed.Graal.Net.Api.DXEndpoint.StateChangeListenerCallback.html" title="DXEndpoint.StateChangeListenerCallback" class="">DXEndpoint.StateChangeListenerCallback</a>
@@ -351,8 +351,8 @@
                       <a href="DxFeed.Graal.Net.Ipf.Live.html" title="DxFeed.Graal.Net.Ipf.Live" class="">DxFeed.Graal.Net.Ipf.Live</a>
 
                         <ul class="nav level2">
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Ipf.Live.InstrumentProfileCollector.html" title="InstrumentProfileCollector" class="">InstrumentProfileCollector</a>
+                          <li class="active">
+                            <a href="DxFeed.Graal.Net.Ipf.Live.InstrumentProfileCollector.html" title="InstrumentProfileCollector" class="active">InstrumentProfileCollector</a>
                           </li>
                           <li class="">
                             <a href="DxFeed.Graal.Net.Ipf.Live.InstrumentProfileConnection.html" title="InstrumentProfileConnection" class="">InstrumentProfileConnection</a>
@@ -442,55 +442,199 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="DxFeed.Graal.Net.Api.DXEndpoint.State">
+            <article class="content wrap" id="_content" data-uid="DxFeed.Graal.Net.Ipf.Live.InstrumentProfileCollector">
 
 
 
-
-  <h1 id="DxFeed_Graal_Net_Api_DXEndpoint_State" data-uid="DxFeed.Graal.Net.Api.DXEndpoint.State" class="text-break">Enum DXEndpoint.State
+  <h1 id="DxFeed_Graal_Net_Ipf_Live_InstrumentProfileCollector" data-uid="DxFeed.Graal.Net.Ipf.Live.InstrumentProfileCollector" class="text-break">Class InstrumentProfileCollector
 </h1>
-  <div class="markdown level0 summary"><p>A list of endpoint states.</p>
+  <div class="markdown level0 summary"><p>Collects instrument profile updates and provides the live list of instrument profiles.
+This class contains a map that keeps a unique instrument profile per symbol.
+This class is intended to be used with InstrumentProfileConnection as a repository
+that keeps profiles of all known instruments.
+As set of instrument profiles stored in this collector can be accessed with view method.
+A snapshot plus a live stream of updates can be accessed with addUpdateListener method.
+Removal of instrument profile is represented by an InstrumentProfile instance
+with a type equal to InstrumentProfileType.REMOVED.</p>
 </div>
   <div class="markdown level0 conceptual"></div>
-  <h6><strong>Namespace</strong>: <a class="xref" href="DxFeed.html">DxFeed</a>.<a class="xref" href="DxFeed.Graal.html">Graal</a>.<a class="xref" href="DxFeed.Graal.Net.html">Net</a>.<a class="xref" href="DxFeed.Graal.Net.Api.html">Api</a></h6>
-  <h6><strong>Assembly</strong>: DxFeed.Graal.Net.dll</h6>
-  <h5 id="DxFeed_Graal_Net_Api_DXEndpoint_State_syntax">Syntax</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public enum DXEndpoint.State</code></pre>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+    <div class="level1"><span class="xref">InstrumentProfileCollector</span></div>
   </div>
-  <h3 id="fields">Fields
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="DxFeed.html">DxFeed</a>.<a class="xref" href="DxFeed.Graal.html">Graal</a>.<a class="xref" href="DxFeed.Graal.Net.html">Net</a>.<a class="xref" href="DxFeed.Graal.Net.Ipf.html">Ipf</a>.<a class="xref" href="DxFeed.Graal.Net.Ipf.Live.html">Live</a></h6>
+  <h6><strong>Assembly</strong>: DxFeed.Graal.Net.dll</h6>
+  <h5 id="DxFeed_Graal_Net_Ipf_Live_InstrumentProfileCollector_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class InstrumentProfileCollector</code></pre>
+  </div>
+  <h3 id="methods">Methods
 </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.6.0/apiSpec/new?filename=DxFeed_Graal_Net_Ipf_Live_InstrumentProfileCollector_AddUpdateListener_DxFeed_Graal_Net_Ipf_Live_InstrumentProfileUpdateListener_.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Ipf.Live.InstrumentProfileCollector.AddUpdateListener(DxFeed.Graal.Net.Ipf.Live.InstrumentProfileUpdateListener)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.6.0/src\DxFeed.Graal.Net\Ipf\Live\InstrumentProfileCollector.cs/#L51">View Source</a>
+  </span>
+  <a id="DxFeed_Graal_Net_Ipf_Live_InstrumentProfileCollector_AddUpdateListener_" data-uid="DxFeed.Graal.Net.Ipf.Live.InstrumentProfileCollector.AddUpdateListener*"></a>
+  <h4 id="DxFeed_Graal_Net_Ipf_Live_InstrumentProfileCollector_AddUpdateListener_DxFeed_Graal_Net_Ipf_Live_InstrumentProfileUpdateListener_" data-uid="DxFeed.Graal.Net.Ipf.Live.InstrumentProfileCollector.AddUpdateListener(DxFeed.Graal.Net.Ipf.Live.InstrumentProfileUpdateListener)">AddUpdateListener(InstrumentProfileUpdateListener)</h4>
+  <div class="markdown level1 summary"><p>Adds listener that is notified about any updates in the set of instrument profiles.
+If a set of instrument profiles is not empty, then this listener will be immediately notified.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void AddUpdateListener(InstrumentProfileUpdateListener listener)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-condensed">
     <thead>
       <tr>
+        <th>Type</th>
         <th>Name</th>
         <th>Description</th>
       </tr>
-    <thead>
+    </thead>
     <tbody>
       <tr>
-        <td id="DxFeed_Graal_Net_Api_DXEndpoint_State_Closed">Closed</td>
-        <td><p>Endpoint was <a class="xref" href="DxFeed.Graal.Net.Api.DXEndpoint.html#DxFeed_Graal_Net_Api_DXEndpoint_Close">Close()</a>.</p>
-</td>
-      </tr>
-      <tr>
-        <td id="DxFeed_Graal_Net_Api_DXEndpoint_State_Connected">Connected</td>
-        <td><p>The connection to remote endpoint is established.</p>
-</td>
-      </tr>
-      <tr>
-        <td id="DxFeed_Graal_Net_Api_DXEndpoint_State_Connecting">Connecting</td>
-        <td><p>The <a class="xref" href="DxFeed.Graal.Net.Api.DXEndpoint.html#DxFeed_Graal_Net_Api_DXEndpoint_Connect_System_String_">Connect(string)</a> method was called to establish connection to remove endpoint,
-but connection is not actually established yet or was lost.</p>
-</td>
-      </tr>
-      <tr>
-        <td id="DxFeed_Graal_Net_Api_DXEndpoint_State_NotConnected">NotConnected</td>
-        <td><p>Endpoint was created by is not connected to remote endpoints.</p>
+        <td><a class="xref" href="DxFeed.Graal.Net.Ipf.Live.InstrumentProfileUpdateListener.html">InstrumentProfileUpdateListener</a></td>
+        <td><span class="parametername">listener</span></td>
+        <td><p>The profile update listener.</p>
 </td>
       </tr>
     </tbody>
-  </thead></thead></table>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.6.0/apiSpec/new?filename=DxFeed_Graal_Net_Ipf_Live_InstrumentProfileCollector_GetLastUpdateTime.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Ipf.Live.InstrumentProfileCollector.GetLastUpdateTime%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.6.0/src\DxFeed.Graal.Net\Ipf\Live\InstrumentProfileCollector.cs/#L31">View Source</a>
+  </span>
+  <a id="DxFeed_Graal_Net_Ipf_Live_InstrumentProfileCollector_GetLastUpdateTime_" data-uid="DxFeed.Graal.Net.Ipf.Live.InstrumentProfileCollector.GetLastUpdateTime*"></a>
+  <h4 id="DxFeed_Graal_Net_Ipf_Live_InstrumentProfileCollector_GetLastUpdateTime" data-uid="DxFeed.Graal.Net.Ipf.Live.InstrumentProfileCollector.GetLastUpdateTime">GetLastUpdateTime()</h4>
+  <div class="markdown level1 summary"><p>Gets last modification time (in milliseconds) of instrument profiles or zero if it is unknown.
+Note, that while the time is represented in milliseconds, the actual granularity of time here is a second.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public long GetLastUpdateTime()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></td>
+        <td><p>Last modification time (in milliseconds) of instrument profiles or zero if it is unknown.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.6.0/apiSpec/new?filename=DxFeed_Graal_Net_Ipf_Live_InstrumentProfileCollector_RemoveUpdateListener_DxFeed_Graal_Net_Ipf_Live_InstrumentProfileUpdateListener_.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Ipf.Live.InstrumentProfileCollector.RemoveUpdateListener(DxFeed.Graal.Net.Ipf.Live.InstrumentProfileUpdateListener)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.6.0/src\DxFeed.Graal.Net\Ipf\Live\InstrumentProfileCollector.cs/#L58">View Source</a>
+  </span>
+  <a id="DxFeed_Graal_Net_Ipf_Live_InstrumentProfileCollector_RemoveUpdateListener_" data-uid="DxFeed.Graal.Net.Ipf.Live.InstrumentProfileCollector.RemoveUpdateListener*"></a>
+  <h4 id="DxFeed_Graal_Net_Ipf_Live_InstrumentProfileCollector_RemoveUpdateListener_DxFeed_Graal_Net_Ipf_Live_InstrumentProfileUpdateListener_" data-uid="DxFeed.Graal.Net.Ipf.Live.InstrumentProfileCollector.RemoveUpdateListener(DxFeed.Graal.Net.Ipf.Live.InstrumentProfileUpdateListener)">RemoveUpdateListener(InstrumentProfileUpdateListener)</h4>
+  <div class="markdown level1 summary"><p>Removes listener that is notified about any updates in the set of instrument profiles.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void RemoveUpdateListener(InstrumentProfileUpdateListener listener)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="DxFeed.Graal.Net.Ipf.Live.InstrumentProfileUpdateListener.html">InstrumentProfileUpdateListener</a></td>
+        <td><span class="parametername">listener</span></td>
+        <td><p>The profile update listener.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.6.0/apiSpec/new?filename=DxFeed_Graal_Net_Ipf_Live_InstrumentProfileCollector_View.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Ipf.Live.InstrumentProfileCollector.View%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.6.0/src\DxFeed.Graal.Net\Ipf\Live\InstrumentProfileCollector.cs/#L43">View Source</a>
+  </span>
+  <a id="DxFeed_Graal_Net_Ipf_Live_InstrumentProfileCollector_View_" data-uid="DxFeed.Graal.Net.Ipf.Live.InstrumentProfileCollector.View*"></a>
+  <h4 id="DxFeed_Graal_Net_Ipf_Live_InstrumentProfileCollector_View" data-uid="DxFeed.Graal.Net.Ipf.Live.InstrumentProfileCollector.View">View()</h4>
+  <div class="markdown level1 summary"><p>Gets a concurrent view of the set of instrument profiles.
+Note, that removal of instrument profile is represented by an <a class="xref" href="DxFeed.Graal.Net.Ipf.InstrumentProfile.html">InstrumentProfile</a> instance with a
+<a class="xref" href="DxFeed.Graal.Net.Ipf.InstrumentProfileType.html">InstrumentProfileType</a> equal to
+<code>InstrumentProfileType.REMOVED</code>
+Normally, this view exposes only non-removed profiles. However, if iteration is concurrent with removal,
+then a removed instrument profile (with a removed type) can be exposed by this view.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IEnumerable&lt;InstrumentProfile&gt; View()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="DxFeed.Graal.Net.Ipf.InstrumentProfile.html">InstrumentProfile</a>&gt;</td>
+        <td><p>A concurrent view of the set of instrument profiles.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
 </article>
           </div>
 
@@ -499,10 +643,10 @@ but connection is not actually established yet or was lost.</p>
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.6.0/apiSpec/new?filename=DxFeed_Graal_Net_Api_DXEndpoint_State.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Api.DXEndpoint.State%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Edit this page</a>
+                    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.6.0/apiSpec/new?filename=DxFeed_Graal_Net_Ipf_Live_InstrumentProfileCollector.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Ipf.Live.InstrumentProfileCollector%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Edit this page</a>
                   </li>
                   <li>
-                    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.6.0/src\DxFeed.Graal.Net\Api\DXEndpoint.cs/#L351" class="contribution-link">View Source</a>
+                    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.6.0/src\DxFeed.Graal.Net\Ipf\Live\InstrumentProfileCollector.cs/#L22" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>
