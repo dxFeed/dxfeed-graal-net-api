@@ -6,7 +6,6 @@
 
 using System;
 using System.Runtime.Serialization;
-using System.Text;
 
 namespace DxFeed.Graal.Net.Native.ErrorHandling;
 
@@ -32,6 +31,9 @@ public sealed class JavaException : Exception
     private JavaException(SerializationInfo info, StreamingContext context)
         : base(info, context)
     {
+        JavaClassName = info.GetString(nameof(JavaClassName));
+        JavaMessage = info.GetString(nameof(JavaMessage));
+        JavaStackTrace = info.GetString(nameof(JavaStackTrace));
     }
 
     /// <summary>
@@ -49,20 +51,16 @@ public sealed class JavaException : Exception
     /// </summary>
     public string? JavaStackTrace { get; }
 
-    /// <summary>
-    /// Gets a message that describes the current exception.
-    /// </summary>
-    /// <returns>The error message that explains the reason for the exception.</returns>
-    public override string Message
+    /// <inheritdoc/>
+    public override string StackTrace =>
+     JavaStackTrace + base.StackTrace;
+
+    /// <inheritdoc/>
+    public override void GetObjectData(SerializationInfo info, StreamingContext context)
     {
-        get
-        {
-            var message = new StringBuilder();
-            message.AppendLine();
-            message.AppendLine("Java Class: " + JavaClassName);
-            message.AppendLine("Java Message: " + JavaMessage);
-            message.AppendLine("Java StackTrace: " + JavaStackTrace);
-            return message.ToString();
-        }
+        base.GetObjectData(info, context);
+        info.AddValue(nameof(JavaClassName), JavaClassName);
+        info.AddValue(nameof(JavaMessage), JavaMessage);
+        info.AddValue(nameof(JavaStackTrace), JavaStackTrace);
     }
 }

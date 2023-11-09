@@ -12,23 +12,7 @@ namespace DxFeed.Graal.Net.Native.ErrorHandling;
 /// Information about thrown Java exception.
 /// </summary>
 [StructLayout(LayoutKind.Sequential)]
-internal readonly struct JavaExceptionInfo
-{
-    /// <summary>
-    /// Java class name exception.
-    /// </summary>
-    [MarshalAs(UnmanagedType.LPUTF8Str)]
-    public readonly string? ClassName;
-
-    /// <summary>
-    /// Java exception message.
-    /// </summary>
-    [MarshalAs(UnmanagedType.LPUTF8Str)]
-    public readonly string? Message;
-
-    /// <summary>
-    /// Java stack trace.
-    /// </summary>
-    [MarshalAs(UnmanagedType.LPUTF8Str)]
-    public readonly string? StackTrace;
-}
+internal readonly record struct JavaExceptionInfo(
+    [MarshalAs(UnmanagedType.LPUTF8Str)] string? ClassName,
+    [MarshalAs(UnmanagedType.LPUTF8Str)] string? Message,
+    [MarshalAs(UnmanagedType.LPUTF8Str)] string? StackTrace);

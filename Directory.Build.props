@@ -1,5 +1,6 @@
 <Project>
   <PropertyGroup>
+    <PathMap>$(MSBuildProjectDirectory)=$(MSBuildProjectName)</PathMap>
     <!-- Project info -->
     <Company>Devexperts</Company>
     <Copyright>Copyright © 2022 Devexperts LLC</Copyright>

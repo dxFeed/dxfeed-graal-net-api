@@ -14,13 +14,13 @@ namespace DxFeed.Graal.Net.Native.Endpoint;
 /// </summary>
 internal sealed class BuilderNative : IDisposable
 {
-    private readonly BuilderSafeHandle _builderHandle;
+    private readonly BuilderHandle _builderHandle;
 
-    private BuilderNative(BuilderSafeHandle builderHandle) =>
+    private BuilderNative(BuilderHandle builderHandle) =>
         _builderHandle = builderHandle;
 
     public static BuilderNative Create() =>
-        new(BuilderSafeHandle.Create());
+        new(BuilderHandle.Create());
 
     public void WithRole(int role) =>
         _builderHandle.WithRole(role);

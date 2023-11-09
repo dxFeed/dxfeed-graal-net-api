@@ -7,7 +7,6 @@
 using System;
 using System.ComponentModel;
 using System.Runtime.Serialization;
-using System.Text;
 
 namespace DxFeed.Graal.Net.Native.ErrorHandling;
 
@@ -30,12 +29,9 @@ public sealed class GraalException : Exception
     private GraalException(SerializationInfo info, StreamingContext context)
         : base(info, context)
     {
+        ErrorCode = (GraalErrorCode)info.GetValue(nameof(ErrorCode), typeof(GraalErrorCode))!;
+        GraalMessage = info.GetString(nameof(GraalMessage))!;
     }
-
-    /// <summary>
-    /// Gets graal error message.
-    /// </summary>
-    public string? GraalMessage { get; }
 
     /// <summary>
     /// Gets graal error code.
@@ -43,19 +39,23 @@ public sealed class GraalException : Exception
     public GraalErrorCode ErrorCode { get; }
 
     /// <summary>
+    /// Gets graal error message.
+    /// </summary>
+    public string GraalMessage { get; }
+
+    /// <summary>
     /// Gets a message that describes the current exception.
     /// </summary>
     /// <returns>The error message that explains the reason for the exception.</returns>
-    public override string Message
+    public override string Message =>
+        GraalMessage;
+
+    /// <inheritdoc/>
+    public override void GetObjectData(SerializationInfo info, StreamingContext context)
     {
-        get
-        {
-            var message = new StringBuilder();
-            message.AppendLine();
-            message.AppendLine("ErrorCode: " + (int)ErrorCode);
-            message.AppendLine("Message: " + GraalMessage);
-            return message.ToString();
-        }
+        base.GetObjectData(info, context);
+        info.AddValue(nameof(ErrorCode), ErrorCode);
+        info.AddValue(nameof(GraalMessage), GraalMessage);
     }
 
     /// <summary>
@@ -65,14 +65,14 @@ public sealed class GraalException : Exception
     /// <returns>Returns error description.</returns>
     private static string GetGraalErrorDescription(GraalErrorCode value)
     {
-        var str = value.ToString();
-        var fi = value.GetType().GetField(str);
+        var name = value.ToString();
+        var fi = value.GetType().GetField(name);
         if (fi == null)
         {
-            return "Unknown error";
+            return $"Unknown error with error code {value}.";
         }
 
         var attributes = (DescriptionAttribute[])fi.GetCustomAttributes(typeof(DescriptionAttribute), false);
-        return attributes.Length > 0 ? attributes[0].Description : str;
+        return attributes.Length > 0 ? attributes[0].Description : name;
     }
 }

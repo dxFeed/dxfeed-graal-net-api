@@ -4,16 +4,88 @@
 // If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
 // </copyright>
 
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.InteropServices;
+using DxFeed.Graal.Net.Native.Interop;
+using static DxFeed.Graal.Net.Native.ErrorHandling.ErrorCheck;
 
 namespace DxFeed.Graal.Net.Native.Endpoint.Handles;
 
 /// <summary>
-/// A handle that represents a Java <c>com.dxfeed.api.DXEndpoint.Builder</c> object.
+/// This class wraps an unsafe handler <see cref="BuilderHandle"/>.
+/// The location of the imported functions is in the header files <c>"dxfg_endpoint.h"</c>.
 /// </summary>
-[StructLayout(LayoutKind.Sequential)]
-internal readonly struct BuilderHandle
+[SuppressMessage("ReSharper", "ClassNeverInstantiated.Global", Justification = "Created by marshaller")]
+internal sealed class BuilderHandle : JavaHandle
 {
-    // ReSharper disable once MemberCanBePrivate.Global
-    public readonly JavaObjectHandle Handle;
+    public static BuilderHandle Create() =>
+        NativeCall(CurrentThread, Import.New(CurrentThread));
+
+    public void WithRole(int role) =>
+        NativeCall(CurrentThread, Import.WithRole(CurrentThread, this, role));
+
+    public void WithProperty(string key, string value) =>
+        NativeCall(CurrentThread, Import.WithProperty(CurrentThread, this, key, value));
+
+    public bool SupportsProperty(string key) =>
+        NativeCall(CurrentThread, Import.SupportsProperty(CurrentThread, this, key)) != 0;
+
+    public EndpointHandle Build() =>
+        NativeCall(CurrentThread, Import.Build(CurrentThread, this));
+
+    private static class Import
+    {
+        [DllImport(
+            ImportInfo.DllName,
+            CallingConvention = CallingConvention.Cdecl,
+            CharSet = CharSet.Ansi,
+            EntryPoint = "dxfg_DXEndpoint_newBuilder")]
+        public static extern BuilderHandle New(nint thread);
+
+        [DllImport(
+            ImportInfo.DllName,
+            CallingConvention = CallingConvention.Cdecl,
+            CharSet = CharSet.Ansi,
+            EntryPoint = "dxfg_DXEndpoint_Builder_withRole")]
+        public static extern int WithRole(
+            nint thread,
+            BuilderHandle builder,
+            int role);
+
+        [DllImport(
+            ImportInfo.DllName,
+            CallingConvention = CallingConvention.Cdecl,
+            CharSet = CharSet.Ansi,
+            ExactSpelling = true,
+            BestFitMapping = false,
+            ThrowOnUnmappableChar = true,
+            EntryPoint = "dxfg_DXEndpoint_Builder_withProperty")]
+        public static extern int WithProperty(
+            nint thread,
+            BuilderHandle builder,
+            [MarshalAs(UnmanagedType.LPUTF8Str)] string key,
+            [MarshalAs(UnmanagedType.LPUTF8Str)] string value);
+
+        [DllImport(
+            ImportInfo.DllName,
+            CallingConvention = CallingConvention.Cdecl,
+            CharSet = CharSet.Ansi,
+            ExactSpelling = true,
+            BestFitMapping = false,
+            ThrowOnUnmappableChar = true,
+            EntryPoint = "dxfg_DXEndpoint_Builder_supportsProperty")]
+        public static extern int SupportsProperty(
+            nint thread,
+            BuilderHandle builder,
+            [MarshalAs(UnmanagedType.LPUTF8Str)] string key);
+
+        [DllImport(
+            ImportInfo.DllName,
+            CallingConvention = CallingConvention.Cdecl,
+            CharSet = CharSet.Ansi,
+            EntryPoint = "dxfg_DXEndpoint_Builder_build")]
+        public static extern EndpointHandle Build(
+            nint thread,
+            BuilderHandle builder);
+    }
 }

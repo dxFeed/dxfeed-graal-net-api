@@ -17,11 +17,11 @@ namespace DxFeed.Graal.Net.Native.Endpoint;
 /// </summary>
 internal sealed unsafe class EndpointNative : IDisposable
 {
-    private readonly EndpointSafeHandle _endpointHandle;
+    private readonly EndpointHandle _endpointHandle;
     private readonly Lazy<FeedNative> _feedNative;
     private readonly Lazy<PublisherNative> _publisherNative;
 
-    internal EndpointNative(EndpointSafeHandle endpointHandle)
+    internal EndpointNative(EndpointHandle endpointHandle)
     {
         _endpointHandle = endpointHandle;
         _feedNative = new Lazy<FeedNative>(() => new FeedNative(_endpointHandle.GetFeed()));
