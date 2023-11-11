@@ -14,10 +14,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\DxFeed.Graal.Net\DxFeed.Graal.Net.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
     <None Update="ConvertTapeFile.in">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

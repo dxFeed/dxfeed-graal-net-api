@@ -12,8 +12,4 @@
   <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
     <OutputPath>../../artifacts/Release/Samples/DxFeedLiveIpfSample/</OutputPath>
   </PropertyGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\..\src\DxFeed.Graal.Net\DxFeed.Graal.Net.csproj" />
-  </ItemGroup>
 </Project>

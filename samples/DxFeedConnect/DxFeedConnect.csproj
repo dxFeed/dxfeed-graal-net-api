@@ -13,8 +13,4 @@
     <OutputPath>../../artifacts/Release/Samples/DxFeedConnect/</OutputPath>
   </PropertyGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\..\src\DxFeed.Graal.Net\DxFeed.Graal.Net.csproj" />
-  </ItemGroup>
-
 </Project>
