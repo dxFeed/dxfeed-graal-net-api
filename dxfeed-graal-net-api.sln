@@ -1,32 +1,37 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DxFeed.Graal.Net", "src\DxFeed.Graal.Net\DxFeed.Graal.Net.csproj", "{D61138CF-CEDB-4A2C-926F-BD4240CF6423}"
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34003.232
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DxFeed.Graal.Net", "src\DxFeed.Graal.Net\DxFeed.Graal.Net.csproj", "{D61138CF-CEDB-4A2C-926F-BD4240CF6423}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DxFeed.Graal.Net.Tools", "src\DxFeed.Graal.Net.Tools\DxFeed.Graal.Net.Tools.csproj", "{1F8765D9-1ED0-40EC-8239-B3E9F7BDF38C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DxFeed.Graal.Net.Tools", "src\DxFeed.Graal.Net.Tools\DxFeed.Graal.Net.Tools.csproj", "{1F8765D9-1ED0-40EC-8239-B3E9F7BDF38C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DxFeed.Graal.Net.Tests", "tests\DxFeed.Graal.Net.Tests\DxFeed.Graal.Net.Tests.csproj", "{7F07BB95-9DB6-4331-BCCF-FBF441F8F3E2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DxFeed.Graal.Net.Tests", "tests\DxFeed.Graal.Net.Tests\DxFeed.Graal.Net.Tests.csproj", "{7F07BB95-9DB6-4331-BCCF-FBF441F8F3E2}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Samples", "Samples", "{C4490D74-2970-4A1B-8178-A724A06B140A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrintQuoteEvents", "samples\PrintQuoteEvents\PrintQuoteEvents.csproj", "{73597E04-D8A8-4991-A759-7F886CBE2A8F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PrintQuoteEvents", "samples\PrintQuoteEvents\PrintQuoteEvents.csproj", "{73597E04-D8A8-4991-A759-7F886CBE2A8F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DxFeedConnect", "samples\DxFeedConnect\DxFeedConnect.csproj", "{2A8B6037-09FF-40DC-868F-A0ED54A46287}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DxFeedConnect", "samples\DxFeedConnect\DxFeedConnect.csproj", "{2A8B6037-09FF-40DC-868F-A0ED54A46287}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{D8A3B3E7-CFFD-4113-862D-B9E9E7FF0BA5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WriteTapeFile", "samples\WriteTapeFile\WriteTapeFile.csproj", "{F06FDF6E-6BE8-4A72-A834-62AB1BAA6B7A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WriteTapeFile", "samples\WriteTapeFile\WriteTapeFile.csproj", "{F06FDF6E-6BE8-4A72-A834-62AB1BAA6B7A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConvertTapeFile", "samples\ConvertTapeFile\ConvertTapeFile.csproj", "{F9369083-EB43-455F-8944-07246E4FE6AC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConvertTapeFile", "samples\ConvertTapeFile\ConvertTapeFile.csproj", "{F9369083-EB43-455F-8944-07246E4FE6AC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DxFeedFileParser", "samples\DxFeedFileParser\DxFeedFileParser.csproj", "{62ED5ABC-B2A7-4CE3-8AE1-25AF185B47E9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DxFeedFileParser", "samples\DxFeedFileParser\DxFeedFileParser.csproj", "{62ED5ABC-B2A7-4CE3-8AE1-25AF185B47E9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DxFeedSample", "samples\DxFeedSample\DxFeedSample.csproj", "{ECD5E041-0FBF-475E-82A6-DE6384EF25A0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DxFeedSample", "samples\DxFeedSample\DxFeedSample.csproj", "{ECD5E041-0FBF-475E-82A6-DE6384EF25A0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CandleSample", "samples\CandleSample\CandleSample.csproj", "{CECAB17A-9DBE-4A4E-8556-5747AB170714}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CandleSample", "samples\CandleSample\CandleSample.csproj", "{CECAB17A-9DBE-4A4E-8556-5747AB170714}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DxFeedIpfConnect", "samples\DxFeedIpfConnect\DxFeedIpfConnect.csproj", "{62206DAF-999F-437A-AC18-1217ED14EB52}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DxFeedIpfConnect", "samples\DxFeedIpfConnect\DxFeedIpfConnect.csproj", "{62206DAF-999F-437A-AC18-1217ED14EB52}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DxFeedLiveIpfSample", "samples\DxFeedLiveIpfSample\DxFeedLiveIpfSample.csproj", "{C2F0FF7C-4675-4D5F-AE90-0E8DA33A1EB8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DxFeedLiveIpfSample", "samples\DxFeedLiveIpfSample\DxFeedLiveIpfSample.csproj", "{C2F0FF7C-4675-4D5F-AE90-0E8DA33A1EB8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DXLink.Net", "DXLink.Net\DXLink.Net.csproj", "{2879E5F6-0C94-4915-93FC-CE147EF6A608}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -82,11 +87,18 @@ Global
 		{C2F0FF7C-4675-4D5F-AE90-0E8DA33A1EB8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C2F0FF7C-4675-4D5F-AE90-0E8DA33A1EB8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C2F0FF7C-4675-4D5F-AE90-0E8DA33A1EB8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2879E5F6-0C94-4915-93FC-CE147EF6A608}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2879E5F6-0C94-4915-93FC-CE147EF6A608}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2879E5F6-0C94-4915-93FC-CE147EF6A608}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2879E5F6-0C94-4915-93FC-CE147EF6A608}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
+		{7F07BB95-9DB6-4331-BCCF-FBF441F8F3E2} = {D8A3B3E7-CFFD-4113-862D-B9E9E7FF0BA5}
 		{73597E04-D8A8-4991-A759-7F886CBE2A8F} = {C4490D74-2970-4A1B-8178-A724A06B140A}
 		{2A8B6037-09FF-40DC-868F-A0ED54A46287} = {C4490D74-2970-4A1B-8178-A724A06B140A}
-		{7F07BB95-9DB6-4331-BCCF-FBF441F8F3E2} = {D8A3B3E7-CFFD-4113-862D-B9E9E7FF0BA5}
 		{F06FDF6E-6BE8-4A72-A834-62AB1BAA6B7A} = {C4490D74-2970-4A1B-8178-A724A06B140A}
 		{F9369083-EB43-455F-8944-07246E4FE6AC} = {C4490D74-2970-4A1B-8178-A724A06B140A}
 		{62ED5ABC-B2A7-4CE3-8AE1-25AF185B47E9} = {C4490D74-2970-4A1B-8178-A724A06B140A}
