@@ -31,7 +31,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DxFeedIpfConnect", "samples
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DxFeedLiveIpfSample", "samples\DxFeedLiveIpfSample\DxFeedLiveIpfSample.csproj", "{C2F0FF7C-4675-4D5F-AE90-0E8DA33A1EB8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DXLink.Net", "DXLink.Net\DXLink.Net.csproj", "{2879E5F6-0C94-4915-93FC-CE147EF6A608}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DxLink.Net", "src\DxLink.Net\DxLink.Net.csproj", "{DE55798B-494A-488C-9311-058D3D9E6EBF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -87,10 +87,10 @@ Global
 		{C2F0FF7C-4675-4D5F-AE90-0E8DA33A1EB8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C2F0FF7C-4675-4D5F-AE90-0E8DA33A1EB8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C2F0FF7C-4675-4D5F-AE90-0E8DA33A1EB8}.Release|Any CPU.Build.0 = Release|Any CPU
-		{2879E5F6-0C94-4915-93FC-CE147EF6A608}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2879E5F6-0C94-4915-93FC-CE147EF6A608}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2879E5F6-0C94-4915-93FC-CE147EF6A608}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2879E5F6-0C94-4915-93FC-CE147EF6A608}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DE55798B-494A-488C-9311-058D3D9E6EBF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DE55798B-494A-488C-9311-058D3D9E6EBF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DE55798B-494A-488C-9311-058D3D9E6EBF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DE55798B-494A-488C-9311-058D3D9E6EBF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -106,5 +106,8 @@ Global
 		{CECAB17A-9DBE-4A4E-8556-5747AB170714} = {C4490D74-2970-4A1B-8178-A724A06B140A}
 		{62206DAF-999F-437A-AC18-1217ED14EB52} = {C4490D74-2970-4A1B-8178-A724A06B140A}
 		{C2F0FF7C-4675-4D5F-AE90-0E8DA33A1EB8} = {C4490D74-2970-4A1B-8178-A724A06B140A}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {22D3BC90-1BA9-4EAD-83D6-37A48D44A674}
 	EndGlobalSection
 EndGlobal
