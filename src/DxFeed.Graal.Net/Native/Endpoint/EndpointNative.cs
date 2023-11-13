@@ -5,10 +5,11 @@
 // </copyright>
 
 using System;
-using System.Runtime.InteropServices;
 using DxFeed.Graal.Net.Native.Endpoint.Handles;
 using DxFeed.Graal.Net.Native.Feed;
+using DxFeed.Graal.Net.Native.Interop;
 using DxFeed.Graal.Net.Native.Publisher;
+using static DxFeed.Graal.Net.Api.DXEndpoint;
 
 namespace DxFeed.Graal.Net.Native.Endpoint;
 
@@ -17,64 +18,75 @@ namespace DxFeed.Graal.Net.Native.Endpoint;
 /// </summary>
 internal sealed unsafe class EndpointNative : IDisposable
 {
-    private readonly EndpointHandle _endpointHandle;
-    private readonly Lazy<FeedNative> _feedNative;
-    private readonly Lazy<PublisherNative> _publisherNative;
+    private readonly EndpointHandle endpoint;
+    private readonly Lazy<FeedNative> feed;
+    private readonly Lazy<PublisherNative> publisher;
+    private readonly ListenerContainer<StateChangeListener, StateChangeListenerHandle> listeners;
 
-    internal EndpointNative(EndpointHandle endpointHandle)
+    internal EndpointNative(EndpointHandle endpoint)
     {
-        _endpointHandle = endpointHandle;
-        _feedNative = new Lazy<FeedNative>(() => new FeedNative(_endpointHandle.GetFeed()));
-        _publisherNative = new Lazy<PublisherNative>(() => new PublisherNative(_endpointHandle.GetPublisher()));
+        this.endpoint = endpoint;
+        feed = new(() => new FeedNative(endpoint.GetFeed()));
+        publisher = new(() => new PublisherNative(endpoint.GetPublisher()));
+        listeners = new(StateChangeListenerHandle.Create);
     }
 
     public void Close() =>
-        _endpointHandle.Close();
+        endpoint.Close();
 
     public void CloseAndAwaitTermination() =>
-        _endpointHandle.CloseAndAwaitTermination();
+        endpoint.CloseAndAwaitTermination();
 
     public void User(string user) =>
-        _endpointHandle.SetUser(user);
+        endpoint.SetUser(user);
 
     public void Password(string password) =>
-        _endpointHandle.SetPassword(password);
+        endpoint.SetPassword(password);
 
     public void Connect(string address) =>
-        _endpointHandle.Connect(address);
+        endpoint.Connect(address);
 
     public void Reconnect() =>
-        _endpointHandle.Reconnect();
+        endpoint.Reconnect();
 
     public void Disconnect() =>
-        _endpointHandle.Disconnect();
+        endpoint.Disconnect();
 
     public void DisconnectAndClear() =>
-        _endpointHandle.DisconnectAndClear();
+        endpoint.DisconnectAndClear();
 
     public void AwaitProcessed() =>
-        _endpointHandle.AwaitProcessed();
+        endpoint.AwaitProcessed();
 
     public void AwaitNotConnected() =>
-        _endpointHandle.AwaitNotConnected();
+        endpoint.AwaitNotConnected();
 
     public int GetState() =>
-        _endpointHandle.GetState();
+        endpoint.GetState();
 
-    public void AddStateChangeListener(
-        delegate* unmanaged[Cdecl]<nint, int, int, nint, void> listener,
-        GCHandle userData)
+    public void AddStateChangeListener(StateChangeListener listener) =>
+        endpoint.AddStateChangeListener(listeners.Add(listener));
+
+    public void RemoveStateChangeListener(StateChangeListener listener)
     {
-        using var stateChangeListenerHandle = StateChangeListenerSafeHandle.Create(listener, userData);
-        _endpointHandle.AddStateChangeListener(stateChangeListenerHandle);
+        if (listeners.TryRemove(listener, out var handle))
+        {
+            using (handle)
+            {
+                endpoint.RemoveStateChangeListener(handle);
+            }
+        }
     }
 
     public FeedNative GetFeed() =>
-        _feedNative.Value;
+        feed.Value;
 
     public PublisherNative GetPublisher() =>
-        _publisherNative.Value;
+        publisher.Value;
 
-    public void Dispose() =>
-        _endpointHandle.Dispose();
+    public void Dispose()
+    {
+        endpoint.Dispose();
+        listeners.Clear();
+    }
 }

@@ -87,12 +87,20 @@ internal sealed unsafe class EndpointHandle : JavaHandle
         return ErrorCheck.NativeCall(thread, NativeGetState(thread, this));
     }
 
-    public void AddStateChangeListener(StateChangeListenerSafeHandle stateChangeListenerHandle)
+    public void AddStateChangeListener(StateChangeListenerHandle stateChangeListenerHandle)
     {
         var thread = Isolate.CurrentThread;
         ErrorCheck.NativeCall(
             thread,
             NativeAddStateChangeListener(thread, this, stateChangeListenerHandle));
+    }
+
+    public void RemoveStateChangeListener(StateChangeListenerHandle stateChangeListenerHandle)
+    {
+        var thread = Isolate.CurrentThread;
+        ErrorCheck.NativeCall(
+            thread,
+            NativeRemoveStateChangeListener(thread, this, stateChangeListenerHandle));
     }
 
     public FeedHandle* GetFeed()
@@ -226,7 +234,17 @@ internal sealed unsafe class EndpointHandle : JavaHandle
     private static extern int NativeAddStateChangeListener(
         nint thread,
         EndpointHandle endpointHandle,
-        StateChangeListenerHandle* listenerHandle);
+        StateChangeListenerHandle listenerHandle);
+
+    [DllImport(
+        ImportInfo.DllName,
+        CallingConvention = CallingConvention.Cdecl,
+        CharSet = CharSet.Ansi,
+        EntryPoint = "dxfg_DXEndpoint_removeStateChangeListener")]
+    private static extern int NativeRemoveStateChangeListener(
+        nint thread,
+        EndpointHandle endpointHandle,
+        StateChangeListenerHandle listenerHandle);
 
     [DllImport(
         ImportInfo.DllName,

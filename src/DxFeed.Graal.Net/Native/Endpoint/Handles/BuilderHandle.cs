@@ -7,6 +7,7 @@
 using System.Diagnostics.CodeAnalysis;
 using System.Runtime.InteropServices;
 using DxFeed.Graal.Net.Native.Interop;
+using static DxFeed.Graal.Net.Api.DXEndpoint;
 using static DxFeed.Graal.Net.Native.ErrorHandling.ErrorCheck;
 
 namespace DxFeed.Graal.Net.Native.Endpoint.Handles;
@@ -21,7 +22,7 @@ internal sealed class BuilderHandle : JavaHandle
     public static BuilderHandle Create() =>
         NativeCall(CurrentThread, Import.New(CurrentThread));
 
-    public void WithRole(int role) =>
+    public void WithRole(Role role) =>
         NativeCall(CurrentThread, Import.WithRole(CurrentThread, this, role));
 
     public void WithProperty(string key, string value) =>
@@ -33,6 +34,10 @@ internal sealed class BuilderHandle : JavaHandle
     public EndpointHandle Build() =>
         NativeCall(CurrentThread, Import.Build(CurrentThread, this));
 
+    /// <summary>
+    /// Internal class containing the import definitions for native methods.
+    /// The location of imported functions is in the header files <c>"dxfg_endpoint.h"</c>.
+    /// </summary>
     private static class Import
     {
         [DllImport(
@@ -50,7 +55,7 @@ internal sealed class BuilderHandle : JavaHandle
         public static extern int WithRole(
             nint thread,
             BuilderHandle builder,
-            int role);
+            Role role);
 
         [DllImport(
             ImportInfo.DllName,

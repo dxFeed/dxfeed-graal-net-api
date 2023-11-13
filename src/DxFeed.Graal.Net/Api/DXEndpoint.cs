@@ -255,11 +255,6 @@ public sealed class DXEndpoint : IDisposable
     private readonly Lazy<DXPublisher> _publisher;
 
     /// <summary>
-    /// A list of state change listeners callback.
-    /// </summary>
-    private ImmutableList<StateChangeListenerCallback> _listeners = ImmutableList.Create<StateChangeListenerCallback>();
-
-    /// <summary>
     /// Initializes a new instance of the <see cref="DXEndpoint"/>
     /// class with specified <see cref="EndpointNative"/>, <see cref="Role"/> and properties.
     /// </summary>
@@ -274,13 +269,6 @@ public sealed class DXEndpoint : IDisposable
 
         _feed = new Lazy<DXFeed>(() => new DXFeed(_endpointNative.GetFeed()));
         _publisher = new Lazy<DXPublisher>(() => new DXPublisher(_endpointNative.GetPublisher()));
-
-        unsafe
-        {
-            // Add a listener and create a GCHandle to avoid garbage collection.
-            // GCHandle will be released when the listener receives the Closed state.
-            _endpointNative.AddStateChangeListener(&OnStateChanges, GCHandle.Alloc(this));
-        }
     }
 
     /// <summary>
@@ -288,7 +276,7 @@ public sealed class DXEndpoint : IDisposable
     /// </summary>
     /// <param name="oldState">The old state of endpoint.</param>
     /// <param name="newState">The new state of endpoint.</param>
-    public delegate void StateChangeListenerCallback(State oldState, State newState);
+    public delegate void StateChangeListener(State oldState, State newState);
 
     /// <summary>
     /// A list of endpoint roles.
@@ -534,7 +522,7 @@ public sealed class DXEndpoint : IDisposable
     /// <b>This method does not wait until connection actually gets established</b>. The actual connection establishment
     /// happens asynchronously after the invocation of this method. However, this method waits until notification
     /// about state transition from <see cref="State.NotConnected"/> to <see cref="State.Connecting"/>
-    /// gets processed by all <see cref="StateChangeListenerCallback"/> that were installed via
+    /// gets processed by all <see cref="StateChangeListener"/> that were installed via
     /// <see cref="AddStateChangeListener"/> method.
     /// </summary>
     /// <param name="address">The data source address.</param>
@@ -621,8 +609,9 @@ public sealed class DXEndpoint : IDisposable
     /// Installed listener can be removed with <see cref="RemoveStateChangeListener"/> method.
     /// </summary>
     /// <param name="listener">The listener to add.</param>
-    public void AddStateChangeListener(StateChangeListenerCallback listener) =>
-        ImmutableInterlocked.Update(ref _listeners, (list, added) => list.Add(added), listener);
+    public void AddStateChangeListener(StateChangeListener listener) =>
+        _endpointNative.AddStateChangeListener(listener);
+    //ImmutableInterlocked.Update(ref _listeners, (list, added) => list.Add(added), listener);
 
     /// <summary>
     /// Removes listener that is notified about changes in <see cref="GetState"/> property.
@@ -630,8 +619,9 @@ public sealed class DXEndpoint : IDisposable
     /// It removes the listener that was previously installed with <see cref="AddStateChangeListener"/> method.
     /// </summary>
     /// <param name="listener">The listener to remove.</param>
-    public void RemoveStateChangeListener(StateChangeListenerCallback listener) =>
-        ImmutableInterlocked.Update(ref _listeners, (list, removed) => list.Remove(removed), listener);
+    public void RemoveStateChangeListener(StateChangeListener listener) =>
+        _endpointNative.RemoveStateChangeListener(listener);
+    //ImmutableInterlocked.Update(ref _listeners, (list, removed) => list.Remove(removed), listener);
 
     /// <summary>
     /// Gets <see cref="DXFeed"/> that is associated with this endpoint.
@@ -657,50 +647,6 @@ public sealed class DXEndpoint : IDisposable
     /// </summary>
     public void Dispose() =>
         Close();
-
-    /// <summary>
-    /// Callback function.
-    /// It is called from the native code when the state of the endpoint changes.
-    /// </summary>
-    /// <param name="thread">The current isolate thread. <b>Ignored</b>.</param>
-    /// <param name="oldState">The old state of endpoint.</param>
-    /// <param name="newState">The new state of endpoint.</param>
-    /// <param name="self">The endpoint handle.</param>
-    [UnmanagedCallersOnly(CallConvs = new[] { typeof(CallConvCdecl) })]
-    private static void OnStateChanges(nint thread, int oldState, int newState, nint self)
-    {
-        var handle = GCHandle.FromIntPtr(self);
-        var endpoint = handle.Target as DXEndpoint;
-        endpoint?.FireStateChanges((State)oldState, (State)newState);
-
-        // If a closed state occurs, we can free self handle.
-        if ((State)newState == State.Closed)
-        {
-            handle.Free();
-        }
-    }
-
-    /// <summary>
-    /// Notifies all listeners of a change of state.
-    /// </summary>
-    /// <param name="oldState">The old state of endpoint.</param>
-    /// <param name="newState">The new state of endpoint.</param>
-    private void FireStateChanges(State oldState, State newState)
-    {
-        var listeners = Volatile.Read(ref _listeners);
-        foreach (var listener in listeners)
-        {
-            try
-            {
-                listener(oldState, newState);
-            }
-            catch (Exception e)
-            {
-                // ToDo Add log entry.
-                Console.Error.WriteLine($"Exception in {_name} endpoint state change listener({listener.Method}): {e}");
-            }
-        }
-    }
 
     /// <summary>
     /// Closes all associated resources with this <see cref="DXEndpoint"/>.
@@ -870,7 +816,7 @@ public sealed class DXEndpoint : IDisposable
         {
             using var builder = BuilderNative.Create();
             var role = _role;
-            builder.WithRole((int)role);
+            builder.WithRole(role);
 
             // Create properties snapshot.
             // This ensures that the properties will not be changed from another thread.

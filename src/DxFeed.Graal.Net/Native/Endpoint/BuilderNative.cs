@@ -5,6 +5,7 @@
 // </copyright>
 
 using System;
+using DxFeed.Graal.Net.Api;
 using DxFeed.Graal.Net.Native.Endpoint.Handles;
 
 namespace DxFeed.Graal.Net.Native.Endpoint;
@@ -22,7 +23,7 @@ internal sealed class BuilderNative : IDisposable
     public static BuilderNative Create() =>
         new(BuilderHandle.Create());
 
-    public void WithRole(int role) =>
+    public void WithRole(DXEndpoint.Role role) =>
         _builderHandle.WithRole(role);
 
     public void WithProperty(string key, string value) =>
