@@ -87,7 +87,7 @@ internal class IsolateThread
         if (threadHandle == 0)
         {
             // Attach a thread only when the thread has not yet been attached.
-            ErrorCheck.GraalCall(GraalAttachThread(isolate, out threadHandle));
+            ErrorCheck.SafeCall(GraalAttachThread(isolate, out threadHandle));
 
             // Enable thread exit callback with current handle.
             ThreadExitManager.EnableCallbackForCurrentThread(ThreadExitCallbackId, threadHandle);
@@ -111,7 +111,7 @@ internal class IsolateThread
                 return;
             }
 
-            ErrorCheck.GraalCall(GraalDetachThread(isolateThreadHandle));
+            ErrorCheck.SafeCall(GraalDetachThread(isolateThreadHandle));
         }
         catch (Exception e)
         {

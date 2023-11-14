@@ -160,14 +160,14 @@ internal sealed unsafe class SubscriptionNative : IDisposable
     private static class SubscriptionImport
     {
         public static SubscriptionHandle* New(nint thread, EventCodeNative eventCode) =>
-            ErrorCheck.NativeCall(thread, NativeSubscriptionNew(thread, eventCode));
+            ErrorCheck.SafeCall(thread, NativeSubscriptionNew(thread, eventCode));
 
         public static SubscriptionHandle* New(nint thread, IEnumerable<EventCodeNative> eventCodes)
         {
             var codes = ListNative<EventCodeNative>.Create(eventCodes);
             try
             {
-                return ErrorCheck.NativeCall(thread, NativeSubscriptionNew(thread, codes));
+                return ErrorCheck.SafeCall(thread, NativeSubscriptionNew(thread, codes));
             }
             finally
             {
@@ -176,28 +176,28 @@ internal sealed unsafe class SubscriptionNative : IDisposable
         }
 
         public static void Release(nint thread, SubscriptionHandle* subHandle) =>
-            ErrorCheck.NativeCall(thread, NativeSubscriptionRelease(thread, subHandle));
+            ErrorCheck.SafeCall(thread, NativeSubscriptionRelease(thread, subHandle));
 
         public static void Close(nint thread, SubscriptionHandle* subHandle) =>
-            ErrorCheck.NativeCall(thread, NativeClose(thread, subHandle));
+            ErrorCheck.SafeCall(thread, NativeClose(thread, subHandle));
 
         public static EventListenerHandle* CreateEventListener(nint thread, EventListenerFunc listenerFunc) =>
-            ErrorCheck.NativeCall(thread, NativeCreateEventListener(thread, listenerFunc, IntPtr.Zero));
+            ErrorCheck.SafeCall(thread, NativeCreateEventListener(thread, listenerFunc, IntPtr.Zero));
 
         public static void ReleaseEventListener(nint thread, EventListenerHandle* eventListenerHandle) =>
-            ErrorCheck.NativeCall(thread, NativeReleaseEventListener(thread, eventListenerHandle));
+            ErrorCheck.SafeCall(thread, NativeReleaseEventListener(thread, eventListenerHandle));
 
         public static void AddEventListener(
             nint thread,
             SubscriptionHandle* subHandle,
             EventListenerHandle* eventListenerHandle) =>
-            ErrorCheck.NativeCall(thread, NativeAddEventListener(thread, subHandle, eventListenerHandle));
+            ErrorCheck.SafeCall(thread, NativeAddEventListener(thread, subHandle, eventListenerHandle));
 
         public static void RemoveEventListener(
             nint thread,
             SubscriptionHandle* subHandle,
             EventListenerHandle* eventListenerHandle) =>
-            ErrorCheck.NativeCall(thread, NativeRemoveEventListener(thread, subHandle, eventListenerHandle));
+            ErrorCheck.SafeCall(thread, NativeRemoveEventListener(thread, subHandle, eventListenerHandle));
 
         public static void AddSymbol(nint thread, SubscriptionHandle* subHandle, object symbol)
         {
@@ -205,7 +205,7 @@ internal sealed unsafe class SubscriptionNative : IDisposable
             try
             {
                 symbolNative = SymbolMapper.CreateNative(symbol);
-                ErrorCheck.NativeCall(thread, NativeAddSymbol(thread, subHandle, symbolNative));
+                ErrorCheck.SafeCall(thread, NativeAddSymbol(thread, subHandle, symbolNative));
             }
             finally
             {
@@ -218,7 +218,7 @@ internal sealed unsafe class SubscriptionNative : IDisposable
             try
             {
                 var symbolNative = SymbolMapper.CreateNative<SymbolNative>(symbol);
-                ErrorCheck.NativeCall(thread, NativeAddSymbols(thread, subHandle, symbolNative));
+                ErrorCheck.SafeCall(thread, NativeAddSymbols(thread, subHandle, symbolNative));
             }
             finally
             {
@@ -233,7 +233,7 @@ internal sealed unsafe class SubscriptionNative : IDisposable
             try
             {
                 symbolNative = SymbolMapper.CreateNative(symbol);
-                ErrorCheck.NativeCall(thread, NativeRemoveSymbol(thread, subHandle, symbolNative));
+                ErrorCheck.SafeCall(thread, NativeRemoveSymbol(thread, subHandle, symbolNative));
             }
             finally
             {
@@ -246,7 +246,7 @@ internal sealed unsafe class SubscriptionNative : IDisposable
             try
             {
                 var symbolNative = SymbolMapper.CreateNative<SymbolNative>(symbol);
-                ErrorCheck.NativeCall(thread, NativeRemoveSymbols(thread, subHandle, symbolNative));
+                ErrorCheck.SafeCall(thread, NativeRemoveSymbols(thread, subHandle, symbolNative));
             }
             finally
             {
@@ -256,16 +256,16 @@ internal sealed unsafe class SubscriptionNative : IDisposable
         }
 
         public static void Clear(nint thread, SubscriptionHandle* subHandle) =>
-            ErrorCheck.NativeCall(thread, NativeClear(thread, subHandle));
+            ErrorCheck.SafeCall(thread, NativeClear(thread, subHandle));
 
         public static void Attach(nint thread, SubscriptionHandle* subHandle, FeedHandle* feedHandle) =>
-            ErrorCheck.NativeCall(thread, NativeAttach(thread, subHandle, feedHandle));
+            ErrorCheck.SafeCall(thread, NativeAttach(thread, subHandle, feedHandle));
 
         public static void Detach(nint thread, SubscriptionHandle* subHandle, FeedHandle* feedHandle) =>
-            ErrorCheck.NativeCall(thread, NativeDetach(thread, subHandle, feedHandle));
+            ErrorCheck.SafeCall(thread, NativeDetach(thread, subHandle, feedHandle));
 
         public static bool IsClosed(nint thread, SubscriptionHandle* subHandle) =>
-            ErrorCheck.NativeCall(thread, NativeIsClosed(thread, subHandle)) != 0;
+            ErrorCheck.SafeCall(thread, NativeIsClosed(thread, subHandle)) != 0;
 
         [DllImport(
             ImportInfo.DllName,

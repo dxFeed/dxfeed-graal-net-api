@@ -21,49 +21,49 @@ namespace DxFeed.Graal.Net.Native.Endpoint;
 internal sealed unsafe class DXEndpointHandle : JavaHandle
 {
     public new void Close() =>
-        NativeCall(CurrentThread, Import.Close(CurrentThread, this));
+        SafeCall(CurrentThread, Import.Close(CurrentThread, this));
 
     public void CloseAndAwaitTermination() =>
-        NativeCall(CurrentThread, Import.CloseAndAwaitTermination(CurrentThread, this));
+        SafeCall(CurrentThread, Import.CloseAndAwaitTermination(CurrentThread, this));
 
     public void SetUser(string user) =>
-        NativeCall(CurrentThread, Import.SetUser(CurrentThread, this, user));
+        SafeCall(CurrentThread, Import.SetUser(CurrentThread, this, user));
 
     public void SetPassword(string password) =>
-        NativeCall(CurrentThread, Import.SetPassword(CurrentThread, this, password));
+        SafeCall(CurrentThread, Import.SetPassword(CurrentThread, this, password));
 
     public void Connect(string address) =>
-        NativeCall(CurrentThread, Import.Connect(CurrentThread, this, address));
+        SafeCall(CurrentThread, Import.Connect(CurrentThread, this, address));
 
     public void Reconnect() =>
-        NativeCall(CurrentThread, Import.Reconnect(CurrentThread, this));
+        SafeCall(CurrentThread, Import.Reconnect(CurrentThread, this));
 
     public void Disconnect() =>
-        NativeCall(CurrentThread, Import.Disconnect(CurrentThread, this));
+        SafeCall(CurrentThread, Import.Disconnect(CurrentThread, this));
 
     public void DisconnectAndClear() =>
-        NativeCall(CurrentThread, Import.DisconnectAndClear(CurrentThread, this));
+        SafeCall(CurrentThread, Import.DisconnectAndClear(CurrentThread, this));
 
     public void AwaitProcessed() =>
-        NativeCall(CurrentThread, Import.AwaitProcessed(CurrentThread, this));
+        SafeCall(CurrentThread, Import.AwaitProcessed(CurrentThread, this));
 
     public void AwaitNotConnected() =>
-        NativeCall(CurrentThread, Import.AwaitNotConnected(CurrentThread, this));
+        SafeCall(CurrentThread, Import.AwaitNotConnected(CurrentThread, this));
 
     public int GetState() =>
-        NativeCall(CurrentThread, Import.GetState(CurrentThread, this));
+        SafeCall(CurrentThread, Import.GetState(CurrentThread, this));
 
     public void AddStateChangeListener(StateChangeListenerHandle listener) =>
-        NativeCall(CurrentThread, Import.AddStateChangeListener(CurrentThread, this, listener));
+        SafeCall(CurrentThread, Import.AddStateChangeListener(CurrentThread, this, listener));
 
     public void RemoveStateChangeListener(StateChangeListenerHandle listener) =>
-        NativeCall(CurrentThread, Import.RemoveStateChangeListener(CurrentThread, this, listener));
+        SafeCall(CurrentThread, Import.RemoveStateChangeListener(CurrentThread, this, listener));
 
     public FeedHandle* GetFeed() =>
-        NativeCall(CurrentThread, Import.GetFeed(CurrentThread, this));
+        SafeCall(CurrentThread, Import.GetFeed(CurrentThread, this));
 
     public PublisherHandle* GetPublisher() =>
-        NativeCall(CurrentThread, Import.GetPublisher(CurrentThread, this));
+        SafeCall(CurrentThread, Import.GetPublisher(CurrentThread, this));
 
     private static class Import
     {

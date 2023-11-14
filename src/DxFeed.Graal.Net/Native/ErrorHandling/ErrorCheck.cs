@@ -23,7 +23,7 @@ internal static class ErrorCheck
     /// <param name="result">The resul of native call.</param>
     /// <returns>The passed <see cref="int"/> result of the native call.</returns>
     /// <exception cref="JavaException">If error occured.</exception>
-    public static int NativeCall(nint thread, int result)
+    public static int SafeCall(nint thread, int result)
     {
         if (result < 0)
         {
@@ -42,7 +42,7 @@ internal static class ErrorCheck
     /// <param name="result">The resul of native call.</param>
     /// <returns>The passed <see cref="long"/> result of the native call.</returns>
     /// <exception cref="JavaException">If error occured.</exception>
-    public static long NativeCall(nint thread, long result)
+    public static long SafeCall(nint thread, long result)
     {
         if (result < 0)
         {
@@ -52,7 +52,7 @@ internal static class ErrorCheck
         return result;
     }
 
-    public static T NativeCall<T>(nint thread, T result)
+    public static T SafeCall<T>(nint thread, T result)
     where T : SafeHandle
     {
         if (result.IsInvalid)
@@ -73,7 +73,7 @@ internal static class ErrorCheck
     /// <typeparam name="T">The unmanaged pointer type.</typeparam>
     /// <returns>The passed T* result of the native call.</returns>
     /// <exception cref="JavaException">If error occured.</exception>
-    public static unsafe T* NativeCall<T>(nint thread, T* result)
+    public static unsafe T* SafeCall<T>(nint thread, T* result)
         where T : unmanaged
     {
         if ((nint)result == 0)
@@ -90,7 +90,7 @@ internal static class ErrorCheck
     /// </summary>
     /// <param name="result">The result of graal call.</param>
     /// <exception cref="GraalException">If error occured.</exception>
-    public static void GraalCall(GraalErrorCode result)
+    public static void SafeCall(GraalErrorCode result)
     {
         if (result != GraalErrorCode.NoError)
         {

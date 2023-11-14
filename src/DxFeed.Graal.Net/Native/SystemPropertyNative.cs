@@ -46,7 +46,7 @@ internal static class SystemPropertyNative
     private static class Import
     {
         public static void SystemSetProperty(nint thread, string key, string value) =>
-            ErrorCheck.NativeCall(thread, NativeSystemSetProperty(thread, key, value));
+            ErrorCheck.SafeCall(thread, NativeSystemSetProperty(thread, key, value));
 
         public static string? SystemGetProperty(nint thread, string key)
         {

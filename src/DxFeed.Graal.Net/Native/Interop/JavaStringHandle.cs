@@ -31,7 +31,7 @@ internal sealed class JavaStringHandle : JavaHandle
 
     /// <inheritdoc/>
     protected override void Release() =>
-        ErrorCheck.NativeCall(CurrentThread, Import.Release(CurrentThread, handle));
+        ErrorCheck.SafeCall(CurrentThread, Import.Release(CurrentThread, handle));
 
     private static class Import
     {
