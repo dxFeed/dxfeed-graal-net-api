@@ -7,15 +7,14 @@
 using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
-using System.Collections.Immutable;
 using System.IO;
-using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Threading;
 using DxFeed.Graal.Net.Api.Osub;
 using DxFeed.Graal.Net.Native.Endpoint;
 using DxFeed.Graal.Net.Native.ErrorHandling;
 using DxFeed.Graal.Net.Utils;
+using static DxFeed.Graal.Net.Native.Endpoint.DXEndpointWrapper;
 
 namespace DxFeed.Graal.Net.Api;
 
@@ -232,7 +231,7 @@ public sealed class DXEndpoint : IDisposable
     /// <summary>
     /// Endpoint native wrapper.
     /// </summary>
-    private readonly EndpointNative _endpointNative;
+    private readonly DXEndpointWrapper _endpointNative;
 
     /// <summary>
     /// The endpoint role.
@@ -256,12 +255,12 @@ public sealed class DXEndpoint : IDisposable
 
     /// <summary>
     /// Initializes a new instance of the <see cref="DXEndpoint"/>
-    /// class with specified <see cref="EndpointNative"/>, <see cref="Role"/> and properties.
+    /// class with specified <see cref="DXEndpointWrapper"/>, <see cref="Role"/> and properties.
     /// </summary>
-    /// <param name="endpointNative">The specified <see cref="EndpointNative"/>.</param>
+    /// <param name="endpointNative">The specified <see cref="DXEndpointWrapper"/>.</param>
     /// <param name="role">The endpoint role.</param>
     /// <param name="name">The endpoint name.</param>
-    private DXEndpoint(EndpointNative endpointNative, Role role, string name)
+    private DXEndpoint(DXEndpointWrapper endpointNative, Role role, string name)
     {
         _endpointNative = endpointNative;
         _role = role;
@@ -701,7 +700,7 @@ public sealed class DXEndpoint : IDisposable
         /// using the finalizer (<see cref="SafeHandle"/>).
         /// The implementation of the definition of supported properties may change in the future.
         /// </summary>
-        private readonly Lazy<BuilderNative> _builderForDefineSupportProperties = new(BuilderNative.Create);
+        private readonly Lazy<BuilderWrapper> _builderForDefineSupportProperties = new();
 
         /// <summary>
         /// List of user-defined properties.
@@ -814,7 +813,7 @@ public sealed class DXEndpoint : IDisposable
         /// <exception cref="JavaException">If the error occurred on the java side.</exception>
         public DXEndpoint Build()
         {
-            using var builder = BuilderNative.Create();
+            using var builder = new BuilderWrapper();
             var role = _role;
             builder.WithRole(role);
 
@@ -862,7 +861,7 @@ public sealed class DXEndpoint : IDisposable
         /// <param name="props">The user-defined properties for this builder.</param>
         /// </summary>
         private static void LoadDefaultPropertiesFileIfNeeded(
-            BuilderNative builder,
+            BuilderWrapper builder,
             Role role,
             IReadOnlyDictionary<string, string> props)
         {

@@ -1,4 +1,4 @@
-// <copyright file="ListenerContainer.cs" company="Devexperts LLC">
+// <copyright file="HandleMap.cs" company="Devexperts LLC">
 // Copyright © 2022 Devexperts LLC. All rights reserved.
 // This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 // If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
@@ -10,7 +10,7 @@ using System.Diagnostics.CodeAnalysis;
 
 namespace DxFeed.Graal.Net.Native.Interop;
 
-internal class ListenerContainer<TListener, THandle>
+internal class HandleMap<TListener, THandle>
     where TListener : notnull
     where THandle : JavaHandle
 {
@@ -18,7 +18,7 @@ internal class ListenerContainer<TListener, THandle>
     private readonly Func<TListener, THandle> createHandle;
     private readonly object syncRoot = new();
 
-    public ListenerContainer(Func<TListener, THandle> createHandle) =>
+    public HandleMap(Func<TListener, THandle> createHandle) =>
         this.createHandle = createHandle;
 
     public THandle Add(TListener listener)

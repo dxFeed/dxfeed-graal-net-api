@@ -12,7 +12,7 @@ using DxFeed.Graal.Net.Native.Interop;
 using static DxFeed.Graal.Net.Api.DXEndpoint;
 using static DxFeed.Graal.Net.Native.ErrorHandling.ErrorCheck;
 
-namespace DxFeed.Graal.Net.Native.Endpoint.Handles;
+namespace DxFeed.Graal.Net.Native.Endpoint;
 
 /// <summary>
 /// Represents a handle for a state change listener in a Java environment.

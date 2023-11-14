@@ -1,11 +1,10 @@
-// <copyright file="EndpointNative.cs" company="Devexperts LLC">
+// <copyright file="DXEndpointWrapper.cs" company="Devexperts LLC">
 // Copyright © 2022 Devexperts LLC. All rights reserved.
 // This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 // If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
 // </copyright>
 
 using System;
-using DxFeed.Graal.Net.Native.Endpoint.Handles;
 using DxFeed.Graal.Net.Native.Feed;
 using DxFeed.Graal.Net.Native.Interop;
 using DxFeed.Graal.Net.Native.Publisher;
@@ -14,16 +13,17 @@ using static DxFeed.Graal.Net.Api.DXEndpoint;
 namespace DxFeed.Graal.Net.Native.Endpoint;
 
 /// <summary>
-/// Native wrapper over the Java <c>com.dxfeed.api.DXEndpoint</c> class.
+/// A native wrapper for the Java class <c>com.dxfeed.api.DXEndpoint</c>.
+/// This class exclusively owns managed resources.
 /// </summary>
-internal sealed unsafe class EndpointNative : IDisposable
+internal sealed unsafe class DXEndpointWrapper : IDisposable
 {
-    private readonly EndpointHandle endpoint;
+    private readonly DXEndpointHandle endpoint;
     private readonly Lazy<FeedNative> feed;
     private readonly Lazy<PublisherNative> publisher;
-    private readonly ListenerContainer<StateChangeListener, StateChangeListenerHandle> listeners;
+    private readonly HandleMap<StateChangeListener, StateChangeListenerHandle> listeners;
 
-    internal EndpointNative(EndpointHandle endpoint)
+    private DXEndpointWrapper(DXEndpointHandle endpoint)
     {
         this.endpoint = endpoint;
         feed = new(() => new FeedNative(endpoint.GetFeed()));
@@ -84,9 +84,30 @@ internal sealed unsafe class EndpointNative : IDisposable
     public PublisherNative GetPublisher() =>
         publisher.Value;
 
-    public void Dispose()
-    {
+    public void Dispose() =>
         endpoint.Dispose();
-        listeners.Clear();
+
+    /// <summary>
+    /// A native wrapper for the Java class <c>com.dxfeed.api.DXEndpoint.Builder</c>.
+    /// This class exclusively owns managed resources.
+    /// </summary>
+    public sealed class BuilderWrapper : IDisposable
+    {
+        private readonly BuilderHandle builder = BuilderHandle.Create();
+
+        public void WithRole(Role role) =>
+            builder.WithRole(role);
+
+        public void WithProperty(string key, string value) =>
+            builder.WithProperty(key, value);
+
+        public bool SupportsProperty(string key) =>
+            builder.SupportsProperty(key);
+
+        public DXEndpointWrapper Build() =>
+            new(builder.Build());
+
+        public void Dispose() =>
+            builder.Dispose();
     }
 }
