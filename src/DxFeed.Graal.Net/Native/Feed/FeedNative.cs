@@ -56,7 +56,7 @@ internal sealed unsafe class FeedNative
             nint thread,
             FeedHandle* feedHandle,
             EventCodeNative eventCode) =>
-            ErrorCheck.SafeCall(thread, NativeCreateSubscription(thread, feedHandle, eventCode));
+            ErrorCheck.SafeCall(NativeCreateSubscription(thread, feedHandle, eventCode));
 
         public static SubscriptionHandle* CreateSubscription(
             nint thread,
@@ -66,7 +66,7 @@ internal sealed unsafe class FeedNative
             var codes = ListNative<EventCodeNative>.Create(eventCodes);
             try
             {
-                return ErrorCheck.SafeCall(thread, NativeCreateSubscription(thread, feedHandle, codes));
+                return ErrorCheck.SafeCall(NativeCreateSubscription(thread, feedHandle, codes));
             }
             finally
             {
@@ -78,19 +78,19 @@ internal sealed unsafe class FeedNative
             nint thread,
             FeedHandle* feedHandle,
             SubscriptionHandle* subHandle) =>
-            ErrorCheck.SafeCall(thread, NativeAttachSubscription(thread, feedHandle, subHandle));
+            ErrorCheck.SafeCall(NativeAttachSubscription(thread, feedHandle, subHandle));
 
         public static void DetachSubscription(
             nint thread,
             FeedHandle* feedHandle,
             SubscriptionHandle* subHandle) =>
-            ErrorCheck.SafeCall(thread, NativeDetachSubscription(thread, feedHandle, subHandle));
+            ErrorCheck.SafeCall(NativeDetachSubscription(thread, feedHandle, subHandle));
 
         public static void DetachSubscriptionAndClear(
             nint thread,
             FeedHandle* feedHandle,
             SubscriptionHandle* subHandle) =>
-            ErrorCheck.SafeCall(thread, NativeDetachSubscriptionAndClear(thread, feedHandle, subHandle));
+            ErrorCheck.SafeCall(NativeDetachSubscriptionAndClear(thread, feedHandle, subHandle));
 
         [DllImport(
             ImportInfo.DllName,

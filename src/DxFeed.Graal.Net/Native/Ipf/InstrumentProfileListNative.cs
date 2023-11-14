@@ -32,7 +32,7 @@ internal class InstrumentProfileListNative : JavaHandle
     {
         try
         {
-            ErrorCheck.SafeCall(CurrentThread, NativeRelease(CurrentThread, handle));
+            ErrorCheck.SafeCall(NativeRelease(CurrentThread, handle));
             handle = (IntPtr)0;
             return true;
         }

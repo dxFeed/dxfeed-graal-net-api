@@ -36,7 +36,7 @@ internal sealed unsafe class IterableInstrumentProfileHandle : JavaHandle
     }
 
     public bool HasNext() =>
-        ErrorCheck.SafeCall(CurrentThread, NativeHasNext(CurrentThread, this)) != 0;
+        ErrorCheck.SafeCall(NativeHasNext(CurrentThread, this)) != 0;
 
     public InstrumentProfile? Next()
     {

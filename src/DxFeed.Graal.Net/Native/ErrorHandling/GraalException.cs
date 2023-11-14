@@ -11,8 +11,12 @@ using System.Runtime.Serialization;
 namespace DxFeed.Graal.Net.Native.ErrorHandling;
 
 /// <summary>
-/// Represents errors that occur when calling graal function.
+/// Exception class representing errors that occur during calls to GraalVM functions in interop scenarios.
 /// </summary>
+/// <remarks>
+/// This class encapsulates the detailed information about errors that arise from GraalVM operations,
+/// including the specific error code and a descriptive message.
+/// </remarks>
 [Serializable]
 public sealed class GraalException : Exception
 {
@@ -34,7 +38,7 @@ public sealed class GraalException : Exception
     }
 
     /// <summary>
-    /// Gets graal error code.
+    /// Gets the error code associated with the GraalVM error.
     /// </summary>
     public GraalErrorCode ErrorCode { get; }
 
@@ -44,9 +48,8 @@ public sealed class GraalException : Exception
     public string GraalMessage { get; }
 
     /// <summary>
-    /// Gets a message that describes the current exception.
+    /// Gets the descriptive message associated with the GraalVM error.
     /// </summary>
-    /// <returns>The error message that explains the reason for the exception.</returns>
     public override string Message =>
         GraalMessage;
 
@@ -59,10 +62,10 @@ public sealed class GraalException : Exception
     }
 
     /// <summary>
-    /// Gets the error description associated with the specified error code.
+    /// Retrieves the descriptive error message corresponding to a specified GraalVM error code.
     /// </summary>
-    /// <param name="value">The specified error code.</param>
-    /// <returns>Returns error description.</returns>
+    /// <param name="value">The error code for which to retrieve the description.</param>
+    /// <returns>The descriptive error message.</returns>
     private static string GetGraalErrorDescription(GraalErrorCode value)
     {
         var name = value.ToString();

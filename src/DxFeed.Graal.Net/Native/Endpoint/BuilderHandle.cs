@@ -20,19 +20,19 @@ namespace DxFeed.Graal.Net.Native.Endpoint;
 internal sealed class BuilderHandle : JavaHandle
 {
     public static BuilderHandle Create() =>
-        SafeCall(CurrentThread, Import.New(CurrentThread));
+        SafeCall(Import.New(CurrentThread));
 
     public void WithRole(Role role) =>
-        SafeCall(CurrentThread, Import.WithRole(CurrentThread, this, role));
+        SafeCall(Import.WithRole(CurrentThread, this, role));
 
     public void WithProperty(string key, string value) =>
-        SafeCall(CurrentThread, Import.WithProperty(CurrentThread, this, key, value));
+        SafeCall(Import.WithProperty(CurrentThread, this, key, value));
 
     public bool SupportsProperty(string key) =>
-        SafeCall(CurrentThread, Import.SupportsProperty(CurrentThread, this, key)) != 0;
+        SafeCall(Import.SupportsProperty(CurrentThread, this, key)) != 0;
 
     public DXEndpointHandle Build() =>
-        SafeCall(CurrentThread, Import.Build(CurrentThread, this));
+        SafeCall(Import.Build(CurrentThread, this));
 
     /// <summary>
     /// Internal class containing the import definitions for native methods.

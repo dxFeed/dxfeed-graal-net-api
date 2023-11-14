@@ -19,22 +19,22 @@ internal class InstrumentProfileReaderNative : JavaHandle
 {
     public static string? ResolveSourceUrl(string address)
     {
-        using var str = SafeCall(CurrentThread, NativeResolveSourceUrl(CurrentThread, address));
+        using var str = SafeCall(NativeResolveSourceUrl(CurrentThread, address));
         return str.ToString();
     }
 
     public static InstrumentProfileReaderNative Create() =>
-        SafeCall(CurrentThread, NativeCreate(CurrentThread));
+        SafeCall(NativeCreate(CurrentThread));
 
     public long GetLastModified() =>
-        SafeCall(CurrentThread, NativeGetLastModified(CurrentThread, this));
+        SafeCall(NativeGetLastModified(CurrentThread, this));
 
     public bool WasComplete() =>
-        SafeCall(CurrentThread, NativeWasComplete(CurrentThread, this)) != 0;
+        SafeCall(NativeWasComplete(CurrentThread, this)) != 0;
 
     public List<InstrumentProfile> ReadFromFile(string address, string? user, string? password)
     {
-        using var result = SafeCall(CurrentThread, NativeReadFromFile(CurrentThread, this, address, user, password));
+        using var result = SafeCall(NativeReadFromFile(CurrentThread, this, address, user, password));
         return result.ToList();
     }
 

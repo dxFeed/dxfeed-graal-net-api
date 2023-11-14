@@ -21,14 +21,14 @@ internal sealed class InstrumentProfileCollectorHandle : JavaHandle
         ConcurrentDictionary<InstrumentProfileUpdateListener, InstrumentProfileUpdateListenerHandle> Listeners = new();
 
     public static InstrumentProfileCollectorHandle Create() =>
-        ErrorCheck.SafeCall(CurrentThread, NativeCreate(CurrentThread));
+        ErrorCheck.SafeCall(NativeCreate(CurrentThread));
 
     public long GetLastUpdateTime() =>
-        ErrorCheck.SafeCall(CurrentThread, NativeGetLastUpdateTime(CurrentThread, this));
+        ErrorCheck.SafeCall(NativeGetLastUpdateTime(CurrentThread, this));
 
     public IEnumerable<InstrumentProfile> View()
     {
-        using var it = ErrorCheck.SafeCall(CurrentThread, NativeView(CurrentThread, this));
+        using var it = ErrorCheck.SafeCall(NativeView(CurrentThread, this));
         return it.ToList();
     }
 
@@ -41,14 +41,14 @@ internal sealed class InstrumentProfileCollectorHandle : JavaHandle
 
         var l = InstrumentProfileUpdateListenerHandle.Create(listener);
         Listeners.TryAdd(listener, l);
-        ErrorCheck.SafeCall(CurrentThread, NativeAddUpdateListener(CurrentThread, this, l));
+        ErrorCheck.SafeCall(NativeAddUpdateListener(CurrentThread, this, l));
     }
 
     public void RemoveUpdateListener(InstrumentProfileUpdateListener listener)
     {
         if (Listeners.TryRemove(listener, out var l))
         {
-            ErrorCheck.SafeCall(CurrentThread, NativeRemoveUpdateListener(CurrentThread, this, l));
+            ErrorCheck.SafeCall(NativeRemoveUpdateListener(CurrentThread, this, l));
         }
     }
 

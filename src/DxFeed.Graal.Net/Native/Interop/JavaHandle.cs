@@ -91,7 +91,7 @@ internal abstract class JavaHandle : SafeHandle
     /// </summary>
     /// <exception cref="JavaException"> If error occured.</exception>
     protected virtual void Release() =>
-        ErrorCheck.SafeCall(CurrentThread, Import.Release(CurrentThread, handle));
+        ErrorCheck.SafeCall(Import.Release(CurrentThread, handle));
 
     /// <summary>
     /// Registers the provided .NET <see cref="GCHandle"/> object for finalization
@@ -105,7 +105,7 @@ internal abstract class JavaHandle : SafeHandle
     /// </remarks>
     /// <seealso cref="OnFinalize"/>
     protected unsafe void RegisterFinalize(GCHandle netHandle) =>
-        ErrorCheck.SafeCall(CurrentThread, Import.RegisterFinalize(CurrentThread, this, &OnFinalize, netHandle));
+        ErrorCheck.SafeCall(Import.RegisterFinalize(CurrentThread, this, &OnFinalize, netHandle));
 
     /// <summary>
     /// Handles the finalization callback from the native side.

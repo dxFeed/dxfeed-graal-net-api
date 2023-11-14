@@ -50,7 +50,7 @@ internal sealed unsafe class PublisherNative
             nint thread,
             PublisherHandle* publisherHandle,
             ListNative<EventTypeNative>* events) =>
-            ErrorCheck.SafeCall(thread, NativePublishEvents(thread, publisherHandle, events));
+            ErrorCheck.SafeCall(NativePublishEvents(thread, publisherHandle, events));
 
         [DllImport(
             ImportInfo.DllName,

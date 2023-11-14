@@ -23,7 +23,7 @@ internal sealed unsafe class InstrumentProfileUpdateListenerHandle : JavaHandle
         InstrumentProfileUpdateListenerHandle? javaHandle = null;
         try
         {
-            javaHandle = ErrorCheck.SafeCall(CurrentThread, Import.New(CurrentThread, &OnUpdate, netHandle));
+            javaHandle = ErrorCheck.SafeCall(Import.New(CurrentThread, &OnUpdate, netHandle));
             javaHandle.RegisterFinalize(netHandle);
             return javaHandle;
         }

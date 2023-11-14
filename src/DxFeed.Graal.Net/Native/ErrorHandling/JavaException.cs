@@ -10,17 +10,22 @@ using System.Runtime.Serialization;
 namespace DxFeed.Graal.Net.Native.ErrorHandling;
 
 /// <summary>
-/// Represents errors that occur inside Java code.
+/// Exception class that represents errors occurring within Java code in interop scenarios.
 /// </summary>
+/// <remarks>
+/// This class encapsulates detailed information about Java exceptions,
+/// including the class name, message, and stack trace of the original Java exception.
+/// It is utilized in .NET environments to represent Java exceptions in a structured and informative manner.
+/// </remarks>
 [Serializable]
 public sealed class JavaException : Exception
 {
     /// <summary>
     /// Initializes a new instance of the <see cref="JavaException"/> class.
     /// </summary>
-    /// <param name="javaClassName">The Java exception class name.</param>
-    /// <param name="javaMessage">The Java exception message.</param>
-    /// <param name="javaStackTrace">The Java stack trace.</param>
+    /// <param name="javaClassName">The class name of the Java exception.</param>
+    /// <param name="javaMessage">The message of the Java exception.</param>
+    /// <param name="javaStackTrace">The stack trace of the Java exception.</param>
     public JavaException(string? javaClassName, string? javaMessage, string? javaStackTrace)
     {
         JavaClassName = javaClassName;
@@ -37,17 +42,17 @@ public sealed class JavaException : Exception
     }
 
     /// <summary>
-    /// Gets Java exception class name.
+    /// Gets the class name of the Java exception.
     /// </summary>
     public string? JavaClassName { get; }
 
     /// <summary>
-    /// Gets Java exception message.
+    /// Gets the message of the Java exception.
     /// </summary>
     public string? JavaMessage { get; }
 
     /// <summary>
-    /// Gets Java stack trace.
+    /// Gets the stack trace of the Java exception.
     /// </summary>
     public string? JavaStackTrace { get; }
 

@@ -34,7 +34,7 @@ internal sealed class StateChangeListenerHandle : JavaHandle
         StateChangeListenerHandle? javaHandle = null;
         try
         {
-            javaHandle = SafeCall(CurrentThread, Import.New(CurrentThread, &OnStateChanges, handle));
+            javaHandle = SafeCall(Import.New(CurrentThread, &OnStateChanges, handle));
             javaHandle.RegisterFinalize(handle);
             return javaHandle;
         }
