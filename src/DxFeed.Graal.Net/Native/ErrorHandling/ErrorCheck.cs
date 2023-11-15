@@ -9,16 +9,16 @@ using System.Runtime.InteropServices;
 namespace DxFeed.Graal.Net.Native.ErrorHandling;
 
 /// <summary>
-/// Provides utility methods for error checking and exception handling of native calls.
-/// This class ensures that any errors occurring in native code are properly propagated
-/// and handled in the .NET environment.
+/// Provides utility methods for error checking and exception handling in native function calls.
+/// This class contains methods that verify the results of native calls
+/// and throw appropriate exceptions if errors are detected.
 /// </summary>
 internal static class ErrorCheck
 {
     /// <summary>
     /// Verifies the result of a native function call that returns an <see cref="int"/>.
     /// Throws <see cref="JavaException"/> if error occured.
-    /// If there is no error, the result will be transmitted transparently.
+    /// If no error is detected, the original result is returned.
     /// </summary>
     /// <param name="result">The result of the native function call.</param>
     /// <returns>The original result if no error occurred.</returns>
@@ -27,7 +27,7 @@ internal static class ErrorCheck
     {
         if (result < 0)
         {
-            ThrowIfJavaExceptionExists();
+            ThrowIfJavaThreadExceptionExists();
         }
 
         return result;
@@ -36,7 +36,7 @@ internal static class ErrorCheck
     /// <summary>
     /// Verifies the result of a native function call that returns a <see cref="long"/>.
     /// Throws <see cref="JavaException"/> if error occured.
-    /// If there is no error, the result will be transmitted transparently.
+    /// If no error is detected, the original result is returned.
     /// </summary>
     /// <param name="result">The result of the native function call.</param>
     /// <returns>The original result if no error occurred.</returns>
@@ -45,7 +45,7 @@ internal static class ErrorCheck
     {
         if (result < 0)
         {
-            ThrowIfJavaExceptionExists();
+            ThrowIfJavaThreadExceptionExists();
         }
 
         return result;
@@ -54,7 +54,7 @@ internal static class ErrorCheck
     /// <summary>
     /// Verifies the result of a native function call that returns a <see cref="SafeHandle"/>.
     /// Throws <see cref="JavaException"/> if error occured.
-    /// If there is no error, the result will be transmitted transparently.
+    /// If no error is detected, the original result is returned.
     /// </summary>
     /// <param name="result">The result of the native function call.</param>
     /// <typeparam name="T">The type of <see cref="SafeHandle"/>.</typeparam>
@@ -65,16 +65,16 @@ internal static class ErrorCheck
     {
         if (result.IsInvalid)
         {
-            ThrowIfJavaExceptionExists();
+            ThrowIfJavaThreadExceptionExists();
         }
 
         return result;
     }
 
     /// <summary>
-    /// Verifies the result of a native function call that returns a <see cref="SafeHandle"/>.
+    /// Verifies the result of a native function call that returns a T* (unmanaged pointer type).
     /// Throws <see cref="JavaException"/> if error occured.
-    /// If there is no error, the result will be transmitted transparently.
+    /// If no error is detected, the original result is returned.
     /// </summary>
     /// <param name="result">The result of the native function call.</param>
     /// <typeparam name="T">The unmanaged pointer type.</typeparam>
@@ -85,7 +85,7 @@ internal static class ErrorCheck
     {
         if ((nint)result == 0)
         {
-            ThrowIfJavaExceptionExists();
+            ThrowIfJavaThreadExceptionExists();
         }
 
         return result;
@@ -95,7 +95,7 @@ internal static class ErrorCheck
     /// Verifies the result of a GraalVM functions call.
     /// If an error is detected (non-zero result), a <see cref="GraalException"/> is thrown.
     /// </summary>
-    /// <param name="result">The result code from the Graal function call.</param>
+    /// <param name="result">The result code from the GraalVM function call.</param>
     /// <exception cref="GraalException">If the GraalVM call resulted in an error.</exception>
     public static void SafeCall(GraalErrorCode result)
     {
@@ -105,8 +105,8 @@ internal static class ErrorCheck
         }
     }
 
-    private static void ThrowIfJavaExceptionExists() =>
-        JavaExceptionHandle.ThrowIfJavaExceptionExists();
+    private static void ThrowIfJavaThreadExceptionExists() =>
+        JavaExceptionHandle.ThrowIfJavaThreadExceptionExists();
 
     private static void ThrowGraalException(GraalErrorCode code) =>
         throw new GraalException(code);

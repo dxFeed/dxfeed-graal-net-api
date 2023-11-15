@@ -26,8 +26,8 @@ internal sealed class JavaExceptionHandle : JavaHandle
     /// Checks for the existence of a Java exception on the current thread
     /// and throws a corresponding .NET exception if one is found.
     /// </summary>
-    /// <exception cref="JavaException">Thrown when a Java exception is present on the current thread.</exception>
-    public static void ThrowIfJavaExceptionExists()
+    /// <exception cref="JavaException">If a Java exception is present on the current thread.</exception>
+    public static void ThrowIfJavaThreadExceptionExists()
     {
         using var exceptionHandle = Import.GetAndClearThreadException(CurrentThread);
         if (exceptionHandle.IsInvalid)
@@ -36,9 +36,10 @@ internal sealed class JavaExceptionHandle : JavaHandle
         }
 
         var exceptionInfo = Marshal.PtrToStructure<JavaExceptionInfo>(exceptionHandle.handle);
-        throw new JavaException(exceptionInfo.ClassName, exceptionInfo.Message, exceptionInfo.StackTrace);
+        throw new JavaException(exceptionInfo.Message, exceptionInfo.ClassName, exceptionInfo.StackTrace);
     }
 
+    /// <inheritdoc/>
     protected override void Release() =>
         Import.Release(CurrentThread, handle);
 
