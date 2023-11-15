@@ -12,10 +12,6 @@ using static DxFeed.Graal.Net.Native.ErrorHandling.ErrorCheck;
 
 namespace DxFeed.Graal.Net.Native.Endpoint;
 
-/// <summary>
-/// Represents a managed wrapper for the native builder handle used in the DXEndpoint API.
-/// This class facilitates the creation and manipulation of a native endpoint builder.
-/// </summary>
 [SuppressMessage("ReSharper", "ClassNeverInstantiated.Global", Justification = "Created by marshaller")]
 internal sealed class BuilderHandle : JavaHandle
 {
@@ -34,10 +30,6 @@ internal sealed class BuilderHandle : JavaHandle
     public DXEndpointHandle Build() =>
         SafeCall(Import.Build(CurrentThread, this));
 
-    /// <summary>
-    /// Internal class containing the import definitions for native methods.
-    /// The location of imported functions is in the header files <c>"dxfg_endpoint.h"</c>.
-    /// </summary>
     private static class Import
     {
         [DllImport(

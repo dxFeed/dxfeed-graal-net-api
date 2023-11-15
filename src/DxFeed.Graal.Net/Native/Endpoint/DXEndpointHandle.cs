@@ -13,10 +13,6 @@ using static DxFeed.Graal.Net.Native.ErrorHandling.ErrorCheck;
 
 namespace DxFeed.Graal.Net.Native.Endpoint;
 
-/// <summary>
-/// This class wraps an unsafe handler <see cref="BuilderHandle"/>.
-/// The location of the imported functions is in the header files <c>"dxfg_endpoint.h"</c>.
-/// </summary>
 [SuppressMessage("ReSharper", "ClassNeverInstantiated.Global", Justification = "Created by marshaller")]
 internal sealed unsafe class DXEndpointHandle : JavaHandle
 {

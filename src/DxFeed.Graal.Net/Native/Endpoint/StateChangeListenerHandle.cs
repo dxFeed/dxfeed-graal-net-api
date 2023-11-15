@@ -14,45 +14,12 @@ using static DxFeed.Graal.Net.Native.ErrorHandling.ErrorCheck;
 
 namespace DxFeed.Graal.Net.Native.Endpoint;
 
-/// <summary>
-/// Represents a handle for a state change listener in a Java environment.
-/// This class encapsulates the necessary logic to interact with native code for state change events.
-/// </summary>
 [SuppressMessage("ReSharper", "ClassNeverInstantiated.Global", Justification = "Created by marshaller")]
 internal sealed class StateChangeListenerHandle : JavaHandle
 {
-    /// <summary>
-    /// Creates a new <see cref="StateChangeListenerHandle"/> instance.
-    /// This method sets up a native callback for state change events.
-    /// </summary>
-    /// <param name="listener">The callback to be invoked on state changes.</param>
-    /// <returns>A handle to the created state change listener.</returns>
-    /// <exception cref="Exception">If an error occurs during the creation of the handle.</exception>
-    public static unsafe StateChangeListenerHandle Create(StateChangeListener listener)
-    {
-        var handle = GCHandle.Alloc(listener, GCHandleType.Normal);
-        StateChangeListenerHandle? javaHandle = null;
-        try
-        {
-            javaHandle = SafeCall(Import.New(CurrentThread, &OnStateChanges, handle));
-            javaHandle.RegisterFinalize(handle);
-            return javaHandle;
-        }
-        catch (Exception)
-        {
-            javaHandle?.Dispose();
-            handle.Free();
-            throw;
-        }
-    }
+    public static unsafe StateChangeListenerHandle Create(StateChangeListener listener) =>
+        CreateAndRegisterFinalize(listener, handle => SafeCall(Import.New(CurrentThread, &OnStateChanges, handle)));
 
-    /// <summary>
-    /// Native callback method for handling state changes. This method is invoked by native code.
-    /// </summary>
-    /// <param name="thread">Identifier of the native thread.</param>
-    /// <param name="oldState">The state prior to the change.</param>
-    /// <param name="newState">The current state after the change.</param>
-    /// <param name="handle">Handle to the managed callback delegate.</param>
     [UnmanagedCallersOnly(CallConvs = new[] { typeof(CallConvCdecl) })]
     private static void OnStateChanges(nint thread, State oldState, State newState, GCHandle handle)
     {
@@ -69,14 +36,10 @@ internal sealed class StateChangeListenerHandle : JavaHandle
         catch (Exception e)
         {
             // ToDo Add log entry.
-            Console.Error.WriteLine($"Exception in endpoint state change listener({listener?.Method}): {e}");
+            Console.Error.WriteLine($"Exception in user {nameof(StateChangeListener)}. {e}");
         }
     }
 
-    /// <summary>
-    /// Internal class containing the import definitions for native methods.
-    /// The location of imported functions is in the header files <c>"dxfg_endpoint.h"</c>.
-    /// </summary>
     private static class Import
     {
         [DllImport(

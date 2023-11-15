@@ -12,10 +12,6 @@ using static DxFeed.Graal.Net.Api.DXEndpoint;
 
 namespace DxFeed.Graal.Net.Native.Endpoint;
 
-/// <summary>
-/// A native wrapper for the Java class <c>com.dxfeed.api.DXEndpoint</c>.
-/// This class exclusively owns managed resources.
-/// </summary>
 internal sealed unsafe class DXEndpointWrapper : IDisposable
 {
     private readonly DXEndpointHandle endpoint;
@@ -85,12 +81,8 @@ internal sealed unsafe class DXEndpointWrapper : IDisposable
         publisher.Value;
 
     public void Dispose() =>
-        endpoint.Dispose();
+        Close();
 
-    /// <summary>
-    /// A native wrapper for the Java class <c>com.dxfeed.api.DXEndpoint.Builder</c>.
-    /// This class exclusively owns managed resources.
-    /// </summary>
     public sealed class BuilderWrapper : IDisposable
     {
         private readonly BuilderHandle builder = BuilderHandle.Create();
