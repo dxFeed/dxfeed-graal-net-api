@@ -50,21 +50,4 @@ internal class HandleMap<TListener, THandle>
 
         return false;
     }
-
-    public void Clear()
-    {
-        lock (syncRoot)
-        {
-            foreach (var handles in listeners.Values)
-            {
-                while (!handles.IsEmpty)
-                {
-                    if (handles.TryTake(out var handle))
-                    {
-                        handle.Dispose();
-                    }
-                }
-            }
-        }
-    }
 }

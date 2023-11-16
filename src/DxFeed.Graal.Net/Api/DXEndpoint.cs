@@ -224,6 +224,11 @@ public sealed class DXEndpoint : IDisposable
     public const string DXSchemeEnabledPropertyPrefix = "dxscheme.enabled.";
 
     /// <summary>
+    /// List of <see cref="DXEndpoint"/> roots links for avoid GC, as long as the object cannot be safely collected.
+    /// </summary>
+    private static readonly ConcurrentSet<DXEndpoint> RootRefs = new();
+
+    /// <summary>
     /// A list of singleton <see cref="DXEndpoint"/> instances with different roles.
     /// </summary>
     private static readonly ConcurrentDictionary<Role, Lazy<DXEndpoint>> Instances = new();
@@ -268,6 +273,7 @@ public sealed class DXEndpoint : IDisposable
 
         _feed = new Lazy<DXFeed>(() => new DXFeed(_endpointNative.GetFeed()));
         _publisher = new Lazy<DXPublisher>(() => new DXPublisher(_endpointNative.GetPublisher()));
+        RootRefs.Add(this);
     }
 
     /// <summary>
@@ -610,7 +616,6 @@ public sealed class DXEndpoint : IDisposable
     /// <param name="listener">The listener to add.</param>
     public void AddStateChangeListener(StateChangeListener listener) =>
         _endpointNative.AddStateChangeListener(listener);
-    //ImmutableInterlocked.Update(ref _listeners, (list, added) => list.Add(added), listener);
 
     /// <summary>
     /// Removes listener that is notified about changes in <see cref="GetState"/> property.
@@ -620,7 +625,6 @@ public sealed class DXEndpoint : IDisposable
     /// <param name="listener">The listener to remove.</param>
     public void RemoveStateChangeListener(StateChangeListener listener) =>
         _endpointNative.RemoveStateChangeListener(listener);
-    //ImmutableInterlocked.Update(ref _listeners, (list, removed) => list.Remove(removed), listener);
 
     /// <summary>
     /// Gets <see cref="DXFeed"/> that is associated with this endpoint.
@@ -656,6 +660,8 @@ public sealed class DXEndpoint : IDisposable
         {
             _feed.Value.Close();
         }
+
+        RootRefs.Remove(this);
     }
 
     /// <summary>
