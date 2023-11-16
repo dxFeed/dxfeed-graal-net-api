@@ -11,20 +11,22 @@ using DxFeed.Graal.Net.Native.Interop;
 namespace DxFeed.Graal.Net.Native.ErrorHandling;
 
 /// <summary>
-/// Represents a handle for Java exceptions in a .NET interop environment.
+/// Represents a handle to a Java exception object.
 /// </summary>
 /// <remarks>
-/// This class is responsible for managing Java exception handles and converting them into
-/// .NET exceptions for consistent error handling across the interop boundary. It leverages
-/// native methods to interact with Java exceptions and provides functionality to translate
-/// and throw these exceptions in .NET.
+/// This class provides functionality for managing Java exception objects
+/// when interacting with Java code from .NET. It encapsulates native methods to interact with
+/// Java exceptions, allowing .NET code to properly handle these exceptions.
+/// The class also includes methods to check for existing Java exceptions in the current thread,
+/// retrieve and clear them, and convert them to .NET exceptions for seamless error handling
+/// across the interop boundary.
 /// </remarks>
 [SuppressMessage("ReSharper", "ClassNeverInstantiated.Global", Justification = "Created by marshaller")]
 internal sealed class JavaExceptionHandle : JavaHandle
 {
     /// <summary>
     /// Checks for the existence of a Java exception on the current thread
-    /// and throws a corresponding .NET exception if one is found.
+    /// and throws a <see cref="JavaException"/> if one is found.
     /// </summary>
     /// <exception cref="JavaException">If a Java exception is present on the current thread.</exception>
     public static void ThrowIfJavaThreadExceptionExists()

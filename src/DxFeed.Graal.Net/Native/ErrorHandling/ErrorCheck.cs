@@ -23,6 +23,11 @@ internal static class ErrorCheck
     /// <param name="result">The result of the native function call.</param>
     /// <returns>The original result if no error occurred.</returns>
     /// <exception cref="JavaException">If the native call resulted in an error.</exception>
+    /// <remarks>
+    /// The method checks for the presence of an exception in the same thread from which it was called.
+    /// If invoked from a different thread than the one where the result was obtained,
+    /// it will not throw an exception (even if it was thrown on Java side), potentially leading to undefined behavior.
+    /// </remarks>
     public static int SafeCall(int result)
     {
         if (result < 0)
@@ -41,6 +46,11 @@ internal static class ErrorCheck
     /// <param name="result">The result of the native function call.</param>
     /// <returns>The original result if no error occurred.</returns>
     /// <exception cref="JavaException">If the native call resulted in an error.</exception>
+    /// <remarks>
+    /// The method checks for the presence of an exception in the same thread from which it was called.
+    /// If invoked from a different thread than the one where the result was obtained,
+    /// it will not throw an exception (even if it was thrown on Java side), potentially leading to undefined behavior.
+    /// </remarks>
     public static long SafeCall(long result)
     {
         if (result < 0)
@@ -60,6 +70,11 @@ internal static class ErrorCheck
     /// <typeparam name="T">The type of <see cref="SafeHandle"/>.</typeparam>
     /// <returns>The original result if no error occurred.</returns>
     /// <exception cref="JavaException">If the native call resulted in an error.</exception>
+    /// <remarks>
+    /// The method checks for the presence of an exception in the same thread from which it was called.
+    /// If invoked from a different thread than the one where the result was obtained,
+    /// it will not throw an exception (even if it was thrown on Java side), potentially leading to undefined behavior.
+    /// </remarks>
     public static T SafeCall<T>(T result)
     where T : SafeHandle
     {
@@ -80,6 +95,11 @@ internal static class ErrorCheck
     /// <typeparam name="T">The unmanaged pointer type.</typeparam>
     /// <returns>The original result if no error occurred.</returns>
     /// <exception cref="JavaException">If the native call resulted in an error.</exception>
+    /// <remarks>
+    /// The method checks for the presence of an exception in the same thread from which it was called.
+    /// If invoked from a different thread than the one where the result was obtained,
+    /// it will not throw an exception (even if it was thrown on Java side), potentially leading to undefined behavior.
+    /// </remarks>
     public static unsafe T* SafeCall<T>(T* result)
         where T : unmanaged
     {
@@ -105,9 +125,25 @@ internal static class ErrorCheck
         }
     }
 
+    /// <summary>
+    /// Checks for the existence of a Java exception on the current thread
+    /// and throws a <see cref="JavaException"/> if one is found.
+    /// </summary>
+    /// <remarks>
+    /// If a Java exception is present, it converts the Java exception to a .NET <see cref="JavaException"/>
+    /// and throws it. This ensures that Java exceptions are properly propagated and handled in .NET code.
+    /// </remarks>
     private static void ThrowIfJavaThreadExceptionExists() =>
         JavaExceptionHandle.ThrowIfJavaThreadExceptionExists();
 
-    private static void ThrowGraalException(GraalErrorCode code) =>
-        throw new GraalException(code);
+    /// <summary>
+    /// Throws a <see cref="GraalException"/> based on a specified error code.
+    /// </summary>
+    /// <param name="errorCode">The error code representing a specific GraalVM error.</param>
+    /// <remarks>
+    /// This method creates and throws a <see cref="GraalException"/> that encapsulates the provided GraalVM error code
+    /// along with a descriptive message. It allows for consistent handling of GraalVM-related errors.
+    /// </remarks>
+    private static void ThrowGraalException(GraalErrorCode errorCode) =>
+        throw new GraalException(errorCode);
 }

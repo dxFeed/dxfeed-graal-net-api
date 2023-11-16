@@ -10,7 +10,7 @@ namespace DxFeed.Graal.Net.Native.ErrorHandling;
 
 /// <summary>
 /// Errors returned when calling GraalVM functions.
-/// The error description was obtained from <a href="https://github.com/oracle/graal/blob/jdk-21.0.1/substratevm/src/com.oracle.svm.core/src/com/oracle/svm/core/c/function/CEntryPointErrors.java#L43">Graal GitHub.</a>
+/// The error description was obtained from <a href="https://github.com/oracle/graal/blob/jdk-21.0.1/substratevm/src/com.oracle.svm.core/src/com/oracle/svm/core/c/function/CEntryPointErrors.java#L43">GraalVM GitHub.</a>
 /// </summary>
 public enum GraalErrorCode
 {
