@@ -58,7 +58,7 @@ internal sealed unsafe class DXEndpointHandle : JavaHandle
     public FeedHandle* GetFeed() =>
         SafeCall(Import.GetFeed(CurrentThread, this));
 
-    public PublisherHandle* GetPublisher() =>
+    public DXPublisherHandle GetPublisher() =>
         SafeCall(Import.GetPublisher(CurrentThread, this));
 
     private static class Import
@@ -208,7 +208,7 @@ internal sealed unsafe class DXEndpointHandle : JavaHandle
             CallingConvention = CallingConvention.Cdecl,
             CharSet = CharSet.Ansi,
             EntryPoint = "dxfg_DXEndpoint_getPublisher")]
-        public static extern PublisherHandle* GetPublisher(
+        public static extern DXPublisherHandle GetPublisher(
             nint thread,
             DXEndpointHandle endpoint);
     }

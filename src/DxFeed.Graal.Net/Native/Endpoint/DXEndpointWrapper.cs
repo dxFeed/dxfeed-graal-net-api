@@ -16,14 +16,14 @@ internal sealed unsafe class DXEndpointWrapper : IDisposable
 {
     private readonly DXEndpointHandle endpoint;
     private readonly Lazy<FeedNative> feed;
-    private readonly Lazy<PublisherNative> publisher;
+    private readonly Lazy<DXPublisherHandle> publisher;
     private readonly HandleMap<StateChangeListener, StateChangeListenerHandle> listeners;
 
     private DXEndpointWrapper(DXEndpointHandle endpoint)
     {
         this.endpoint = endpoint;
         feed = new(() => new FeedNative(endpoint.GetFeed()));
-        publisher = new(() => new PublisherNative(endpoint.GetPublisher()));
+        publisher = new(endpoint.GetPublisher);
         listeners = new(StateChangeListenerHandle.Create);
     }
 
@@ -77,7 +77,7 @@ internal sealed unsafe class DXEndpointWrapper : IDisposable
     public FeedNative GetFeed() =>
         feed.Value;
 
-    public PublisherNative GetPublisher() =>
+    public DXPublisherHandle GetPublisher() =>
         publisher.Value;
 
     public void Dispose() =>
