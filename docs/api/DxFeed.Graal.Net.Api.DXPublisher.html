@@ -117,7 +117,7 @@
                             <a href="DxFeed.Graal.Net.Api.DXEndpoint.State.html" title="DXEndpoint.State" class="">DXEndpoint.State</a>
                           </li>
                           <li class="">
-                            <a href="DxFeed.Graal.Net.Api.DXEndpoint.StateChangeListenerCallback.html" title="DXEndpoint.StateChangeListenerCallback" class="">DXEndpoint.StateChangeListenerCallback</a>
+                            <a href="DxFeed.Graal.Net.Api.DXEndpoint.StateChangeListener.html" title="DXEndpoint.StateChangeListener" class="">DXEndpoint.StateChangeListener</a>
                           </li>
                           <li class="">
                             <a href="DxFeed.Graal.Net.Api.DXFeed.html" title="DXFeed" class="">DXFeed</a>
@@ -449,7 +449,7 @@
   <h1 id="DxFeed_Graal_Net_Api_DXPublisher" data-uid="DxFeed.Graal.Net.Api.DXPublisher" class="text-break">Class DXPublisher
 </h1>
   <div class="markdown level0 summary"><p>Provides API for publishing of events to local or remote <a class="xref" href="DxFeed.Graal.Net.Api.DXFeed.html">DXFeed</a>.
-This class is a wrapper for <a class="xref" href="DxFeed.Graal.Net.Native.Publisher.PublisherNative.html">PublisherNative</a>.
+This class is a wrapper for <a class="xref" href="DxFeed.Graal.Net.Native.Publisher.DXPublisherHandle.html">DXPublisherHandle</a>.
 <br>
 For more details see <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/api/DXPublisher.html">Javadoc</a>.</p>
 </div>
@@ -489,26 +489,25 @@ For more details see <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/api/
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public class DXPublisher</code></pre>
   </div>
-  <h3 id="properties">Properties
+  <h3 id="methods">Methods
 </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.6.0/apiSpec/new?filename=DxFeed_Graal_Net_Api_DXPublisher_Instance.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Api.DXPublisher.Instance%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.7.0/apiSpec/new?filename=DxFeed_Graal_Net_Api_DXPublisher_GetInstance.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Api.DXPublisher.GetInstance%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.6.0/src\DxFeed.Graal.Net\Api\DXPublisher.cs/#L38">View Source</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.7.0/src/DxFeed.Graal.Net/Api/DXPublisher.cs/#L38">View Source</a>
   </span>
-  <a id="DxFeed_Graal_Net_Api_DXPublisher_Instance_" data-uid="DxFeed.Graal.Net.Api.DXPublisher.Instance*"></a>
-  <h4 id="DxFeed_Graal_Net_Api_DXPublisher_Instance" data-uid="DxFeed.Graal.Net.Api.DXPublisher.Instance">Instance</h4>
-  <div class="markdown level1 summary"><p>Gets a default application-wide singleton instance of <a class="xref" href="DxFeed.Graal.Net.Api.DXPublisher.html">DXPublisher</a>.
-<a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/api/DXPublisher.html#getInstance--">Javadoc.</a></p>
+  <a id="DxFeed_Graal_Net_Api_DXPublisher_GetInstance_" data-uid="DxFeed.Graal.Net.Api.DXPublisher.GetInstance*"></a>
+  <h4 id="DxFeed_Graal_Net_Api_DXPublisher_GetInstance" data-uid="DxFeed.Graal.Net.Api.DXPublisher.GetInstance">GetInstance()</h4>
+  <div class="markdown level1 summary"><p>Gets a default application-wide singleton instance of <a class="xref" href="DxFeed.Graal.Net.Api.DXPublisher.html">DXPublisher</a>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static DXPublisher Instance { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">public static DXPublisher GetInstance()</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
+  <h5 class="returns">Returns</h5>
   <table class="table table-bordered table-condensed">
     <thead>
       <tr>
@@ -519,26 +518,24 @@ For more details see <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/api/
     <tbody>
       <tr>
         <td><a class="xref" href="DxFeed.Graal.Net.Api.DXPublisher.html">DXPublisher</a></td>
-        <td></td>
+        <td><p>The <a class="xref" href="DxFeed.Graal.Net.Api.DXPublisher.html">DXPublisher</a>.</p>
+</td>
       </tr>
     </tbody>
   </table>
-  <h3 id="methods">Methods
-</h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.6.0/apiSpec/new?filename=DxFeed_Graal_Net_Api_DXPublisher_PublishEvents_DxFeed_Graal_Net_Events_IEventType___.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Api.DXPublisher.PublishEvents(DxFeed.Graal.Net.Events.IEventType%5B%5D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.7.0/apiSpec/new?filename=DxFeed_Graal_Net_Api_DXPublisher_PublishEvents_DxFeed_Graal_Net_Events_IEventType___.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Api.DXPublisher.PublishEvents(DxFeed.Graal.Net.Events.IEventType%5B%5D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.6.0/src\DxFeed.Graal.Net\Api\DXPublisher.cs/#L50">View Source</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.7.0/src/DxFeed.Graal.Net/Api/DXPublisher.cs/#L48">View Source</a>
   </span>
   <a id="DxFeed_Graal_Net_Api_DXPublisher_PublishEvents_" data-uid="DxFeed.Graal.Net.Api.DXPublisher.PublishEvents*"></a>
   <h4 id="DxFeed_Graal_Net_Api_DXPublisher_PublishEvents_DxFeed_Graal_Net_Events_IEventType___" data-uid="DxFeed.Graal.Net.Api.DXPublisher.PublishEvents(DxFeed.Graal.Net.Events.IEventType[])">PublishEvents(params IEventType[])</h4>
   <div class="markdown level1 summary"><p>Publishes events to the corresponding feed. If the <a class="xref" href="DxFeed.Graal.Net.Api.DXEndpoint.html">DXEndpoint</a> of this publisher has
 <a class="xref" href="DxFeed.Graal.Net.Api.DXEndpoint.Role.html#DxFeed_Graal_Net_Api_DXEndpoint_Role_Publisher">Publisher</a> role and it is connected, the
 published events will be delivered to the remote endpoints. Local <a class="xref" href="DxFeed.Graal.Net.Api.DXEndpoint.html#DxFeed_Graal_Net_Api_DXEndpoint_GetFeed">GetFeed()</a> will
-always receive published events.
-<a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/api/DXPublisher.html#publishEvents-java.util.Collection-">Javadoc.</a></p>
+always receive published events.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
@@ -565,18 +562,17 @@ always receive published events.
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.6.0/apiSpec/new?filename=DxFeed_Graal_Net_Api_DXPublisher_PublishEvents_System_Collections_Generic_IEnumerable_DxFeed_Graal_Net_Events_IEventType__.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Api.DXPublisher.PublishEvents(System.Collections.Generic.IEnumerable%7BDxFeed.Graal.Net.Events.IEventType%7D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.7.0/apiSpec/new?filename=DxFeed_Graal_Net_Api_DXPublisher_PublishEvents_System_Collections_Generic_IEnumerable_DxFeed_Graal_Net_Events_IEventType__.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Api.DXPublisher.PublishEvents(System.Collections.Generic.IEnumerable%7BDxFeed.Graal.Net.Events.IEventType%7D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.6.0/src\DxFeed.Graal.Net\Api\DXPublisher.cs/#L62">View Source</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.7.0/src/DxFeed.Graal.Net/Api/DXPublisher.cs/#L58">View Source</a>
   </span>
   <a id="DxFeed_Graal_Net_Api_DXPublisher_PublishEvents_" data-uid="DxFeed.Graal.Net.Api.DXPublisher.PublishEvents*"></a>
   <h4 id="DxFeed_Graal_Net_Api_DXPublisher_PublishEvents_System_Collections_Generic_IEnumerable_DxFeed_Graal_Net_Events_IEventType__" data-uid="DxFeed.Graal.Net.Api.DXPublisher.PublishEvents(System.Collections.Generic.IEnumerable{DxFeed.Graal.Net.Events.IEventType})">PublishEvents(IEnumerable&lt;IEventType&gt;)</h4>
   <div class="markdown level1 summary"><p>Publishes events to the corresponding feed. If the <a class="xref" href="DxFeed.Graal.Net.Api.DXEndpoint.html">DXEndpoint</a> of this publisher has
 <a class="xref" href="DxFeed.Graal.Net.Api.DXEndpoint.Role.html#DxFeed_Graal_Net_Api_DXEndpoint_Role_Publisher">Publisher</a> role and it is connected, the
 published events will be delivered to the remote endpoints. Local <a class="xref" href="DxFeed.Graal.Net.Api.DXEndpoint.html#DxFeed_Graal_Net_Api_DXEndpoint_GetFeed">GetFeed()</a> will
-always receive published events.
-<a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/api/DXPublisher.html#publishEvents-java.util.Collection-">Javadoc.</a></p>
+always receive published events.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
@@ -610,10 +606,10 @@ always receive published events.
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.6.0/apiSpec/new?filename=DxFeed_Graal_Net_Api_DXPublisher.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Api.DXPublisher%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Edit this page</a>
+                    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.7.0/apiSpec/new?filename=DxFeed_Graal_Net_Api_DXPublisher.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Api.DXPublisher%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Edit this page</a>
                   </li>
                   <li>
-                    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.6.0/src\DxFeed.Graal.Net\Api\DXPublisher.cs/#L20" class="contribution-link">View Source</a>
+                    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.7.0/src/DxFeed.Graal.Net/Api/DXPublisher.cs/#L20" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

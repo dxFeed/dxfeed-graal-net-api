@@ -117,7 +117,7 @@
                             <a href="DxFeed.Graal.Net.Api.DXEndpoint.State.html" title="DXEndpoint.State" class="">DXEndpoint.State</a>
                           </li>
                           <li class="">
-                            <a href="DxFeed.Graal.Net.Api.DXEndpoint.StateChangeListenerCallback.html" title="DXEndpoint.StateChangeListenerCallback" class="">DXEndpoint.StateChangeListenerCallback</a>
+                            <a href="DxFeed.Graal.Net.Api.DXEndpoint.StateChangeListener.html" title="DXEndpoint.StateChangeListener" class="">DXEndpoint.StateChangeListener</a>
                           </li>
                           <li class="">
                             <a href="DxFeed.Graal.Net.Api.DXFeed.html" title="DXFeed" class="">DXFeed</a>
@@ -448,7 +448,7 @@
 
   <h1 id="DxFeed_Graal_Net_Native_ErrorHandling_GraalException" data-uid="DxFeed.Graal.Net.Native.ErrorHandling.GraalException" class="text-break">Class GraalException
 </h1>
-  <div class="markdown level0 summary"><p>Represents errors that occur when calling graal function.</p>
+  <div class="markdown level0 summary"><p>An exception class representing errors that occur during calls to GraalVM functions in interop scenarios.</p>
 </div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
@@ -467,9 +467,6 @@
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.exception.getbaseexception">Exception.GetBaseException()</a>
     </div>
     <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.exception.getobjectdata">Exception.GetObjectData(SerializationInfo, StreamingContext)</a>
-    </div>
-    <div>
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.exception.gettype">Exception.GetType()</a>
     </div>
     <div>
@@ -486,6 +483,9 @@
     </div>
     <div>
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.exception.innerexception">Exception.InnerException</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.exception.message">Exception.Message</a>
     </div>
     <div>
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.exception.source">Exception.Source</a>
@@ -516,14 +516,18 @@
     <pre><code class="lang-csharp hljs">[Serializable]
 public sealed class GraalException : Exception, ISerializable</code></pre>
   </div>
+  <h5 id="DxFeed_Graal_Net_Native_ErrorHandling_GraalException_remarks"><strong>Remarks</strong></h5>
+  <div class="markdown level0 remarks"><p>This class encapsulates detailed information about errors encountered in GraalVM operations,
+including specific error codes and descriptive messages.</p>
+</div>
   <h3 id="constructors">Constructors
 </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.6.0/apiSpec/new?filename=DxFeed_Graal_Net_Native_ErrorHandling_GraalException__ctor_DxFeed_Graal_Net_Native_ErrorHandling_GraalErrorCode_.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Native.ErrorHandling.GraalException.%23ctor(DxFeed.Graal.Net.Native.ErrorHandling.GraalErrorCode)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.7.0/apiSpec/new?filename=DxFeed_Graal_Net_Native_ErrorHandling_GraalException__ctor_DxFeed_Graal_Net_Native_ErrorHandling_GraalErrorCode_.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Native.ErrorHandling.GraalException.%23ctor(DxFeed.Graal.Net.Native.ErrorHandling.GraalErrorCode)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.6.0/src\DxFeed.Graal.Net\Native\ErrorHandling\GraalException.cs/#L24">View Source</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.7.0/src/DxFeed.Graal.Net/Native/ErrorHandling/GraalException.cs/#L27">View Source</a>
   </span>
   <a id="DxFeed_Graal_Net_Native_ErrorHandling_GraalException__ctor_" data-uid="DxFeed.Graal.Net.Native.ErrorHandling.GraalException.#ctor*"></a>
   <h4 id="DxFeed_Graal_Net_Native_ErrorHandling_GraalException__ctor_DxFeed_Graal_Net_Native_ErrorHandling_GraalErrorCode_" data-uid="DxFeed.Graal.Net.Native.ErrorHandling.GraalException.#ctor(DxFeed.Graal.Net.Native.ErrorHandling.GraalErrorCode)">GraalException(GraalErrorCode)</h4>
@@ -547,7 +551,7 @@ public sealed class GraalException : Exception, ISerializable</code></pre>
       <tr>
         <td><a class="xref" href="DxFeed.Graal.Net.Native.ErrorHandling.GraalErrorCode.html">GraalErrorCode</a></td>
         <td><span class="parametername">errorCode</span></td>
-        <td><p>The graal error code.</p>
+        <td><p>The error code associated with the GraalVM error.</p>
 </td>
       </tr>
     </tbody>
@@ -556,14 +560,14 @@ public sealed class GraalException : Exception, ISerializable</code></pre>
 </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.6.0/apiSpec/new?filename=DxFeed_Graal_Net_Native_ErrorHandling_GraalException_ErrorCode.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Native.ErrorHandling.GraalException.ErrorCode%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.7.0/apiSpec/new?filename=DxFeed_Graal_Net_Native_ErrorHandling_GraalException_ErrorCode.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Native.ErrorHandling.GraalException.ErrorCode%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.6.0/src\DxFeed.Graal.Net\Native\ErrorHandling\GraalException.cs/#L43">View Source</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.7.0/src/DxFeed.Graal.Net/Native/ErrorHandling/GraalException.cs/#L38">View Source</a>
   </span>
   <a id="DxFeed_Graal_Net_Native_ErrorHandling_GraalException_ErrorCode_" data-uid="DxFeed.Graal.Net.Native.ErrorHandling.GraalException.ErrorCode*"></a>
   <h4 id="DxFeed_Graal_Net_Native_ErrorHandling_GraalException_ErrorCode" data-uid="DxFeed.Graal.Net.Native.ErrorHandling.GraalException.ErrorCode">ErrorCode</h4>
-  <div class="markdown level1 summary"><p>Gets graal error code.</p>
+  <div class="markdown level1 summary"><p>Gets the GraalVM error code associated with this exception.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
@@ -585,71 +589,66 @@ public sealed class GraalException : Exception, ISerializable</code></pre>
       </tr>
     </tbody>
   </table>
+  <h3 id="methods">Methods
+</h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.6.0/apiSpec/new?filename=DxFeed_Graal_Net_Native_ErrorHandling_GraalException_GraalMessage.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Native.ErrorHandling.GraalException.GraalMessage%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.7.0/apiSpec/new?filename=DxFeed_Graal_Net_Native_ErrorHandling_GraalException_GetObjectData_System_Runtime_Serialization_SerializationInfo_System_Runtime_Serialization_StreamingContext_.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Native.ErrorHandling.GraalException.GetObjectData(System.Runtime.Serialization.SerializationInfo%2CSystem.Runtime.Serialization.StreamingContext)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.6.0/src\DxFeed.Graal.Net\Native\ErrorHandling\GraalException.cs/#L38">View Source</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.7.0/src/DxFeed.Graal.Net/Native/ErrorHandling/GraalException.cs/#L41">View Source</a>
   </span>
-  <a id="DxFeed_Graal_Net_Native_ErrorHandling_GraalException_GraalMessage_" data-uid="DxFeed.Graal.Net.Native.ErrorHandling.GraalException.GraalMessage*"></a>
-  <h4 id="DxFeed_Graal_Net_Native_ErrorHandling_GraalException_GraalMessage" data-uid="DxFeed.Graal.Net.Native.ErrorHandling.GraalException.GraalMessage">GraalMessage</h4>
-  <div class="markdown level1 summary"><p>Gets graal error message.</p>
+  <a id="DxFeed_Graal_Net_Native_ErrorHandling_GraalException_GetObjectData_" data-uid="DxFeed.Graal.Net.Native.ErrorHandling.GraalException.GetObjectData*"></a>
+  <h4 id="DxFeed_Graal_Net_Native_ErrorHandling_GraalException_GetObjectData_System_Runtime_Serialization_SerializationInfo_System_Runtime_Serialization_StreamingContext_" data-uid="DxFeed.Graal.Net.Native.ErrorHandling.GraalException.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">GetObjectData(SerializationInfo, StreamingContext)</h4>
+  <div class="markdown level1 summary"><p>When overridden in a derived class, sets the <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.runtime.serialization.serializationinfo">SerializationInfo</a> with information about the exception.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string? GraalMessage { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">public override void GetObjectData(SerializationInfo info, StreamingContext context)</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
+  <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-condensed">
     <thead>
       <tr>
         <th>Type</th>
+        <th>Name</th>
         <th>Description</th>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
-        <td></td>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.runtime.serialization.serializationinfo">SerializationInfo</a></td>
+        <td><span class="parametername">info</span></td>
+        <td><p>The <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.runtime.serialization.serializationinfo">SerializationInfo</a> that holds the serialized object data about the exception being thrown.</p>
+</td>
       </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.6.0/apiSpec/new?filename=DxFeed_Graal_Net_Native_ErrorHandling_GraalException_Message.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Native.ErrorHandling.GraalException.Message%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.6.0/src\DxFeed.Graal.Net\Native\ErrorHandling\GraalException.cs/#L49">View Source</a>
-  </span>
-  <a id="DxFeed_Graal_Net_Native_ErrorHandling_GraalException_Message_" data-uid="DxFeed.Graal.Net.Native.ErrorHandling.GraalException.Message*"></a>
-  <h4 id="DxFeed_Graal_Net_Native_ErrorHandling_GraalException_Message" data-uid="DxFeed.Graal.Net.Native.ErrorHandling.GraalException.Message">Message</h4>
-  <div class="markdown level1 summary"><p>Gets a message that describes the current exception.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public override string Message { get; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
       <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
-        <td><p>The error message that explains the reason for the exception.</p>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.runtime.serialization.streamingcontext">StreamingContext</a></td>
+        <td><span class="parametername">context</span></td>
+        <td><p>The <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.runtime.serialization.streamingcontext">StreamingContext</a> that contains contextual information about the source or destination.</p>
 </td>
       </tr>
     </tbody>
   </table>
   <h5 class="overrides">Overrides</h5>
-  <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.exception.message">Exception.Message</a></div>
+  <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.exception.getobjectdata">Exception.GetObjectData(SerializationInfo, StreamingContext)</a></div>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentnullexception">ArgumentNullException</a></td>
+        <td><p>The <code class="paramref">info</code> parameter is a null reference (<code>Nothing</code> in Visual Basic).</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
   <h3 id="implements">Implements</h3>
   <div>
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.runtime.serialization.iserializable">ISerializable</a>
@@ -663,10 +662,10 @@ public sealed class GraalException : Exception, ISerializable</code></pre>
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.6.0/apiSpec/new?filename=DxFeed_Graal_Net_Native_ErrorHandling_GraalException.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Native.ErrorHandling.GraalException%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Edit this page</a>
+                    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.7.0/apiSpec/new?filename=DxFeed_Graal_Net_Native_ErrorHandling_GraalException.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Native.ErrorHandling.GraalException%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Edit this page</a>
                   </li>
                   <li>
-                    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.6.0/src\DxFeed.Graal.Net\Native\ErrorHandling\GraalException.cs/#L17" class="contribution-link">View Source</a>
+                    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.7.0/src/DxFeed.Graal.Net/Native/ErrorHandling/GraalException.cs/#L20" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

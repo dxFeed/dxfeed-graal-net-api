@@ -19,12 +19,12 @@ references:
   commentId: T:DxFeed.Graal.Net.Api.DXEndpoint
   fullName: DxFeed.Graal.Net.Api.DXEndpoint
   nameWithType: DXEndpoint
-- uid: DxFeed.Graal.Net.Api.DXEndpoint.AddStateChangeListener(DxFeed.Graal.Net.Api.DXEndpoint.StateChangeListenerCallback)
-  name: AddStateChangeListener(StateChangeListenerCallback)
-  href: docs/api/DxFeed.Graal.Net.Api.DXEndpoint.html#DxFeed_Graal_Net_Api_DXEndpoint_AddStateChangeListener_DxFeed_Graal_Net_Api_DXEndpoint_StateChangeListenerCallback_
-  commentId: M:DxFeed.Graal.Net.Api.DXEndpoint.AddStateChangeListener(DxFeed.Graal.Net.Api.DXEndpoint.StateChangeListenerCallback)
-  fullName: DxFeed.Graal.Net.Api.DXEndpoint.AddStateChangeListener(DxFeed.Graal.Net.Api.DXEndpoint.StateChangeListenerCallback)
-  nameWithType: DXEndpoint.AddStateChangeListener(DXEndpoint.StateChangeListenerCallback)
+- uid: DxFeed.Graal.Net.Api.DXEndpoint.AddStateChangeListener(DxFeed.Graal.Net.Api.DXEndpoint.StateChangeListener)
+  name: AddStateChangeListener(StateChangeListener)
+  href: docs/api/DxFeed.Graal.Net.Api.DXEndpoint.html#DxFeed_Graal_Net_Api_DXEndpoint_AddStateChangeListener_DxFeed_Graal_Net_Api_DXEndpoint_StateChangeListener_
+  commentId: M:DxFeed.Graal.Net.Api.DXEndpoint.AddStateChangeListener(DxFeed.Graal.Net.Api.DXEndpoint.StateChangeListener)
+  fullName: DxFeed.Graal.Net.Api.DXEndpoint.AddStateChangeListener(DxFeed.Graal.Net.Api.DXEndpoint.StateChangeListener)
+  nameWithType: DXEndpoint.AddStateChangeListener(DXEndpoint.StateChangeListener)
 - uid: DxFeed.Graal.Net.Api.DXEndpoint.AddStateChangeListener*
   name: AddStateChangeListener
   href: docs/api/DxFeed.Graal.Net.Api.DXEndpoint.html#DxFeed_Graal_Net_Api_DXEndpoint_AddStateChangeListener_
@@ -492,12 +492,12 @@ references:
   isSpec: "True"
   fullName: DxFeed.Graal.Net.Api.DXEndpoint.Reconnect
   nameWithType: DXEndpoint.Reconnect
-- uid: DxFeed.Graal.Net.Api.DXEndpoint.RemoveStateChangeListener(DxFeed.Graal.Net.Api.DXEndpoint.StateChangeListenerCallback)
-  name: RemoveStateChangeListener(StateChangeListenerCallback)
-  href: docs/api/DxFeed.Graal.Net.Api.DXEndpoint.html#DxFeed_Graal_Net_Api_DXEndpoint_RemoveStateChangeListener_DxFeed_Graal_Net_Api_DXEndpoint_StateChangeListenerCallback_
-  commentId: M:DxFeed.Graal.Net.Api.DXEndpoint.RemoveStateChangeListener(DxFeed.Graal.Net.Api.DXEndpoint.StateChangeListenerCallback)
-  fullName: DxFeed.Graal.Net.Api.DXEndpoint.RemoveStateChangeListener(DxFeed.Graal.Net.Api.DXEndpoint.StateChangeListenerCallback)
-  nameWithType: DXEndpoint.RemoveStateChangeListener(DXEndpoint.StateChangeListenerCallback)
+- uid: DxFeed.Graal.Net.Api.DXEndpoint.RemoveStateChangeListener(DxFeed.Graal.Net.Api.DXEndpoint.StateChangeListener)
+  name: RemoveStateChangeListener(StateChangeListener)
+  href: docs/api/DxFeed.Graal.Net.Api.DXEndpoint.html#DxFeed_Graal_Net_Api_DXEndpoint_RemoveStateChangeListener_DxFeed_Graal_Net_Api_DXEndpoint_StateChangeListener_
+  commentId: M:DxFeed.Graal.Net.Api.DXEndpoint.RemoveStateChangeListener(DxFeed.Graal.Net.Api.DXEndpoint.StateChangeListener)
+  fullName: DxFeed.Graal.Net.Api.DXEndpoint.RemoveStateChangeListener(DxFeed.Graal.Net.Api.DXEndpoint.StateChangeListener)
+  nameWithType: DXEndpoint.RemoveStateChangeListener(DXEndpoint.StateChangeListener)
 - uid: DxFeed.Graal.Net.Api.DXEndpoint.RemoveStateChangeListener*
   name: RemoveStateChangeListener
   href: docs/api/DxFeed.Graal.Net.Api.DXEndpoint.html#DxFeed_Graal_Net_Api_DXEndpoint_RemoveStateChangeListener_
@@ -577,12 +577,12 @@ references:
   commentId: F:DxFeed.Graal.Net.Api.DXEndpoint.State.NotConnected
   fullName: DxFeed.Graal.Net.Api.DXEndpoint.State.NotConnected
   nameWithType: DXEndpoint.State.NotConnected
-- uid: DxFeed.Graal.Net.Api.DXEndpoint.StateChangeListenerCallback
-  name: DXEndpoint.StateChangeListenerCallback
-  href: docs/api/DxFeed.Graal.Net.Api.DXEndpoint.StateChangeListenerCallback.html
-  commentId: T:DxFeed.Graal.Net.Api.DXEndpoint.StateChangeListenerCallback
-  fullName: DxFeed.Graal.Net.Api.DXEndpoint.StateChangeListenerCallback
-  nameWithType: DXEndpoint.StateChangeListenerCallback
+- uid: DxFeed.Graal.Net.Api.DXEndpoint.StateChangeListener
+  name: DXEndpoint.StateChangeListener
+  href: docs/api/DxFeed.Graal.Net.Api.DXEndpoint.StateChangeListener.html
+  commentId: T:DxFeed.Graal.Net.Api.DXEndpoint.StateChangeListener
+  fullName: DxFeed.Graal.Net.Api.DXEndpoint.StateChangeListener
+  nameWithType: DXEndpoint.StateChangeListener
 - uid: DxFeed.Graal.Net.Api.DXEndpoint.User(System.String)
   name: User(string)
   href: docs/api/DxFeed.Graal.Net.Api.DXEndpoint.html#DxFeed_Graal_Net_Api_DXEndpoint_User_System_String_
@@ -605,19 +605,6 @@ references:
   commentId: T:DxFeed.Graal.Net.Api.DXFeed
   fullName: DxFeed.Graal.Net.Api.DXFeed
   nameWithType: DXFeed
-- uid: DxFeed.Graal.Net.Api.DXFeed.AttachSubscription(DxFeed.Graal.Net.Api.DXFeedSubscription)
-  name: AttachSubscription(DXFeedSubscription)
-  href: docs/api/DxFeed.Graal.Net.Api.DXFeed.html#DxFeed_Graal_Net_Api_DXFeed_AttachSubscription_DxFeed_Graal_Net_Api_DXFeedSubscription_
-  commentId: M:DxFeed.Graal.Net.Api.DXFeed.AttachSubscription(DxFeed.Graal.Net.Api.DXFeedSubscription)
-  fullName: DxFeed.Graal.Net.Api.DXFeed.AttachSubscription(DxFeed.Graal.Net.Api.DXFeedSubscription)
-  nameWithType: DXFeed.AttachSubscription(DXFeedSubscription)
-- uid: DxFeed.Graal.Net.Api.DXFeed.AttachSubscription*
-  name: AttachSubscription
-  href: docs/api/DxFeed.Graal.Net.Api.DXFeed.html#DxFeed_Graal_Net_Api_DXFeed_AttachSubscription_
-  commentId: Overload:DxFeed.Graal.Net.Api.DXFeed.AttachSubscription
-  isSpec: "True"
-  fullName: DxFeed.Graal.Net.Api.DXFeed.AttachSubscription
-  nameWithType: DXFeed.AttachSubscription
 - uid: DxFeed.Graal.Net.Api.DXFeed.CreateSubscription(System.Collections.Generic.IEnumerable{System.Type})
   name: CreateSubscription(IEnumerable<Type>)
   href: docs/api/DxFeed.Graal.Net.Api.DXFeed.html#DxFeed_Graal_Net_Api_DXFeed_CreateSubscription_System_Collections_Generic_IEnumerable_System_Type__
@@ -643,32 +630,6 @@ references:
   isSpec: "True"
   fullName: DxFeed.Graal.Net.Api.DXFeed.CreateSubscription
   nameWithType: DXFeed.CreateSubscription
-- uid: DxFeed.Graal.Net.Api.DXFeed.DetachSubscription(DxFeed.Graal.Net.Api.DXFeedSubscription)
-  name: DetachSubscription(DXFeedSubscription)
-  href: docs/api/DxFeed.Graal.Net.Api.DXFeed.html#DxFeed_Graal_Net_Api_DXFeed_DetachSubscription_DxFeed_Graal_Net_Api_DXFeedSubscription_
-  commentId: M:DxFeed.Graal.Net.Api.DXFeed.DetachSubscription(DxFeed.Graal.Net.Api.DXFeedSubscription)
-  fullName: DxFeed.Graal.Net.Api.DXFeed.DetachSubscription(DxFeed.Graal.Net.Api.DXFeedSubscription)
-  nameWithType: DXFeed.DetachSubscription(DXFeedSubscription)
-- uid: DxFeed.Graal.Net.Api.DXFeed.DetachSubscription*
-  name: DetachSubscription
-  href: docs/api/DxFeed.Graal.Net.Api.DXFeed.html#DxFeed_Graal_Net_Api_DXFeed_DetachSubscription_
-  commentId: Overload:DxFeed.Graal.Net.Api.DXFeed.DetachSubscription
-  isSpec: "True"
-  fullName: DxFeed.Graal.Net.Api.DXFeed.DetachSubscription
-  nameWithType: DXFeed.DetachSubscription
-- uid: DxFeed.Graal.Net.Api.DXFeed.DetachSubscriptionAndClear(DxFeed.Graal.Net.Api.DXFeedSubscription)
-  name: DetachSubscriptionAndClear(DXFeedSubscription)
-  href: docs/api/DxFeed.Graal.Net.Api.DXFeed.html#DxFeed_Graal_Net_Api_DXFeed_DetachSubscriptionAndClear_DxFeed_Graal_Net_Api_DXFeedSubscription_
-  commentId: M:DxFeed.Graal.Net.Api.DXFeed.DetachSubscriptionAndClear(DxFeed.Graal.Net.Api.DXFeedSubscription)
-  fullName: DxFeed.Graal.Net.Api.DXFeed.DetachSubscriptionAndClear(DxFeed.Graal.Net.Api.DXFeedSubscription)
-  nameWithType: DXFeed.DetachSubscriptionAndClear(DXFeedSubscription)
-- uid: DxFeed.Graal.Net.Api.DXFeed.DetachSubscriptionAndClear*
-  name: DetachSubscriptionAndClear
-  href: docs/api/DxFeed.Graal.Net.Api.DXFeed.html#DxFeed_Graal_Net_Api_DXFeed_DetachSubscriptionAndClear_
-  commentId: Overload:DxFeed.Graal.Net.Api.DXFeed.DetachSubscriptionAndClear
-  isSpec: "True"
-  fullName: DxFeed.Graal.Net.Api.DXFeed.DetachSubscriptionAndClear
-  nameWithType: DXFeed.DetachSubscriptionAndClear
 - uid: DxFeed.Graal.Net.Api.DXFeed.GetInstance
   name: GetInstance()
   href: docs/api/DxFeed.Graal.Net.Api.DXFeed.html#DxFeed_Graal_Net_Api_DXFeed_GetInstance
@@ -732,19 +693,6 @@ references:
   isSpec: "True"
   fullName: DxFeed.Graal.Net.Api.DXFeedSubscription.AddSymbols
   nameWithType: DXFeedSubscription.AddSymbols
-- uid: DxFeed.Graal.Net.Api.DXFeedSubscription.Attach(DxFeed.Graal.Net.Api.DXFeed)
-  name: Attach(DXFeed)
-  href: docs/api/DxFeed.Graal.Net.Api.DXFeedSubscription.html#DxFeed_Graal_Net_Api_DXFeedSubscription_Attach_DxFeed_Graal_Net_Api_DXFeed_
-  commentId: M:DxFeed.Graal.Net.Api.DXFeedSubscription.Attach(DxFeed.Graal.Net.Api.DXFeed)
-  fullName: DxFeed.Graal.Net.Api.DXFeedSubscription.Attach(DxFeed.Graal.Net.Api.DXFeed)
-  nameWithType: DXFeedSubscription.Attach(DXFeed)
-- uid: DxFeed.Graal.Net.Api.DXFeedSubscription.Attach*
-  name: Attach
-  href: docs/api/DxFeed.Graal.Net.Api.DXFeedSubscription.html#DxFeed_Graal_Net_Api_DXFeedSubscription_Attach_
-  commentId: Overload:DxFeed.Graal.Net.Api.DXFeedSubscription.Attach
-  isSpec: "True"
-  fullName: DxFeed.Graal.Net.Api.DXFeedSubscription.Attach
-  nameWithType: DXFeedSubscription.Attach
 - uid: DxFeed.Graal.Net.Api.DXFeedSubscription.Clear
   name: Clear()
   href: docs/api/DxFeed.Graal.Net.Api.DXFeedSubscription.html#DxFeed_Graal_Net_Api_DXFeedSubscription_Clear
@@ -771,19 +719,6 @@ references:
   isSpec: "True"
   fullName: DxFeed.Graal.Net.Api.DXFeedSubscription.Close
   nameWithType: DXFeedSubscription.Close
-- uid: DxFeed.Graal.Net.Api.DXFeedSubscription.Detach(DxFeed.Graal.Net.Api.DXFeed)
-  name: Detach(DXFeed)
-  href: docs/api/DxFeed.Graal.Net.Api.DXFeedSubscription.html#DxFeed_Graal_Net_Api_DXFeedSubscription_Detach_DxFeed_Graal_Net_Api_DXFeed_
-  commentId: M:DxFeed.Graal.Net.Api.DXFeedSubscription.Detach(DxFeed.Graal.Net.Api.DXFeed)
-  fullName: DxFeed.Graal.Net.Api.DXFeedSubscription.Detach(DxFeed.Graal.Net.Api.DXFeed)
-  nameWithType: DXFeedSubscription.Detach(DXFeed)
-- uid: DxFeed.Graal.Net.Api.DXFeedSubscription.Detach*
-  name: Detach
-  href: docs/api/DxFeed.Graal.Net.Api.DXFeedSubscription.html#DxFeed_Graal_Net_Api_DXFeedSubscription_Detach_
-  commentId: Overload:DxFeed.Graal.Net.Api.DXFeedSubscription.Detach
-  isSpec: "True"
-  fullName: DxFeed.Graal.Net.Api.DXFeedSubscription.Detach
-  nameWithType: DXFeedSubscription.Detach
 - uid: DxFeed.Graal.Net.Api.DXFeedSubscription.Dispose
   name: Dispose()
   href: docs/api/DxFeed.Graal.Net.Api.DXFeedSubscription.html#DxFeed_Graal_Net_Api_DXFeedSubscription_Dispose
@@ -880,19 +815,19 @@ references:
   commentId: T:DxFeed.Graal.Net.Api.DXPublisher
   fullName: DxFeed.Graal.Net.Api.DXPublisher
   nameWithType: DXPublisher
-- uid: DxFeed.Graal.Net.Api.DXPublisher.Instance
-  name: Instance
-  href: docs/api/DxFeed.Graal.Net.Api.DXPublisher.html#DxFeed_Graal_Net_Api_DXPublisher_Instance
-  commentId: P:DxFeed.Graal.Net.Api.DXPublisher.Instance
-  fullName: DxFeed.Graal.Net.Api.DXPublisher.Instance
-  nameWithType: DXPublisher.Instance
-- uid: DxFeed.Graal.Net.Api.DXPublisher.Instance*
-  name: Instance
-  href: docs/api/DxFeed.Graal.Net.Api.DXPublisher.html#DxFeed_Graal_Net_Api_DXPublisher_Instance_
-  commentId: Overload:DxFeed.Graal.Net.Api.DXPublisher.Instance
+- uid: DxFeed.Graal.Net.Api.DXPublisher.GetInstance
+  name: GetInstance()
+  href: docs/api/DxFeed.Graal.Net.Api.DXPublisher.html#DxFeed_Graal_Net_Api_DXPublisher_GetInstance
+  commentId: M:DxFeed.Graal.Net.Api.DXPublisher.GetInstance
+  fullName: DxFeed.Graal.Net.Api.DXPublisher.GetInstance()
+  nameWithType: DXPublisher.GetInstance()
+- uid: DxFeed.Graal.Net.Api.DXPublisher.GetInstance*
+  name: GetInstance
+  href: docs/api/DxFeed.Graal.Net.Api.DXPublisher.html#DxFeed_Graal_Net_Api_DXPublisher_GetInstance_
+  commentId: Overload:DxFeed.Graal.Net.Api.DXPublisher.GetInstance
   isSpec: "True"
-  fullName: DxFeed.Graal.Net.Api.DXPublisher.Instance
-  nameWithType: DXPublisher.Instance
+  fullName: DxFeed.Graal.Net.Api.DXPublisher.GetInstance
+  nameWithType: DXPublisher.GetInstance
 - uid: DxFeed.Graal.Net.Api.DXPublisher.PublishEvents(DxFeed.Graal.Net.Events.IEventType[])
   name: PublishEvents(params IEventType[])
   href: docs/api/DxFeed.Graal.Net.Api.DXPublisher.html#DxFeed_Graal_Net_Api_DXPublisher_PublishEvents_DxFeed_Graal_Net_Events_IEventType___
@@ -8567,6 +8502,12 @@ references:
   commentId: T:DxFeed.Graal.Net.Native.ErrorHandling.GraalErrorCode
   fullName: DxFeed.Graal.Net.Native.ErrorHandling.GraalErrorCode
   nameWithType: GraalErrorCode
+- uid: DxFeed.Graal.Net.Native.ErrorHandling.GraalErrorCode.AllocationFailed
+  name: AllocationFailed
+  href: docs/api/DxFeed.Graal.Net.Native.ErrorHandling.GraalErrorCode.html#DxFeed_Graal_Net_Native_ErrorHandling_GraalErrorCode_AllocationFailed
+  commentId: F:DxFeed.Graal.Net.Native.ErrorHandling.GraalErrorCode.AllocationFailed
+  fullName: DxFeed.Graal.Net.Native.ErrorHandling.GraalErrorCode.AllocationFailed
+  nameWithType: GraalErrorCode.AllocationFailed
 - uid: DxFeed.Graal.Net.Native.ErrorHandling.GraalErrorCode.ArgumentParsingFailed
   name: ArgumentParsingFailed
   href: docs/api/DxFeed.Graal.Net.Native.ErrorHandling.GraalErrorCode.html#DxFeed_Graal_Net_Native_ErrorHandling_GraalErrorCode_ArgumentParsingFailed
@@ -8591,6 +8532,48 @@ references:
   commentId: F:DxFeed.Graal.Net.Native.ErrorHandling.GraalErrorCode.CpuFeatureCheckFailed
   fullName: DxFeed.Graal.Net.Native.ErrorHandling.GraalErrorCode.CpuFeatureCheckFailed
   nameWithType: GraalErrorCode.CpuFeatureCheckFailed
+- uid: DxFeed.Graal.Net.Native.ErrorHandling.GraalErrorCode.DynamicMethodAddressResolutionGotFdCreateFailed
+  name: DynamicMethodAddressResolutionGotFdCreateFailed
+  href: docs/api/DxFeed.Graal.Net.Native.ErrorHandling.GraalErrorCode.html#DxFeed_Graal_Net_Native_ErrorHandling_GraalErrorCode_DynamicMethodAddressResolutionGotFdCreateFailed
+  commentId: F:DxFeed.Graal.Net.Native.ErrorHandling.GraalErrorCode.DynamicMethodAddressResolutionGotFdCreateFailed
+  fullName: DxFeed.Graal.Net.Native.ErrorHandling.GraalErrorCode.DynamicMethodAddressResolutionGotFdCreateFailed
+  nameWithType: GraalErrorCode.DynamicMethodAddressResolutionGotFdCreateFailed
+- uid: DxFeed.Graal.Net.Native.ErrorHandling.GraalErrorCode.DynamicMethodAddressResolutionGotFdInvalid
+  name: DynamicMethodAddressResolutionGotFdInvalid
+  href: docs/api/DxFeed.Graal.Net.Native.ErrorHandling.GraalErrorCode.html#DxFeed_Graal_Net_Native_ErrorHandling_GraalErrorCode_DynamicMethodAddressResolutionGotFdInvalid
+  commentId: F:DxFeed.Graal.Net.Native.ErrorHandling.GraalErrorCode.DynamicMethodAddressResolutionGotFdInvalid
+  fullName: DxFeed.Graal.Net.Native.ErrorHandling.GraalErrorCode.DynamicMethodAddressResolutionGotFdInvalid
+  nameWithType: GraalErrorCode.DynamicMethodAddressResolutionGotFdInvalid
+- uid: DxFeed.Graal.Net.Native.ErrorHandling.GraalErrorCode.DynamicMethodAddressResolutionGotFdMapFailed
+  name: DynamicMethodAddressResolutionGotFdMapFailed
+  href: docs/api/DxFeed.Graal.Net.Native.ErrorHandling.GraalErrorCode.html#DxFeed_Graal_Net_Native_ErrorHandling_GraalErrorCode_DynamicMethodAddressResolutionGotFdMapFailed
+  commentId: F:DxFeed.Graal.Net.Native.ErrorHandling.GraalErrorCode.DynamicMethodAddressResolutionGotFdMapFailed
+  fullName: DxFeed.Graal.Net.Native.ErrorHandling.GraalErrorCode.DynamicMethodAddressResolutionGotFdMapFailed
+  nameWithType: GraalErrorCode.DynamicMethodAddressResolutionGotFdMapFailed
+- uid: DxFeed.Graal.Net.Native.ErrorHandling.GraalErrorCode.DynamicMethodAddressResolutionGotFdResizeFailed
+  name: DynamicMethodAddressResolutionGotFdResizeFailed
+  href: docs/api/DxFeed.Graal.Net.Native.ErrorHandling.GraalErrorCode.html#DxFeed_Graal_Net_Native_ErrorHandling_GraalErrorCode_DynamicMethodAddressResolutionGotFdResizeFailed
+  commentId: F:DxFeed.Graal.Net.Native.ErrorHandling.GraalErrorCode.DynamicMethodAddressResolutionGotFdResizeFailed
+  fullName: DxFeed.Graal.Net.Native.ErrorHandling.GraalErrorCode.DynamicMethodAddressResolutionGotFdResizeFailed
+  nameWithType: GraalErrorCode.DynamicMethodAddressResolutionGotFdResizeFailed
+- uid: DxFeed.Graal.Net.Native.ErrorHandling.GraalErrorCode.DynamicMethodAddressResolutionGotMmapFailed
+  name: DynamicMethodAddressResolutionGotMmapFailed
+  href: docs/api/DxFeed.Graal.Net.Native.ErrorHandling.GraalErrorCode.html#DxFeed_Graal_Net_Native_ErrorHandling_GraalErrorCode_DynamicMethodAddressResolutionGotMmapFailed
+  commentId: F:DxFeed.Graal.Net.Native.ErrorHandling.GraalErrorCode.DynamicMethodAddressResolutionGotMmapFailed
+  fullName: DxFeed.Graal.Net.Native.ErrorHandling.GraalErrorCode.DynamicMethodAddressResolutionGotMmapFailed
+  nameWithType: GraalErrorCode.DynamicMethodAddressResolutionGotMmapFailed
+- uid: DxFeed.Graal.Net.Native.ErrorHandling.GraalErrorCode.DynamicMethodAddressResolutionGotUniqueFileCreateFailed
+  name: DynamicMethodAddressResolutionGotUniqueFileCreateFailed
+  href: docs/api/DxFeed.Graal.Net.Native.ErrorHandling.GraalErrorCode.html#DxFeed_Graal_Net_Native_ErrorHandling_GraalErrorCode_DynamicMethodAddressResolutionGotUniqueFileCreateFailed
+  commentId: F:DxFeed.Graal.Net.Native.ErrorHandling.GraalErrorCode.DynamicMethodAddressResolutionGotUniqueFileCreateFailed
+  fullName: DxFeed.Graal.Net.Native.ErrorHandling.GraalErrorCode.DynamicMethodAddressResolutionGotUniqueFileCreateFailed
+  nameWithType: GraalErrorCode.DynamicMethodAddressResolutionGotUniqueFileCreateFailed
+- uid: DxFeed.Graal.Net.Native.ErrorHandling.GraalErrorCode.DynamicMethodAddressResolutionGotWrongMmap
+  name: DynamicMethodAddressResolutionGotWrongMmap
+  href: docs/api/DxFeed.Graal.Net.Native.ErrorHandling.GraalErrorCode.html#DxFeed_Graal_Net_Native_ErrorHandling_GraalErrorCode_DynamicMethodAddressResolutionGotWrongMmap
+  commentId: F:DxFeed.Graal.Net.Native.ErrorHandling.GraalErrorCode.DynamicMethodAddressResolutionGotWrongMmap
+  fullName: DxFeed.Graal.Net.Native.ErrorHandling.GraalErrorCode.DynamicMethodAddressResolutionGotWrongMmap
+  nameWithType: GraalErrorCode.DynamicMethodAddressResolutionGotWrongMmap
 - uid: DxFeed.Graal.Net.Native.ErrorHandling.GraalErrorCode.FreeAddressSpaceFailed
   name: FreeAddressSpaceFailed
   href: docs/api/DxFeed.Graal.Net.Native.ErrorHandling.GraalErrorCode.html#DxFeed_Graal_Net_Native_ErrorHandling_GraalErrorCode_FreeAddressSpaceFailed
@@ -8663,6 +8646,12 @@ references:
   commentId: F:DxFeed.Graal.Net.Native.ErrorHandling.GraalErrorCode.OpenImageFailed
   fullName: DxFeed.Graal.Net.Native.ErrorHandling.GraalErrorCode.OpenImageFailed
   nameWithType: GraalErrorCode.OpenImageFailed
+- uid: DxFeed.Graal.Net.Native.ErrorHandling.GraalErrorCode.PageSizeCheckFailed
+  name: PageSizeCheckFailed
+  href: docs/api/DxFeed.Graal.Net.Native.ErrorHandling.GraalErrorCode.html#DxFeed_Graal_Net_Native_ErrorHandling_GraalErrorCode_PageSizeCheckFailed
+  commentId: F:DxFeed.Graal.Net.Native.ErrorHandling.GraalErrorCode.PageSizeCheckFailed
+  fullName: DxFeed.Graal.Net.Native.ErrorHandling.GraalErrorCode.PageSizeCheckFailed
+  nameWithType: GraalErrorCode.PageSizeCheckFailed
 - uid: DxFeed.Graal.Net.Native.ErrorHandling.GraalErrorCode.ProtectHeapFailed
   name: ProtectHeapFailed
   href: docs/api/DxFeed.Graal.Net.Native.ErrorHandling.GraalErrorCode.html#DxFeed_Graal_Net_Native_ErrorHandling_GraalErrorCode_ProtectHeapFailed
@@ -8705,6 +8694,12 @@ references:
   commentId: F:DxFeed.Graal.Net.Native.ErrorHandling.GraalErrorCode.UninitializedIsolate
   fullName: DxFeed.Graal.Net.Native.ErrorHandling.GraalErrorCode.UninitializedIsolate
   nameWithType: GraalErrorCode.UninitializedIsolate
+- uid: DxFeed.Graal.Net.Native.ErrorHandling.GraalErrorCode.UnknownStackBoundaries
+  name: UnknownStackBoundaries
+  href: docs/api/DxFeed.Graal.Net.Native.ErrorHandling.GraalErrorCode.html#DxFeed_Graal_Net_Native_ErrorHandling_GraalErrorCode_UnknownStackBoundaries
+  commentId: F:DxFeed.Graal.Net.Native.ErrorHandling.GraalErrorCode.UnknownStackBoundaries
+  fullName: DxFeed.Graal.Net.Native.ErrorHandling.GraalErrorCode.UnknownStackBoundaries
+  nameWithType: GraalErrorCode.UnknownStackBoundaries
 - uid: DxFeed.Graal.Net.Native.ErrorHandling.GraalErrorCode.Unspecified
   name: Unspecified
   href: docs/api/DxFeed.Graal.Net.Native.ErrorHandling.GraalErrorCode.html#DxFeed_Graal_Net_Native_ErrorHandling_GraalErrorCode_Unspecified
@@ -8755,32 +8750,19 @@ references:
   isSpec: "True"
   fullName: DxFeed.Graal.Net.Native.ErrorHandling.GraalException.ErrorCode
   nameWithType: GraalException.ErrorCode
-- uid: DxFeed.Graal.Net.Native.ErrorHandling.GraalException.GraalMessage
-  name: GraalMessage
-  href: docs/api/DxFeed.Graal.Net.Native.ErrorHandling.GraalException.html#DxFeed_Graal_Net_Native_ErrorHandling_GraalException_GraalMessage
-  commentId: P:DxFeed.Graal.Net.Native.ErrorHandling.GraalException.GraalMessage
-  fullName: DxFeed.Graal.Net.Native.ErrorHandling.GraalException.GraalMessage
-  nameWithType: GraalException.GraalMessage
-- uid: DxFeed.Graal.Net.Native.ErrorHandling.GraalException.GraalMessage*
-  name: GraalMessage
-  href: docs/api/DxFeed.Graal.Net.Native.ErrorHandling.GraalException.html#DxFeed_Graal_Net_Native_ErrorHandling_GraalException_GraalMessage_
-  commentId: Overload:DxFeed.Graal.Net.Native.ErrorHandling.GraalException.GraalMessage
+- uid: DxFeed.Graal.Net.Native.ErrorHandling.GraalException.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)
+  name: GetObjectData(SerializationInfo, StreamingContext)
+  href: docs/api/DxFeed.Graal.Net.Native.ErrorHandling.GraalException.html#DxFeed_Graal_Net_Native_ErrorHandling_GraalException_GetObjectData_System_Runtime_Serialization_SerializationInfo_System_Runtime_Serialization_StreamingContext_
+  commentId: M:DxFeed.Graal.Net.Native.ErrorHandling.GraalException.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)
+  fullName: DxFeed.Graal.Net.Native.ErrorHandling.GraalException.GetObjectData(System.Runtime.Serialization.SerializationInfo, System.Runtime.Serialization.StreamingContext)
+  nameWithType: GraalException.GetObjectData(SerializationInfo, StreamingContext)
+- uid: DxFeed.Graal.Net.Native.ErrorHandling.GraalException.GetObjectData*
+  name: GetObjectData
+  href: docs/api/DxFeed.Graal.Net.Native.ErrorHandling.GraalException.html#DxFeed_Graal_Net_Native_ErrorHandling_GraalException_GetObjectData_
+  commentId: Overload:DxFeed.Graal.Net.Native.ErrorHandling.GraalException.GetObjectData
   isSpec: "True"
-  fullName: DxFeed.Graal.Net.Native.ErrorHandling.GraalException.GraalMessage
-  nameWithType: GraalException.GraalMessage
-- uid: DxFeed.Graal.Net.Native.ErrorHandling.GraalException.Message
-  name: Message
-  href: docs/api/DxFeed.Graal.Net.Native.ErrorHandling.GraalException.html#DxFeed_Graal_Net_Native_ErrorHandling_GraalException_Message
-  commentId: P:DxFeed.Graal.Net.Native.ErrorHandling.GraalException.Message
-  fullName: DxFeed.Graal.Net.Native.ErrorHandling.GraalException.Message
-  nameWithType: GraalException.Message
-- uid: DxFeed.Graal.Net.Native.ErrorHandling.GraalException.Message*
-  name: Message
-  href: docs/api/DxFeed.Graal.Net.Native.ErrorHandling.GraalException.html#DxFeed_Graal_Net_Native_ErrorHandling_GraalException_Message_
-  commentId: Overload:DxFeed.Graal.Net.Native.ErrorHandling.GraalException.Message
-  isSpec: "True"
-  fullName: DxFeed.Graal.Net.Native.ErrorHandling.GraalException.Message
-  nameWithType: GraalException.Message
+  fullName: DxFeed.Graal.Net.Native.ErrorHandling.GraalException.GetObjectData
+  nameWithType: GraalException.GetObjectData
 - uid: DxFeed.Graal.Net.Native.ErrorHandling.JavaException
   name: JavaException
   href: docs/api/DxFeed.Graal.Net.Native.ErrorHandling.JavaException.html
@@ -8806,6 +8788,19 @@ references:
   fullName.vb: DxFeed.Graal.Net.Native.ErrorHandling.JavaException.New
   nameWithType: JavaException.JavaException
   nameWithType.vb: JavaException.New
+- uid: DxFeed.Graal.Net.Native.ErrorHandling.JavaException.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)
+  name: GetObjectData(SerializationInfo, StreamingContext)
+  href: docs/api/DxFeed.Graal.Net.Native.ErrorHandling.JavaException.html#DxFeed_Graal_Net_Native_ErrorHandling_JavaException_GetObjectData_System_Runtime_Serialization_SerializationInfo_System_Runtime_Serialization_StreamingContext_
+  commentId: M:DxFeed.Graal.Net.Native.ErrorHandling.JavaException.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)
+  fullName: DxFeed.Graal.Net.Native.ErrorHandling.JavaException.GetObjectData(System.Runtime.Serialization.SerializationInfo, System.Runtime.Serialization.StreamingContext)
+  nameWithType: JavaException.GetObjectData(SerializationInfo, StreamingContext)
+- uid: DxFeed.Graal.Net.Native.ErrorHandling.JavaException.GetObjectData*
+  name: GetObjectData
+  href: docs/api/DxFeed.Graal.Net.Native.ErrorHandling.JavaException.html#DxFeed_Graal_Net_Native_ErrorHandling_JavaException_GetObjectData_
+  commentId: Overload:DxFeed.Graal.Net.Native.ErrorHandling.JavaException.GetObjectData
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Native.ErrorHandling.JavaException.GetObjectData
+  nameWithType: JavaException.GetObjectData
 - uid: DxFeed.Graal.Net.Native.ErrorHandling.JavaException.JavaClassName
   name: JavaClassName
   href: docs/api/DxFeed.Graal.Net.Native.ErrorHandling.JavaException.html#DxFeed_Graal_Net_Native_ErrorHandling_JavaException_JavaClassName
@@ -8819,19 +8814,6 @@ references:
   isSpec: "True"
   fullName: DxFeed.Graal.Net.Native.ErrorHandling.JavaException.JavaClassName
   nameWithType: JavaException.JavaClassName
-- uid: DxFeed.Graal.Net.Native.ErrorHandling.JavaException.JavaMessage
-  name: JavaMessage
-  href: docs/api/DxFeed.Graal.Net.Native.ErrorHandling.JavaException.html#DxFeed_Graal_Net_Native_ErrorHandling_JavaException_JavaMessage
-  commentId: P:DxFeed.Graal.Net.Native.ErrorHandling.JavaException.JavaMessage
-  fullName: DxFeed.Graal.Net.Native.ErrorHandling.JavaException.JavaMessage
-  nameWithType: JavaException.JavaMessage
-- uid: DxFeed.Graal.Net.Native.ErrorHandling.JavaException.JavaMessage*
-  name: JavaMessage
-  href: docs/api/DxFeed.Graal.Net.Native.ErrorHandling.JavaException.html#DxFeed_Graal_Net_Native_ErrorHandling_JavaException_JavaMessage_
-  commentId: Overload:DxFeed.Graal.Net.Native.ErrorHandling.JavaException.JavaMessage
-  isSpec: "True"
-  fullName: DxFeed.Graal.Net.Native.ErrorHandling.JavaException.JavaMessage
-  nameWithType: JavaException.JavaMessage
 - uid: DxFeed.Graal.Net.Native.ErrorHandling.JavaException.JavaStackTrace
   name: JavaStackTrace
   href: docs/api/DxFeed.Graal.Net.Native.ErrorHandling.JavaException.html#DxFeed_Graal_Net_Native_ErrorHandling_JavaException_JavaStackTrace
@@ -8845,19 +8827,19 @@ references:
   isSpec: "True"
   fullName: DxFeed.Graal.Net.Native.ErrorHandling.JavaException.JavaStackTrace
   nameWithType: JavaException.JavaStackTrace
-- uid: DxFeed.Graal.Net.Native.ErrorHandling.JavaException.Message
-  name: Message
-  href: docs/api/DxFeed.Graal.Net.Native.ErrorHandling.JavaException.html#DxFeed_Graal_Net_Native_ErrorHandling_JavaException_Message
-  commentId: P:DxFeed.Graal.Net.Native.ErrorHandling.JavaException.Message
-  fullName: DxFeed.Graal.Net.Native.ErrorHandling.JavaException.Message
-  nameWithType: JavaException.Message
-- uid: DxFeed.Graal.Net.Native.ErrorHandling.JavaException.Message*
-  name: Message
-  href: docs/api/DxFeed.Graal.Net.Native.ErrorHandling.JavaException.html#DxFeed_Graal_Net_Native_ErrorHandling_JavaException_Message_
-  commentId: Overload:DxFeed.Graal.Net.Native.ErrorHandling.JavaException.Message
+- uid: DxFeed.Graal.Net.Native.ErrorHandling.JavaException.StackTrace
+  name: StackTrace
+  href: docs/api/DxFeed.Graal.Net.Native.ErrorHandling.JavaException.html#DxFeed_Graal_Net_Native_ErrorHandling_JavaException_StackTrace
+  commentId: P:DxFeed.Graal.Net.Native.ErrorHandling.JavaException.StackTrace
+  fullName: DxFeed.Graal.Net.Native.ErrorHandling.JavaException.StackTrace
+  nameWithType: JavaException.StackTrace
+- uid: DxFeed.Graal.Net.Native.ErrorHandling.JavaException.StackTrace*
+  name: StackTrace
+  href: docs/api/DxFeed.Graal.Net.Native.ErrorHandling.JavaException.html#DxFeed_Graal_Net_Native_ErrorHandling_JavaException_StackTrace_
+  commentId: Overload:DxFeed.Graal.Net.Native.ErrorHandling.JavaException.StackTrace
   isSpec: "True"
-  fullName: DxFeed.Graal.Net.Native.ErrorHandling.JavaException.Message
-  nameWithType: JavaException.Message
+  fullName: DxFeed.Graal.Net.Native.ErrorHandling.JavaException.StackTrace
+  nameWithType: JavaException.StackTrace
 - uid: DxFeed.Graal.Net.Native.Events
   name: DxFeed.Graal.Net.Native.Events
   href: docs/api/DxFeed.Graal.Net.Native.Events.html

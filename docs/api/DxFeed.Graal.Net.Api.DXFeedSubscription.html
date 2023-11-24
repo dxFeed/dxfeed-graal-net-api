@@ -117,7 +117,7 @@
                             <a href="DxFeed.Graal.Net.Api.DXEndpoint.State.html" title="DXEndpoint.State" class="">DXEndpoint.State</a>
                           </li>
                           <li class="">
-                            <a href="DxFeed.Graal.Net.Api.DXEndpoint.StateChangeListenerCallback.html" title="DXEndpoint.StateChangeListenerCallback" class="">DXEndpoint.StateChangeListenerCallback</a>
+                            <a href="DxFeed.Graal.Net.Api.DXEndpoint.StateChangeListener.html" title="DXEndpoint.StateChangeListener" class="">DXEndpoint.StateChangeListener</a>
                           </li>
                           <li class="">
                             <a href="DxFeed.Graal.Net.Api.DXFeed.html" title="DXFeed" class="">DXFeed</a>
@@ -494,10 +494,10 @@ For more details see <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/api/
 </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.6.0/apiSpec/new?filename=DxFeed_Graal_Net_Api_DXFeedSubscription_IsClosed.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Api.DXFeedSubscription.IsClosed%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.7.0/apiSpec/new?filename=DxFeed_Graal_Net_Api_DXFeedSubscription_IsClosed.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Api.DXFeedSubscription.IsClosed%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.6.0/src\DxFeed.Graal.Net\Api\DXFeedSubscription.cs/#L65">View Source</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.7.0/src/DxFeed.Graal.Net/Api/DXFeedSubscription.cs/#L65">View Source</a>
   </span>
   <a id="DxFeed_Graal_Net_Api_DXFeedSubscription_IsClosed_" data-uid="DxFeed.Graal.Net.Api.DXFeedSubscription.IsClosed*"></a>
   <h4 id="DxFeed_Graal_Net_Api_DXFeedSubscription_IsClosed" data-uid="DxFeed.Graal.Net.Api.DXFeedSubscription.IsClosed">IsClosed</h4>
@@ -528,19 +528,17 @@ For more details see <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/api/
 </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.6.0/apiSpec/new?filename=DxFeed_Graal_Net_Api_DXFeedSubscription_AddEventListener_DxFeed_Graal_Net_Api_DXFeedEventListener_.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Api.DXFeedSubscription.AddEventListener(DxFeed.Graal.Net.Api.DXFeedEventListener)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.7.0/apiSpec/new?filename=DxFeed_Graal_Net_Api_DXFeedSubscription_AddEventListener_DxFeed_Graal_Net_Api_DXFeedEventListener_.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Api.DXFeedSubscription.AddEventListener(DxFeed.Graal.Net.Api.DXFeedEventListener)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.6.0/src\DxFeed.Graal.Net\Api\DXFeedSubscription.cs/#L100">View Source</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.7.0/src/DxFeed.Graal.Net/Api/DXFeedSubscription.cs/#L85">View Source</a>
   </span>
   <a id="DxFeed_Graal_Net_Api_DXFeedSubscription_AddEventListener_" data-uid="DxFeed.Graal.Net.Api.DXFeedSubscription.AddEventListener*"></a>
   <h4 id="DxFeed_Graal_Net_Api_DXFeedSubscription_AddEventListener_DxFeed_Graal_Net_Api_DXFeedEventListener_" data-uid="DxFeed.Graal.Net.Api.DXFeedSubscription.AddEventListener(DxFeed.Graal.Net.Api.DXFeedEventListener)">AddEventListener(DXFeedEventListener)</h4>
   <div class="markdown level1 summary"><p>Adds listener for events.
 Event lister can be added only when subscription is not producing any events.
-The subscription must be either empty (no symbols have been added)
-or not attached to any feed.
-This method does nothing if this subscription is closed.
-<a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/api/DXFeedSubscription.html#addEventListener-com.dxfeed.api.DXFeedEventListener-">Javadoc.</a></p>
+The subscription must be either empty (no symbols have been added).
+This method does nothing if this subscription is closed.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
@@ -567,17 +565,16 @@ This method does nothing if this subscription is closed.
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.6.0/apiSpec/new?filename=DxFeed_Graal_Net_Api_DXFeedSubscription_AddSymbols_System_Collections_Generic_IEnumerable_System_Object__.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Api.DXFeedSubscription.AddSymbols(System.Collections.Generic.IEnumerable%7BSystem.Object%7D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.7.0/apiSpec/new?filename=DxFeed_Graal_Net_Api_DXFeedSubscription_AddSymbols_System_Collections_Generic_IEnumerable_System_Object__.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Api.DXFeedSubscription.AddSymbols(System.Collections.Generic.IEnumerable%7BSystem.Object%7D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.6.0/src\DxFeed.Graal.Net\Api\DXFeedSubscription.cs/#L149">View Source</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.7.0/src/DxFeed.Graal.Net/Api/DXFeedSubscription.cs/#L131">View Source</a>
   </span>
   <a id="DxFeed_Graal_Net_Api_DXFeedSubscription_AddSymbols_" data-uid="DxFeed.Graal.Net.Api.DXFeedSubscription.AddSymbols*"></a>
   <h4 id="DxFeed_Graal_Net_Api_DXFeedSubscription_AddSymbols_System_Collections_Generic_IEnumerable_System_Object__" data-uid="DxFeed.Graal.Net.Api.DXFeedSubscription.AddSymbols(System.Collections.Generic.IEnumerable{System.Object})">AddSymbols(IEnumerable&lt;object&gt;)</h4>
   <div class="markdown level1 summary"><p>Adds the specified collection of symbols to the set of subscribed symbols.
 All registered event listeners will receive update on the last events for all
-newly added symbols.
-<a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/api/DXFeedSubscription.html#addSymbols-java.util.Collection-">Javadoc.</a></p>
+newly added symbols.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
@@ -604,17 +601,16 @@ newly added symbols.
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.6.0/apiSpec/new?filename=DxFeed_Graal_Net_Api_DXFeedSubscription_AddSymbols_System_Object___.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Api.DXFeedSubscription.AddSymbols(System.Object%5B%5D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.7.0/apiSpec/new?filename=DxFeed_Graal_Net_Api_DXFeedSubscription_AddSymbols_System_Object___.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Api.DXFeedSubscription.AddSymbols(System.Object%5B%5D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.6.0/src\DxFeed.Graal.Net\Api\DXFeedSubscription.cs/#L139">View Source</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.7.0/src/DxFeed.Graal.Net/Api/DXFeedSubscription.cs/#L122">View Source</a>
   </span>
   <a id="DxFeed_Graal_Net_Api_DXFeedSubscription_AddSymbols_" data-uid="DxFeed.Graal.Net.Api.DXFeedSubscription.AddSymbols*"></a>
   <h4 id="DxFeed_Graal_Net_Api_DXFeedSubscription_AddSymbols_System_Object___" data-uid="DxFeed.Graal.Net.Api.DXFeedSubscription.AddSymbols(System.Object[])">AddSymbols(params object[])</h4>
   <div class="markdown level1 summary"><p>Adds the specified collection of symbols to the set of subscribed symbols.
 All registered event listeners will receive update on the last events for all
-newly added symbols.
-<a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/api/DXFeedSubscription.html#addSymbols-java.util.Collection-">Javadoc.</a></p>
+newly added symbols.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
@@ -641,49 +637,14 @@ newly added symbols.
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.6.0/apiSpec/new?filename=DxFeed_Graal_Net_Api_DXFeedSubscription_Attach_DxFeed_Graal_Net_Api_DXFeed_.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Api.DXFeedSubscription.Attach(DxFeed.Graal.Net.Api.DXFeed)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.7.0/apiSpec/new?filename=DxFeed_Graal_Net_Api_DXFeedSubscription_Clear.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Api.DXFeedSubscription.Clear%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.6.0/src\DxFeed.Graal.Net\Api\DXFeedSubscription.cs/#L80">View Source</a>
-  </span>
-  <a id="DxFeed_Graal_Net_Api_DXFeedSubscription_Attach_" data-uid="DxFeed.Graal.Net.Api.DXFeedSubscription.Attach*"></a>
-  <h4 id="DxFeed_Graal_Net_Api_DXFeedSubscription_Attach_DxFeed_Graal_Net_Api_DXFeed_" data-uid="DxFeed.Graal.Net.Api.DXFeedSubscription.Attach(DxFeed.Graal.Net.Api.DXFeed)">Attach(DXFeed)</h4>
-  <div class="markdown level1 summary"><p>Attaches subscription to the specified feed.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void Attach(DXFeed feed)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="DxFeed.Graal.Net.Api.DXFeed.html">DXFeed</a></td>
-        <td><span class="parametername">feed</span></td>
-        <td><p>The <a class="xref" href="DxFeed.Graal.Net.Api.DXFeed.html">DXFeed</a> to attach to.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.6.0/apiSpec/new?filename=DxFeed_Graal_Net_Api_DXFeedSubscription_Clear.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Api.DXFeedSubscription.Clear%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.6.0/src\DxFeed.Graal.Net\Api\DXFeedSubscription.cs/#L172">View Source</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.7.0/src/DxFeed.Graal.Net/Api/DXFeedSubscription.cs/#L151">View Source</a>
   </span>
   <a id="DxFeed_Graal_Net_Api_DXFeedSubscription_Clear_" data-uid="DxFeed.Graal.Net.Api.DXFeedSubscription.Clear*"></a>
   <h4 id="DxFeed_Graal_Net_Api_DXFeedSubscription_Clear" data-uid="DxFeed.Graal.Net.Api.DXFeedSubscription.Clear">Clear()</h4>
-  <div class="markdown level1 summary"><p>Clears the set of subscribed symbols.
-<a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/api/DXFeedSubscription.html#clear--">Javadoc.</a></p>
+  <div class="markdown level1 summary"><p>Clears the set of subscribed symbols.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
@@ -692,15 +653,14 @@ newly added symbols.
   </div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.6.0/apiSpec/new?filename=DxFeed_Graal_Net_Api_DXFeedSubscription_Close.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Api.DXFeedSubscription.Close%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.7.0/apiSpec/new?filename=DxFeed_Graal_Net_Api_DXFeedSubscription_Close.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Api.DXFeedSubscription.Close%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.6.0/src\DxFeed.Graal.Net\Api\DXFeedSubscription.cs/#L180">View Source</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.7.0/src/DxFeed.Graal.Net/Api/DXFeedSubscription.cs/#L158">View Source</a>
   </span>
   <a id="DxFeed_Graal_Net_Api_DXFeedSubscription_Close_" data-uid="DxFeed.Graal.Net.Api.DXFeedSubscription.Close*"></a>
   <h4 id="DxFeed_Graal_Net_Api_DXFeedSubscription_Close" data-uid="DxFeed.Graal.Net.Api.DXFeedSubscription.Close">Close()</h4>
-  <div class="markdown level1 summary"><p>Closes this subscription and makes it <i>permanently</i> detached.
-<a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/api/DXFeedSubscription.html#close--">Javadoc.</a></p>
+  <div class="markdown level1 summary"><p>Closes this subscription and makes it <i>permanently</i> detached.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
@@ -709,44 +669,10 @@ newly added symbols.
   </div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.6.0/apiSpec/new?filename=DxFeed_Graal_Net_Api_DXFeedSubscription_Detach_DxFeed_Graal_Net_Api_DXFeed_.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Api.DXFeedSubscription.Detach(DxFeed.Graal.Net.Api.DXFeed)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.7.0/apiSpec/new?filename=DxFeed_Graal_Net_Api_DXFeedSubscription_Dispose.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Api.DXFeedSubscription.Dispose%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.6.0/src\DxFeed.Graal.Net\Api\DXFeedSubscription.cs/#L87">View Source</a>
-  </span>
-  <a id="DxFeed_Graal_Net_Api_DXFeedSubscription_Detach_" data-uid="DxFeed.Graal.Net.Api.DXFeedSubscription.Detach*"></a>
-  <h4 id="DxFeed_Graal_Net_Api_DXFeedSubscription_Detach_DxFeed_Graal_Net_Api_DXFeed_" data-uid="DxFeed.Graal.Net.Api.DXFeedSubscription.Detach(DxFeed.Graal.Net.Api.DXFeed)">Detach(DXFeed)</h4>
-  <div class="markdown level1 summary"><p>Detaches subscription from the specified feed.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void Detach(DXFeed feed)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="DxFeed.Graal.Net.Api.DXFeed.html">DXFeed</a></td>
-        <td><span class="parametername">feed</span></td>
-        <td><p>The <a class="xref" href="DxFeed.Graal.Net.Api.DXFeed.html">DXFeed</a> to detach from.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.6.0/apiSpec/new?filename=DxFeed_Graal_Net_Api_DXFeedSubscription_Dispose.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Api.DXFeedSubscription.Dispose%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.6.0/src\DxFeed.Graal.Net\Api\DXFeedSubscription.cs/#L187">View Source</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.7.0/src/DxFeed.Graal.Net/Api/DXFeedSubscription.cs/#L165">View Source</a>
   </span>
   <a id="DxFeed_Graal_Net_Api_DXFeedSubscription_Dispose_" data-uid="DxFeed.Graal.Net.Api.DXFeedSubscription.Dispose*"></a>
   <h4 id="DxFeed_Graal_Net_Api_DXFeedSubscription_Dispose" data-uid="DxFeed.Graal.Net.Api.DXFeedSubscription.Dispose">Dispose()</h4>
@@ -759,10 +685,10 @@ newly added symbols.
   </div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.6.0/apiSpec/new?filename=DxFeed_Graal_Net_Api_DXFeedSubscription_GetEventTypes.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Api.DXFeedSubscription.GetEventTypes%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.7.0/apiSpec/new?filename=DxFeed_Graal_Net_Api_DXFeedSubscription_GetEventTypes.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Api.DXFeedSubscription.GetEventTypes%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.6.0/src\DxFeed.Graal.Net\Api\DXFeedSubscription.cs/#L69">View Source</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.7.0/src/DxFeed.Graal.Net/Api/DXFeedSubscription.cs/#L69">View Source</a>
   </span>
   <a id="DxFeed_Graal_Net_Api_DXFeedSubscription_GetEventTypes_" data-uid="DxFeed.Graal.Net.Api.DXFeedSubscription.GetEventTypes*"></a>
   <h4 id="DxFeed_Graal_Net_Api_DXFeedSubscription_GetEventTypes" data-uid="DxFeed.Graal.Net.Api.DXFeedSubscription.GetEventTypes">GetEventTypes()</h4>
@@ -792,10 +718,10 @@ newly added symbols.
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.6.0/apiSpec/new?filename=DxFeed_Graal_Net_Api_DXFeedSubscription_IsContainsEventType_System_Type_.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Api.DXFeedSubscription.IsContainsEventType(System.Type)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.7.0/apiSpec/new?filename=DxFeed_Graal_Net_Api_DXFeedSubscription_IsContainsEventType_System_Type_.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Api.DXFeedSubscription.IsContainsEventType(System.Type)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.6.0/src\DxFeed.Graal.Net\Api\DXFeedSubscription.cs/#L73">View Source</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.7.0/src/DxFeed.Graal.Net/Api/DXFeedSubscription.cs/#L73">View Source</a>
   </span>
   <a id="DxFeed_Graal_Net_Api_DXFeedSubscription_IsContainsEventType_" data-uid="DxFeed.Graal.Net.Api.DXFeedSubscription.IsContainsEventType*"></a>
   <h4 id="DxFeed_Graal_Net_Api_DXFeedSubscription_IsContainsEventType_System_Type_" data-uid="DxFeed.Graal.Net.Api.DXFeedSubscription.IsContainsEventType(System.Type)">IsContainsEventType(Type)</h4>
@@ -843,15 +769,14 @@ newly added symbols.
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.6.0/apiSpec/new?filename=DxFeed_Graal_Net_Api_DXFeedSubscription_RemoveEventListener_DxFeed_Graal_Net_Api_DXFeedEventListener_.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Api.DXFeedSubscription.RemoveEventListener(DxFeed.Graal.Net.Api.DXFeedEventListener)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.7.0/apiSpec/new?filename=DxFeed_Graal_Net_Api_DXFeedSubscription_RemoveEventListener_DxFeed_Graal_Net_Api_DXFeedEventListener_.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Api.DXFeedSubscription.RemoveEventListener(DxFeed.Graal.Net.Api.DXFeedEventListener)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.6.0/src\DxFeed.Graal.Net\Api\DXFeedSubscription.cs/#L119">View Source</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.7.0/src/DxFeed.Graal.Net/Api/DXFeedSubscription.cs/#L103">View Source</a>
   </span>
   <a id="DxFeed_Graal_Net_Api_DXFeedSubscription_RemoveEventListener_" data-uid="DxFeed.Graal.Net.Api.DXFeedSubscription.RemoveEventListener*"></a>
   <h4 id="DxFeed_Graal_Net_Api_DXFeedSubscription_RemoveEventListener_DxFeed_Graal_Net_Api_DXFeedEventListener_" data-uid="DxFeed.Graal.Net.Api.DXFeedSubscription.RemoveEventListener(DxFeed.Graal.Net.Api.DXFeedEventListener)">RemoveEventListener(DXFeedEventListener)</h4>
-  <div class="markdown level1 summary"><p>Removes listener for events.
-<a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/api/DXFeedSubscription.html#addEventListener-com.dxfeed.api.DXFeedEventListener-">Javadoc.</a></p>
+  <div class="markdown level1 summary"><p>Removes listener for events.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
@@ -878,15 +803,14 @@ newly added symbols.
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.6.0/apiSpec/new?filename=DxFeed_Graal_Net_Api_DXFeedSubscription_RemoveSymbols_System_Collections_Generic_IEnumerable_System_Object__.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Api.DXFeedSubscription.RemoveSymbols(System.Collections.Generic.IEnumerable%7BSystem.Object%7D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.7.0/apiSpec/new?filename=DxFeed_Graal_Net_Api_DXFeedSubscription_RemoveSymbols_System_Collections_Generic_IEnumerable_System_Object__.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Api.DXFeedSubscription.RemoveSymbols(System.Collections.Generic.IEnumerable%7BSystem.Object%7D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.6.0/src\DxFeed.Graal.Net\Api\DXFeedSubscription.cs/#L165">View Source</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.7.0/src/DxFeed.Graal.Net/Api/DXFeedSubscription.cs/#L145">View Source</a>
   </span>
   <a id="DxFeed_Graal_Net_Api_DXFeedSubscription_RemoveSymbols_" data-uid="DxFeed.Graal.Net.Api.DXFeedSubscription.RemoveSymbols*"></a>
   <h4 id="DxFeed_Graal_Net_Api_DXFeedSubscription_RemoveSymbols_System_Collections_Generic_IEnumerable_System_Object__" data-uid="DxFeed.Graal.Net.Api.DXFeedSubscription.RemoveSymbols(System.Collections.Generic.IEnumerable{System.Object})">RemoveSymbols(IEnumerable&lt;object&gt;)</h4>
-  <div class="markdown level1 summary"><p>Removes the specified collection of symbols from the set of subscribed symbols.
-<a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/api/DXFeedSubscription.html#removeSymbols-java.util.Collection-">Javadoc.</a></p>
+  <div class="markdown level1 summary"><p>Removes the specified collection of symbols from the set of subscribed symbols.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
@@ -913,15 +837,14 @@ newly added symbols.
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.6.0/apiSpec/new?filename=DxFeed_Graal_Net_Api_DXFeedSubscription_RemoveSymbols_System_Object___.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Api.DXFeedSubscription.RemoveSymbols(System.Object%5B%5D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.7.0/apiSpec/new?filename=DxFeed_Graal_Net_Api_DXFeedSubscription_RemoveSymbols_System_Object___.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Api.DXFeedSubscription.RemoveSymbols(System.Object%5B%5D)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.6.0/src\DxFeed.Graal.Net\Api\DXFeedSubscription.cs/#L157">View Source</a>
+    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.7.0/src/DxFeed.Graal.Net/Api/DXFeedSubscription.cs/#L138">View Source</a>
   </span>
   <a id="DxFeed_Graal_Net_Api_DXFeedSubscription_RemoveSymbols_" data-uid="DxFeed.Graal.Net.Api.DXFeedSubscription.RemoveSymbols*"></a>
   <h4 id="DxFeed_Graal_Net_Api_DXFeedSubscription_RemoveSymbols_System_Object___" data-uid="DxFeed.Graal.Net.Api.DXFeedSubscription.RemoveSymbols(System.Object[])">RemoveSymbols(params object[])</h4>
-  <div class="markdown level1 summary"><p>Removes the specified collection of symbols from the set of subscribed symbols.
-<a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/api/DXFeedSubscription.html#removeSymbols-java.util.Collection-">Javadoc.</a></p>
+  <div class="markdown level1 summary"><p>Removes the specified collection of symbols from the set of subscribed symbols.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
@@ -962,10 +885,10 @@ newly added symbols.
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.6.0/apiSpec/new?filename=DxFeed_Graal_Net_Api_DXFeedSubscription.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Api.DXFeedSubscription%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Edit this page</a>
+                    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.7.0/apiSpec/new?filename=DxFeed_Graal_Net_Api_DXFeedSubscription.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Api.DXFeedSubscription%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Edit this page</a>
                   </li>
                   <li>
-                    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.6.0/src\DxFeed.Graal.Net\Api\DXFeedSubscription.cs/#L24" class="contribution-link">View Source</a>
+                    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.7.0/src/DxFeed.Graal.Net/Api/DXFeedSubscription.cs/#L24" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

@@ -42,10 +42,10 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "docs/api/DxFeed.Graal.Net.Api.DXEndpoint.StateChangeListenerCallback.yml",
+      "source_relative_path": "docs/api/DxFeed.Graal.Net.Api.DXEndpoint.StateChangeListener.yml",
       "output": {
         ".html": {
-          "relative_path": "docs/api/DxFeed.Graal.Net.Api.DXEndpoint.StateChangeListenerCallback.html"
+          "relative_path": "docs/api/DxFeed.Graal.Net.Api.DXEndpoint.StateChangeListener.html"
         }
       },
       "version": ""
@@ -1084,9 +1084,6 @@
       "version": ""
     },
     {
-      "log_codes": [
-        "InvalidFileLink"
-      ],
       "type": "Conceptual",
       "source_relative_path": "index.md",
       "output": {
