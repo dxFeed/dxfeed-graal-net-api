@@ -7,72 +7,53 @@
 using System;
 using System.ComponentModel;
 using System.Runtime.Serialization;
-using System.Text;
 
 namespace DxFeed.Graal.Net.Native.ErrorHandling;
 
 /// <summary>
-/// Represents errors that occur when calling graal function.
+/// An exception class representing errors that occur during calls to GraalVM functions in interop scenarios.
 /// </summary>
+/// <remarks>
+/// This class encapsulates detailed information about errors encountered in GraalVM operations,
+/// including specific error codes and descriptive messages.
+/// </remarks>
 [Serializable]
 public sealed class GraalException : Exception
 {
     /// <summary>
     /// Initializes a new instance of the <see cref="GraalException"/> class.
     /// </summary>
-    /// <param name="errorCode">The graal error code.</param>
+    /// <param name="errorCode">The error code associated with the GraalVM error.</param>
     public GraalException(GraalErrorCode errorCode)
-    {
+        : base(CreateErrorMessage(errorCode)) =>
         ErrorCode = errorCode;
-        GraalMessage = GetGraalErrorDescription(errorCode);
-    }
 
     private GraalException(SerializationInfo info, StreamingContext context)
-        : base(info, context)
-    {
-    }
+        : base(info, context) =>
+        ErrorCode = (GraalErrorCode)info.GetValue(nameof(ErrorCode), typeof(GraalErrorCode))!;
 
     /// <summary>
-    /// Gets graal error message.
-    /// </summary>
-    public string? GraalMessage { get; }
-
-    /// <summary>
-    /// Gets graal error code.
+    /// Gets the GraalVM error code associated with this exception.
     /// </summary>
     public GraalErrorCode ErrorCode { get; }
 
-    /// <summary>
-    /// Gets a message that describes the current exception.
-    /// </summary>
-    /// <returns>The error message that explains the reason for the exception.</returns>
-    public override string Message
+    /// <inheritdoc/>
+    public override void GetObjectData(SerializationInfo info, StreamingContext context)
     {
-        get
-        {
-            var message = new StringBuilder();
-            message.AppendLine();
-            message.AppendLine("ErrorCode: " + (int)ErrorCode);
-            message.AppendLine("Message: " + GraalMessage);
-            return message.ToString();
-        }
+        base.GetObjectData(info, context);
+        info.AddValue(nameof(ErrorCode), ErrorCode);
     }
 
-    /// <summary>
-    /// Gets the error description associated with the specified error code.
-    /// </summary>
-    /// <param name="value">The specified error code.</param>
-    /// <returns>Returns error description.</returns>
-    private static string GetGraalErrorDescription(GraalErrorCode value)
+    private static string CreateErrorMessage(GraalErrorCode errorCode)
     {
-        var str = value.ToString();
-        var fi = value.GetType().GetField(str);
+        var name = errorCode.ToString();
+        var fi = errorCode.GetType().GetField(name);
         if (fi == null)
         {
-            return "Unknown error";
+            return $"Unknown error with error code: {errorCode}.";
         }
 
         var attributes = (DescriptionAttribute[])fi.GetCustomAttributes(typeof(DescriptionAttribute), false);
-        return attributes.Length > 0 ? attributes[0].Description : str;
+        return attributes.Length > 0 ? attributes[0].Description : name;
     }
 }

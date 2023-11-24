@@ -18,6 +18,7 @@
     <LangVersion>10</LangVersion>
     <Nullable>enable</Nullable>
     <CodeAnalysisRuleSet>../../StyleCop.xml</CodeAnalysisRuleSet>
+    <PathMap>$(MSBuildProjectDirectory)=$(MSBuildProjectName)</PathMap>
 
     <!-- Versioning -->
     <!-- Assembly version (System.Reflection.Assembly.GetExecutingAssembly()) -->

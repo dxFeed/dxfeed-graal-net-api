@@ -19,7 +19,6 @@ namespace DxFeed.Graal.Net.Api;
 /// <br/>
 /// <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/api/DXFeed.html"><b>Read it first Javadoc.</b></a>
 /// </summary>
-// ToDo All creates subscription methods must use DXFeedSubscription ctor, and adds sub to _attachedSubscription Set.
 public class DXFeed
 {
     /// <summary>
@@ -27,7 +26,6 @@ public class DXFeed
     /// </summary>
     private readonly FeedNative _feedNative;
 
-    // ToDo Wrap a ConcurrentDictionary to ConcurrentHashSet. Dotnet does not have implementation ConcurrentHashSet.
     private readonly ConcurrentSet<DXFeedSubscription> _attachedSubscription = new();
 
     /// <summary>
@@ -40,7 +38,6 @@ public class DXFeed
     /// <summary>
     /// Gets a default application-wide singleton instance of feed.
     /// Most applications use only a single data-source and should rely on this method to get one.
-    /// <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/api/DXFeed.html#getInstance--">Javadoc.</a>
     /// </summary>
     /// <returns>The <see cref="DXFeed"/>.</returns>
     public static DXFeed GetInstance() =>
@@ -48,7 +45,6 @@ public class DXFeed
 
     /// <summary>
     /// Creates new subscription for a list of event types that is <i>attached</i> to this feed.
-    /// <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/api/DXFeed.html#createSubscription-java.lang.Class-">Javadoc.</a>
     /// </summary>
     /// <param name="eventTypes">
     /// The list of event types.
@@ -68,7 +64,6 @@ public class DXFeed
 
     /// <summary>
     /// Creates new subscription for a list of event types that is <i>attached</i> to this feed.
-    /// <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/api/DXFeed.html#createSubscription-java.lang.Class-">Javadoc.</a>
     /// </summary>
     /// <param name="eventTypes">
     /// The list of event types.
@@ -80,44 +75,6 @@ public class DXFeed
     /// </exception>
     public DXFeedSubscription CreateSubscription(IEnumerable<Type> eventTypes) =>
         CreateSubscription(eventTypes.ToArray());
-
-    /// <summary>
-    /// Attaches the given subscription to this feed. This method does nothing if the
-    /// corresponding subscription is already attached to this feed.
-    /// <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/api/DXFeed.html#attachSubscription-com.dxfeed.api.DXFeedSubscription-">Javadoc.</a>
-    /// </summary>
-    /// <param name="subscription">The subscription.</param>
-    public void AttachSubscription(DXFeedSubscription subscription)
-    {
-        _attachedSubscription.Add(subscription);
-        _feedNative.AttachSubscription(subscription.GetNative());
-    }
-
-    /// <summary>
-    /// Detaches the given subscription from this feed and clears data delivered
-    /// to this subscription by publishing empty events.
-    /// This method does nothing if the corresponding subscription is not attached to this feed.
-    /// <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/api/DXFeed.html#detachSubscription-com.dxfeed.api.DXFeedSubscription-">Javadoc.</a>
-    /// </summary>
-    /// <param name="subscription">The subscription.</param>
-    public void DetachSubscription(DXFeedSubscription subscription)
-    {
-        _attachedSubscription.Remove(subscription);
-        _feedNative.DetachSubscription(subscription.GetNative());
-    }
-
-    /// <summary>
-    /// Detaches the given subscription from this feed and clears data delivered
-    /// to this subscription by publishing empty events.
-    /// This method does nothing if the corresponding subscription is not attached to this feed.
-    /// <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/api/DXFeed.html#detachSubscriptionAndClear-com.dxfeed.api.DXFeedSubscription-">Javadoc.</a>
-    /// </summary>
-    /// <param name="subscription">The subscription.</param>
-    public void DetachSubscriptionAndClear(DXFeedSubscription subscription)
-    {
-        _attachedSubscription.Remove(subscription);
-        _feedNative.DetachSubscriptionAndClear(subscription.GetNative());
-    }
 
     /// <summary>
     /// Gets underlying "feed native wrapper".
