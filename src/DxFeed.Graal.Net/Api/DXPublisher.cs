@@ -13,7 +13,7 @@ namespace DxFeed.Graal.Net.Api;
 
 /// <summary>
 /// Provides API for publishing of events to local or remote <see cref="DXFeed"/>.
-/// This class is a wrapper for <see cref="PublisherNative"/>.
+/// This class is a wrapper for <see cref="DXPublisherHandle"/>.
 /// <br/>
 /// For more details see <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/api/DXPublisher.html">Javadoc</a>.
 /// </summary>
@@ -22,20 +22,20 @@ public class DXPublisher
     /// <summary>
     /// Publisher native wrapper.
     /// </summary>
-    private readonly PublisherNative _publisherNative;
+    private readonly DXPublisherHandle publisher;
 
     /// <summary>
     /// Initializes a new instance of the <see cref="DXPublisher"/> class with specified publisher native.
     /// </summary>
-    /// <param name="publisherNative">The specified publisher native.</param>
-    internal DXPublisher(PublisherNative publisherNative) =>
-        _publisherNative = publisherNative;
+    /// <param name="publisher">The specified publisher native.</param>
+    internal DXPublisher(DXPublisherHandle publisher) =>
+        this.publisher = publisher;
 
     /// <summary>
     /// Gets a default application-wide singleton instance of <see cref="DXPublisher"/>.
-    /// <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/api/DXPublisher.html#getInstance--">Javadoc.</a>
     /// </summary>
-    public static DXPublisher Instance =>
+    /// <returns>The <see cref="DXPublisher"/>.</returns>
+    public static DXPublisher GetInstance() =>
         DXEndpoint.GetInstance(DXEndpoint.Role.Publisher).GetPublisher();
 
     /// <summary>
@@ -43,22 +43,18 @@ public class DXPublisher
     /// <see cref="DXEndpoint.Role.Publisher"/> role and it is connected, the
     /// published events will be delivered to the remote endpoints. Local <see cref="DXEndpoint.GetFeed"/> will
     /// always receive published events.
-    /// <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/api/DXPublisher.html#publishEvents-java.util.Collection-">Javadoc.</a>
     /// </summary>
     /// <param name="events">The list of events to publish.</param>
-    // ToDo Implement method.
     public void PublishEvents(params IEventType[] events) =>
-        _publisherNative.PublishEvents(events);
+        publisher.PublishEvents(events);
 
     /// <summary>
     /// Publishes events to the corresponding feed. If the <see cref="DXEndpoint"/> of this publisher has
     /// <see cref="DXEndpoint.Role.Publisher"/> role and it is connected, the
     /// published events will be delivered to the remote endpoints. Local <see cref="DXEndpoint.GetFeed"/> will
     /// always receive published events.
-    /// <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/api/DXPublisher.html#publishEvents-java.util.Collection-">Javadoc.</a>
     /// </summary>
     /// <param name="events">The collection of events to publish.</param>
-    // ToDo Implement method.
     public void PublishEvents(IEnumerable<IEventType> events) =>
         PublishEvents(events.ToArray());
 }

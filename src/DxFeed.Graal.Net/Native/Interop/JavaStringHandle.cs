@@ -31,7 +31,7 @@ internal sealed class JavaStringHandle : JavaHandle
 
     /// <inheritdoc/>
     protected override void Release() =>
-        ErrorCheck.NativeCall(CurrentThread, Import.Release(CurrentThread, handle));
+        ErrorCheck.SafeCall(Import.Release(CurrentThread, handle));
 
     private static class Import
     {
@@ -40,8 +40,6 @@ internal sealed class JavaStringHandle : JavaHandle
             CallingConvention = CallingConvention.Cdecl,
             CharSet = CharSet.Ansi,
             EntryPoint = "dxfg_String_release")]
-        public static extern int Release(
-            nint thread,
-            nint handle);
+        public static extern int Release(nint thread, nint handle);
     }
 }

@@ -34,6 +34,7 @@ public class PerfTestTool : AbstractTool<PerfTestArgs>
 
     public override void Run(PerfTestArgs args)
     {
+        SystemProperty.SetProperties(ParseProperties(args.Properties));
         using var endpoint = DXEndpoint
             .NewBuilder()
             .WithRole(args.ForceStream ? DXEndpoint.Role.StreamFeed : DXEndpoint.Role.Feed)

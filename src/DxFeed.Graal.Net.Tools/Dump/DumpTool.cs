@@ -35,6 +35,7 @@ public class DumpTool : AbstractTool<DumpArgs>
 
     public override void Run(DumpArgs args)
     {
+        SystemProperty.SetProperties(ParseProperties(args.Properties));
         using var inputEndpoint = DXEndpoint
             .NewBuilder()
             .WithRole(DXEndpoint.Role.StreamFeed)

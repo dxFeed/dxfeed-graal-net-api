@@ -7,15 +7,14 @@
 using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
-using System.Collections.Immutable;
 using System.IO;
-using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Threading;
 using DxFeed.Graal.Net.Api.Osub;
 using DxFeed.Graal.Net.Native.Endpoint;
 using DxFeed.Graal.Net.Native.ErrorHandling;
 using DxFeed.Graal.Net.Utils;
+using static DxFeed.Graal.Net.Native.Endpoint.DXEndpointWrapper;
 
 namespace DxFeed.Graal.Net.Api;
 
@@ -225,6 +224,11 @@ public sealed class DXEndpoint : IDisposable
     public const string DXSchemeEnabledPropertyPrefix = "dxscheme.enabled.";
 
     /// <summary>
+    /// List of <see cref="DXEndpoint"/> roots links for avoid GC, as long as the object cannot be safely collected.
+    /// </summary>
+    private static readonly ConcurrentSet<DXEndpoint> RootRefs = new();
+
+    /// <summary>
     /// A list of singleton <see cref="DXEndpoint"/> instances with different roles.
     /// </summary>
     private static readonly ConcurrentDictionary<Role, Lazy<DXEndpoint>> Instances = new();
@@ -232,7 +236,7 @@ public sealed class DXEndpoint : IDisposable
     /// <summary>
     /// Endpoint native wrapper.
     /// </summary>
-    private readonly EndpointNative _endpointNative;
+    private readonly DXEndpointWrapper _endpointNative;
 
     /// <summary>
     /// The endpoint role.
@@ -255,18 +259,13 @@ public sealed class DXEndpoint : IDisposable
     private readonly Lazy<DXPublisher> _publisher;
 
     /// <summary>
-    /// A list of state change listeners callback.
-    /// </summary>
-    private ImmutableList<StateChangeListenerCallback> _listeners = ImmutableList.Create<StateChangeListenerCallback>();
-
-    /// <summary>
     /// Initializes a new instance of the <see cref="DXEndpoint"/>
-    /// class with specified <see cref="EndpointNative"/>, <see cref="Role"/> and properties.
+    /// class with specified <see cref="DXEndpointWrapper"/>, <see cref="Role"/> and properties.
     /// </summary>
-    /// <param name="endpointNative">The specified <see cref="EndpointNative"/>.</param>
+    /// <param name="endpointNative">The specified <see cref="DXEndpointWrapper"/>.</param>
     /// <param name="role">The endpoint role.</param>
     /// <param name="name">The endpoint name.</param>
-    private DXEndpoint(EndpointNative endpointNative, Role role, string name)
+    private DXEndpoint(DXEndpointWrapper endpointNative, Role role, string name)
     {
         _endpointNative = endpointNative;
         _role = role;
@@ -274,13 +273,7 @@ public sealed class DXEndpoint : IDisposable
 
         _feed = new Lazy<DXFeed>(() => new DXFeed(_endpointNative.GetFeed()));
         _publisher = new Lazy<DXPublisher>(() => new DXPublisher(_endpointNative.GetPublisher()));
-
-        unsafe
-        {
-            // Add a listener and create a GCHandle to avoid garbage collection.
-            // GCHandle will be released when the listener receives the Closed state.
-            _endpointNative.AddStateChangeListener(&OnStateChanges, GCHandle.Alloc(this));
-        }
+        RootRefs.Add(this);
     }
 
     /// <summary>
@@ -288,7 +281,7 @@ public sealed class DXEndpoint : IDisposable
     /// </summary>
     /// <param name="oldState">The old state of endpoint.</param>
     /// <param name="newState">The new state of endpoint.</param>
-    public delegate void StateChangeListenerCallback(State oldState, State newState);
+    public delegate void StateChangeListener(State oldState, State newState);
 
     /// <summary>
     /// A list of endpoint roles.
@@ -534,7 +527,7 @@ public sealed class DXEndpoint : IDisposable
     /// <b>This method does not wait until connection actually gets established</b>. The actual connection establishment
     /// happens asynchronously after the invocation of this method. However, this method waits until notification
     /// about state transition from <see cref="State.NotConnected"/> to <see cref="State.Connecting"/>
-    /// gets processed by all <see cref="StateChangeListenerCallback"/> that were installed via
+    /// gets processed by all <see cref="StateChangeListener"/> that were installed via
     /// <see cref="AddStateChangeListener"/> method.
     /// </summary>
     /// <param name="address">The data source address.</param>
@@ -621,8 +614,8 @@ public sealed class DXEndpoint : IDisposable
     /// Installed listener can be removed with <see cref="RemoveStateChangeListener"/> method.
     /// </summary>
     /// <param name="listener">The listener to add.</param>
-    public void AddStateChangeListener(StateChangeListenerCallback listener) =>
-        ImmutableInterlocked.Update(ref _listeners, (list, added) => list.Add(added), listener);
+    public void AddStateChangeListener(StateChangeListener listener) =>
+        _endpointNative.AddStateChangeListener(listener);
 
     /// <summary>
     /// Removes listener that is notified about changes in <see cref="GetState"/> property.
@@ -630,8 +623,8 @@ public sealed class DXEndpoint : IDisposable
     /// It removes the listener that was previously installed with <see cref="AddStateChangeListener"/> method.
     /// </summary>
     /// <param name="listener">The listener to remove.</param>
-    public void RemoveStateChangeListener(StateChangeListenerCallback listener) =>
-        ImmutableInterlocked.Update(ref _listeners, (list, removed) => list.Remove(removed), listener);
+    public void RemoveStateChangeListener(StateChangeListener listener) =>
+        _endpointNative.RemoveStateChangeListener(listener);
 
     /// <summary>
     /// Gets <see cref="DXFeed"/> that is associated with this endpoint.
@@ -659,50 +652,6 @@ public sealed class DXEndpoint : IDisposable
         Close();
 
     /// <summary>
-    /// Callback function.
-    /// It is called from the native code when the state of the endpoint changes.
-    /// </summary>
-    /// <param name="thread">The current isolate thread. <b>Ignored</b>.</param>
-    /// <param name="oldState">The old state of endpoint.</param>
-    /// <param name="newState">The new state of endpoint.</param>
-    /// <param name="self">The endpoint handle.</param>
-    [UnmanagedCallersOnly(CallConvs = new[] { typeof(CallConvCdecl) })]
-    private static void OnStateChanges(nint thread, int oldState, int newState, nint self)
-    {
-        var handle = GCHandle.FromIntPtr(self);
-        var endpoint = handle.Target as DXEndpoint;
-        endpoint?.FireStateChanges((State)oldState, (State)newState);
-
-        // If a closed state occurs, we can free self handle.
-        if ((State)newState == State.Closed)
-        {
-            handle.Free();
-        }
-    }
-
-    /// <summary>
-    /// Notifies all listeners of a change of state.
-    /// </summary>
-    /// <param name="oldState">The old state of endpoint.</param>
-    /// <param name="newState">The new state of endpoint.</param>
-    private void FireStateChanges(State oldState, State newState)
-    {
-        var listeners = Volatile.Read(ref _listeners);
-        foreach (var listener in listeners)
-        {
-            try
-            {
-                listener(oldState, newState);
-            }
-            catch (Exception e)
-            {
-                // ToDo Add log entry.
-                Console.Error.WriteLine($"Exception in {_name} endpoint state change listener({listener.Method}): {e}");
-            }
-        }
-    }
-
-    /// <summary>
     /// Closes all associated resources with this <see cref="DXEndpoint"/>.
     /// </summary>
     private void CloseInner()
@@ -711,6 +660,8 @@ public sealed class DXEndpoint : IDisposable
         {
             _feed.Value.Close();
         }
+
+        RootRefs.Remove(this);
     }
 
     /// <summary>
@@ -755,7 +706,7 @@ public sealed class DXEndpoint : IDisposable
         /// using the finalizer (<see cref="SafeHandle"/>).
         /// The implementation of the definition of supported properties may change in the future.
         /// </summary>
-        private readonly Lazy<BuilderNative> _builderForDefineSupportProperties = new(BuilderNative.Create);
+        private readonly Lazy<BuilderWrapper> _builderForDefineSupportProperties = new();
 
         /// <summary>
         /// List of user-defined properties.
@@ -868,9 +819,9 @@ public sealed class DXEndpoint : IDisposable
         /// <exception cref="JavaException">If the error occurred on the java side.</exception>
         public DXEndpoint Build()
         {
-            using var builder = BuilderNative.Create();
+            using var builder = new BuilderWrapper();
             var role = _role;
-            builder.WithRole((int)role);
+            builder.WithRole(role);
 
             // Create properties snapshot.
             // This ensures that the properties will not be changed from another thread.
@@ -916,7 +867,7 @@ public sealed class DXEndpoint : IDisposable
         /// <param name="props">The user-defined properties for this builder.</param>
         /// </summary>
         private static void LoadDefaultPropertiesFileIfNeeded(
-            BuilderNative builder,
+            BuilderWrapper builder,
             Role role,
             IReadOnlyDictionary<string, string> props)
         {

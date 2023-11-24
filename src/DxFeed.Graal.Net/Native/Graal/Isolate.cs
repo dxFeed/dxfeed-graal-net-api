@@ -86,7 +86,7 @@ internal class Isolate
     /// <returns>Returns <see cref="Isolate"/>.</returns>
     private static Isolate CreateIsolate()
     {
-        ErrorCheck.GraalCall(GraalCreateIsolate(0, out var isolate, out _));
+        ErrorCheck.SafeCall(GraalCreateIsolate(0, out var isolate, out _));
         return new Isolate(isolate);
     }
 

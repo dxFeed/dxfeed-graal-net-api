@@ -9,31 +9,16 @@ using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using DxFeed.Graal.Net.Ipf.Live;
-using DxFeed.Graal.Net.Native.ErrorHandling;
 using DxFeed.Graal.Net.Native.Interop;
+using static DxFeed.Graal.Net.Native.ErrorHandling.ErrorCheck;
 
 namespace DxFeed.Graal.Net.Native.Ipf.Handles;
 
 [SuppressMessage("ReSharper", "ClassNeverInstantiated.Global", Justification = "Created by marshaller")]
 internal sealed unsafe class InstrumentProfileUpdateListenerHandle : JavaHandle
 {
-    public static InstrumentProfileUpdateListenerHandle Create(InstrumentProfileUpdateListener listener)
-    {
-        var netHandle = GCHandle.Alloc(listener, GCHandleType.Normal);
-        InstrumentProfileUpdateListenerHandle? javaHandle = null;
-        try
-        {
-            javaHandle = ErrorCheck.NativeCall(CurrentThread, Import.New(CurrentThread, &OnUpdate, netHandle));
-            javaHandle.RegisterFinalize(netHandle);
-            return javaHandle;
-        }
-        catch (Exception)
-        {
-            javaHandle?.Dispose();
-            netHandle.Free();
-            throw;
-        }
-    }
+    public static InstrumentProfileUpdateListenerHandle Create(InstrumentProfileUpdateListener listener) =>
+        CreateAndRegisterFinalize(listener, handle => SafeCall(Import.New(CurrentThread, &OnUpdate, handle)));
 
     [UnmanagedCallersOnly(CallConvs = new[] { typeof(CallConvCdecl) })]
     private static void OnUpdate(nint thread, nint iterator, GCHandle netHandle)

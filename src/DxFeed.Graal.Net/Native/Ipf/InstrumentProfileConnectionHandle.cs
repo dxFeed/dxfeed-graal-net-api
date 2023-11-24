@@ -14,29 +14,28 @@ namespace DxFeed.Graal.Net.Native.Ipf;
 internal class InstrumentProfileConnectionHandle : JavaHandle
 {
     public static InstrumentProfileConnectionHandle Create(string address, InstrumentProfileCollectorHandle instrumentProfileCollector) =>
-        ErrorCheck.NativeCall(CurrentThread, Import.CreateConnection(CurrentThread, address, instrumentProfileCollector));
-
+        ErrorCheck.SafeCall(Import.CreateConnection(CurrentThread, address, instrumentProfileCollector));
 
     public string? GetAddress()
     {
-        using var address = ErrorCheck.NativeCall(CurrentThread, Import.GetAddress(CurrentThread, this));
+        using var address = ErrorCheck.SafeCall(Import.GetAddress(CurrentThread, this));
         return address.ToString();
     }
 
     public long GetUpdatePeriod() =>
-        ErrorCheck.NativeCall(CurrentThread, Import.GetUpdatePeriod(CurrentThread, this));
+        ErrorCheck.SafeCall(Import.GetUpdatePeriod(CurrentThread, this));
 
     public void SetUpdatePeriod(long updatePeriod) =>
-        ErrorCheck.NativeCall(CurrentThread, Import.SetUpdatePeriod(CurrentThread, this, updatePeriod));
+        ErrorCheck.SafeCall(Import.SetUpdatePeriod(CurrentThread, this, updatePeriod));
 
     public long GetLastModified() =>
-        ErrorCheck.NativeCall(CurrentThread, Import.GetLasModified(CurrentThread, this));
+        ErrorCheck.SafeCall(Import.GetLasModified(CurrentThread, this));
 
     public void Start() =>
-        ErrorCheck.NativeCall(CurrentThread, Import.Start(CurrentThread, this));
+        ErrorCheck.SafeCall(Import.Start(CurrentThread, this));
 
     public new void Close() =>
-        ErrorCheck.NativeCall(CurrentThread, Import.Close(CurrentThread, this));
+        ErrorCheck.SafeCall(Import.Close(CurrentThread, this));
 
     private static class Import
     {

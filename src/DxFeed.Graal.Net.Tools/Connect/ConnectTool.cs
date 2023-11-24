@@ -29,6 +29,7 @@ public sealed class ConnectTool : AbstractTool<ConnectArgs>, IDisposable
 
     public override void Run(ConnectArgs args)
     {
+        SystemProperty.SetProperties(ParseProperties(args.Properties));
         using var endpoint = DXEndpoint
             .NewBuilder()
             .WithRole(DXEndpoint.Role.Feed)

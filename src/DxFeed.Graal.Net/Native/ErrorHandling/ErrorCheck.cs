@@ -9,88 +9,115 @@ using System.Runtime.InteropServices;
 namespace DxFeed.Graal.Net.Native.ErrorHandling;
 
 /// <summary>
-/// Utility class for check native calls.
-/// The location of the imported functions is in the header files <c>"dxfg_catch_exception.h"</c>.
+/// Provides utility methods for error checking and exception handling in native function calls.
+/// This class contains methods that verify the results of native calls
+/// and throw appropriate exceptions if errors are detected.
 /// </summary>
 internal static class ErrorCheck
 {
     /// <summary>
-    /// Checks for a call to a native function that returns an <see cref="int"/>.
-    /// Throws <see cref="JavaExceptionInfo"/> if error occured.
-    /// If there is no error, the result will be transmitted transparently.
+    /// Verifies the result of a native function call that returns an <see cref="int"/>.
+    /// Throws <see cref="JavaException"/> if error occured.
+    /// If no error is detected, the original result is returned.
     /// </summary>
-    /// <param name="thread">The current isolate thread.</param>
-    /// <param name="result">The resul of native call.</param>
-    /// <returns>The passed <see cref="int"/> result of the native call.</returns>
-    /// <exception cref="JavaException">If error occured.</exception>
-    public static int NativeCall(nint thread, int result)
+    /// <param name="result">The result of the native function call.</param>
+    /// <returns>The original result if no error occurred.</returns>
+    /// <exception cref="JavaException">If the native call resulted in an error.</exception>
+    /// <remarks>
+    /// The method checks for the presence of an exception in the same thread from which it was called.
+    /// If invoked from a different thread than the one where the result was obtained,
+    /// it will not throw an exception (even if it was thrown on Java side), potentially leading to undefined behavior.
+    /// </remarks>
+    public static int SafeCall(int result)
     {
         if (result < 0)
         {
-            ThrowThreadJavaExceptionIfExist(thread);
+            ThrowIfJavaThreadExceptionExists();
         }
 
         return result;
     }
 
     /// <summary>
-    /// Checks for a call to a native function that returns an <see cref="long"/>.
-    /// Throws <see cref="JavaExceptionInfo"/> if error occured.
-    /// If there is no error, the result will be transmitted transparently.
+    /// Verifies the result of a native function call that returns a <see cref="long"/>.
+    /// Throws <see cref="JavaException"/> if error occured.
+    /// If no error is detected, the original result is returned.
     /// </summary>
-    /// <param name="thread">The current isolate thread.</param>
-    /// <param name="result">The resul of native call.</param>
-    /// <returns>The passed <see cref="long"/> result of the native call.</returns>
-    /// <exception cref="JavaException">If error occured.</exception>
-    public static long NativeCall(nint thread, long result)
+    /// <param name="result">The result of the native function call.</param>
+    /// <returns>The original result if no error occurred.</returns>
+    /// <exception cref="JavaException">If the native call resulted in an error.</exception>
+    /// <remarks>
+    /// The method checks for the presence of an exception in the same thread from which it was called.
+    /// If invoked from a different thread than the one where the result was obtained,
+    /// it will not throw an exception (even if it was thrown on Java side), potentially leading to undefined behavior.
+    /// </remarks>
+    public static long SafeCall(long result)
     {
         if (result < 0)
         {
-            ThrowThreadJavaExceptionIfExist(thread);
+            ThrowIfJavaThreadExceptionExists();
         }
 
         return result;
     }
 
-    public static T NativeCall<T>(nint thread, T result)
+    /// <summary>
+    /// Verifies the result of a native function call that returns a <see cref="SafeHandle"/>.
+    /// Throws <see cref="JavaException"/> if error occured.
+    /// If no error is detected, the original result is returned.
+    /// </summary>
+    /// <param name="result">The result of the native function call.</param>
+    /// <typeparam name="T">The type of <see cref="SafeHandle"/>.</typeparam>
+    /// <returns>The original result if no error occurred.</returns>
+    /// <exception cref="JavaException">If the native call resulted in an error.</exception>
+    /// <remarks>
+    /// The method checks for the presence of an exception in the same thread from which it was called.
+    /// If invoked from a different thread than the one where the result was obtained,
+    /// it will not throw an exception (even if it was thrown on Java side), potentially leading to undefined behavior.
+    /// </remarks>
+    public static T SafeCall<T>(T result)
     where T : SafeHandle
     {
         if (result.IsInvalid)
         {
-            ThrowThreadJavaExceptionIfExist(thread);
+            ThrowIfJavaThreadExceptionExists();
         }
 
         return result;
     }
 
     /// <summary>
-    /// Checks for a call to a native function that returns an T* (unmanaged pointer type).
-    /// Throws <see cref="JavaExceptionInfo"/> if error occured.
-    /// If there is no error, the result will be transmitted transparently.
+    /// Verifies the result of a native function call that returns a T* (unmanaged pointer type).
+    /// Throws <see cref="JavaException"/> if error occured.
+    /// If no error is detected, the original result is returned.
     /// </summary>
-    /// <param name="thread">The current isolate thread.</param>
-    /// <param name="result">The resul of native call.</param>
+    /// <param name="result">The result of the native function call.</param>
     /// <typeparam name="T">The unmanaged pointer type.</typeparam>
-    /// <returns>The passed T* result of the native call.</returns>
-    /// <exception cref="JavaException">If error occured.</exception>
-    public static unsafe T* NativeCall<T>(nint thread, T* result)
+    /// <returns>The original result if no error occurred.</returns>
+    /// <exception cref="JavaException">If the native call resulted in an error.</exception>
+    /// <remarks>
+    /// The method checks for the presence of an exception in the same thread from which it was called.
+    /// If invoked from a different thread than the one where the result was obtained,
+    /// it will not throw an exception (even if it was thrown on Java side), potentially leading to undefined behavior.
+    /// </remarks>
+    public static unsafe T* SafeCall<T>(T* result)
         where T : unmanaged
     {
         if ((nint)result == 0)
         {
-            ThrowThreadJavaExceptionIfExist(thread);
+            ThrowIfJavaThreadExceptionExists();
         }
 
         return result;
     }
 
     /// <summary>
-    /// Checks for graal function call.
-    /// Throws <see cref="GraalException"/> if error occured.
+    /// Verifies the result of a GraalVM functions call.
+    /// If an error is detected (non-zero result), a <see cref="GraalException"/> is thrown.
     /// </summary>
-    /// <param name="result">The result of graal call.</param>
-    /// <exception cref="GraalException">If error occured.</exception>
-    public static void GraalCall(GraalErrorCode result)
+    /// <param name="result">The result code from the GraalVM function call.</param>
+    /// <exception cref="GraalException">If the GraalVM call resulted in an error.</exception>
+    public static void SafeCall(GraalErrorCode result)
     {
         if (result != GraalErrorCode.NoError)
         {
@@ -98,59 +125,25 @@ internal static class ErrorCheck
         }
     }
 
-    private static void ThrowThreadJavaExceptionIfExist(nint thread)
-    {
-        var exceptionInfo = ExceptionImport.GetAndClearThreadException(thread);
-        if (exceptionInfo != null)
-        {
-            ThrowJavaException((JavaExceptionInfo)exceptionInfo);
-        }
-    }
-
-    private static void ThrowJavaException(JavaExceptionInfo javaExceptionInfo) =>
-        throw new JavaException(javaExceptionInfo.ClassName, javaExceptionInfo.Message, javaExceptionInfo.StackTrace);
-
-    private static void ThrowGraalException(GraalErrorCode code) =>
-        throw new GraalException(code);
+    /// <summary>
+    /// Checks for the existence of a Java exception on the current thread
+    /// and throws a <see cref="JavaException"/> if one is found.
+    /// </summary>
+    /// <remarks>
+    /// If a Java exception is present, it converts the Java exception to a .NET <see cref="JavaException"/>
+    /// and throws it. This ensures that Java exceptions are properly propagated and handled in .NET code.
+    /// </remarks>
+    private static void ThrowIfJavaThreadExceptionExists() =>
+        JavaExceptionHandle.ThrowIfJavaThreadExceptionExists();
 
     /// <summary>
-    /// Contains imported functions from native code.
+    /// Throws a <see cref="GraalException"/> based on a specified error code.
     /// </summary>
-    private static class ExceptionImport
-    {
-        /// <summary>
-        /// Gets current Java exception associated with current thread.
-        /// </summary>
-        /// <param name="thread">The pointer to a run-time data structure for the thread.</param>
-        /// <returns>Returns <see cref="JavaExceptionInfo"/> or null, if not exception thrown.</returns>
-        public static JavaExceptionInfo? GetAndClearThreadException(nint thread)
-        {
-            var exceptionInfoPtr = NativeGetAndClearThreadException(thread);
-            if (exceptionInfoPtr == 0)
-            {
-                return null;
-            }
-
-            try
-            {
-                return Marshal.PtrToStructure<JavaExceptionInfo>(exceptionInfoPtr);
-            }
-            finally
-            {
-                NativeExceptionRelease(thread, exceptionInfoPtr);
-            }
-        }
-
-        [DllImport(
-            ImportInfo.DllName,
-            CallingConvention = CallingConvention.Cdecl,
-            EntryPoint = "dxfg_get_and_clear_thread_exception_t")]
-        private static extern nint NativeGetAndClearThreadException(nint thread);
-
-        [DllImport(
-            ImportInfo.DllName,
-            CallingConvention = CallingConvention.Cdecl,
-            EntryPoint = "dxfg_Exception_release")]
-        private static extern void NativeExceptionRelease(nint thread, nint exception);
-    }
+    /// <param name="errorCode">The error code representing a specific GraalVM error.</param>
+    /// <remarks>
+    /// This method creates and throws a <see cref="GraalException"/> that encapsulates the provided GraalVM error code
+    /// along with a descriptive message. It allows for consistent handling of GraalVM-related errors.
+    /// </remarks>
+    private static void ThrowGraalException(GraalErrorCode errorCode) =>
+        throw new GraalException(errorCode);
 }

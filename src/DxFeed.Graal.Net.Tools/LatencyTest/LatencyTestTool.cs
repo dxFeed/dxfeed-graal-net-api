@@ -256,6 +256,7 @@ public class LatencyTestTool : AbstractTool<LatencyTestArgs>
 
     public override void Run(LatencyTestArgs args)
     {
+        SystemProperty.SetProperties(ParseProperties(args.Properties));
         using var endpoint = DXEndpoint
             .NewBuilder()
             .WithRole(args.ForceStream ? DXEndpoint.Role.StreamFeed : DXEndpoint.Role.Feed)
