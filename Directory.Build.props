@@ -14,7 +14,7 @@
     <Description>This library is built as a language specific wrapper over dxFeed Java API which in turn was compiled with GraalVM Native Image.</Description>
 
     <!-- Project setting -->
-    <TargetFramework>net6.0</TargetFramework>
+    <TargetFrameworks>net6.0;net7.0;net8.0</TargetFrameworks>
     <LangVersion>10</LangVersion>
     <Nullable>enable</Nullable>
     <CodeAnalysisRuleSet>../../StyleCop.xml</CodeAnalysisRuleSet>

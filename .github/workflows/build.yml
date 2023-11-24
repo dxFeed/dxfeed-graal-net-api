@@ -59,12 +59,12 @@ jobs:
 
       - name: Publish Tools
         run: |
-          ./publish.sh DxFeed.Graal.Net.Tools
-          ./publish.sh DxFeed.Graal.Net.Tools win-x64
-          ./publish.sh DxFeed.Graal.Net.Tools linux-x64
-          ./publish.sh DxFeed.Graal.Net.Tools osx-x64
+          ./publish.sh DxFeed.Graal.Net.Tools net6.0
+          ./publish.sh DxFeed.Graal.Net.Tools net8.0 win-x64
+          ./publish.sh DxFeed.Graal.Net.Tools net8.0 linux-x64
+          ./publish.sh DxFeed.Graal.Net.Tools net8.0 osx-x64
           codesign -f -s - artifacts/Publish/osx-x64/DxFeed.Graal.Net.Tools/DxFeed.Graal.Net.Tools
-          ./publish.sh DxFeed.Graal.Net.Tools osx-arm64
+          ./publish.sh DxFeed.Graal.Net.Tools net8.0 osx-arm64
           codesign -f -s - artifacts/Publish/osx-arm64/DxFeed.Graal.Net.Tools/DxFeed.Graal.Net.Tools
 
           (cd artifacts/Publish/DxFeed.Graal.Net.Tools/           && zip DxFeed.Graal.Net.Tools-framework-dependent-${{ github.ref_name }}.zip      . -r -D)
