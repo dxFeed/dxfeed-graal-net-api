@@ -1,6 +1,5 @@
 <Project>
   <PropertyGroup>
-    <PathMap>$(MSBuildProjectDirectory)=$(MSBuildProjectName)</PathMap>
     <!-- Project info -->
     <Company>Devexperts</Company>
     <Copyright>Copyright © 2022 Devexperts LLC</Copyright>
@@ -19,6 +18,7 @@
     <LangVersion>10</LangVersion>
     <Nullable>enable</Nullable>
     <CodeAnalysisRuleSet>../../StyleCop.xml</CodeAnalysisRuleSet>
+    <PathMap>$(MSBuildProjectDirectory)=$(MSBuildProjectName)</PathMap>
 
     <!-- Versioning -->
     <!-- Assembly version (System.Reflection.Assembly.GetExecutingAssembly()) -->
