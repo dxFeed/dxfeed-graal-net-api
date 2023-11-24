@@ -73,27 +73,12 @@ public sealed class DXFeedSubscription : IObservableSubscription, IDisposable
     public bool IsContainsEventType(Type eventType) =>
         _eventTypeSet.Contains(eventType);
 
-    /// <summary>
-    /// Attaches subscription to the specified feed.
-    /// </summary>
-    /// <param name="feed">The <see cref="DXFeed"/> to attach to.</param>
-    public void Attach(DXFeed feed) =>
-        feed.AttachSubscription(this);
-
-    /// <summary>
-    /// Detaches subscription from the specified feed.
-    /// </summary>
-    /// <param name="feed">The <see cref="DXFeed"/> to detach from.</param>
-    public void Detach(DXFeed feed) =>
-        feed.DetachSubscription(this);
 
     /// <summary>
     /// Adds listener for events.
     /// Event lister can be added only when subscription is not producing any events.
-    /// The subscription must be either empty (no symbols have been added)
-    /// or not attached to any feed.
+    /// The subscription must be either empty (no symbols have been added).
     /// This method does nothing if this subscription is closed.
-    /// <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/api/DXFeedSubscription.html#addEventListener-com.dxfeed.api.DXFeedEventListener-">Javadoc.</a>
     /// </summary>
     /// <param name="listener">The event listener.</param>
     // ToDo Add method overload to pass IDXFeedEventListener.
@@ -112,7 +97,6 @@ public sealed class DXFeedSubscription : IObservableSubscription, IDisposable
 
     /// <summary>
     /// Removes listener for events.
-    /// <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/api/DXFeedSubscription.html#addEventListener-com.dxfeed.api.DXFeedEventListener-">Javadoc.</a>
     /// </summary>
     /// <param name="listener">The event listener.</param>
     // ToDo Add method overload to pass IDXFeedEventListener.
@@ -133,7 +117,6 @@ public sealed class DXFeedSubscription : IObservableSubscription, IDisposable
     /// Adds the specified collection of symbols to the set of subscribed symbols.
     /// All registered event listeners will receive update on the last events for all
     /// newly added symbols.
-    /// <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/api/DXFeedSubscription.html#addSymbols-java.util.Collection-">Javadoc.</a>
     /// </summary>
     /// <param name="symbols">The collection of symbols.</param>
     public void AddSymbols(params object[] symbols) =>
@@ -143,7 +126,6 @@ public sealed class DXFeedSubscription : IObservableSubscription, IDisposable
     /// Adds the specified collection of symbols to the set of subscribed symbols.
     /// All registered event listeners will receive update on the last events for all
     /// newly added symbols.
-    /// <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/api/DXFeedSubscription.html#addSymbols-java.util.Collection-">Javadoc.</a>
     /// </summary>
     /// <param name="symbols">The collection of symbols.</param>
     public void AddSymbols(IEnumerable<object> symbols) =>
@@ -151,7 +133,6 @@ public sealed class DXFeedSubscription : IObservableSubscription, IDisposable
 
     /// <summary>
     /// Removes the specified collection of symbols from the set of subscribed symbols.
-    /// <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/api/DXFeedSubscription.html#removeSymbols-java.util.Collection-">Javadoc.</a>
     /// </summary>
     /// <param name="symbols">The collection of symbols.</param>
     public void RemoveSymbols(params object[] symbols) =>
@@ -159,7 +140,6 @@ public sealed class DXFeedSubscription : IObservableSubscription, IDisposable
 
     /// <summary>
     /// Removes the specified collection of symbols from the set of subscribed symbols.
-    /// <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/api/DXFeedSubscription.html#removeSymbols-java.util.Collection-">Javadoc.</a>
     /// </summary>
     /// <param name="symbols">The collection of symbols.</param>
     public void RemoveSymbols(IEnumerable<object> symbols) =>
@@ -167,14 +147,12 @@ public sealed class DXFeedSubscription : IObservableSubscription, IDisposable
 
     /// <summary>
     /// Clears the set of subscribed symbols.
-    /// <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/api/DXFeedSubscription.html#clear--">Javadoc.</a>
     /// </summary>
     public void Clear() =>
         _subscriptionNative.Clear();
 
     /// <summary>
     /// Closes this subscription and makes it <i>permanently</i> detached.
-    /// <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/api/DXFeedSubscription.html#close--">Javadoc.</a>
     /// </summary>
     // ToDo Should notify the close. If it is attached to the feed, the feed should detach it.
     public void Close() =>
