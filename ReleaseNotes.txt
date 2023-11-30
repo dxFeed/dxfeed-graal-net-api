@@ -1,19 +1,36 @@
+## Version 1.0.0
+
+* Reduce memory consumption
+* Improve performance
+* Fix token-based authorization in dxLink
+* Bump DxFeed.Graal.Native.SDK
+
+## Version 0.8.0
+
+* Update README.MD
+* Add dependencies and third party license
+* Fix DocFX template
+
+## Version 0.7.0
+
+* Change lifetime management for objects created by GraalVM
+* Add builds for net7.0 and net8.0
+
 ## Version 0.6.0
-* Feature: Add IpfConnection
+
+* Bump DxFeed.Graal.Native.SDK
+* Add IpfConnection
 
 ## Version 0.5.0
 
-## What's Changed
-* Feature: Add IpfProfileReader
+* Add InstrumentProfileReader
 
 ## Version 0.4.0
 
-## What's Changed
 * Fix: Readme and docs
 
 ## Version 0.3.0
 
-## What's Changed
 * Feature: Add Help Tool
 * Feature: Add Help articles
 * Feature: Add LatencyTest tool
@@ -23,7 +40,6 @@
 
 ## Version 0.2.1
 
-## What's Changed
 * Feature: Add CodeQL analysis CI/CD step
 * Feature: Add DocFX generation
 * Fix: Update readme
@@ -31,7 +47,6 @@
 
 ## Version 0.2.0
 
-## What's Changed
 * Feature: Bump DxFeed.Graal.Native version to 0.3.3
 * Feature: Bump QD version to 3.316
 * Refactor: Rework event mappers (now we can convert to/from native)
@@ -55,7 +70,6 @@
 
 ## Version 0.1.0
 
-## What's Changed
 * Feature: Add new events type (Candle, Profile, Summary, Greeks, Series, TheoPrice, Underlying)
 * Fix: Implement safe dispose for the DxEdnpoint
 * Fix: Complete to-do tasks in the Utils namespace
