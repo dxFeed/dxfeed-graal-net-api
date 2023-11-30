@@ -1,0 +1,4 @@
+/* Disable nav-bar */
+.navbar .navbar-nav {
+  display: none;
+}
