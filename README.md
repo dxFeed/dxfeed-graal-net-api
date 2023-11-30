@@ -15,10 +15,11 @@ the [Overview](#overview) section.<br>
 
 ![Build](https://github.com/dxFeed/dxfeed-graal-net-api/actions/workflows/build.yml/badge.svg)
 ![CodeQL](https://github.com/dxFeed/dxfeed-graal-net-api/actions/workflows/codeql.yml/badge.svg)
-[![NET](https://img.shields.io/badge/.NET_version-net6.0%20%7C%20net7.0%20%7C%20net8.0-blueviolet)](https://dotnet.microsoft.com/en-us/)
 ![Platform](https://img.shields.io/badge/platform-win--x64%20%7C%20linux--x64%20%7C%20osx--x64%20%7C%20osx--arm64-lightgrey)
-[![License](https://img.shields.io/badge/license-MPL--2.0-orange)](https://github.com/dxFeed/dxfeed-graal-net-api/blob/master/LICENSE)
+[![NET](https://img.shields.io/badge/.NET_version-net6.0%20%7C%20net7.0%20%7C%20net8.0-blueviolet)](https://dotnet.microsoft.com/en-us/)
+[![Release](https://img.shields.io/github/v/release/dxFeed/dxfeed-graal-net-api)](https://github.com/dxFeed/dxfeed-graal-net-api/releases/latest)
 [![Nuget](https://img.shields.io/badge/nuget-0.7.0-blue)](https://dxfeed.jfrog.io/artifactory/nuget-open/com/dxfeed/graal-net/)
+[![License](https://img.shields.io/badge/license-MPL--2.0-orange)](https://github.com/dxFeed/dxfeed-graal-net-api/blob/master/LICENSE)
 
 ## Table of Contents
 
@@ -254,7 +255,7 @@ using System;
 using DxFeed.Graal.Net.Api;
 using DxFeed.Graal.Net.Events.Market;
 
-// For token based authorization, use the following address format:
+// For token-based authorization, use the following address format:
 // "demo.dxfeed.com:7300[login=entitle:token]"
 using var endpoint = DXEndpoint.Create().Connect("demo.dxfeed.com:7300");
 using var subscription = endpoint.GetFeed().CreateSubscription(typeof(Quote));
@@ -300,7 +301,7 @@ using DxFeed.Graal.Net.Events.Market;
 // The experimental property must be enabled.
 SystemProperty.SetProperty("dxfeed.experimental.dxlink.enable", "true");
 
-// For token based authorization, use the following address format:
+// For token-based authorization, use the following address format:
 // "dxlink:wss://demo.dxfeed.com/dxlink-ws[login=dxlink:token]"
 using var endpoint = DXEndpoint.Create().Connect("dxlink:wss://demo.dxfeed.com/dxlink-ws");
 using var subscription = endpoint.GetFeed().CreateSubscription(typeof(Quote));
