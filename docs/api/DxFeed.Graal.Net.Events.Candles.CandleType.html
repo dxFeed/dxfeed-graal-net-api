@@ -1,465 +1,130 @@
 ﻿<!DOCTYPE html>
-<!--[if IE]><![endif]-->
 <html>
-
   <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Class CandleType
+      <title>Class CandleType
  | dxFeed Graal .NET API </title>
-    <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Class CandleType
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class CandleType
  | dxFeed Graal .NET API ">
-    <meta name="generator" content="docfx ">
-  
-    <link rel="shortcut icon" href="../../docs/images/favicon.png">
-    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
-    <link rel="stylesheet" href="../../styles/docfx.css">
-    <link rel="stylesheet" href="../../styles/main.css">
-    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"> 
-    <meta property="docfx:navrel" content="../../toc.html">
-    <meta property="docfx:tocrel" content="toc.html">
-  
-  <meta property="docfx:rel" content="../../">
-  <meta property="docfx:newtab" content="true">
-  </head>  <body data-spy="scroll" data-target="#affix" data-offset="120">
-    <div id="wrapper">
-      <header>
+      
+      <link rel="icon" href="../../docs/images/favicon.png">
+      <link rel="stylesheet" href="../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../public/main.css">
+      <meta name="docfx:navrel" content="../../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.8.0/apiSpec/new?filename=DxFeed_Graal_Net_Events_Candles_CandleType.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Candles.CandleType%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+  </head>
 
-        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
-          <div class="container">
-            <div class="navbar-header">
-              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-              </button>
+  <script type="module" src="./../../public/docfx.min.js"></script>
 
-              <a class="navbar-brand" href="../../index.html">
-                <img id="logo" class="svg" src="../../docs/images/logo.svg" alt="">
-              </a>
-            </div>
-            <div class="collapse navbar-collapse" id="navbar">
-              <form class="navbar-form navbar-right" role="search" id="search">
-                <div class="form-group">
-                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
-                </div>
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../index.html">
+            <img id="logo" class="svg" src="../../docs/images/logo.svg" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
               </form>
-
-                <ul class="nav level1 navbar-nav">
-                      <li>
-                          <a href="../../docs/api/index.html" title="API Documentation">API Documentation</a>
-                      </li>
-                </ul>
             </div>
-          </div>
-        </nav>
-
-        <div class="subnav navbar navbar-default">
-          <div class="container hide-when-search" id="breadcrumb">
-            <ul class="breadcrumb">
-              <li></li>
-            </ul>
           </div>
         </div>
-      </header>
-      <div class="container body-content">
+      </nav>
+    </header>
 
-        <div id="search-results">
-          <div class="search-list">Search Results for <span></span></div>
-          <div class="sr-items">
-            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
           </div>
-          <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
         </div>
       </div>
-      <div role="main" class="container body-content hide-when-search">
-        <div class="sidenav hide-when-search">
-          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
-          <div class="sidetoggle collapse" id="sidetoggle">
-            <div>
-              <div class="sidefilter">
-                <form class="toc-filter">
-                  <span class="glyphicon glyphicon-filter filter-icon"></span>
-                  <input type="text" id="toc_filter_input" placeholder="Enter here to filter..." onkeypress="if(event.keyCode==13) {return false;}">
-                </form>
-              </div>
-              <div class="sidetoc">
-                <div class="toc" id="toc">
 
-                  <ul class="nav level1">
-                    <li class="">
-                      <span class="expand-stub"></span>
-                      <a href="DxFeed.Graal.Net.html" title="DxFeed.Graal.Net" class="">DxFeed.Graal.Net</a>
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
 
-                        <ul class="nav level2">
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.SystemProperty.html" title="SystemProperty" class="">SystemProperty</a>
-                          </li>
-                        </ul>
-                    </li>
-                    <li class="">
-                      <span class="expand-stub"></span>
-                      <a href="DxFeed.Graal.Net.Api.html" title="DxFeed.Graal.Net.Api" class="">DxFeed.Graal.Net.Api</a>
-
-                        <ul class="nav level2">
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Api.DXEndpoint.html" title="DXEndpoint" class="">DXEndpoint</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Api.DXEndpoint.Builder.html" title="DXEndpoint.Builder" class="">DXEndpoint.Builder</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Api.DXEndpoint.Role.html" title="DXEndpoint.Role" class="">DXEndpoint.Role</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Api.DXEndpoint.State.html" title="DXEndpoint.State" class="">DXEndpoint.State</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Api.DXEndpoint.StateChangeListener.html" title="DXEndpoint.StateChangeListener" class="">DXEndpoint.StateChangeListener</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Api.DXFeed.html" title="DXFeed" class="">DXFeed</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Api.DXFeedEventListener.html" title="DXFeedEventListener" class="">DXFeedEventListener</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Api.DXFeedSubscription.html" title="DXFeedSubscription" class="">DXFeedSubscription</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Api.DXPublisher.html" title="DXPublisher" class="">DXPublisher</a>
-                          </li>
-                        </ul>
-                    </li>
-                    <li class="">
-                      <span class="expand-stub"></span>
-                      <a href="DxFeed.Graal.Net.Api.Osub.html" title="DxFeed.Graal.Net.Api.Osub" class="">DxFeed.Graal.Net.Api.Osub</a>
-
-                        <ul class="nav level2">
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Api.Osub.IObservableSubscription.html" title="IObservableSubscription" class="">IObservableSubscription</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Api.Osub.IndexedEventSubscriptionSymbol.html" title="IndexedEventSubscriptionSymbol" class="">IndexedEventSubscriptionSymbol</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Api.Osub.IndexedEventSubscriptionSymbol-1.html" title="IndexedEventSubscriptionSymbol&lt;T&gt;" class="">IndexedEventSubscriptionSymbol&lt;T&gt;</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Api.Osub.TimeSeriesSubscriptionSymbol.html" title="TimeSeriesSubscriptionSymbol" class="">TimeSeriesSubscriptionSymbol</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Api.Osub.TimeSeriesSubscriptionSymbol-1.html" title="TimeSeriesSubscriptionSymbol&lt;T&gt;" class="">TimeSeriesSubscriptionSymbol&lt;T&gt;</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Api.Osub.WildcardSymbol.html" title="WildcardSymbol" class="">WildcardSymbol</a>
-                          </li>
-                        </ul>
-                    </li>
-                    <li class="">
-                      <span class="expand-stub"></span>
-                      <a href="DxFeed.Graal.Net.Events.html" title="DxFeed.Graal.Net.Events" class="">DxFeed.Graal.Net.Events</a>
-
-                        <ul class="nav level2">
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.EventCodeAttribute.html" title="EventCodeAttribute" class="">EventCodeAttribute</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.IEventType.html" title="IEventType" class="">IEventType</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.IIndexedEvent.html" title="IIndexedEvent" class="">IIndexedEvent</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.ILastingEvent.html" title="ILastingEvent" class="">ILastingEvent</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.ITimeSeriesEvent.html" title="ITimeSeriesEvent" class="">ITimeSeriesEvent</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.IndexedEventSource.html" title="IndexedEventSource" class="">IndexedEventSource</a>
-                          </li>
-                        </ul>
-                    </li>
-                    <li class="">
-                      <span class="expand-stub"></span>
-                      <a href="DxFeed.Graal.Net.Events.Candles.html" title="DxFeed.Graal.Net.Events.Candles" class="">DxFeed.Graal.Net.Events.Candles</a>
-
-                        <ul class="nav level2">
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.Candles.Candle.html" title="Candle" class="">Candle</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.Candles.CandleAlignment.html" title="CandleAlignment" class="">CandleAlignment</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.Candles.CandleAlignment.CandleAlignmentId.html" title="CandleAlignment.CandleAlignmentId" class="">CandleAlignment.CandleAlignmentId</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.Candles.CandleExchange.html" title="CandleExchange" class="">CandleExchange</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.Candles.CandlePeriod.html" title="CandlePeriod" class="">CandlePeriod</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.Candles.CandlePrice.html" title="CandlePrice" class="">CandlePrice</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.Candles.CandlePrice.CandlePriceId.html" title="CandlePrice.CandlePriceId" class="">CandlePrice.CandlePriceId</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.Candles.CandlePriceLevel.html" title="CandlePriceLevel" class="">CandlePriceLevel</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.Candles.CandleSession.html" title="CandleSession" class="">CandleSession</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.Candles.CandleSession.CandleSessionId.html" title="CandleSession.CandleSessionId" class="">CandleSession.CandleSessionId</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.Candles.CandleSymbol.html" title="CandleSymbol" class="">CandleSymbol</a>
-                          </li>
-                          <li class="active">
-                            <a href="DxFeed.Graal.Net.Events.Candles.CandleType.html" title="CandleType" class="active">CandleType</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.Candles.CandleType.CandleTypeId.html" title="CandleType.CandleTypeId" class="">CandleType.CandleTypeId</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.Candles.ICandleSymbolProperty.html" title="ICandleSymbolProperty" class="">ICandleSymbolProperty</a>
-                          </li>
-                        </ul>
-                    </li>
-                    <li class="">
-                      <span class="expand-stub"></span>
-                      <a href="DxFeed.Graal.Net.Events.Market.html" title="DxFeed.Graal.Net.Events.Market" class="">DxFeed.Graal.Net.Events.Market</a>
-
-                        <ul class="nav level2">
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.Market.AnalyticOrder.html" title="AnalyticOrder" class="">AnalyticOrder</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.Market.Direction.html" title="Direction" class="">Direction</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.Market.IcebergType.html" title="IcebergType" class="">IcebergType</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.Market.MarketEvent.html" title="MarketEvent" class="">MarketEvent</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.Market.MarketEventSymbols.html" title="MarketEventSymbols" class="">MarketEventSymbols</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.Market.OptionSale.html" title="OptionSale" class="">OptionSale</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.Market.Order.html" title="Order" class="">Order</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.Market.OrderAction.html" title="OrderAction" class="">OrderAction</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.Market.OrderBase.html" title="OrderBase" class="">OrderBase</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.Market.OrderSource.html" title="OrderSource" class="">OrderSource</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.Market.PriceType.html" title="PriceType" class="">PriceType</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.Market.Profile.html" title="Profile" class="">Profile</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.Market.Quote.html" title="Quote" class="">Quote</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.Market.Scope.html" title="Scope" class="">Scope</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.Market.ShortSaleRestriction.html" title="ShortSaleRestriction" class="">ShortSaleRestriction</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.Market.Side.html" title="Side" class="">Side</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.Market.SpreadOrder.html" title="SpreadOrder" class="">SpreadOrder</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.Market.Summary.html" title="Summary" class="">Summary</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.Market.TimeAndSale.html" title="TimeAndSale" class="">TimeAndSale</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.Market.TimeAndSaleType.html" title="TimeAndSaleType" class="">TimeAndSaleType</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.Market.Trade.html" title="Trade" class="">Trade</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.Market.TradeBase.html" title="TradeBase" class="">TradeBase</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.Market.TradeETH.html" title="TradeETH" class="">TradeETH</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.Market.TradingStatus.html" title="TradingStatus" class="">TradingStatus</a>
-                          </li>
-                        </ul>
-                    </li>
-                    <li class="">
-                      <span class="expand-stub"></span>
-                      <a href="DxFeed.Graal.Net.Events.Options.html" title="DxFeed.Graal.Net.Events.Options" class="">DxFeed.Graal.Net.Events.Options</a>
-
-                        <ul class="nav level2">
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.Options.Greeks.html" title="Greeks" class="">Greeks</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.Options.Series.html" title="Series" class="">Series</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.Options.TheoPrice.html" title="TheoPrice" class="">TheoPrice</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.Options.Underlying.html" title="Underlying" class="">Underlying</a>
-                          </li>
-                        </ul>
-                    </li>
-                    <li class="">
-                      <span class="expand-stub"></span>
-                      <a href="DxFeed.Graal.Net.Ipf.html" title="DxFeed.Graal.Net.Ipf" class="">DxFeed.Graal.Net.Ipf</a>
-
-                        <ul class="nav level2">
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Ipf.InstrumentProfile.html" title="InstrumentProfile" class="">InstrumentProfile</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Ipf.InstrumentProfileReader.html" title="InstrumentProfileReader" class="">InstrumentProfileReader</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Ipf.InstrumentProfileType.html" title="InstrumentProfileType" class="">InstrumentProfileType</a>
-                          </li>
-                        </ul>
-                    </li>
-                    <li class="">
-                      <span class="expand-stub"></span>
-                      <a href="DxFeed.Graal.Net.Ipf.Live.html" title="DxFeed.Graal.Net.Ipf.Live" class="">DxFeed.Graal.Net.Ipf.Live</a>
-
-                        <ul class="nav level2">
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Ipf.Live.InstrumentProfileCollector.html" title="InstrumentProfileCollector" class="">InstrumentProfileCollector</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Ipf.Live.InstrumentProfileConnection.html" title="InstrumentProfileConnection" class="">InstrumentProfileConnection</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Ipf.Live.InstrumentProfileUpdateListener.html" title="InstrumentProfileUpdateListener" class="">InstrumentProfileUpdateListener</a>
-                          </li>
-                        </ul>
-                    </li>
-                    <li class="">
-                      <span class="expand-stub"></span>
-                      <a href="DxFeed.Graal.Net.Native.ErrorHandling.html" title="DxFeed.Graal.Net.Native.ErrorHandling" class="">DxFeed.Graal.Net.Native.ErrorHandling</a>
-
-                        <ul class="nav level2">
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Native.ErrorHandling.GraalErrorCode.html" title="GraalErrorCode" class="">GraalErrorCode</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Native.ErrorHandling.GraalException.html" title="GraalException" class="">GraalException</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Native.ErrorHandling.JavaException.html" title="JavaException" class="">JavaException</a>
-                          </li>
-                        </ul>
-                    </li>
-                    <li class="">
-                      <span class="expand-stub"></span>
-                      <a href="DxFeed.Graal.Net.Native.Events.html" title="DxFeed.Graal.Net.Native.Events" class="">DxFeed.Graal.Net.Native.Events</a>
-
-                        <ul class="nav level2">
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Native.Events.EventCodeNative.html" title="EventCodeNative" class="">EventCodeNative</a>
-                          </li>
-                        </ul>
-                    </li>
-                    <li class="">
-                      <span class="expand-stub"></span>
-                      <a href="DxFeed.Graal.Net.Utils.html" title="DxFeed.Graal.Net.Utils" class="">DxFeed.Graal.Net.Utils</a>
-
-                        <ul class="nav level2">
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Utils.AttributeUtil.html" title="AttributeUtil" class="">AttributeUtil</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Utils.BitUtil.html" title="BitUtil" class="">BitUtil</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Utils.CmdArgsUtil.html" title="CmdArgsUtil" class="">CmdArgsUtil</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Utils.ConcurrentSet-1.html" title="ConcurrentSet&lt;T&gt;" class="">ConcurrentSet&lt;T&gt;</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Utils.DayUtil.html" title="DayUtil" class="">DayUtil</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Utils.EnumUtil.html" title="EnumUtil" class="">EnumUtil</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Utils.MathUtil.html" title="MathUtil" class="">MathUtil</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Utils.PlatformUtils.html" title="PlatformUtils" class="">PlatformUtils</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Utils.ReflectionUtil.html" title="ReflectionUtil" class="">ReflectionUtil</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Utils.StringUtil.html" title="StringUtil" class="">StringUtil</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Utils.TimeFormat.html" title="TimeFormat" class="">TimeFormat</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Utils.TimeNanosUtil.html" title="TimeNanosUtil" class="">TimeNanosUtil</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Utils.TimeUtil.html" title="TimeUtil" class="">TimeUtil</a>
-                          </li>
-                        </ul>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
+          <nav id="breadcrumb"></nav>
         </div>
-        <div class="article row grid-right">
-          <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="DxFeed.Graal.Net.Events.Candles.CandleType">
+
+        <article data-uid="DxFeed.Graal.Net.Events.Candles.CandleType">
 
 
 
-  <h1 id="DxFeed_Graal_Net_Events_Candles_CandleType" data-uid="DxFeed.Graal.Net.Events.Candles.CandleType" class="text-break">Class CandleType
-</h1>
-  <div class="markdown level0 summary"><p>Type of the candle aggregation period constitutes <a class="xref" href="DxFeed.Graal.Net.Events.Candles.CandlePeriod.html">CandlePeriod</a> type together
+  <h1 id="DxFeed_Graal_Net_Events_Candles_CandleType" data-uid="DxFeed.Graal.Net.Events.Candles.CandleType" class="text-break">
+    Class CandleType
+  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.8.0/src/DxFeed.Graal.Net/Events/Candles/CandleType.cs/#L18"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="DxFeed.html">DxFeed</a>.<a class="xref" href="DxFeed.Graal.html">Graal</a>.<a class="xref" href="DxFeed.Graal.Net.html">Net</a>.<a class="xref" href="DxFeed.Graal.Net.Events.html">Events</a>.<a class="xref" href="DxFeed.Graal.Net.Events.Candles.html">Candles</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>DxFeed.Graal.Net.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>Type of the candle aggregation period constitutes <a class="xref" href="DxFeed.Graal.Net.Events.Candles.CandlePeriod.html">CandlePeriod</a> type together
 its actual <a class="xref" href="DxFeed.Graal.Net.Events.Candles.CandlePeriod.html#DxFeed_Graal_Net_Events_Candles_CandlePeriod_Value">Value</a>.
 For more details see <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/event/candle/CandleType.html">Javadoc</a>.</p>
 </div>
-  <div class="markdown level0 conceptual"></div>
-  <div class="inheritance">
-    <h5>Inheritance</h5>
-    <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
-    <div class="level1"><span class="xref">CandleType</span></div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class CandleType</code></pre>
   </div>
-  <div class="inheritedMembers">
-    <h5>Inherited Members</h5>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><span class="xref">CandleType</span></div>
+    </dd>
+  </dl>
+
+
+
+  <dl class="typelist derived">
+    <dt>Inherited Members</dt>
+    <dd>
     <div>
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
     </div>
@@ -478,173 +143,178 @@ For more details see <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/even
     <div>
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
     </div>
-  </div>
-  <h6><strong>Namespace</strong>: <a class="xref" href="DxFeed.html">DxFeed</a>.<a class="xref" href="DxFeed.Graal.html">Graal</a>.<a class="xref" href="DxFeed.Graal.Net.html">Net</a>.<a class="xref" href="DxFeed.Graal.Net.Events.html">Events</a>.<a class="xref" href="DxFeed.Graal.Net.Events.Candles.html">Candles</a></h6>
-  <h6><strong>Assembly</strong>: DxFeed.Graal.Net.dll</h6>
-  <h5 id="DxFeed_Graal_Net_Events_Candles_CandleType_syntax">Syntax</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class CandleType</code></pre>
-  </div>
-  <h3 id="fields">Fields
-</h3>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.7.0/apiSpec/new?filename=DxFeed_Graal_Net_Events_Candles_CandleType_Day.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Candles.CandleType.Day%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.7.0/src/DxFeed.Graal.Net/Events/Candles/CandleType.cs/#L58">View Source</a>
-  </span>
-  <h4 id="DxFeed_Graal_Net_Events_Candles_CandleType_Day" data-uid="DxFeed.Graal.Net.Events.Candles.CandleType.Day">Day</h4>
+  </dd></dl>
+
+
+
+
+
+
+  <h2 class="section" id="fields">Fields
+</h2>
+
+
+
+  <h3 id="DxFeed_Graal_Net_Events_Candles_CandleType_Day" data-uid="DxFeed.Graal.Net.Events.Candles.CandleType.Day">
+  Day
+  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.8.0/src/DxFeed.Graal.Net/Events/Candles/CandleType.cs/#L58"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Certain number of days.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static readonly CandleType Day</code></pre>
   </div>
-  <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="DxFeed.Graal.Net.Events.Candles.CandleType.html">CandleType</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.7.0/apiSpec/new?filename=DxFeed_Graal_Net_Events_Candles_CandleType_Hour.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Candles.CandleType.Hour%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.7.0/src/DxFeed.Graal.Net/Events/Candles/CandleType.cs/#L53">View Source</a>
-  </span>
-  <h4 id="DxFeed_Graal_Net_Events_Candles_CandleType_Hour" data-uid="DxFeed.Graal.Net.Events.Candles.CandleType.Hour">Hour</h4>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DxFeed.Graal.Net.Events.Candles.CandleType.html">CandleType</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DxFeed_Graal_Net_Events_Candles_CandleType_Hour" data-uid="DxFeed.Graal.Net.Events.Candles.CandleType.Hour">
+  Hour
+  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.8.0/src/DxFeed.Graal.Net/Events/Candles/CandleType.cs/#L53"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Certain number of hours.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static readonly CandleType Hour</code></pre>
   </div>
-  <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="DxFeed.Graal.Net.Events.Candles.CandleType.html">CandleType</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.7.0/apiSpec/new?filename=DxFeed_Graal_Net_Events_Candles_CandleType_Minute.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Candles.CandleType.Minute%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.7.0/src/DxFeed.Graal.Net/Events/Candles/CandleType.cs/#L48">View Source</a>
-  </span>
-  <h4 id="DxFeed_Graal_Net_Events_Candles_CandleType_Minute" data-uid="DxFeed.Graal.Net.Events.Candles.CandleType.Minute">Minute</h4>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DxFeed.Graal.Net.Events.Candles.CandleType.html">CandleType</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DxFeed_Graal_Net_Events_Candles_CandleType_Minute" data-uid="DxFeed.Graal.Net.Events.Candles.CandleType.Minute">
+  Minute
+  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.8.0/src/DxFeed.Graal.Net/Events/Candles/CandleType.cs/#L48"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Certain number of minutes.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static readonly CandleType Minute</code></pre>
   </div>
-  <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="DxFeed.Graal.Net.Events.Candles.CandleType.html">CandleType</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.7.0/apiSpec/new?filename=DxFeed_Graal_Net_Events_Candles_CandleType_Month.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Candles.CandleType.Month%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.7.0/src/DxFeed.Graal.Net/Events/Candles/CandleType.cs/#L68">View Source</a>
-  </span>
-  <h4 id="DxFeed_Graal_Net_Events_Candles_CandleType_Month" data-uid="DxFeed.Graal.Net.Events.Candles.CandleType.Month">Month</h4>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DxFeed.Graal.Net.Events.Candles.CandleType.html">CandleType</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DxFeed_Graal_Net_Events_Candles_CandleType_Month" data-uid="DxFeed.Graal.Net.Events.Candles.CandleType.Month">
+  Month
+  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.8.0/src/DxFeed.Graal.Net/Events/Candles/CandleType.cs/#L68"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Certain number of months.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static readonly CandleType Month</code></pre>
   </div>
-  <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="DxFeed.Graal.Net.Events.Candles.CandleType.html">CandleType</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.7.0/apiSpec/new?filename=DxFeed_Graal_Net_Events_Candles_CandleType_OptExp.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Candles.CandleType.OptExp%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.7.0/src/DxFeed.Graal.Net/Events/Candles/CandleType.cs/#L73">View Source</a>
-  </span>
-  <h4 id="DxFeed_Graal_Net_Events_Candles_CandleType_OptExp" data-uid="DxFeed.Graal.Net.Events.Candles.CandleType.OptExp">OptExp</h4>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DxFeed.Graal.Net.Events.Candles.CandleType.html">CandleType</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DxFeed_Graal_Net_Events_Candles_CandleType_OptExp" data-uid="DxFeed.Graal.Net.Events.Candles.CandleType.OptExp">
+  OptExp
+  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.8.0/src/DxFeed.Graal.Net/Events/Candles/CandleType.cs/#L73"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Certain number of option expirations.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static readonly CandleType OptExp</code></pre>
   </div>
-  <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="DxFeed.Graal.Net.Events.Candles.CandleType.html">CandleType</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.7.0/apiSpec/new?filename=DxFeed_Graal_Net_Events_Candles_CandleType_Price.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Candles.CandleType.Price%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.7.0/src/DxFeed.Graal.Net/Events/Candles/CandleType.cs/#L94">View Source</a>
-  </span>
-  <h4 id="DxFeed_Graal_Net_Events_Candles_CandleType_Price" data-uid="DxFeed.Graal.Net.Events.Candles.CandleType.Price">Price</h4>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DxFeed.Graal.Net.Events.Candles.CandleType.html">CandleType</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DxFeed_Graal_Net_Events_Candles_CandleType_Price" data-uid="DxFeed.Graal.Net.Events.Candles.CandleType.Price">
+  Price
+  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.8.0/src/DxFeed.Graal.Net/Events/Candles/CandleType.cs/#L94"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Certain price change, calculated according to the following rules:</p>
 <ul>
     <li>high(n) - low(n) = price range</li>
@@ -654,33 +324,34 @@ For more details see <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/even
 where n is the number of the bar.
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static readonly CandleType Price</code></pre>
   </div>
-  <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="DxFeed.Graal.Net.Events.Candles.CandleType.html">CandleType</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.7.0/apiSpec/new?filename=DxFeed_Graal_Net_Events_Candles_CandleType_PriceMomentum.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Candles.CandleType.PriceMomentum%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.7.0/src/DxFeed.Graal.Net/Events/Candles/CandleType.cs/#L106">View Source</a>
-  </span>
-  <h4 id="DxFeed_Graal_Net_Events_Candles_CandleType_PriceMomentum" data-uid="DxFeed.Graal.Net.Events.Candles.CandleType.PriceMomentum">PriceMomentum</h4>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DxFeed.Graal.Net.Events.Candles.CandleType.html">CandleType</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DxFeed_Graal_Net_Events_Candles_CandleType_PriceMomentum" data-uid="DxFeed.Graal.Net.Events.Candles.CandleType.PriceMomentum">
+  PriceMomentum
+  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.8.0/src/DxFeed.Graal.Net/Events/Candles/CandleType.cs/#L106"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Certain price change, calculated according to the following rules:</p>
 <ul>
     <li>high(n) - low(n) = price range</li>
@@ -691,33 +362,34 @@ where n is the number of the bar.
 where n is the number of the bar.
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static readonly CandleType PriceMomentum</code></pre>
   </div>
-  <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="DxFeed.Graal.Net.Events.Candles.CandleType.html">CandleType</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.7.0/apiSpec/new?filename=DxFeed_Graal_Net_Events_Candles_CandleType_PriceRenko.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Candles.CandleType.PriceRenko%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.7.0/src/DxFeed.Graal.Net/Events/Candles/CandleType.cs/#L118">View Source</a>
-  </span>
-  <h4 id="DxFeed_Graal_Net_Events_Candles_CandleType_PriceRenko" data-uid="DxFeed.Graal.Net.Events.Candles.CandleType.PriceRenko">PriceRenko</h4>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DxFeed.Graal.Net.Events.Candles.CandleType.html">CandleType</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DxFeed_Graal_Net_Events_Candles_CandleType_PriceRenko" data-uid="DxFeed.Graal.Net.Events.Candles.CandleType.PriceRenko">
+  PriceRenko
+  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.8.0/src/DxFeed.Graal.Net/Events/Candles/CandleType.cs/#L118"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Certain price change, calculated according to the following rules:</p>
 <ul>
     <li>high(n+1) - high(n) = price range or low(n) - low(n+1) = price range</li>
@@ -728,251 +400,261 @@ where n is the number of the bar.
 where n is the number of the bar.
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static readonly CandleType PriceRenko</code></pre>
   </div>
-  <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="DxFeed.Graal.Net.Events.Candles.CandleType.html">CandleType</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.7.0/apiSpec/new?filename=DxFeed_Graal_Net_Events_Candles_CandleType_Second.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Candles.CandleType.Second%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.7.0/src/DxFeed.Graal.Net/Events/Candles/CandleType.cs/#L43">View Source</a>
-  </span>
-  <h4 id="DxFeed_Graal_Net_Events_Candles_CandleType_Second" data-uid="DxFeed.Graal.Net.Events.Candles.CandleType.Second">Second</h4>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DxFeed.Graal.Net.Events.Candles.CandleType.html">CandleType</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DxFeed_Graal_Net_Events_Candles_CandleType_Second" data-uid="DxFeed.Graal.Net.Events.Candles.CandleType.Second">
+  Second
+  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.8.0/src/DxFeed.Graal.Net/Events/Candles/CandleType.cs/#L43"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Certain number of seconds.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static readonly CandleType Second</code></pre>
   </div>
-  <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="DxFeed.Graal.Net.Events.Candles.CandleType.html">CandleType</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.7.0/apiSpec/new?filename=DxFeed_Graal_Net_Events_Candles_CandleType_Tick.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Candles.CandleType.Tick%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.7.0/src/DxFeed.Graal.Net/Events/Candles/CandleType.cs/#L38">View Source</a>
-  </span>
-  <h4 id="DxFeed_Graal_Net_Events_Candles_CandleType_Tick" data-uid="DxFeed.Graal.Net.Events.Candles.CandleType.Tick">Tick</h4>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DxFeed.Graal.Net.Events.Candles.CandleType.html">CandleType</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DxFeed_Graal_Net_Events_Candles_CandleType_Tick" data-uid="DxFeed.Graal.Net.Events.Candles.CandleType.Tick">
+  Tick
+  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.8.0/src/DxFeed.Graal.Net/Events/Candles/CandleType.cs/#L38"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Certain number of ticks.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static readonly CandleType Tick</code></pre>
   </div>
-  <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="DxFeed.Graal.Net.Events.Candles.CandleType.html">CandleType</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.7.0/apiSpec/new?filename=DxFeed_Graal_Net_Events_Candles_CandleType_Volume.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Candles.CandleType.Volume%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.7.0/src/DxFeed.Graal.Net/Events/Candles/CandleType.cs/#L83">View Source</a>
-  </span>
-  <h4 id="DxFeed_Graal_Net_Events_Candles_CandleType_Volume" data-uid="DxFeed.Graal.Net.Events.Candles.CandleType.Volume">Volume</h4>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DxFeed.Graal.Net.Events.Candles.CandleType.html">CandleType</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DxFeed_Graal_Net_Events_Candles_CandleType_Volume" data-uid="DxFeed.Graal.Net.Events.Candles.CandleType.Volume">
+  Volume
+  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.8.0/src/DxFeed.Graal.Net/Events/Candles/CandleType.cs/#L83"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Certain volume of trades.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static readonly CandleType Volume</code></pre>
   </div>
-  <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="DxFeed.Graal.Net.Events.Candles.CandleType.html">CandleType</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.7.0/apiSpec/new?filename=DxFeed_Graal_Net_Events_Candles_CandleType_Week.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Candles.CandleType.Week%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.7.0/src/DxFeed.Graal.Net/Events/Candles/CandleType.cs/#L63">View Source</a>
-  </span>
-  <h4 id="DxFeed_Graal_Net_Events_Candles_CandleType_Week" data-uid="DxFeed.Graal.Net.Events.Candles.CandleType.Week">Week</h4>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DxFeed.Graal.Net.Events.Candles.CandleType.html">CandleType</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DxFeed_Graal_Net_Events_Candles_CandleType_Week" data-uid="DxFeed.Graal.Net.Events.Candles.CandleType.Week">
+  Week
+  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.8.0/src/DxFeed.Graal.Net/Events/Candles/CandleType.cs/#L63"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Certain number of weeks.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static readonly CandleType Week</code></pre>
   </div>
-  <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="DxFeed.Graal.Net.Events.Candles.CandleType.html">CandleType</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.7.0/apiSpec/new?filename=DxFeed_Graal_Net_Events_Candles_CandleType_Year.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Candles.CandleType.Year%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.7.0/src/DxFeed.Graal.Net/Events/Candles/CandleType.cs/#L78">View Source</a>
-  </span>
-  <h4 id="DxFeed_Graal_Net_Events_Candles_CandleType_Year" data-uid="DxFeed.Graal.Net.Events.Candles.CandleType.Year">Year</h4>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DxFeed.Graal.Net.Events.Candles.CandleType.html">CandleType</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DxFeed_Graal_Net_Events_Candles_CandleType_Year" data-uid="DxFeed.Graal.Net.Events.Candles.CandleType.Year">
+  Year
+  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.8.0/src/DxFeed.Graal.Net/Events/Candles/CandleType.cs/#L78"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Certain number of years.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static readonly CandleType Year</code></pre>
   </div>
-  <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="DxFeed.Graal.Net.Events.Candles.CandleType.html">CandleType</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h3 id="properties">Properties
-</h3>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.7.0/apiSpec/new?filename=DxFeed_Graal_Net_Events_Candles_CandleType_Id.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Candles.CandleType.Id%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.7.0/src/DxFeed.Graal.Net/Events/Candles/CandleType.cs/#L226">View Source</a>
-  </span>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DxFeed.Graal.Net.Events.Candles.CandleType.html">CandleType</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
   <a id="DxFeed_Graal_Net_Events_Candles_CandleType_Id_" data-uid="DxFeed.Graal.Net.Events.Candles.CandleType.Id*"></a>
-  <h4 id="DxFeed_Graal_Net_Events_Candles_CandleType_Id" data-uid="DxFeed.Graal.Net.Events.Candles.CandleType.Id">Id</h4>
+
+  <h3 id="DxFeed_Graal_Net_Events_Candles_CandleType_Id" data-uid="DxFeed.Graal.Net.Events.Candles.CandleType.Id">
+  Id
+  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.8.0/src/DxFeed.Graal.Net/Events/Candles/CandleType.cs/#L226"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Gets <a class="xref" href="DxFeed.Graal.Net.Events.Candles.CandleType.CandleTypeId.html">CandleType.CandleTypeId</a> associated with this instance.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public CandleType.CandleTypeId Id { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="DxFeed.Graal.Net.Events.Candles.CandleType.html">CandleType</a>.<a class="xref" href="DxFeed.Graal.Net.Events.Candles.CandleType.CandleTypeId.html">CandleTypeId</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.7.0/apiSpec/new?filename=DxFeed_Graal_Net_Events_Candles_CandleType_Name.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Candles.CandleType.Name%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.7.0/src/DxFeed.Graal.Net/Events/Candles/CandleType.cs/#L234">View Source</a>
-  </span>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DxFeed.Graal.Net.Events.Candles.CandleType.html">CandleType</a>.<a class="xref" href="DxFeed.Graal.Net.Events.Candles.CandleType.CandleTypeId.html">CandleTypeId</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="DxFeed_Graal_Net_Events_Candles_CandleType_Name_" data-uid="DxFeed.Graal.Net.Events.Candles.CandleType.Name*"></a>
-  <h4 id="DxFeed_Graal_Net_Events_Candles_CandleType_Name" data-uid="DxFeed.Graal.Net.Events.Candles.CandleType.Name">Name</h4>
+
+  <h3 id="DxFeed_Graal_Net_Events_Candles_CandleType_Name" data-uid="DxFeed.Graal.Net.Events.Candles.CandleType.Name">
+  Name
+  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.8.0/src/DxFeed.Graal.Net/Events/Candles/CandleType.cs/#L234"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Gets full name this <a class="xref" href="DxFeed.Graal.Net.Events.Candles.CandleType.html">CandleType</a> instance.
 For example,
 <a class="xref" href="DxFeed.Graal.Net.Events.Candles.CandleType.html#DxFeed_Graal_Net_Events_Candles_CandleType_Tick">Tick</a> (<a class="xref" href="DxFeed.Graal.Net.Events.Candles.CandleType.html#DxFeed_Graal_Net_Events_Candles_CandleType_Value">Value</a> == <code>&quot;t&quot;</code>) returns <code>&quot;Tick&quot;</code>,
 <a class="xref" href="DxFeed.Graal.Net.Events.Candles.CandleType.html#DxFeed_Graal_Net_Events_Candles_CandleType_Month">Month</a> (<a class="xref" href="DxFeed.Graal.Net.Events.Candles.CandleType.html#DxFeed_Graal_Net_Events_Candles_CandleType_Value">Value</a> == <code>&quot;mo&quot;</code>) returns <code>&quot;Month&quot;</code>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public string Name { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.7.0/apiSpec/new?filename=DxFeed_Graal_Net_Events_Candles_CandleType_PeriodIntervalMillis.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Candles.CandleType.PeriodIntervalMillis%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.7.0/src/DxFeed.Graal.Net/Events/Candles/CandleType.cs/#L249">View Source</a>
-  </span>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="DxFeed_Graal_Net_Events_Candles_CandleType_PeriodIntervalMillis_" data-uid="DxFeed.Graal.Net.Events.Candles.CandleType.PeriodIntervalMillis*"></a>
-  <h4 id="DxFeed_Graal_Net_Events_Candles_CandleType_PeriodIntervalMillis" data-uid="DxFeed.Graal.Net.Events.Candles.CandleType.PeriodIntervalMillis">PeriodIntervalMillis</h4>
+
+  <h3 id="DxFeed_Graal_Net_Events_Candles_CandleType_PeriodIntervalMillis" data-uid="DxFeed.Graal.Net.Events.Candles.CandleType.PeriodIntervalMillis">
+  PeriodIntervalMillis
+  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.8.0/src/DxFeed.Graal.Net/Events/Candles/CandleType.cs/#L249"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Gets candle type period in milliseconds (aggregation period) as closely as possible.
 Certain types like <a class="xref" href="DxFeed.Graal.Net.Events.Candles.CandleType.html#DxFeed_Graal_Net_Events_Candles_CandleType_Second">Second</a> and
 <a class="xref" href="DxFeed.Graal.Net.Events.Candles.CandleType.html#DxFeed_Graal_Net_Events_Candles_CandleType_Day">Day</a> span a specific number of milliseconds.
@@ -983,34 +665,35 @@ are approximate. Candle type period of
 is not defined and this method returns <code>0</code>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public long PeriodIntervalMillis { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.7.0/apiSpec/new?filename=DxFeed_Graal_Net_Events_Candles_CandleType_Value.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Candles.CandleType.Value%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.7.0/src/DxFeed.Graal.Net/Events/Candles/CandleType.cs/#L237">View Source</a>
-  </span>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="DxFeed_Graal_Net_Events_Candles_CandleType_Value_" data-uid="DxFeed.Graal.Net.Events.Candles.CandleType.Value*"></a>
-  <h4 id="DxFeed_Graal_Net_Events_Candles_CandleType_Value" data-uid="DxFeed.Graal.Net.Events.Candles.CandleType.Value">Value</h4>
+
+  <h3 id="DxFeed_Graal_Net_Events_Candles_CandleType_Value" data-uid="DxFeed.Graal.Net.Events.Candles.CandleType.Value">
+  Value
+  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.8.0/src/DxFeed.Graal.Net/Events/Candles/CandleType.cs/#L237"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Returns string representation of this candle type.
 The string representation of candle type is the shortest unique prefix of the
 lower case string that corresponds to its <a class="xref" href="DxFeed.Graal.Net.Events.Candles.CandleType.html#DxFeed_Graal_Net_Events_Candles_CandleType_Name">Name</a>. For example,
@@ -1018,172 +701,133 @@ lower case string that corresponds to its <a class="xref" href="DxFeed.Graal.Net
 <code>&quot;mo&quot;</code> to distinguish it from <a class="xref" href="DxFeed.Graal.Net.Events.Candles.CandleType.html#DxFeed_Graal_Net_Events_Candles_CandleType_Minute">Minute</a> that is represented as <code>&quot;m&quot;</code>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public string Value { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
-        <td><p>The string representation.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h3 id="methods">Methods
-</h3>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.7.0/apiSpec/new?filename=DxFeed_Graal_Net_Events_Candles_CandleType_GetById_DxFeed_Graal_Net_Events_Candles_CandleType_CandleTypeId_.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Candles.CandleType.GetById(DxFeed.Graal.Net.Events.Candles.CandleType.CandleTypeId)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.7.0/src/DxFeed.Graal.Net/Events/Candles/CandleType.cs/#L257">View Source</a>
-  </span>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>The string representation.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
   <a id="DxFeed_Graal_Net_Events_Candles_CandleType_GetById_" data-uid="DxFeed.Graal.Net.Events.Candles.CandleType.GetById*"></a>
-  <h4 id="DxFeed_Graal_Net_Events_Candles_CandleType_GetById_DxFeed_Graal_Net_Events_Candles_CandleType_CandleTypeId_" data-uid="DxFeed.Graal.Net.Events.Candles.CandleType.GetById(DxFeed.Graal.Net.Events.Candles.CandleType.CandleTypeId)">GetById(CandleTypeId)</h4>
+
+  <h3 id="DxFeed_Graal_Net_Events_Candles_CandleType_GetById_DxFeed_Graal_Net_Events_Candles_CandleType_CandleTypeId_" data-uid="DxFeed.Graal.Net.Events.Candles.CandleType.GetById(DxFeed.Graal.Net.Events.Candles.CandleType.CandleTypeId)">
+  GetById(CandleTypeId)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.8.0/src/DxFeed.Graal.Net/Events/Candles/CandleType.cs/#L257"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Gets <a class="xref" href="DxFeed.Graal.Net.Events.Candles.CandleType.html">CandleType</a> associated with the specified <a class="xref" href="DxFeed.Graal.Net.Events.Candles.CandleType.CandleTypeId.html">CandleType.CandleTypeId</a>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static CandleType GetById(CandleType.CandleTypeId id)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="DxFeed.Graal.Net.Events.Candles.CandleType.html">CandleType</a>.<a class="xref" href="DxFeed.Graal.Net.Events.Candles.CandleType.CandleTypeId.html">CandleTypeId</a></td>
-        <td><span class="parametername">id</span></td>
-        <td><p>The candle type id.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="DxFeed.Graal.Net.Events.Candles.CandleType.html">CandleType</a></td>
-        <td><p>The candle type.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="exceptions">Exceptions</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Condition</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentexception">ArgumentException</a></td>
-        <td><p>If candle type id not exist.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.7.0/apiSpec/new?filename=DxFeed_Graal_Net_Events_Candles_CandleType_Parse_System_String_.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Candles.CandleType.Parse(System.String)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.7.0/src/DxFeed.Graal.Net/Events/Candles/CandleType.cs/#L276">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>id</code> <a class="xref" href="DxFeed.Graal.Net.Events.Candles.CandleType.html">CandleType</a>.<a class="xref" href="DxFeed.Graal.Net.Events.Candles.CandleType.CandleTypeId.html">CandleTypeId</a></dt>
+    <dd><p>The candle type id.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DxFeed.Graal.Net.Events.Candles.CandleType.html">CandleType</a></dt>
+    <dd><p>The candle type.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentexception">ArgumentException</a></dt>
+    <dd><p>If candle type id not exist.</p>
+</dd>
+  </dl>
+
+
+
   <a id="DxFeed_Graal_Net_Events_Candles_CandleType_Parse_" data-uid="DxFeed.Graal.Net.Events.Candles.CandleType.Parse*"></a>
-  <h4 id="DxFeed_Graal_Net_Events_Candles_CandleType_Parse_System_String_" data-uid="DxFeed.Graal.Net.Events.Candles.CandleType.Parse(System.String)">Parse(string)</h4>
+
+  <h3 id="DxFeed_Graal_Net_Events_Candles_CandleType_Parse_System_String_" data-uid="DxFeed.Graal.Net.Events.Candles.CandleType.Parse(System.String)">
+  Parse(string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.8.0/src/DxFeed.Graal.Net/Events/Candles/CandleType.cs/#L276"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Parses string representation of candle type into object.
 Any string that is a prefix of candle type <a class="xref" href="DxFeed.Graal.Net.Events.Candles.CandleType.html#DxFeed_Graal_Net_Events_Candles_CandleType_Name">Name</a> can be parsed
 (including the one that was returned by <a class="xref" href="DxFeed.Graal.Net.Events.Candles.CandleType.html#DxFeed_Graal_Net_Events_Candles_CandleType_ToString">ToString()</a>)
 and case is ignored for parsing.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public static CandleType Parse(string s)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
-        <td><span class="parametername">s</span></td>
-        <td><p>The string representation of candle type.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="DxFeed.Graal.Net.Events.Candles.CandleType.html">CandleType</a></td>
-        <td><p>The candle type.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="exceptions">Exceptions</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Condition</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentexception">ArgumentException</a></td>
-        <td><p>If the string representation is invalid.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.7.0/apiSpec/new?filename=DxFeed_Graal_Net_Events_Candles_CandleType_ToString.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Candles.CandleType.ToString%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.7.0/src/DxFeed.Graal.Net/Events/Candles/CandleType.cs/#L320">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>s</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>The string representation of candle type.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DxFeed.Graal.Net.Events.Candles.CandleType.html">CandleType</a></dt>
+    <dd><p>The candle type.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentexception">ArgumentException</a></dt>
+    <dd><p>If the string representation is invalid.</p>
+</dd>
+  </dl>
+
+
+
   <a id="DxFeed_Graal_Net_Events_Candles_CandleType_ToString_" data-uid="DxFeed.Graal.Net.Events.Candles.CandleType.ToString*"></a>
-  <h4 id="DxFeed_Graal_Net_Events_Candles_CandleType_ToString" data-uid="DxFeed.Graal.Net.Events.Candles.CandleType.ToString">ToString()</h4>
+
+  <h3 id="DxFeed_Graal_Net_Events_Candles_CandleType_ToString" data-uid="DxFeed.Graal.Net.Events.Candles.CandleType.ToString">
+  ToString()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.8.0/src/DxFeed.Graal.Net/Events/Candles/CandleType.cs/#L320"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Returns string representation of this candle type.
 The string representation of candle type is the shortest unique prefix of the
 lower case string that corresponds to its <a class="xref" href="DxFeed.Graal.Net.Events.Candles.CandleType.html#DxFeed_Graal_Net_Events_Candles_CandleType_Name">Name</a>. For example,
@@ -1191,69 +835,49 @@ lower case string that corresponds to its <a class="xref" href="DxFeed.Graal.Net
 <code>&quot;mo&quot;</code> to distinguish it from <a class="xref" href="DxFeed.Graal.Net.Events.Candles.CandleType.html#DxFeed_Graal_Net_Events_Candles_CandleType_Minute">Minute</a> that is represented as <code>&quot;m&quot;</code>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public override string ToString()</code></pre>
   </div>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
-        <td><p>The string representation.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="overrides">Overrides</h5>
-  <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a></div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>The string representation.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
 
 </article>
-          </div>
 
-          <div class="hidden-sm col-md-2" role="complementary">
-            <div class="sideaffix">
-              <div class="contribution">
-                <ul class="nav">
-                  <li>
-                    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.7.0/apiSpec/new?filename=DxFeed_Graal_Net_Events_Candles_CandleType.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Candles.CandleType%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Edit this page</a>
-                  </li>
-                  <li>
-                    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.7.0/src/DxFeed.Graal.Net/Events/Candles/CandleType.cs/#L18" class="contribution-link">View Source</a>
-                  </li>
-                </ul>
-              </div>
-              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
-                <h5>In this article</h5>
-                <div></div>
-              </nav>
-            </div>
-          </div>
-        </div>
+
+
       </div>
 
-      <footer>
-        <div class="grad-bottom"></div>
-        <div class="footer">
-          <div class="container">
-            <span class="pull-right">
-              <a href="#top">Back to top</a>
-            </span>
-      <span>Copyright © 2022 Devexperts LLC</span>
-      
-          </div>
-        </div>
-      </footer>
-    </div>
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
 
-    <script type="text/javascript" src="../../styles/docfx.vendor.min.js"></script>
-    <script type="text/javascript" src="../../styles/docfx.js"></script>
-    <script type="text/javascript" src="../../styles/main.js"></script>
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Copyright © 2022 Devexperts LLC</span>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>

@@ -1,692 +1,254 @@
 ﻿<!DOCTYPE html>
-<!--[if IE]><![endif]-->
 <html>
-
   <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Enum GraalErrorCode
+      <title>Enum GraalErrorCode
  | dxFeed Graal .NET API </title>
-    <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Enum GraalErrorCode
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Enum GraalErrorCode
  | dxFeed Graal .NET API ">
-    <meta name="generator" content="docfx ">
-  
-    <link rel="shortcut icon" href="../../docs/images/favicon.png">
-    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
-    <link rel="stylesheet" href="../../styles/docfx.css">
-    <link rel="stylesheet" href="../../styles/main.css">
-    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"> 
-    <meta property="docfx:navrel" content="../../toc.html">
-    <meta property="docfx:tocrel" content="toc.html">
-  
-  <meta property="docfx:rel" content="../../">
-  <meta property="docfx:newtab" content="true">
-  </head>  <body data-spy="scroll" data-target="#affix" data-offset="120">
-    <div id="wrapper">
-      <header>
+      
+      <link rel="icon" href="../../docs/images/favicon.png">
+      <link rel="stylesheet" href="../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../public/main.css">
+      <meta name="docfx:navrel" content="../../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.8.0/apiSpec/new?filename=DxFeed_Graal_Net_Native_ErrorHandling_GraalErrorCode.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Native.ErrorHandling.GraalErrorCode%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+  </head>
 
-        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
-          <div class="container">
-            <div class="navbar-header">
-              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-              </button>
+  <script type="module" src="./../../public/docfx.min.js"></script>
 
-              <a class="navbar-brand" href="../../index.html">
-                <img id="logo" class="svg" src="../../docs/images/logo.svg" alt="">
-              </a>
-            </div>
-            <div class="collapse navbar-collapse" id="navbar">
-              <form class="navbar-form navbar-right" role="search" id="search">
-                <div class="form-group">
-                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
-                </div>
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../index.html">
+            <img id="logo" class="svg" src="../../docs/images/logo.svg" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
               </form>
-
-                <ul class="nav level1 navbar-nav">
-                      <li>
-                          <a href="../../docs/api/index.html" title="API Documentation">API Documentation</a>
-                      </li>
-                </ul>
             </div>
-          </div>
-        </nav>
-
-        <div class="subnav navbar navbar-default">
-          <div class="container hide-when-search" id="breadcrumb">
-            <ul class="breadcrumb">
-              <li></li>
-            </ul>
           </div>
         </div>
-      </header>
-      <div class="container body-content">
+      </nav>
+    </header>
 
-        <div id="search-results">
-          <div class="search-list">Search Results for <span></span></div>
-          <div class="sr-items">
-            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
           </div>
-          <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
         </div>
       </div>
-      <div role="main" class="container body-content hide-when-search">
-        <div class="sidenav hide-when-search">
-          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
-          <div class="sidetoggle collapse" id="sidetoggle">
-            <div>
-              <div class="sidefilter">
-                <form class="toc-filter">
-                  <span class="glyphicon glyphicon-filter filter-icon"></span>
-                  <input type="text" id="toc_filter_input" placeholder="Enter here to filter..." onkeypress="if(event.keyCode==13) {return false;}">
-                </form>
-              </div>
-              <div class="sidetoc">
-                <div class="toc" id="toc">
 
-                  <ul class="nav level1">
-                    <li class="">
-                      <span class="expand-stub"></span>
-                      <a href="DxFeed.Graal.Net.html" title="DxFeed.Graal.Net" class="">DxFeed.Graal.Net</a>
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
 
-                        <ul class="nav level2">
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.SystemProperty.html" title="SystemProperty" class="">SystemProperty</a>
-                          </li>
-                        </ul>
-                    </li>
-                    <li class="">
-                      <span class="expand-stub"></span>
-                      <a href="DxFeed.Graal.Net.Api.html" title="DxFeed.Graal.Net.Api" class="">DxFeed.Graal.Net.Api</a>
-
-                        <ul class="nav level2">
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Api.DXEndpoint.html" title="DXEndpoint" class="">DXEndpoint</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Api.DXEndpoint.Builder.html" title="DXEndpoint.Builder" class="">DXEndpoint.Builder</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Api.DXEndpoint.Role.html" title="DXEndpoint.Role" class="">DXEndpoint.Role</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Api.DXEndpoint.State.html" title="DXEndpoint.State" class="">DXEndpoint.State</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Api.DXEndpoint.StateChangeListener.html" title="DXEndpoint.StateChangeListener" class="">DXEndpoint.StateChangeListener</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Api.DXFeed.html" title="DXFeed" class="">DXFeed</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Api.DXFeedEventListener.html" title="DXFeedEventListener" class="">DXFeedEventListener</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Api.DXFeedSubscription.html" title="DXFeedSubscription" class="">DXFeedSubscription</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Api.DXPublisher.html" title="DXPublisher" class="">DXPublisher</a>
-                          </li>
-                        </ul>
-                    </li>
-                    <li class="">
-                      <span class="expand-stub"></span>
-                      <a href="DxFeed.Graal.Net.Api.Osub.html" title="DxFeed.Graal.Net.Api.Osub" class="">DxFeed.Graal.Net.Api.Osub</a>
-
-                        <ul class="nav level2">
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Api.Osub.IObservableSubscription.html" title="IObservableSubscription" class="">IObservableSubscription</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Api.Osub.IndexedEventSubscriptionSymbol.html" title="IndexedEventSubscriptionSymbol" class="">IndexedEventSubscriptionSymbol</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Api.Osub.IndexedEventSubscriptionSymbol-1.html" title="IndexedEventSubscriptionSymbol&lt;T&gt;" class="">IndexedEventSubscriptionSymbol&lt;T&gt;</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Api.Osub.TimeSeriesSubscriptionSymbol.html" title="TimeSeriesSubscriptionSymbol" class="">TimeSeriesSubscriptionSymbol</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Api.Osub.TimeSeriesSubscriptionSymbol-1.html" title="TimeSeriesSubscriptionSymbol&lt;T&gt;" class="">TimeSeriesSubscriptionSymbol&lt;T&gt;</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Api.Osub.WildcardSymbol.html" title="WildcardSymbol" class="">WildcardSymbol</a>
-                          </li>
-                        </ul>
-                    </li>
-                    <li class="">
-                      <span class="expand-stub"></span>
-                      <a href="DxFeed.Graal.Net.Events.html" title="DxFeed.Graal.Net.Events" class="">DxFeed.Graal.Net.Events</a>
-
-                        <ul class="nav level2">
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.EventCodeAttribute.html" title="EventCodeAttribute" class="">EventCodeAttribute</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.IEventType.html" title="IEventType" class="">IEventType</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.IIndexedEvent.html" title="IIndexedEvent" class="">IIndexedEvent</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.ILastingEvent.html" title="ILastingEvent" class="">ILastingEvent</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.ITimeSeriesEvent.html" title="ITimeSeriesEvent" class="">ITimeSeriesEvent</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.IndexedEventSource.html" title="IndexedEventSource" class="">IndexedEventSource</a>
-                          </li>
-                        </ul>
-                    </li>
-                    <li class="">
-                      <span class="expand-stub"></span>
-                      <a href="DxFeed.Graal.Net.Events.Candles.html" title="DxFeed.Graal.Net.Events.Candles" class="">DxFeed.Graal.Net.Events.Candles</a>
-
-                        <ul class="nav level2">
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.Candles.Candle.html" title="Candle" class="">Candle</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.Candles.CandleAlignment.html" title="CandleAlignment" class="">CandleAlignment</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.Candles.CandleAlignment.CandleAlignmentId.html" title="CandleAlignment.CandleAlignmentId" class="">CandleAlignment.CandleAlignmentId</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.Candles.CandleExchange.html" title="CandleExchange" class="">CandleExchange</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.Candles.CandlePeriod.html" title="CandlePeriod" class="">CandlePeriod</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.Candles.CandlePrice.html" title="CandlePrice" class="">CandlePrice</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.Candles.CandlePrice.CandlePriceId.html" title="CandlePrice.CandlePriceId" class="">CandlePrice.CandlePriceId</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.Candles.CandlePriceLevel.html" title="CandlePriceLevel" class="">CandlePriceLevel</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.Candles.CandleSession.html" title="CandleSession" class="">CandleSession</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.Candles.CandleSession.CandleSessionId.html" title="CandleSession.CandleSessionId" class="">CandleSession.CandleSessionId</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.Candles.CandleSymbol.html" title="CandleSymbol" class="">CandleSymbol</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.Candles.CandleType.html" title="CandleType" class="">CandleType</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.Candles.CandleType.CandleTypeId.html" title="CandleType.CandleTypeId" class="">CandleType.CandleTypeId</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.Candles.ICandleSymbolProperty.html" title="ICandleSymbolProperty" class="">ICandleSymbolProperty</a>
-                          </li>
-                        </ul>
-                    </li>
-                    <li class="">
-                      <span class="expand-stub"></span>
-                      <a href="DxFeed.Graal.Net.Events.Market.html" title="DxFeed.Graal.Net.Events.Market" class="">DxFeed.Graal.Net.Events.Market</a>
-
-                        <ul class="nav level2">
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.Market.AnalyticOrder.html" title="AnalyticOrder" class="">AnalyticOrder</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.Market.Direction.html" title="Direction" class="">Direction</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.Market.IcebergType.html" title="IcebergType" class="">IcebergType</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.Market.MarketEvent.html" title="MarketEvent" class="">MarketEvent</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.Market.MarketEventSymbols.html" title="MarketEventSymbols" class="">MarketEventSymbols</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.Market.OptionSale.html" title="OptionSale" class="">OptionSale</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.Market.Order.html" title="Order" class="">Order</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.Market.OrderAction.html" title="OrderAction" class="">OrderAction</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.Market.OrderBase.html" title="OrderBase" class="">OrderBase</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.Market.OrderSource.html" title="OrderSource" class="">OrderSource</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.Market.PriceType.html" title="PriceType" class="">PriceType</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.Market.Profile.html" title="Profile" class="">Profile</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.Market.Quote.html" title="Quote" class="">Quote</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.Market.Scope.html" title="Scope" class="">Scope</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.Market.ShortSaleRestriction.html" title="ShortSaleRestriction" class="">ShortSaleRestriction</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.Market.Side.html" title="Side" class="">Side</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.Market.SpreadOrder.html" title="SpreadOrder" class="">SpreadOrder</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.Market.Summary.html" title="Summary" class="">Summary</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.Market.TimeAndSale.html" title="TimeAndSale" class="">TimeAndSale</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.Market.TimeAndSaleType.html" title="TimeAndSaleType" class="">TimeAndSaleType</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.Market.Trade.html" title="Trade" class="">Trade</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.Market.TradeBase.html" title="TradeBase" class="">TradeBase</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.Market.TradeETH.html" title="TradeETH" class="">TradeETH</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.Market.TradingStatus.html" title="TradingStatus" class="">TradingStatus</a>
-                          </li>
-                        </ul>
-                    </li>
-                    <li class="">
-                      <span class="expand-stub"></span>
-                      <a href="DxFeed.Graal.Net.Events.Options.html" title="DxFeed.Graal.Net.Events.Options" class="">DxFeed.Graal.Net.Events.Options</a>
-
-                        <ul class="nav level2">
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.Options.Greeks.html" title="Greeks" class="">Greeks</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.Options.Series.html" title="Series" class="">Series</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.Options.TheoPrice.html" title="TheoPrice" class="">TheoPrice</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.Options.Underlying.html" title="Underlying" class="">Underlying</a>
-                          </li>
-                        </ul>
-                    </li>
-                    <li class="">
-                      <span class="expand-stub"></span>
-                      <a href="DxFeed.Graal.Net.Ipf.html" title="DxFeed.Graal.Net.Ipf" class="">DxFeed.Graal.Net.Ipf</a>
-
-                        <ul class="nav level2">
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Ipf.InstrumentProfile.html" title="InstrumentProfile" class="">InstrumentProfile</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Ipf.InstrumentProfileReader.html" title="InstrumentProfileReader" class="">InstrumentProfileReader</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Ipf.InstrumentProfileType.html" title="InstrumentProfileType" class="">InstrumentProfileType</a>
-                          </li>
-                        </ul>
-                    </li>
-                    <li class="">
-                      <span class="expand-stub"></span>
-                      <a href="DxFeed.Graal.Net.Ipf.Live.html" title="DxFeed.Graal.Net.Ipf.Live" class="">DxFeed.Graal.Net.Ipf.Live</a>
-
-                        <ul class="nav level2">
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Ipf.Live.InstrumentProfileCollector.html" title="InstrumentProfileCollector" class="">InstrumentProfileCollector</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Ipf.Live.InstrumentProfileConnection.html" title="InstrumentProfileConnection" class="">InstrumentProfileConnection</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Ipf.Live.InstrumentProfileUpdateListener.html" title="InstrumentProfileUpdateListener" class="">InstrumentProfileUpdateListener</a>
-                          </li>
-                        </ul>
-                    </li>
-                    <li class="">
-                      <span class="expand-stub"></span>
-                      <a href="DxFeed.Graal.Net.Native.ErrorHandling.html" title="DxFeed.Graal.Net.Native.ErrorHandling" class="">DxFeed.Graal.Net.Native.ErrorHandling</a>
-
-                        <ul class="nav level2">
-                          <li class="active">
-                            <a href="DxFeed.Graal.Net.Native.ErrorHandling.GraalErrorCode.html" title="GraalErrorCode" class="active">GraalErrorCode</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Native.ErrorHandling.GraalException.html" title="GraalException" class="">GraalException</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Native.ErrorHandling.JavaException.html" title="JavaException" class="">JavaException</a>
-                          </li>
-                        </ul>
-                    </li>
-                    <li class="">
-                      <span class="expand-stub"></span>
-                      <a href="DxFeed.Graal.Net.Native.Events.html" title="DxFeed.Graal.Net.Native.Events" class="">DxFeed.Graal.Net.Native.Events</a>
-
-                        <ul class="nav level2">
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Native.Events.EventCodeNative.html" title="EventCodeNative" class="">EventCodeNative</a>
-                          </li>
-                        </ul>
-                    </li>
-                    <li class="">
-                      <span class="expand-stub"></span>
-                      <a href="DxFeed.Graal.Net.Utils.html" title="DxFeed.Graal.Net.Utils" class="">DxFeed.Graal.Net.Utils</a>
-
-                        <ul class="nav level2">
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Utils.AttributeUtil.html" title="AttributeUtil" class="">AttributeUtil</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Utils.BitUtil.html" title="BitUtil" class="">BitUtil</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Utils.CmdArgsUtil.html" title="CmdArgsUtil" class="">CmdArgsUtil</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Utils.ConcurrentSet-1.html" title="ConcurrentSet&lt;T&gt;" class="">ConcurrentSet&lt;T&gt;</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Utils.DayUtil.html" title="DayUtil" class="">DayUtil</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Utils.EnumUtil.html" title="EnumUtil" class="">EnumUtil</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Utils.MathUtil.html" title="MathUtil" class="">MathUtil</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Utils.PlatformUtils.html" title="PlatformUtils" class="">PlatformUtils</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Utils.ReflectionUtil.html" title="ReflectionUtil" class="">ReflectionUtil</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Utils.StringUtil.html" title="StringUtil" class="">StringUtil</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Utils.TimeFormat.html" title="TimeFormat" class="">TimeFormat</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Utils.TimeNanosUtil.html" title="TimeNanosUtil" class="">TimeNanosUtil</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Utils.TimeUtil.html" title="TimeUtil" class="">TimeUtil</a>
-                          </li>
-                        </ul>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
+          <nav id="breadcrumb"></nav>
         </div>
-        <div class="article row grid-right">
-          <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="DxFeed.Graal.Net.Native.ErrorHandling.GraalErrorCode">
+
+        <article data-uid="DxFeed.Graal.Net.Native.ErrorHandling.GraalErrorCode">
 
 
 
 
-  <h1 id="DxFeed_Graal_Net_Native_ErrorHandling_GraalErrorCode" data-uid="DxFeed.Graal.Net.Native.ErrorHandling.GraalErrorCode" class="text-break">Enum GraalErrorCode
-</h1>
-  <div class="markdown level0 summary"><p>Errors returned when calling GraalVM functions.
+  <h1 id="DxFeed_Graal_Net_Native_ErrorHandling_GraalErrorCode" data-uid="DxFeed.Graal.Net.Native.ErrorHandling.GraalErrorCode" class="text-break">
+    Enum GraalErrorCode
+  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.8.0/src/DxFeed.Graal.Net/Native/ErrorHandling/GraalErrorCode.cs/#L15"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="DxFeed.html">DxFeed</a>.<a class="xref" href="DxFeed.Graal.html">Graal</a>.<a class="xref" href="DxFeed.Graal.Net.html">Net</a>.<a class="xref" href="DxFeed.Graal.Net.Native.html">Native</a>.<a class="xref" href="DxFeed.Graal.Net.Native.ErrorHandling.html">ErrorHandling</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>DxFeed.Graal.Net.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>Errors returned when calling GraalVM functions.
 The error description was obtained from <a href="https://github.com/oracle/graal/blob/jdk-21.0.1/substratevm/src/com.oracle.svm.core/src/com/oracle/svm/core/c/function/CEntryPointErrors.java#L43">GraalVM GitHub.</a></p>
 </div>
-  <div class="markdown level0 conceptual"></div>
-  <h6><strong>Namespace</strong>: <a class="xref" href="DxFeed.html">DxFeed</a>.<a class="xref" href="DxFeed.Graal.html">Graal</a>.<a class="xref" href="DxFeed.Graal.Net.html">Net</a>.<a class="xref" href="DxFeed.Graal.Net.Native.html">Native</a>.<a class="xref" href="DxFeed.Graal.Net.Native.ErrorHandling.html">ErrorHandling</a></h6>
-  <h6><strong>Assembly</strong>: DxFeed.Graal.Net.dll</h6>
-  <h5 id="DxFeed_Graal_Net_Native_ErrorHandling_GraalErrorCode_syntax">Syntax</h5>
+  <div class="markdown conceptual"></div>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public enum GraalErrorCode</code></pre>
   </div>
-  <h3 id="fields">Fields
-</h3>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    <thead>
-    <tbody>
-      <tr>
-        <td id="DxFeed_Graal_Net_Native_ErrorHandling_GraalErrorCode_AllocationFailed">AllocationFailed</td>
-        <td><p>Memory allocation failed, the OS is probably out of memory.</p>
-</td>
-      </tr>
-      <tr>
-        <td id="DxFeed_Graal_Net_Native_ErrorHandling_GraalErrorCode_ArgumentParsingFailed">ArgumentParsingFailed</td>
-        <td><p>The isolate arguments could not be parsed.</p>
-</td>
-      </tr>
-      <tr>
-        <td id="DxFeed_Graal_Net_Native_ErrorHandling_GraalErrorCode_AuxImagePrimaryImageMismatch">AuxImagePrimaryImageMismatch</td>
-        <td><p>The auxiliary image was built from a different primary image.</p>
-</td>
-      </tr>
-      <tr>
-        <td id="DxFeed_Graal_Net_Native_ErrorHandling_GraalErrorCode_AuxImageUnsupported">AuxImageUnsupported</td>
-        <td><p>Auxiliary images are not supported on this platform or edition.</p>
-</td>
-      </tr>
-      <tr>
-        <td id="DxFeed_Graal_Net_Native_ErrorHandling_GraalErrorCode_CpuFeatureCheckFailed">CpuFeatureCheckFailed</td>
-        <td><p>Current target does not support the CPU features that are required by the image.</p>
-</td>
-      </tr>
-      <tr>
-        <td id="DxFeed_Graal_Net_Native_ErrorHandling_GraalErrorCode_DynamicMethodAddressResolutionGotFdCreateFailed">DynamicMethodAddressResolutionGotFdCreateFailed</td>
-        <td><p>Creating an in-memory file for the GOT failed.</p>
-</td>
-      </tr>
-      <tr>
-        <td id="DxFeed_Graal_Net_Native_ErrorHandling_GraalErrorCode_DynamicMethodAddressResolutionGotFdInvalid">DynamicMethodAddressResolutionGotFdInvalid</td>
-        <td><p>Mapping the GOT before an isolate's heap failed (invalid file).</p>
-</td>
-      </tr>
-      <tr>
-        <td id="DxFeed_Graal_Net_Native_ErrorHandling_GraalErrorCode_DynamicMethodAddressResolutionGotFdMapFailed">DynamicMethodAddressResolutionGotFdMapFailed</td>
-        <td><p>Mapping and populating the in-memory file for the GOT failed.</p>
-</td>
-      </tr>
-      <tr>
-        <td id="DxFeed_Graal_Net_Native_ErrorHandling_GraalErrorCode_DynamicMethodAddressResolutionGotFdResizeFailed">DynamicMethodAddressResolutionGotFdResizeFailed</td>
-        <td><p>Resizing the in-memory file for the GOT failed.</p>
-</td>
-      </tr>
-      <tr>
-        <td id="DxFeed_Graal_Net_Native_ErrorHandling_GraalErrorCode_DynamicMethodAddressResolutionGotMmapFailed">DynamicMethodAddressResolutionGotMmapFailed</td>
-        <td><p>Mapping the GOT before an isolate's heap failed (no mapping).</p>
-</td>
-      </tr>
-      <tr>
-        <td id="DxFeed_Graal_Net_Native_ErrorHandling_GraalErrorCode_DynamicMethodAddressResolutionGotUniqueFileCreateFailed">DynamicMethodAddressResolutionGotUniqueFileCreateFailed</td>
-        <td><p>Could not create unique GOT file even after retrying.</p>
-</td>
-      </tr>
-      <tr>
-        <td id="DxFeed_Graal_Net_Native_ErrorHandling_GraalErrorCode_DynamicMethodAddressResolutionGotWrongMmap">DynamicMethodAddressResolutionGotWrongMmap</td>
-        <td><p>Mapping the GOT before an isolate's heap failed (wrong mapping).</p>
-</td>
-      </tr>
-      <tr>
-        <td id="DxFeed_Graal_Net_Native_ErrorHandling_GraalErrorCode_FreeAddressSpaceFailed">FreeAddressSpaceFailed</td>
-        <td><p>Releasing the isolate's address space failed.</p>
-</td>
-      </tr>
-      <tr>
-        <td id="DxFeed_Graal_Net_Native_ErrorHandling_GraalErrorCode_FreeImageHeapFailed">FreeImageHeapFailed</td>
-        <td><p>Releasing the isolate's image heap memory failed.</p>
-</td>
-      </tr>
-      <tr>
-        <td id="DxFeed_Graal_Net_Native_ErrorHandling_GraalErrorCode_InsufficientAddressSpace">InsufficientAddressSpace</td>
-        <td><p>The image heap does not fit in the available address space.</p>
-</td>
-      </tr>
-      <tr>
-        <td id="DxFeed_Graal_Net_Native_ErrorHandling_GraalErrorCode_InsufficientAuxImageMemory">InsufficientAuxImageMemory</td>
-        <td><p>Insufficient memory for the auxiliary image.</p>
-</td>
-      </tr>
-      <tr>
-        <td id="DxFeed_Graal_Net_Native_ErrorHandling_GraalErrorCode_IsolateInitializationFailed">IsolateInitializationFailed</td>
-        <td><p>Initialization the isolate failed.</p>
-</td>
-      </tr>
-      <tr>
-        <td id="DxFeed_Graal_Net_Native_ErrorHandling_GraalErrorCode_LocateImageFailed">LocateImageFailed</td>
-        <td><p>Locating the image file failed.</p>
-</td>
-      </tr>
-      <tr>
-        <td id="DxFeed_Graal_Net_Native_ErrorHandling_GraalErrorCode_MapAuxImageFailed">MapAuxImageFailed</td>
-        <td><p>Mapping the auxiliary image file into memory failed.</p>
-</td>
-      </tr>
-      <tr>
-        <td id="DxFeed_Graal_Net_Native_ErrorHandling_GraalErrorCode_MapHeapFailed">MapHeapFailed</td>
-        <td><p>Mapping the heap from the image file into memory failed.</p>
-</td>
-      </tr>
-      <tr>
-        <td id="DxFeed_Graal_Net_Native_ErrorHandling_GraalErrorCode_NoError">NoError</td>
-        <td><p>No error occurred.</p>
-</td>
-      </tr>
-      <tr>
-        <td id="DxFeed_Graal_Net_Native_ErrorHandling_GraalErrorCode_NullArgument">NullArgument</td>
-        <td><p>An argument was NULL.</p>
-</td>
-      </tr>
-      <tr>
-        <td id="DxFeed_Graal_Net_Native_ErrorHandling_GraalErrorCode_OpenAuxImageFailed">OpenAuxImageFailed</td>
-        <td><p>Opening the located auxiliary image file failed.</p>
-</td>
-      </tr>
-      <tr>
-        <td id="DxFeed_Graal_Net_Native_ErrorHandling_GraalErrorCode_OpenImageFailed">OpenImageFailed</td>
-        <td><p>Opening the located image file failed.</p>
-</td>
-      </tr>
-      <tr>
-        <td id="DxFeed_Graal_Net_Native_ErrorHandling_GraalErrorCode_PageSizeCheckFailed">PageSizeCheckFailed</td>
-        <td><p>Image page size is incompatible with run-time page size.
-Rebuild image with -H:PageSize=[pagesize] to set appropriately.</p>
-</td>
-      </tr>
-      <tr>
-        <td id="DxFeed_Graal_Net_Native_ErrorHandling_GraalErrorCode_ProtectHeapFailed">ProtectHeapFailed</td>
-        <td><p>Setting the protection of the heap memory failed.</p>
-</td>
-      </tr>
-      <tr>
-        <td id="DxFeed_Graal_Net_Native_ErrorHandling_GraalErrorCode_ReadAuxImageMetaFailed">ReadAuxImageMetaFailed</td>
-        <td><p>Reading the opened auxiliary image file failed.</p>
-</td>
-      </tr>
-      <tr>
-        <td id="DxFeed_Graal_Net_Native_ErrorHandling_GraalErrorCode_ReserveAddressSpaceFailed">ReserveAddressSpaceFailed</td>
-        <td><p>Reserving address space for the new isolate failed.</p>
-</td>
-      </tr>
-      <tr>
-        <td id="DxFeed_Graal_Net_Native_ErrorHandling_GraalErrorCode_ThreadingInitializationFailed">ThreadingInitializationFailed</td>
-        <td><p>Initialization of threading in the isolate failed.</p>
-</td>
-      </tr>
-      <tr>
-        <td id="DxFeed_Graal_Net_Native_ErrorHandling_GraalErrorCode_UnattachedThread">UnattachedThread</td>
-        <td><p>The specified thread is not attached to the isolate.</p>
-</td>
-      </tr>
-      <tr>
-        <td id="DxFeed_Graal_Net_Native_ErrorHandling_GraalErrorCode_UncaughtException">UncaughtException</td>
-        <td><p>Some exception is not caught.</p>
-</td>
-      </tr>
-      <tr>
-        <td id="DxFeed_Graal_Net_Native_ErrorHandling_GraalErrorCode_UninitializedIsolate">UninitializedIsolate</td>
-        <td><p>The specified isolate is unknown.</p>
-</td>
-      </tr>
-      <tr>
-        <td id="DxFeed_Graal_Net_Native_ErrorHandling_GraalErrorCode_UnknownStackBoundaries">UnknownStackBoundaries</td>
-        <td><p>Could not determine the stack boundaries.</p>
-</td>
-      </tr>
-      <tr>
-        <td id="DxFeed_Graal_Net_Native_ErrorHandling_GraalErrorCode_Unspecified">Unspecified</td>
-        <td><p>An unspecified error occurred.</p>
-</td>
-      </tr>
-      <tr>
-        <td id="DxFeed_Graal_Net_Native_ErrorHandling_GraalErrorCode_UnsupportedIsolateParametersVersion">UnsupportedIsolateParametersVersion</td>
-        <td><p>The version of the specified isolate parameters is unsupported.</p>
-</td>
-      </tr>
-    </tbody>
-  </thead></thead></table>
-</article>
-          </div>
 
-          <div class="hidden-sm col-md-2" role="complementary">
-            <div class="sideaffix">
-              <div class="contribution">
-                <ul class="nav">
-                  <li>
-                    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.7.0/apiSpec/new?filename=DxFeed_Graal_Net_Native_ErrorHandling_GraalErrorCode.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Native.ErrorHandling.GraalErrorCode%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Edit this page</a>
-                  </li>
-                  <li>
-                    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.7.0/src/DxFeed.Graal.Net/Native/ErrorHandling/GraalErrorCode.cs/#L15" class="contribution-link">View Source</a>
-                  </li>
-                </ul>
-              </div>
-              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
-                <h5>In this article</h5>
-                <div></div>
-              </nav>
-            </div>
-          </div>
-        </div>
+
+
+
+
+
+
+
+
+  <h2 id="fields">Fields
+</h2>
+  <dl class="parameters">
+    <dt id="DxFeed_Graal_Net_Native_ErrorHandling_GraalErrorCode_AllocationFailed"><code>AllocationFailed = 3</code></dt>
+    <dd><p>Memory allocation failed, the OS is probably out of memory.</p>
+</dd>
+    <dt id="DxFeed_Graal_Net_Native_ErrorHandling_GraalErrorCode_ArgumentParsingFailed"><code>ArgumentParsingFailed = 22</code></dt>
+    <dd><p>The isolate arguments could not be parsed.</p>
+</dd>
+    <dt id="DxFeed_Graal_Net_Native_ErrorHandling_GraalErrorCode_AuxImagePrimaryImageMismatch"><code>AuxImagePrimaryImageMismatch = 21</code></dt>
+    <dd><p>The auxiliary image was built from a different primary image.</p>
+</dd>
+    <dt id="DxFeed_Graal_Net_Native_ErrorHandling_GraalErrorCode_AuxImageUnsupported"><code>AuxImageUnsupported = 18</code></dt>
+    <dd><p>Auxiliary images are not supported on this platform or edition.</p>
+</dd>
+    <dt id="DxFeed_Graal_Net_Native_ErrorHandling_GraalErrorCode_CpuFeatureCheckFailed"><code>CpuFeatureCheckFailed = 23</code></dt>
+    <dd><p>Current target does not support the CPU features that are required by the image.</p>
+</dd>
+    <dt id="DxFeed_Graal_Net_Native_ErrorHandling_GraalErrorCode_DynamicMethodAddressResolutionGotFdCreateFailed"><code>DynamicMethodAddressResolutionGotFdCreateFailed = 25</code></dt>
+    <dd><p>Creating an in-memory file for the GOT failed.</p>
+</dd>
+    <dt id="DxFeed_Graal_Net_Native_ErrorHandling_GraalErrorCode_DynamicMethodAddressResolutionGotFdInvalid"><code>DynamicMethodAddressResolutionGotFdInvalid = 30</code></dt>
+    <dd><p>Mapping the GOT before an isolate's heap failed (invalid file).</p>
+</dd>
+    <dt id="DxFeed_Graal_Net_Native_ErrorHandling_GraalErrorCode_DynamicMethodAddressResolutionGotFdMapFailed"><code>DynamicMethodAddressResolutionGotFdMapFailed = 27</code></dt>
+    <dd><p>Mapping and populating the in-memory file for the GOT failed.</p>
+</dd>
+    <dt id="DxFeed_Graal_Net_Native_ErrorHandling_GraalErrorCode_DynamicMethodAddressResolutionGotFdResizeFailed"><code>DynamicMethodAddressResolutionGotFdResizeFailed = 26</code></dt>
+    <dd><p>Resizing the in-memory file for the GOT failed.</p>
+</dd>
+    <dt id="DxFeed_Graal_Net_Native_ErrorHandling_GraalErrorCode_DynamicMethodAddressResolutionGotMmapFailed"><code>DynamicMethodAddressResolutionGotMmapFailed = 28</code></dt>
+    <dd><p>Mapping the GOT before an isolate's heap failed (no mapping).</p>
+</dd>
+    <dt id="DxFeed_Graal_Net_Native_ErrorHandling_GraalErrorCode_DynamicMethodAddressResolutionGotUniqueFileCreateFailed"><code>DynamicMethodAddressResolutionGotUniqueFileCreateFailed = 31</code></dt>
+    <dd><p>Could not create unique GOT file even after retrying.</p>
+</dd>
+    <dt id="DxFeed_Graal_Net_Native_ErrorHandling_GraalErrorCode_DynamicMethodAddressResolutionGotWrongMmap"><code>DynamicMethodAddressResolutionGotWrongMmap = 29</code></dt>
+    <dd><p>Mapping the GOT before an isolate's heap failed (wrong mapping).</p>
+</dd>
+    <dt id="DxFeed_Graal_Net_Native_ErrorHandling_GraalErrorCode_FreeAddressSpaceFailed"><code>FreeAddressSpaceFailed = 19</code></dt>
+    <dd><p>Releasing the isolate's address space failed.</p>
+</dd>
+    <dt id="DxFeed_Graal_Net_Native_ErrorHandling_GraalErrorCode_FreeImageHeapFailed"><code>FreeImageHeapFailed = 20</code></dt>
+    <dd><p>Releasing the isolate's image heap memory failed.</p>
+</dd>
+    <dt id="DxFeed_Graal_Net_Native_ErrorHandling_GraalErrorCode_InsufficientAddressSpace"><code>InsufficientAddressSpace = 802</code></dt>
+    <dd><p>The image heap does not fit in the available address space.</p>
+</dd>
+    <dt id="DxFeed_Graal_Net_Native_ErrorHandling_GraalErrorCode_InsufficientAuxImageMemory"><code>InsufficientAuxImageMemory = 17</code></dt>
+    <dd><p>Insufficient memory for the auxiliary image.</p>
+</dd>
+    <dt id="DxFeed_Graal_Net_Native_ErrorHandling_GraalErrorCode_IsolateInitializationFailed"><code>IsolateInitializationFailed = 13</code></dt>
+    <dd><p>Initialization the isolate failed.</p>
+</dd>
+    <dt id="DxFeed_Graal_Net_Native_ErrorHandling_GraalErrorCode_LocateImageFailed"><code>LocateImageFailed = 6</code></dt>
+    <dd><p>Locating the image file failed.</p>
+</dd>
+    <dt id="DxFeed_Graal_Net_Native_ErrorHandling_GraalErrorCode_MapAuxImageFailed"><code>MapAuxImageFailed = 16</code></dt>
+    <dd><p>Mapping the auxiliary image file into memory failed.</p>
+</dd>
+    <dt id="DxFeed_Graal_Net_Native_ErrorHandling_GraalErrorCode_MapHeapFailed"><code>MapHeapFailed = 8</code></dt>
+    <dd><p>Mapping the heap from the image file into memory failed.</p>
+</dd>
+    <dt id="DxFeed_Graal_Net_Native_ErrorHandling_GraalErrorCode_NoError"><code>NoError = 0</code></dt>
+    <dd><p>No error occurred.</p>
+</dd>
+    <dt id="DxFeed_Graal_Net_Native_ErrorHandling_GraalErrorCode_NullArgument"><code>NullArgument = 2</code></dt>
+    <dd><p>An argument was NULL.</p>
+</dd>
+    <dt id="DxFeed_Graal_Net_Native_ErrorHandling_GraalErrorCode_OpenAuxImageFailed"><code>OpenAuxImageFailed = 14</code></dt>
+    <dd><p>Opening the located auxiliary image file failed.</p>
+</dd>
+    <dt id="DxFeed_Graal_Net_Native_ErrorHandling_GraalErrorCode_OpenImageFailed"><code>OpenImageFailed = 7</code></dt>
+    <dd><p>Opening the located image file failed.</p>
+</dd>
+    <dt id="DxFeed_Graal_Net_Native_ErrorHandling_GraalErrorCode_PageSizeCheckFailed"><code>PageSizeCheckFailed = 24</code></dt>
+    <dd><p>Image page size is incompatible with run-time page size.
+Rebuild image with -H:PageSize=[pagesize] to set appropriately.</p>
+</dd>
+    <dt id="DxFeed_Graal_Net_Native_ErrorHandling_GraalErrorCode_ProtectHeapFailed"><code>ProtectHeapFailed = 9</code></dt>
+    <dd><p>Setting the protection of the heap memory failed.</p>
+</dd>
+    <dt id="DxFeed_Graal_Net_Native_ErrorHandling_GraalErrorCode_ReadAuxImageMetaFailed"><code>ReadAuxImageMetaFailed = 15</code></dt>
+    <dd><p>Reading the opened auxiliary image file failed.</p>
+</dd>
+    <dt id="DxFeed_Graal_Net_Native_ErrorHandling_GraalErrorCode_ReserveAddressSpaceFailed"><code>ReserveAddressSpaceFailed = 801</code></dt>
+    <dd><p>Reserving address space for the new isolate failed.</p>
+</dd>
+    <dt id="DxFeed_Graal_Net_Native_ErrorHandling_GraalErrorCode_ThreadingInitializationFailed"><code>ThreadingInitializationFailed = 11</code></dt>
+    <dd><p>Initialization of threading in the isolate failed.</p>
+</dd>
+    <dt id="DxFeed_Graal_Net_Native_ErrorHandling_GraalErrorCode_UnattachedThread"><code>UnattachedThread = 4</code></dt>
+    <dd><p>The specified thread is not attached to the isolate.</p>
+</dd>
+    <dt id="DxFeed_Graal_Net_Native_ErrorHandling_GraalErrorCode_UncaughtException"><code>UncaughtException = 12</code></dt>
+    <dd><p>Some exception is not caught.</p>
+</dd>
+    <dt id="DxFeed_Graal_Net_Native_ErrorHandling_GraalErrorCode_UninitializedIsolate"><code>UninitializedIsolate = 5</code></dt>
+    <dd><p>The specified isolate is unknown.</p>
+</dd>
+    <dt id="DxFeed_Graal_Net_Native_ErrorHandling_GraalErrorCode_UnknownStackBoundaries"><code>UnknownStackBoundaries = 32</code></dt>
+    <dd><p>Could not determine the stack boundaries.</p>
+</dd>
+    <dt id="DxFeed_Graal_Net_Native_ErrorHandling_GraalErrorCode_Unspecified"><code>Unspecified = 1</code></dt>
+    <dd><p>An unspecified error occurred.</p>
+</dd>
+    <dt id="DxFeed_Graal_Net_Native_ErrorHandling_GraalErrorCode_UnsupportedIsolateParametersVersion"><code>UnsupportedIsolateParametersVersion = 10</code></dt>
+    <dd><p>The version of the specified isolate parameters is unsupported.</p>
+</dd>
+  </dl>
+
+
+
+</article>
+
+
+
       </div>
 
-      <footer>
-        <div class="grad-bottom"></div>
-        <div class="footer">
-          <div class="container">
-            <span class="pull-right">
-              <a href="#top">Back to top</a>
-            </span>
-      <span>Copyright © 2022 Devexperts LLC</span>
-      
-          </div>
-        </div>
-      </footer>
-    </div>
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
 
-    <script type="text/javascript" src="../../styles/docfx.vendor.min.js"></script>
-    <script type="text/javascript" src="../../styles/docfx.js"></script>
-    <script type="text/javascript" src="../../styles/main.js"></script>
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Copyright © 2022 Devexperts LLC</span>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>

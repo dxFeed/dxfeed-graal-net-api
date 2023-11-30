@@ -1,471 +1,144 @@
 ﻿<!DOCTYPE html>
-<!--[if IE]><![endif]-->
 <html>
-
   <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Class ConcurrentSet&lt;T&gt;
+      <title>Class ConcurrentSet&lt;T&gt;
  | dxFeed Graal .NET API </title>
-    <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Class ConcurrentSet&lt;T&gt;
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class ConcurrentSet&lt;T&gt;
  | dxFeed Graal .NET API ">
-    <meta name="generator" content="docfx ">
-  
-    <link rel="shortcut icon" href="../../docs/images/favicon.png">
-    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
-    <link rel="stylesheet" href="../../styles/docfx.css">
-    <link rel="stylesheet" href="../../styles/main.css">
-    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"> 
-    <meta property="docfx:navrel" content="../../toc.html">
-    <meta property="docfx:tocrel" content="toc.html">
-  
-  <meta property="docfx:rel" content="../../">
-  <meta property="docfx:newtab" content="true">
-  </head>  <body data-spy="scroll" data-target="#affix" data-offset="120">
-    <div id="wrapper">
-      <header>
+      
+      <link rel="icon" href="../../docs/images/favicon.png">
+      <link rel="stylesheet" href="../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../public/main.css">
+      <meta name="docfx:navrel" content="../../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.8.0/apiSpec/new?filename=DxFeed_Graal_Net_Utils_ConcurrentSet_1.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Utils.ConcurrentSet%601%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+  </head>
 
-        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
-          <div class="container">
-            <div class="navbar-header">
-              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-              </button>
+  <script type="module" src="./../../public/docfx.min.js"></script>
 
-              <a class="navbar-brand" href="../../index.html">
-                <img id="logo" class="svg" src="../../docs/images/logo.svg" alt="">
-              </a>
-            </div>
-            <div class="collapse navbar-collapse" id="navbar">
-              <form class="navbar-form navbar-right" role="search" id="search">
-                <div class="form-group">
-                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
-                </div>
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../index.html">
+            <img id="logo" class="svg" src="../../docs/images/logo.svg" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
               </form>
-
-                <ul class="nav level1 navbar-nav">
-                      <li>
-                          <a href="../../docs/api/index.html" title="API Documentation">API Documentation</a>
-                      </li>
-                </ul>
             </div>
-          </div>
-        </nav>
-
-        <div class="subnav navbar navbar-default">
-          <div class="container hide-when-search" id="breadcrumb">
-            <ul class="breadcrumb">
-              <li></li>
-            </ul>
           </div>
         </div>
-      </header>
-      <div class="container body-content">
+      </nav>
+    </header>
 
-        <div id="search-results">
-          <div class="search-list">Search Results for <span></span></div>
-          <div class="sr-items">
-            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
           </div>
-          <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
         </div>
       </div>
-      <div role="main" class="container body-content hide-when-search">
-        <div class="sidenav hide-when-search">
-          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
-          <div class="sidetoggle collapse" id="sidetoggle">
-            <div>
-              <div class="sidefilter">
-                <form class="toc-filter">
-                  <span class="glyphicon glyphicon-filter filter-icon"></span>
-                  <input type="text" id="toc_filter_input" placeholder="Enter here to filter..." onkeypress="if(event.keyCode==13) {return false;}">
-                </form>
-              </div>
-              <div class="sidetoc">
-                <div class="toc" id="toc">
 
-                  <ul class="nav level1">
-                    <li class="">
-                      <span class="expand-stub"></span>
-                      <a href="DxFeed.Graal.Net.html" title="DxFeed.Graal.Net" class="">DxFeed.Graal.Net</a>
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
 
-                        <ul class="nav level2">
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.SystemProperty.html" title="SystemProperty" class="">SystemProperty</a>
-                          </li>
-                        </ul>
-                    </li>
-                    <li class="">
-                      <span class="expand-stub"></span>
-                      <a href="DxFeed.Graal.Net.Api.html" title="DxFeed.Graal.Net.Api" class="">DxFeed.Graal.Net.Api</a>
-
-                        <ul class="nav level2">
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Api.DXEndpoint.html" title="DXEndpoint" class="">DXEndpoint</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Api.DXEndpoint.Builder.html" title="DXEndpoint.Builder" class="">DXEndpoint.Builder</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Api.DXEndpoint.Role.html" title="DXEndpoint.Role" class="">DXEndpoint.Role</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Api.DXEndpoint.State.html" title="DXEndpoint.State" class="">DXEndpoint.State</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Api.DXEndpoint.StateChangeListener.html" title="DXEndpoint.StateChangeListener" class="">DXEndpoint.StateChangeListener</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Api.DXFeed.html" title="DXFeed" class="">DXFeed</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Api.DXFeedEventListener.html" title="DXFeedEventListener" class="">DXFeedEventListener</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Api.DXFeedSubscription.html" title="DXFeedSubscription" class="">DXFeedSubscription</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Api.DXPublisher.html" title="DXPublisher" class="">DXPublisher</a>
-                          </li>
-                        </ul>
-                    </li>
-                    <li class="">
-                      <span class="expand-stub"></span>
-                      <a href="DxFeed.Graal.Net.Api.Osub.html" title="DxFeed.Graal.Net.Api.Osub" class="">DxFeed.Graal.Net.Api.Osub</a>
-
-                        <ul class="nav level2">
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Api.Osub.IObservableSubscription.html" title="IObservableSubscription" class="">IObservableSubscription</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Api.Osub.IndexedEventSubscriptionSymbol.html" title="IndexedEventSubscriptionSymbol" class="">IndexedEventSubscriptionSymbol</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Api.Osub.IndexedEventSubscriptionSymbol-1.html" title="IndexedEventSubscriptionSymbol&lt;T&gt;" class="">IndexedEventSubscriptionSymbol&lt;T&gt;</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Api.Osub.TimeSeriesSubscriptionSymbol.html" title="TimeSeriesSubscriptionSymbol" class="">TimeSeriesSubscriptionSymbol</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Api.Osub.TimeSeriesSubscriptionSymbol-1.html" title="TimeSeriesSubscriptionSymbol&lt;T&gt;" class="">TimeSeriesSubscriptionSymbol&lt;T&gt;</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Api.Osub.WildcardSymbol.html" title="WildcardSymbol" class="">WildcardSymbol</a>
-                          </li>
-                        </ul>
-                    </li>
-                    <li class="">
-                      <span class="expand-stub"></span>
-                      <a href="DxFeed.Graal.Net.Events.html" title="DxFeed.Graal.Net.Events" class="">DxFeed.Graal.Net.Events</a>
-
-                        <ul class="nav level2">
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.EventCodeAttribute.html" title="EventCodeAttribute" class="">EventCodeAttribute</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.IEventType.html" title="IEventType" class="">IEventType</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.IIndexedEvent.html" title="IIndexedEvent" class="">IIndexedEvent</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.ILastingEvent.html" title="ILastingEvent" class="">ILastingEvent</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.ITimeSeriesEvent.html" title="ITimeSeriesEvent" class="">ITimeSeriesEvent</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.IndexedEventSource.html" title="IndexedEventSource" class="">IndexedEventSource</a>
-                          </li>
-                        </ul>
-                    </li>
-                    <li class="">
-                      <span class="expand-stub"></span>
-                      <a href="DxFeed.Graal.Net.Events.Candles.html" title="DxFeed.Graal.Net.Events.Candles" class="">DxFeed.Graal.Net.Events.Candles</a>
-
-                        <ul class="nav level2">
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.Candles.Candle.html" title="Candle" class="">Candle</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.Candles.CandleAlignment.html" title="CandleAlignment" class="">CandleAlignment</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.Candles.CandleAlignment.CandleAlignmentId.html" title="CandleAlignment.CandleAlignmentId" class="">CandleAlignment.CandleAlignmentId</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.Candles.CandleExchange.html" title="CandleExchange" class="">CandleExchange</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.Candles.CandlePeriod.html" title="CandlePeriod" class="">CandlePeriod</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.Candles.CandlePrice.html" title="CandlePrice" class="">CandlePrice</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.Candles.CandlePrice.CandlePriceId.html" title="CandlePrice.CandlePriceId" class="">CandlePrice.CandlePriceId</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.Candles.CandlePriceLevel.html" title="CandlePriceLevel" class="">CandlePriceLevel</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.Candles.CandleSession.html" title="CandleSession" class="">CandleSession</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.Candles.CandleSession.CandleSessionId.html" title="CandleSession.CandleSessionId" class="">CandleSession.CandleSessionId</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.Candles.CandleSymbol.html" title="CandleSymbol" class="">CandleSymbol</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.Candles.CandleType.html" title="CandleType" class="">CandleType</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.Candles.CandleType.CandleTypeId.html" title="CandleType.CandleTypeId" class="">CandleType.CandleTypeId</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.Candles.ICandleSymbolProperty.html" title="ICandleSymbolProperty" class="">ICandleSymbolProperty</a>
-                          </li>
-                        </ul>
-                    </li>
-                    <li class="">
-                      <span class="expand-stub"></span>
-                      <a href="DxFeed.Graal.Net.Events.Market.html" title="DxFeed.Graal.Net.Events.Market" class="">DxFeed.Graal.Net.Events.Market</a>
-
-                        <ul class="nav level2">
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.Market.AnalyticOrder.html" title="AnalyticOrder" class="">AnalyticOrder</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.Market.Direction.html" title="Direction" class="">Direction</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.Market.IcebergType.html" title="IcebergType" class="">IcebergType</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.Market.MarketEvent.html" title="MarketEvent" class="">MarketEvent</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.Market.MarketEventSymbols.html" title="MarketEventSymbols" class="">MarketEventSymbols</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.Market.OptionSale.html" title="OptionSale" class="">OptionSale</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.Market.Order.html" title="Order" class="">Order</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.Market.OrderAction.html" title="OrderAction" class="">OrderAction</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.Market.OrderBase.html" title="OrderBase" class="">OrderBase</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.Market.OrderSource.html" title="OrderSource" class="">OrderSource</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.Market.PriceType.html" title="PriceType" class="">PriceType</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.Market.Profile.html" title="Profile" class="">Profile</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.Market.Quote.html" title="Quote" class="">Quote</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.Market.Scope.html" title="Scope" class="">Scope</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.Market.ShortSaleRestriction.html" title="ShortSaleRestriction" class="">ShortSaleRestriction</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.Market.Side.html" title="Side" class="">Side</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.Market.SpreadOrder.html" title="SpreadOrder" class="">SpreadOrder</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.Market.Summary.html" title="Summary" class="">Summary</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.Market.TimeAndSale.html" title="TimeAndSale" class="">TimeAndSale</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.Market.TimeAndSaleType.html" title="TimeAndSaleType" class="">TimeAndSaleType</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.Market.Trade.html" title="Trade" class="">Trade</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.Market.TradeBase.html" title="TradeBase" class="">TradeBase</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.Market.TradeETH.html" title="TradeETH" class="">TradeETH</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.Market.TradingStatus.html" title="TradingStatus" class="">TradingStatus</a>
-                          </li>
-                        </ul>
-                    </li>
-                    <li class="">
-                      <span class="expand-stub"></span>
-                      <a href="DxFeed.Graal.Net.Events.Options.html" title="DxFeed.Graal.Net.Events.Options" class="">DxFeed.Graal.Net.Events.Options</a>
-
-                        <ul class="nav level2">
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.Options.Greeks.html" title="Greeks" class="">Greeks</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.Options.Series.html" title="Series" class="">Series</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.Options.TheoPrice.html" title="TheoPrice" class="">TheoPrice</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.Options.Underlying.html" title="Underlying" class="">Underlying</a>
-                          </li>
-                        </ul>
-                    </li>
-                    <li class="">
-                      <span class="expand-stub"></span>
-                      <a href="DxFeed.Graal.Net.Ipf.html" title="DxFeed.Graal.Net.Ipf" class="">DxFeed.Graal.Net.Ipf</a>
-
-                        <ul class="nav level2">
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Ipf.InstrumentProfile.html" title="InstrumentProfile" class="">InstrumentProfile</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Ipf.InstrumentProfileReader.html" title="InstrumentProfileReader" class="">InstrumentProfileReader</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Ipf.InstrumentProfileType.html" title="InstrumentProfileType" class="">InstrumentProfileType</a>
-                          </li>
-                        </ul>
-                    </li>
-                    <li class="">
-                      <span class="expand-stub"></span>
-                      <a href="DxFeed.Graal.Net.Ipf.Live.html" title="DxFeed.Graal.Net.Ipf.Live" class="">DxFeed.Graal.Net.Ipf.Live</a>
-
-                        <ul class="nav level2">
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Ipf.Live.InstrumentProfileCollector.html" title="InstrumentProfileCollector" class="">InstrumentProfileCollector</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Ipf.Live.InstrumentProfileConnection.html" title="InstrumentProfileConnection" class="">InstrumentProfileConnection</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Ipf.Live.InstrumentProfileUpdateListener.html" title="InstrumentProfileUpdateListener" class="">InstrumentProfileUpdateListener</a>
-                          </li>
-                        </ul>
-                    </li>
-                    <li class="">
-                      <span class="expand-stub"></span>
-                      <a href="DxFeed.Graal.Net.Native.ErrorHandling.html" title="DxFeed.Graal.Net.Native.ErrorHandling" class="">DxFeed.Graal.Net.Native.ErrorHandling</a>
-
-                        <ul class="nav level2">
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Native.ErrorHandling.GraalErrorCode.html" title="GraalErrorCode" class="">GraalErrorCode</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Native.ErrorHandling.GraalException.html" title="GraalException" class="">GraalException</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Native.ErrorHandling.JavaException.html" title="JavaException" class="">JavaException</a>
-                          </li>
-                        </ul>
-                    </li>
-                    <li class="">
-                      <span class="expand-stub"></span>
-                      <a href="DxFeed.Graal.Net.Native.Events.html" title="DxFeed.Graal.Net.Native.Events" class="">DxFeed.Graal.Net.Native.Events</a>
-
-                        <ul class="nav level2">
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Native.Events.EventCodeNative.html" title="EventCodeNative" class="">EventCodeNative</a>
-                          </li>
-                        </ul>
-                    </li>
-                    <li class="">
-                      <span class="expand-stub"></span>
-                      <a href="DxFeed.Graal.Net.Utils.html" title="DxFeed.Graal.Net.Utils" class="">DxFeed.Graal.Net.Utils</a>
-
-                        <ul class="nav level2">
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Utils.AttributeUtil.html" title="AttributeUtil" class="">AttributeUtil</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Utils.BitUtil.html" title="BitUtil" class="">BitUtil</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Utils.CmdArgsUtil.html" title="CmdArgsUtil" class="">CmdArgsUtil</a>
-                          </li>
-                          <li class="active">
-                            <a href="DxFeed.Graal.Net.Utils.ConcurrentSet-1.html" title="ConcurrentSet&lt;T&gt;" class="active">ConcurrentSet&lt;T&gt;</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Utils.DayUtil.html" title="DayUtil" class="">DayUtil</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Utils.EnumUtil.html" title="EnumUtil" class="">EnumUtil</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Utils.MathUtil.html" title="MathUtil" class="">MathUtil</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Utils.PlatformUtils.html" title="PlatformUtils" class="">PlatformUtils</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Utils.ReflectionUtil.html" title="ReflectionUtil" class="">ReflectionUtil</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Utils.StringUtil.html" title="StringUtil" class="">StringUtil</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Utils.TimeFormat.html" title="TimeFormat" class="">TimeFormat</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Utils.TimeNanosUtil.html" title="TimeNanosUtil" class="">TimeNanosUtil</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Utils.TimeUtil.html" title="TimeUtil" class="">TimeUtil</a>
-                          </li>
-                        </ul>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
+          <nav id="breadcrumb"></nav>
         </div>
-        <div class="article row grid-right">
-          <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="DxFeed.Graal.Net.Utils.ConcurrentSet`1">
+
+        <article data-uid="DxFeed.Graal.Net.Utils.ConcurrentSet`1">
 
 
 
-  <h1 id="DxFeed_Graal_Net_Utils_ConcurrentSet_1" data-uid="DxFeed.Graal.Net.Utils.ConcurrentSet`1" class="text-break">Class ConcurrentSet&lt;T&gt;
-</h1>
-  <div class="markdown level0 summary"><p>This is a simple wrapper over <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.concurrent.concurrentdictionary-2">ConcurrentDictionary&lt;TKey, TValue&gt;</a>,
+  <h1 id="DxFeed_Graal_Net_Utils_ConcurrentSet_1" data-uid="DxFeed.Graal.Net.Utils.ConcurrentSet`1" class="text-break">
+    Class ConcurrentSet&lt;T&gt;
+  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.8.0/src/DxFeed.Graal.Net/Utils/ConcurrentSet.cs/#L19"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="DxFeed.html">DxFeed</a>.<a class="xref" href="DxFeed.Graal.html">Graal</a>.<a class="xref" href="DxFeed.Graal.Net.html">Net</a>.<a class="xref" href="DxFeed.Graal.Net.Utils.html">Utils</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>DxFeed.Graal.Net.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>This is a simple wrapper over <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.concurrent.concurrentdictionary-2">ConcurrentDictionary&lt;TKey, TValue&gt;</a>,
 to provide an interface as a <code>Set</code> (.NET does not provide a built-in concurrent hashset type)
 for more consistent.</p>
 </div>
-  <div class="markdown level0 conceptual"></div>
-  <div class="inheritance">
-    <h5>Inheritance</h5>
-    <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
-    <div class="level1"><span class="xref">ConcurrentSet&lt;T&gt;</span></div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class ConcurrentSet&lt;T&gt; : ICollection&lt;T&gt;, IEnumerable&lt;T&gt;, IEnumerable where T : notnull</code></pre>
   </div>
-  <div class="implements">
-    <h5>Implements</h5>
-    <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1">ICollection</a>&lt;T&gt;</div>
-    <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;T&gt;</div>
-    <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.ienumerable">IEnumerable</a></div>
-  </div>
-  <div class="inheritedMembers">
-    <h5>Inherited Members</h5>
+
+
+
+  <h4 class="section">Type Parameters</h4>
+  <dl class="parameters">
+    <dt><code>T</code></dt>
+    <dd><p>The type of elements in the set.</p>
+</dd>
+  </dl>
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><span class="xref">ConcurrentSet&lt;T&gt;</span></div>
+    </dd>
+  </dl>
+
+  <dl class="typelist implements">
+    <dt>Implements</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1">ICollection</a>&lt;T&gt;</div>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;T&gt;</div>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.ienumerable">IEnumerable</a></div>
+    </dd>
+  </dl>
+
+
+  <dl class="typelist derived">
+    <dt>Inherited Members</dt>
+    <dd>
     <div>
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
     </div>
@@ -487,463 +160,376 @@ for more consistent.</p>
     <div>
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
     </div>
-  </div>
-  <h6><strong>Namespace</strong>: <a class="xref" href="DxFeed.html">DxFeed</a>.<a class="xref" href="DxFeed.Graal.html">Graal</a>.<a class="xref" href="DxFeed.Graal.Net.html">Net</a>.<a class="xref" href="DxFeed.Graal.Net.Utils.html">Utils</a></h6>
-  <h6><strong>Assembly</strong>: DxFeed.Graal.Net.dll</h6>
-  <h5 id="DxFeed_Graal_Net_Utils_ConcurrentSet_1_syntax">Syntax</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class ConcurrentSet&lt;T&gt; : ICollection&lt;T&gt;, IEnumerable&lt;T&gt;, IEnumerable where T : notnull</code></pre>
-  </div>
-  <h5 class="typeParameters">Type Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="parametername">T</span></td>
-        <td><p>The type of elements in the set.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h3 id="constructors">Constructors
-</h3>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.7.0/apiSpec/new?filename=DxFeed_Graal_Net_Utils_ConcurrentSet_1__ctor.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Utils.ConcurrentSet%601.%23ctor%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.7.0/src/DxFeed.Graal.Net/Utils/ConcurrentSet.cs/#L27">View Source</a>
-  </span>
+  </dd></dl>
+
+
+
+
+
+
+  <h2 class="section" id="constructors">Constructors
+</h2>
+
+
   <a id="DxFeed_Graal_Net_Utils_ConcurrentSet_1__ctor_" data-uid="DxFeed.Graal.Net.Utils.ConcurrentSet`1.#ctor*"></a>
-  <h4 id="DxFeed_Graal_Net_Utils_ConcurrentSet_1__ctor" data-uid="DxFeed.Graal.Net.Utils.ConcurrentSet`1.#ctor">ConcurrentSet()</h4>
+
+  <h3 id="DxFeed_Graal_Net_Utils_ConcurrentSet_1__ctor" data-uid="DxFeed.Graal.Net.Utils.ConcurrentSet`1.#ctor">
+  ConcurrentSet()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.8.0/src/DxFeed.Graal.Net/Utils/ConcurrentSet.cs/#L27"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="DxFeed.Graal.Net.Utils.ConcurrentSet-1.html">ConcurrentSet&lt;T&gt;</a> class.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public ConcurrentSet()</code></pre>
   </div>
-  <h3 id="properties">Properties
-</h3>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.7.0/apiSpec/new?filename=DxFeed_Graal_Net_Utils_ConcurrentSet_1_Count.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Utils.ConcurrentSet%601.Count%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.7.0/src/DxFeed.Graal.Net/Utils/ConcurrentSet.cs/#L31">View Source</a>
-  </span>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
   <a id="DxFeed_Graal_Net_Utils_ConcurrentSet_1_Count_" data-uid="DxFeed.Graal.Net.Utils.ConcurrentSet`1.Count*"></a>
-  <h4 id="DxFeed_Graal_Net_Utils_ConcurrentSet_1_Count" data-uid="DxFeed.Graal.Net.Utils.ConcurrentSet`1.Count">Count</h4>
+
+  <h3 id="DxFeed_Graal_Net_Utils_ConcurrentSet_1_Count" data-uid="DxFeed.Graal.Net.Utils.ConcurrentSet`1.Count">
+  Count
+  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.8.0/src/DxFeed.Graal.Net/Utils/ConcurrentSet.cs/#L31"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Gets the number of elements contained in the <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1">ICollection&lt;T&gt;</a>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public int Count { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
-        <td><p>The number of elements contained in the <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1">ICollection&lt;T&gt;</a>.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.7.0/apiSpec/new?filename=DxFeed_Graal_Net_Utils_ConcurrentSet_1_IsReadOnly.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Utils.ConcurrentSet%601.IsReadOnly%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.7.0/src/DxFeed.Graal.Net/Utils/ConcurrentSet.cs/#L35">View Source</a>
-  </span>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The number of elements contained in the <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1">ICollection&lt;T&gt;</a>.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="DxFeed_Graal_Net_Utils_ConcurrentSet_1_IsReadOnly_" data-uid="DxFeed.Graal.Net.Utils.ConcurrentSet`1.IsReadOnly*"></a>
-  <h4 id="DxFeed_Graal_Net_Utils_ConcurrentSet_1_IsReadOnly" data-uid="DxFeed.Graal.Net.Utils.ConcurrentSet`1.IsReadOnly">IsReadOnly</h4>
+
+  <h3 id="DxFeed_Graal_Net_Utils_ConcurrentSet_1_IsReadOnly" data-uid="DxFeed.Graal.Net.Utils.ConcurrentSet`1.IsReadOnly">
+  IsReadOnly
+  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.8.0/src/DxFeed.Graal.Net/Utils/ConcurrentSet.cs/#L35"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Gets a value indicating whether the <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1">ICollection&lt;T&gt;</a> is read-only.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public bool IsReadOnly { get; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
-        <td><p><a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">true</a> if the <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1">ICollection&lt;T&gt;</a> is read-only; otherwise, <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">false</a>.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h3 id="methods">Methods
-</h3>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.7.0/apiSpec/new?filename=DxFeed_Graal_Net_Utils_ConcurrentSet_1_Add__0_.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Utils.ConcurrentSet%601.Add(%600)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.7.0/src/DxFeed.Graal.Net/Utils/ConcurrentSet.cs/#L46">View Source</a>
-  </span>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p><a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">true</a> if the <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1">ICollection&lt;T&gt;</a> is read-only; otherwise, <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">false</a>.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
   <a id="DxFeed_Graal_Net_Utils_ConcurrentSet_1_Add_" data-uid="DxFeed.Graal.Net.Utils.ConcurrentSet`1.Add*"></a>
-  <h4 id="DxFeed_Graal_Net_Utils_ConcurrentSet_1_Add__0_" data-uid="DxFeed.Graal.Net.Utils.ConcurrentSet`1.Add(`0)">Add(T)</h4>
+
+  <h3 id="DxFeed_Graal_Net_Utils_ConcurrentSet_1_Add__0_" data-uid="DxFeed.Graal.Net.Utils.ConcurrentSet`1.Add(`0)">
+  Add(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.8.0/src/DxFeed.Graal.Net/Utils/ConcurrentSet.cs/#L46"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Adds the specified element to a set.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public bool Add(T item)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">T</span></td>
-        <td><span class="parametername">item</span></td>
-        <td><p>The element to add to the set.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
-        <td><p><code>true</code> if the element is added to the <a class="xref" href="DxFeed.Graal.Net.Utils.ConcurrentSet-1.html">ConcurrentSet&lt;T&gt;</a> object;
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>item</code> <span class="xref">T</span></dt>
+    <dd><p>The element to add to the set.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p><code>true</code> if the element is added to the <a class="xref" href="DxFeed.Graal.Net.Utils.ConcurrentSet-1.html">ConcurrentSet&lt;T&gt;</a> object;
 <code>false</code> if the element is already present.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.7.0/apiSpec/new?filename=DxFeed_Graal_Net_Utils_ConcurrentSet_1_Clear.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Utils.ConcurrentSet%601.Clear%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.7.0/src/DxFeed.Graal.Net/Utils/ConcurrentSet.cs/#L50">View Source</a>
-  </span>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="DxFeed_Graal_Net_Utils_ConcurrentSet_1_Clear_" data-uid="DxFeed.Graal.Net.Utils.ConcurrentSet`1.Clear*"></a>
-  <h4 id="DxFeed_Graal_Net_Utils_ConcurrentSet_1_Clear" data-uid="DxFeed.Graal.Net.Utils.ConcurrentSet`1.Clear">Clear()</h4>
+
+  <h3 id="DxFeed_Graal_Net_Utils_ConcurrentSet_1_Clear" data-uid="DxFeed.Graal.Net.Utils.ConcurrentSet`1.Clear">
+  Clear()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.8.0/src/DxFeed.Graal.Net/Utils/ConcurrentSet.cs/#L50"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Removes all items from the <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1">ICollection&lt;T&gt;</a>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public void Clear()</code></pre>
   </div>
-  <h5 class="exceptions">Exceptions</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Condition</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.notsupportedexception">NotSupportedException</a></td>
-        <td><p>The <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1">ICollection&lt;T&gt;</a> is read-only.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.7.0/apiSpec/new?filename=DxFeed_Graal_Net_Utils_ConcurrentSet_1_Contains__0_.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Utils.ConcurrentSet%601.Contains(%600)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.7.0/src/DxFeed.Graal.Net/Utils/ConcurrentSet.cs/#L54">View Source</a>
-  </span>
+
+
+
+
+
+
+
+
+
+
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.notsupportedexception">NotSupportedException</a></dt>
+    <dd><p>The <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1">ICollection&lt;T&gt;</a> is read-only.</p>
+</dd>
+  </dl>
+
+
+
   <a id="DxFeed_Graal_Net_Utils_ConcurrentSet_1_Contains_" data-uid="DxFeed.Graal.Net.Utils.ConcurrentSet`1.Contains*"></a>
-  <h4 id="DxFeed_Graal_Net_Utils_ConcurrentSet_1_Contains__0_" data-uid="DxFeed.Graal.Net.Utils.ConcurrentSet`1.Contains(`0)">Contains(T)</h4>
+
+  <h3 id="DxFeed_Graal_Net_Utils_ConcurrentSet_1_Contains__0_" data-uid="DxFeed.Graal.Net.Utils.ConcurrentSet`1.Contains(`0)">
+  Contains(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.8.0/src/DxFeed.Graal.Net/Utils/ConcurrentSet.cs/#L54"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Determines whether the <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1">ICollection&lt;T&gt;</a> contains a specific value.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public bool Contains(T item)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">T</span></td>
-        <td><span class="parametername">item</span></td>
-        <td><p>The object to locate in the <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1">ICollection&lt;T&gt;</a>.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
-        <td><p><a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">true</a> if <code class="paramref">item</code> is found in the <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1">ICollection&lt;T&gt;</a>; otherwise, <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">false</a>.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.7.0/apiSpec/new?filename=DxFeed_Graal_Net_Utils_ConcurrentSet_1_CopyTo__0___System_Int32_.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Utils.ConcurrentSet%601.CopyTo(%600%5B%5D%2CSystem.Int32)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.7.0/src/DxFeed.Graal.Net/Utils/ConcurrentSet.cs/#L58">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>item</code> <span class="xref">T</span></dt>
+    <dd><p>The object to locate in the <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1">ICollection&lt;T&gt;</a>.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p><a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">true</a> if <code class="paramref">item</code> is found in the <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1">ICollection&lt;T&gt;</a>; otherwise, <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">false</a>.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="DxFeed_Graal_Net_Utils_ConcurrentSet_1_CopyTo_" data-uid="DxFeed.Graal.Net.Utils.ConcurrentSet`1.CopyTo*"></a>
-  <h4 id="DxFeed_Graal_Net_Utils_ConcurrentSet_1_CopyTo__0___System_Int32_" data-uid="DxFeed.Graal.Net.Utils.ConcurrentSet`1.CopyTo(`0[],System.Int32)">CopyTo(T[], int)</h4>
+
+  <h3 id="DxFeed_Graal_Net_Utils_ConcurrentSet_1_CopyTo__0___System_Int32_" data-uid="DxFeed.Graal.Net.Utils.ConcurrentSet`1.CopyTo(`0[],System.Int32)">
+  CopyTo(T[], int)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.8.0/src/DxFeed.Graal.Net/Utils/ConcurrentSet.cs/#L58"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Copies the elements of the <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1">ICollection&lt;T&gt;</a> to an <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.array">Array</a>, starting at a particular <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.array">Array</a> index.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public void CopyTo(T[] array, int arrayIndex)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>T[]</td>
-        <td><span class="parametername">array</span></td>
-        <td><p>The one-dimensional <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.array">Array</a> that is the destination of the elements copied from <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1">ICollection&lt;T&gt;</a>. The <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.array">Array</a> must have zero-based indexing.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
-        <td><span class="parametername">arrayIndex</span></td>
-        <td><p>The zero-based index in <code class="paramref">array</code> at which copying begins.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="exceptions">Exceptions</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Condition</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentnullexception">ArgumentNullException</a></td>
-        <td><p><code class="paramref">array</code> is <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/keywords/null">null</a>.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentoutofrangeexception">ArgumentOutOfRangeException</a></td>
-        <td><p><code class="paramref">arrayIndex</code> is less than 0.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentexception">ArgumentException</a></td>
-        <td><p>The number of elements in the source <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1">ICollection&lt;T&gt;</a> is greater than the available space from <code class="paramref">arrayIndex</code> to the end of the destination <code class="paramref">array</code>.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.7.0/apiSpec/new?filename=DxFeed_Graal_Net_Utils_ConcurrentSet_1_GetEnumerator.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Utils.ConcurrentSet%601.GetEnumerator%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.7.0/src/DxFeed.Graal.Net/Utils/ConcurrentSet.cs/#L66">View Source</a>
-  </span>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>array</code> T[]</dt>
+    <dd><p>The one-dimensional <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.array">Array</a> that is the destination of the elements copied from <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1">ICollection&lt;T&gt;</a>. The <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.array">Array</a> must have zero-based indexing.</p>
+</dd>
+    <dt><code>arrayIndex</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The zero-based index in <code class="paramref">array</code> at which copying begins.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentnullexception">ArgumentNullException</a></dt>
+    <dd><p><code class="paramref">array</code> is <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/keywords/null">null</a>.</p>
+</dd>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentoutofrangeexception">ArgumentOutOfRangeException</a></dt>
+    <dd><p><code class="paramref">arrayIndex</code> is less than 0.</p>
+</dd>
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentexception">ArgumentException</a></dt>
+    <dd><p>The number of elements in the source <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1">ICollection&lt;T&gt;</a> is greater than the available space from <code class="paramref">arrayIndex</code> to the end of the destination <code class="paramref">array</code>.</p>
+</dd>
+  </dl>
+
+
+
   <a id="DxFeed_Graal_Net_Utils_ConcurrentSet_1_GetEnumerator_" data-uid="DxFeed.Graal.Net.Utils.ConcurrentSet`1.GetEnumerator*"></a>
-  <h4 id="DxFeed_Graal_Net_Utils_ConcurrentSet_1_GetEnumerator" data-uid="DxFeed.Graal.Net.Utils.ConcurrentSet`1.GetEnumerator">GetEnumerator()</h4>
+
+  <h3 id="DxFeed_Graal_Net_Utils_ConcurrentSet_1_GetEnumerator" data-uid="DxFeed.Graal.Net.Utils.ConcurrentSet`1.GetEnumerator">
+  GetEnumerator()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.8.0/src/DxFeed.Graal.Net/Utils/ConcurrentSet.cs/#L66"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Returns an enumerator that iterates through the collection.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public IEnumerator&lt;T&gt; GetEnumerator()</code></pre>
   </div>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerator-1">IEnumerator</a>&lt;T&gt;</td>
-        <td><p>An enumerator that can be used to iterate through the collection.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.7.0/apiSpec/new?filename=DxFeed_Graal_Net_Utils_ConcurrentSet_1_Remove__0_.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Utils.ConcurrentSet%601.Remove(%600)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.7.0/src/DxFeed.Graal.Net/Utils/ConcurrentSet.cs/#L62">View Source</a>
-  </span>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerator-1">IEnumerator</a>&lt;T&gt;</dt>
+    <dd><p>An enumerator that can be used to iterate through the collection.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
   <a id="DxFeed_Graal_Net_Utils_ConcurrentSet_1_Remove_" data-uid="DxFeed.Graal.Net.Utils.ConcurrentSet`1.Remove*"></a>
-  <h4 id="DxFeed_Graal_Net_Utils_ConcurrentSet_1_Remove__0_" data-uid="DxFeed.Graal.Net.Utils.ConcurrentSet`1.Remove(`0)">Remove(T)</h4>
+
+  <h3 id="DxFeed_Graal_Net_Utils_ConcurrentSet_1_Remove__0_" data-uid="DxFeed.Graal.Net.Utils.ConcurrentSet`1.Remove(`0)">
+  Remove(T)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.8.0/src/DxFeed.Graal.Net/Utils/ConcurrentSet.cs/#L62"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Removes the first occurrence of a specific object from the <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1">ICollection&lt;T&gt;</a>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public bool Remove(T item)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">T</span></td>
-        <td><span class="parametername">item</span></td>
-        <td><p>The object to remove from the <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1">ICollection&lt;T&gt;</a>.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
-        <td><p><a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">true</a> if <code class="paramref">item</code> was successfully removed from the <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1">ICollection&lt;T&gt;</a>; otherwise, <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">false</a>. This method also returns <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">false</a> if <code class="paramref">item</code> is not found in the original <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1">ICollection&lt;T&gt;</a>.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="exceptions">Exceptions</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Condition</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.notsupportedexception">NotSupportedException</a></td>
-        <td><p>The <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1">ICollection&lt;T&gt;</a> is read-only.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h3 id="implements">Implements</h3>
-  <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1">ICollection&lt;T&gt;</a>
-  </div>
-  <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable&lt;T&gt;</a>
-  </div>
-  <div>
-      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.ienumerable">IEnumerable</a>
-  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>item</code> <span class="xref">T</span></dt>
+    <dd><p>The object to remove from the <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1">ICollection&lt;T&gt;</a>.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p><a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">true</a> if <code class="paramref">item</code> was successfully removed from the <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1">ICollection&lt;T&gt;</a>; otherwise, <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">false</a>. This method also returns <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">false</a> if <code class="paramref">item</code> is not found in the original <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1">ICollection&lt;T&gt;</a>.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.notsupportedexception">NotSupportedException</a></dt>
+    <dd><p>The <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.icollection-1">ICollection&lt;T&gt;</a> is read-only.</p>
+</dd>
+  </dl>
+
+
+
 
 </article>
-          </div>
 
-          <div class="hidden-sm col-md-2" role="complementary">
-            <div class="sideaffix">
-              <div class="contribution">
-                <ul class="nav">
-                  <li>
-                    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.7.0/apiSpec/new?filename=DxFeed_Graal_Net_Utils_ConcurrentSet_1.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Utils.ConcurrentSet%601%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Edit this page</a>
-                  </li>
-                  <li>
-                    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.7.0/src/DxFeed.Graal.Net/Utils/ConcurrentSet.cs/#L19" class="contribution-link">View Source</a>
-                  </li>
-                </ul>
-              </div>
-              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
-                <h5>In this article</h5>
-                <div></div>
-              </nav>
-            </div>
-          </div>
-        </div>
+
+
       </div>
 
-      <footer>
-        <div class="grad-bottom"></div>
-        <div class="footer">
-          <div class="container">
-            <span class="pull-right">
-              <a href="#top">Back to top</a>
-            </span>
-      <span>Copyright © 2022 Devexperts LLC</span>
-      
-          </div>
-        </div>
-      </footer>
-    </div>
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
 
-    <script type="text/javascript" src="../../styles/docfx.vendor.min.js"></script>
-    <script type="text/javascript" src="../../styles/docfx.js"></script>
-    <script type="text/javascript" src="../../styles/main.js"></script>
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Copyright © 2022 Devexperts LLC</span>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>

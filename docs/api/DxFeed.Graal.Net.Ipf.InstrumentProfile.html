@@ -1,465 +1,130 @@
 ﻿<!DOCTYPE html>
-<!--[if IE]><![endif]-->
 <html>
-
   <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Class InstrumentProfile
+      <title>Class InstrumentProfile
  | dxFeed Graal .NET API </title>
-    <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Class InstrumentProfile
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class InstrumentProfile
  | dxFeed Graal .NET API ">
-    <meta name="generator" content="docfx ">
-  
-    <link rel="shortcut icon" href="../../docs/images/favicon.png">
-    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
-    <link rel="stylesheet" href="../../styles/docfx.css">
-    <link rel="stylesheet" href="../../styles/main.css">
-    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"> 
-    <meta property="docfx:navrel" content="../../toc.html">
-    <meta property="docfx:tocrel" content="toc.html">
-  
-  <meta property="docfx:rel" content="../../">
-  <meta property="docfx:newtab" content="true">
-  </head>  <body data-spy="scroll" data-target="#affix" data-offset="120">
-    <div id="wrapper">
-      <header>
+      
+      <link rel="icon" href="../../docs/images/favicon.png">
+      <link rel="stylesheet" href="../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../public/main.css">
+      <meta name="docfx:navrel" content="../../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.8.0/apiSpec/new?filename=DxFeed_Graal_Net_Ipf_InstrumentProfile.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Ipf.InstrumentProfile%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+  </head>
 
-        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
-          <div class="container">
-            <div class="navbar-header">
-              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-              </button>
+  <script type="module" src="./../../public/docfx.min.js"></script>
 
-              <a class="navbar-brand" href="../../index.html">
-                <img id="logo" class="svg" src="../../docs/images/logo.svg" alt="">
-              </a>
-            </div>
-            <div class="collapse navbar-collapse" id="navbar">
-              <form class="navbar-form navbar-right" role="search" id="search">
-                <div class="form-group">
-                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
-                </div>
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../index.html">
+            <img id="logo" class="svg" src="../../docs/images/logo.svg" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
               </form>
-
-                <ul class="nav level1 navbar-nav">
-                      <li>
-                          <a href="../../docs/api/index.html" title="API Documentation">API Documentation</a>
-                      </li>
-                </ul>
             </div>
-          </div>
-        </nav>
-
-        <div class="subnav navbar navbar-default">
-          <div class="container hide-when-search" id="breadcrumb">
-            <ul class="breadcrumb">
-              <li></li>
-            </ul>
           </div>
         </div>
-      </header>
-      <div class="container body-content">
+      </nav>
+    </header>
 
-        <div id="search-results">
-          <div class="search-list">Search Results for <span></span></div>
-          <div class="sr-items">
-            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
           </div>
-          <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
         </div>
       </div>
-      <div role="main" class="container body-content hide-when-search">
-        <div class="sidenav hide-when-search">
-          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
-          <div class="sidetoggle collapse" id="sidetoggle">
-            <div>
-              <div class="sidefilter">
-                <form class="toc-filter">
-                  <span class="glyphicon glyphicon-filter filter-icon"></span>
-                  <input type="text" id="toc_filter_input" placeholder="Enter here to filter..." onkeypress="if(event.keyCode==13) {return false;}">
-                </form>
-              </div>
-              <div class="sidetoc">
-                <div class="toc" id="toc">
 
-                  <ul class="nav level1">
-                    <li class="">
-                      <span class="expand-stub"></span>
-                      <a href="DxFeed.Graal.Net.html" title="DxFeed.Graal.Net" class="">DxFeed.Graal.Net</a>
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
 
-                        <ul class="nav level2">
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.SystemProperty.html" title="SystemProperty" class="">SystemProperty</a>
-                          </li>
-                        </ul>
-                    </li>
-                    <li class="">
-                      <span class="expand-stub"></span>
-                      <a href="DxFeed.Graal.Net.Api.html" title="DxFeed.Graal.Net.Api" class="">DxFeed.Graal.Net.Api</a>
-
-                        <ul class="nav level2">
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Api.DXEndpoint.html" title="DXEndpoint" class="">DXEndpoint</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Api.DXEndpoint.Builder.html" title="DXEndpoint.Builder" class="">DXEndpoint.Builder</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Api.DXEndpoint.Role.html" title="DXEndpoint.Role" class="">DXEndpoint.Role</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Api.DXEndpoint.State.html" title="DXEndpoint.State" class="">DXEndpoint.State</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Api.DXEndpoint.StateChangeListener.html" title="DXEndpoint.StateChangeListener" class="">DXEndpoint.StateChangeListener</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Api.DXFeed.html" title="DXFeed" class="">DXFeed</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Api.DXFeedEventListener.html" title="DXFeedEventListener" class="">DXFeedEventListener</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Api.DXFeedSubscription.html" title="DXFeedSubscription" class="">DXFeedSubscription</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Api.DXPublisher.html" title="DXPublisher" class="">DXPublisher</a>
-                          </li>
-                        </ul>
-                    </li>
-                    <li class="">
-                      <span class="expand-stub"></span>
-                      <a href="DxFeed.Graal.Net.Api.Osub.html" title="DxFeed.Graal.Net.Api.Osub" class="">DxFeed.Graal.Net.Api.Osub</a>
-
-                        <ul class="nav level2">
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Api.Osub.IObservableSubscription.html" title="IObservableSubscription" class="">IObservableSubscription</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Api.Osub.IndexedEventSubscriptionSymbol.html" title="IndexedEventSubscriptionSymbol" class="">IndexedEventSubscriptionSymbol</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Api.Osub.IndexedEventSubscriptionSymbol-1.html" title="IndexedEventSubscriptionSymbol&lt;T&gt;" class="">IndexedEventSubscriptionSymbol&lt;T&gt;</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Api.Osub.TimeSeriesSubscriptionSymbol.html" title="TimeSeriesSubscriptionSymbol" class="">TimeSeriesSubscriptionSymbol</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Api.Osub.TimeSeriesSubscriptionSymbol-1.html" title="TimeSeriesSubscriptionSymbol&lt;T&gt;" class="">TimeSeriesSubscriptionSymbol&lt;T&gt;</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Api.Osub.WildcardSymbol.html" title="WildcardSymbol" class="">WildcardSymbol</a>
-                          </li>
-                        </ul>
-                    </li>
-                    <li class="">
-                      <span class="expand-stub"></span>
-                      <a href="DxFeed.Graal.Net.Events.html" title="DxFeed.Graal.Net.Events" class="">DxFeed.Graal.Net.Events</a>
-
-                        <ul class="nav level2">
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.EventCodeAttribute.html" title="EventCodeAttribute" class="">EventCodeAttribute</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.IEventType.html" title="IEventType" class="">IEventType</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.IIndexedEvent.html" title="IIndexedEvent" class="">IIndexedEvent</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.ILastingEvent.html" title="ILastingEvent" class="">ILastingEvent</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.ITimeSeriesEvent.html" title="ITimeSeriesEvent" class="">ITimeSeriesEvent</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.IndexedEventSource.html" title="IndexedEventSource" class="">IndexedEventSource</a>
-                          </li>
-                        </ul>
-                    </li>
-                    <li class="">
-                      <span class="expand-stub"></span>
-                      <a href="DxFeed.Graal.Net.Events.Candles.html" title="DxFeed.Graal.Net.Events.Candles" class="">DxFeed.Graal.Net.Events.Candles</a>
-
-                        <ul class="nav level2">
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.Candles.Candle.html" title="Candle" class="">Candle</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.Candles.CandleAlignment.html" title="CandleAlignment" class="">CandleAlignment</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.Candles.CandleAlignment.CandleAlignmentId.html" title="CandleAlignment.CandleAlignmentId" class="">CandleAlignment.CandleAlignmentId</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.Candles.CandleExchange.html" title="CandleExchange" class="">CandleExchange</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.Candles.CandlePeriod.html" title="CandlePeriod" class="">CandlePeriod</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.Candles.CandlePrice.html" title="CandlePrice" class="">CandlePrice</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.Candles.CandlePrice.CandlePriceId.html" title="CandlePrice.CandlePriceId" class="">CandlePrice.CandlePriceId</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.Candles.CandlePriceLevel.html" title="CandlePriceLevel" class="">CandlePriceLevel</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.Candles.CandleSession.html" title="CandleSession" class="">CandleSession</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.Candles.CandleSession.CandleSessionId.html" title="CandleSession.CandleSessionId" class="">CandleSession.CandleSessionId</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.Candles.CandleSymbol.html" title="CandleSymbol" class="">CandleSymbol</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.Candles.CandleType.html" title="CandleType" class="">CandleType</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.Candles.CandleType.CandleTypeId.html" title="CandleType.CandleTypeId" class="">CandleType.CandleTypeId</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.Candles.ICandleSymbolProperty.html" title="ICandleSymbolProperty" class="">ICandleSymbolProperty</a>
-                          </li>
-                        </ul>
-                    </li>
-                    <li class="">
-                      <span class="expand-stub"></span>
-                      <a href="DxFeed.Graal.Net.Events.Market.html" title="DxFeed.Graal.Net.Events.Market" class="">DxFeed.Graal.Net.Events.Market</a>
-
-                        <ul class="nav level2">
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.Market.AnalyticOrder.html" title="AnalyticOrder" class="">AnalyticOrder</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.Market.Direction.html" title="Direction" class="">Direction</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.Market.IcebergType.html" title="IcebergType" class="">IcebergType</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.Market.MarketEvent.html" title="MarketEvent" class="">MarketEvent</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.Market.MarketEventSymbols.html" title="MarketEventSymbols" class="">MarketEventSymbols</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.Market.OptionSale.html" title="OptionSale" class="">OptionSale</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.Market.Order.html" title="Order" class="">Order</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.Market.OrderAction.html" title="OrderAction" class="">OrderAction</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.Market.OrderBase.html" title="OrderBase" class="">OrderBase</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.Market.OrderSource.html" title="OrderSource" class="">OrderSource</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.Market.PriceType.html" title="PriceType" class="">PriceType</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.Market.Profile.html" title="Profile" class="">Profile</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.Market.Quote.html" title="Quote" class="">Quote</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.Market.Scope.html" title="Scope" class="">Scope</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.Market.ShortSaleRestriction.html" title="ShortSaleRestriction" class="">ShortSaleRestriction</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.Market.Side.html" title="Side" class="">Side</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.Market.SpreadOrder.html" title="SpreadOrder" class="">SpreadOrder</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.Market.Summary.html" title="Summary" class="">Summary</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.Market.TimeAndSale.html" title="TimeAndSale" class="">TimeAndSale</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.Market.TimeAndSaleType.html" title="TimeAndSaleType" class="">TimeAndSaleType</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.Market.Trade.html" title="Trade" class="">Trade</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.Market.TradeBase.html" title="TradeBase" class="">TradeBase</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.Market.TradeETH.html" title="TradeETH" class="">TradeETH</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.Market.TradingStatus.html" title="TradingStatus" class="">TradingStatus</a>
-                          </li>
-                        </ul>
-                    </li>
-                    <li class="">
-                      <span class="expand-stub"></span>
-                      <a href="DxFeed.Graal.Net.Events.Options.html" title="DxFeed.Graal.Net.Events.Options" class="">DxFeed.Graal.Net.Events.Options</a>
-
-                        <ul class="nav level2">
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.Options.Greeks.html" title="Greeks" class="">Greeks</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.Options.Series.html" title="Series" class="">Series</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.Options.TheoPrice.html" title="TheoPrice" class="">TheoPrice</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.Options.Underlying.html" title="Underlying" class="">Underlying</a>
-                          </li>
-                        </ul>
-                    </li>
-                    <li class="">
-                      <span class="expand-stub"></span>
-                      <a href="DxFeed.Graal.Net.Ipf.html" title="DxFeed.Graal.Net.Ipf" class="">DxFeed.Graal.Net.Ipf</a>
-
-                        <ul class="nav level2">
-                          <li class="active">
-                            <a href="DxFeed.Graal.Net.Ipf.InstrumentProfile.html" title="InstrumentProfile" class="active">InstrumentProfile</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Ipf.InstrumentProfileReader.html" title="InstrumentProfileReader" class="">InstrumentProfileReader</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Ipf.InstrumentProfileType.html" title="InstrumentProfileType" class="">InstrumentProfileType</a>
-                          </li>
-                        </ul>
-                    </li>
-                    <li class="">
-                      <span class="expand-stub"></span>
-                      <a href="DxFeed.Graal.Net.Ipf.Live.html" title="DxFeed.Graal.Net.Ipf.Live" class="">DxFeed.Graal.Net.Ipf.Live</a>
-
-                        <ul class="nav level2">
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Ipf.Live.InstrumentProfileCollector.html" title="InstrumentProfileCollector" class="">InstrumentProfileCollector</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Ipf.Live.InstrumentProfileConnection.html" title="InstrumentProfileConnection" class="">InstrumentProfileConnection</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Ipf.Live.InstrumentProfileUpdateListener.html" title="InstrumentProfileUpdateListener" class="">InstrumentProfileUpdateListener</a>
-                          </li>
-                        </ul>
-                    </li>
-                    <li class="">
-                      <span class="expand-stub"></span>
-                      <a href="DxFeed.Graal.Net.Native.ErrorHandling.html" title="DxFeed.Graal.Net.Native.ErrorHandling" class="">DxFeed.Graal.Net.Native.ErrorHandling</a>
-
-                        <ul class="nav level2">
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Native.ErrorHandling.GraalErrorCode.html" title="GraalErrorCode" class="">GraalErrorCode</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Native.ErrorHandling.GraalException.html" title="GraalException" class="">GraalException</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Native.ErrorHandling.JavaException.html" title="JavaException" class="">JavaException</a>
-                          </li>
-                        </ul>
-                    </li>
-                    <li class="">
-                      <span class="expand-stub"></span>
-                      <a href="DxFeed.Graal.Net.Native.Events.html" title="DxFeed.Graal.Net.Native.Events" class="">DxFeed.Graal.Net.Native.Events</a>
-
-                        <ul class="nav level2">
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Native.Events.EventCodeNative.html" title="EventCodeNative" class="">EventCodeNative</a>
-                          </li>
-                        </ul>
-                    </li>
-                    <li class="">
-                      <span class="expand-stub"></span>
-                      <a href="DxFeed.Graal.Net.Utils.html" title="DxFeed.Graal.Net.Utils" class="">DxFeed.Graal.Net.Utils</a>
-
-                        <ul class="nav level2">
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Utils.AttributeUtil.html" title="AttributeUtil" class="">AttributeUtil</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Utils.BitUtil.html" title="BitUtil" class="">BitUtil</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Utils.CmdArgsUtil.html" title="CmdArgsUtil" class="">CmdArgsUtil</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Utils.ConcurrentSet-1.html" title="ConcurrentSet&lt;T&gt;" class="">ConcurrentSet&lt;T&gt;</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Utils.DayUtil.html" title="DayUtil" class="">DayUtil</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Utils.EnumUtil.html" title="EnumUtil" class="">EnumUtil</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Utils.MathUtil.html" title="MathUtil" class="">MathUtil</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Utils.PlatformUtils.html" title="PlatformUtils" class="">PlatformUtils</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Utils.ReflectionUtil.html" title="ReflectionUtil" class="">ReflectionUtil</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Utils.StringUtil.html" title="StringUtil" class="">StringUtil</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Utils.TimeFormat.html" title="TimeFormat" class="">TimeFormat</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Utils.TimeNanosUtil.html" title="TimeNanosUtil" class="">TimeNanosUtil</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Utils.TimeUtil.html" title="TimeUtil" class="">TimeUtil</a>
-                          </li>
-                        </ul>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
+          <nav id="breadcrumb"></nav>
         </div>
-        <div class="article row grid-right">
-          <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="DxFeed.Graal.Net.Ipf.InstrumentProfile">
+
+        <article data-uid="DxFeed.Graal.Net.Ipf.InstrumentProfile">
 
 
 
-  <h1 id="DxFeed_Graal_Net_Ipf_InstrumentProfile" data-uid="DxFeed.Graal.Net.Ipf.InstrumentProfile" class="text-break">Class InstrumentProfile
-</h1>
-  <div class="markdown level0 summary"><p>Represents basic profile information about market instrument.
+  <h1 id="DxFeed_Graal_Net_Ipf_InstrumentProfile" data-uid="DxFeed.Graal.Net.Ipf.InstrumentProfile" class="text-break">
+    Class InstrumentProfile
+  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.8.0/src/DxFeed.Graal.Net/Ipf/InstrumentProfile.cs/#L19"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="DxFeed.html">DxFeed</a>.<a class="xref" href="DxFeed.Graal.html">Graal</a>.<a class="xref" href="DxFeed.Graal.Net.html">Net</a>.<a class="xref" href="DxFeed.Graal.Net.Ipf.html">Ipf</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>DxFeed.Graal.Net.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>Represents basic profile information about market instrument.
 Please see <a href="http://www.dxfeed.com/downloads/documentation/dxFeed_Instrument_Profile_Format.pdf">Instrument Profile Format documentation</a>
 for complete description.</p>
 </div>
-  <div class="markdown level0 conceptual"></div>
-  <div class="inheritance">
-    <h5>Inheritance</h5>
-    <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
-    <div class="level1"><span class="xref">InstrumentProfile</span></div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class InstrumentProfile</code></pre>
   </div>
-  <div class="inheritedMembers">
-    <h5>Inherited Members</h5>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><span class="xref">InstrumentProfile</span></div>
+    </dd>
+  </dl>
+
+
+
+  <dl class="typelist derived">
+    <dt>Inherited Members</dt>
+    <dd>
     <div>
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
     </div>
@@ -478,83 +143,95 @@ for complete description.</p>
     <div>
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
     </div>
-  </div>
-  <h6><strong>Namespace</strong>: <a class="xref" href="DxFeed.html">DxFeed</a>.<a class="xref" href="DxFeed.Graal.html">Graal</a>.<a class="xref" href="DxFeed.Graal.Net.html">Net</a>.<a class="xref" href="DxFeed.Graal.Net.Ipf.html">Ipf</a></h6>
-  <h6><strong>Assembly</strong>: DxFeed.Graal.Net.dll</h6>
-  <h5 id="DxFeed_Graal_Net_Ipf_InstrumentProfile_syntax">Syntax</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class InstrumentProfile</code></pre>
-  </div>
-  <h3 id="constructors">Constructors
-</h3>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.7.0/apiSpec/new?filename=DxFeed_Graal_Net_Ipf_InstrumentProfile__ctor.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Ipf.InstrumentProfile.%23ctor%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.7.0/src/DxFeed.Graal.Net/Ipf/InstrumentProfile.cs/#L56">View Source</a>
-  </span>
+  </dd></dl>
+
+
+
+
+
+
+  <h2 class="section" id="constructors">Constructors
+</h2>
+
+
   <a id="DxFeed_Graal_Net_Ipf_InstrumentProfile__ctor_" data-uid="DxFeed.Graal.Net.Ipf.InstrumentProfile.#ctor*"></a>
-  <h4 id="DxFeed_Graal_Net_Ipf_InstrumentProfile__ctor" data-uid="DxFeed.Graal.Net.Ipf.InstrumentProfile.#ctor">InstrumentProfile()</h4>
+
+  <h3 id="DxFeed_Graal_Net_Ipf_InstrumentProfile__ctor" data-uid="DxFeed.Graal.Net.Ipf.InstrumentProfile.#ctor">
+  InstrumentProfile()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.8.0/src/DxFeed.Graal.Net/Ipf/InstrumentProfile.cs/#L56"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="DxFeed.Graal.Net.Ipf.InstrumentProfile.html">InstrumentProfile</a> class.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public InstrumentProfile()</code></pre>
   </div>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.7.0/apiSpec/new?filename=DxFeed_Graal_Net_Ipf_InstrumentProfile__ctor_DxFeed_Graal_Net_Ipf_InstrumentProfile_.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Ipf.InstrumentProfile.%23ctor(DxFeed.Graal.Net.Ipf.InstrumentProfile)%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.7.0/src/DxFeed.Graal.Net/Ipf/InstrumentProfile.cs/#L71">View Source</a>
-  </span>
+
+
+
+
+
+
+
+
+
+
+
+
+
   <a id="DxFeed_Graal_Net_Ipf_InstrumentProfile__ctor_" data-uid="DxFeed.Graal.Net.Ipf.InstrumentProfile.#ctor*"></a>
-  <h4 id="DxFeed_Graal_Net_Ipf_InstrumentProfile__ctor_DxFeed_Graal_Net_Ipf_InstrumentProfile_" data-uid="DxFeed.Graal.Net.Ipf.InstrumentProfile.#ctor(DxFeed.Graal.Net.Ipf.InstrumentProfile)">InstrumentProfile(InstrumentProfile)</h4>
+
+  <h3 id="DxFeed_Graal_Net_Ipf_InstrumentProfile__ctor_DxFeed_Graal_Net_Ipf_InstrumentProfile_" data-uid="DxFeed.Graal.Net.Ipf.InstrumentProfile.#ctor(DxFeed.Graal.Net.Ipf.InstrumentProfile)">
+  InstrumentProfile(InstrumentProfile)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.8.0/src/DxFeed.Graal.Net/Ipf/InstrumentProfile.cs/#L71"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="DxFeed.Graal.Net.Ipf.InstrumentProfile.html">InstrumentProfile</a> class,
 creating a deep copy of the provided instrument profile.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public InstrumentProfile(InstrumentProfile ip)</code></pre>
   </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="DxFeed.Graal.Net.Ipf.InstrumentProfile.html">InstrumentProfile</a></td>
-        <td><span class="parametername">ip</span></td>
-        <td><p>The <a class="xref" href="DxFeed.Graal.Net.Ipf.InstrumentProfile.html">InstrumentProfile</a> instance to copy.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 id="DxFeed_Graal_Net_Ipf_InstrumentProfile__ctor_DxFeed_Graal_Net_Ipf_InstrumentProfile__remarks">Remarks</h5>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>ip</code> <a class="xref" href="DxFeed.Graal.Net.Ipf.InstrumentProfile.html">InstrumentProfile</a></dt>
+    <dd><p>The <a class="xref" href="DxFeed.Graal.Net.Ipf.InstrumentProfile.html">InstrumentProfile</a> instance to copy.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h4 class="section" id="DxFeed_Graal_Net_Ipf_InstrumentProfile__ctor_DxFeed_Graal_Net_Ipf_InstrumentProfile__remarks">Remarks</h4>
   <div class="markdown level1 remarks"><p>This constructor is used for creating a new instance of the <a class="xref" href="DxFeed.Graal.Net.Ipf.InstrumentProfile.html">InstrumentProfile</a>
 class with the same properties as the given instance.
 It performs a deep copy, ensuring that the new instance does not share references with the original,
 making it safe from modifications to the original instance.</p>
 </div>
-  <h3 id="properties">Properties
-</h3>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.7.0/apiSpec/new?filename=DxFeed_Graal_Net_Ipf_InstrumentProfile_AdditionalUnderlyings.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Ipf.InstrumentProfile.AdditionalUnderlyings%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.7.0/src/DxFeed.Graal.Net/Ipf/InstrumentProfile.cs/#L365">View Source</a>
-  </span>
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
   <a id="DxFeed_Graal_Net_Ipf_InstrumentProfile_AdditionalUnderlyings_" data-uid="DxFeed.Graal.Net.Ipf.InstrumentProfile.AdditionalUnderlyings*"></a>
-  <h4 id="DxFeed_Graal_Net_Ipf_InstrumentProfile_AdditionalUnderlyings" data-uid="DxFeed.Graal.Net.Ipf.InstrumentProfile.AdditionalUnderlyings">AdditionalUnderlyings</h4>
+
+  <h3 id="DxFeed_Graal_Net_Ipf_InstrumentProfile_AdditionalUnderlyings" data-uid="DxFeed.Graal.Net.Ipf.InstrumentProfile.AdditionalUnderlyings">
+  AdditionalUnderlyings
+  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.8.0/src/DxFeed.Graal.Net/Ipf/InstrumentProfile.cs/#L365"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Gets or sets additional underlyings for options, including additional cash.
 It shall use following format:</p>
 <pre><code class="lang-csharp">&lt;VALUE&gt; ::= &lt;empty&gt; | &lt;LIST&gt;
@@ -563,69 +240,71 @@ It shall use following format:</p>
 <p>the list shall be sorted by &lt;UNDERLYING&gt;.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public string AdditionalUnderlyings { get; set; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 id="DxFeed_Graal_Net_Ipf_InstrumentProfile_AdditionalUnderlyings_examples">Examples</h5>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+  <h4 class="section" id="DxFeed_Graal_Net_Ipf_InstrumentProfile_AdditionalUnderlyings_examples">Examples</h4>
   <p>&quot;SE 50&quot;, &quot;FIS 53; US$ 45.46&quot;.</p>
 
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.7.0/apiSpec/new?filename=DxFeed_Graal_Net_Ipf_InstrumentProfile_BaseCurrency.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Ipf.InstrumentProfile.BaseCurrency%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.7.0/src/DxFeed.Graal.Net/Ipf/InstrumentProfile.cs/#L229">View Source</a>
-  </span>
+
+
+
+
+
   <a id="DxFeed_Graal_Net_Ipf_InstrumentProfile_BaseCurrency_" data-uid="DxFeed.Graal.Net.Ipf.InstrumentProfile.BaseCurrency*"></a>
-  <h4 id="DxFeed_Graal_Net_Ipf_InstrumentProfile_BaseCurrency" data-uid="DxFeed.Graal.Net.Ipf.InstrumentProfile.BaseCurrency">BaseCurrency</h4>
+
+  <h3 id="DxFeed_Graal_Net_Ipf_InstrumentProfile_BaseCurrency" data-uid="DxFeed.Graal.Net.Ipf.InstrumentProfile.BaseCurrency">
+  BaseCurrency
+  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.8.0/src/DxFeed.Graal.Net/Ipf/InstrumentProfile.cs/#L229"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Gets or sets base currency of currency pair (FOREX instruments).
 It shall use three-letter currency code similarly to <a class="xref" href="DxFeed.Graal.Net.Ipf.InstrumentProfile.html#DxFeed_Graal_Net_Ipf_InstrumentProfile_Currency">Currency</a>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public string BaseCurrency { get; set; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.7.0/apiSpec/new?filename=DxFeed_Graal_Net_Ipf_InstrumentProfile_CFI.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Ipf.InstrumentProfile.CFI%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.7.0/src/DxFeed.Graal.Net/Ipf/InstrumentProfile.cs/#L244">View Source</a>
-  </span>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="DxFeed_Graal_Net_Ipf_InstrumentProfile_CFI_" data-uid="DxFeed.Graal.Net.Ipf.InstrumentProfile.CFI*"></a>
-  <h4 id="DxFeed_Graal_Net_Ipf_InstrumentProfile_CFI" data-uid="DxFeed.Graal.Net.Ipf.InstrumentProfile.CFI">CFI</h4>
+
+  <h3 id="DxFeed_Graal_Net_Ipf_InstrumentProfile_CFI" data-uid="DxFeed.Graal.Net.Ipf.InstrumentProfile.CFI">
+  CFI
+  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.8.0/src/DxFeed.Graal.Net/Ipf/InstrumentProfile.cs/#L244"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Gets or sets classification of Financial Instruments code.
 It is a mandatory field for OPTION instruments as it is the only way to distinguish Call/Put type,
 American/European exercise, Cash/Physical delivery.
@@ -634,212 +313,218 @@ It is allowed to use 'X' extensively and to omit trailing letters (assumed to be
 See <a href="http://en.wikipedia.org/wiki/ISO_10962">ISO 10962 on Wikipedia</a>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public string CFI { get; set; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 id="DxFeed_Graal_Net_Ipf_InstrumentProfile_CFI_examples">Examples</h5>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+  <h4 class="section" id="DxFeed_Graal_Net_Ipf_InstrumentProfile_CFI_examples">Examples</h4>
   <p>&quot;ESNTPB&quot;, &quot;ESXXXX&quot;, &quot;ES&quot;, &quot;OPASPS&quot;.</p>
 
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.7.0/apiSpec/new?filename=DxFeed_Graal_Net_Ipf_InstrumentProfile_CUSIP.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Ipf.InstrumentProfile.CUSIP%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.7.0/src/DxFeed.Graal.Net/Ipf/InstrumentProfile.cs/#L282">View Source</a>
-  </span>
+
+
+
+
+
   <a id="DxFeed_Graal_Net_Ipf_InstrumentProfile_CUSIP_" data-uid="DxFeed.Graal.Net.Ipf.InstrumentProfile.CUSIP*"></a>
-  <h4 id="DxFeed_Graal_Net_Ipf_InstrumentProfile_CUSIP" data-uid="DxFeed.Graal.Net.Ipf.InstrumentProfile.CUSIP">CUSIP</h4>
+
+  <h3 id="DxFeed_Graal_Net_Ipf_InstrumentProfile_CUSIP" data-uid="DxFeed.Graal.Net.Ipf.InstrumentProfile.CUSIP">
+  CUSIP
+  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.8.0/src/DxFeed.Graal.Net/Ipf/InstrumentProfile.cs/#L282"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Gets or sets committee on Uniform Security Identification Procedures code.
 It shall use nine-letter code assigned by CUSIP Services Bureau.
 See <a href="http://en.wikipedia.org/wiki/CUSIP">CUSIP on Wikipedia</a>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public string CUSIP { get; set; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 id="DxFeed_Graal_Net_Ipf_InstrumentProfile_CUSIP_examples">Examples</h5>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+  <h4 class="section" id="DxFeed_Graal_Net_Ipf_InstrumentProfile_CUSIP_examples">Examples</h4>
   <p>&quot;38259P508&quot;.</p>
 
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.7.0/apiSpec/new?filename=DxFeed_Graal_Net_Ipf_InstrumentProfile_Country.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Ipf.InstrumentProfile.Country%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.7.0/src/DxFeed.Graal.Net/Ipf/InstrumentProfile.cs/#L167">View Source</a>
-  </span>
+
+
+
+
+
   <a id="DxFeed_Graal_Net_Ipf_InstrumentProfile_Country_" data-uid="DxFeed.Graal.Net.Ipf.InstrumentProfile.Country*"></a>
-  <h4 id="DxFeed_Graal_Net_Ipf_InstrumentProfile_Country" data-uid="DxFeed.Graal.Net.Ipf.InstrumentProfile.Country">Country</h4>
+
+  <h3 id="DxFeed_Graal_Net_Ipf_InstrumentProfile_Country" data-uid="DxFeed.Graal.Net.Ipf.InstrumentProfile.Country">
+  Country
+  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.8.0/src/DxFeed.Graal.Net/Ipf/InstrumentProfile.cs/#L167"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Gets or sets country of origin (incorporation) of corresponding company or parent entity.
 It shall use two-letter country code from ISO 3166-1 standard.
 See <a href="http://en.wikipedia.org/wiki/ISO_3166-1">ISO 3166-1 on Wikipedia</a>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public string Country { get; set; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 id="DxFeed_Graal_Net_Ipf_InstrumentProfile_Country_examples">Examples</h5>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+  <h4 class="section" id="DxFeed_Graal_Net_Ipf_InstrumentProfile_Country_examples">Examples</h4>
   <p>&quot;US&quot;, &quot;RU&quot;.</p>
 
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.7.0/apiSpec/new?filename=DxFeed_Graal_Net_Ipf_InstrumentProfile_Currency.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Ipf.InstrumentProfile.Currency%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.7.0/src/DxFeed.Graal.Net/Ipf/InstrumentProfile.cs/#L219">View Source</a>
-  </span>
+
+
+
+
+
   <a id="DxFeed_Graal_Net_Ipf_InstrumentProfile_Currency_" data-uid="DxFeed.Graal.Net.Ipf.InstrumentProfile.Currency*"></a>
-  <h4 id="DxFeed_Graal_Net_Ipf_InstrumentProfile_Currency" data-uid="DxFeed.Graal.Net.Ipf.InstrumentProfile.Currency">Currency</h4>
+
+  <h3 id="DxFeed_Graal_Net_Ipf_InstrumentProfile_Currency" data-uid="DxFeed.Graal.Net.Ipf.InstrumentProfile.Currency">
+  Currency
+  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.8.0/src/DxFeed.Graal.Net/Ipf/InstrumentProfile.cs/#L219"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Gets or sets currency of quotation, pricing and trading.
 It shall use three-letter currency code from ISO 4217 standard.
 See <a href="http://en.wikipedia.org/wiki/ISO_4217">ISO 4217 on Wikipedia</a>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public string Currency { get; set; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 id="DxFeed_Graal_Net_Ipf_InstrumentProfile_Currency_examples">Examples</h5>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+  <h4 class="section" id="DxFeed_Graal_Net_Ipf_InstrumentProfile_Currency_examples">Examples</h4>
   <p>&quot;USD&quot;, &quot;RUB&quot;.</p>
 
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.7.0/apiSpec/new?filename=DxFeed_Graal_Net_Ipf_InstrumentProfile_Description.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Ipf.InstrumentProfile.Description%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.7.0/src/DxFeed.Graal.Net/Ipf/InstrumentProfile.cs/#L135">View Source</a>
-  </span>
+
+
+
+
+
   <a id="DxFeed_Graal_Net_Ipf_InstrumentProfile_Description_" data-uid="DxFeed.Graal.Net.Ipf.InstrumentProfile.Description*"></a>
-  <h4 id="DxFeed_Graal_Net_Ipf_InstrumentProfile_Description" data-uid="DxFeed.Graal.Net.Ipf.InstrumentProfile.Description">Description</h4>
+
+  <h3 id="DxFeed_Graal_Net_Ipf_InstrumentProfile_Description" data-uid="DxFeed.Graal.Net.Ipf.InstrumentProfile.Description">
+  Description
+  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.8.0/src/DxFeed.Graal.Net/Ipf/InstrumentProfile.cs/#L135"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Gets or sets description of instrument,
 preferable an international one in Latin alphabet.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public string Description { get; set; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 id="DxFeed_Graal_Net_Ipf_InstrumentProfile_Description_examples">Examples</h5>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+  <h4 class="section" id="DxFeed_Graal_Net_Ipf_InstrumentProfile_Description_examples">Examples</h4>
   <p>&quot;Google Inc.&quot;, &quot;Mini Gold Futures,Jun-2009,ETH&quot;.</p>
 
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.7.0/apiSpec/new?filename=DxFeed_Graal_Net_Ipf_InstrumentProfile_ExchangeData.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Ipf.InstrumentProfile.ExchangeData%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.7.0/src/DxFeed.Graal.Net/Ipf/InstrumentProfile.cs/#L191">View Source</a>
-  </span>
+
+
+
+
+
   <a id="DxFeed_Graal_Net_Ipf_InstrumentProfile_ExchangeData_" data-uid="DxFeed.Graal.Net.Ipf.InstrumentProfile.ExchangeData*"></a>
-  <h4 id="DxFeed_Graal_Net_Ipf_InstrumentProfile_ExchangeData" data-uid="DxFeed.Graal.Net.Ipf.InstrumentProfile.ExchangeData">ExchangeData</h4>
+
+  <h3 id="DxFeed_Graal_Net_Ipf_InstrumentProfile_ExchangeData" data-uid="DxFeed.Graal.Net.Ipf.InstrumentProfile.ExchangeData">
+  ExchangeData
+  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.8.0/src/DxFeed.Graal.Net/Ipf/InstrumentProfile.cs/#L191"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Gets or sets exchange-specific data required to properly identify instrument when communicating with exchange.
 It uses exchange-specific format.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public string ExchangeData { get; set; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.7.0/apiSpec/new?filename=DxFeed_Graal_Net_Ipf_InstrumentProfile_Exchanges.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Ipf.InstrumentProfile.Exchanges%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.7.0/src/DxFeed.Graal.Net/Ipf/InstrumentProfile.cs/#L207">View Source</a>
-  </span>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="DxFeed_Graal_Net_Ipf_InstrumentProfile_Exchanges_" data-uid="DxFeed.Graal.Net.Ipf.InstrumentProfile.Exchanges*"></a>
-  <h4 id="DxFeed_Graal_Net_Ipf_InstrumentProfile_Exchanges" data-uid="DxFeed.Graal.Net.Ipf.InstrumentProfile.Exchanges">Exchanges</h4>
+
+  <h3 id="DxFeed_Graal_Net_Ipf_InstrumentProfile_Exchanges" data-uid="DxFeed.Graal.Net.Ipf.InstrumentProfile.Exchanges">
+  Exchanges
+  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.8.0/src/DxFeed.Graal.Net/Ipf/InstrumentProfile.cs/#L207"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Gets or sets list of exchanges where instrument is quoted or traded.
 Its shall use the following format:</p>
 <pre><code class="lang-csharp">&lt;VALUE&gt; ::= &lt;empty&gt; | &lt;LIST&gt;
@@ -847,274 +532,282 @@ Its shall use the following format:</p>
 <p>&lt;LIST&gt; the list shall be sorted by MIC.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public string Exchanges { get; set; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 id="DxFeed_Graal_Net_Ipf_InstrumentProfile_Exchanges_examples">Examples</h5>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+  <h4 class="section" id="DxFeed_Graal_Net_Ipf_InstrumentProfile_Exchanges_examples">Examples</h4>
   <p>&quot;ARCX;CBSX;XNAS;XNYS&quot;.</p>
 
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.7.0/apiSpec/new?filename=DxFeed_Graal_Net_Ipf_InstrumentProfile_Expiration.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Ipf.InstrumentProfile.Expiration%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.7.0/src/DxFeed.Graal.Net/Ipf/InstrumentProfile.cs/#L390">View Source</a>
-  </span>
+
+
+
+
+
   <a id="DxFeed_Graal_Net_Ipf_InstrumentProfile_Expiration_" data-uid="DxFeed.Graal.Net.Ipf.InstrumentProfile.Expiration*"></a>
-  <h4 id="DxFeed_Graal_Net_Ipf_InstrumentProfile_Expiration" data-uid="DxFeed.Graal.Net.Ipf.InstrumentProfile.Expiration">Expiration</h4>
+
+  <h3 id="DxFeed_Graal_Net_Ipf_InstrumentProfile_Expiration" data-uid="DxFeed.Graal.Net.Ipf.InstrumentProfile.Expiration">
+  Expiration
+  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.8.0/src/DxFeed.Graal.Net/Ipf/InstrumentProfile.cs/#L390"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Gets or sets day id of expiration.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public int Expiration { get; set; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 id="DxFeed_Graal_Net_Ipf_InstrumentProfile_Expiration_examples">Examples</h5>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+  <h4 class="section" id="DxFeed_Graal_Net_Ipf_InstrumentProfile_Expiration_examples">Examples</h4>
   <p><a class="xref" href="DxFeed.Graal.Net.Utils.DayUtil.html#DxFeed_Graal_Net_Utils_DayUtil_GetYearMonthDayByDayId_System_Int32_">DayUtil.GetYearMonthDayByDayId(20090117)</a>.</p>
 
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.7.0/apiSpec/new?filename=DxFeed_Graal_Net_Ipf_InstrumentProfile_ExpirationStyle.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Ipf.InstrumentProfile.ExpirationStyle%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.7.0/src/DxFeed.Graal.Net/Ipf/InstrumentProfile.cs/#L438">View Source</a>
-  </span>
+
+
+
+
+
   <a id="DxFeed_Graal_Net_Ipf_InstrumentProfile_ExpirationStyle_" data-uid="DxFeed.Graal.Net.Ipf.InstrumentProfile.ExpirationStyle*"></a>
-  <h4 id="DxFeed_Graal_Net_Ipf_InstrumentProfile_ExpirationStyle" data-uid="DxFeed.Graal.Net.Ipf.InstrumentProfile.ExpirationStyle">ExpirationStyle</h4>
+
+  <h3 id="DxFeed_Graal_Net_Ipf_InstrumentProfile_ExpirationStyle" data-uid="DxFeed.Graal.Net.Ipf.InstrumentProfile.ExpirationStyle">
+  ExpirationStyle
+  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.8.0/src/DxFeed.Graal.Net/Ipf/InstrumentProfile.cs/#L438"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Gets or sets expiration cycle style, such as &quot;Weeklys&quot;, &quot;Quarterlys&quot;.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public string ExpirationStyle { get; set; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.7.0/apiSpec/new?filename=DxFeed_Graal_Net_Ipf_InstrumentProfile_ICB.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Ipf.InstrumentProfile.ICB%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.7.0/src/DxFeed.Graal.Net/Ipf/InstrumentProfile.cs/#L295">View Source</a>
-  </span>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="DxFeed_Graal_Net_Ipf_InstrumentProfile_ICB_" data-uid="DxFeed.Graal.Net.Ipf.InstrumentProfile.ICB*"></a>
-  <h4 id="DxFeed_Graal_Net_Ipf_InstrumentProfile_ICB" data-uid="DxFeed.Graal.Net.Ipf.InstrumentProfile.ICB">ICB</h4>
+
+  <h3 id="DxFeed_Graal_Net_Ipf_InstrumentProfile_ICB" data-uid="DxFeed.Graal.Net.Ipf.InstrumentProfile.ICB">
+  ICB
+  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.8.0/src/DxFeed.Graal.Net/Ipf/InstrumentProfile.cs/#L295"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Gets or sets industry Classification Benchmark.
 It shall use four-digit number from ICB catalog.
 See <a href="http://en.wikipedia.org/wiki/Industry_Classification_Benchmark">ICB on Wikipedia</a>
 or <a href="http://www.icbenchmark.com/">ICB homepage</a>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public int ICB { get; set; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 id="DxFeed_Graal_Net_Ipf_InstrumentProfile_ICB_examples">Examples</h5>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+  <h4 class="section" id="DxFeed_Graal_Net_Ipf_InstrumentProfile_ICB_examples">Examples</h4>
   <p>&quot;9535&quot;.</p>
 
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.7.0/apiSpec/new?filename=DxFeed_Graal_Net_Ipf_InstrumentProfile_ISIN.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Ipf.InstrumentProfile.ISIN%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.7.0/src/DxFeed.Graal.Net/Ipf/InstrumentProfile.cs/#L257">View Source</a>
-  </span>
+
+
+
+
+
   <a id="DxFeed_Graal_Net_Ipf_InstrumentProfile_ISIN_" data-uid="DxFeed.Graal.Net.Ipf.InstrumentProfile.ISIN*"></a>
-  <h4 id="DxFeed_Graal_Net_Ipf_InstrumentProfile_ISIN" data-uid="DxFeed.Graal.Net.Ipf.InstrumentProfile.ISIN">ISIN</h4>
+
+  <h3 id="DxFeed_Graal_Net_Ipf_InstrumentProfile_ISIN" data-uid="DxFeed.Graal.Net.Ipf.InstrumentProfile.ISIN">
+  ISIN
+  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.8.0/src/DxFeed.Graal.Net/Ipf/InstrumentProfile.cs/#L257"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Gets or sets international Securities Identifying Number.
 It shall use twelve-letter code from ISO 6166 standard.
 See <a href="http://en.wikipedia.org/wiki/ISO_6166">ISO 6166 on Wikipedia</a>
 or <a href="http://en.wikipedia.org/wiki/International_Securities_Identifying_Number">ISIN on Wikipedia</a>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public string ISIN { get; set; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 id="DxFeed_Graal_Net_Ipf_InstrumentProfile_ISIN_examples">Examples</h5>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+  <h4 class="section" id="DxFeed_Graal_Net_Ipf_InstrumentProfile_ISIN_examples">Examples</h4>
   <p>&quot;DE0007100000&quot;, &quot;US38259P5089&quot;.</p>
 
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.7.0/apiSpec/new?filename=DxFeed_Graal_Net_Ipf_InstrumentProfile_LastTrade.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Ipf.InstrumentProfile.LastTrade%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.7.0/src/DxFeed.Graal.Net/Ipf/InstrumentProfile.cs/#L400">View Source</a>
-  </span>
+
+
+
+
+
   <a id="DxFeed_Graal_Net_Ipf_InstrumentProfile_LastTrade_" data-uid="DxFeed.Graal.Net.Ipf.InstrumentProfile.LastTrade*"></a>
-  <h4 id="DxFeed_Graal_Net_Ipf_InstrumentProfile_LastTrade" data-uid="DxFeed.Graal.Net.Ipf.InstrumentProfile.LastTrade">LastTrade</h4>
+
+  <h3 id="DxFeed_Graal_Net_Ipf_InstrumentProfile_LastTrade" data-uid="DxFeed.Graal.Net.Ipf.InstrumentProfile.LastTrade">
+  LastTrade
+  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.8.0/src/DxFeed.Graal.Net/Ipf/InstrumentProfile.cs/#L400"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Gets or sets day id of last trading day.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public int LastTrade { get; set; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 id="DxFeed_Graal_Net_Ipf_InstrumentProfile_LastTrade_examples">Examples</h5>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+  <h4 class="section" id="DxFeed_Graal_Net_Ipf_InstrumentProfile_LastTrade_examples">Examples</h4>
   <p><a class="xref" href="DxFeed.Graal.Net.Utils.DayUtil.html#DxFeed_Graal_Net_Utils_DayUtil_GetYearMonthDayByDayId_System_Int32_">DayUtil.GetYearMonthDayByDayId(20090117)</a>.</p>
 
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.7.0/apiSpec/new?filename=DxFeed_Graal_Net_Ipf_InstrumentProfile_LocalDescription.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Ipf.InstrumentProfile.LocalDescription%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.7.0/src/DxFeed.Graal.Net/Ipf/InstrumentProfile.cs/#L155">View Source</a>
-  </span>
+
+
+
+
+
   <a id="DxFeed_Graal_Net_Ipf_InstrumentProfile_LocalDescription_" data-uid="DxFeed.Graal.Net.Ipf.InstrumentProfile.LocalDescription*"></a>
-  <h4 id="DxFeed_Graal_Net_Ipf_InstrumentProfile_LocalDescription" data-uid="DxFeed.Graal.Net.Ipf.InstrumentProfile.LocalDescription">LocalDescription</h4>
+
+  <h3 id="DxFeed_Graal_Net_Ipf_InstrumentProfile_LocalDescription" data-uid="DxFeed.Graal.Net.Ipf.InstrumentProfile.LocalDescription">
+  LocalDescription
+  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.8.0/src/DxFeed.Graal.Net/Ipf/InstrumentProfile.cs/#L155"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Gets or sets description of instrument in national language.
 It shall be empty if same as <a class="xref" href="DxFeed.Graal.Net.Ipf.InstrumentProfile.html#DxFeed_Graal_Net_Ipf_InstrumentProfile_Description">Description</a>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public string LocalDescription { get; set; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.7.0/apiSpec/new?filename=DxFeed_Graal_Net_Ipf_InstrumentProfile_LocalSymbol.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Ipf.InstrumentProfile.LocalSymbol%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.7.0/src/DxFeed.Graal.Net/Ipf/InstrumentProfile.cs/#L145">View Source</a>
-  </span>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="DxFeed_Graal_Net_Ipf_InstrumentProfile_LocalSymbol_" data-uid="DxFeed.Graal.Net.Ipf.InstrumentProfile.LocalSymbol*"></a>
-  <h4 id="DxFeed_Graal_Net_Ipf_InstrumentProfile_LocalSymbol" data-uid="DxFeed.Graal.Net.Ipf.InstrumentProfile.LocalSymbol">LocalSymbol</h4>
+
+  <h3 id="DxFeed_Graal_Net_Ipf_InstrumentProfile_LocalSymbol" data-uid="DxFeed.Graal.Net.Ipf.InstrumentProfile.LocalSymbol">
+  LocalSymbol
+  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.8.0/src/DxFeed.Graal.Net/Ipf/InstrumentProfile.cs/#L145"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Gets or sets identifier of instrument in national language.
 It shall be empty if same as <a class="xref" href="DxFeed.Graal.Net.Ipf.InstrumentProfile.html#DxFeed_Graal_Net_Ipf_InstrumentProfile_Symbol">Symbol</a>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public string LocalSymbol { get; set; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.7.0/apiSpec/new?filename=DxFeed_Graal_Net_Ipf_InstrumentProfile_MMY.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Ipf.InstrumentProfile.MMY%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.7.0/src/DxFeed.Graal.Net/Ipf/InstrumentProfile.cs/#L380">View Source</a>
-  </span>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="DxFeed_Graal_Net_Ipf_InstrumentProfile_MMY_" data-uid="DxFeed.Graal.Net.Ipf.InstrumentProfile.MMY*"></a>
-  <h4 id="DxFeed_Graal_Net_Ipf_InstrumentProfile_MMY" data-uid="DxFeed.Graal.Net.Ipf.InstrumentProfile.MMY">MMY</h4>
+
+  <h3 id="DxFeed_Graal_Net_Ipf_InstrumentProfile_MMY" data-uid="DxFeed.Graal.Net.Ipf.InstrumentProfile.MMY">
+  MMY
+  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.8.0/src/DxFeed.Graal.Net/Ipf/InstrumentProfile.cs/#L380"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Gets or sets maturity month-year as provided for corresponding FIX tag (200).
 It can use several different formats depending on data source.</p>
 <ul>
@@ -1124,68 +817,70 @@ It can use several different formats depending on data source.</p>
 </ul>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public string MMY { get; set; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.7.0/apiSpec/new?filename=DxFeed_Graal_Net_Ipf_InstrumentProfile_Multiplier.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Ipf.InstrumentProfile.Multiplier%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.7.0/src/DxFeed.Graal.Net/Ipf/InstrumentProfile.cs/#L318">View Source</a>
-  </span>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="DxFeed_Graal_Net_Ipf_InstrumentProfile_Multiplier_" data-uid="DxFeed.Graal.Net.Ipf.InstrumentProfile.Multiplier*"></a>
-  <h4 id="DxFeed_Graal_Net_Ipf_InstrumentProfile_Multiplier" data-uid="DxFeed.Graal.Net.Ipf.InstrumentProfile.Multiplier">Multiplier</h4>
+
+  <h3 id="DxFeed_Graal_Net_Ipf_InstrumentProfile_Multiplier" data-uid="DxFeed.Graal.Net.Ipf.InstrumentProfile.Multiplier">
+  Multiplier
+  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.8.0/src/DxFeed.Graal.Net/Ipf/InstrumentProfile.cs/#L318"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Gets or sets market value multiplier.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public double Multiplier { get; set; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 id="DxFeed_Graal_Net_Ipf_InstrumentProfile_Multiplier_examples">Examples</h5>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+  <h4 class="section" id="DxFeed_Graal_Net_Ipf_InstrumentProfile_Multiplier_examples">Examples</h4>
   <p>&quot;100&quot;, &quot;33.2&quot;.</p>
 
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.7.0/apiSpec/new?filename=DxFeed_Graal_Net_Ipf_InstrumentProfile_OPOL.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Ipf.InstrumentProfile.OPOL%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.7.0/src/DxFeed.Graal.Net/Ipf/InstrumentProfile.cs/#L181">View Source</a>
-  </span>
+
+
+
+
+
   <a id="DxFeed_Graal_Net_Ipf_InstrumentProfile_OPOL_" data-uid="DxFeed.Graal.Net.Ipf.InstrumentProfile.OPOL*"></a>
-  <h4 id="DxFeed_Graal_Net_Ipf_InstrumentProfile_OPOL" data-uid="DxFeed.Graal.Net.Ipf.InstrumentProfile.OPOL">OPOL</h4>
+
+  <h3 id="DxFeed_Graal_Net_Ipf_InstrumentProfile_OPOL" data-uid="DxFeed.Graal.Net.Ipf.InstrumentProfile.OPOL">
+  OPOL
+  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.8.0/src/DxFeed.Graal.Net/Ipf/InstrumentProfile.cs/#L181"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Gets or sets official Place Of Listing, the organization that have listed this instrument.
 Instruments with multiple listings shall use separate profiles for each listing.
 It shall use Market Identifier Code (MIC) from ISO 10383 standard.
@@ -1193,37 +888,38 @@ See <a href="http://en.wikipedia.org/wiki/ISO_10383">ISO 10383 on Wikipedia</a>
 or <a href="http://www.iso15022.org/MIC/homepageMIC.htm">MIC homepage</a>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public string OPOL { get; set; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 id="DxFeed_Graal_Net_Ipf_InstrumentProfile_OPOL_examples">Examples</h5>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+  <h4 class="section" id="DxFeed_Graal_Net_Ipf_InstrumentProfile_OPOL_examples">Examples</h4>
   <p>&quot;XNAS&quot;, &quot;RTSX&quot;.</p>
 
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.7.0/apiSpec/new?filename=DxFeed_Graal_Net_Ipf_InstrumentProfile_OptionType.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Ipf.InstrumentProfile.OptionType%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.7.0/src/DxFeed.Graal.Net/Ipf/InstrumentProfile.cs/#L429">View Source</a>
-  </span>
+
+
+
+
+
   <a id="DxFeed_Graal_Net_Ipf_InstrumentProfile_OptionType_" data-uid="DxFeed.Graal.Net.Ipf.InstrumentProfile.OptionType*"></a>
-  <h4 id="DxFeed_Graal_Net_Ipf_InstrumentProfile_OptionType" data-uid="DxFeed.Graal.Net.Ipf.InstrumentProfile.OptionType">OptionType</h4>
+
+  <h3 id="DxFeed_Graal_Net_Ipf_InstrumentProfile_OptionType" data-uid="DxFeed.Graal.Net.Ipf.InstrumentProfile.OptionType">
+  OptionType
+  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.8.0/src/DxFeed.Graal.Net/Ipf/InstrumentProfile.cs/#L429"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Gets or sets type of option.
 It shall use one of following values.</p>
 <ul>
@@ -1237,34 +933,35 @@ It shall use one of following values.</p>
 </ul>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public string OptionType { get; set; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.7.0/apiSpec/new?filename=DxFeed_Graal_Net_Ipf_InstrumentProfile_PriceIncrements.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Ipf.InstrumentProfile.PriceIncrements%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.7.0/src/DxFeed.Graal.Net/Ipf/InstrumentProfile.cs/#L464">View Source</a>
-  </span>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="DxFeed_Graal_Net_Ipf_InstrumentProfile_PriceIncrements_" data-uid="DxFeed.Graal.Net.Ipf.InstrumentProfile.PriceIncrements*"></a>
-  <h4 id="DxFeed_Graal_Net_Ipf_InstrumentProfile_PriceIncrements" data-uid="DxFeed.Graal.Net.Ipf.InstrumentProfile.PriceIncrements">PriceIncrements</h4>
+
+  <h3 id="DxFeed_Graal_Net_Ipf_InstrumentProfile_PriceIncrements" data-uid="DxFeed.Graal.Net.Ipf.InstrumentProfile.PriceIncrements">
+  PriceIncrements
+  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.8.0/src/DxFeed.Graal.Net/Ipf/InstrumentProfile.cs/#L464"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Gets or sets minimum allowed price increments with corresponding price ranges.
 It shall use following format:</p>
 <pre><code class="lang-csharp">&lt;VALUE&gt; ::= &lt;empty&gt; | &lt;LIST&gt;
@@ -1273,449 +970,442 @@ It shall use following format:</p>
 <p>the list shall be sorted by &lt;UPPER_LIMIT&gt;.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public string PriceIncrements { get; set; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 id="DxFeed_Graal_Net_Ipf_InstrumentProfile_PriceIncrements_examples">Examples</h5>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+  <h4 class="section" id="DxFeed_Graal_Net_Ipf_InstrumentProfile_PriceIncrements_examples">Examples</h4>
   <p>&quot;0.25&quot;, &quot;0.01 3; 0.05&quot;.</p>
 
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.7.0/apiSpec/new?filename=DxFeed_Graal_Net_Ipf_InstrumentProfile_Product.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Ipf.InstrumentProfile.Product%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.7.0/src/DxFeed.Graal.Net/Ipf/InstrumentProfile.cs/#L328">View Source</a>
-  </span>
+
+
+
+
+
   <a id="DxFeed_Graal_Net_Ipf_InstrumentProfile_Product_" data-uid="DxFeed.Graal.Net.Ipf.InstrumentProfile.Product*"></a>
-  <h4 id="DxFeed_Graal_Net_Ipf_InstrumentProfile_Product" data-uid="DxFeed.Graal.Net.Ipf.InstrumentProfile.Product">Product</h4>
+
+  <h3 id="DxFeed_Graal_Net_Ipf_InstrumentProfile_Product" data-uid="DxFeed.Graal.Net.Ipf.InstrumentProfile.Product">
+  Product
+  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.8.0/src/DxFeed.Graal.Net/Ipf/InstrumentProfile.cs/#L328"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Gets or sets product for futures and options on futures (underlying asset name).</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public string Product { get; set; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 id="DxFeed_Graal_Net_Ipf_InstrumentProfile_Product_examples">Examples</h5>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+  <h4 class="section" id="DxFeed_Graal_Net_Ipf_InstrumentProfile_Product_examples">Examples</h4>
   <p>&quot;/YG&quot;.</p>
 
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.7.0/apiSpec/new?filename=DxFeed_Graal_Net_Ipf_InstrumentProfile_SEDOL.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Ipf.InstrumentProfile.SEDOL%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.7.0/src/DxFeed.Graal.Net/Ipf/InstrumentProfile.cs/#L270">View Source</a>
-  </span>
+
+
+
+
+
   <a id="DxFeed_Graal_Net_Ipf_InstrumentProfile_SEDOL_" data-uid="DxFeed.Graal.Net.Ipf.InstrumentProfile.SEDOL*"></a>
-  <h4 id="DxFeed_Graal_Net_Ipf_InstrumentProfile_SEDOL" data-uid="DxFeed.Graal.Net.Ipf.InstrumentProfile.SEDOL">SEDOL</h4>
+
+  <h3 id="DxFeed_Graal_Net_Ipf_InstrumentProfile_SEDOL" data-uid="DxFeed.Graal.Net.Ipf.InstrumentProfile.SEDOL">
+  SEDOL
+  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.8.0/src/DxFeed.Graal.Net/Ipf/InstrumentProfile.cs/#L270"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Gets or sets stock Exchange Daily Official List.
 It shall use seven-letter code assigned by London Stock Exchange.
 See <a href="http://en.wikipedia.org/wiki/SEDOL">SEDOL on Wikipedia</a> or
 <a href="http://www.londonstockexchange.com/en-gb/products/informationproducts/sedol/">SEDOL on LSE</a>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public string SEDOL { get; set; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 id="DxFeed_Graal_Net_Ipf_InstrumentProfile_SEDOL_examples">Examples</h5>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+  <h4 class="section" id="DxFeed_Graal_Net_Ipf_InstrumentProfile_SEDOL_examples">Examples</h4>
   <p>&quot;2310967&quot;, &quot;5766857&quot;.</p>
 
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.7.0/apiSpec/new?filename=DxFeed_Graal_Net_Ipf_InstrumentProfile_SIC.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Ipf.InstrumentProfile.SIC%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.7.0/src/DxFeed.Graal.Net/Ipf/InstrumentProfile.cs/#L308">View Source</a>
-  </span>
+
+
+
+
+
   <a id="DxFeed_Graal_Net_Ipf_InstrumentProfile_SIC_" data-uid="DxFeed.Graal.Net.Ipf.InstrumentProfile.SIC*"></a>
-  <h4 id="DxFeed_Graal_Net_Ipf_InstrumentProfile_SIC" data-uid="DxFeed.Graal.Net.Ipf.InstrumentProfile.SIC">SIC</h4>
+
+  <h3 id="DxFeed_Graal_Net_Ipf_InstrumentProfile_SIC" data-uid="DxFeed.Graal.Net.Ipf.InstrumentProfile.SIC">
+  SIC
+  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.8.0/src/DxFeed.Graal.Net/Ipf/InstrumentProfile.cs/#L308"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Gets or sets standard Industrial Classification.
 It shall use four-digit number from SIC catalog.
 See <a href="http://en.wikipedia.org/wiki/Standard_Industrial_Classification">SIC on Wikipedia</a>
 or <a href="https://www.osha.gov/pls/imis/sic_manual.html">SIC structure</a>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public int SIC { get; set; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 id="DxFeed_Graal_Net_Ipf_InstrumentProfile_SIC_examples">Examples</h5>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+  <h4 class="section" id="DxFeed_Graal_Net_Ipf_InstrumentProfile_SIC_examples">Examples</h4>
   <p>&quot;7371&quot;.</p>
 
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.7.0/apiSpec/new?filename=DxFeed_Graal_Net_Ipf_InstrumentProfile_SPC.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Ipf.InstrumentProfile.SPC%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.7.0/src/DxFeed.Graal.Net/Ipf/InstrumentProfile.cs/#L348">View Source</a>
-  </span>
+
+
+
+
+
   <a id="DxFeed_Graal_Net_Ipf_InstrumentProfile_SPC_" data-uid="DxFeed.Graal.Net.Ipf.InstrumentProfile.SPC*"></a>
-  <h4 id="DxFeed_Graal_Net_Ipf_InstrumentProfile_SPC" data-uid="DxFeed.Graal.Net.Ipf.InstrumentProfile.SPC">SPC</h4>
+
+  <h3 id="DxFeed_Graal_Net_Ipf_InstrumentProfile_SPC" data-uid="DxFeed.Graal.Net.Ipf.InstrumentProfile.SPC">
+  SPC
+  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.8.0/src/DxFeed.Graal.Net/Ipf/InstrumentProfile.cs/#L348"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Gets or sets shares per contract for options.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public double SPC { get; set; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 id="DxFeed_Graal_Net_Ipf_InstrumentProfile_SPC_examples">Examples</h5>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+  <h4 class="section" id="DxFeed_Graal_Net_Ipf_InstrumentProfile_SPC_examples">Examples</h4>
   <p>&quot;1&quot;, &quot;100&quot;.</p>
 
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.7.0/apiSpec/new?filename=DxFeed_Graal_Net_Ipf_InstrumentProfile_SettlementStyle.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Ipf.InstrumentProfile.SettlementStyle%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.7.0/src/DxFeed.Graal.Net/Ipf/InstrumentProfile.cs/#L447">View Source</a>
-  </span>
+
+
+
+
+
   <a id="DxFeed_Graal_Net_Ipf_InstrumentProfile_SettlementStyle_" data-uid="DxFeed.Graal.Net.Ipf.InstrumentProfile.SettlementStyle*"></a>
-  <h4 id="DxFeed_Graal_Net_Ipf_InstrumentProfile_SettlementStyle" data-uid="DxFeed.Graal.Net.Ipf.InstrumentProfile.SettlementStyle">SettlementStyle</h4>
+
+  <h3 id="DxFeed_Graal_Net_Ipf_InstrumentProfile_SettlementStyle" data-uid="DxFeed.Graal.Net.Ipf.InstrumentProfile.SettlementStyle">
+  SettlementStyle
+  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.8.0/src/DxFeed.Graal.Net/Ipf/InstrumentProfile.cs/#L447"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Gets or sets settlement price determination style, such as &quot;Open&quot;, &quot;Close&quot;.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public string SettlementStyle { get; set; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.7.0/apiSpec/new?filename=DxFeed_Graal_Net_Ipf_InstrumentProfile_Strike.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Ipf.InstrumentProfile.Strike%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.7.0/src/DxFeed.Graal.Net/Ipf/InstrumentProfile.cs/#L410">View Source</a>
-  </span>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="DxFeed_Graal_Net_Ipf_InstrumentProfile_Strike_" data-uid="DxFeed.Graal.Net.Ipf.InstrumentProfile.Strike*"></a>
-  <h4 id="DxFeed_Graal_Net_Ipf_InstrumentProfile_Strike" data-uid="DxFeed.Graal.Net.Ipf.InstrumentProfile.Strike">Strike</h4>
+
+  <h3 id="DxFeed_Graal_Net_Ipf_InstrumentProfile_Strike" data-uid="DxFeed.Graal.Net.Ipf.InstrumentProfile.Strike">
+  Strike
+  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.8.0/src/DxFeed.Graal.Net/Ipf/InstrumentProfile.cs/#L410"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Gets or sets strike price for options.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public double Strike { get; set; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 id="DxFeed_Graal_Net_Ipf_InstrumentProfile_Strike_examples">Examples</h5>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+  <h4 class="section" id="DxFeed_Graal_Net_Ipf_InstrumentProfile_Strike_examples">Examples</h4>
   <p>&quot;80&quot;, &quot;22.5&quot;.</p>
 
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.7.0/apiSpec/new?filename=DxFeed_Graal_Net_Ipf_InstrumentProfile_Symbol.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Ipf.InstrumentProfile.Symbol%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.7.0/src/DxFeed.Graal.Net/Ipf/InstrumentProfile.cs/#L124">View Source</a>
-  </span>
+
+
+
+
+
   <a id="DxFeed_Graal_Net_Ipf_InstrumentProfile_Symbol_" data-uid="DxFeed.Graal.Net.Ipf.InstrumentProfile.Symbol*"></a>
-  <h4 id="DxFeed_Graal_Net_Ipf_InstrumentProfile_Symbol" data-uid="DxFeed.Graal.Net.Ipf.InstrumentProfile.Symbol">Symbol</h4>
+
+  <h3 id="DxFeed_Graal_Net_Ipf_InstrumentProfile_Symbol" data-uid="DxFeed.Graal.Net.Ipf.InstrumentProfile.Symbol">
+  Symbol
+  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.8.0/src/DxFeed.Graal.Net/Ipf/InstrumentProfile.cs/#L124"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Gets or sets identifier of instrument,
 preferable an international one in Latin alphabet.
 It is a mandatory field. It may not be empty.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public string Symbol { get; set; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 id="DxFeed_Graal_Net_Ipf_InstrumentProfile_Symbol_examples">Examples</h5>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+  <h4 class="section" id="DxFeed_Graal_Net_Ipf_InstrumentProfile_Symbol_examples">Examples</h4>
   <p>&quot;GOOG&quot;, &quot;/YGM9&quot;, &quot;.ZYEAD&quot;.</p>
 
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.7.0/apiSpec/new?filename=DxFeed_Graal_Net_Ipf_InstrumentProfile_TradingHours.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Ipf.InstrumentProfile.TradingHours%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.7.0/src/DxFeed.Graal.Net/Ipf/InstrumentProfile.cs/#L473">View Source</a>
-  </span>
+
+
+
+
+
   <a id="DxFeed_Graal_Net_Ipf_InstrumentProfile_TradingHours_" data-uid="DxFeed.Graal.Net.Ipf.InstrumentProfile.TradingHours*"></a>
-  <h4 id="DxFeed_Graal_Net_Ipf_InstrumentProfile_TradingHours" data-uid="DxFeed.Graal.Net.Ipf.InstrumentProfile.TradingHours">TradingHours</h4>
+
+  <h3 id="DxFeed_Graal_Net_Ipf_InstrumentProfile_TradingHours" data-uid="DxFeed.Graal.Net.Ipf.InstrumentProfile.TradingHours">
+  TradingHours
+  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.8.0/src/DxFeed.Graal.Net/Ipf/InstrumentProfile.cs/#L473"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Gets or sets trading hours specification.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public string TradingHours { get; set; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.7.0/apiSpec/new?filename=DxFeed_Graal_Net_Ipf_InstrumentProfile_Type.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Ipf.InstrumentProfile.Type%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.7.0/src/DxFeed.Graal.Net/Ipf/InstrumentProfile.cs/#L112">View Source</a>
-  </span>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
   <a id="DxFeed_Graal_Net_Ipf_InstrumentProfile_Type_" data-uid="DxFeed.Graal.Net.Ipf.InstrumentProfile.Type*"></a>
-  <h4 id="DxFeed_Graal_Net_Ipf_InstrumentProfile_Type" data-uid="DxFeed.Graal.Net.Ipf.InstrumentProfile.Type">Type</h4>
+
+  <h3 id="DxFeed_Graal_Net_Ipf_InstrumentProfile_Type" data-uid="DxFeed.Graal.Net.Ipf.InstrumentProfile.Type">
+  Type
+  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.8.0/src/DxFeed.Graal.Net/Ipf/InstrumentProfile.cs/#L112"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Gets or sets type of instrument.
 It takes precedence in conflict cases with other fields.
 It is a mandatory field. It may not be empty.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public string Type { get; set; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 id="DxFeed_Graal_Net_Ipf_InstrumentProfile_Type_examples">Examples</h5>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+  <h4 class="section" id="DxFeed_Graal_Net_Ipf_InstrumentProfile_Type_examples">Examples</h4>
   <p>&quot;STOCK&quot;, &quot;FUTURE&quot;, &quot;OPTION&quot;.</p>
 
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.7.0/apiSpec/new?filename=DxFeed_Graal_Net_Ipf_InstrumentProfile_Underlying.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Ipf.InstrumentProfile.Underlying%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.7.0/src/DxFeed.Graal.Net/Ipf/InstrumentProfile.cs/#L338">View Source</a>
-  </span>
+
+
+
+
+
   <a id="DxFeed_Graal_Net_Ipf_InstrumentProfile_Underlying_" data-uid="DxFeed.Graal.Net.Ipf.InstrumentProfile.Underlying*"></a>
-  <h4 id="DxFeed_Graal_Net_Ipf_InstrumentProfile_Underlying" data-uid="DxFeed.Graal.Net.Ipf.InstrumentProfile.Underlying">Underlying</h4>
+
+  <h3 id="DxFeed_Graal_Net_Ipf_InstrumentProfile_Underlying" data-uid="DxFeed.Graal.Net.Ipf.InstrumentProfile.Underlying">
+  Underlying
+  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.8.0/src/DxFeed.Graal.Net/Ipf/InstrumentProfile.cs/#L338"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Gets or sets primary underlying symbol for options.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public string Underlying { get; set; }</code></pre>
   </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 id="DxFeed_Graal_Net_Ipf_InstrumentProfile_Underlying_examples">Examples</h5>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+  <h4 class="section" id="DxFeed_Graal_Net_Ipf_InstrumentProfile_Underlying_examples">Examples</h4>
   <p>&quot;C&quot;, &quot;/YGM9&quot;.</p>
 
-  <h3 id="methods">Methods
-</h3>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.7.0/apiSpec/new?filename=DxFeed_Graal_Net_Ipf_InstrumentProfile_ToString.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Ipf.InstrumentProfile.ToString%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Edit this page</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.7.0/src/DxFeed.Graal.Net/Ipf/InstrumentProfile.cs/#L483">View Source</a>
-  </span>
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
   <a id="DxFeed_Graal_Net_Ipf_InstrumentProfile_ToString_" data-uid="DxFeed.Graal.Net.Ipf.InstrumentProfile.ToString*"></a>
-  <h4 id="DxFeed_Graal_Net_Ipf_InstrumentProfile_ToString" data-uid="DxFeed.Graal.Net.Ipf.InstrumentProfile.ToString">ToString()</h4>
+
+  <h3 id="DxFeed_Graal_Net_Ipf_InstrumentProfile_ToString" data-uid="DxFeed.Graal.Net.Ipf.InstrumentProfile.ToString">
+  ToString()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.8.0/src/DxFeed.Graal.Net/Ipf/InstrumentProfile.cs/#L483"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
   <div class="markdown level1 summary"><p>Returns a string representation of the instrument profile.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
+
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public override string ToString()</code></pre>
   </div>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
-        <td><p>The string representation.</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="overrides">Overrides</h5>
-  <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a></div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>The string representation.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
 
 </article>
-          </div>
 
-          <div class="hidden-sm col-md-2" role="complementary">
-            <div class="sideaffix">
-              <div class="contribution">
-                <ul class="nav">
-                  <li>
-                    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/new/0.7.0/apiSpec/new?filename=DxFeed_Graal_Net_Ipf_InstrumentProfile.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Ipf.InstrumentProfile%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Edit this page</a>
-                  </li>
-                  <li>
-                    <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/0.7.0/src/DxFeed.Graal.Net/Ipf/InstrumentProfile.cs/#L19" class="contribution-link">View Source</a>
-                  </li>
-                </ul>
-              </div>
-              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
-                <h5>In this article</h5>
-                <div></div>
-              </nav>
-            </div>
-          </div>
-        </div>
+
+
       </div>
 
-      <footer>
-        <div class="grad-bottom"></div>
-        <div class="footer">
-          <div class="container">
-            <span class="pull-right">
-              <a href="#top">Back to top</a>
-            </span>
-      <span>Copyright © 2022 Devexperts LLC</span>
-      
-          </div>
-        </div>
-      </footer>
-    </div>
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
 
-    <script type="text/javascript" src="../../styles/docfx.vendor.min.js"></script>
-    <script type="text/javascript" src="../../styles/docfx.js"></script>
-    <script type="text/javascript" src="../../styles/main.js"></script>
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Copyright © 2022 Devexperts LLC</span>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>

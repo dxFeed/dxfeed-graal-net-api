@@ -1,476 +1,125 @@
 ﻿<!DOCTYPE html>
-<!--[if IE]><![endif]-->
 <html>
-
   <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Namespace DxFeed.Graal.Net.Events.Market
+      <title>Namespace DxFeed.Graal.Net.Events.Market
  | dxFeed Graal .NET API </title>
-    <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Namespace DxFeed.Graal.Net.Events.Market
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Namespace DxFeed.Graal.Net.Events.Market
  | dxFeed Graal .NET API ">
-    <meta name="generator" content="docfx ">
-  
-    <link rel="shortcut icon" href="../../docs/images/favicon.png">
-    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
-    <link rel="stylesheet" href="../../styles/docfx.css">
-    <link rel="stylesheet" href="../../styles/main.css">
-    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"> 
-    <meta property="docfx:navrel" content="../../toc.html">
-    <meta property="docfx:tocrel" content="toc.html">
-  
-  <meta property="docfx:rel" content="../../">
-  <meta property="docfx:newtab" content="true">
-  </head>  <body data-spy="scroll" data-target="#affix" data-offset="120">
-    <div id="wrapper">
-      <header>
+      
+      <link rel="icon" href="../../docs/images/favicon.png">
+      <link rel="stylesheet" href="../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../public/main.css">
+      <meta name="docfx:navrel" content="../../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../../">
+      
+      
+      
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+  </head>
 
-        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
-          <div class="container">
-            <div class="navbar-header">
-              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-              </button>
+  <script type="module" src="./../../public/docfx.min.js"></script>
 
-              <a class="navbar-brand" href="../../index.html">
-                <img id="logo" class="svg" src="../../docs/images/logo.svg" alt="">
-              </a>
-            </div>
-            <div class="collapse navbar-collapse" id="navbar">
-              <form class="navbar-form navbar-right" role="search" id="search">
-                <div class="form-group">
-                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
-                </div>
+  <script>
+    const theme = localStorage.getItem('theme') || 'auto'
+    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+  </script>
+
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../index.html">
+            <img id="logo" class="svg" src="../../docs/images/logo.svg" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
               </form>
-
-                <ul class="nav level1 navbar-nav">
-                      <li>
-                          <a href="../../docs/api/index.html" title="API Documentation">API Documentation</a>
-                      </li>
-                </ul>
             </div>
-          </div>
-        </nav>
-
-        <div class="subnav navbar navbar-default">
-          <div class="container hide-when-search" id="breadcrumb">
-            <ul class="breadcrumb">
-              <li></li>
-            </ul>
           </div>
         </div>
-      </header>
-      <div class="container body-content">
+      </nav>
+    </header>
 
-        <div id="search-results">
-          <div class="search-list">Search Results for <span></span></div>
-          <div class="sr-items">
-            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
           </div>
-          <ul id="pagination" data-first="First" data-prev="Previous" data-next="Next" data-last="Last"></ul>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
         </div>
       </div>
-      <div role="main" class="container body-content hide-when-search">
-        <div class="sidenav hide-when-search">
-          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
-          <div class="sidetoggle collapse" id="sidetoggle">
-            <div>
-              <div class="sidefilter">
-                <form class="toc-filter">
-                  <span class="glyphicon glyphicon-filter filter-icon"></span>
-                  <input type="text" id="toc_filter_input" placeholder="Enter here to filter..." onkeypress="if(event.keyCode==13) {return false;}">
-                </form>
-              </div>
-              <div class="sidetoc">
-                <div class="toc" id="toc">
 
-                  <ul class="nav level1">
-                    <li class="">
-                      <span class="expand-stub"></span>
-                      <a href="DxFeed.Graal.Net.html" title="DxFeed.Graal.Net" class="">DxFeed.Graal.Net</a>
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
 
-                        <ul class="nav level2">
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.SystemProperty.html" title="SystemProperty" class="">SystemProperty</a>
-                          </li>
-                        </ul>
-                    </li>
-                    <li class="">
-                      <span class="expand-stub"></span>
-                      <a href="DxFeed.Graal.Net.Api.html" title="DxFeed.Graal.Net.Api" class="">DxFeed.Graal.Net.Api</a>
-
-                        <ul class="nav level2">
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Api.DXEndpoint.html" title="DXEndpoint" class="">DXEndpoint</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Api.DXEndpoint.Builder.html" title="DXEndpoint.Builder" class="">DXEndpoint.Builder</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Api.DXEndpoint.Role.html" title="DXEndpoint.Role" class="">DXEndpoint.Role</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Api.DXEndpoint.State.html" title="DXEndpoint.State" class="">DXEndpoint.State</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Api.DXEndpoint.StateChangeListener.html" title="DXEndpoint.StateChangeListener" class="">DXEndpoint.StateChangeListener</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Api.DXFeed.html" title="DXFeed" class="">DXFeed</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Api.DXFeedEventListener.html" title="DXFeedEventListener" class="">DXFeedEventListener</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Api.DXFeedSubscription.html" title="DXFeedSubscription" class="">DXFeedSubscription</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Api.DXPublisher.html" title="DXPublisher" class="">DXPublisher</a>
-                          </li>
-                        </ul>
-                    </li>
-                    <li class="">
-                      <span class="expand-stub"></span>
-                      <a href="DxFeed.Graal.Net.Api.Osub.html" title="DxFeed.Graal.Net.Api.Osub" class="">DxFeed.Graal.Net.Api.Osub</a>
-
-                        <ul class="nav level2">
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Api.Osub.IObservableSubscription.html" title="IObservableSubscription" class="">IObservableSubscription</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Api.Osub.IndexedEventSubscriptionSymbol.html" title="IndexedEventSubscriptionSymbol" class="">IndexedEventSubscriptionSymbol</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Api.Osub.IndexedEventSubscriptionSymbol-1.html" title="IndexedEventSubscriptionSymbol&lt;T&gt;" class="">IndexedEventSubscriptionSymbol&lt;T&gt;</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Api.Osub.TimeSeriesSubscriptionSymbol.html" title="TimeSeriesSubscriptionSymbol" class="">TimeSeriesSubscriptionSymbol</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Api.Osub.TimeSeriesSubscriptionSymbol-1.html" title="TimeSeriesSubscriptionSymbol&lt;T&gt;" class="">TimeSeriesSubscriptionSymbol&lt;T&gt;</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Api.Osub.WildcardSymbol.html" title="WildcardSymbol" class="">WildcardSymbol</a>
-                          </li>
-                        </ul>
-                    </li>
-                    <li class="">
-                      <span class="expand-stub"></span>
-                      <a href="DxFeed.Graal.Net.Events.html" title="DxFeed.Graal.Net.Events" class="">DxFeed.Graal.Net.Events</a>
-
-                        <ul class="nav level2">
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.EventCodeAttribute.html" title="EventCodeAttribute" class="">EventCodeAttribute</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.IEventType.html" title="IEventType" class="">IEventType</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.IIndexedEvent.html" title="IIndexedEvent" class="">IIndexedEvent</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.ILastingEvent.html" title="ILastingEvent" class="">ILastingEvent</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.ITimeSeriesEvent.html" title="ITimeSeriesEvent" class="">ITimeSeriesEvent</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.IndexedEventSource.html" title="IndexedEventSource" class="">IndexedEventSource</a>
-                          </li>
-                        </ul>
-                    </li>
-                    <li class="">
-                      <span class="expand-stub"></span>
-                      <a href="DxFeed.Graal.Net.Events.Candles.html" title="DxFeed.Graal.Net.Events.Candles" class="">DxFeed.Graal.Net.Events.Candles</a>
-
-                        <ul class="nav level2">
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.Candles.Candle.html" title="Candle" class="">Candle</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.Candles.CandleAlignment.html" title="CandleAlignment" class="">CandleAlignment</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.Candles.CandleAlignment.CandleAlignmentId.html" title="CandleAlignment.CandleAlignmentId" class="">CandleAlignment.CandleAlignmentId</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.Candles.CandleExchange.html" title="CandleExchange" class="">CandleExchange</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.Candles.CandlePeriod.html" title="CandlePeriod" class="">CandlePeriod</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.Candles.CandlePrice.html" title="CandlePrice" class="">CandlePrice</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.Candles.CandlePrice.CandlePriceId.html" title="CandlePrice.CandlePriceId" class="">CandlePrice.CandlePriceId</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.Candles.CandlePriceLevel.html" title="CandlePriceLevel" class="">CandlePriceLevel</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.Candles.CandleSession.html" title="CandleSession" class="">CandleSession</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.Candles.CandleSession.CandleSessionId.html" title="CandleSession.CandleSessionId" class="">CandleSession.CandleSessionId</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.Candles.CandleSymbol.html" title="CandleSymbol" class="">CandleSymbol</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.Candles.CandleType.html" title="CandleType" class="">CandleType</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.Candles.CandleType.CandleTypeId.html" title="CandleType.CandleTypeId" class="">CandleType.CandleTypeId</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.Candles.ICandleSymbolProperty.html" title="ICandleSymbolProperty" class="">ICandleSymbolProperty</a>
-                          </li>
-                        </ul>
-                    </li>
-                    <li class="active">
-                      <span class="expand-stub"></span>
-                      <a href="DxFeed.Graal.Net.Events.Market.html" title="DxFeed.Graal.Net.Events.Market" class="active">DxFeed.Graal.Net.Events.Market</a>
-
-                        <ul class="nav level2">
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.Market.AnalyticOrder.html" title="AnalyticOrder" class="">AnalyticOrder</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.Market.Direction.html" title="Direction" class="">Direction</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.Market.IcebergType.html" title="IcebergType" class="">IcebergType</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.Market.MarketEvent.html" title="MarketEvent" class="">MarketEvent</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.Market.MarketEventSymbols.html" title="MarketEventSymbols" class="">MarketEventSymbols</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.Market.OptionSale.html" title="OptionSale" class="">OptionSale</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.Market.Order.html" title="Order" class="">Order</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.Market.OrderAction.html" title="OrderAction" class="">OrderAction</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.Market.OrderBase.html" title="OrderBase" class="">OrderBase</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.Market.OrderSource.html" title="OrderSource" class="">OrderSource</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.Market.PriceType.html" title="PriceType" class="">PriceType</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.Market.Profile.html" title="Profile" class="">Profile</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.Market.Quote.html" title="Quote" class="">Quote</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.Market.Scope.html" title="Scope" class="">Scope</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.Market.ShortSaleRestriction.html" title="ShortSaleRestriction" class="">ShortSaleRestriction</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.Market.Side.html" title="Side" class="">Side</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.Market.SpreadOrder.html" title="SpreadOrder" class="">SpreadOrder</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.Market.Summary.html" title="Summary" class="">Summary</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.Market.TimeAndSale.html" title="TimeAndSale" class="">TimeAndSale</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.Market.TimeAndSaleType.html" title="TimeAndSaleType" class="">TimeAndSaleType</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.Market.Trade.html" title="Trade" class="">Trade</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.Market.TradeBase.html" title="TradeBase" class="">TradeBase</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.Market.TradeETH.html" title="TradeETH" class="">TradeETH</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.Market.TradingStatus.html" title="TradingStatus" class="">TradingStatus</a>
-                          </li>
-                        </ul>
-                    </li>
-                    <li class="">
-                      <span class="expand-stub"></span>
-                      <a href="DxFeed.Graal.Net.Events.Options.html" title="DxFeed.Graal.Net.Events.Options" class="">DxFeed.Graal.Net.Events.Options</a>
-
-                        <ul class="nav level2">
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.Options.Greeks.html" title="Greeks" class="">Greeks</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.Options.Series.html" title="Series" class="">Series</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.Options.TheoPrice.html" title="TheoPrice" class="">TheoPrice</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Events.Options.Underlying.html" title="Underlying" class="">Underlying</a>
-                          </li>
-                        </ul>
-                    </li>
-                    <li class="">
-                      <span class="expand-stub"></span>
-                      <a href="DxFeed.Graal.Net.Ipf.html" title="DxFeed.Graal.Net.Ipf" class="">DxFeed.Graal.Net.Ipf</a>
-
-                        <ul class="nav level2">
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Ipf.InstrumentProfile.html" title="InstrumentProfile" class="">InstrumentProfile</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Ipf.InstrumentProfileReader.html" title="InstrumentProfileReader" class="">InstrumentProfileReader</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Ipf.InstrumentProfileType.html" title="InstrumentProfileType" class="">InstrumentProfileType</a>
-                          </li>
-                        </ul>
-                    </li>
-                    <li class="">
-                      <span class="expand-stub"></span>
-                      <a href="DxFeed.Graal.Net.Ipf.Live.html" title="DxFeed.Graal.Net.Ipf.Live" class="">DxFeed.Graal.Net.Ipf.Live</a>
-
-                        <ul class="nav level2">
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Ipf.Live.InstrumentProfileCollector.html" title="InstrumentProfileCollector" class="">InstrumentProfileCollector</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Ipf.Live.InstrumentProfileConnection.html" title="InstrumentProfileConnection" class="">InstrumentProfileConnection</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Ipf.Live.InstrumentProfileUpdateListener.html" title="InstrumentProfileUpdateListener" class="">InstrumentProfileUpdateListener</a>
-                          </li>
-                        </ul>
-                    </li>
-                    <li class="">
-                      <span class="expand-stub"></span>
-                      <a href="DxFeed.Graal.Net.Native.ErrorHandling.html" title="DxFeed.Graal.Net.Native.ErrorHandling" class="">DxFeed.Graal.Net.Native.ErrorHandling</a>
-
-                        <ul class="nav level2">
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Native.ErrorHandling.GraalErrorCode.html" title="GraalErrorCode" class="">GraalErrorCode</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Native.ErrorHandling.GraalException.html" title="GraalException" class="">GraalException</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Native.ErrorHandling.JavaException.html" title="JavaException" class="">JavaException</a>
-                          </li>
-                        </ul>
-                    </li>
-                    <li class="">
-                      <span class="expand-stub"></span>
-                      <a href="DxFeed.Graal.Net.Native.Events.html" title="DxFeed.Graal.Net.Native.Events" class="">DxFeed.Graal.Net.Native.Events</a>
-
-                        <ul class="nav level2">
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Native.Events.EventCodeNative.html" title="EventCodeNative" class="">EventCodeNative</a>
-                          </li>
-                        </ul>
-                    </li>
-                    <li class="">
-                      <span class="expand-stub"></span>
-                      <a href="DxFeed.Graal.Net.Utils.html" title="DxFeed.Graal.Net.Utils" class="">DxFeed.Graal.Net.Utils</a>
-
-                        <ul class="nav level2">
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Utils.AttributeUtil.html" title="AttributeUtil" class="">AttributeUtil</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Utils.BitUtil.html" title="BitUtil" class="">BitUtil</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Utils.CmdArgsUtil.html" title="CmdArgsUtil" class="">CmdArgsUtil</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Utils.ConcurrentSet-1.html" title="ConcurrentSet&lt;T&gt;" class="">ConcurrentSet&lt;T&gt;</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Utils.DayUtil.html" title="DayUtil" class="">DayUtil</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Utils.EnumUtil.html" title="EnumUtil" class="">EnumUtil</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Utils.MathUtil.html" title="MathUtil" class="">MathUtil</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Utils.PlatformUtils.html" title="PlatformUtils" class="">PlatformUtils</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Utils.ReflectionUtil.html" title="ReflectionUtil" class="">ReflectionUtil</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Utils.StringUtil.html" title="StringUtil" class="">StringUtil</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Utils.TimeFormat.html" title="TimeFormat" class="">TimeFormat</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Utils.TimeNanosUtil.html" title="TimeNanosUtil" class="">TimeNanosUtil</a>
-                          </li>
-                          <li class="">
-                            <a href="DxFeed.Graal.Net.Utils.TimeUtil.html" title="TimeUtil" class="">TimeUtil</a>
-                          </li>
-                        </ul>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
+          <nav id="breadcrumb"></nav>
         </div>
-        <div class="article row grid-right">
-          <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="DxFeed.Graal.Net.Events.Market">
+
+        <article data-uid="DxFeed.Graal.Net.Events.Market">
 
   <h1 id="DxFeed_Graal_Net_Events_Market" data-uid="DxFeed.Graal.Net.Events.Market" class="text-break">Namespace DxFeed.Graal.Net.Events.Market
 </h1>
   <div class="markdown level0 summary"></div>
   <div class="markdown level0 conceptual"></div>
   <div class="markdown level0 remarks"></div>
+
     <h3 id="classes">
 Classes
 </h3>
-      <h4><a class="xref" href="DxFeed.Graal.Net.Events.Market.AnalyticOrder.html">AnalyticOrder</a></h4>
-      <section><p>Represents an extension of <a class="xref" href="DxFeed.Graal.Net.Events.Market.Order.html">Order</a> introducing analytics information,
+    <dl class="jumplist">
+      <dt><a class="xref" href="DxFeed.Graal.Net.Events.Market.AnalyticOrder.html">AnalyticOrder</a></dt>
+      <dd><p>Represents an extension of <a class="xref" href="DxFeed.Graal.Net.Events.Market.Order.html">Order</a> introducing analytics information,
 e.g. adding to this order iceberg related information
 (<a class="xref" href="DxFeed.Graal.Net.Events.Market.AnalyticOrder.html#DxFeed_Graal_Net_Events_Market_AnalyticOrder_IcebergPeakSize">IcebergPeakSize</a>, <a class="xref" href="DxFeed.Graal.Net.Events.Market.AnalyticOrder.html#DxFeed_Graal_Net_Events_Market_AnalyticOrder_IcebergHiddenSize">IcebergHiddenSize</a>, <a class="xref" href="DxFeed.Graal.Net.Events.Market.AnalyticOrder.html#DxFeed_Graal_Net_Events_Market_AnalyticOrder_IcebergExecutedSize">IcebergExecutedSize</a>).
 The collection of analytic order events of a symbol represents the most recent analytic information
 that is available about orders on the market at any given moment of time.
 <br>
 For more details see <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/event/market/AnalyticOrder.html">Javadoc</a>.</p>
-</section>
-      <h4><a class="xref" href="DxFeed.Graal.Net.Events.Market.MarketEvent.html">MarketEvent</a></h4>
-      <section><p>Abstract base class for all market events. All market events are objects that
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="DxFeed.Graal.Net.Events.Market.MarketEvent.html">MarketEvent</a></dt>
+      <dd><p>Abstract base class for all market events. All market events are objects that
 extend this class. Market event classes are simple beans with setter and getter methods for their
 properties and minimal business logic. All market events have <a class="xref" href="DxFeed.Graal.Net.Events.Market.MarketEvent.html#DxFeed_Graal_Net_Events_Market_MarketEvent_EventSymbol">EventSymbol</a>
 property that is defined by this class.
 <br>
 For more details see <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/event/market/MarketEvent.html">Javadoc</a>.</p>
-</section>
-      <h4><a class="xref" href="DxFeed.Graal.Net.Events.Market.MarketEventSymbols.html">MarketEventSymbols</a></h4>
-      <section><p>Helper class to compose and parse symbols for market events.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="DxFeed.Graal.Net.Events.Market.MarketEventSymbols.html">MarketEventSymbols</a></dt>
+      <dd><p>Helper class to compose and parse symbols for market events.</p>
 <h3>Regional symbols</h3>
 <p>Regional symbol subscription receives events only from a designated exchange, marketplace, or venue
 instead of receiving composite events from all venues (by default). Regional symbol is composed from a
@@ -490,9 +139,11 @@ value "5m", while the other has key "tho" and value "true".</li>
 The methods in this class always maintain attribute keys in alphabetic order.
 <br>
 For more details see <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/event/market/MarketEventSymbols.html">Javadoc</a>.
-</section>
-      <h4><a class="xref" href="DxFeed.Graal.Net.Events.Market.OptionSale.html">OptionSale</a></h4>
-      <section><p>Option Sale event represents a trade or another market event with the price
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="DxFeed.Graal.Net.Events.Market.OptionSale.html">OptionSale</a></dt>
+      <dd><p>Option Sale event represents a trade or another market event with the price
 (for example, market open/close price, etc.) for each option symbol listed under the specified Underlying.
 Option Sales are intended to provide information about option trades <b>in a continuous time slice</b> with
 the additional metrics, like Option Volatility, Option Delta, and Underlying Price.
@@ -500,18 +151,22 @@ the additional metrics, like Option Volatility, Option Delta, and Underlying Pri
 which can be used for later correction/cancellation processing.
 <br>
 For more details see <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/event/market/OptionSale.html">Javadoc</a>.</p>
-</section>
-      <h4><a class="xref" href="DxFeed.Graal.Net.Events.Market.Order.html">Order</a></h4>
-      <section><p>Order event is a snapshot for a full available market depth for a symbol.
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="DxFeed.Graal.Net.Events.Market.Order.html">Order</a></dt>
+      <dd><p>Order event is a snapshot for a full available market depth for a symbol.
 The collection of order events of a symbol represents the most recent information
 that is available about orders on the market at any given moment of time.
 Order events give information on several levels of details, called scopes - see <a class="xref" href="DxFeed.Graal.Net.Events.Market.Scope.html">Scope</a>.
 Scope of an order is available via <a class="xref" href="DxFeed.Graal.Net.Events.Market.OrderBase.html#DxFeed_Graal_Net_Events_Market_OrderBase_Scope">Scope</a>property.
 <br>
 For more details see <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/event/market/Order.html">Javadoc</a>.</p>
-</section>
-      <h4><a class="xref" href="DxFeed.Graal.Net.Events.Market.OrderBase.html">OrderBase</a></h4>
-      <section><p>Base class for common fields of <a class="xref" href="DxFeed.Graal.Net.Events.Market.Order.html">Order</a>, <a class="xref" href="DxFeed.Graal.Net.Events.Market.AnalyticOrder.html">AnalyticOrder</a>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="DxFeed.Graal.Net.Events.Market.OrderBase.html">OrderBase</a></dt>
+      <dd><p>Base class for common fields of <a class="xref" href="DxFeed.Graal.Net.Events.Market.Order.html">Order</a>, <a class="xref" href="DxFeed.Graal.Net.Events.Market.AnalyticOrder.html">AnalyticOrder</a>
 and <a class="xref" href="DxFeed.Graal.Net.Events.Market.SpreadOrder.html">SpreadOrder</a> events.
 Order events represent a snapshot for a full available market depth for a symbol.
 The collection of order events of a symbol represents the most recent information that is
@@ -525,9 +180,11 @@ extended with an analytic information, for example, whether particular order rep
 <a class="xref" href="DxFeed.Graal.Net.Events.Market.SpreadOrder.html">SpreadOrder</a> event represents market depth for <b>all spreads on a given underlying symbol</b>.
 <br>
 For more details see <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/event/market/OrderBase.html">Javadoc</a>.</p>
-</section>
-      <h4><a class="xref" href="DxFeed.Graal.Net.Events.Market.OrderSource.html">OrderSource</a></h4>
-      <section><p>Identifies source of <a class="xref" href="DxFeed.Graal.Net.Events.Market.Order.html">Order</a>, <a class="xref" href="DxFeed.Graal.Net.Events.Market.AnalyticOrder.html">AnalyticOrder</a> and <a class="xref" href="DxFeed.Graal.Net.Events.Market.SpreadOrder.html">SpreadOrder</a> events.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="DxFeed.Graal.Net.Events.Market.OrderSource.html">OrderSource</a></dt>
+      <dd><p>Identifies source of <a class="xref" href="DxFeed.Graal.Net.Events.Market.Order.html">Order</a>, <a class="xref" href="DxFeed.Graal.Net.Events.Market.AnalyticOrder.html">AnalyticOrder</a> and <a class="xref" href="DxFeed.Graal.Net.Events.Market.SpreadOrder.html">SpreadOrder</a> events.</p>
 <ul>
 <li>
 <em>Synthetic</em> sources <a class="xref" href="DxFeed.Graal.Net.Events.Market.OrderSource.html#DxFeed_Graal_Net_Events_Market_OrderSource_COMPOSITE_BID">COMPOSITE_BID</a>, <a class="xref" href="DxFeed.Graal.Net.Events.Market.OrderSource.html#DxFeed_Graal_Net_Events_Market_OrderSource_COMPOSITE_ASK">COMPOSITE_ASK</a>,
@@ -545,23 +202,29 @@ For more details see <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/even
 </li>
 </ul>
 For more details see <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/event/market/OrderSource.html">Javadoc</a>.
-</section>
-      <h4><a class="xref" href="DxFeed.Graal.Net.Events.Market.Profile.html">Profile</a></h4>
-      <section><p>Profile information snapshot that contains security instrument description.
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="DxFeed.Graal.Net.Events.Market.Profile.html">Profile</a></dt>
+      <dd><p>Profile information snapshot that contains security instrument description.
 It represents the most recent information that is available about the traded security
 on the market at any given moment of time.
 <br>
 For more details see <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/event/market/Profile.html">Javadoc</a>.</p>
-</section>
-      <h4><a class="xref" href="DxFeed.Graal.Net.Events.Market.Quote.html">Quote</a></h4>
-      <section><p>Quote event is a snapshot of the best bid and ask prices, and other fields that change with each quote.
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="DxFeed.Graal.Net.Events.Market.Quote.html">Quote</a></dt>
+      <dd><p>Quote event is a snapshot of the best bid and ask prices, and other fields that change with each quote.
 It represents the most recent information that is available about the best quote on the market
 at any given moment of time.
 <br>
 For more details see <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/event/market/Quote.html">Javadoc</a>.</p>
-</section>
-      <h4><a class="xref" href="DxFeed.Graal.Net.Events.Market.SpreadOrder.html">SpreadOrder</a></h4>
-      <section><p>Spread order event is a snapshot for a full available market depth for all spreads
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="DxFeed.Graal.Net.Events.Market.SpreadOrder.html">SpreadOrder</a></dt>
+      <dd><p>Spread order event is a snapshot for a full available market depth for all spreads
 on a given underlying symbol. The collection of spread order events of a symbol
 represents the most recent information that is available about spread orders on
 the market at any given moment of time.</p>
@@ -572,40 +235,50 @@ of the actual spread that is being represented by spread order object.
 that was used in subscription.
 </p>
 For more details see <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/event/market/SpreadOrder.html">Javadoc</a>.
-</section>
-      <h4><a class="xref" href="DxFeed.Graal.Net.Events.Market.Summary.html">Summary</a></h4>
-      <section><p>Summary information snapshot about the trading session including session highs, lows, etc.
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="DxFeed.Graal.Net.Events.Market.Summary.html">Summary</a></dt>
+      <dd><p>Summary information snapshot about the trading session including session highs, lows, etc.
 It represents the most recent information that is available about the trading session in
 the market at any given moment of time.
 <br>
 For more details see <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/event/market/Summary.html">Javadoc</a>.</p>
-</section>
-      <h4><a class="xref" href="DxFeed.Graal.Net.Events.Market.TimeAndSale.html">TimeAndSale</a></h4>
-      <section><p>Time and Sale represents a trade or other market event with price, like market open/close price, etc.
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="DxFeed.Graal.Net.Events.Market.TimeAndSale.html">TimeAndSale</a></dt>
+      <dd><p>Time and Sale represents a trade or other market event with price, like market open/close price, etc.
 Time and Sales are intended to provide information about trades <b>in a continuous time slice</b>
 (unlike <a class="xref" href="DxFeed.Graal.Net.Events.Market.Trade.html">Trade</a> events which are supposed to provide snapshot about the <b>current last</b> trade).
 <br> Time and Sale events have unique <a class="xref" href="DxFeed.Graal.Net.Events.Market.TimeAndSale.html#DxFeed_Graal_Net_Events_Market_TimeAndSale_Index">Index</a>
 which can be used for later correction/cancellation processing.
 <br>
 For more details see <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/event/market/TimeAndSale.html">Javadoc</a>.</p>
-</section>
-      <h4><a class="xref" href="DxFeed.Graal.Net.Events.Market.Trade.html">Trade</a></h4>
-      <section><p>Trade event is a snapshot of the price and size of the last trade during regular trading hours
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="DxFeed.Graal.Net.Events.Market.Trade.html">Trade</a></dt>
+      <dd><p>Trade event is a snapshot of the price and size of the last trade during regular trading hours
 and an overall day volume and day turnover.
 It represents the most recent information that is available about the regular last trade on the market
 at any given moment of time.
 <br>
 For more details see <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/event/market/Trade.html">Javadoc</a>.</p>
-</section>
-      <h4><a class="xref" href="DxFeed.Graal.Net.Events.Market.TradeBase.html">TradeBase</a></h4>
-      <section><p>Base class for common fields of <a class="xref" href="DxFeed.Graal.Net.Events.Market.Trade.html">Trade</a> and <a class="xref" href="DxFeed.Graal.Net.Events.Market.TradeETH.html">TradeETH</a> events.
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="DxFeed.Graal.Net.Events.Market.TradeBase.html">TradeBase</a></dt>
+      <dd><p>Base class for common fields of <a class="xref" href="DxFeed.Graal.Net.Events.Market.Trade.html">Trade</a> and <a class="xref" href="DxFeed.Graal.Net.Events.Market.TradeETH.html">TradeETH</a> events.
 Trade events represent the most recent information that is available about the last trade on the market
 at any given moment of time.
 <br>
 For more details see <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/event/market/TradeBase.html">Javadoc</a>.</p>
-</section>
-      <h4><a class="xref" href="DxFeed.Graal.Net.Events.Market.TradeETH.html">TradeETH</a></h4>
-      <section><p>TradeETH event is a snapshot of the price and size of the last trade during
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="DxFeed.Graal.Net.Events.Market.TradeETH.html">TradeETH</a></dt>
+      <dd><p>TradeETH event is a snapshot of the price and size of the last trade during
 extended trading hours and the extended trading hours day volume and day turnover.
 This event is defined only for symbols (typically stocks and ETFs) with a designated
 <b>extended trading hours</b> (ETH, pre market and post market trading sessions).
@@ -613,80 +286,84 @@ It represents the most recent information that is available about
 ETH last trade on the market at any given moment of time.
 <br>
 For more details see <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/event/market/TradeETH.html">Javadoc</a>.</p>
-</section>
+</dd>
+    </dl>
     <h3 id="enums">
 Enums
 </h3>
-      <h4><a class="xref" href="DxFeed.Graal.Net.Events.Market.Direction.html">Direction</a></h4>
-      <section><p>Direction of the price movement. For example tick direction for last trade price.
+    <dl class="jumplist">
+      <dt><a class="xref" href="DxFeed.Graal.Net.Events.Market.Direction.html">Direction</a></dt>
+      <dd><p>Direction of the price movement. For example tick direction for last trade price.
 <br>
 For more details see <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/event/market/Direction.html">Javadoc</a>.</p>
-</section>
-      <h4><a class="xref" href="DxFeed.Graal.Net.Events.Market.IcebergType.html">IcebergType</a></h4>
-      <section><p>Type of an iceberg order.</p>
-</section>
-      <h4><a class="xref" href="DxFeed.Graal.Net.Events.Market.OrderAction.html">OrderAction</a></h4>
-      <section><p>Action enum for the Full Order Book (FOB) Orders. Action describes business meaning of the
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="DxFeed.Graal.Net.Events.Market.IcebergType.html">IcebergType</a></dt>
+      <dd><p>Type of an iceberg order.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="DxFeed.Graal.Net.Events.Market.OrderAction.html">OrderAction</a></dt>
+      <dd><p>Action enum for the Full Order Book (FOB) Orders. Action describes business meaning of the
 <a class="xref" href="DxFeed.Graal.Net.Events.Market.Order.html">Order</a> event: whether order was added or replaced, partially or fully executed, etc.</p>
-</section>
-      <h4><a class="xref" href="DxFeed.Graal.Net.Events.Market.PriceType.html">PriceType</a></h4>
-      <section><p>Type of the price value.</p>
-</section>
-      <h4><a class="xref" href="DxFeed.Graal.Net.Events.Market.Scope.html">Scope</a></h4>
-      <section><p>Scope of an order.</p>
-</section>
-      <h4><a class="xref" href="DxFeed.Graal.Net.Events.Market.ShortSaleRestriction.html">ShortSaleRestriction</a></h4>
-      <section><p>Short sale restriction on an instrument.</p>
-</section>
-      <h4><a class="xref" href="DxFeed.Graal.Net.Events.Market.Side.html">Side</a></h4>
-      <section><p>Side of an order or a trade.
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="DxFeed.Graal.Net.Events.Market.PriceType.html">PriceType</a></dt>
+      <dd><p>Type of the price value.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="DxFeed.Graal.Net.Events.Market.Scope.html">Scope</a></dt>
+      <dd><p>Scope of an order.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="DxFeed.Graal.Net.Events.Market.ShortSaleRestriction.html">ShortSaleRestriction</a></dt>
+      <dd><p>Short sale restriction on an instrument.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="DxFeed.Graal.Net.Events.Market.Side.html">Side</a></dt>
+      <dd><p>Side of an order or a trade.
 <br>
 For more details see <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/event/market/Side.html">Javadoc</a>.</p>
-</section>
-      <h4><a class="xref" href="DxFeed.Graal.Net.Events.Market.TimeAndSaleType.html">TimeAndSaleType</a></h4>
-      <section><p>Type of a time and sale event.
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="DxFeed.Graal.Net.Events.Market.TimeAndSaleType.html">TimeAndSaleType</a></dt>
+      <dd><p>Type of a time and sale event.
 <br>
 For more details see <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/event/market/TimeAndSaleType.html">Javadoc</a>.</p>
-</section>
-      <h4><a class="xref" href="DxFeed.Graal.Net.Events.Market.TradingStatus.html">TradingStatus</a></h4>
-      <section><p>Trading status of an instrument.</p>
-</section>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="DxFeed.Graal.Net.Events.Market.TradingStatus.html">TradingStatus</a></dt>
+      <dd><p>Trading status of an instrument.</p>
+</dd>
+    </dl>
 
 
 </article>
-          </div>
 
-          <div class="hidden-sm col-md-2" role="complementary">
-            <div class="sideaffix">
-              <div class="contribution">
-                <ul class="nav">
-                </ul>
-              </div>
-              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
-                <h5>In this article</h5>
-                <div></div>
-              </nav>
-            </div>
-          </div>
-        </div>
+
+
       </div>
 
-      <footer>
-        <div class="grad-bottom"></div>
-        <div class="footer">
-          <div class="container">
-            <span class="pull-right">
-              <a href="#top">Back to top</a>
-            </span>
-      <span>Copyright © 2022 Devexperts LLC</span>
-      
-          </div>
-        </div>
-      </footer>
-    </div>
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
 
-    <script type="text/javascript" src="../../styles/docfx.vendor.min.js"></script>
-    <script type="text/javascript" src="../../styles/docfx.js"></script>
-    <script type="text/javascript" src="../../styles/main.js"></script>
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Copyright © 2022 Devexperts LLC</span>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>
