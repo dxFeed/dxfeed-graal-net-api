@@ -20,15 +20,15 @@
       "_appFooter": "<span>Copyright © 2022 Devexperts LLC</span>",
       "_appLogoPath": "docs/images/logo.svg",
       "_appFaviconPath": "docs/images/favicon.png",
-      "_disableContribution": false,
+      "_disableContribution": true,
       "_disableSideFilter": false,
       "_enableSearch": true,
       "_enableNewTab": true
     },
     "template": [
       "default",
-      "statictoc",
-      "docs/templates/material"
+      "modern",
+      "docs/templates/custom"
     ],
     "xrefService": [
       "https://xref.docs.microsoft.com/query?uid={uid}"
