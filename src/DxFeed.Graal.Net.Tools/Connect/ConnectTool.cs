@@ -32,7 +32,7 @@ public sealed class ConnectTool : AbstractTool<ConnectArgs>, IDisposable
         SystemProperty.SetProperties(ParseProperties(args.Properties));
         using var endpoint = DXEndpoint
             .NewBuilder()
-            .WithRole(DXEndpoint.Role.Feed)
+            .WithRole(args.ForceStream ? DXEndpoint.Role.StreamFeed : DXEndpoint.Role.Feed)
             .WithProperties(ParseProperties(args.Properties))
             .WithName(nameof(ConnectTool))
             .Build();

@@ -10,7 +10,7 @@ namespace DxFeed.Graal.Net.Tools.Connect;
 
 public class ConnectArgs :
     IAddressArgRequired, ITypesArgRequired, ISymbolsArgRequired, IFromTimeArg, ISourceArg, IPropertyArg, ITapeArg,
-    IQuiteArg
+    IQuiteArg, IForceStreamArg
 {
     public string Address { get; set; } = null!;
 
@@ -27,4 +27,6 @@ public class ConnectArgs :
     public string? Tape { get; set; }
 
     public bool IsQuite { get; set; }
+
+    public bool ForceStream { get; set; }
 }

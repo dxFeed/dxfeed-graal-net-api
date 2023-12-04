@@ -4,14 +4,12 @@
 // If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
 // </copyright>
 
-using System;
 using CommandLine;
-using CommandLine.Text;
 using DxFeed.Graal.Net.Tools.Arguments;
 
 namespace DxFeed.Graal.Net.Tools.LatencyTest;
 
-public class LatencyTestArgs : IAddressArg, ITypesArg, ISymbolsArg, IPropertyArg
+public class LatencyTestArgs : IAddressArg, ITypesArg, ISymbolsArg, IPropertyArg, IForceStreamArg
 {
     public string Address { get; set; } = null!;
 
@@ -21,9 +19,7 @@ public class LatencyTestArgs : IAddressArg, ITypesArg, ISymbolsArg, IPropertyArg
 
     public string? Properties { get; set; } = null!;
 
-    [Option("force-stream", Required = false,
-        HelpText = "Enforces a streaming contract for subscription. The StreamFeed role is used instead of Feed.")]
-    public bool ForceStream { get; set; } = false;
+    public bool ForceStream { get; set; }
 
     [Option("interval", Required = false, HelpText = "Measurement interval in seconds.")]
     public int Interval { get; set; } = 2;
