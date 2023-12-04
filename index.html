@@ -15,7 +15,7 @@
       <meta name="docfx:rel" content="">
       
       
-      <meta name="docfx:docurl" content="https://github.com/dxFeed/dxfeed-graal-net-api/blob/1.0.0/index.md/#L1">
+      <meta name="docfx:docurl" content="https://github.com/dxFeed/dxfeed-graal-net-api/blob/1.1.0/index.md/#L1">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -102,7 +102,7 @@ the <a href="#overview">Overview</a> section.<br>
 <img src="https://img.shields.io/badge/platform-win--x64%20%7C%20linux--x64%20%7C%20osx--x64%20%7C%20osx--arm64-lightgrey" alt="Platform">
 <a href="https://dotnet.microsoft.com/en-us/"><img src="https://img.shields.io/badge/.NET_version-net6.0%20%7C%20net7.0%20%7C%20net8.0-blueviolet" alt="NET"></a>
 <a href="https://github.com/dxFeed/dxfeed-graal-net-api/releases/latest"><img src="https://img.shields.io/github/v/release/dxFeed/dxfeed-graal-net-api" alt="Release"></a>
-<a href="https://dxfeed.jfrog.io/artifactory/nuget-open/com/dxfeed/graal-net/"><img src="https://img.shields.io/badge/nuget-1.0.0-blue" alt="Nuget"></a>
+<a href="https://dxfeed.jfrog.io/artifactory/nuget-open/com/dxfeed/graal-net/"><img src="https://img.shields.io/badge/nuget-1.1.0-blue" alt="Nuget"></a>
 <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/master/LICENSE"><img src="https://img.shields.io/badge/license-MPL--2.0-orange" alt="License"></a></p>
 <h2 id="table-of-contents">Table of Contents</h2>
 <ul>
@@ -480,8 +480,10 @@ using DxFeed.Graal.Net;
 using DxFeed.Graal.Net.Api;
 using DxFeed.Graal.Net.Events.Market;
 
-// The experimental property must be enabled.
+// Enable experimental feature.
 SystemProperty.SetProperty(&quot;dxfeed.experimental.dxlink.enable&quot;, &quot;true&quot;);
+// Set scheme for dxLink.
+SystemProperty.SetProperty(&quot;scheme&quot;, &quot;ext:resource:dxlink.xml&quot;);
 
 // For token-based authorization, use the following address format:
 // &quot;dxlink:wss://demo.dxfeed.com/dxlink-ws[login=dxlink:token]&quot;

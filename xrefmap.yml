@@ -9618,6 +9618,28 @@ references:
   commentId: F:DxFeed.Graal.Net.Utils.PlatformUtils.PlatformDiagInfo
   fullName: DxFeed.Graal.Net.Utils.PlatformUtils.PlatformDiagInfo
   nameWithType: PlatformUtils.PlatformDiagInfo
+- uid: DxFeed.Graal.Net.Utils.QdsUtil
+  name: QdsUtil
+  href: docs/api/DxFeed.Graal.Net.Utils.QdsUtil.html
+  commentId: T:DxFeed.Graal.Net.Utils.QdsUtil
+  fullName: DxFeed.Graal.Net.Utils.QdsUtil
+  nameWithType: QdsUtil
+- uid: DxFeed.Graal.Net.Utils.QdsUtil.RunTool(System.Collections.Generic.IEnumerable{System.String})
+  name: RunTool(IEnumerable<string>)
+  href: docs/api/DxFeed.Graal.Net.Utils.QdsUtil.html#DxFeed_Graal_Net_Utils_QdsUtil_RunTool_System_Collections_Generic_IEnumerable_System_String__
+  commentId: M:DxFeed.Graal.Net.Utils.QdsUtil.RunTool(System.Collections.Generic.IEnumerable{System.String})
+  name.vb: RunTool(IEnumerable(Of String))
+  fullName: DxFeed.Graal.Net.Utils.QdsUtil.RunTool(System.Collections.Generic.IEnumerable<string>)
+  fullName.vb: DxFeed.Graal.Net.Utils.QdsUtil.RunTool(System.Collections.Generic.IEnumerable(Of String))
+  nameWithType: QdsUtil.RunTool(IEnumerable<string>)
+  nameWithType.vb: QdsUtil.RunTool(IEnumerable(Of String))
+- uid: DxFeed.Graal.Net.Utils.QdsUtil.RunTool*
+  name: RunTool
+  href: docs/api/DxFeed.Graal.Net.Utils.QdsUtil.html#DxFeed_Graal_Net_Utils_QdsUtil_RunTool_
+  commentId: Overload:DxFeed.Graal.Net.Utils.QdsUtil.RunTool
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Utils.QdsUtil.RunTool
+  nameWithType: QdsUtil.RunTool
 - uid: DxFeed.Graal.Net.Utils.ReflectionUtil
   name: ReflectionUtil
   href: docs/api/DxFeed.Graal.Net.Utils.ReflectionUtil.html
