@@ -300,8 +300,10 @@ using DxFeed.Graal.Net;
 using DxFeed.Graal.Net.Api;
 using DxFeed.Graal.Net.Events.Market;
 
-// The experimental property must be enabled.
+// Enable experimental feature.
 SystemProperty.SetProperty("dxfeed.experimental.dxlink.enable", "true");
+// Set scheme for dxLink.
+SystemProperty.SetProperty("scheme", "ext:resource:dxlink.xml");
 
 // For token-based authorization, use the following address format:
 // "dxlink:wss://demo.dxfeed.com/dxlink-ws[login=dxlink:token]"
