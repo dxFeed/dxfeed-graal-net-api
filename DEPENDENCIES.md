@@ -9,3 +9,4 @@
 ## DxFeed.Graal.Tools
 
 - [CommandLineParser](https://www.nuget.org/packages/CommandLineParser) v2.9.1
+- [System.CommandLine](https://www.nuget.org/packages/System.CommandLine) v2.0.0-beta4.22272.1

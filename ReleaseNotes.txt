@@ -1,3 +1,7 @@
+* Add qds-tools
+* Add force-stream options for tools
+* Fix sample for dxLink in Readme
+
 ## Version 1.0.0
 
 * Reduce memory consumption
