@@ -9,7 +9,7 @@ using DxFeed.Graal.Net.Tools.Arguments;
 
 namespace DxFeed.Graal.Net.Tools.PerfTest;
 
-public class PerfTestArgs : IAddressArgRequired, ITypesArgRequired, ISymbolsArgRequired, IPropertyArg
+public class PerfTestArgs : IAddressArgRequired, ITypesArgRequired, ISymbolsArgRequired, IPropertyArg, IForceStreamArg
 {
     public string Address { get; set; } = null!;
 
@@ -19,9 +19,7 @@ public class PerfTestArgs : IAddressArgRequired, ITypesArgRequired, ISymbolsArgR
 
     public string? Properties { get; set; } = null!;
 
-    [Option("force-stream", Required = false,
-        HelpText = "Enforces a streaming contract for subscription. The StreamFeed role is used instead of Feed.")]
-    public bool ForceStream { get; set; } = false;
+    public bool ForceStream { get; set; }
 
     [Option("cpu-usage-by-core", Required = false, HelpText = "Show CPU usage by core (where 1 core = 100%).")]
     public bool ShowCpuUsageByCore { get; set; } = false;
