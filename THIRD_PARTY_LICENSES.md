@@ -6,3 +6,5 @@
    SPDX-License-Identifier: MIT
 3. CommandLineParser - https://www.nuget.org/packages/CommandLineParser/2.9.1/License    
    SPDX-License-Identifier: MIT
+4. System.CommandLine - https://www.nuget.org/packages/System.CommandLine/2.0.0-beta4.22272.1/License    
+   SPDX-License-Identifier: MIT
