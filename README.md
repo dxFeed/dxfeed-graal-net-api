@@ -11,7 +11,6 @@ and [dxFeed Java API](https://docs.dxfeed.com/dxfeed/api/overview-summary.html) 
 
 :information_source: If you already use [dxFeed .NET API](https://github.com/dxFeed/dxfeed-net-api), please see
 the [Overview](#overview) section.<br>
-:warning: It’s a **beta** version and still under active development.
 
 ![Build](https://github.com/dxFeed/dxfeed-graal-net-api/actions/workflows/build.yml/badge.svg)
 ![CodeQL](https://github.com/dxFeed/dxfeed-graal-net-api/actions/workflows/codeql.yml/badge.svg)
