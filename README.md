@@ -302,7 +302,7 @@ using DxFeed.Graal.Net.Events.Market;
 // Enable experimental feature.
 SystemProperty.SetProperty("dxfeed.experimental.dxlink.enable", "true");
 // Set scheme for dxLink.
-SystemProperty.SetProperty("scheme", "ext:resource:dxlink.xml");
+SystemProperty.SetProperty("scheme", "ext:opt:sysprops,resource:dxlink.xml");
 
 // For token-based authorization, use the following address format:
 // "dxlink:wss://demo.dxfeed.com/dxlink-ws[login=dxlink:token]"
