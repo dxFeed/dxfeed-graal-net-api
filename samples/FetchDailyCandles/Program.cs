@@ -13,35 +13,30 @@ using DxFeed.Graal.Net.Events.Candles;
 namespace DxFeed.Graal.Net.Samples;
 
 /// <summary>
-/// Creates multiple event listener and subscribe to Quote and Trade events.
-/// Use default DXFeed instance for that data feed address is defined by "dxfeed.properties" file.
+/// Fetches last 30 days of candles for a specified symbol, prints them, and exits.
 /// </summary>
-internal abstract class DxFeedLastEventsTask
+internal abstract class FetchDailyCandles
 {
+    private static void PrintUsage() =>
+        Console.WriteLine($@"
+Usage:
+FetchDailyCandles <symbol>
+
+Where:
+    symbol - Is security symbol (e.g. IBM, AAPL, SPX etc.).");
+
     public static async Task Main(string[] args)
     {
         if (args.Length != 1)
         {
-            Console.WriteLine($@"
-Usage:
-DxFeedLastEventsTask <symbol>
-
-Where:
-    symbol - Is security symbol (e.g. IBM, AAPL, SPX etc.).");
+            PrintUsage();
             return;
         }
 
         var symbol = args[0];
-        TestCandleGetPromise(symbol);
-        await Task.Delay(Timeout.Infinite);
-    }
-
-    private static void TestCandleGetPromise(string symbol)
-    {
         var feed = DXFeed.GetInstance();
-        var from = DateTimeOffset.Now.AddDays(-30);
-        var task = feed.GetTimeSeriesEventAsync<Candle>(symbol, from.ToUnixTimeMilliseconds(), long.MaxValue);
-        var candles = task.Result;
+        var from = DateTimeOffset.Now.AddDays(-30).ToUnixTimeMilliseconds();
+        var candles = await feed.GetTimeSeriesAsync<Candle>(symbol, from, long.MaxValue);
         if (candles != null)
         {
             foreach (var candle in candles)
@@ -50,4 +45,5 @@ Where:
             }
         }
     }
+
 }

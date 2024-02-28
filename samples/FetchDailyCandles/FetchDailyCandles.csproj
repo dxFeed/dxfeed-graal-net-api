@@ -6,11 +6,11 @@
     </PropertyGroup>
 
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
-    <OutputPath>../../artifacts/Debug/Samples/DxFeedLastEventsTask/</OutputPath>
+    <OutputPath>../../artifacts/Debug/Samples/FetchDailyCandles/</OutputPath>
   </PropertyGroup>
 
   <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
-    <OutputPath>../../artifacts/Release/Samples/DxFeedLastEventsTask/</OutputPath>
+    <OutputPath>../../artifacts/Release/Samples/FetchDailyCandles/</OutputPath>
   </PropertyGroup>
 
   <ItemGroup>

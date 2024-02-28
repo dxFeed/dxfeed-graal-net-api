@@ -28,7 +28,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DxFeedIpfConnect", "samples
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DxFeedLiveIpfSample", "samples\DxFeedLiveIpfSample\DxFeedLiveIpfSample.csproj", "{C2F0FF7C-4675-4D5F-AE90-0E8DA33A1EB8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DxFeedLastEventsTask", "samples\DxFeedLastEventsTask\DxFeedLastEventsTask.csproj", "{0797D7A4-3572-457B-AAD9-3F26098D4BDD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FetchDailyCandles", "samples\FetchDailyCandles\FetchDailyCandles.csproj", "{0797D7A4-3572-457B-AAD9-3F26098D4BDD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

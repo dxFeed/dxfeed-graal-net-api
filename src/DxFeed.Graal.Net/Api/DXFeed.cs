@@ -104,7 +104,7 @@ public class DXFeed
             {
                 await Task.Delay(100, token).ConfigureAwait(true);
             }
-            catch (TaskCanceledException e)
+            catch (TaskCanceledException)
             {
                 return default;
             }
@@ -134,7 +134,7 @@ public class DXFeed
     /// <param name="token">the cancellation token.</param>
     /// <typeparam name="T">the event type.</typeparam>
     /// <returns>the task for the result of the request.</returns>
-    public async Task<IEnumerable<T>?> GetTimeSeriesEventAsync<T>(object symbol, long from, long to, CancellationToken token = default)
+    public async Task<IEnumerable<T>?> GetTimeSeriesAsync<T>(object symbol, long from, long to, CancellationToken token = default)
         where T : ITimeSeriesEvent
     {
         if (token.IsCancellationRequested)
@@ -149,7 +149,7 @@ public class DXFeed
             {
                 await Task.Delay(100, token).ConfigureAwait(true);
             }
-            catch (TaskCanceledException e)
+            catch (TaskCanceledException)
             {
                 return default;
             }
