@@ -83,7 +83,7 @@ public class DXFeed
     /// This method works only for event types that implement  <see cref="ILastingEvent"/>  marker interface.
     /// This method requests the data from the the uplink data provider,
     /// creates new event of the specified event type,
-    /// and <see cref="Task.Result"/> the resulting promise with this event.
+    /// and <see cref="Task{TResult}.Result"/> the resulting promise with this event.
     /// </summary>
     /// <param name="symbol">the symbol.</param>
     /// <param name="token">the cancellation token.</param>
@@ -125,7 +125,7 @@ public class DXFeed
     /// This method works only for event types that implement <see cref="ITimeSeriesEvent"/> interface.
     /// his method requests the data from the the uplink data provider,
     /// creates a list of events of the specified event type,
-    /// and <see cref="Task.Result"/> the resulting promise with this list.
+    /// and <see cref="Task{TResult}.Result"/> the resulting promise with this list.
     /// </summary>
     /// <param name="symbol">the symbol.</param>
     /// <param name="from">the time, inclusive, to request events from <see cref="ITimeSeriesEvent.Time"/>.</param>
