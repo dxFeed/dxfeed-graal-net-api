@@ -5,6 +5,7 @@
 // </copyright>
 
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.InteropServices;
 using DxFeed.Graal.Net.Events;
 using DxFeed.Graal.Net.Native.Events;
@@ -13,6 +14,7 @@ using static DxFeed.Graal.Net.Native.ErrorHandling.ErrorCheck;
 
 namespace DxFeed.Graal.Net.Native.Promise;
 
+[SuppressMessage("ReSharper", "ClassNeverInstantiated.Global", Justification = "Created by marshaller")]
 internal sealed unsafe class PromiseNative : JavaHandle
 {
     public bool IsDone() => SafeCall(Import.IsDone(CurrentThread, this)) != 0;

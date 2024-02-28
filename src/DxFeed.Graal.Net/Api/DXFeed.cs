@@ -119,7 +119,6 @@ public class DXFeed
         return (T?)nativePromise.Result();
     }
 
-
     /// <summary>
     /// Requests time series of events for the specified event type, symbol, and a range of time.
     /// This method works only for event types that implement <see cref="ITimeSeriesEvent"/> interface.

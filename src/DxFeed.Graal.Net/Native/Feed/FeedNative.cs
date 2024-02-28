@@ -50,6 +50,7 @@ internal sealed unsafe class FeedNative
         symbolNative = SymbolMapper.CreateNative(symbol);
         return FeedImport.GetLastEventPromise(GetCurrentThread(), _feedHandle, eventCode, symbolNative);
     }
+
     public PromiseNative GetTimeSeriesPromise(EventCodeNative eventCode, object symbol, long from, long to)
     {
         var symbolNative = (SymbolNative*)0;
