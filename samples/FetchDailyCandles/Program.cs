@@ -13,7 +13,7 @@ using DxFeed.Graal.Net.Events.Candles;
 namespace DxFeed.Graal.Net.Samples;
 
 /// <summary>
-/// Fetches last 30 days of candles for a specified symbol, prints them, and exits.
+/// Fetches last 20 days of candles for a specified symbol, prints them, and exits.
 /// </summary>
 internal abstract class FetchDailyCandles
 {
@@ -23,7 +23,7 @@ Usage:
 FetchDailyCandles <symbol>
 
 Where:
-    symbol - Is security symbol (e.g. AAPL{{=d}}, IBM{{=d}} etc.).");
+    symbol - Is security symbol (e.g. AAPL, IBM etc.).");
 
     public static async Task Main(string[] args)
     {
@@ -33,16 +33,25 @@ Where:
             return;
         }
 
-        var symbol = args[0];
-        var feed = DXFeed.GetInstance();
-        var from = DateTimeOffset.Now.AddDays(-30).ToUnixTimeMilliseconds();
-        var to = DateTimeOffset.Now.ToUnixTimeMilliseconds();
+        var baseSymbol = args[0];
+        var symbol = CandleSymbol.ValueOf(baseSymbol, CandlePeriod.Day);
+        var toTime = DateTimeOffset.Now.ToUnixTimeMilliseconds();
+        var fromTime = DateTimeOffset.Now.AddDays(-20).ToUnixTimeMilliseconds();
         using var cts = new CancellationTokenSource();
         cts.CancelAfter(TimeSpan.FromSeconds(5));
-        var candles = await feed.GetTimeSeriesAsync<Candle>(symbol, from, to, cts.Token);
-        foreach (var candle in candles)
+
+        try
         {
-            Console.WriteLine(candle);
+            // Use default DXFeed instance for that data feed address is defined by dxfeed.properties file.
+            var candles = await DXFeed.GetInstance().GetTimeSeriesAsync<Candle>(symbol, fromTime, toTime, cts.Token);
+            foreach (var candle in candles)
+            {
+                Console.WriteLine(candle);
+            }
+        }
+        finally
+        {
+            Environment.Exit(0); // Exit when done.
         }
     }
 }
