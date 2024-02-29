@@ -47,15 +47,30 @@ internal sealed unsafe class FeedNative
     public PromiseNative GetLastEventPromise(EventCodeNative eventCode, object symbol)
     {
         var symbolNative = (SymbolNative*)0;
-        symbolNative = SymbolMapper.CreateNative(symbol);
-        return FeedImport.GetLastEventPromise(GetCurrentThread(), _feedHandle, eventCode, symbolNative);
+        try
+        {
+            symbolNative = SymbolMapper.CreateNative(symbol);
+            return FeedImport.GetLastEventPromise(GetCurrentThread(), _feedHandle, eventCode, symbolNative);
+        }
+        finally
+        {
+            SymbolMapper.ReleaseNative(symbolNative);
+        }
     }
 
     public PromiseNative GetTimeSeriesPromise(EventCodeNative eventCode, object symbol, long from, long to)
     {
         var symbolNative = (SymbolNative*)0;
-        symbolNative = SymbolMapper.CreateNative(symbol);
-        return FeedImport.GetTimeSeriesPromise(GetCurrentThread(), _feedHandle, eventCode, symbolNative, from, to);
+        try
+        {
+            symbolNative = SymbolMapper.CreateNative(symbol);
+            return FeedImport.GetTimeSeriesPromise(GetCurrentThread(), _feedHandle, eventCode, symbolNative, from, to);
+        }
+        finally
+        {
+            SymbolMapper.ReleaseNative(symbolNative);
+        }
+
     }
 
     internal FeedHandle* GetHandle() =>
