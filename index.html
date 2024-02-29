@@ -6,6 +6,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="title" content=" | dxFeed Graal .NET API ">
       
+      
       <link rel="icon" href="docs/images/favicon.png">
       <link rel="stylesheet" href="public/docfx.min.css">
       <link rel="stylesheet" href="public/main.css">
@@ -15,7 +16,7 @@
       <meta name="docfx:rel" content="">
       
       
-      <meta name="docfx:docurl" content="https://github.com/dxFeed/dxfeed-graal-net-api/blob/1.1.0/index.md/#L1">
+      <meta name="docfx:docurl" content="https://github.com/dxFeed/dxfeed-graal-net-api/blob/1.2.0/index.md/#L1">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -95,14 +96,13 @@ the <a href="https://dxfeed.jfrog.io/artifactory/maven-open/com/dxfeed/graal-nat
 which was compiled with <a href="https://www.graalvm.org/latest/reference-manual/native-image/">GraalVM Native Image</a>
 and <a href="https://docs.dxfeed.com/dxfeed/api/overview-summary.html">dxFeed Java API</a> (our flagman API).</p>
 <p>ℹ️ If you already use <a href="https://github.com/dxFeed/dxfeed-net-api">dxFeed .NET API</a>, please see
-the <a href="#overview">Overview</a> section.<br>
-⚠️ It’s a <strong>beta</strong> version and still under active development.</p>
+the <a href="#overview">Overview</a> section.<br></p>
 <p><img src="https://github.com/dxFeed/dxfeed-graal-net-api/actions/workflows/build.yml/badge.svg" alt="Build">
 <img src="https://github.com/dxFeed/dxfeed-graal-net-api/actions/workflows/codeql.yml/badge.svg" alt="CodeQL">
 <img src="https://img.shields.io/badge/platform-win--x64%20%7C%20linux--x64%20%7C%20osx--x64%20%7C%20osx--arm64-lightgrey" alt="Platform">
 <a href="https://dotnet.microsoft.com/en-us/"><img src="https://img.shields.io/badge/.NET_version-net6.0%20%7C%20net7.0%20%7C%20net8.0-blueviolet" alt="NET"></a>
 <a href="https://github.com/dxFeed/dxfeed-graal-net-api/releases/latest"><img src="https://img.shields.io/github/v/release/dxFeed/dxfeed-graal-net-api" alt="Release"></a>
-<a href="https://dxfeed.jfrog.io/artifactory/nuget-open/com/dxfeed/graal-net/"><img src="https://img.shields.io/badge/nuget-1.1.0-blue" alt="Nuget"></a>
+<a href="https://dxfeed.jfrog.io/artifactory/nuget-open/com/dxfeed/graal-net/"><img src="https://img.shields.io/badge/nuget-1.2.0-blue" alt="Nuget"></a>
 <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/master/LICENSE"><img src="https://img.shields.io/badge/license-MPL--2.0-orange" alt="License"></a></p>
 <h2 id="table-of-contents">Table of Contents</h2>
 <ul>
@@ -148,23 +148,14 @@ that prevent us from providing a state-of-the-art technological solution.</p>
 <h3 id="milestones">Milestones</h3>
 <p>Feature development has already stopped for the <a href="https://github.com/dxFeed/dxfeed-net-api">old version</a> of dxFeed .NET
 API.</p>
-<p>We expect the new repository to go into production in Q1’2024.
-At the same time, the old version will be considered deprecated, and at the end of 2024, we plan to end the service.
+<p>The old version will be considered deprecated, and at the end of 2024, we plan to end the service.
 If you’re already our customer and have difficulty with a future transition, please contact us via
 our <a href="https://jira.in.devexperts.com/servicedesk/customer/portal/1">customer portal</a>.</p>
 <h3 id="future-development">Future Development</h3>
 <p>Features planned with <strong>high priority</strong>:</p>
 <ul>
-<li>Add unit tests and conduct different types of testing</li>
 <li>Add necessary entities for more convenient API
-usage (<a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/ipf/InstrumentProfile.html">IPF</a>, <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/model/TimeSeriesEventModel.html">TimeSeriesEventModel</a>, <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/model/market/OrderBookModel.html">OrderBookModel</a>, <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/api/DXFeed.html#getTimeSeriesPromise-java.lang.Class-java.lang.Object-long-long-">GetTimeSeriesPromise</a>,
-etc.)</li>
-<li>Provide more samples</li>
-<li>Provide performance test results along with a comparison with the old API version</li>
-</ul>
-<hr>
-<p>Features planned for the <strong>next stage</strong>:</p>
-<ul>
+usage (<a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/model/TimeSeriesEventModel.html">TimeSeriesEventModel</a>, <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/model/market/OrderBookModel.html">OrderBookModel</a>, etc.)</li>
 <li>Implement a model
 of <a href="https://kb.dxfeed.com/en/data-services/real-time-data-services/-net-api-incremental-updates.html">incremental updates</a>
 in Java API and add it to .NET API</li>
@@ -483,7 +474,7 @@ using DxFeed.Graal.Net.Events.Market;
 // Enable experimental feature.
 SystemProperty.SetProperty(&quot;dxfeed.experimental.dxlink.enable&quot;, &quot;true&quot;);
 // Set scheme for dxLink.
-SystemProperty.SetProperty(&quot;scheme&quot;, &quot;ext:resource:dxlink.xml&quot;);
+SystemProperty.SetProperty(&quot;scheme&quot;, &quot;ext:opt:sysprops,resource:dxlink.xml&quot;);
 
 // For token-based authorization, use the following address format:
 // &quot;dxlink:wss://demo.dxfeed.com/dxlink-ws[login=dxlink:token]&quot;
@@ -534,6 +525,8 @@ connects to the specified address(es) and calculates performance counters (event
 etc.)</li>
 <li><a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/main/src/DxFeed.Graal.Net.Tools/LatencyTest/LatencyTestTool.cs">LatencyTest</a>
 connects to the specified address(es) and calculates latency</li>
+<li><a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/main/src/DxFeed.Graal.Net.Tools/Qds/QdsTool.cs">Qds</a>
+collection of tools ported from the Java qds-tools</li>
 </ul>
 <p>To run tools on macOS, it may be necessary to unquarantine them:</p>
 <pre><code>sudo /usr/bin/xattr -r -d com.apple.quarantine &lt;directory_with_tools&gt;
@@ -557,6 +550,7 @@ demonstration of how to get Instrument Profiles</li>
 simple demonstration of how to get live updates for Instrument Profiles</li>
 <li class="task-list-item"><input disabled="disabled" type="checkbox"> DxFeedPublishProfiles is a simple demonstration of how to publish market events</li>
 <li class="task-list-item"><input disabled="disabled" type="checkbox"> ScheduleSample is a simple demonstration of how to get various scheduling information for instruments</li>
+<li class="task-list-item"><input disabled="disabled" type="checkbox" checked="checked"> FetchDailyCandles is a simple demonstration of how to fetch last N-days of candles for a specified symbol</li>
 </ul>
 <h2 id="current-state">Current State</h2>
 <h3 id="endpoint-roles">Endpoint Roles</h3>
@@ -688,9 +682,8 @@ returns the last event for the specified event instance
 <li class="task-list-item"><p><input disabled="disabled" type="checkbox"> <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/api/DXFeed.html#getLastEvents-java.util.Collection-">GetLastEvents</a>
 returns the last events for the specified event instances list</p>
 </li>
-<li class="task-list-item"><p><input disabled="disabled" type="checkbox"> <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/api/DXFeed.html#getLastEventPromise-java.lang.Class-java.lang.Object-">GetLastEventPromise</a>
-requests the last event for the specified event type and symbol
-(<a href="https://github.com/devexperts/QD/blob/master/dxfeed-samples/src/main/java/com/dxfeed/sample/console/LastEventsConsole.java">Java API sample</a>)</p>
+<li class="task-list-item"><p><input disabled="disabled" type="checkbox" checked="checked"> <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/api/DXFeed.html#getLastEventPromise-java.lang.Class-java.lang.Object-">GetLastEventPromise</a>
+requests the last event for the specified event type and symbol</p>
 </li>
 <li class="task-list-item"><p><input disabled="disabled" type="checkbox"> <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/api/DXFeed.html#getLastEventsPromises-java.lang.Class-java.util.Collection-">GetLastEventsPromises</a>
 requests the last events for the specified event type and symbol collection</p>
@@ -704,9 +697,8 @@ requests an indexed events list for the specified event type, symbol, and source
 <li class="task-list-item"><p><input disabled="disabled" type="checkbox"> <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/api/DXFeed.html#getIndexedEventsIfSubscribed-java.lang.Class-java.lang.Object-com.dxfeed.event.IndexedEventSource-">GetIndexedEventsIfSubscribed</a>
 returns a list of indexed events for the specified event type, symbol, and source, if there’s a subscription for it</p>
 </li>
-<li class="task-list-item"><p><input disabled="disabled" type="checkbox"> <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/api/DXFeed.html#getTimeSeriesPromise-java.lang.Class-java.lang.Object-long-long-">GetTimeSeriesPromise</a>
-requests time series events for the specified event type, symbol, and time range
-(<a href="https://github.com/devexperts/QD/blob/master/dxfeed-samples/src/main/java/com/dxfeed/sample/_simple_/FetchDailyCandles.java">Java API sample</a>)</p>
+<li class="task-list-item"><p><input disabled="disabled" type="checkbox" checked="checked"> <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/api/DXFeed.html#getTimeSeriesPromise-java.lang.Class-java.lang.Object-long-long-">GetTimeSeriesPromise</a>
+requests time series events for the specified event type, symbol, and time range</p>
 </li>
 <li class="task-list-item"><p><input disabled="disabled" type="checkbox"> <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/api/DXFeed.html#getTimeSeriesIfSubscribed-java.lang.Class-java.lang.Object-long-long-">GetTimeSeriesIfSubscribed</a>
 requests time series events for the specified event type, symbol, and time range if there’s a subscription for it</p>

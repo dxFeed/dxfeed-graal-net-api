@@ -643,6 +643,38 @@ references:
   isSpec: "True"
   fullName: DxFeed.Graal.Net.Api.DXFeed.GetInstance
   nameWithType: DXFeed.GetInstance
+- uid: DxFeed.Graal.Net.Api.DXFeed.GetLastEventAsync*
+  name: GetLastEventAsync
+  href: docs/api/DxFeed.Graal.Net.Api.DXFeed.html#DxFeed_Graal_Net_Api_DXFeed_GetLastEventAsync_
+  commentId: Overload:DxFeed.Graal.Net.Api.DXFeed.GetLastEventAsync
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Api.DXFeed.GetLastEventAsync
+  nameWithType: DXFeed.GetLastEventAsync
+- uid: DxFeed.Graal.Net.Api.DXFeed.GetLastEventAsync``1(System.Object,System.Threading.CancellationToken)
+  name: GetLastEventAsync<T>(object, CancellationToken)
+  href: docs/api/DxFeed.Graal.Net.Api.DXFeed.html#DxFeed_Graal_Net_Api_DXFeed_GetLastEventAsync__1_System_Object_System_Threading_CancellationToken_
+  commentId: M:DxFeed.Graal.Net.Api.DXFeed.GetLastEventAsync``1(System.Object,System.Threading.CancellationToken)
+  name.vb: GetLastEventAsync(Of T)(Object, CancellationToken)
+  fullName: DxFeed.Graal.Net.Api.DXFeed.GetLastEventAsync<T>(object, System.Threading.CancellationToken)
+  fullName.vb: DxFeed.Graal.Net.Api.DXFeed.GetLastEventAsync(Of T)(Object, System.Threading.CancellationToken)
+  nameWithType: DXFeed.GetLastEventAsync<T>(object, CancellationToken)
+  nameWithType.vb: DXFeed.GetLastEventAsync(Of T)(Object, CancellationToken)
+- uid: DxFeed.Graal.Net.Api.DXFeed.GetTimeSeriesAsync*
+  name: GetTimeSeriesAsync
+  href: docs/api/DxFeed.Graal.Net.Api.DXFeed.html#DxFeed_Graal_Net_Api_DXFeed_GetTimeSeriesAsync_
+  commentId: Overload:DxFeed.Graal.Net.Api.DXFeed.GetTimeSeriesAsync
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Api.DXFeed.GetTimeSeriesAsync
+  nameWithType: DXFeed.GetTimeSeriesAsync
+- uid: DxFeed.Graal.Net.Api.DXFeed.GetTimeSeriesAsync``1(System.Object,System.Int64,System.Int64,System.Threading.CancellationToken)
+  name: GetTimeSeriesAsync<T>(object, long, long, CancellationToken)
+  href: docs/api/DxFeed.Graal.Net.Api.DXFeed.html#DxFeed_Graal_Net_Api_DXFeed_GetTimeSeriesAsync__1_System_Object_System_Int64_System_Int64_System_Threading_CancellationToken_
+  commentId: M:DxFeed.Graal.Net.Api.DXFeed.GetTimeSeriesAsync``1(System.Object,System.Int64,System.Int64,System.Threading.CancellationToken)
+  name.vb: GetTimeSeriesAsync(Of T)(Object, Long, Long, CancellationToken)
+  fullName: DxFeed.Graal.Net.Api.DXFeed.GetTimeSeriesAsync<T>(object, long, long, System.Threading.CancellationToken)
+  fullName.vb: DxFeed.Graal.Net.Api.DXFeed.GetTimeSeriesAsync(Of T)(Object, Long, Long, System.Threading.CancellationToken)
+  nameWithType: DXFeed.GetTimeSeriesAsync<T>(object, long, long, CancellationToken)
+  nameWithType.vb: DXFeed.GetTimeSeriesAsync(Of T)(Object, Long, Long, CancellationToken)
 - uid: DxFeed.Graal.Net.Api.DXFeedEventListener
   name: DXFeedEventListener
   href: docs/api/DxFeed.Graal.Net.Api.DXFeedEventListener.html
