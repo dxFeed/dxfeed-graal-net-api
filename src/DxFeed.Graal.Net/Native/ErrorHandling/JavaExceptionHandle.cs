@@ -37,7 +37,12 @@ internal sealed class JavaExceptionHandle : JavaHandle
             return;
         }
 
-        var exceptionInfo = Marshal.PtrToStructure<JavaExceptionInfo>(exceptionHandle.handle);
+        exceptionHandle.ThrowException();
+    }
+
+    public void ThrowException()
+    {
+        var exceptionInfo = Marshal.PtrToStructure<JavaExceptionInfo>(handle);
         throw new JavaException(exceptionInfo.Message, exceptionInfo.ClassName, exceptionInfo.StackTrace);
     }
 

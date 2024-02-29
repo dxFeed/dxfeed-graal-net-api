@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Runtime.InteropServices;
 using DxFeed.Graal.Net.Events;
+using DxFeed.Graal.Net.Native.ErrorHandling;
 using DxFeed.Graal.Net.Native.Events;
 using DxFeed.Graal.Net.Native.Interop;
 using static DxFeed.Graal.Net.Native.ErrorHandling.ErrorCheck;
@@ -20,6 +21,20 @@ internal sealed unsafe class PromiseNative : JavaHandle
     public bool IsDone() => SafeCall(Import.IsDone(CurrentThread, this)) != 0;
 
     public bool HasResult() => SafeCall(Import.HasResult(CurrentThread, this)) != 0;
+
+    public void ThrowIfJavaExceptionExists()
+    {
+        if (SafeCall(Import.HasException(CurrentThread, this)) != 0)
+        {
+            using var exceptionHandle = Import.GetException(CurrentThread, this);
+            if (exceptionHandle.IsInvalid)
+            {
+                return;
+            }
+
+            exceptionHandle.ThrowException();
+        }
+    }
 
     public void Cancel() => SafeCall(Import.Cancel(CurrentThread, this));
 
@@ -69,6 +84,13 @@ internal sealed unsafe class PromiseNative : JavaHandle
 
         [DllImport(
             ImportInfo.DllName,
+            EntryPoint = "dxfg_Promise_hasException")]
+        public static extern int HasException(
+            nint thread,
+            PromiseNative promiseHandle);
+
+        [DllImport(
+            ImportInfo.DllName,
             EntryPoint = "dxfg_Promise_cancel")]
         public static extern int Cancel(
             nint thread,
@@ -101,5 +123,13 @@ internal sealed unsafe class PromiseNative : JavaHandle
         public static extern int ReleaseResult(
             nint thread,
             EventTypeNative* nativeEvent);
+
+        [DllImport(
+            ImportInfo.DllName,
+            CallingConvention = CallingConvention.Cdecl,
+            EntryPoint = "dxfg_Promise_getException")]
+        public static extern JavaExceptionHandle GetException(
+            nint thread,
+            PromiseNative promiseHandle);
     }
 }
