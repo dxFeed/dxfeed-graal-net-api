@@ -63,8 +63,7 @@ that prevent us from providing a state-of-the-art technological solution.
 Feature development has already stopped for the [old version](https://github.com/dxFeed/dxfeed-net-api) of dxFeed .NET
 API.
 
-We expect the new repository to go into production in Q1’2024.
-At the same time, the old version will be considered deprecated, and at the end of 2024, we plan to end the service.
+The old version will be considered deprecated, and at the end of 2024, we plan to end the service.
 If you’re already our customer and have difficulty with a future transition, please contact us via
 our [customer portal](https://jira.in.devexperts.com/servicedesk/customer/portal/1).
 
@@ -72,16 +71,8 @@ our [customer portal](https://jira.in.devexperts.com/servicedesk/customer/portal
 
 Features planned with **high priority**:
 
-* Add unit tests and conduct different types of testing
 * Add necessary entities for more convenient API
-  usage ([IPF](https://docs.dxfeed.com/dxfeed/api/com/dxfeed/ipf/InstrumentProfile.html), [TimeSeriesEventModel](https://docs.dxfeed.com/dxfeed/api/com/dxfeed/model/TimeSeriesEventModel.html), [OrderBookModel](https://docs.dxfeed.com/dxfeed/api/com/dxfeed/model/market/OrderBookModel.html), [GetTimeSeriesPromise](https://docs.dxfeed.com/dxfeed/api/com/dxfeed/api/DXFeed.html#getTimeSeriesPromise-java.lang.Class-java.lang.Object-long-long-),
-  etc.)
-* Provide more samples
-* Provide performance test results along with a comparison with the old API version
-
----
-Features planned for the **next stage**:
-
+  usage ([TimeSeriesEventModel](https://docs.dxfeed.com/dxfeed/api/com/dxfeed/model/TimeSeriesEventModel.html), [OrderBookModel](https://docs.dxfeed.com/dxfeed/api/com/dxfeed/model/market/OrderBookModel.html), etc.)
 * Implement a model
   of [incremental updates](https://kb.dxfeed.com/en/data-services/real-time-data-services/-net-api-incremental-updates.html)
   in Java API and add it to .NET API
