@@ -36,14 +36,13 @@ Where:
         var symbol = args[0];
         var feed = DXFeed.GetInstance();
         var from = DateTimeOffset.Now.AddDays(-30).ToUnixTimeMilliseconds();
-        var candles = await feed.GetTimeSeriesAsync<Candle>(symbol, from, long.MaxValue);
-        if (candles != null)
+        var to = DateTimeOffset.Now.ToUnixTimeMilliseconds();
+        using var cts = new CancellationTokenSource();
+        cts.CancelAfter(TimeSpan.FromSeconds(5));
+        var candles = await feed.GetTimeSeriesAsync<Candle>(symbol, from, to, cts.Token);
+        foreach (var candle in candles)
         {
-            foreach (var candle in candles)
-            {
-                Console.WriteLine(candle);
-            }
+            Console.WriteLine(candle);
         }
     }
-
 }
