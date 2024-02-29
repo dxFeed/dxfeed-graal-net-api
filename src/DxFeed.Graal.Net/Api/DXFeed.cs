@@ -92,27 +92,18 @@ public class DXFeed
     public async Task<T?> GetLastEventAsync<T>(object symbol, CancellationToken token = default)
     where T : ILastingEvent
     {
-        if (token.IsCancellationRequested)
-        {
-            return default;
-        }
+        token.ThrowIfCancellationRequested();
 
         using var nativePromise = _feedNative.GetLastEventPromise(EventCodeAttribute.GetEventCode(typeof(T)), symbol);
         while (!nativePromise.HasResult())
         {
-            try
-            {
-                await Task.Delay(100, token).ConfigureAwait(true);
-            }
-            catch (TaskCanceledException)
-            {
-                return default;
-            }
+
+            await Task.Delay(100, token).ConfigureAwait(true);
 
             if (token.IsCancellationRequested)
             {
                 nativePromise.Cancel();
-                return default;
+                token.ThrowIfCancellationRequested();
             }
         }
 
@@ -136,28 +127,18 @@ public class DXFeed
     public async Task<IEnumerable<T>?> GetTimeSeriesAsync<T>(object symbol, long from, long to, CancellationToken token = default)
         where T : ITimeSeriesEvent
     {
-        if (token.IsCancellationRequested)
-        {
-            return default;
-        }
+        token.ThrowIfCancellationRequested();
 
         using var nativePromise = _feedNative.GetTimeSeriesPromise(EventCodeAttribute.GetEventCode(typeof(T)), symbol, from, to);
         while (!nativePromise.HasResult())
         {
-            try
-            {
-                await Task.Delay(100, token).ConfigureAwait(true);
-            }
-            catch (TaskCanceledException)
-            {
-                return default;
-            }
+           await Task.Delay(100, token).ConfigureAwait(true);
 
-            if (token.IsCancellationRequested)
-            {
-                nativePromise.Cancel();
-                return default;
-            }
+           if (token.IsCancellationRequested)
+           {
+               nativePromise.Cancel();
+               token.ThrowIfCancellationRequested();
+           }
         }
 
         return nativePromise.Results().OfType<T>();
