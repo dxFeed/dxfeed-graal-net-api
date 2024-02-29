@@ -89,7 +89,7 @@ public class DXFeed
     /// <param name="token">The cancellation token.</param>
     /// <typeparam name="T">The type of event.</typeparam>
     /// <returns>The task for the result of the request.</returns>
-    public async Task<T?> GetLastEventAsync<T>(object symbol, CancellationToken token = default)
+    public async Task<T> GetLastEventAsync<T>(object symbol, CancellationToken token = default)
         where T : ILastingEvent
     {
         token.ThrowIfCancellationRequested();
@@ -102,7 +102,7 @@ public class DXFeed
             }
 
             nativePromise.ThrowIfJavaExceptionExists();
-            return nativePromise.HasResult() ? (T?)nativePromise.Result() : default;
+            return (T)nativePromise.Result();
         }
         catch (OperationCanceledException)
         {
@@ -125,7 +125,7 @@ public class DXFeed
     /// <param name="token">The cancellation token.</param>
     /// <typeparam name="T">The event type.</typeparam>
     /// <returns>The task for the result of the request.</returns>
-    public async Task<IEnumerable<T>?> GetTimeSeriesAsync<T>(object symbol, long from, long to, CancellationToken token = default)
+    public async Task<IEnumerable<T>> GetTimeSeriesAsync<T>(object symbol, long from, long to, CancellationToken token = default)
         where T : ITimeSeriesEvent
     {
         token.ThrowIfCancellationRequested();
@@ -139,7 +139,7 @@ public class DXFeed
             }
 
             nativePromise.ThrowIfJavaExceptionExists();
-            return nativePromise.HasResult() ? nativePromise.Results().OfType<T>() : default;
+            return nativePromise.Results().OfType<T>();
         }
         catch (OperationCanceledException)
         {
