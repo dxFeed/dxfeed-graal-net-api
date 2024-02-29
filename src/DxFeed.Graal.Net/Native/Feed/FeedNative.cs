@@ -10,7 +10,10 @@ using DxFeed.Graal.Net.Native.ErrorHandling;
 using DxFeed.Graal.Net.Native.Events;
 using DxFeed.Graal.Net.Native.Graal;
 using DxFeed.Graal.Net.Native.Interop;
+using DxFeed.Graal.Net.Native.Promise;
 using DxFeed.Graal.Net.Native.Subscription;
+using DxFeed.Graal.Net.Native.SymbolMappers;
+using DxFeed.Graal.Net.Native.Symbols;
 
 namespace DxFeed.Graal.Net.Native.Feed;
 
@@ -40,6 +43,34 @@ internal sealed unsafe class FeedNative
 
     public void DetachSubscriptionAndClear(SubscriptionNative subscriptionNative) =>
         FeedImport.DetachSubscriptionAndClear(GetCurrentThread(), _feedHandle, subscriptionNative.GetHandle());
+
+    public PromiseNative GetLastEventPromise(EventCodeNative eventCode, object symbol)
+    {
+        var symbolNative = (SymbolNative*)0;
+        try
+        {
+            symbolNative = SymbolMapper.CreateNative(symbol);
+            return FeedImport.GetLastEventPromise(GetCurrentThread(), _feedHandle, eventCode, symbolNative);
+        }
+        finally
+        {
+            SymbolMapper.ReleaseNative(symbolNative);
+        }
+    }
+
+    public PromiseNative GetTimeSeriesPromise(EventCodeNative eventCode, object symbol, long from, long to)
+    {
+        var symbolNative = (SymbolNative*)0;
+        try
+        {
+            symbolNative = SymbolMapper.CreateNative(symbol);
+            return FeedImport.GetTimeSeriesPromise(GetCurrentThread(), _feedHandle, eventCode, symbolNative, from, to);
+        }
+        finally
+        {
+            SymbolMapper.ReleaseNative(symbolNative);
+        }
+    }
 
     internal FeedHandle* GetHandle() =>
         _feedHandle;
@@ -91,6 +122,30 @@ internal sealed unsafe class FeedNative
             FeedHandle* feedHandle,
             SubscriptionHandle* subHandle) =>
             ErrorCheck.SafeCall(NativeDetachSubscriptionAndClear(thread, feedHandle, subHandle));
+
+        [DllImport(
+            ImportInfo.DllName,
+            CallingConvention = CallingConvention.Cdecl,
+            CharSet = CharSet.Ansi,
+            EntryPoint = "dxfg_DXFeed_getTimeSeriesPromise")]
+        public static extern PromiseNative GetTimeSeriesPromise(
+            nint thread,
+            FeedHandle* feedHandle,
+            EventCodeNative eventCodes,
+            SymbolNative* symbol,
+            long from,
+            long to);
+
+        [DllImport(
+            ImportInfo.DllName,
+            CallingConvention = CallingConvention.Cdecl,
+            CharSet = CharSet.Ansi,
+            EntryPoint = "dxfg_DXFeed_getLastEventPromise")]
+        public static extern PromiseNative GetLastEventPromise(
+            nint thread,
+            FeedHandle* feedHandle,
+            EventCodeNative eventCodes,
+            SymbolNative* symbol);
 
         [DllImport(
             ImportInfo.DllName,

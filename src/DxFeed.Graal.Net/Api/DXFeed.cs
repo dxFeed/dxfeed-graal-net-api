@@ -7,6 +7,8 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
+using System.Threading.Tasks;
 using DxFeed.Graal.Net.Events;
 using DxFeed.Graal.Net.Native.Feed;
 using DxFeed.Graal.Net.Utils;
@@ -75,6 +77,76 @@ public class DXFeed
     /// </exception>
     public DXFeedSubscription CreateSubscription(IEnumerable<Type> eventTypes) =>
         CreateSubscription(eventTypes.ToArray());
+
+    /// <summary>
+    /// Requests the last event for the specified event type and symbol.
+    /// This method works only for event types that implement  <see cref="ILastingEvent"/>  marker interface.
+    /// This method requests the data from the the uplink data provider,
+    /// creates new event of the specified event type,
+    /// and <see cref="Task{TResult}.Result"/> the resulting task with this event.
+    /// </summary>
+    /// <param name="symbol">The symbol.</param>
+    /// <param name="token">The cancellation token.</param>
+    /// <typeparam name="T">The type of event.</typeparam>
+    /// <returns>The task for the result of the request.</returns>
+    public async Task<T?> GetLastEventAsync<T>(object symbol, CancellationToken token = default)
+        where T : ILastingEvent
+    {
+        token.ThrowIfCancellationRequested();
+        using var nativePromise = _feedNative.GetLastEventPromise(EventCodeAttribute.GetEventCode(typeof(T)), symbol);
+        try
+        {
+            while (!nativePromise.IsDone())
+            {
+                await Task.Delay(100, token);
+            }
+
+            nativePromise.ThrowIfJavaExceptionExists();
+            return nativePromise.HasResult() ? (T?)nativePromise.Result() : default;
+        }
+        catch (OperationCanceledException)
+        {
+            nativePromise.Cancel();
+            throw;
+        }
+    }
+
+    /// <summary>
+    /// Requests time series of events for the specified event type, symbol, and a range of time.
+    /// This method works only for event types that implement <see cref="ITimeSeriesEvent"/> interface.
+    /// his method requests the data from the the uplink data provider,
+    /// creates a list of events of the specified event type,
+    /// and <see cref="Task{TResult}.Result"/> the resulting task with this list.
+    /// </summary>
+    /// <param name="symbol">The symbol.</param>
+    /// <param name="from">The time, inclusive, to request events from <see cref="ITimeSeriesEvent.Time"/>.</param>
+    /// <param name="to">The time, inclusive, to request events from <see cref="ITimeSeriesEvent.Time"/>.
+    /// Use long.MaxValue to retrieve events without an upper limit on time.</param>
+    /// <param name="token">The cancellation token.</param>
+    /// <typeparam name="T">The event type.</typeparam>
+    /// <returns>The task for the result of the request.</returns>
+    public async Task<IEnumerable<T>?> GetTimeSeriesAsync<T>(object symbol, long from, long to, CancellationToken token = default)
+        where T : ITimeSeriesEvent
+    {
+        token.ThrowIfCancellationRequested();
+        using var nativePromise =
+            _feedNative.GetTimeSeriesPromise(EventCodeAttribute.GetEventCode(typeof(T)), symbol, from, to);
+        try
+        {
+            while (!nativePromise.IsDone())
+            {
+                await Task.Delay(100, token);
+            }
+
+            nativePromise.ThrowIfJavaExceptionExists();
+            return nativePromise.HasResult() ? nativePromise.Results().OfType<T>() : default;
+        }
+        catch (OperationCanceledException)
+        {
+            nativePromise.Cancel();
+            throw;
+        }
+    }
 
     /// <summary>
     /// Gets underlying "feed native wrapper".
