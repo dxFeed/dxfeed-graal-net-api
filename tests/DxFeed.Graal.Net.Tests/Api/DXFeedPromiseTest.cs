@@ -7,13 +7,12 @@
 using DxFeed.Graal.Net.Api;
 using DxFeed.Graal.Net.Events.Candles;
 using DxFeed.Graal.Net.Events.Market;
-using static DxFeed.Graal.Net.Api.DXEndpoint;
 using static DxFeed.Graal.Net.Api.DXEndpoint.Role;
 
 namespace DxFeed.Graal.Net.Tests.Api;
 
 [TestFixture]
-public class DXEndpointLastEventsTest
+public class DXFeedPromiseTest
 {
     [Test]
     public async Task TestLastEventTask()
@@ -24,30 +23,20 @@ public class DXEndpointLastEventsTest
 
         var lastEvent = feed.GetLastEventAsync<Quote>("A");
         publisher.PublishEvents(new Quote("A"));
-        Console.WriteLine(lastEvent);
-        Assert.That(lastEvent.Result.EventSymbol == "A");
+        Assert.That(lastEvent.Result, Is.Not.EqualTo(null));
+        Assert.That(lastEvent.Result.EventSymbol, Is.EqualTo("A"));
 
-        var cancelSource = new CancellationTokenSource();
-        cancelSource.Cancel();
-        try
+
+        Assert.ThrowsAsync<OperationCanceledException>(async () =>
         {
+            var cancelSource = new CancellationTokenSource();
+            cancelSource.Cancel();
             await feed.GetLastEventAsync<Quote>("A", cancelSource.Token);
-        }
-        catch (OperationCanceledException) { }
-        catch (Exception ex)
-        {
-            Assert.That(false, $"Unhandled exception {ex}");
-        }
-
-        try
+        });
+        Assert.ThrowsAsync<NullReferenceException>(async () =>
         {
             await feed.GetLastEventAsync<Quote>(null);
-        }
-        catch (NullReferenceException) { }
-        catch (Exception ex)
-        {
-            Assert.That(false, $"Unhandled exception {ex}");
-        }
+        });
 
         endpoint.Close();
     }
@@ -61,30 +50,20 @@ public class DXEndpointLastEventsTest
 
         var lastEvent = feed.GetTimeSeriesAsync<Candle>("A", 0, long.MaxValue);
         publisher.PublishEvents(new Candle(CandleSymbol.ValueOf("A")));
-        Console.WriteLine(lastEvent);
-        Assert.That(lastEvent.Result.First().EventSymbol == "A");
+        Assert.That(lastEvent.Result, Is.Not.EqualTo(null));
+        Assert.That(lastEvent.Result.First().EventSymbol, Is.EqualTo("A"));
 
-        var cancelSource = new CancellationTokenSource();
-        cancelSource.Cancel();
-        try
+        Assert.ThrowsAsync<OperationCanceledException>(async () =>
         {
+            var cancelSource = new CancellationTokenSource();
+            cancelSource.Cancel();
             await feed.GetTimeSeriesAsync<Candle>("A", 0, long.MaxValue, cancelSource.Token);
-        }
-        catch (OperationCanceledException) { }
-        catch (Exception ex)
-        {
-            Assert.That(false, $"Unhandled exception {ex}");
-        }
+        });
 
-        try
+        Assert.ThrowsAsync<NullReferenceException>(async () =>
         {
             await feed.GetTimeSeriesAsync<Candle>(null, 0, long.MaxValue);
-        }
-        catch (NullReferenceException) { }
-        catch (Exception ex)
-        {
-            Assert.That(false, $"Unhandled exception {ex}");
-        }
+        });
 
         endpoint.Close();
     }

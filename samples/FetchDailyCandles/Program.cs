@@ -23,7 +23,7 @@ Usage:
 FetchDailyCandles <symbol>
 
 Where:
-    symbol - Is security symbol (e.g. IBM, AAPL, SPX etc.).");
+    symbol - Is security symbol (e.g. AAPL{{=d}}, IBM{{=d}} etc.).");
 
     public static async Task Main(string[] args)
     {

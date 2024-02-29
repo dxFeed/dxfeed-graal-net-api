@@ -70,7 +70,6 @@ internal sealed unsafe class FeedNative
         {
             SymbolMapper.ReleaseNative(symbolNative);
         }
-
     }
 
     internal FeedHandle* GetHandle() =>

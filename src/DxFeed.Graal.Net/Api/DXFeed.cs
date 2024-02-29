@@ -83,37 +83,32 @@ public class DXFeed
     /// This method works only for event types that implement  <see cref="ILastingEvent"/>  marker interface.
     /// This method requests the data from the the uplink data provider,
     /// creates new event of the specified event type,
-    /// and <see cref="Task{TResult}.Result"/> the resulting promise with this event.
+    /// and <see cref="Task{TResult}.Result"/> the resulting task with this event.
     /// </summary>
-    /// <param name="symbol">the symbol.</param>
-    /// <param name="token">the cancellation token.</param>
-    /// <typeparam name="T">the type of event.</typeparam>
-    /// <returns>the promise for the result of the request.</returns>
+    /// <param name="symbol">The symbol.</param>
+    /// <param name="token">The cancellation token.</param>
+    /// <typeparam name="T">The type of event.</typeparam>
+    /// <returns>The task for the result of the request.</returns>
     public async Task<T?> GetLastEventAsync<T>(object symbol, CancellationToken token = default)
         where T : ILastingEvent
     {
         token.ThrowIfCancellationRequested();
-
         using var nativePromise = _feedNative.GetLastEventPromise(EventCodeAttribute.GetEventCode(typeof(T)), symbol);
-        while (!nativePromise.HasResult())
+        try
         {
-            await Task.Delay(100, token);
-
-            if (token.IsCancellationRequested)
+            while (!nativePromise.IsDone())
             {
-                nativePromise.Cancel();
-                token.ThrowIfCancellationRequested();
+                await Task.Delay(100, token);
             }
+
+            nativePromise.ThrowIfJavaExceptionExists();
+            return nativePromise.HasResult() ? (T?)nativePromise.Result() : default;
         }
-
-        nativePromise.ThrowIfJavaExceptionExists();
-
-        if (nativePromise.IsDone())
+        catch (OperationCanceledException)
         {
-            return (T?)nativePromise.Result();
+            nativePromise.Cancel();
+            throw;
         }
-
-        return default;
     }
 
     /// <summary>
@@ -121,44 +116,37 @@ public class DXFeed
     /// This method works only for event types that implement <see cref="ITimeSeriesEvent"/> interface.
     /// his method requests the data from the the uplink data provider,
     /// creates a list of events of the specified event type,
-    /// and <see cref="Task{TResult}.Result"/> the resulting promise with this list.
+    /// and <see cref="Task{TResult}.Result"/> the resulting task with this list.
     /// </summary>
-    /// <param name="symbol">the symbol.</param>
-    /// <param name="from">the time, inclusive, to request events from <see cref="ITimeSeriesEvent.Time"/>.</param>
-    /// <param name="to">the time, inclusive, to request events from <see cref="ITimeSeriesEvent.Time"/>.
+    /// <param name="symbol">The symbol.</param>
+    /// <param name="from">The time, inclusive, to request events from <see cref="ITimeSeriesEvent.Time"/>.</param>
+    /// <param name="to">The time, inclusive, to request events from <see cref="ITimeSeriesEvent.Time"/>.
     /// Use long.MaxValue to retrieve events without an upper limit on time.</param>
-    /// <param name="token">the cancellation token.</param>
-    /// <typeparam name="T">the event type.</typeparam>
-    /// <returns>the task for the result of the request.</returns>
-    public async Task<IEnumerable<T>?> GetTimeSeriesAsync<T>(object symbol, long from, long to,
-        CancellationToken token = default)
+    /// <param name="token">The cancellation token.</param>
+    /// <typeparam name="T">The event type.</typeparam>
+    /// <returns>The task for the result of the request.</returns>
+    public async Task<IEnumerable<T>?> GetTimeSeriesAsync<T>(object symbol, long from, long to, CancellationToken token = default)
         where T : ITimeSeriesEvent
     {
         token.ThrowIfCancellationRequested();
-
         using var nativePromise =
             _feedNative.GetTimeSeriesPromise(EventCodeAttribute.GetEventCode(typeof(T)), symbol, from, to);
-        while (!nativePromise.HasResult())
+        try
         {
-            await Task.Delay(100, token);
-
-            if (token.IsCancellationRequested)
+            while (!nativePromise.IsDone())
             {
-                nativePromise.Cancel();
-                token.ThrowIfCancellationRequested();
+                await Task.Delay(100, token);
             }
+
+            nativePromise.ThrowIfJavaExceptionExists();
+            return nativePromise.HasResult() ? nativePromise.Results().OfType<T>() : default;
         }
-
-        nativePromise.ThrowIfJavaExceptionExists();
-
-        if (nativePromise.IsDone())
+        catch (OperationCanceledException)
         {
-            return nativePromise.Results().OfType<T>();
+            nativePromise.Cancel();
+            throw;
         }
-
-        return default;
     }
-
 
     /// <summary>
     /// Gets underlying "feed native wrapper".

@@ -27,11 +27,6 @@ internal sealed unsafe class PromiseNative : JavaHandle
         if (SafeCall(Import.HasException(CurrentThread, this)) != 0)
         {
             using var exceptionHandle = Import.GetException(CurrentThread, this);
-            if (exceptionHandle.IsInvalid)
-            {
-                return;
-            }
-
             exceptionHandle.ThrowException();
         }
     }
