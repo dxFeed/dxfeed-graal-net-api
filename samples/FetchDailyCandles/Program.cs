@@ -34,7 +34,7 @@ Where:
         }
 
         var baseSymbol = args[0];
-        var symbol = CandleSymbol.ValueOf(baseSymbol, CandlePeriod.Day);
+        var candleSymbol = CandleSymbol.ValueOf(baseSymbol, CandlePeriod.Day);
         var toTime = DateTimeOffset.Now.ToUnixTimeMilliseconds();
         var fromTime = DateTimeOffset.Now.AddDays(-20).ToUnixTimeMilliseconds();
         using var cts = new CancellationTokenSource();
@@ -43,7 +43,8 @@ Where:
         try
         {
             // Use default DXFeed instance for that data feed address is defined by dxfeed.properties file.
-            var candles = await DXFeed.GetInstance().GetTimeSeriesAsync<Candle>(symbol, fromTime, toTime, cts.Token);
+            var candles = await DXFeed.GetInstance()
+                .GetTimeSeriesAsync<Candle>(candleSymbol, fromTime, toTime, cts.Token);
             foreach (var candle in candles)
             {
                 Console.WriteLine(candle);
