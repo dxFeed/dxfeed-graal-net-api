@@ -376,7 +376,7 @@ sudo /usr/bin/xattr -r -d com.apple.quarantine <directory_with_tools>
   simple demonstration of how to get live updates for Instrument Profiles
 - [ ] DxFeedPublishProfiles is a simple demonstration of how to publish market events
 - [ ] ScheduleSample is a simple demonstration of how to get various scheduling information for instruments
-- [x] FetchDailyCandles(https://github.com/dxFeed/dxfeed-graal-net-api/tree/main/samples/FetchDailyCandles) is a simple
+- [x] [FetchDailyCandles](https://github.com/dxFeed/dxfeed-graal-net-api/tree/main/samples/FetchDailyCandles) is a simple
   demonstration of how to fetch last N-days of candles for a specified symbol
 
 ## Current State
