@@ -7,24 +7,23 @@
 using System.Runtime.InteropServices;
 using DxFeed.Graal.Net.Events;
 using DxFeed.Graal.Net.Events.Market;
-using DxFeed.Graal.Net.Native.Symbols.Indexed;
 
 namespace DxFeed.Graal.Net.Native.SymbolMappers;
 
 internal static unsafe class IndexedSourceMapper
 {
     /// <summary>
-    /// Creates unsafe <see cref="IndexedEventSourceNative"/> pointer from <see cref="IndexedEventSource"/>.
+    /// Creates unsafe <see cref="SymbolMarshaller.IndexedEventSourceNative"/> pointer from <see cref="IndexedEventSource"/>.
     /// </summary>
     /// <param name="source">The source.</param>
     /// <returns>Returns unsafe pointer. The pointer must be freed with <see cref="ReleaseNative"/>. </returns>
-    public static IndexedEventSourceNative* CreateNative(IndexedEventSource source)
+    public static SymbolMarshaller.IndexedEventSourceNative* CreateNative(IndexedEventSource source)
     {
-        var sourceNative = (IndexedEventSourceNative*)Marshal.AllocHGlobal(sizeof(IndexedEventSourceNative));
-        sourceNative->Type = IndexedSourceTypeNative.IndexedEventSource;
+        var sourceNative = (SymbolMarshaller.IndexedEventSourceNative*)Marshal.AllocHGlobal(sizeof(SymbolMarshaller.IndexedEventSourceNative));
+        sourceNative->Type = SymbolMarshaller.IndexedSourceTypeNative.IndexedEventSource;
         if (source is OrderSource)
         {
-            sourceNative->Type = IndexedSourceTypeNative.OrderEventSource;
+            sourceNative->Type = SymbolMarshaller.IndexedSourceTypeNative.OrderEventSource;
         }
 
         sourceNative->Id = source.Id;
@@ -34,10 +33,10 @@ internal static unsafe class IndexedSourceMapper
     }
 
     /// <summary>
-    /// Release unsafe <see cref="IndexedEventSourceNative"/> pointer.
+    /// Release unsafe <see cref="SymbolMarshaller.IndexedEventSourceNative"/> pointer.
     /// </summary>
     /// <param name="sourceNative">The source unsafe pointer.</param>
-    public static void ReleaseNative(IndexedEventSourceNative* sourceNative)
+    public static void ReleaseNative(SymbolMarshaller.IndexedEventSourceNative* sourceNative)
     {
         if ((nint)sourceNative == 0)
         {

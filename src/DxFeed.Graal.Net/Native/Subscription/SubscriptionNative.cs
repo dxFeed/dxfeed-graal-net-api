@@ -13,7 +13,6 @@ using DxFeed.Graal.Net.Native.Feed;
 using DxFeed.Graal.Net.Native.Graal;
 using DxFeed.Graal.Net.Native.Interop;
 using DxFeed.Graal.Net.Native.SymbolMappers;
-using DxFeed.Graal.Net.Native.Symbols;
 
 namespace DxFeed.Graal.Net.Native.Subscription;
 
@@ -201,7 +200,7 @@ internal sealed unsafe class SubscriptionNative : IDisposable
 
         public static void AddSymbol(nint thread, SubscriptionHandle* subHandle, object symbol)
         {
-            var symbolNative = (SymbolNative*)0;
+            var symbolNative = (SymbolMarshaller.SymbolNative*)0;
             try
             {
                 symbolNative = SymbolMapper.CreateNative(symbol);
@@ -217,7 +216,7 @@ internal sealed unsafe class SubscriptionNative : IDisposable
         {
             try
             {
-                var symbolNative = SymbolMapper.CreateNative<SymbolNative>(symbol);
+                var symbolNative = SymbolMapper.CreateNative<SymbolMarshaller.SymbolNative>(symbol);
                 ErrorCheck.SafeCall(NativeAddSymbols(thread, subHandle, symbolNative));
             }
             finally
@@ -229,7 +228,7 @@ internal sealed unsafe class SubscriptionNative : IDisposable
 
         public static void RemoveSymbol(nint thread, SubscriptionHandle* subHandle, object symbol)
         {
-            var symbolNative = (SymbolNative*)0;
+            var symbolNative = (SymbolMarshaller.SymbolNative*)0;
             try
             {
                 symbolNative = SymbolMapper.CreateNative(symbol);
@@ -245,7 +244,7 @@ internal sealed unsafe class SubscriptionNative : IDisposable
         {
             try
             {
-                var symbolNative = SymbolMapper.CreateNative<SymbolNative>(symbol);
+                var symbolNative = SymbolMapper.CreateNative<SymbolMarshaller.SymbolNative>(symbol);
                 ErrorCheck.SafeCall(NativeRemoveSymbols(thread, subHandle, symbolNative));
             }
             finally
@@ -350,7 +349,7 @@ internal sealed unsafe class SubscriptionNative : IDisposable
         private static extern int NativeAddSymbol(
             nint thread,
             SubscriptionHandle* subHandle,
-            SymbolNative* symbol);
+            SymbolMarshaller.SymbolNative* symbol);
 
         [DllImport(
             ImportInfo.DllName,
@@ -360,7 +359,7 @@ internal sealed unsafe class SubscriptionNative : IDisposable
         private static extern int NativeAddSymbols(
             nint thread,
             SubscriptionHandle* subHandle,
-            ListNative<SymbolNative>* symbols);
+            ListNative<SymbolMarshaller.SymbolNative>* symbols);
 
         [DllImport(
             ImportInfo.DllName,
@@ -370,7 +369,7 @@ internal sealed unsafe class SubscriptionNative : IDisposable
         private static extern int NativeRemoveSymbol(
             nint thread,
             SubscriptionHandle* subHandle,
-            SymbolNative* symbol);
+            SymbolMarshaller.SymbolNative* symbol);
 
         [DllImport(
             ImportInfo.DllName,
@@ -380,7 +379,7 @@ internal sealed unsafe class SubscriptionNative : IDisposable
         private static extern int NativeRemoveSymbols(
             nint thread,
             SubscriptionHandle* subHandle,
-            ListNative<SymbolNative>* symbols);
+            ListNative<SymbolMarshaller.SymbolNative>* symbols);
 
         [DllImport(
             ImportInfo.DllName,

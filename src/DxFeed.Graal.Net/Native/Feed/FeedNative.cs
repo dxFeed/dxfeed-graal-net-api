@@ -13,7 +13,6 @@ using DxFeed.Graal.Net.Native.Interop;
 using DxFeed.Graal.Net.Native.Promise;
 using DxFeed.Graal.Net.Native.Subscription;
 using DxFeed.Graal.Net.Native.SymbolMappers;
-using DxFeed.Graal.Net.Native.Symbols;
 
 namespace DxFeed.Graal.Net.Native.Feed;
 
@@ -46,7 +45,7 @@ internal sealed unsafe class FeedNative
 
     public PromiseNative GetLastEventPromise(EventCodeNative eventCode, object symbol)
     {
-        var symbolNative = (SymbolNative*)0;
+        var symbolNative = (SymbolMarshaller.SymbolNative*)0;
         try
         {
             symbolNative = SymbolMapper.CreateNative(symbol);
@@ -60,7 +59,7 @@ internal sealed unsafe class FeedNative
 
     public PromiseNative GetTimeSeriesPromise(EventCodeNative eventCode, object symbol, long from, long to)
     {
-        var symbolNative = (SymbolNative*)0;
+        var symbolNative = (SymbolMarshaller.SymbolNative*)0;
         try
         {
             symbolNative = SymbolMapper.CreateNative(symbol);
@@ -132,7 +131,7 @@ internal sealed unsafe class FeedNative
             nint thread,
             FeedHandle* feedHandle,
             EventCodeNative eventCodes,
-            SymbolNative* symbol,
+            SymbolMarshaller.SymbolNative* symbol,
             long from,
             long to);
 
@@ -145,7 +144,7 @@ internal sealed unsafe class FeedNative
             nint thread,
             FeedHandle* feedHandle,
             EventCodeNative eventCodes,
-            SymbolNative* symbol);
+            SymbolMarshaller.SymbolNative* symbol);
 
         [DllImport(
             ImportInfo.DllName,

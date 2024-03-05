@@ -9,10 +9,6 @@ using System.Runtime.InteropServices;
 using DxFeed.Graal.Net.Api.Osub;
 using DxFeed.Graal.Net.Events.Candles;
 using DxFeed.Graal.Net.Native.Interop;
-using DxFeed.Graal.Net.Native.Symbols;
-using DxFeed.Graal.Net.Native.Symbols.Candle;
-using DxFeed.Graal.Net.Native.Symbols.Indexed;
-using DxFeed.Graal.Net.Native.Symbols.TimeSeries;
 
 namespace DxFeed.Graal.Net.Native.SymbolMappers;
 
@@ -34,22 +30,22 @@ internal static unsafe class SymbolMapper
         return listNative;
     }
 
-    public static SymbolNative* CreateNative(object symbol)
+    public static SymbolMarshaller.SymbolNative* CreateNative(object symbol)
     {
         var nativeSymbol = symbol switch
         {
-            string => (SymbolNative*)Marshal.AllocHGlobal(sizeof(StringSymbolNative)),
-            CandleSymbol => (SymbolNative*)Marshal.AllocHGlobal(sizeof(CandleSymbolNative)),
-            IndexedEventSubscriptionSymbol => (SymbolNative*)Marshal.AllocHGlobal(sizeof(IndexedEventSubscriptionSymbolNative)),
-            TimeSeriesSubscriptionSymbol => (SymbolNative*)Marshal.AllocHGlobal(sizeof(TimeSeriesSubscriptionSymbolNative)),
-            WildcardSymbol => (SymbolNative*)Marshal.AllocHGlobal(sizeof(WildcardSymbolNative)),
+            string => (SymbolMarshaller.SymbolNative*)Marshal.AllocHGlobal(sizeof(SymbolMarshaller.StringSymbolNative)),
+            CandleSymbol => (SymbolMarshaller.SymbolNative*)Marshal.AllocHGlobal(sizeof(SymbolMarshaller.CandleSymbolNative)),
+            IndexedEventSubscriptionSymbol => (SymbolMarshaller.SymbolNative*)Marshal.AllocHGlobal(sizeof(SymbolMarshaller.IndexedEventSubscriptionSymbolNative)),
+            TimeSeriesSubscriptionSymbol => (SymbolMarshaller.SymbolNative*)Marshal.AllocHGlobal(sizeof(SymbolMarshaller.TimeSeriesSubscriptionSymbolNative)),
+            WildcardSymbol => (SymbolMarshaller.SymbolNative*)Marshal.AllocHGlobal(sizeof(SymbolMarshaller.WildcardSymbolNative)),
             _ => throw new ArgumentException($"Unknown symbol type: {symbol.GetType().Name}"),
         };
         FillNative(symbol, nativeSymbol);
         return nativeSymbol;
     }
 
-    public static void ReleaseNative(SymbolNative* nativeSymbol)
+    public static void ReleaseNative(SymbolMarshaller.SymbolNative* nativeSymbol)
     {
         if ((nint)nativeSymbol == 0)
         {
@@ -58,24 +54,24 @@ internal static unsafe class SymbolMapper
 
         switch (nativeSymbol->SymbolCode)
         {
-            case SymbolCodeNative.String:
-                var s = (StringSymbolNative*)nativeSymbol;
+            case SymbolMarshaller.SymbolCodeNative.String:
+                var s = (SymbolMarshaller.StringSymbolNative*)nativeSymbol;
                 s->Symbol.Release();
                 break;
-            case SymbolCodeNative.CandleSymbol:
-                var cs = (CandleSymbolNative*)nativeSymbol;
+            case SymbolMarshaller.SymbolCodeNative.CandleSymbol:
+                var cs = (SymbolMarshaller.CandleSymbolNative*)nativeSymbol;
                 cs->Symbol.Release();
                 break;
-            case SymbolCodeNative.IndexedEventSubscriptionSymbol:
-                var iss = (IndexedEventSubscriptionSymbolNative*)nativeSymbol;
+            case SymbolMarshaller.SymbolCodeNative.IndexedEventSubscriptionSymbol:
+                var iss = (SymbolMarshaller.IndexedEventSubscriptionSymbolNative*)nativeSymbol;
                 IndexedSourceMapper.ReleaseNative(iss->Source);
                 ReleaseNative(iss->Symbol);
                 break;
-            case SymbolCodeNative.TimeSeriesSubscriptionSymbol:
-                var tss = (TimeSeriesSubscriptionSymbolNative*)nativeSymbol;
+            case SymbolMarshaller.SymbolCodeNative.TimeSeriesSubscriptionSymbol:
+                var tss = (SymbolMarshaller.TimeSeriesSubscriptionSymbolNative*)nativeSymbol;
                 ReleaseNative(tss->Symbol);
                 break;
-            case SymbolCodeNative.WildcardSymbol:
+            case SymbolMarshaller.SymbolCodeNative.WildcardSymbol:
                 break;
             default:
                 throw new ArgumentException($"Unknown symbol type: {nativeSymbol->SymbolCode}");
@@ -84,35 +80,35 @@ internal static unsafe class SymbolMapper
         Marshal.FreeHGlobal((nint)nativeSymbol);
     }
 
-    private static void FillNative(object symbol, SymbolNative* nativeSymbol)
+    private static void FillNative(object symbol, SymbolMarshaller.SymbolNative* nativeSymbol)
     {
         switch (symbol)
         {
             case string s:
-                var stringSymbol = (StringSymbolNative*)nativeSymbol;
-                stringSymbol->Base.SymbolCode = SymbolCodeNative.String;
+                var stringSymbol = (SymbolMarshaller.StringSymbolNative*)nativeSymbol;
+                stringSymbol->Base.SymbolCode = SymbolMarshaller.SymbolCodeNative.String;
                 stringSymbol->Symbol = s;
                 break;
             case CandleSymbol cs:
-                var candleSymbol = (CandleSymbolNative*)nativeSymbol;
-                candleSymbol->SymbolNative.SymbolCode = SymbolCodeNative.String;
+                var candleSymbol = (SymbolMarshaller.CandleSymbolNative*)nativeSymbol;
+                candleSymbol->SymbolNative.SymbolCode = SymbolMarshaller.SymbolCodeNative.String;
                 candleSymbol->Symbol = cs.Symbol;
                 break;
             case IndexedEventSubscriptionSymbol iss:
-                var indexedSymbol = (IndexedEventSubscriptionSymbolNative*)nativeSymbol;
-                indexedSymbol->SymbolNative.SymbolCode = SymbolCodeNative.IndexedEventSubscriptionSymbol;
+                var indexedSymbol = (SymbolMarshaller.IndexedEventSubscriptionSymbolNative*)nativeSymbol;
+                indexedSymbol->SymbolNative.SymbolCode = SymbolMarshaller.SymbolCodeNative.IndexedEventSubscriptionSymbol;
                 indexedSymbol->Symbol = CreateNative(iss.EventSymbol);
                 indexedSymbol->Source = IndexedSourceMapper.CreateNative(iss.Source);
                 break;
             case TimeSeriesSubscriptionSymbol tss:
-                var timeSeriesSymbol = (TimeSeriesSubscriptionSymbolNative*)nativeSymbol;
-                timeSeriesSymbol->SymbolNative.SymbolCode = SymbolCodeNative.TimeSeriesSubscriptionSymbol;
+                var timeSeriesSymbol = (SymbolMarshaller.TimeSeriesSubscriptionSymbolNative*)nativeSymbol;
+                timeSeriesSymbol->SymbolNative.SymbolCode = SymbolMarshaller.SymbolCodeNative.TimeSeriesSubscriptionSymbol;
                 timeSeriesSymbol->Symbol = CreateNative(tss.EventSymbol);
                 timeSeriesSymbol->FromTime = tss.FromTime;
                 break;
             case WildcardSymbol:
-                var wildcardSymbol = (WildcardSymbolNative*)nativeSymbol;
-                wildcardSymbol->SymbolNative.SymbolCode = SymbolCodeNative.WildcardSymbol;
+                var wildcardSymbol = (SymbolMarshaller.WildcardSymbolNative*)nativeSymbol;
+                wildcardSymbol->SymbolNative.SymbolCode = SymbolMarshaller.SymbolCodeNative.WildcardSymbol;
                 break;
         }
     }
