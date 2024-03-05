@@ -69,8 +69,6 @@ our [customer portal](https://jira.in.devexperts.com/servicedesk/customer/portal
 
 ### Future Development
 
-Features planned with **high priority**:
-
 * Add necessary entities for more convenient API
   usage ([TimeSeriesEventModel](https://docs.dxfeed.com/dxfeed/api/com/dxfeed/model/TimeSeriesEventModel.html), [OrderBookModel](https://docs.dxfeed.com/dxfeed/api/com/dxfeed/model/market/OrderBookModel.html),
   etc.)
