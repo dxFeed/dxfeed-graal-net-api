@@ -77,8 +77,6 @@ Features planned with **high priority**:
 * Implement a model
   of [incremental updates](https://kb.dxfeed.com/en/data-services/real-time-data-services/-net-api-incremental-updates.html)
   in Java API and add it to .NET API
-* Implement OrderBookModel with advanced logic (e.g., OnNewBook, OnBookUpdate, OnBookIncrementalChange) in Java API and
-  add it to .NET API
 * Add samples or implement a convenient API
   for [Candlewebservice](https://kb.dxfeed.com/en/data-services/aggregated-data-services/candlewebservice.html)
 
@@ -380,7 +378,8 @@ sudo /usr/bin/xattr -r -d com.apple.quarantine <directory_with_tools>
   simple demonstration of how to get live updates for Instrument Profiles
 - [ ] DxFeedPublishProfiles is a simple demonstration of how to publish market events
 - [ ] ScheduleSample is a simple demonstration of how to get various scheduling information for instruments
-- [x] FetchDailyCandles is a simple demonstration of how to fetch last N-days of candles for a specified symbol
+- [x] FetchDailyCandles(https://github.com/dxFeed/dxfeed-graal-net-api/tree/main/samples/FetchDailyCandles) is a simple
+  demonstration of how to fetch last N-days of candles for a specified symbol
 
 ## Current State
 
@@ -407,11 +406,6 @@ sudo /usr/bin/xattr -r -d com.apple.quarantine <directory_with_tools>
 - [x] [LOCAL_HUB](https://docs.dxfeed.com/dxfeed/api/com/dxfeed/api/DXEndpoint.Role.html#LOCAL_HUB)
   is a local hub without the ability to establish network connections. Events published via `Publisher` are delivered to
   local `Feed` only
-
-- [ ] [ON_DEMAND_FEED](https://docs.dxfeed.com/dxfeed/api/com/dxfeed/api/DXEndpoint.Role.html#ON_DEMAND_FEED)
-  is similar to `Feed`, but it is designed to be used
-  with  [OnDemandService](https://docs.dxfeed.com/dxfeed/api/com/dxfeed/ondemand/OnDemandService.html) for historical
-  data replay only
 
 ### Event Types
 
@@ -466,11 +460,8 @@ sudo /usr/bin/xattr -r -d com.apple.quarantine <directory_with_tools>
   represents a trade or another market event with the price (for example, market open/close price, etc.) for each option
   symbol listed under the specified `Underlying`
 
-- [ ] [Configuration](https://docs.dxfeed.com/dxfeed/api/com/dxfeed/event/misc/Configuration.html)
-  is an event with an application-specific attachment
-
-- [ ] [Message](https://docs.dxfeed.com/dxfeed/api/com/dxfeed/event/misc/Message.html)
-  is an event with an application-specific attachment
+- [ ] [OtcMarketsOrder](https://docs.dxfeed.com/dxfeed/api/com/dxfeed/event/market/OtcMarketsOrder.html) represents an
+  extension of `Order` for the symbols traded on the OTC Markets.
 
 ### Subscription Symbols
 
@@ -503,33 +494,12 @@ sudo /usr/bin/xattr -r -d com.apple.quarantine <directory_with_tools>
   is an observable set of subscription symbols for the specific event
   type ([Java API sample](https://github.com/devexperts/QD/blob/master/dxfeed-samples/src/main/java/com/dxfeed/sample/_simple_/PublishProfiles.java))
 
-- [ ] [GetLastEvent](https://docs.dxfeed.com/dxfeed/api/com/dxfeed/api/DXFeed.html#getLastEvent-E-)
+- [x] [GetLastEvent](https://docs.dxfeed.com/dxfeed/api/com/dxfeed/api/DXFeed.html#getLastEvent-E-)
   returns the last event for the specified event instance
   ([Java API sample](https://github.com/devexperts/QD/blob/master/dxfeed-samples/src/main/java/com/dxfeed/sample/api/DXFeedSample.java))
 
-- [x] [GetLastEvents](https://docs.dxfeed.com/dxfeed/api/com/dxfeed/api/DXFeed.html#getLastEvents-java.util.Collection-)
-  returns the last events for the specified event instances list
-
-- [ ] [GetLastEventPromise](https://docs.dxfeed.com/dxfeed/api/com/dxfeed/api/DXFeed.html#getLastEventPromise-java.lang.Class-java.lang.Object-)
-  requests the last event for the specified event type and symbol
-
-- [ ] [GetLastEventsPromises](https://docs.dxfeed.com/dxfeed/api/com/dxfeed/api/DXFeed.html#getLastEventsPromises-java.lang.Class-java.util.Collection-)
-  requests the last events for the specified event type and symbol collection
-
-- [ ] [GetLastEventIfSubscribed](https://docs.dxfeed.com/dxfeed/api/com/dxfeed/api/DXFeed.html#getLastEventIfSubscribed-java.lang.Class-java.lang.Object-)
-  returns the last event for the specified event type and symbol if there’s a subscription for it
-
-- [ ] [GetIndexedEventsPromise](https://docs.dxfeed.com/dxfeed/api/com/dxfeed/api/DXFeed.html#getIndexedEventsPromise-java.lang.Class-java.lang.Object-com.dxfeed.event.IndexedEventSource-)
-  requests an indexed events list for the specified event type, symbol, and source
-
-- [ ] [GetIndexedEventsIfSubscribed](https://docs.dxfeed.com/dxfeed/api/com/dxfeed/api/DXFeed.html#getIndexedEventsIfSubscribed-java.lang.Class-java.lang.Object-com.dxfeed.event.IndexedEventSource-)
-  returns a list of indexed events for the specified event type, symbol, and source, if there’s a subscription for it
-
 - [x] [GetTimeSeriesPromise](https://docs.dxfeed.com/dxfeed/api/com/dxfeed/api/DXFeed.html#getTimeSeriesPromise-java.lang.Class-java.lang.Object-long-long-)
   requests time series events for the specified event type, symbol, and time range
-
-- [ ] [GetTimeSeriesIfSubscribed](https://docs.dxfeed.com/dxfeed/api/com/dxfeed/api/DXFeed.html#getTimeSeriesIfSubscribed-java.lang.Class-java.lang.Object-long-long-)
-  requests time series events for the specified event type, symbol, and time range if there’s a subscription for it
 
 - [ ] [TimeSeriesEventModel](https://docs.dxfeed.com/dxfeed/api/com/dxfeed/model/TimeSeriesEventModel.html)
   is a model of a list of time series events
@@ -556,21 +526,10 @@ sudo /usr/bin/xattr -r -d com.apple.quarantine <directory_with_tools>
   collects instrument profile updates and provides the live instrument profiles list
   ([Java API sample](https://github.com/devexperts/QD/blob/master/dxfeed-samples/src/main/java/com/dxfeed/sample/ipf/DXFeedLiveIpfSample.java))
 
-- [ ] [InstrumentProfileConnection](https://docs.dxfeed.com/dxfeed/api/com/dxfeed/ipf/live/InstrumentProfileConnection.html)
+- [x] [InstrumentProfileConnection](https://docs.dxfeed.com/dxfeed/api/com/dxfeed/ipf/live/InstrumentProfileConnection.html)
   connects to an instrument profile URL and reads instrument profiles with support of streaming live updates
 
 - [ ] [Schedule](https://docs.dxfeed.com/dxfeed/api/com/dxfeed/schedule/Schedule.html)
   provides an API to retrieving and exploring the trading schedules of various exchanges and different financial
   instrument classes
   ([Java API sample](https://github.com/devexperts/QD/blob/master/dxfeed-samples/src/main/java/com/dxfeed/sample/schedule/ScheduleSample.java))
-
-- [ ] [Option Series](https://github.com/devexperts/QD/blob/master/dxfeed-api/src/main/java/com/dxfeed/ipf/option/OptionSeries.java)
-  is a series of call and put options with different strike sharing the same attributes of expiration, last trading day,
-  spc, multiplies,
-  etc. ([Java API sample](https://github.com/devexperts/QD/blob/master/dxfeed-samples/src/main/java/com/dxfeed/sample/ipf/option/DXFeedOptionChain.java))
-
-### Services
-
-- [ ] [OnDemandService](https://docs.dxfeed.com/dxfeed/api/com/dxfeed/ondemand/OnDemandService.html)
-  provides on-demand historical tick data replay controls
-  ([Java API sample](https://github.com/devexperts/QD/blob/master/dxfeed-samples/src/main/java/com/dxfeed/sample/ondemand/OnDemandSample.java))
