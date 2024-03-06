@@ -45,30 +45,12 @@ internal sealed unsafe class FeedNative
 
     public PromiseNative GetLastEventPromise(EventCodeNative eventCode, object symbol)
     {
-        var symbolNative = (SymbolMarshaller.SymbolNative*)0;
-        try
-        {
-            symbolNative = SymbolMapper.CreateNative(symbol);
-            return FeedImport.GetLastEventPromise(GetCurrentThread(), _feedHandle, eventCode, symbolNative);
-        }
-        finally
-        {
-            SymbolMapper.ReleaseNative(symbolNative);
-        }
+        return FeedImport.GetLastEventPromise(GetCurrentThread(), _feedHandle, eventCode, symbol);
     }
 
     public PromiseNative GetTimeSeriesPromise(EventCodeNative eventCode, object symbol, long from, long to)
     {
-        var symbolNative = (SymbolMarshaller.SymbolNative*)0;
-        try
-        {
-            symbolNative = SymbolMapper.CreateNative(symbol);
-            return FeedImport.GetTimeSeriesPromise(GetCurrentThread(), _feedHandle, eventCode, symbolNative, from, to);
-        }
-        finally
-        {
-            SymbolMapper.ReleaseNative(symbolNative);
-        }
+        return FeedImport.GetTimeSeriesPromise(GetCurrentThread(), _feedHandle, eventCode, symbol, from, to);
     }
 
     internal FeedHandle* GetHandle() =>
@@ -131,7 +113,8 @@ internal sealed unsafe class FeedNative
             nint thread,
             FeedHandle* feedHandle,
             EventCodeNative eventCodes,
-            SymbolMarshaller.SymbolNative* symbol,
+            [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(SymbolMarshaller))]
+            object value,
             long from,
             long to);
 
@@ -144,7 +127,8 @@ internal sealed unsafe class FeedNative
             nint thread,
             FeedHandle* feedHandle,
             EventCodeNative eventCodes,
-            SymbolMarshaller.SymbolNative* symbol);
+            [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(SymbolMarshaller))]
+            object value);
 
         [DllImport(
             ImportInfo.DllName,

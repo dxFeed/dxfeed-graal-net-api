@@ -138,6 +138,9 @@ public sealed class DXFeedSubscription : IObservableSubscription, IDisposable
     public void RemoveSymbols(params object[] symbols) =>
         _subscriptionNative.RemoveSymbol(symbols);
 
+
+    public IEnumerable<object> GetSymbols() =>
+        _subscriptionNative.GetSymbols();
     /// <summary>
     /// Removes the specified collection of symbols from the set of subscribed symbols.
     /// </summary>
