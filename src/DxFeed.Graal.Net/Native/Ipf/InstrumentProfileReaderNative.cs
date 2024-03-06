@@ -5,23 +5,17 @@
 // </copyright>
 
 using System.Collections.Generic;
-using System.Diagnostics.CodeAnalysis;
 using System.Runtime.InteropServices;
-using System.Threading;
 using DxFeed.Graal.Net.Ipf;
 using DxFeed.Graal.Net.Native.Interop;
-using Microsoft.Win32.SafeHandles;
 using static DxFeed.Graal.Net.Native.ErrorHandling.ErrorCheck;
 
 namespace DxFeed.Graal.Net.Native.Ipf;
 
 internal class InstrumentProfileReaderNative : JavaHandle
 {
-    public static string? ResolveSourceUrl(string address)
-    {
-        using var str = SafeCall(NativeResolveSourceUrl(CurrentThread, address));
-        return str.ToString();
-    }
+    public static string? ResolveSourceUrl(string address) =>
+        SafeCall(NativeResolveSourceUrl(CurrentThread, address));
 
     public static InstrumentProfileReaderNative Create() =>
         SafeCall(NativeCreate(CurrentThread));
@@ -46,7 +40,8 @@ internal class InstrumentProfileReaderNative : JavaHandle
         BestFitMapping = false,
         ThrowOnUnmappableChar = true,
         EntryPoint = "dxfg_InstrumentProfileReader_resolveSourceURL")]
-    private static extern JavaStringHandle NativeResolveSourceUrl(
+    [return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(StringMarshaler))]
+    private static extern string? NativeResolveSourceUrl(
         nint thread,
         [MarshalAs(UnmanagedType.LPUTF8Str)] string address);
 

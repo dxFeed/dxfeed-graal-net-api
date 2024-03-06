@@ -5,37 +5,33 @@
 // </copyright>
 
 using System.Runtime.InteropServices;
-using DxFeed.Graal.Net.Ipf.Live;
-using DxFeed.Graal.Net.Native.ErrorHandling;
 using DxFeed.Graal.Net.Native.Interop;
+using static DxFeed.Graal.Net.Native.ErrorHandling.ErrorCheck;
 
 namespace DxFeed.Graal.Net.Native.Ipf;
 
 internal class InstrumentProfileConnectionHandle : JavaHandle
 {
-    public static InstrumentProfileConnectionHandle Create(string address, InstrumentProfileCollectorHandle instrumentProfileCollector) =>
-        ErrorCheck.SafeCall(Import.CreateConnection(CurrentThread, address, instrumentProfileCollector));
+    public static InstrumentProfileConnectionHandle Create(string address, InstrumentProfileCollectorHandle collector) =>
+        SafeCall(Import.CreateConnection(CurrentThread, address, collector));
 
-    public string? GetAddress()
-    {
-        using var address = ErrorCheck.SafeCall(Import.GetAddress(CurrentThread, this));
-        return address.ToString();
-    }
+    public string? GetAddress() =>
+        SafeCall(Import.GetAddress(CurrentThread, this));
 
     public long GetUpdatePeriod() =>
-        ErrorCheck.SafeCall(Import.GetUpdatePeriod(CurrentThread, this));
+        SafeCall(Import.GetUpdatePeriod(CurrentThread, this));
 
     public void SetUpdatePeriod(long updatePeriod) =>
-        ErrorCheck.SafeCall(Import.SetUpdatePeriod(CurrentThread, this, updatePeriod));
+        SafeCall(Import.SetUpdatePeriod(CurrentThread, this, updatePeriod));
 
     public long GetLastModified() =>
-        ErrorCheck.SafeCall(Import.GetLasModified(CurrentThread, this));
+        SafeCall(Import.GetLasModified(CurrentThread, this));
 
     public void Start() =>
-        ErrorCheck.SafeCall(Import.Start(CurrentThread, this));
+        SafeCall(Import.Start(CurrentThread, this));
 
     public new void Close() =>
-        ErrorCheck.SafeCall(Import.Close(CurrentThread, this));
+        SafeCall(Import.Close(CurrentThread, this));
 
     private static class Import
     {
@@ -60,7 +56,8 @@ internal class InstrumentProfileConnectionHandle : JavaHandle
             BestFitMapping = false,
             ThrowOnUnmappableChar = true,
             EntryPoint = "dxfg_InstrumentProfileConnection_getAddress")]
-        public static extern JavaStringHandle GetAddress(
+        [return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(StringMarshaler))]
+        public static extern string? GetAddress(
             nint thread,
             InstrumentProfileConnectionHandle instrumentProfileConnection);
 
