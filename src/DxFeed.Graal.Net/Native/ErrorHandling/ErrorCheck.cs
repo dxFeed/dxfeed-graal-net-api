@@ -67,7 +67,7 @@ internal static class ErrorCheck
     /// If no error is detected, the original result is returned.
     /// </summary>
     /// <param name="result">The result of the native function call.</param>
-    /// <typeparam name="T">The type of <see cref="SafeHandle"/>.</typeparam>
+    /// <typeparam name="T">The any type.</typeparam>
     /// <returns>The original result if no error occurred.</returns>
     /// <exception cref="JavaException">If the native call resulted in an error.</exception>
     /// <remarks>
@@ -76,9 +76,8 @@ internal static class ErrorCheck
     /// it will not throw an exception (even if it was thrown on Java side), potentially leading to undefined behavior.
     /// </remarks>
     public static T SafeCall<T>(T result)
-    where T : SafeHandle
     {
-        if (result.IsInvalid)
+        if (result == null || result is SafeHandle { IsInvalid: true })
         {
             ThrowIfJavaThreadExceptionExists();
         }

@@ -11,46 +11,34 @@ using static DxFeed.Graal.Net.Native.ErrorHandling.ErrorCheck;
 
 namespace DxFeed.Graal.Net.Native.Interop;
 
-internal class StringMarshaller : AbstractMarshaller
+internal class StringMarshaler : AbstractMarshaler
 {
-    private static readonly Lazy<StringMarshaller> Instance = new();
+    private static readonly Lazy<StringMarshaler> Instance = new();
 
     public static ICustomMarshaler GetInstance(string cookie) =>
         Instance.Value;
 
-    public override object? MarshalNativeToManaged(IntPtr native)
+    public override object? ConvertNativeToManaged(IntPtr native) =>
+        Marshal.PtrToStringUTF8(native);
+
+    public override IntPtr ConvertManagedToNative(object? managed)
     {
-        if (native == IntPtr.Zero)
-        {
-            return null;
-        }
-
-        RegisterCleanUpActionsForPointer(native, CleanFromNative);
-        return Marshal.PtrToStringUTF8(native);
-    }
-
-    public override IntPtr MarshalManagedToNative(object? managed)
-    {
-        if (managed == null)
-        {
-            return IntPtr.Zero;
-        }
-
         if (managed is not string str)
         {
             throw new ArgumentException("Managed object must be a string.", nameof(managed));
         }
 
-        var native = Marshal.StringToCoTaskMemUTF8(str);
-        RegisterCleanUpActionsForPointer(native, CleanFromManaged);
-        return native;
+        return Marshal.StringToCoTaskMemUTF8(str);
     }
 
-    private static void CleanFromNative(IntPtr native) =>
-        SafeCall(Import.Release(Isolate.CurrentThread, native));
+    public override void CleanUpFromManaged(IntPtr ptr) =>
+        Marshal.FreeCoTaskMem(ptr);
 
-    private static void CleanFromManaged(IntPtr native) =>
-        Marshal.ZeroFreeCoTaskMemUTF8(native);
+    public override void CleanUpFromNative(IntPtr ptr) =>
+        SafeCall(Import.Release(Isolate.CurrentThread, ptr));
+
+    public override void CleanUpListFromNative(IntPtr ptr) =>
+        SafeCall(Import.ReleaseList(Isolate.CurrentThread, ptr));
 
     private static class Import
     {
@@ -60,5 +48,12 @@ internal class StringMarshaller : AbstractMarshaller
             CharSet = CharSet.Ansi,
             EntryPoint = "dxfg_String_release")]
         public static extern int Release(nint thread, nint handle);
+
+        [DllImport(
+            ImportInfo.DllName,
+            CallingConvention = CallingConvention.Cdecl,
+            CharSet = CharSet.Ansi,
+            EntryPoint = "dxfg_CList_String_release")]
+        public static extern int ReleaseList(nint thread, nint handle);
     }
 }
