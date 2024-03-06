@@ -1,4 +1,4 @@
-// <copyright file="ListMarshaller.cs" company="Devexperts LLC">
+// <copyright file="ListMarshaler.cs" company="Devexperts LLC">
 // Copyright © 2022 Devexperts LLC. All rights reserved.
 // This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 // If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
@@ -15,7 +15,7 @@ internal class ListMarshaler<T> : AbstractMarshaler
     where T : AbstractMarshaler, new()
 {
     private static readonly Lazy<ListMarshaler<T>> Instance = new();
-    private static readonly T ElementMarshaller = new();
+    private static readonly T ElementMarshaler = new();
 
     public static ICustomMarshaler GetInstance(string cookie) =>
         Instance.Value;
@@ -26,7 +26,7 @@ internal class ListMarshaler<T> : AbstractMarshaler
         var result = new List<object?>(list->Size);
         for (var i = 0; i < list->Size; ++i)
         {
-            result.Add(ElementMarshaller.ConvertNativeToManaged((IntPtr)list->Elements[i]));
+            result.Add(ElementMarshaler.ConvertNativeToManaged((IntPtr)list->Elements[i]));
         }
 
         return result;
@@ -46,7 +46,7 @@ internal class ListMarshaler<T> : AbstractMarshaler
         list->Elements = (void**)Marshal.AllocHGlobal(IntPtr.Size * size);
         for (var i = 0; i < elements.Length; ++i)
         {
-            list->Elements[i] = (void*)ElementMarshaller.ConvertManagedToNative(elements[i]);
+            list->Elements[i] = (void*)ElementMarshaler.ConvertManagedToNative(elements[i]);
         }
 
         return (IntPtr)list;
@@ -62,7 +62,7 @@ internal class ListMarshaler<T> : AbstractMarshaler
         var list = (ListNative*)ptr;
         for (var i = 0; i < list->Size; ++i)
         {
-            ElementMarshaller.CleanUpFromManaged((IntPtr)list->Elements[i]);
+            ElementMarshaler.CleanUpFromManaged((IntPtr)list->Elements[i]);
         }
 
         Marshal.FreeHGlobal((IntPtr)list->Elements);
@@ -73,7 +73,7 @@ internal class ListMarshaler<T> : AbstractMarshaler
         CleanUpListFromNative(ptr);
 
     public override void CleanUpListFromNative(IntPtr ptr) =>
-        ElementMarshaller.CleanUpListFromNative(ptr);
+        ElementMarshaler.CleanUpListFromNative(ptr);
 
     [StructLayout(LayoutKind.Sequential)]
     private unsafe struct ListNative
