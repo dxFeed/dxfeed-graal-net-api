@@ -15,7 +15,7 @@ using static DxFeed.Graal.Net.Native.ErrorHandling.ErrorCheck;
 
 namespace DxFeed.Graal.Net.Native.Promise;
 
-[SuppressMessage("ReSharper", "ClassNeverInstantiated.Global", Justification = "Created by marshaller")]
+[SuppressMessage("ReSharper", "ClassNeverInstantiated.Global", Justification = "Created by marshaler")]
 internal sealed unsafe class PromiseNative : JavaHandle
 {
     public bool IsDone() => SafeCall(Import.IsDone(CurrentThread, this)) != 0;
