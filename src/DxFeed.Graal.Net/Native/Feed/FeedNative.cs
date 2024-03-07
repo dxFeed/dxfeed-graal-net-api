@@ -43,15 +43,11 @@ internal sealed unsafe class FeedNative
     public void DetachSubscriptionAndClear(SubscriptionNative subscriptionNative) =>
         FeedImport.DetachSubscriptionAndClear(GetCurrentThread(), _feedHandle, subscriptionNative.GetHandle());
 
-    public PromiseNative GetLastEventPromise(EventCodeNative eventCode, object symbol)
-    {
-        return FeedImport.GetLastEventPromise(GetCurrentThread(), _feedHandle, eventCode, symbol);
-    }
+    public PromiseNative GetLastEventPromise(EventCodeNative eventCode, object symbol) =>
+        FeedImport.GetLastEventPromise(GetCurrentThread(), _feedHandle, eventCode, symbol);
 
-    public PromiseNative GetTimeSeriesPromise(EventCodeNative eventCode, object symbol, long from, long to)
-    {
-        return FeedImport.GetTimeSeriesPromise(GetCurrentThread(), _feedHandle, eventCode, symbol, from, to);
-    }
+    public PromiseNative GetTimeSeriesPromise(EventCodeNative eventCode, object symbol, long from, long to) =>
+        FeedImport.GetTimeSeriesPromise(GetCurrentThread(), _feedHandle, eventCode, symbol, from, to);
 
     internal FeedHandle* GetHandle() =>
         _feedHandle;

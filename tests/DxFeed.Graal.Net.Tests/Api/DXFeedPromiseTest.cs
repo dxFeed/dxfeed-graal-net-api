@@ -30,13 +30,13 @@ public class DXFeedPromiseTest
 
         Assert.ThrowsAsync<OperationCanceledException>(async () =>
         {
-            var cancelSource = new CancellationTokenSource();
+            using var cancelSource = new CancellationTokenSource();
             cancelSource.Cancel();
             await feed.GetLastEventAsync<Quote>("A", cancelSource.Token);
         });
         Assert.ThrowsAsync<JavaException>(async () =>
         {
-            await feed.GetLastEventAsync<Quote>(null);
+            await feed.GetLastEventAsync<Quote>(null!);
         });
 
         endpoint.Close();
@@ -56,14 +56,14 @@ public class DXFeedPromiseTest
 
         Assert.ThrowsAsync<OperationCanceledException>(async () =>
         {
-            var cancelSource = new CancellationTokenSource();
+            using var cancelSource = new CancellationTokenSource();
             cancelSource.Cancel();
             await feed.GetTimeSeriesAsync<Candle>("A", 0, long.MaxValue, cancelSource.Token);
         });
 
         Assert.ThrowsAsync<JavaException>(async () =>
         {
-            await feed.GetTimeSeriesAsync<Candle>(null, 0, long.MaxValue);
+            await feed.GetTimeSeriesAsync<Candle>(null!, 0, long.MaxValue);
         });
 
         endpoint.Close();
