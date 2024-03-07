@@ -138,9 +138,16 @@ public sealed class DXFeedSubscription : IObservableSubscription, IDisposable
     public void RemoveSymbols(params object[] symbols) =>
         _subscriptionNative.RemoveSymbol(symbols);
 
-
+    /// <summary>
+    /// Returns a set of subscribed symbols. The resulting set cannot be modified. The contents of the resulting set
+    /// are undefined if the set of symbols is changed after invocation of this method, but the resulting set is
+    /// safe for concurrent reads from any threads. The resulting set maybe either a snapshot of the set of
+    /// the subscribed symbols at the time of invocation or a weakly consistent view of the set.
+    /// </summary>
+    /// <returns>Returns collection of symbols.</returns>
     public IEnumerable<object> GetSymbols() =>
         _subscriptionNative.GetSymbols();
+
     /// <summary>
     /// Removes the specified collection of symbols from the set of subscribed symbols.
     /// </summary>
