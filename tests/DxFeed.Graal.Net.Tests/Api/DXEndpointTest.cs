@@ -99,7 +99,8 @@ public class DXEndpointTest
         var endpoint = Create(Feed);
 
         var subscription = endpoint.GetFeed().CreateSubscription(typeof(Candle));
-        var symbols = new List<object> {
+        var symbols = new List<object>
+        {
             "AAPL_TEST",
             "AAPL_TEST{=d}",
             WildcardSymbol.All,
@@ -116,5 +117,17 @@ public class DXEndpointTest
         Assert.That(subscription.GetSymbols().Any(), Is.False);
         subscription.SetSymbols(symbols.ToArray());
         Assert.That(new HashSet<object>(symbols).SetEquals(resultSymbols));
+        subscription.Clear();
+        subscription.AddSymbols(symbols);
+        Assert.That(new HashSet<object>(symbols).SetEquals(subscription.GetSymbols()));
+        subscription.Clear();
+
+        var tempList = new List<object>();
+        foreach (var symbol in symbols)
+        {
+            tempList.Add(symbol);
+            subscription.AddSymbols(symbol);
+            Assert.That(new HashSet<object>(tempList).SetEquals(subscription.GetSymbols()));
+        }
     }
 }
