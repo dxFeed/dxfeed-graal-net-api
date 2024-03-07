@@ -99,10 +99,11 @@ internal sealed unsafe class SubscriptionNative : IDisposable
         }
     }
 
-    public IEnumerable<object> GetSymbols()
-    {
-        return SubscriptionImport.GetSymbols(GetCurrentThread(), _subHandle);
-    }
+    public IReadOnlySet<object> GetSymbols() =>
+        new HashSet<object>(SubscriptionImport.GetSymbols(GetCurrentThread(), _subHandle));
+
+    public void SetSymbols(IEnumerable<object> symbols) =>
+       SubscriptionImport.SetSymbols(GetCurrentThread(), _subHandle, symbols);
 
     public void Clear() =>
         SubscriptionImport.Clear(GetCurrentThread(), _subHandle);
@@ -203,30 +204,23 @@ internal sealed unsafe class SubscriptionNative : IDisposable
             EventListenerHandle* eventListenerHandle) =>
             ErrorCheck.SafeCall(NativeRemoveEventListener(thread, subHandle, eventListenerHandle));
 
-        public static void AddSymbol(nint thread, SubscriptionHandle* subHandle, object symbol)
-        {
+        public static void AddSymbol(nint thread, SubscriptionHandle* subHandle, object symbol) =>
             ErrorCheck.SafeCall(NativeAddSymbol(thread, subHandle, symbol));
-        }
 
-        public static void AddSymbols(nint thread, SubscriptionHandle* subHandle, object[] symbol)
-        {
+        public static void AddSymbols(nint thread, SubscriptionHandle* subHandle, object[] symbol) =>
             ErrorCheck.SafeCall(NativeAddSymbols(thread, subHandle, symbol));
-        }
 
-        public static void RemoveSymbol(nint thread, SubscriptionHandle* subHandle, object symbol)
-        {
+        public static void RemoveSymbol(nint thread, SubscriptionHandle* subHandle, object symbol) =>
             ErrorCheck.SafeCall(NativeRemoveSymbol(thread, subHandle, symbol));
-        }
 
-        public static void RemoveSymbols(nint thread, SubscriptionHandle* subHandle, object[] symbol)
-        {
+        public static void RemoveSymbols(nint thread, SubscriptionHandle* subHandle, object[] symbol) =>
             ErrorCheck.SafeCall(NativeRemoveSymbols(thread, subHandle, symbol));
-        }
 
-        public static IEnumerable<object> GetSymbols(nint thread, SubscriptionHandle* subHandle)
-        {
-            return (IEnumerable<object>)ErrorCheck.SafeCall(NativeGetSymbols(thread, subHandle));
-        }
+        public static IEnumerable<object> GetSymbols(nint thread, SubscriptionHandle* subHandle) =>
+            ErrorCheck.SafeCall(NativeGetSymbols(thread, subHandle));
+
+        public static void SetSymbols(nint thread, SubscriptionHandle* subHandle, IEnumerable<object> symbols) =>
+            ErrorCheck.SafeCall(NativeSetSymbols(thread, subHandle, symbols));
 
         public static void Clear(nint thread, SubscriptionHandle* subHandle) =>
             ErrorCheck.SafeCall(NativeClear(thread, subHandle));
@@ -369,6 +363,16 @@ internal sealed unsafe class SubscriptionNative : IDisposable
             nint thread,
             SubscriptionHandle* subHandle);
 
+        [DllImport(
+            ImportInfo.DllName,
+            CallingConvention = CallingConvention.Cdecl,
+            CharSet = CharSet.Ansi,
+            EntryPoint = "dxfg_DXFeedSubscription_setSymbols")]
+        private static extern int NativeSetSymbols(
+            nint thread,
+            SubscriptionHandle* subHandle,
+            [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ListMarshaler<SymbolMarshaler>))]
+            IEnumerable<object> symbols);
 
         [DllImport(
             ImportInfo.DllName,
