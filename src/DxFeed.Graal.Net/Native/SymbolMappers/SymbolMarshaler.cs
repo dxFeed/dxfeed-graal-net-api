@@ -1,5 +1,5 @@
-// <copyright file="SymbolMarshaller.cs" company="Devexperts LLC">
-// Copyright © 2022 Devexperts LLC. All rights reserved.
+// <copyright file="SymbolMarshaler.cs" company="Devexperts LLC">
+// Copyright © 2024 Devexperts LLC. All rights reserved.
 // This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 // If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
 // </copyright>
@@ -92,48 +92,33 @@ internal class SymbolMarshaler : AbstractMarshaler
     public override void CleanUpListFromNative(IntPtr ptr) =>
         ErrorCheck.SafeCall(Import.ReleaseList(Isolate.CurrentThread, ptr));
 
-    private static object? CreateAndFillManaged(IntPtr native)
+    private static unsafe object CreateAndFillManaged(IntPtr native)
     {
-        unsafe
+        var symbolNative = (SymbolNative*)native;
+        switch (symbolNative->SymbolCode)
         {
-            var symbolNative = (SymbolNative*)native;
-            switch (symbolNative->SymbolCode)
-            {
-                case SymbolCodeNative.String:
-                    return ((StringSymbolNative*)symbolNative)->Symbol.ToString();
-                case SymbolCodeNative.CandleSymbol:
-                    var str = ((CandleSymbolNative*)symbolNative)->Symbol.ToString();
-                    return CandleSymbol.ValueOf(str);
-                case SymbolCodeNative.WildcardSymbol:
-                    return WildcardSymbol.All;
-                case SymbolCodeNative.IndexedEventSubscriptionSymbol:
-                    var indexedNative = (IndexedEventSubscriptionSymbolNative*)symbolNative;
-                    var indexedSymbol = CreateAndFillManaged((IntPtr)indexedNative->Symbol);
-                    if (indexedSymbol != null)
-                    {
-                        return new IndexedEventSubscriptionSymbol(
-                            indexedSymbol,
-                            new IndexedEventSource(
-                                indexedNative->Source->Id,
-                                indexedNative->Source->Name.ToString() ?? string.Empty));
-                    }
-
-                    break;
-                case SymbolCodeNative.TimeSeriesSubscriptionSymbol:
-                    var timeSeriesNative = (TimeSeriesSubscriptionSymbolNative*)symbolNative;
-                    var timeSeriesSymbol = CreateAndFillManaged((IntPtr)timeSeriesNative->Symbol);
-                    if (timeSeriesSymbol != null)
-                    {
-                        return new TimeSeriesSubscriptionSymbol(timeSeriesSymbol, timeSeriesNative->FromTime);
-                    }
-
-                    break;
-                default:
-                    throw new ArgumentException($"Unknown symbol type: {symbolNative->SymbolCode}");
-            }
+            case SymbolCodeNative.String:
+                return ((StringSymbolNative*)symbolNative)->Symbol.ToString() ?? throw new InvalidOperationException();
+            case SymbolCodeNative.CandleSymbol:
+                var str = ((CandleSymbolNative*)symbolNative)->Symbol.ToString();
+                return CandleSymbol.ValueOf(str);
+            case SymbolCodeNative.WildcardSymbol:
+                return WildcardSymbol.All;
+            case SymbolCodeNative.IndexedEventSubscriptionSymbol:
+                var indexedNative = (IndexedEventSubscriptionSymbolNative*)symbolNative;
+                var indexedSymbol = CreateAndFillManaged((IntPtr)indexedNative->Symbol);
+                return new IndexedEventSubscriptionSymbol(
+                    indexedSymbol,
+                    new IndexedEventSource(
+                        indexedNative->Source->Id,
+                        indexedNative->Source->Name.ToString() ?? string.Empty));
+            case SymbolCodeNative.TimeSeriesSubscriptionSymbol:
+                var timeSeriesNative = (TimeSeriesSubscriptionSymbolNative*)symbolNative;
+                var timeSeriesSymbol = CreateAndFillManaged((IntPtr)timeSeriesNative->Symbol);
+                return new TimeSeriesSubscriptionSymbol(timeSeriesSymbol, timeSeriesNative->FromTime);
+            default:
+                throw new ArgumentException($"Unknown symbol type: {symbolNative->SymbolCode}");
         }
-
-        return null;
     }
 
     private static unsafe void ReleaseNative(SymbolNative* nativeSymbol)

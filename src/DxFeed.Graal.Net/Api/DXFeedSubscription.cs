@@ -155,7 +155,7 @@ public sealed class DXFeedSubscription : IObservableSubscription, IDisposable
     /// <summary>
     /// Changes the set of subscribed symbols so that it contains just the symbols from the specified collection.
     /// To conveniently set subscription for just one or few symbols you can use
-    /// <see cref="SetSymbols(System.Collections.Generic.IEnumerable{object})"/>.
+    /// <see cref="SetSymbols(IEnumerable{object})"/>.
     /// </summary>
     /// <param name="symbols">The collection of symbols.</param>
     public void SetSymbols(IEnumerable<object> symbols) =>

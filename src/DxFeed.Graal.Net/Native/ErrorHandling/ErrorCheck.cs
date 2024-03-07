@@ -77,7 +77,7 @@ internal static class ErrorCheck
     /// </remarks>
     public static T SafeCall<T>(T result)
     {
-        if (result == null || result is SafeHandle { IsInvalid: true })
+        if (result is null or SafeHandle { IsInvalid: true })
         {
             ThrowIfJavaThreadExceptionExists();
         }
