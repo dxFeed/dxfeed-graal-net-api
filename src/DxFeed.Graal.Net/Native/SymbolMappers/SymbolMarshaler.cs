@@ -16,9 +16,9 @@ using DxFeed.Graal.Net.Native.Interop;
 
 namespace DxFeed.Graal.Net.Native.SymbolMappers;
 
-internal class SymbolMarshaller : AbstractMarshaler
+internal class SymbolMarshaler : AbstractMarshaler
 {
-    private static readonly Lazy<SymbolMarshaller> Instance = new();
+    private static readonly Lazy<SymbolMarshaler> Instance = new();
 
     private enum IndexedSourceTypeNative
     {
@@ -202,7 +202,7 @@ internal class SymbolMarshaller : AbstractMarshaler
                 return (SymbolNative*)timesSeriesNative;
             case CandleSymbol value:
                 var candleNative = (CandleSymbolNative*)Marshal.AllocHGlobal(sizeof(CandleSymbolNative));
-                candleNative->SymbolNative.SymbolCode = SymbolCodeNative.String;
+                candleNative->SymbolNative.SymbolCode = SymbolCodeNative.CandleSymbol;
                 candleNative->Symbol = value.Symbol;
                 return (SymbolNative*)candleNative;
             case WildcardSymbol:
@@ -232,7 +232,7 @@ internal class SymbolMarshaller : AbstractMarshaler
     }
 
     /// <summary>
-    /// Release unsafe <see cref="SymbolMarshaller.IndexedEventSourceNative"/> pointer.
+    /// Release unsafe <see cref="SymbolMarshaler.IndexedEventSourceNative"/> pointer.
     /// </summary>
     /// <param name="sourceNative">The source unsafe pointer.</param>
     private static unsafe void ReleaseNativeIndexedEventSource(IndexedEventSourceNative* sourceNative)

@@ -113,7 +113,7 @@ internal sealed unsafe class FeedNative
             nint thread,
             FeedHandle* feedHandle,
             EventCodeNative eventCodes,
-            [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(SymbolMarshaller))]
+            [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(SymbolMarshaler))]
             object value,
             long from,
             long to);
@@ -127,7 +127,7 @@ internal sealed unsafe class FeedNative
             nint thread,
             FeedHandle* feedHandle,
             EventCodeNative eventCodes,
-            [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(SymbolMarshaller))]
+            [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(SymbolMarshaler))]
             object value);
 
         [DllImport(
