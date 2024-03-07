@@ -85,16 +85,6 @@ internal static class ErrorCheck
         return result;
     }
 
-    public static object? SafeCall(object? result)
-    {
-        if (result == null)
-        {
-            ThrowIfJavaThreadExceptionExists();
-        }
-
-        return result;
-    }
-
     /// <summary>
     /// Verifies the result of a native function call that returns a T* (unmanaged pointer type).
     /// Throws <see cref="JavaException"/> if error occured.

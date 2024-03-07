@@ -16,37 +16,81 @@ using DxFeed.Graal.Net.Native.Interop;
 
 namespace DxFeed.Graal.Net.Native.SymbolMappers;
 
-internal class SymbolMarshaller : AbstractMarshaller
+internal class SymbolMarshaller : AbstractMarshaler
 {
     private static readonly Lazy<SymbolMarshaller> Instance = new();
+
+    private enum IndexedSourceTypeNative
+    {
+        /// <summary>
+        /// Represent <see cref="Net.Events.IndexedEventSource"/> type.
+        /// </summary>
+        IndexedEventSource,
+
+        /// <summary>
+        /// Represent <see cref="OrderSource"/> type.
+        /// </summary>
+        OrderEventSource,
+    }
+
+    private enum SymbolCodeNative
+    {
+        /// <summary>
+        /// Symbol as <see cref="string"/>.
+        /// </summary>
+        String,
+
+        /// <summary>
+        /// Symbol as <see cref="Net.Events.Candles.CandleSymbol"/>.
+        /// </summary>
+        CandleSymbol,
+
+        /// <summary>
+        /// Symbol as <see cref="Api.Osub.WildcardSymbol"/>.
+        /// </summary>
+        WildcardSymbol,
+
+        /// <summary>
+        /// Symbols as <see cref="Api.Osub.IndexedEventSubscriptionSymbol"/>.
+        /// </summary>
+        IndexedEventSubscriptionSymbol,
+
+        /// <summary>
+        /// Symbols as <see cref="Api.Osub.TimeSeriesSubscriptionSymbol"/>.
+        /// </summary>
+        TimeSeriesSubscriptionSymbol,
+    }
 
     public static ICustomMarshaler GetInstance(string cookie) =>
         Instance.Value;
 
-    public override object? MarshalNativeToManaged(IntPtr native)
+    public override object? ConvertNativeToManaged(IntPtr native)
     {
         if (native == IntPtr.Zero)
         {
             return null;
         }
 
-        RegisterCleanUpActionsForPointer(native, CleanFromNative);
         var result = CreateAndFillManaged(native);
         return result;
     }
 
-    public override IntPtr MarshalManagedToNative(object? managed)
+    public override IntPtr ConvertManagedToNative(object? managed)
     {
         unsafe
         {
             var result = (IntPtr)CreateAndFillNative(managed);
-            RegisterCleanUpActionsForPointer(result, native =>
-            {
-                ReleaseNative((SymbolNative*)native);
-            });
             return result;
         }
     }
+
+    public override unsafe void CleanUpFromManaged(IntPtr ptr) => ReleaseNative((SymbolNative*)ptr);
+
+    public override void CleanUpFromNative(IntPtr ptr) =>
+        ErrorCheck.SafeCall(Import.Release(Isolate.CurrentThread, ptr));
+
+    public override void CleanUpListFromNative(IntPtr ptr) =>
+        ErrorCheck.SafeCall(Import.ReleaseList(Isolate.CurrentThread, ptr));
 
     private static object? CreateAndFillManaged(IntPtr native)
     {
@@ -110,8 +154,8 @@ internal class SymbolMarshaller : AbstractMarshaller
                 cs->Symbol.Release();
                 break;
             case SymbolCodeNative.IndexedEventSubscriptionSymbol:
-                var iss = (SymbolMarshaller.IndexedEventSubscriptionSymbolNative*)nativeSymbol;
-                IndexedSourceMapper.ReleaseNative(iss->Source);
+                var iss = (IndexedEventSubscriptionSymbolNative*)nativeSymbol;
+                ReleaseNativeIndexedEventSource(iss->Source);
                 ReleaseNative(iss->Symbol);
                 break;
             case SymbolCodeNative.TimeSeriesSubscriptionSymbol:
@@ -127,7 +171,7 @@ internal class SymbolMarshaller : AbstractMarshaller
         Marshal.FreeHGlobal((nint)nativeSymbol);
     }
 
-    private unsafe SymbolNative* CreateAndFillNative(object? managed)
+    private static unsafe SymbolNative* CreateAndFillNative(object? managed)
     {
         if (managed == null)
         {
@@ -147,7 +191,7 @@ internal class SymbolMarshaller : AbstractMarshaller
                         sizeof(IndexedEventSubscriptionSymbolNative));
                 indexedSymbol->SymbolNative.SymbolCode = SymbolCodeNative.IndexedEventSubscriptionSymbol;
                 indexedSymbol->Symbol = CreateAndFillNative(value.EventSymbol);
-                indexedSymbol->Source = IndexedSourceMapper.CreateNative(value.Source);
+                indexedSymbol->Source = CreateNativeIndexedEventSource(value.Source);
                 return (SymbolNative*)indexedSymbol;
             case TimeSeriesSubscriptionSymbol value:
                 var timesSeriesNative = (TimeSeriesSubscriptionSymbolNative*)Marshal.AllocHGlobal(
@@ -171,17 +215,39 @@ internal class SymbolMarshaller : AbstractMarshaller
         }
     }
 
-    private static void CleanFromNative(IntPtr native) =>
-        ErrorCheck.SafeCall(Import.Release(Isolate.CurrentThread, native));
-
-    [StructLayout(LayoutKind.Sequential)]
-    internal struct SymbolNative
+    private static unsafe IndexedEventSourceNative* CreateNativeIndexedEventSource(IndexedEventSource source)
     {
-        public SymbolCodeNative SymbolCode;
+        var sourceNative =
+            (IndexedEventSourceNative*)Marshal.AllocHGlobal(sizeof(IndexedEventSourceNative));
+        sourceNative->Type = IndexedSourceTypeNative.IndexedEventSource;
+        if (source is OrderSource)
+        {
+            sourceNative->Type = IndexedSourceTypeNative.OrderEventSource;
+        }
+
+        sourceNative->Id = source.Id;
+        sourceNative->Name = source.Name;
+
+        return sourceNative;
+    }
+
+    /// <summary>
+    /// Release unsafe <see cref="SymbolMarshaller.IndexedEventSourceNative"/> pointer.
+    /// </summary>
+    /// <param name="sourceNative">The source unsafe pointer.</param>
+    private static unsafe void ReleaseNativeIndexedEventSource(IndexedEventSourceNative* sourceNative)
+    {
+        if ((nint)sourceNative == 0)
+        {
+            return;
+        }
+
+        sourceNative->Name.Release();
+        Marshal.FreeHGlobal((nint)sourceNative);
     }
 
     [StructLayout(LayoutKind.Sequential)]
-    internal struct IndexedEventSourceNative
+    private struct IndexedEventSourceNative
     {
         public IndexedSourceTypeNative Type;
         public int Id;
@@ -189,28 +255,21 @@ internal class SymbolMarshaller : AbstractMarshaller
     }
 
     [StructLayout(LayoutKind.Sequential)]
-    internal unsafe struct IndexedEventSubscriptionSymbolNative
+    private struct SymbolNative
+    {
+        public SymbolCodeNative SymbolCode;
+    }
+
+    [StructLayout(LayoutKind.Sequential)]
+    private unsafe struct IndexedEventSubscriptionSymbolNative
     {
         public SymbolNative SymbolNative;
         public SymbolNative* Symbol; // Can be any allowed symbol (String, Wildcard, etc.).
         public IndexedEventSourceNative* Source;
     }
 
-    internal enum IndexedSourceTypeNative
-    {
-        /// <summary>
-        /// Represent <see cref="Net.Events.IndexedEventSource"/> type.
-        /// </summary>
-        IndexedEventSource,
-
-        /// <summary>
-        /// Represent <see cref="OrderSource"/> type.
-        /// </summary>
-        OrderEventSource,
-    }
-
     [StructLayout(LayoutKind.Sequential)]
-    internal unsafe struct TimeSeriesSubscriptionSymbolNative
+    private unsafe struct TimeSeriesSubscriptionSymbolNative
     {
         public SymbolNative SymbolNative;
         public SymbolNative* Symbol; // Can be any allowed symbol (String, Wildcard, etc.).
@@ -218,48 +277,20 @@ internal class SymbolMarshaller : AbstractMarshaller
     }
 
     [StructLayout(LayoutKind.Sequential)]
-    internal struct StringSymbolNative
+    private struct StringSymbolNative
     {
         public SymbolNative Base;
         public StringNative Symbol; // A null-terminated UTF-8 string.
     }
 
-    internal enum SymbolCodeNative
-    {
-        /// <summary>
-        /// Symbol as <see cref="string"/>.
-        /// </summary>
-        String,
-
-        /// <summary>
-        /// Symbol as <see cref="Net.Events.Candles.CandleSymbol"/>.
-        /// </summary>
-        CandleSymbol,
-
-        /// <summary>
-        /// Symbol as <see cref="Api.Osub.WildcardSymbol"/>.
-        /// </summary>
-        WildcardSymbol,
-
-        /// <summary>
-        /// Symbols as <see cref="Api.Osub.IndexedEventSubscriptionSymbol"/>.
-        /// </summary>
-        IndexedEventSubscriptionSymbol,
-
-        /// <summary>
-        /// Symbols as <see cref="Api.Osub.TimeSeriesSubscriptionSymbol"/>.
-        /// </summary>
-        TimeSeriesSubscriptionSymbol,
-    }
-
     [StructLayout(LayoutKind.Sequential)]
-    internal struct WildcardSymbolNative
+    private struct WildcardSymbolNative
     {
         public SymbolNative SymbolNative;
     }
 
     [StructLayout(LayoutKind.Sequential)]
-    internal struct CandleSymbolNative
+    private struct CandleSymbolNative
     {
         public SymbolNative SymbolNative;
         public StringNative Symbol; // A null-terminated UTF-8 string.
@@ -273,5 +304,12 @@ internal class SymbolMarshaller : AbstractMarshaller
             CharSet = CharSet.Ansi,
             EntryPoint = "dxfg_Symbol_release")]
         public static extern int Release(nint thread, nint handle);
+
+        [DllImport(
+            ImportInfo.DllName,
+            CallingConvention = CallingConvention.Cdecl,
+            CharSet = CharSet.Ansi,
+            EntryPoint = "dxfg_CList_symbol_release")]
+        public static extern int ReleaseList(nint thread, nint handle);
     }
 }

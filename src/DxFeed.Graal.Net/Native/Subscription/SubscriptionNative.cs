@@ -334,7 +334,7 @@ internal sealed unsafe class SubscriptionNative : IDisposable
         private static extern int NativeAddSymbols(
             nint thread,
             SubscriptionHandle* subHandle,
-            [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ListMarshaller<SymbolMarshaller>))]
+            [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ListMarshaler<SymbolMarshaller>))]
             object[] value);
 
         [DllImport(
@@ -356,7 +356,7 @@ internal sealed unsafe class SubscriptionNative : IDisposable
         private static extern int NativeRemoveSymbols(
             nint thread,
             SubscriptionHandle* subHandle,
-            [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ListMarshaller<SymbolMarshaller>))]
+            [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ListMarshaler<SymbolMarshaller>))]
             object[] value);
 
         [DllImport(
@@ -364,7 +364,7 @@ internal sealed unsafe class SubscriptionNative : IDisposable
             CallingConvention = CallingConvention.Cdecl,
             CharSet = CharSet.Ansi,
             EntryPoint = "dxfg_DXFeedSubscription_getSymbols")]
-        [return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ListMarshaller<SymbolMarshaller>))]
+        [return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ListMarshaler<SymbolMarshaller>))]
         private static extern IEnumerable<object> NativeGetSymbols(
             nint thread,
             SubscriptionHandle* subHandle);
