@@ -7,6 +7,7 @@
 using DxFeed.Graal.Net.Api;
 using DxFeed.Graal.Net.Events.Candles;
 using DxFeed.Graal.Net.Events.Market;
+using DxFeed.Graal.Net.Native.ErrorHandling;
 using static DxFeed.Graal.Net.Api.DXEndpoint.Role;
 
 namespace DxFeed.Graal.Net.Tests.Api;
@@ -15,7 +16,7 @@ namespace DxFeed.Graal.Net.Tests.Api;
 public class DXFeedPromiseTest
 {
     [Test]
-    public async Task TestLastEventTask()
+    public Task TestLastEventTask()
     {
         var endpoint = DXEndpoint.Create(LocalHub);
         var feed = endpoint.GetFeed();
@@ -29,20 +30,21 @@ public class DXFeedPromiseTest
 
         Assert.ThrowsAsync<OperationCanceledException>(async () =>
         {
-            var cancelSource = new CancellationTokenSource();
-            cancelSource.Cancel();
+            using var cancelSource = new CancellationTokenSource();
+            await cancelSource.CancelAsync();
             await feed.GetLastEventAsync<Quote>("A", cancelSource.Token);
         });
-        Assert.ThrowsAsync<NullReferenceException>(async () =>
+        Assert.ThrowsAsync<JavaException>(async () =>
         {
-            await feed.GetLastEventAsync<Quote>(null);
+            await feed.GetLastEventAsync<Quote>(null!);
         });
 
         endpoint.Close();
+        return Task.CompletedTask;
     }
 
     [Test]
-    public async Task TestTimeSeriesEventTask()
+    public Task TestTimeSeriesEventTask()
     {
         var endpoint = DXEndpoint.Create(LocalHub);
         var feed = endpoint.GetFeed();
@@ -55,16 +57,17 @@ public class DXFeedPromiseTest
 
         Assert.ThrowsAsync<OperationCanceledException>(async () =>
         {
-            var cancelSource = new CancellationTokenSource();
-            cancelSource.Cancel();
+            using var cancelSource = new CancellationTokenSource();
+            await cancelSource.CancelAsync();
             await feed.GetTimeSeriesAsync<Candle>("A", 0, long.MaxValue, cancelSource.Token);
         });
 
-        Assert.ThrowsAsync<NullReferenceException>(async () =>
+        Assert.ThrowsAsync<JavaException>(async () =>
         {
-            await feed.GetTimeSeriesAsync<Candle>(null, 0, long.MaxValue);
+            await feed.GetTimeSeriesAsync<Candle>(null!, 0, long.MaxValue);
         });
 
         endpoint.Close();
+        return Task.CompletedTask;
     }
 }
