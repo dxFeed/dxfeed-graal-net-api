@@ -16,9 +16,9 @@ namespace DxFeed.Graal.Net.Tests.Api;
 public class DXFeedPromiseTest
 {
     [Test]
-    public async Task TestLastEventTask()
+    public void TestLastEventTask()
     {
-        var endpoint = DXEndpoint.Create(LocalHub);
+        using var endpoint = DXEndpoint.Create(LocalHub);
         var feed = endpoint.GetFeed();
         var publisher = endpoint.GetPublisher();
 
@@ -27,25 +27,23 @@ public class DXFeedPromiseTest
         Assert.That(lastEvent.Result, Is.Not.EqualTo(null));
         Assert.That(lastEvent.Result.EventSymbol, Is.EqualTo("A"));
 
-
         Assert.ThrowsAsync<OperationCanceledException>(async () =>
         {
             using var cancelSource = new CancellationTokenSource();
             cancelSource.Cancel();
             await feed.GetLastEventAsync<Quote>("A", cancelSource.Token);
         });
+
         Assert.ThrowsAsync<JavaException>(async () =>
         {
             await feed.GetLastEventAsync<Quote>(null!);
         });
-
-        endpoint.Close();
     }
 
     [Test]
-    public async Task TestTimeSeriesEventTask()
+    public void TestTimeSeriesEventTask()
     {
-        var endpoint = DXEndpoint.Create(LocalHub);
+        using var endpoint = DXEndpoint.Create(LocalHub);
         var feed = endpoint.GetFeed();
         var publisher = endpoint.GetPublisher();
 
@@ -65,7 +63,5 @@ public class DXFeedPromiseTest
         {
             await feed.GetTimeSeriesAsync<Candle>(null!, 0, long.MaxValue);
         });
-
-        endpoint.Close();
     }
 }
