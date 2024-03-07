@@ -10,15 +10,13 @@ using DxFeed.Graal.Net.Events.Market;
 using DxFeed.Graal.Net.Native.ErrorHandling;
 using static DxFeed.Graal.Net.Api.DXEndpoint.Role;
 
-// ReSharper disable MethodHasAsyncOverload
-
 namespace DxFeed.Graal.Net.Tests.Api;
 
 [TestFixture]
 public class DXFeedPromiseTest
 {
     [Test]
-    public Task TestLastEventTask()
+    public async Task TestLastEventTask()
     {
         var endpoint = DXEndpoint.Create(LocalHub);
         var feed = endpoint.GetFeed();
@@ -32,21 +30,20 @@ public class DXFeedPromiseTest
 
         Assert.ThrowsAsync<OperationCanceledException>(async () =>
         {
-            using var cancelSource = new CancellationTokenSource();
+            var cancelSource = new CancellationTokenSource();
             cancelSource.Cancel();
             await feed.GetLastEventAsync<Quote>("A", cancelSource.Token);
         });
         Assert.ThrowsAsync<JavaException>(async () =>
         {
-            await feed.GetLastEventAsync<Quote>(null!);
+            await feed.GetLastEventAsync<Quote>(null);
         });
 
         endpoint.Close();
-        return Task.CompletedTask;
     }
 
     [Test]
-    public Task TestTimeSeriesEventTask()
+    public async Task TestTimeSeriesEventTask()
     {
         var endpoint = DXEndpoint.Create(LocalHub);
         var feed = endpoint.GetFeed();
@@ -59,17 +56,16 @@ public class DXFeedPromiseTest
 
         Assert.ThrowsAsync<OperationCanceledException>(async () =>
         {
-            using var cancelSource = new CancellationTokenSource();
+            var cancelSource = new CancellationTokenSource();
             cancelSource.Cancel();
             await feed.GetTimeSeriesAsync<Candle>("A", 0, long.MaxValue, cancelSource.Token);
         });
 
         Assert.ThrowsAsync<JavaException>(async () =>
         {
-            await feed.GetTimeSeriesAsync<Candle>(null!, 0, long.MaxValue);
+            await feed.GetTimeSeriesAsync<Candle>(null, 0, long.MaxValue);
         });
 
         endpoint.Close();
-        return Task.CompletedTask;
     }
 }
