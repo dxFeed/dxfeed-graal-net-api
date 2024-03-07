@@ -10,6 +10,8 @@ using DxFeed.Graal.Net.Events.Market;
 using DxFeed.Graal.Net.Native.ErrorHandling;
 using static DxFeed.Graal.Net.Api.DXEndpoint.Role;
 
+// ReSharper disable MethodHasAsyncOverload
+
 namespace DxFeed.Graal.Net.Tests.Api;
 
 [TestFixture]
@@ -31,7 +33,7 @@ public class DXFeedPromiseTest
         Assert.ThrowsAsync<OperationCanceledException>(async () =>
         {
             using var cancelSource = new CancellationTokenSource();
-            await cancelSource.CancelAsync();
+            cancelSource.Cancel();
             await feed.GetLastEventAsync<Quote>("A", cancelSource.Token);
         });
         Assert.ThrowsAsync<JavaException>(async () =>
@@ -58,7 +60,7 @@ public class DXFeedPromiseTest
         Assert.ThrowsAsync<OperationCanceledException>(async () =>
         {
             using var cancelSource = new CancellationTokenSource();
-            await cancelSource.CancelAsync();
+            cancelSource.Cancel();
             await feed.GetTimeSeriesAsync<Candle>("A", 0, long.MaxValue, cancelSource.Token);
         });
 
