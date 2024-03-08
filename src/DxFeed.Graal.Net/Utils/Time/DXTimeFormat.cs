@@ -20,8 +20,18 @@ public class DXTimeFormat
     public static DXTimeFormat WithTimeZone(string timeZone) =>
         new() { _timeFormatNative = TimeFormatNative.WithTimeZone(timeZone) };
 
-    public DateTimeOffset Parse(string value)
+    public DXTimeFormat WithMillis()
     {
-        return _timeFormatNative.Parse(value);
+        var existingTimeFormat = _timeFormatNative;
+        return new DXTimeFormat() { _timeFormatNative = existingTimeFormat.WithMillis() };
     }
+
+    public DXTimeFormat AsFullIso()
+    {
+        var existingTimeFormat = _timeFormatNative;
+        return new DXTimeFormat { _timeFormatNative = existingTimeFormat.AsFullIso() };
+    }
+    public DateTimeOffset Parse(string value) => _timeFormatNative.Parse(value);
+
+    public string Format(long value) => _timeFormatNative.Format(value);
 }

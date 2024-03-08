@@ -8,7 +8,6 @@ using System;
 using System.Runtime.InteropServices;
 using DxFeed.Graal.Net.Native.ErrorHandling;
 using DxFeed.Graal.Net.Native.Interop;
-using DxFeed.Graal.Net.Utils;
 
 namespace DxFeed.Graal.Net.Native.Utils;
 
@@ -37,12 +36,19 @@ internal class TimeFormatNative : JavaHandle
         return ErrorCheck.SafeCall(Import.TimeFormatWithTimeZone(CurrentThread, nativeTimeZone));
     }
 
+    internal TimeFormatNative WithMillis() => ErrorCheck.SafeCall(Import.TimeFormatWithMillis(CurrentThread, this));
+    internal TimeFormatNative AsFullIso() => ErrorCheck.SafeCall(Import.TimeFormatAsFullIso(CurrentThread, this));
+
     internal DateTimeOffset Parse(string value)
     {
         var result = ErrorCheck.SafeCall(Import.Parse(CurrentThread, this, value));
         return DateTimeOffset.FromUnixTimeMilliseconds(result);
     }
 
+    internal string Format(long value)
+    {
+        return ErrorCheck.SafeCall(Import.Format(CurrentThread, this, value));
+    }
 
     private static class Import
     {
@@ -69,6 +75,24 @@ internal class TimeFormatNative : JavaHandle
             nint thread,
             TimeZoneNative timeZone);
 
+        [DllImport(
+            ImportInfo.DllName,
+            CallingConvention = CallingConvention.Cdecl,
+            CharSet = CharSet.Ansi,
+            EntryPoint = "dxfg_TimeFormat_withMillis")]
+        public static extern TimeFormatNative TimeFormatWithMillis(
+            nint thread,
+            TimeFormatNative timeFormat);
+
+
+        [DllImport(
+            ImportInfo.DllName,
+            CallingConvention = CallingConvention.Cdecl,
+            CharSet = CharSet.Ansi,
+            EntryPoint = "dxfg_TimeFormat_asFullIso")]
+        public static extern TimeFormatNative TimeFormatAsFullIso(
+            nint thread,
+            TimeFormatNative timeFormat);
 
         [DllImport(
             ImportInfo.DllName,
@@ -81,6 +105,18 @@ internal class TimeFormatNative : JavaHandle
             TimeFormatNative handle,
             [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(StringMarshaler))]
             string key);
+
+        [DllImport(
+            ImportInfo.DllName,
+            CallingConvention = CallingConvention.Cdecl,
+            CharSet = CharSet.Ansi,
+            BestFitMapping = false,
+            EntryPoint = "dxfg_TimeFormat_format")]
+        [return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(StringMarshaler))]
+        public static extern string Format(
+            nint thread,
+            TimeFormatNative handle,
+            long value);
 
         [DllImport(
             ImportInfo.DllName,
