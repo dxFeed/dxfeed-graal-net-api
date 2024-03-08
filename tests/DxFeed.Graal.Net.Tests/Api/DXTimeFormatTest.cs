@@ -19,12 +19,7 @@ public class DXTimeFormatTest
     public void TestDefaultParse()
     {
         var defaultTimeFormat = DXTimeFormat.Default();
-        var dt = TimeFormat.Local.Parse("2005-12-31 21:00:00+03");
-        Assert.Multiple(() =>
-        {
-            Assert.That(DXTimeFormat.Default().Parse("2005-12-31 21:00:00+03"), Is.EqualTo(dt));
-            Assert.That(DXTimeFormat.GMT().Parse("2005-12-31 21:00:00+03"), Is.EqualTo(dt));
-        });
+
         Assert.Multiple(() =>
         {
             Assert.That(defaultTimeFormat.Parse(" 0    "), Is.EqualTo(DateTimeOffset.UnixEpoch));

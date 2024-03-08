@@ -4,6 +4,7 @@
 // If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
 // </copyright>
 
+using DxFeed.Graal.Net.Native.ErrorHandling;
 using DxFeed.Graal.Net.Utils;
 
 namespace DxFeed.Graal.Net.Tests.Api;
@@ -15,8 +16,11 @@ public class SymbolParserTest
     public void TestDefaultParse()
     {
         var expected = new HashSet<string> { "AAPL", "IBM" };
-        var abc = SymbolParser.Parse("AAPL,IBM");
-        var was = abc.ToHashSet();
-        Assert.That(expected.SetEquals(expected));
+        Assert.That(SymbolParser.Parse("AAPL,IBM").ToHashSet().SetEquals(expected));
+        Assert.That(SymbolParser.Parse("ipf[https://demo:demo@tools.dxfeed.com/ipf?TYPE=STOCK&compression=zip],APPL").Count(), Is.GreaterThan(2));
+        Assert.That(SymbolParser.Parse("AAPL").First(), Is.EqualTo("AAPL"));
+        Assert.That(SymbolParser.Parse("*").First(), Is.EqualTo("*"));
+        Assert.That(SymbolParser.Parse("all").First(), Is.EqualTo("*"));
+        Assert.Throws<JavaException>(() => SymbolParser.Parse(""));
     }
 }

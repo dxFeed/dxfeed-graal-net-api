@@ -11,9 +11,14 @@ namespace DxFeed.Graal.Net.Utils;
 
 public class DXTimeFormat
 {
+    private static readonly Lazy<DXTimeFormat> _defaultWithMillis = new(() => DXTimeFormat.Default().WithMillis());
+
+    private static readonly Lazy<DXTimeFormat> _default = new(() => new DXTimeFormat { _timeFormatNative = TimeFormatNative.Default() });
+
     private TimeFormatNative _timeFormatNative;
 
-    public static DXTimeFormat Default() => new() { _timeFormatNative = TimeFormatNative.Default() };
+    public static DXTimeFormat DefaultWithMillis() => _defaultWithMillis.Value;
+    public static DXTimeFormat Default() => _default.Value;
 
     public static DXTimeFormat GMT() => new() { _timeFormatNative = TimeFormatNative.GMT() };
 
@@ -31,6 +36,7 @@ public class DXTimeFormat
         var existingTimeFormat = _timeFormatNative;
         return new DXTimeFormat { _timeFormatNative = existingTimeFormat.AsFullIso() };
     }
+
     public DateTimeOffset Parse(string value) => _timeFormatNative.Parse(value);
 
     public string Format(long value) => _timeFormatNative.Format(value);

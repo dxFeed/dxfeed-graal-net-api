@@ -64,7 +64,6 @@ Examples:
         var types = CmdArgsUtil.ParseTypes(args[1]);
         var symbols = (IEnumerable<object>)CmdArgsUtil.ParseSymbols(args[2]);
         DateTimeOffset? time = args.Length > 3 ? CmdArgsUtil.ParseFromTime(args[3]) : null;
-
         // Create endpoint and connect to specified address.
         using var endpoint = DXEndpoint.Create().Connect(address);
 

@@ -6,6 +6,7 @@
 
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using System.Runtime.InteropServices;
 using DxFeed.Graal.Net.Native.ErrorHandling;
 using DxFeed.Graal.Net.Native.Graal;
@@ -15,10 +16,7 @@ namespace DxFeed.Graal.Net.Native.Utils;
 
 internal class SymbolParserNative
 {
-    public static IEnumerable<string> Parse(string value)
-    {
-      return (IEnumerable<string>)ErrorCheck.SafeCall(Import.ParseSymbols( IsolateThread.CurrentThread, value));
-    }
+    public static IEnumerable<string> Parse(string value) => ErrorCheck.SafeCall(Import.ParseSymbols(IsolateThread.CurrentThread, value)).OfType<string>();
 
     private static class Import
     {
