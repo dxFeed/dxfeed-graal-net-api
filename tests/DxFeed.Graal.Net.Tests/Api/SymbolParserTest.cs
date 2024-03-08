@@ -17,7 +17,9 @@ public class SymbolParserTest
     {
         var expected = new HashSet<string> { "AAPL", "IBM" };
         Assert.That(SymbolParser.Parse("AAPL,IBM").ToHashSet().SetEquals(expected));
-        Assert.That(SymbolParser.Parse("ipf[https://demo:demo@tools.dxfeed.com/ipf?TYPE=STOCK&compression=zip],APPL").Count(), Is.GreaterThan(2));
+        Assert.That(
+            SymbolParser.Parse("ipf[https://demo:demo@tools.dxfeed.com/ipf?TYPE=STOCK&compression=zip],APPL").Count(),
+            Is.GreaterThan(2));
         Assert.That(SymbolParser.Parse("AAPL").First(), Is.EqualTo("AAPL"));
         Assert.That(SymbolParser.Parse("*").First(), Is.EqualTo("*"));
         Assert.That(SymbolParser.Parse("all").First(), Is.EqualTo("*"));

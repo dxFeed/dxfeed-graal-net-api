@@ -23,7 +23,6 @@ public class DXTimeFormatTest
         Assert.Multiple(() =>
         {
             Assert.That(defaultTimeFormat.Parse(" 0    "), Is.EqualTo(DateTimeOffset.UnixEpoch));
-
             Assert.That(defaultTimeFormat.Parse("20070101-123456"),
                 Is.EqualTo((DateTimeOffset)new DateTime(2007, 01, 01, 12, 34, 56, DateTimeKind.Local)));
             Assert.That(defaultTimeFormat.Parse("20070101-123456.123"),
@@ -75,7 +74,6 @@ public class DXTimeFormatTest
         foreach (var badValue in badValues)
         {
             Assert.Throws<JavaException>(() => defaultTimeFormat.Parse(badValue));
-
         }
     }
 
@@ -95,6 +93,7 @@ public class DXTimeFormatTest
         Assert.That(msd.Parse("20120406-224106.231").ToUnixTimeMilliseconds(), Is.EqualTo(1333737666231L));
         Assert.That(msd.Parse("20120406-224106.231+0400").ToUnixTimeMilliseconds(), Is.EqualTo(1333737666231L));
     }
+
     private static void checkGMTTimeFormat(DXTimeFormat gmtTimeFormat)
     {
         Assert.Multiple(() =>
@@ -105,19 +104,19 @@ public class DXTimeFormatTest
             Assert.That(gmtTimeFormat.Parse("20070101-123456.123"),
                 Is.EqualTo((DateTimeOffset)new DateTime(2007, 01, 01, 12, 34, 56, 123, DateTimeKind.Utc)));
             Assert.That(gmtTimeFormat.Parse("2005-12-31 21:00:00"),
-                Is.EqualTo((DateTimeOffset)new DateTime(2005, 12, 31, 21, 00, 00 , 00, DateTimeKind.Utc)));
+                Is.EqualTo((DateTimeOffset)new DateTime(2005, 12, 31, 21, 00, 00, 00, DateTimeKind.Utc)));
             Assert.That(gmtTimeFormat.Parse("2005-12-31 21:00:00+03"),
                 Is.EqualTo(new DateTimeOffset(2005, 12, 31, 21, 00, 0, new TimeSpan(+3, 0, 0))));
             Assert.That(gmtTimeFormat.Parse("2005-12-31 21:00:00-03"),
                 Is.EqualTo(new DateTimeOffset(2005, 12, 31, 21, 00, 0, new TimeSpan(-3, 0, 0))));
             Assert.That(gmtTimeFormat.Parse("2005-12-31Z"),
-                Is.EqualTo((DateTimeOffset)new DateTime(2005, 12, 31, 00, 00, 00 , 00, DateTimeKind.Utc)));
+                Is.EqualTo((DateTimeOffset)new DateTime(2005, 12, 31, 00, 00, 00, 00, DateTimeKind.Utc)));
             Assert.That(gmtTimeFormat.Parse("2005-11-30 21:00:00Z"),
-                Is.EqualTo((DateTimeOffset)new DateTime(2005, 11, 30, 21, 00, 00 , 00, DateTimeKind.Utc)));
+                Is.EqualTo((DateTimeOffset)new DateTime(2005, 11, 30, 21, 00, 00, 00, DateTimeKind.Utc)));
             Assert.That(gmtTimeFormat.Parse("2005-11-30T21:00:00Z"),
-                Is.EqualTo((DateTimeOffset)new DateTime(2005, 11, 30, 21, 00, 00 , 00, DateTimeKind.Utc)));
+                Is.EqualTo((DateTimeOffset)new DateTime(2005, 11, 30, 21, 00, 00, 00, DateTimeKind.Utc)));
             Assert.That(gmtTimeFormat.Parse("2005-11-30T21:00:00"),
-                Is.EqualTo((DateTimeOffset)new DateTime(2005, 11, 30, 21, 00, 00 , 00, DateTimeKind.Utc)));
+                Is.EqualTo((DateTimeOffset)new DateTime(2005, 11, 30, 21, 00, 00, 00, DateTimeKind.Utc)));
         });
         Assert.Throws<JavaException>(() => gmtTimeFormat.Parse("1"));
     }
@@ -175,7 +174,8 @@ public class DXTimeFormatTest
             Assert.That(DXTimePeriod.ValueOf("0").GetTime(), Is.EqualTo(0L));
             Assert.That(DXTimePeriod.ValueOf("1s").GetTime(), Is.EqualTo(1000L));
             Assert.That(DXTimePeriod.ValueOf(".123456789").GetTime(), Is.EqualTo(123L));
-            Assert.That(DXTimePeriod.ValueOf("1.23456789").GetTime(), Is.EqualTo(DXTimePeriod.ValueOf("0d0h0m1.235s").GetTime()));
+            Assert.That(DXTimePeriod.ValueOf("1.23456789").GetTime(),
+                Is.EqualTo(DXTimePeriod.ValueOf("0d0h0m1.235s").GetTime()));
         });
 
         var expectedValue = 873000000L;
@@ -190,14 +190,26 @@ public class DXTimeFormatTest
             Assert.That(DXTimePeriod.ValueOf("p10d2H29m59.9995s").GetTime(), Is.EqualTo(expectedValue));
         });
         var badValues =
-        new List<string> {
-            "t1d", "p", string.Empty, "P2D3T", "P10DT2H30MS", ".", "p1mt", "239e-3", " PT1S", "pt1s2m", "PT1s ", "239ss",
-            "t1,5s", "1,5"
-        };
+            new List<string>
+            {
+                "t1d",
+                "p",
+                string.Empty,
+                "P2D3T",
+                "P10DT2H30MS",
+                ".",
+                "p1mt",
+                "239e-3",
+                " PT1S",
+                "pt1s2m",
+                "PT1s ",
+                "239ss",
+                "t1,5s",
+                "1,5"
+            };
         foreach (var badValue in badValues)
         {
             Assert.Throws<JavaException>(() => DXTimePeriod.ValueOf(badValue));
-
         }
     }
 

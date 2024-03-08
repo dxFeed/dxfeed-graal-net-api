@@ -13,14 +13,19 @@ public class DXTimeFormat
 {
     private static readonly Lazy<DXTimeFormat> _defaultWithMillis = new(() => DXTimeFormat.Default().WithMillis());
 
-    private static readonly Lazy<DXTimeFormat> _default = new(() => new DXTimeFormat { _timeFormatNative = TimeFormatNative.Default() });
+    private static readonly Lazy<DXTimeFormat> _default = new(() =>
+        new DXTimeFormat { _timeFormatNative = TimeFormatNative.Default() });
+
+    private static readonly Lazy<DXTimeFormat> _gmt = new(() =>
+        new DXTimeFormat { _timeFormatNative = TimeFormatNative.GMT() });
 
     private TimeFormatNative _timeFormatNative;
 
     public static DXTimeFormat DefaultWithMillis() => _defaultWithMillis.Value;
+
     public static DXTimeFormat Default() => _default.Value;
 
-    public static DXTimeFormat GMT() => new() { _timeFormatNative = TimeFormatNative.GMT() };
+    public static DXTimeFormat GMT() => _gmt.Value;
 
     public static DXTimeFormat WithTimeZone(string timeZone) =>
         new() { _timeFormatNative = TimeFormatNative.WithTimeZone(timeZone) };

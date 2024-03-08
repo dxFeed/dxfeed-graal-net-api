@@ -4,21 +4,30 @@
 // If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
 // </copyright>
 
+using System;
 using DxFeed.Graal.Net.Native.Utils;
 
 namespace DxFeed.Graal.Net.Utils;
 
 public class DXTimePeriod
 {
+    private static readonly Lazy<DXTimePeriod> _zero = new(() =>
+        new DXTimePeriod(TimePeriodNative.Zero()));
+
+    private static readonly Lazy<DXTimePeriod> _unlimited = new(() =>
+        new DXTimePeriod(TimePeriodNative.Unlimited()));
+
     private TimePeriodNative _timePeriodNative;
 
-    public static DXTimePeriod Zero() => new() { _timePeriodNative = TimePeriodNative.Zero() };
+    private DXTimePeriod(TimePeriodNative timePeriodNative) => _timePeriodNative = timePeriodNative;
 
-    public static DXTimePeriod Unlimited() => new() { _timePeriodNative = TimePeriodNative.Unlimited() };
+    public static DXTimePeriod Zero() => _zero.Value;
 
-    public static DXTimePeriod ValueOf(long value) => new() { _timePeriodNative = TimePeriodNative.ValueOf(value) };
+    public static DXTimePeriod Unlimited() => _unlimited.Value;
 
-    public static DXTimePeriod ValueOf(string value) => new() { _timePeriodNative = TimePeriodNative.ValueOf(value) };
+    public static DXTimePeriod ValueOf(long value) => new(TimePeriodNative.ValueOf(value));
+
+    public static DXTimePeriod ValueOf(string value) => new(TimePeriodNative.ValueOf(value));
 
     public long GetTime() => _timePeriodNative.GetTime();
 
