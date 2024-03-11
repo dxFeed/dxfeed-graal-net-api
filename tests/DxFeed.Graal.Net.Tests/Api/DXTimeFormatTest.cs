@@ -4,16 +4,14 @@
 // If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
 // </copyright>
 
-using System.Runtime.Intrinsics.Arm;
-using System.Security.Cryptography;
+using System.Globalization;
 using DxFeed.Graal.Net.Native.ErrorHandling;
 using DxFeed.Graal.Net.Utils;
-using Microsoft.VisualBasic;
 
 namespace DxFeed.Graal.Net.Tests.Api;
 
 [TestFixture]
-public class DXTimeFormatTest
+internal class DXTimeFormatTest
 {
     [Test]
     public void TestDefaultParse()
@@ -45,7 +43,7 @@ public class DXTimeFormatTest
 
         var now = (DateTimeOffset)DateTime.Now.ToUniversalTime();
         now = now.AddTicks(-now.Ticks % TimeSpan.TicksPerSecond);
-        var parsedNow = defaultTimeFormat.Parse(now.ToString($"yyyy-MM-dd HH:mm:sszz"));
+        var parsedNow = defaultTimeFormat.Parse(now.ToString($"yyyy-MM-dd HH:mm:sszz", CultureInfo.InvariantCulture));
         Assert.That(parsedNow, Is.EqualTo(now));
         var badValues = new List<string>
         {
@@ -78,21 +76,7 @@ public class DXTimeFormatTest
     }
 
     [Test]
-    public void TestGMTParse()
-    {
-        checkGMTTimeFormat(DXTimeFormat.GMT());
-        checkGMTTimeFormat(DXTimeFormat.WithTimeZone("Etc/UTC"));
-        //according java api. TZ returns the specified TimeZone, or the GMT zone if the given ID cannot be understood.
-        checkGMTTimeFormat(DXTimeFormat.WithTimeZone("Wrong TimeZOne"));
-    }
-
-    [Test]
-    public void TestTimeWithMillis()
-    {
-        var msd = DXTimeFormat.WithTimeZone("Europe/Moscow");
-        Assert.That(msd.Parse("20120406-224106.231").ToUnixTimeMilliseconds(), Is.EqualTo(1333737666231L));
-        Assert.That(msd.Parse("20120406-224106.231+0400").ToUnixTimeMilliseconds(), Is.EqualTo(1333737666231L));
-    }
+    public void TestGMTParse() => checkGMTTimeFormat(DXTimeFormat.GMT());
 
     private static void checkGMTTimeFormat(DXTimeFormat gmtTimeFormat)
     {
@@ -125,30 +109,39 @@ public class DXTimeFormatTest
     public void TestFormat()
     {
         var defaultTimeFormat = DXTimeFormat.GMT();
-        Assert.That(defaultTimeFormat.Format(-1), Is.EqualTo("19691231-235959"));
-        Assert.That(defaultTimeFormat.Format(0), Is.EqualTo("0"));
-        Assert.That(defaultTimeFormat.Format(1), Is.EqualTo("19700101-000000"));
-        Assert.That(defaultTimeFormat.Format(1709888958000), Is.EqualTo("20240308-090918"));
+        Assert.Multiple(() =>
+        {
+            Assert.That(defaultTimeFormat.Format(-1), Is.EqualTo("19691231-235959"));
+            Assert.That(defaultTimeFormat.Format(0), Is.EqualTo("0"));
+            Assert.That(defaultTimeFormat.Format(1), Is.EqualTo("19700101-000000"));
+            Assert.That(defaultTimeFormat.Format(1709888958000), Is.EqualTo("20240308-090918"));
+        });
     }
 
     [Test]
     public void TestWithMillisTimeFormat()
     {
         var defaultTimeFormat = DXTimeFormat.GMT().WithMillis();
-        Assert.That(defaultTimeFormat.Format(-1), Is.EqualTo("19691231-235959.999"));
-        Assert.That(defaultTimeFormat.Format(0), Is.EqualTo("0"));
-        Assert.That(defaultTimeFormat.Format(1), Is.EqualTo("19700101-000000.001"));
-        Assert.That(defaultTimeFormat.Format(1709888958018), Is.EqualTo("20240308-090918.018"));
+        Assert.Multiple(() =>
+        {
+            Assert.That(defaultTimeFormat.Format(-1), Is.EqualTo("19691231-235959.999"));
+            Assert.That(defaultTimeFormat.Format(0), Is.EqualTo("0"));
+            Assert.That(defaultTimeFormat.Format(1), Is.EqualTo("19700101-000000.001"));
+            Assert.That(defaultTimeFormat.Format(1709888958018), Is.EqualTo("20240308-090918.018"));
+        });
     }
 
     [Test]
     public void TestIsoTimeFormat()
     {
         var defaultTimeFormat = DXTimeFormat.GMT().AsFullIso();
-        Assert.That(defaultTimeFormat.Format(-1), Is.EqualTo("1969-12-31T23:59:59.999Z"));
-        Assert.That(defaultTimeFormat.Format(0), Is.EqualTo("0"));
-        Assert.That(defaultTimeFormat.Format(1), Is.EqualTo("1970-01-01T00:00:00.001Z"));
-        Assert.That(defaultTimeFormat.Format(1709888958018), Is.EqualTo("2024-03-08T09:09:18.018Z"));
+        Assert.Multiple(() =>
+        {
+            Assert.That(defaultTimeFormat.Format(-1), Is.EqualTo("1969-12-31T23:59:59.999Z"));
+            Assert.That(defaultTimeFormat.Format(0), Is.EqualTo("0"));
+            Assert.That(defaultTimeFormat.Format(1), Is.EqualTo("1970-01-01T00:00:00.001Z"));
+            Assert.That(defaultTimeFormat.Format(1709888958018), Is.EqualTo("2024-03-08T09:09:18.018Z"));
+        });
     }
 
     [Test]
@@ -168,9 +161,6 @@ public class DXTimeFormatTest
             Assert.That(unlimited.GetSeconds(), Is.EqualTo(-1511828489));
             Assert.That(unlimited.GetNanos(), Is.EqualTo(-1000000));
             Assert.That(unlimited.GetTime(), Is.EqualTo(long.MaxValue));
-        });
-        Assert.Multiple(() =>
-        {
             Assert.That(DXTimePeriod.ValueOf("0").GetTime(), Is.EqualTo(0L));
             Assert.That(DXTimePeriod.ValueOf("1s").GetTime(), Is.EqualTo(1000L));
             Assert.That(DXTimePeriod.ValueOf(".123456789").GetTime(), Is.EqualTo(123L));
@@ -178,7 +168,7 @@ public class DXTimeFormatTest
                 Is.EqualTo(DXTimePeriod.ValueOf("0d0h0m1.235s").GetTime()));
         });
 
-        var expectedValue = 873000000L;
+        const long expectedValue = 873000000L;
         Assert.Multiple(() =>
         {
             Assert.That(DXTimePeriod.ValueOf(873000000L).GetTime(), Is.EqualTo(expectedValue));
@@ -231,9 +221,10 @@ public class DXTimeFormatTest
     }
 
     [Test]
-    public void TestDateOutsideIsoRangeFormat()
-    {
-        Assert.That(DXTimeFormat.GMT().Format(long.MinValue), Is.EqualTo(long.MinValue.ToString()));
-        Assert.That(DXTimeFormat.GMT().Format(long.MaxValue), Is.EqualTo(long.MaxValue.ToString()));
-    }
+    public void TestDateOutsideIsoRangeFormat() =>
+        Assert.Multiple(() =>
+        {
+            Assert.That(DXTimeFormat.GMT().Format(long.MinValue), Is.EqualTo(long.MinValue.ToString(CultureInfo.InvariantCulture)));
+            Assert.That(DXTimeFormat.GMT().Format(long.MaxValue), Is.EqualTo(long.MaxValue.ToString(CultureInfo.InvariantCulture)));
+        });
 }

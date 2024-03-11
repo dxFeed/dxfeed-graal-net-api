@@ -14,9 +14,10 @@ using DxFeed.Graal.Net.Native.Interop;
 
 namespace DxFeed.Graal.Net.Native.Utils;
 
-internal class SymbolParserNative
+internal static class SymbolParserNative
 {
-    public static IEnumerable<string> Parse(string value) => ErrorCheck.SafeCall(Import.ParseSymbols(IsolateThread.CurrentThread, value)).OfType<string>();
+    public static IEnumerable<string> Parse(string value) =>
+        ErrorCheck.SafeCall(Import.ParseSymbols(IsolateThread.CurrentThread, value)).OfType<string>();
 
     private static class Import
     {

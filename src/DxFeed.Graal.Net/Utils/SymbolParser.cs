@@ -10,7 +10,15 @@ using DxFeed.Graal.Net.Native.Utils;
 
 namespace DxFeed.Graal.Net.Utils;
 
-public class SymbolParser
+/// <summary>
+/// Utility class for parsing symbols.
+/// </summary>
+public static class SymbolParser
 {
+    /// <summary>
+    /// Parses an input string and returns a set of symbols.
+    /// </summary>
+    /// <param name="value">The coma-separated list of symbols.</param>
+    /// <returns>Returns created a set of parsed symbols.</returns>
     public static IEnumerable<string> Parse(string value) => SymbolParserNative.Parse(value);
 }

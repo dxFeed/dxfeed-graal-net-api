@@ -178,13 +178,13 @@ public class Profile : MarketEvent, ILastingEvent
     /// <returns>The string representation.</returns>
     protected string BaseFieldsToString() =>
         StringUtil.EncodeNullableString(EventSymbol) +
-        ", eventTime=" + DXTimeFormat.DefaultWithMillis().Format(EventTime) +
+        ", eventTime=" + DXTimeFormat.Default().WithMillis().Format(EventTime) +
         ", description='" + StringUtil.EncodeNullableString(Description) + "'" +
         ", SSR=" + ShortSaleRestriction +
         ", status=" + TradingStatus +
         ", statusReason='" + StringUtil.EncodeNullableString(StatusReason) + "'" +
-        ", haltStartTime=" + DXTimeFormat.DefaultWithMillis().Format(HaltStartTime) +
-        ", haltEndTime=" + DXTimeFormat.DefaultWithMillis().Format(HaltEndTime) +
+        ", haltStartTime=" + DXTimeFormat.Default().WithMillis().Format(HaltStartTime) +
+        ", haltEndTime=" + DXTimeFormat.Default().WithMillis().Format(HaltEndTime) +
         ", highLimitPrice=" + HighLimitPrice +
         ", lowLimitPrice=" + LowLimitPrice +
         ", high52WeekPrice=" + High52WeekPrice +
