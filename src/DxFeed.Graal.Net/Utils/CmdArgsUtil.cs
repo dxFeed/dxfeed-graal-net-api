@@ -8,6 +8,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using DxFeed.Graal.Net.Events;
+using DxFeed.Graal.Net.Utils.Time;
 
 namespace DxFeed.Graal.Net.Utils;
 

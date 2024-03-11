@@ -6,7 +6,7 @@
 
 using System.Globalization;
 using DxFeed.Graal.Net.Native.ErrorHandling;
-using DxFeed.Graal.Net.Utils;
+using DxFeed.Graal.Net.Utils.Time;
 
 namespace DxFeed.Graal.Net.Tests.Api;
 
@@ -150,34 +150,31 @@ internal class DXTimeFormatTest
         var zeroTimePeriod = DXTimePeriod.Zero();
         Assert.Multiple(() =>
         {
-            Assert.That(zeroTimePeriod.GetSeconds(), Is.EqualTo(0));
-            Assert.That(zeroTimePeriod.GetNanos(), Is.EqualTo(0));
-            Assert.That(zeroTimePeriod.GetTime(), Is.EqualTo(0));
+            Assert.That(zeroTimePeriod.Seconds, Is.EqualTo(0));
+            Assert.That(zeroTimePeriod.Milliseconds, Is.EqualTo(0));
         });
 
-        var unlimited = DXTimePeriod.Unlimited();
+        Assert.Throws<OverflowException>(() => DXTimePeriod.ValueOf(long.MaxValue));
+
         Assert.Multiple(() =>
         {
-            Assert.That(unlimited.GetSeconds(), Is.EqualTo(-1511828489));
-            Assert.That(unlimited.GetNanos(), Is.EqualTo(-1000000));
-            Assert.That(unlimited.GetTime(), Is.EqualTo(long.MaxValue));
-            Assert.That(DXTimePeriod.ValueOf("0").GetTime(), Is.EqualTo(0L));
-            Assert.That(DXTimePeriod.ValueOf("1s").GetTime(), Is.EqualTo(1000L));
-            Assert.That(DXTimePeriod.ValueOf(".123456789").GetTime(), Is.EqualTo(123L));
-            Assert.That(DXTimePeriod.ValueOf("1.23456789").GetTime(),
-                Is.EqualTo(DXTimePeriod.ValueOf("0d0h0m1.235s").GetTime()));
+            Assert.That(DXTimePeriod.ValueOf("0").Seconds, Is.EqualTo(0L));
+            Assert.That(DXTimePeriod.ValueOf("1s").TotalMilliseconds, Is.EqualTo(1000));
+            Assert.That(DXTimePeriod.ValueOf(".123456789").TotalMilliseconds, Is.EqualTo(123L));
+            Assert.That(DXTimePeriod.ValueOf("1.23456789").TotalSeconds,
+                Is.EqualTo(DXTimePeriod.ValueOf("0d0h0m1.235s").TotalSeconds));
         });
 
         const long expectedValue = 873000000L;
         Assert.Multiple(() =>
         {
-            Assert.That(DXTimePeriod.ValueOf(873000000L).GetTime(), Is.EqualTo(expectedValue));
-            Assert.That(DXTimePeriod.ValueOf("P10DT2H30M").GetTime(), Is.EqualTo(expectedValue));
-            Assert.That(DXTimePeriod.ValueOf("10DT2H29M60.00").GetTime(), Is.EqualTo(expectedValue));
-            Assert.That(DXTimePeriod.ValueOf("p10DT1H90M").GetTime(), Is.EqualTo(expectedValue));
-            Assert.That(DXTimePeriod.ValueOf("9DT26H1800S").GetTime(), Is.EqualTo(expectedValue));
-            Assert.That(DXTimePeriod.ValueOf("P10DT2H30M.0").GetTime(), Is.EqualTo(expectedValue));
-            Assert.That(DXTimePeriod.ValueOf("p10d2H29m59.9995s").GetTime(), Is.EqualTo(expectedValue));
+            Assert.That(DXTimePeriod.ValueOf(873000000L).TotalMilliseconds, Is.EqualTo(expectedValue));
+            Assert.That(DXTimePeriod.ValueOf("P10DT2H30M").TotalMilliseconds, Is.EqualTo(expectedValue));
+            Assert.That(DXTimePeriod.ValueOf("10DT2H29M60.00").TotalMilliseconds, Is.EqualTo(expectedValue));
+            Assert.That(DXTimePeriod.ValueOf("p10DT1H90M").TotalMilliseconds, Is.EqualTo(expectedValue));
+            Assert.That(DXTimePeriod.ValueOf("9DT26H1800S").TotalMilliseconds, Is.EqualTo(expectedValue));
+            Assert.That(DXTimePeriod.ValueOf("P10DT2H30M.0").TotalMilliseconds, Is.EqualTo(expectedValue));
+            Assert.That(DXTimePeriod.ValueOf("p10d2H29m59.9995s").TotalMilliseconds, Is.EqualTo(expectedValue));
         });
         var badValues =
             new List<string>
@@ -224,7 +221,9 @@ internal class DXTimeFormatTest
     public void TestDateOutsideIsoRangeFormat() =>
         Assert.Multiple(() =>
         {
-            Assert.That(DXTimeFormat.GMT().Format(long.MinValue), Is.EqualTo(long.MinValue.ToString(CultureInfo.InvariantCulture)));
-            Assert.That(DXTimeFormat.GMT().Format(long.MaxValue), Is.EqualTo(long.MaxValue.ToString(CultureInfo.InvariantCulture)));
+            Assert.That(DXTimeFormat.GMT().Format(long.MinValue),
+                Is.EqualTo(long.MinValue.ToString(CultureInfo.InvariantCulture)));
+            Assert.That(DXTimeFormat.GMT().Format(long.MaxValue),
+                Is.EqualTo(long.MaxValue.ToString(CultureInfo.InvariantCulture)));
         });
 }

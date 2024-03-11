@@ -7,31 +7,40 @@
 using System;
 using DxFeed.Graal.Net.Native.Utils;
 
-namespace DxFeed.Graal.Net.Utils;
+namespace DxFeed.Graal.Net.Utils.Time;
 
-public class DXTimePeriod
+/// <summary>
+/// A collection of utility methods for creation Timespan with support for ISO8601 duration format.
+/// </summary>
+public static class DXTimePeriod
 {
-    private static readonly Lazy<DXTimePeriod> _zero = new(() =>
-        new DXTimePeriod(TimePeriodNative.Zero()));
+    /// <summary>
+    /// Time-period of zero.
+    /// </summary>
+    /// <returns>The time span that represents 0.</returns>
+    public static TimeSpan Zero() => TimeSpan.FromMilliseconds(TimePeriodNative.Zero().GetTime());
 
-    private static readonly Lazy<DXTimePeriod> _unlimited = new(() =>
-        new DXTimePeriod(TimePeriodNative.Unlimited()));
+    /// <summary>
+    /// Returns <see cref="TimeSpan"/> with value milliseconds.
+    /// </summary>
+    /// <param name="value">The value in milliseconds.</param>
+    /// <returns>The time span that represented <paramref name="value" />.</returns>
+    public static TimeSpan ValueOf(long value) => TimeSpan.FromMilliseconds(TimePeriodNative.ValueOf(value).GetTime());
 
-    private TimePeriodNative _timePeriodNative;
-
-    private DXTimePeriod(TimePeriodNative timePeriodNative) => _timePeriodNative = timePeriodNative;
-
-    public static DXTimePeriod Zero() => _zero.Value;
-
-    public static DXTimePeriod Unlimited() => _unlimited.Value;
-
-    public static DXTimePeriod ValueOf(long value) => new(TimePeriodNative.ValueOf(value));
-    //from millis to timepspan
-    public static DXTimePeriod ValueOf(string value) => new(TimePeriodNative.ValueOf(value));
-
-    public long GetTime() => _timePeriodNative.GetTime();
-
-    public int GetSeconds() => _timePeriodNative.GetSeconds();
-
-    public long GetNanos() => _timePeriodNative.GetNanos();
+    /// <summary>
+    /// Returns <see cref="TimeSpan"/> with represented with a given string.
+    /// Allowable format is ISO8601 duration, but there are some simplifications and modifications available:
+    /// * <ul>
+    ///     <li> Letters are case insensitive.</li>
+    ///     <li> Letters "P" and "T" can be omitted.</li>
+    ///     <li> Letter "S" can be also omitted. In this case last number will be supposed to be seconds.</li>
+    ///     <li> Number of seconds can be fractional. So it is possible to define duration accurate within milliseconds.</li>
+    ///     <li> Every part can be omitted. It is supposed that it's value is zero then.</li>
+    ///     <li> String "inf" recognized as unlimited period.</li>
+    /// </ul>
+    /// </summary>
+    /// <param name="value">The string representation.</param>
+    /// <returns>The time span that represented with a given string..</returns>
+    public static TimeSpan ValueOf(string value) =>
+        TimeSpan.FromMilliseconds(TimePeriodNative.ValueOf(value).GetTime());
 }

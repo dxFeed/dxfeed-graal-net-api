@@ -7,7 +7,7 @@
 using System;
 using DxFeed.Graal.Net.Native.Utils;
 
-namespace DxFeed.Graal.Net.Utils;
+namespace DxFeed.Graal.Net.Utils.Time;
 
 /// <summary>
 /// Utility class for parsing and formatting dates and times in ISO-compatible format.

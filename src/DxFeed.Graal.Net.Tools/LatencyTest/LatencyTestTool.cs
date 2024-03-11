@@ -16,6 +16,7 @@ using DxFeed.Graal.Net.Events;
 using DxFeed.Graal.Net.Events.Market;
 using DxFeed.Graal.Net.Tools.Attributes;
 using DxFeed.Graal.Net.Utils;
+using DxFeed.Graal.Net.Utils.Time;
 
 namespace DxFeed.Graal.Net.Tools.LatencyTest;
 

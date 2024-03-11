@@ -6,6 +6,7 @@
 
 using System;
 using DxFeed.Graal.Net.Utils;
+using DxFeed.Graal.Net.Utils.Time;
 
 namespace DxFeed.Graal.Net.Events.Market;
 
