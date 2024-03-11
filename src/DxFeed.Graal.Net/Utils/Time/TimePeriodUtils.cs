@@ -15,12 +15,6 @@ namespace DxFeed.Graal.Net.Utils.Time;
 public static class TimePeriodUtils
 {
     /// <summary>
-    /// Time-period of zero.
-    /// </summary>
-    /// <returns>The time span that represents 0.</returns>
-    public static TimeSpan Zero() => TimeSpan.FromMilliseconds(TimePeriodNative.Zero().GetTime());
-
-    /// <summary>
     /// Returns <see cref="TimeSpan"/> with value milliseconds.
     /// </summary>
     /// <param name="value">The value in milliseconds.</param>

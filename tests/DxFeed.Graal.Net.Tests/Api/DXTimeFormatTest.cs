@@ -147,13 +147,6 @@ internal class DXTimeFormatTest
     [Test]
     public void TestTimePeriod()
     {
-        var zeroTimePeriod = TimePeriodUtils.Zero();
-        Assert.Multiple(() =>
-        {
-            Assert.That(zeroTimePeriod.Seconds, Is.EqualTo(0));
-            Assert.That(zeroTimePeriod.Milliseconds, Is.EqualTo(0));
-        });
-
         Assert.Throws<OverflowException>(() => TimePeriodUtils.ValueOf(long.MaxValue));
 
         Assert.Multiple(() =>
