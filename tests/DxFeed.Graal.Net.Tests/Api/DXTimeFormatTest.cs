@@ -147,34 +147,34 @@ internal class DXTimeFormatTest
     [Test]
     public void TestTimePeriod()
     {
-        var zeroTimePeriod = DXTimePeriod.Zero();
+        var zeroTimePeriod = TimePeriodUtils.Zero();
         Assert.Multiple(() =>
         {
             Assert.That(zeroTimePeriod.Seconds, Is.EqualTo(0));
             Assert.That(zeroTimePeriod.Milliseconds, Is.EqualTo(0));
         });
 
-        Assert.Throws<OverflowException>(() => DXTimePeriod.ValueOf(long.MaxValue));
+        Assert.Throws<OverflowException>(() => TimePeriodUtils.ValueOf(long.MaxValue));
 
         Assert.Multiple(() =>
         {
-            Assert.That(DXTimePeriod.ValueOf("0").Seconds, Is.EqualTo(0L));
-            Assert.That(DXTimePeriod.ValueOf("1s").TotalMilliseconds, Is.EqualTo(1000));
-            Assert.That(DXTimePeriod.ValueOf(".123456789").TotalMilliseconds, Is.EqualTo(123L));
-            Assert.That(DXTimePeriod.ValueOf("1.23456789").TotalSeconds,
-                Is.EqualTo(DXTimePeriod.ValueOf("0d0h0m1.235s").TotalSeconds));
+            Assert.That(TimePeriodUtils.ValueOf("0").Seconds, Is.EqualTo(0L));
+            Assert.That(TimePeriodUtils.ValueOf("1s").TotalMilliseconds, Is.EqualTo(1000));
+            Assert.That(TimePeriodUtils.ValueOf(".123456789").TotalMilliseconds, Is.EqualTo(123L));
+            Assert.That(TimePeriodUtils.ValueOf("1.23456789").TotalSeconds,
+                Is.EqualTo(TimePeriodUtils.ValueOf("0d0h0m1.235s").TotalSeconds));
         });
 
         const long expectedValue = 873000000L;
         Assert.Multiple(() =>
         {
-            Assert.That(DXTimePeriod.ValueOf(873000000L).TotalMilliseconds, Is.EqualTo(expectedValue));
-            Assert.That(DXTimePeriod.ValueOf("P10DT2H30M").TotalMilliseconds, Is.EqualTo(expectedValue));
-            Assert.That(DXTimePeriod.ValueOf("10DT2H29M60.00").TotalMilliseconds, Is.EqualTo(expectedValue));
-            Assert.That(DXTimePeriod.ValueOf("p10DT1H90M").TotalMilliseconds, Is.EqualTo(expectedValue));
-            Assert.That(DXTimePeriod.ValueOf("9DT26H1800S").TotalMilliseconds, Is.EqualTo(expectedValue));
-            Assert.That(DXTimePeriod.ValueOf("P10DT2H30M.0").TotalMilliseconds, Is.EqualTo(expectedValue));
-            Assert.That(DXTimePeriod.ValueOf("p10d2H29m59.9995s").TotalMilliseconds, Is.EqualTo(expectedValue));
+            Assert.That(TimePeriodUtils.ValueOf(873000000L).TotalMilliseconds, Is.EqualTo(expectedValue));
+            Assert.That(TimePeriodUtils.ValueOf("P10DT2H30M").TotalMilliseconds, Is.EqualTo(expectedValue));
+            Assert.That(TimePeriodUtils.ValueOf("10DT2H29M60.00").TotalMilliseconds, Is.EqualTo(expectedValue));
+            Assert.That(TimePeriodUtils.ValueOf("p10DT1H90M").TotalMilliseconds, Is.EqualTo(expectedValue));
+            Assert.That(TimePeriodUtils.ValueOf("9DT26H1800S").TotalMilliseconds, Is.EqualTo(expectedValue));
+            Assert.That(TimePeriodUtils.ValueOf("P10DT2H30M.0").TotalMilliseconds, Is.EqualTo(expectedValue));
+            Assert.That(TimePeriodUtils.ValueOf("p10d2H29m59.9995s").TotalMilliseconds, Is.EqualTo(expectedValue));
         });
         var badValues =
             new List<string>
@@ -196,7 +196,7 @@ internal class DXTimeFormatTest
             };
         foreach (var badValue in badValues)
         {
-            Assert.Throws<JavaException>(() => DXTimePeriod.ValueOf(badValue));
+            Assert.Throws<JavaException>(() => TimePeriodUtils.ValueOf(badValue));
         }
     }
 

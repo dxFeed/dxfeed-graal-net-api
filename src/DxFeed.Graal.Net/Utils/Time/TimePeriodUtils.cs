@@ -12,7 +12,7 @@ namespace DxFeed.Graal.Net.Utils.Time;
 /// <summary>
 /// A collection of utility methods for creation Timespan with support for ISO8601 duration format.
 /// </summary>
-public static class DXTimePeriod
+public static class TimePeriodUtils
 {
     /// <summary>
     /// Time-period of zero.
