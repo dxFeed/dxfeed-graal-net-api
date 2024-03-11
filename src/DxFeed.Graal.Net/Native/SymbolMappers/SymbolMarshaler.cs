@@ -166,7 +166,7 @@ internal class SymbolMarshaler : AbstractMarshaler
         switch (managed)
         {
             case string value:
-                var stringNative = (StringSymbolNative*)Marshal.AllocHGlobal(sizeof(StringNative));
+                var stringNative = (StringSymbolNative*)Marshal.AllocHGlobal(sizeof(StringSymbolNative));
                 stringNative->Base.SymbolCode = SymbolCodeNative.String;
                 stringNative->Symbol = StringNative.ValueOf(value);
                 return (SymbolNative*)stringNative;

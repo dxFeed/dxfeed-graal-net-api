@@ -93,28 +93,32 @@ public class DXEndpointTest
         });
     }
 
-    // [Test]
-    // public void CheckAddSymbols()
-    // {
-    //     var endpoint = Create(Feed);
-    //
-    //     var subscription = endpoint.GetFeed().CreateSubscription(typeof(Candle));
-    //     var symbols = new List<object> {
-    //         "AAPL_TEST",
-    //         "AAPL_TEST{=d}",
-    //         WildcardSymbol.All,
-    //         CandleSymbol.ValueOf("AAPL0", CandlePeriod.Day),
-    //         new TimeSeriesSubscriptionSymbol("AAPL2", 1),
-    //         new IndexedEventSubscriptionSymbol("AAPL1", IndexedEventSource.DEFAULT),
-    //         new IndexedEventSubscriptionSymbol("AAPL3", OrderSource.ntv),
-    //         new IndexedEventSubscriptionSymbol("AAPL4", OrderSource.ValueOf(1))
-    //     };
-    //     subscription.SetSymbols(symbols);
-    //     var resultSymbols = subscription.GetSymbols();
-    //     Assert.That(new HashSet<object>(symbols).SetEquals(resultSymbols));
-    //     subscription.Clear();
-    //     Assert.That(subscription.GetSymbols().Any(), Is.False);
-    //     subscription.SetSymbols(symbols.ToArray());
-    //     Assert.That(new HashSet<object>(symbols).SetEquals(resultSymbols));
-    // }
+    [Test]
+    public void CheckAddSymbols()
+    {
+        using var endpoint = Create(Feed);
+
+        var subscription = endpoint.GetFeed().CreateSubscription(typeof(Candle));
+        var symbols = new List<object>
+        {
+            "AAPL_TEST",
+            "AAPL_TEST{=d}",
+            // WildcardSymbol.All, temporarily disabled
+            CandleSymbol.ValueOf("AAPL0", CandlePeriod.Day),
+            new TimeSeriesSubscriptionSymbol("AAPL2", 1),
+            new IndexedEventSubscriptionSymbol("AAPL1", IndexedEventSource.DEFAULT),
+            new IndexedEventSubscriptionSymbol("AAPL3", OrderSource.ntv),
+            new IndexedEventSubscriptionSymbol("AAPL4", OrderSource.ValueOf(1))
+        };
+        subscription.SetSymbols(symbols);
+        var resultSymbols = subscription.GetSymbols();
+        Assert.That(new HashSet<object>(symbols).SetEquals(resultSymbols));
+        subscription.Clear();
+        Assert.That(subscription.GetSymbols().Any(), Is.False);
+        subscription.SetSymbols(symbols.ToArray());
+        Assert.That(new HashSet<object>(symbols).SetEquals(resultSymbols));
+        subscription.AddSymbols(symbols);
+        resultSymbols = subscription.GetSymbols();
+        Assert.That(new HashSet<object>(symbols).SetEquals(resultSymbols));
+    }
 }
