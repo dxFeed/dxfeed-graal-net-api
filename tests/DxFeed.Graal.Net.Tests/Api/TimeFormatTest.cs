@@ -1,4 +1,4 @@
-// <copyright file="DXTimeFormatTest.cs" company="Devexperts LLC">
+// <copyright file="TimeFormatTest.cs" company="Devexperts LLC">
 // Copyright © 2022 Devexperts LLC. All rights reserved.
 // This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 // If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
@@ -11,12 +11,12 @@ using DxFeed.Graal.Net.Utils.Time;
 namespace DxFeed.Graal.Net.Tests.Api;
 
 [TestFixture]
-internal class DXTimeFormatTest
+internal class TimeFormatTest
 {
     [Test]
     public void TestDefaultParse()
     {
-        var defaultTimeFormat = DXTimeFormat.Default();
+        var defaultTimeFormat = TimeFormat.Default;
 
         Assert.Multiple(() =>
         {
@@ -76,9 +76,9 @@ internal class DXTimeFormatTest
     }
 
     [Test]
-    public void TestGMTParse() => checkGMTTimeFormat(DXTimeFormat.GMT());
+    public void TestGMTParse() => checkGMTTimeFormat(TimeFormat.GMT);
 
-    private static void checkGMTTimeFormat(DXTimeFormat gmtTimeFormat)
+    private static void checkGMTTimeFormat(TimeFormat gmtTimeFormat)
     {
         Assert.Multiple(() =>
         {
@@ -108,7 +108,7 @@ internal class DXTimeFormatTest
     [Test]
     public void TestFormat()
     {
-        var defaultTimeFormat = DXTimeFormat.GMT();
+        var defaultTimeFormat = TimeFormat.GMT;
         Assert.Multiple(() =>
         {
             Assert.That(defaultTimeFormat.Format(-1), Is.EqualTo("19691231-235959"));
@@ -121,7 +121,7 @@ internal class DXTimeFormatTest
     [Test]
     public void TestWithMillisTimeFormat()
     {
-        var defaultTimeFormat = DXTimeFormat.GMT().WithMillis();
+        var defaultTimeFormat = TimeFormat.GMT.WithMillis();
         Assert.Multiple(() =>
         {
             Assert.That(defaultTimeFormat.Format(-1), Is.EqualTo("19691231-235959.999"));
@@ -134,7 +134,7 @@ internal class DXTimeFormatTest
     [Test]
     public void TestIsoTimeFormat()
     {
-        var defaultTimeFormat = DXTimeFormat.GMT().AsFullIso();
+        var defaultTimeFormat = TimeFormat.GMT.AsFullIso();
         Assert.Multiple(() =>
         {
             Assert.That(defaultTimeFormat.Format(-1), Is.EqualTo("1969-12-31T23:59:59.999Z"));
@@ -147,27 +147,24 @@ internal class DXTimeFormatTest
     [Test]
     public void TestTimePeriod()
     {
-        Assert.Throws<OverflowException>(() => TimePeriodUtils.ValueOf(long.MaxValue));
-
         Assert.Multiple(() =>
         {
-            Assert.That(TimePeriodUtils.ValueOf("0").Seconds, Is.EqualTo(0L));
-            Assert.That(TimePeriodUtils.ValueOf("1s").TotalMilliseconds, Is.EqualTo(1000));
-            Assert.That(TimePeriodUtils.ValueOf(".123456789").TotalMilliseconds, Is.EqualTo(123L));
-            Assert.That(TimePeriodUtils.ValueOf("1.23456789").TotalSeconds,
-                Is.EqualTo(TimePeriodUtils.ValueOf("0d0h0m1.235s").TotalSeconds));
+            Assert.That(TimePeriod.ValueOf("0").Seconds, Is.EqualTo(0L));
+            Assert.That(TimePeriod.ValueOf("1s").TotalMilliseconds, Is.EqualTo(1000));
+            Assert.That(TimePeriod.ValueOf(".123456789").TotalMilliseconds, Is.EqualTo(123L));
+            Assert.That(TimePeriod.ValueOf("1.23456789").TotalSeconds,
+                Is.EqualTo(TimePeriod.ValueOf("0d0h0m1.235s").TotalSeconds));
         });
 
         const long expectedValue = 873000000L;
         Assert.Multiple(() =>
         {
-            Assert.That(TimePeriodUtils.ValueOf(873000000L).TotalMilliseconds, Is.EqualTo(expectedValue));
-            Assert.That(TimePeriodUtils.ValueOf("P10DT2H30M").TotalMilliseconds, Is.EqualTo(expectedValue));
-            Assert.That(TimePeriodUtils.ValueOf("10DT2H29M60.00").TotalMilliseconds, Is.EqualTo(expectedValue));
-            Assert.That(TimePeriodUtils.ValueOf("p10DT1H90M").TotalMilliseconds, Is.EqualTo(expectedValue));
-            Assert.That(TimePeriodUtils.ValueOf("9DT26H1800S").TotalMilliseconds, Is.EqualTo(expectedValue));
-            Assert.That(TimePeriodUtils.ValueOf("P10DT2H30M.0").TotalMilliseconds, Is.EqualTo(expectedValue));
-            Assert.That(TimePeriodUtils.ValueOf("p10d2H29m59.9995s").TotalMilliseconds, Is.EqualTo(expectedValue));
+            Assert.That(TimePeriod.ValueOf("P10DT2H30M").TotalMilliseconds, Is.EqualTo(expectedValue));
+            Assert.That(TimePeriod.ValueOf("10DT2H29M60.00").TotalMilliseconds, Is.EqualTo(expectedValue));
+            Assert.That(TimePeriod.ValueOf("p10DT1H90M").TotalMilliseconds, Is.EqualTo(expectedValue));
+            Assert.That(TimePeriod.ValueOf("9DT26H1800S").TotalMilliseconds, Is.EqualTo(expectedValue));
+            Assert.That(TimePeriod.ValueOf("P10DT2H30M.0").TotalMilliseconds, Is.EqualTo(expectedValue));
+            Assert.That(TimePeriod.ValueOf("p10d2H29m59.9995s").TotalMilliseconds, Is.EqualTo(expectedValue));
         });
         var badValues =
             new List<string>
@@ -189,15 +186,15 @@ internal class DXTimeFormatTest
             };
         foreach (var badValue in badValues)
         {
-            Assert.Throws<JavaException>(() => TimePeriodUtils.ValueOf(badValue));
+            Assert.Throws<JavaException>(() => TimePeriod.ValueOf(badValue));
         }
     }
 
     [Test]
     public void TestDateAsLong()
     {
-        var gmt = DXTimeFormat.GMT();
-        var a1 = DXTimeFormat.GMT().Parse("20010101"); // yyyymmdd
+        var gmt = TimeFormat.GMT;
+        var a1 = TimeFormat.GMT.Parse("20010101"); // yyyymmdd
         var a2 = gmt.Parse("2001-01-01");
         Assert.That(a1, Is.EqualTo(a2));
 
@@ -214,9 +211,9 @@ internal class DXTimeFormatTest
     public void TestDateOutsideIsoRangeFormat() =>
         Assert.Multiple(() =>
         {
-            Assert.That(DXTimeFormat.GMT().Format(long.MinValue),
+            Assert.That(TimeFormat.GMT.Format(long.MinValue),
                 Is.EqualTo(long.MinValue.ToString(CultureInfo.InvariantCulture)));
-            Assert.That(DXTimeFormat.GMT().Format(long.MaxValue),
+            Assert.That(TimeFormat.GMT.Format(long.MaxValue),
                 Is.EqualTo(long.MaxValue.ToString(CultureInfo.InvariantCulture)));
         });
 }

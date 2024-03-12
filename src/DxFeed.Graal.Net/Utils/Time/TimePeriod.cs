@@ -12,19 +12,12 @@ namespace DxFeed.Graal.Net.Utils.Time;
 /// <summary>
 /// A collection of utility methods for creation Timespan with support for ISO8601 duration format.
 /// </summary>
-public static class TimePeriodUtils
+public static class TimePeriod
 {
-    /// <summary>
-    /// Returns <see cref="TimeSpan"/> with value milliseconds.
-    /// </summary>
-    /// <param name="value">The value in milliseconds.</param>
-    /// <returns>The time span that represented <paramref name="value" />.</returns>
-    public static TimeSpan ValueOf(long value) => TimeSpan.FromMilliseconds(TimePeriodNative.ValueOf(value).GetTime());
-
     /// <summary>
     /// Returns <see cref="TimeSpan"/> with represented with a given string.
     /// Allowable format is ISO8601 duration, but there are some simplifications and modifications available:
-    /// * <ul>
+    /// <ul>
     ///     <li> Letters are case insensitive.</li>
     ///     <li> Letters "P" and "T" can be omitted.</li>
     ///     <li> Letter "S" can be also omitted. In this case last number will be supposed to be seconds.</li>
@@ -34,7 +27,17 @@ public static class TimePeriodUtils
     /// </ul>
     /// </summary>
     /// <param name="value">The string representation.</param>
-    /// <returns>The time span that represented with a given string..</returns>
-    public static TimeSpan ValueOf(string value) =>
-        TimeSpan.FromMilliseconds(TimePeriodNative.ValueOf(value).GetTime());
+    /// <returns>The time span that represented with a given string.</returns>
+    public static TimeSpan ValueOf(string value)
+    {
+        var millis = TimePeriodNative.ValueOf(value).GetTime();
+        const long MaxMilliSeconds = long.MaxValue / TimeSpan.TicksPerMillisecond;
+        const long MinMilliSeconds = long.MinValue / TimeSpan.TicksPerMillisecond;
+        return millis switch
+        {
+            >= MaxMilliSeconds => TimeSpan.MaxValue,
+            <= MinMilliSeconds => TimeSpan.MinValue,
+            _ => TimeSpan.FromMilliseconds(millis),
+        };
+    }
 }

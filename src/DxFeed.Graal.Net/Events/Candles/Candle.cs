@@ -181,9 +181,9 @@ public class Candle : ITimeSeriesEvent, ILastingEvent
     /// <returns>The string representation.</returns>
     protected string BaseFieldsToString() =>
         StringUtil.EncodeNullableString(EventSymbol) +
-        ", eventTime=" + DXTimeFormat.Default().WithMillis().Format(EventTime) +
+        ", eventTime=" + TimeFormat.Default.WithMillis().Format(EventTime) +
         ", eventFlags=0x" + EventFlags.ToString("x", CultureInfo.InvariantCulture) +
-        ", time=" + DXTimeFormat.Default().WithMillis().Format(Time) +
+        ", time=" + TimeFormat.Default.WithMillis().Format(Time) +
         ", sequence=" + Sequence +
         ", count=" + Count +
         ", open=" + Open +

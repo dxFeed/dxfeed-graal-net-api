@@ -189,7 +189,7 @@ public class LatencyTestTool : AbstractTool<LatencyTestArgs>
             Console.WriteLine(@$"  Sample size (N)           : {_sampleSize} (events)");
             Console.WriteLine(@$"  Measurement interval      : {_measurementPeriod.Seconds} (s)");
             Console.WriteLine(@$"  Running time              : {_runningDiff.Elapsed}");
-            Console.WriteLine(@$"  Timestamp                 : {DXTimeFormat.Default().WithMillis().Format(DateTimeOffset.Now.ToUnixTimeMilliseconds())}");
+            Console.WriteLine(@$"  Timestamp                 : {TimeFormat.Default.WithMillis().Format(DateTimeOffset.Now.ToUnixTimeMilliseconds())}");
 
             _min = double.NaN;
             _mean = double.NaN;

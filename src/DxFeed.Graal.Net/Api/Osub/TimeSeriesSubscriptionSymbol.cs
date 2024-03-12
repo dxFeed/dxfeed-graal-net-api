@@ -50,7 +50,7 @@ public class TimeSeriesSubscriptionSymbol<T> : IndexedEventSubscriptionSymbol<T>
 
     /// <inheritdoc/>
     public override string ToString() =>
-        $"{EventSymbol}{{fromTime={DXTimeFormat.Default().WithMillis().Format(FromTime)}}}";
+        $"{EventSymbol}{{fromTime={TimeFormat.Default.WithMillis().Format(FromTime)}}}";
 
     /// <summary>
     /// Indicates whether some other time series event subscription symbol

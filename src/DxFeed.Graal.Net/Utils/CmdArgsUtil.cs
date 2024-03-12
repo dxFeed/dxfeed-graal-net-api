@@ -53,7 +53,7 @@ public static class CmdArgsUtil
     }
 
     /// <inheritdoc cref="TimeFormat.Parse"/>
-    public static DateTimeOffset ParseFromTime(string fromTime) => DXTimeFormat.Default().Parse(fromTime);
+    public static DateTimeOffset ParseFromTime(string fromTime) => TimeFormat.Default.Parse(fromTime);
 
     /// <summary>
     /// Parses the input collection of strings and returns a collection of key-value properties.

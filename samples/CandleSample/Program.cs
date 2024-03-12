@@ -22,7 +22,7 @@ internal abstract class Program
     {
         try
         {
-            param.Value = DXTimeFormat.Default().Parse(stringParam);
+            param.Value = TimeFormat.Default.Parse(stringParam);
             return true;
         }
         catch (Exception)

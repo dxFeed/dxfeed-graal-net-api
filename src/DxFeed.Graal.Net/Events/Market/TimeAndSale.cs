@@ -280,9 +280,9 @@ public class TimeAndSale : MarketEvent, ITimeSeriesEvent
     /// <returns>The string representation.</returns>
     public override string ToString() =>
         "TimeAndSale{" + StringUtil.EncodeNullableString(EventSymbol) +
-        ", eventTime=" + DXTimeFormat.Default().WithMillis().Format(EventTime) +
+        ", eventTime=" + TimeFormat.Default.WithMillis().Format(EventTime) +
         ", eventFlags=0x" + EventFlags.ToString("x", CultureInfo.InvariantCulture) +
-        ", time=" + DXTimeFormat.Default().WithMillis().Format(Time) +
+        ", time=" + TimeFormat.Default.WithMillis().Format(Time) +
         ", timeNanoPart=" + TimeNanoPart +
         ", sequence=" + Sequence +
         ", exchange=" + StringUtil.EncodeChar(ExchangeCode) +

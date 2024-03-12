@@ -272,10 +272,10 @@ public class OptionSale : MarketEvent, IIndexedEvent
     /// <returns>The string representation.</returns>
     public override string ToString() =>
         "OptionSale{" + StringUtil.EncodeNullableString(EventSymbol) +
-        ", eventTime=" + DXTimeFormat.Default().WithMillis().Format(EventTime) +
+        ", eventTime=" + TimeFormat.Default.WithMillis().Format(EventTime) +
         ", eventFlags=0x" + EventFlags.ToString("x", CultureInfo.InvariantCulture) +
         ", index=0x" + Index.ToString("x", CultureInfo.InvariantCulture) +
-        ", time=" + DXTimeFormat.Default().WithMillis().Format(Time) +
+        ", time=" + TimeFormat.Default.WithMillis().Format(Time) +
         ", timeNanoPart=" + TimeNanoPart +
         ", sequence=" + Sequence +
         ", exchange=" + StringUtil.EncodeChar(ExchangeCode) +

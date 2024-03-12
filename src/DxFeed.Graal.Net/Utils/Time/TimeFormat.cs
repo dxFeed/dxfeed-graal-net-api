@@ -1,4 +1,4 @@
-// <copyright file="DXTimeFormat.cs" company="Devexperts LLC">
+// <copyright file="TimeFormat.cs" company="Devexperts LLC">
 // Copyright © 2022 Devexperts LLC. All rights reserved.
 // This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 // If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
@@ -12,48 +12,48 @@ namespace DxFeed.Graal.Net.Utils.Time;
 /// <summary>
 /// Utility class for parsing and formatting dates and times in ISO-compatible format.
 /// </summary>
-public class DXTimeFormat
+public class TimeFormat
 {
-    private static readonly Lazy<DXTimeFormat> _default = new(() =>
-        new DXTimeFormat(TimeFormatNative.Default()));
+    private static readonly Lazy<TimeFormat> _default = new(() =>
+        new TimeFormat(TimeFormatNative.Default()));
 
-    private static readonly Lazy<DXTimeFormat> _gmt = new(() =>
-        new DXTimeFormat(TimeFormatNative.GMT()));
+    private static readonly Lazy<TimeFormat> _gmt = new(() =>
+        new TimeFormat(TimeFormatNative.GMT()));
 
     private readonly TimeFormatNative _timeFormatNative;
-    private readonly Lazy<DXTimeFormat> _defaultWithMillis;
-    private readonly Lazy<DXTimeFormat> _fullIso;
+    private readonly Lazy<TimeFormat> _defaultWithMillis;
+    private readonly Lazy<TimeFormat> _fullIso;
 
-    private DXTimeFormat(TimeFormatNative timeFormatNative)
+    private TimeFormat(TimeFormatNative timeFormatNative)
     {
         _timeFormatNative = timeFormatNative;
-        _defaultWithMillis = new Lazy<DXTimeFormat>(() => new DXTimeFormat(_timeFormatNative.WithMillis()));
-        _fullIso = new Lazy<DXTimeFormat>(() => new DXTimeFormat(_timeFormatNative.AsFullIso()));
+        _defaultWithMillis = new Lazy<TimeFormat>(() => new TimeFormat(_timeFormatNative.WithMillis()));
+        _fullIso = new Lazy<TimeFormat>(() => new TimeFormat(_timeFormatNative.AsFullIso()));
     }
 
     /// <summary>
-    /// Return DXTimeFormat instance that corresponds to default timezone.
+    /// Gets TimeFormat instance that corresponds to default timezone.
     /// </summary>
-    /// <returns>The time format.</returns>
-    public static DXTimeFormat Default() => _default.Value;
+    /// <value>The time format.</value>
+    public static TimeFormat Default => _default.Value;
 
     /// <summary>
-    /// Return DXTimeFormat instance that corresponds to GMT timezone.
+    /// Gets TimeFormat instance that corresponds to GMT timezone.
     /// </summary>
-    /// <returns>The time format.</returns>
-    public static DXTimeFormat GMT() => _gmt.Value;
+    /// <value>The time format.</value>
+    public static TimeFormat GMT => _gmt.Value;
 
     /// <summary>
-    /// Returns DXTimeFormat instance that also includes milliseconds into string when using <see cref="Format"/> format} method.
+    /// Returns TimeFormat instance that also includes milliseconds into string when using <see cref="Format"/> format} method.
     /// </summary>
     /// <returns>The time format.</returns>
-    public DXTimeFormat WithMillis() => _defaultWithMillis.Value;
+    public TimeFormat WithMillis() => _defaultWithMillis.Value;
 
     /// <summary>
-    /// Returns DXTimeFormat instance that produces full ISO8610 string of "yyyy-MM-dd'T'HH:mm:ss.SSSX".
+    /// Returns TimeFormat instance that produces full ISO8610 string of "yyyy-MM-dd'T'HH:mm:ss.SSSX".
     /// </summary>
     /// <returns>The time format.</returns>
-    public DXTimeFormat AsFullIso() => _fullIso.Value;
+    public TimeFormat AsFullIso() => _fullIso.Value;
 
     /// <summary>
     /// Reads Date from String.
@@ -66,7 +66,7 @@ public class DXTimeFormat
 
     /// <summary>
     /// Converts value into string according to the format like `yyyyMMdd-HHmmss`.
-    /// When <see cref="WithMillis"/> was used to acquire this DXTimeFormat instance,
+    /// When <see cref="WithMillis"/> was used to acquire this TimeFormat instance,
     /// the milliseconds are also included as `.sss`.
     /// When value == 0 this method returns string "0".
     /// </summary>
