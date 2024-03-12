@@ -6,7 +6,7 @@
 
 using System.Globalization;
 using DxFeed.Graal.Net.Native.ErrorHandling;
-using DxFeed.Graal.Net.Utils.Time;
+using DxFeed.Graal.Net.Utils;
 
 namespace DxFeed.Graal.Net.Tests.Api;
 

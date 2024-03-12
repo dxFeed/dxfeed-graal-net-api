@@ -8,7 +8,6 @@ using System;
 using System.Globalization;
 using DxFeed.Graal.Net.Native.Events;
 using DxFeed.Graal.Net.Utils;
-using DxFeed.Graal.Net.Utils.Time;
 
 namespace DxFeed.Graal.Net.Events.Market;
 

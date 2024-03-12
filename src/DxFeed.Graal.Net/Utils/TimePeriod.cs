@@ -7,7 +7,7 @@
 using System;
 using DxFeed.Graal.Net.Native.Utils;
 
-namespace DxFeed.Graal.Net.Utils.Time;
+namespace DxFeed.Graal.Net.Utils;
 
 /// <summary>
 /// A collection of utility methods for creation Timespan with support for ISO8601 duration format.
@@ -30,9 +30,9 @@ public static class TimePeriod
     /// <returns>The time span that represented with a given string.</returns>
     public static TimeSpan ValueOf(string value)
     {
-        var millis = TimePeriodNative.ValueOf(value).GetTime();
         const long MaxMilliSeconds = long.MaxValue / TimeSpan.TicksPerMillisecond;
         const long MinMilliSeconds = long.MinValue / TimeSpan.TicksPerMillisecond;
+        var millis = TimePeriodNative.ValueOf(value).GetTime();
         return millis switch
         {
             >= MaxMilliSeconds => TimeSpan.MaxValue,

@@ -5,7 +5,6 @@ using DxFeed.Graal.Net.Api;
 using DxFeed.Graal.Net.Api.Osub;
 using DxFeed.Graal.Net.Events.Candles;
 using DxFeed.Graal.Net.Utils;
-using DxFeed.Graal.Net.Utils.Time;
 
 namespace DxFeed.Graal.Net.Samples;
 
