@@ -120,5 +120,14 @@ public class DXEndpointTest
         subscription.AddSymbols(symbols);
         resultSymbols = subscription.GetSymbols();
         Assert.That(new HashSet<object>(symbols).SetEquals(resultSymbols));
+
+        subscription.Clear();
+        var tempList = new List<object>();
+        foreach (var symbol in symbols)
+        {
+            tempList.Add(symbol);
+            subscription.AddSymbols(symbol);
+            Assert.That(new HashSet<object>(tempList).SetEquals(subscription.GetSymbols()));
+        }
     }
 }

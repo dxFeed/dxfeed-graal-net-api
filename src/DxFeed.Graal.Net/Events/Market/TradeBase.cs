@@ -186,8 +186,8 @@ public abstract class TradeBase : MarketEvent, ILastingEvent
     /// <returns>The string representation.</returns>
     protected string BaseFieldsToString() =>
         StringUtil.EncodeNullableString(EventSymbol) +
-        ", eventTime=" + TimeFormat.Local.WithMillis().WithTimeZone().FormatFromMillis(EventTime) +
-        ", time=" + TimeFormat.Local.WithMillis().WithTimeZone().FormatFromMillis(Time) +
+        ", eventTime=" + TimeFormat.Default.WithMillis().Format(EventTime) +
+        ", time=" + TimeFormat.Default.WithMillis().Format(Time) +
         ", timeNanoPart=" + TimeNanoPart +
         ", sequence=" + Sequence +
         ", exchange=" + StringUtil.EncodeChar(ExchangeCode) +

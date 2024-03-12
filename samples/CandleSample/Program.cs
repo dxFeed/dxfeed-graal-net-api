@@ -21,7 +21,7 @@ internal abstract class Program
     {
         try
         {
-            param.Value = TimeFormat.Local.Parse(stringParam);
+            param.Value = TimeFormat.Default.Parse(stringParam);
             return true;
         }
         catch (Exception)
