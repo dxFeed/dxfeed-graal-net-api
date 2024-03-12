@@ -170,7 +170,7 @@ Only x64 versions are supported.
 
 #### Requirements
 
-* .NET (not required for self-contained assemblies)
+* .NET 6.0+ (not required for self-contained assemblies)
 * [Visual C++ Redistributable for Visual Studio 2015][vc_redist]
 
 [Windows-client]: https://www.microsoft.com/windows/
@@ -187,7 +187,7 @@ Only x64 versions are supported.
 
 #### Requirements
 
-* .NET (not required for self-contained assemblies)
+* .NET 6.0+ (not required for self-contained assemblies)
 
 #### Libc compatibility
 
@@ -215,7 +215,7 @@ Is supported in the Rosetta 2 x64 emulator.
 
 #### Requirements
 
-* .NET (not required for self-contained assemblies)
+* .NET 6.0+ (not required for self-contained assemblies)
 
 ## Installation
 
