@@ -33,6 +33,7 @@ internal static class EventMapper
     private static readonly OrderMapper OrderMapper = new();
     private static readonly AnalyticOrderMapper AnalyticOrderMapper = new();
     private static readonly SpreadOrderMapper SpreadOrderMapper = new();
+    private static readonly OtcMarketsOrderMapper OtcMarketsOrderMapper = new();
     private static readonly SeriesMapper SeriesMapper = new();
     private static readonly OptionSaleMapper OptionSaleMapper = new();
 
@@ -114,8 +115,9 @@ internal static class EventMapper
             EventCodeNative.OptionSale => OptionSaleMapper,
             EventCodeNative.DailyCandle => throw new NotImplementedException(),
             EventCodeNative.OrderBase => throw new NotImplementedException(),
-            EventCodeNative.Configuration => throw new NotImplementedException(),
+            EventCodeNative.Configuration =>throw new NotImplementedException(),
             EventCodeNative.Message => throw new NotImplementedException(),
+            EventCodeNative.OtcMarketsOrder => OtcMarketsOrderMapper,
             _ => throw new ArgumentException($"Unknown {nameof(EventCodeNative)}: {eventCode}"),
         };
 }

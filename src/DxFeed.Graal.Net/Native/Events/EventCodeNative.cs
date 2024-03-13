@@ -109,4 +109,9 @@ public enum EventCodeNative
     /// <see cref="OptionSale"/>.
     /// </summary>
     OptionSale,
+
+    /// <summary>
+    /// <see cref="OtcMarketsOrder"/>.
+    /// </summary>
+    OtcMarketsOrder,
 }
