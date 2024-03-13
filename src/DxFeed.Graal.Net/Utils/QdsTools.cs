@@ -7,16 +7,16 @@
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using DxFeed.Graal.Net.Native;
-using DxFeed.Graal.Net.Native.ErrorHandling;
 using DxFeed.Graal.Net.Native.Graal;
 using DxFeed.Graal.Net.Native.Interop;
+using static DxFeed.Graal.Net.Native.ErrorHandling.ErrorCheck;
 
 namespace DxFeed.Graal.Net.Utils;
 
 /// <summary>
 /// Provides utility methods for running qds-tools using the DxFeed Graal.NET infrastructure.
 /// </summary>
-public static class QdsUtil
+public static class QdsTools
 {
     /// <summary>
     /// Executes a qds-tools with the specified arguments.
@@ -26,10 +26,8 @@ public static class QdsUtil
     /// This method converts the provided string arguments into a native format suitable for the QDS tool,
     /// handles any errors during the execution, and ensures proper resource management within the native interop context.
     /// </remarks>
-    public static unsafe void RunTool(IEnumerable<string> args) =>
-        ErrorCheck.SafeCall(Import.Main(
-            Isolate.CurrentThread,
-            ListNative<StringNative>.Create(args, s => StringNative.ValueOf(s).NativeStringPtr)));
+    public static void RunTool(IEnumerable<string> args) =>
+        SafeCall(Import.Main(Isolate.CurrentThread, args));
 
     private static class Import
     {
@@ -38,8 +36,9 @@ public static class QdsUtil
             CallingConvention = CallingConvention.Cdecl,
             CharSet = CharSet.Ansi,
             EntryPoint = "dxfg_Tools_main")]
-        public static extern unsafe int Main(
+        public static extern int Main(
             nint thread,
-            ListNative<StringNative>* role);
+            [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ListMarshaler<StringMarshaler>))]
+            IEnumerable<string> args);
     }
 }

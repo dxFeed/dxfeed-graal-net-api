@@ -478,10 +478,7 @@ public sealed class DXEndpoint : IDisposable
     /// <exception cref="ArgumentNullException">If user is null.</exception>
     public DXEndpoint User(string user)
     {
-        if (user == null)
-        {
-            throw new ArgumentNullException(nameof(user));
-        }
+        ArgumentNullException.ThrowIfNull(user);
 
         _endpointNative.User(user);
         return this;
@@ -497,10 +494,7 @@ public sealed class DXEndpoint : IDisposable
     /// <exception cref="ArgumentNullException">If password is null.</exception>
     public DXEndpoint Password(string password)
     {
-        if (password == null)
-        {
-            throw new ArgumentNullException(nameof(password));
-        }
+        ArgumentNullException.ThrowIfNull(password);
 
         _endpointNative.Password(password);
         return this;
@@ -536,10 +530,7 @@ public sealed class DXEndpoint : IDisposable
     /// <exception cref="JavaException">If address string is malformed.</exception>
     public DXEndpoint Connect(string address)
     {
-        if (address == null)
-        {
-            throw new ArgumentNullException(nameof(address));
-        }
+        ArgumentNullException.ThrowIfNull(address);
 
         _endpointNative.Connect(address);
         return this;
@@ -802,10 +793,7 @@ public sealed class DXEndpoint : IDisposable
         /// <exception cref="ArgumentNullException">If the key is null.</exception>
         public bool SupportsProperty(string key)
         {
-            if (key == null)
-            {
-                throw new ArgumentNullException(nameof(key));
-            }
+            ArgumentNullException.ThrowIfNull(key);
 
             // Use a separate instance of the builder to define supported properties.
             return _builderForDefineSupportProperties.Value.SupportsProperty(key);
@@ -847,7 +835,7 @@ public sealed class DXEndpoint : IDisposable
         /// </summary>
         /// <param name="props">The user-defined properties.</param>
         /// <returns>Returns the name of the endpoint.</returns>
-        private static string GetOrCreateEndpointName(IDictionary<string, string> props)
+        private static string GetOrCreateEndpointName(Dictionary<string, string> props)
         {
             if (props.TryGetValue(NameProperty, out var name))
             {
@@ -869,7 +857,7 @@ public sealed class DXEndpoint : IDisposable
         private static void LoadDefaultPropertiesFileIfNeeded(
             BuilderWrapper builder,
             Role role,
-            IReadOnlyDictionary<string, string> props)
+            Dictionary<string, string> props)
         {
             // The default properties file is valid only for the
             // Feed, OnDemandFeed and Publisher roles.

@@ -7,11 +7,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Text.RegularExpressions;
 using DxFeed.Graal.Net.Events;
-using DxFeed.Graal.Net.Events.Market;
-using DxFeed.Graal.Net.Ipf;
 
 namespace DxFeed.Graal.Net.Utils;
 
@@ -25,78 +21,7 @@ public static class CmdArgsUtil
     /// </summary>
     /// <param name="symbols">The coma-separated list of symbols.</param>
     /// <returns>Returns created a set of parsed symbols.</returns>
-    public static IEnumerable<string> ParseSymbols(string symbols)
-    {
-        var result = new HashSet<string>();
-
-        void AddSymbol(string symbol)
-        {
-            if (string.IsNullOrWhiteSpace(symbol))
-            {
-                return;
-            }
-
-            if (symbol.StartsWith("ipf[", StringComparison.InvariantCulture) &&
-                symbol.EndsWith($"]", StringComparison.InvariantCulture))
-            {
-                var profiles = new InstrumentProfileReader()
-                    .ReadFromFile(Regex.Match(symbol, @"\[([^)]*)\]").Groups[1].Value);
-                foreach (var profile in profiles)
-                {
-                    result.Add(profile.Symbol);
-                }
-            }
-            else
-            {
-                result.Add(symbol.Trim());
-            }
-        }
-
-        // Count of encountered parentheses of any type.
-        var parentheses = 0;
-        var sb = new StringBuilder();
-        foreach (var c in symbols)
-        {
-            switch (c)
-            {
-                case '{':
-                case '(':
-                case '[':
-                    ++parentheses;
-                    sb.Append(c);
-                    break;
-                case '}':
-                case ')':
-                case ']':
-                    if (parentheses > 0)
-                    {
-                        --parentheses;
-                    }
-
-                    sb.Append(c);
-                    break;
-                case ',':
-                    if (parentheses == 0)
-                    {
-                        // Not in parenthesis -- comma is a symbol list separator.
-                        AddSymbol(sb.ToString());
-                        sb.Clear();
-                    }
-                    else
-                    {
-                        sb.Append(c);
-                    }
-
-                    break;
-                default:
-                    sb.Append(c);
-                    break;
-            }
-        }
-
-        AddSymbol(sb.ToString());
-        return result;
-    }
+    public static IEnumerable<string> ParseSymbols(string symbols) => SymbolParser.Parse(symbols);
 
     /// <summary>
     /// Parses an input string and returns a set of event types.
@@ -127,8 +52,7 @@ public static class CmdArgsUtil
     }
 
     /// <inheritdoc cref="TimeFormat.Parse"/>
-    public static DateTimeOffset ParseFromTime(string fromTime) =>
-        TimeFormat.Local.Parse(fromTime);
+    public static DateTimeOffset ParseFromTime(string fromTime) => TimeFormat.Default.Parse(fromTime);
 
     /// <summary>
     /// Parses the input collection of strings and returns a collection of key-value properties.
