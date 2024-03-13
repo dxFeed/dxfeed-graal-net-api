@@ -4,6 +4,7 @@
 // If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
 // </copyright>
 
+using DxFeed.Graal.Net.Api;
 using DxFeed.Graal.Net.Api.Osub;
 using DxFeed.Graal.Net.Events;
 using DxFeed.Graal.Net.Events.Candles;
@@ -129,5 +130,54 @@ public class DXEndpointTest
             subscription.AddSymbols(symbol);
             Assert.That(new HashSet<object>(tempList).SetEquals(subscription.GetSymbols()));
         }
+    }
+
+    [Test]
+    public void CheckOtcMarketsOrder()
+    {
+        const string SYMBOL = "AAPL_TEST";
+        var order = new OtcMarketsOrder(SYMBOL)
+        {
+            OrderSide = Side.Buy,
+            MarketMaker = "NSDQ",
+            Scope = Scope.Order,
+            Price = 10.0,
+            Size = 1,
+            Index = 1,
+            QuoteAccessPayment = -30,
+            IsOpen = true,
+            IsUnsolicited = true,
+            OtcMarketsPriceType = OtcMarketsPriceType.Actual,
+            IsSaturated = true,
+            IsAutoExecution = true,
+            IsNmsConditional = true
+        };
+
+        var endpoint = DXEndpoint.Create(LocalHub);
+        var feed = endpoint.GetFeed();
+        var publisher = endpoint.GetPublisher();
+        var sub = feed.CreateSubscription(typeof(OtcMarketsOrder));
+        sub.AddEventListener(events =>
+        {
+            var received = (OtcMarketsOrder)events.First();
+            Assert.Multiple(() =>
+            {
+                Assert.That(received.EventSymbol, Is.EqualTo(SYMBOL));
+                Assert.That(received.OrderSide, Is.EqualTo(Side.Buy));
+                Assert.That(received.Scope, Is.EqualTo(Scope.Order));
+                Assert.That(Math.Abs(10.0 - received.Price), Is.LessThan(0.01));
+                Assert.That(Math.Abs(1 - received.Size), Is.LessThan(0.01));
+                Assert.That(received.MarketMaker, Is.EqualTo("TEST"));
+                Assert.That(received.QuoteAccessPayment, Is.EqualTo(-30));
+                Assert.That(received.IsOpen, Is.True);
+                Assert.That(received.IsUnsolicited, Is.True);
+                Assert.That(received.OtcMarketsPriceType, Is.EqualTo(OtcMarketsPriceType.Actual));
+                Assert.That(received.IsSaturated, Is.True);
+                Assert.That(received.IsAutoExecution, Is.True);
+                Assert.That(received.IsNmsConditional, Is.True);
+            });
+        });
+        sub.AddSymbols(SYMBOL);
+        publisher.PublishEvents(order);
     }
 }
