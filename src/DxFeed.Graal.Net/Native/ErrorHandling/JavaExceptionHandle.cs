@@ -21,7 +21,7 @@ namespace DxFeed.Graal.Net.Native.ErrorHandling;
 /// retrieve and clear them, and convert them to .NET exceptions for seamless error handling
 /// across the interop boundary.
 /// </remarks>
-[SuppressMessage("ReSharper", "ClassNeverInstantiated.Global", Justification = "Created by marshaller")]
+[SuppressMessage("ReSharper", "ClassNeverInstantiated.Global", Justification = "Created by marshaler")]
 internal sealed class JavaExceptionHandle : JavaHandle
 {
     /// <summary>

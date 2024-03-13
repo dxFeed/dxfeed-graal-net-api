@@ -1,3 +1,6 @@
+* Add TimeFormat, TimePeriod and SymbolParser
+* Add GetSymbols and SetSymbols for DXFeedSubscription
+
 ## Version 1.2.1
 
 * Improve TimeSeriesEventAsync public API

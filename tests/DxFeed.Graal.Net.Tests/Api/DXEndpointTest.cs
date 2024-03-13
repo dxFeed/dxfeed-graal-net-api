@@ -4,6 +4,10 @@
 // If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
 // </copyright>
 
+using DxFeed.Graal.Net.Api.Osub;
+using DxFeed.Graal.Net.Events;
+using DxFeed.Graal.Net.Events.Candles;
+using DxFeed.Graal.Net.Events.Market;
 using static DxFeed.Graal.Net.Api.DXEndpoint;
 using static DxFeed.Graal.Net.Api.DXEndpoint.Role;
 
@@ -87,5 +91,43 @@ public class DXEndpointTest
             Assert.That(countdownEvent.Wait(new TimeSpan(0, 0, 3)), Is.True);
             Assert.That(currentState, Is.EqualTo(State.Closed));
         });
+    }
+
+    [Test]
+    public void CheckAddSymbols()
+    {
+        using var endpoint = Create(Feed);
+
+        var subscription = endpoint.GetFeed().CreateSubscription(typeof(Candle));
+        var symbols = new List<object>
+        {
+            "AAPL_TEST",
+            "AAPL_TEST{=d}",
+            // WildcardSymbol.All, temporarily disabled
+            CandleSymbol.ValueOf("AAPL0", CandlePeriod.Day),
+            new TimeSeriesSubscriptionSymbol("AAPL2", 1),
+            new IndexedEventSubscriptionSymbol("AAPL1", IndexedEventSource.DEFAULT),
+            new IndexedEventSubscriptionSymbol("AAPL3", OrderSource.ntv),
+            new IndexedEventSubscriptionSymbol("AAPL4", OrderSource.ValueOf(1))
+        };
+        subscription.SetSymbols(symbols);
+        var resultSymbols = subscription.GetSymbols();
+        Assert.That(new HashSet<object>(symbols).SetEquals(resultSymbols));
+        subscription.Clear();
+        Assert.That(subscription.GetSymbols().Any(), Is.False);
+        subscription.SetSymbols(symbols.ToArray());
+        Assert.That(new HashSet<object>(symbols).SetEquals(resultSymbols));
+        subscription.AddSymbols(symbols);
+        resultSymbols = subscription.GetSymbols();
+        Assert.That(new HashSet<object>(symbols).SetEquals(resultSymbols));
+
+        subscription.Clear();
+        var tempList = new List<object>();
+        foreach (var symbol in symbols)
+        {
+            tempList.Add(symbol);
+            subscription.AddSymbols(symbol);
+            Assert.That(new HashSet<object>(tempList).SetEquals(subscription.GetSymbols()));
+        }
     }
 }

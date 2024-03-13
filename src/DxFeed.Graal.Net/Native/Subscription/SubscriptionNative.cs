@@ -13,7 +13,6 @@ using DxFeed.Graal.Net.Native.Feed;
 using DxFeed.Graal.Net.Native.Graal;
 using DxFeed.Graal.Net.Native.Interop;
 using DxFeed.Graal.Net.Native.SymbolMappers;
-using DxFeed.Graal.Net.Native.Symbols;
 
 namespace DxFeed.Graal.Net.Native.Subscription;
 
@@ -99,6 +98,12 @@ internal sealed unsafe class SubscriptionNative : IDisposable
             SubscriptionImport.RemoveSymbols(GetCurrentThread(), _subHandle, symbols);
         }
     }
+
+    public IReadOnlySet<object> GetSymbols() =>
+        new HashSet<object>(SubscriptionImport.GetSymbols(GetCurrentThread(), _subHandle));
+
+    public void SetSymbols(IEnumerable<object> symbols) =>
+       SubscriptionImport.SetSymbols(GetCurrentThread(), _subHandle, symbols);
 
     public void Clear() =>
         SubscriptionImport.Clear(GetCurrentThread(), _subHandle);
@@ -199,61 +204,23 @@ internal sealed unsafe class SubscriptionNative : IDisposable
             EventListenerHandle* eventListenerHandle) =>
             ErrorCheck.SafeCall(NativeRemoveEventListener(thread, subHandle, eventListenerHandle));
 
-        public static void AddSymbol(nint thread, SubscriptionHandle* subHandle, object symbol)
-        {
-            var symbolNative = (SymbolNative*)0;
-            try
-            {
-                symbolNative = SymbolMapper.CreateNative(symbol);
-                ErrorCheck.SafeCall(NativeAddSymbol(thread, subHandle, symbolNative));
-            }
-            finally
-            {
-                SymbolMapper.ReleaseNative(symbolNative);
-            }
-        }
+        public static void AddSymbol(nint thread, SubscriptionHandle* subHandle, object symbol) =>
+            ErrorCheck.SafeCall(NativeAddSymbol(thread, subHandle, symbol));
 
-        public static void AddSymbols(nint thread, SubscriptionHandle* subHandle, object[] symbol)
-        {
-            try
-            {
-                var symbolNative = SymbolMapper.CreateNative<SymbolNative>(symbol);
-                ErrorCheck.SafeCall(NativeAddSymbols(thread, subHandle, symbolNative));
-            }
-            finally
-            {
-                // ToDo Add release.
-                //// SymbolMapper.ReleaseNative(symbolNative);
-            }
-        }
+        public static void AddSymbols(nint thread, SubscriptionHandle* subHandle, object[] symbol) =>
+            ErrorCheck.SafeCall(NativeAddSymbols(thread, subHandle, symbol));
 
-        public static void RemoveSymbol(nint thread, SubscriptionHandle* subHandle, object symbol)
-        {
-            var symbolNative = (SymbolNative*)0;
-            try
-            {
-                symbolNative = SymbolMapper.CreateNative(symbol);
-                ErrorCheck.SafeCall(NativeRemoveSymbol(thread, subHandle, symbolNative));
-            }
-            finally
-            {
-                SymbolMapper.ReleaseNative(symbolNative);
-            }
-        }
+        public static void RemoveSymbol(nint thread, SubscriptionHandle* subHandle, object symbol) =>
+            ErrorCheck.SafeCall(NativeRemoveSymbol(thread, subHandle, symbol));
 
-        public static void RemoveSymbols(nint thread, SubscriptionHandle* subHandle, object[] symbol)
-        {
-            try
-            {
-                var symbolNative = SymbolMapper.CreateNative<SymbolNative>(symbol);
-                ErrorCheck.SafeCall(NativeRemoveSymbols(thread, subHandle, symbolNative));
-            }
-            finally
-            {
-                // ToDo Add release.
-                //// SymbolMapper.ReleaseNative(symbolNative);
-            }
-        }
+        public static void RemoveSymbols(nint thread, SubscriptionHandle* subHandle, object[] symbol) =>
+            ErrorCheck.SafeCall(NativeRemoveSymbols(thread, subHandle, symbol));
+
+        public static IEnumerable<object> GetSymbols(nint thread, SubscriptionHandle* subHandle) =>
+            ErrorCheck.SafeCall(NativeGetSymbols(thread, subHandle));
+
+        public static void SetSymbols(nint thread, SubscriptionHandle* subHandle, IEnumerable<object> symbols) =>
+            ErrorCheck.SafeCall(NativeSetSymbols(thread, subHandle, symbols));
 
         public static void Clear(nint thread, SubscriptionHandle* subHandle) =>
             ErrorCheck.SafeCall(NativeClear(thread, subHandle));
@@ -350,7 +317,8 @@ internal sealed unsafe class SubscriptionNative : IDisposable
         private static extern int NativeAddSymbol(
             nint thread,
             SubscriptionHandle* subHandle,
-            SymbolNative* symbol);
+            [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(SymbolMarshaler))]
+            object value);
 
         [DllImport(
             ImportInfo.DllName,
@@ -360,7 +328,8 @@ internal sealed unsafe class SubscriptionNative : IDisposable
         private static extern int NativeAddSymbols(
             nint thread,
             SubscriptionHandle* subHandle,
-            ListNative<SymbolNative>* symbols);
+            [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ListMarshaler<SymbolMarshaler>))]
+            object[] value);
 
         [DllImport(
             ImportInfo.DllName,
@@ -370,7 +339,8 @@ internal sealed unsafe class SubscriptionNative : IDisposable
         private static extern int NativeRemoveSymbol(
             nint thread,
             SubscriptionHandle* subHandle,
-            SymbolNative* symbol);
+            [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(SymbolMarshaler))]
+            object value);
 
         [DllImport(
             ImportInfo.DllName,
@@ -380,7 +350,29 @@ internal sealed unsafe class SubscriptionNative : IDisposable
         private static extern int NativeRemoveSymbols(
             nint thread,
             SubscriptionHandle* subHandle,
-            ListNative<SymbolNative>* symbols);
+            [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ListMarshaler<SymbolMarshaler>))]
+            object[] value);
+
+        [DllImport(
+            ImportInfo.DllName,
+            CallingConvention = CallingConvention.Cdecl,
+            CharSet = CharSet.Ansi,
+            EntryPoint = "dxfg_DXFeedSubscription_getSymbols")]
+        [return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ListMarshaler<SymbolMarshaler>))]
+        private static extern IEnumerable<object> NativeGetSymbols(
+            nint thread,
+            SubscriptionHandle* subHandle);
+
+        [DllImport(
+            ImportInfo.DllName,
+            CallingConvention = CallingConvention.Cdecl,
+            CharSet = CharSet.Ansi,
+            EntryPoint = "dxfg_DXFeedSubscription_setSymbols")]
+        private static extern int NativeSetSymbols(
+            nint thread,
+            SubscriptionHandle* subHandle,
+            [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ListMarshaler<SymbolMarshaler>))]
+            IEnumerable<object> symbols);
 
         [DllImport(
             ImportInfo.DllName,

@@ -13,7 +13,7 @@ using static DxFeed.Graal.Net.Native.ErrorHandling.ErrorCheck;
 
 namespace DxFeed.Graal.Net.Native.Endpoint;
 
-[SuppressMessage("ReSharper", "ClassNeverInstantiated.Global", Justification = "Created by marshaller")]
+[SuppressMessage("ReSharper", "ClassNeverInstantiated.Global", Justification = "Created by marshaler")]
 internal sealed unsafe class DXEndpointHandle : JavaHandle
 {
     public new void Close() =>

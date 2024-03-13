@@ -73,7 +73,6 @@ public sealed class DXFeedSubscription : IObservableSubscription, IDisposable
     public bool IsContainsEventType(Type eventType) =>
         _eventTypeSet.Contains(eventType);
 
-
     /// <summary>
     /// Adds listener for events.
     /// Event lister can be added only when subscription is not producing any events.
@@ -144,6 +143,31 @@ public sealed class DXFeedSubscription : IObservableSubscription, IDisposable
     /// <param name="symbols">The collection of symbols.</param>
     public void RemoveSymbols(IEnumerable<object> symbols) =>
         RemoveSymbols(symbols.ToArray());
+
+    /// <summary>
+    /// Gets a set of subscribed symbols. The resulting set maybe either a snapshot of the set of
+    /// the subscribed symbols at the time of invocation or a weakly consistent view of the set.
+    /// </summary>
+    /// <returns>The collection of symbols.</returns>
+    public IReadOnlySet<object> GetSymbols() =>
+        _subscriptionNative.GetSymbols();
+
+    /// <summary>
+    /// Changes the set of subscribed symbols so that it contains just the symbols from the specified collection.
+    /// To conveniently set subscription for just one or few symbols you can use
+    /// <see cref="SetSymbols(IEnumerable{object})"/>.
+    /// </summary>
+    /// <param name="symbols">The collection of symbols.</param>
+    public void SetSymbols(IEnumerable<object> symbols) =>
+        _subscriptionNative.SetSymbols(symbols);
+
+    /// <summary>
+    /// Changes the set of subscribed symbols so that it contains just the symbols from the specified array.
+    /// This is a convenience method to set subscription to one or few symbols at a time.
+    /// </summary>
+    /// <param name="symbols">The collection of symbols.</param>
+    public void SetSymbols(params object[] symbols) =>
+        _subscriptionNative.SetSymbols(symbols);
 
     /// <summary>
     /// Clears the set of subscribed symbols.

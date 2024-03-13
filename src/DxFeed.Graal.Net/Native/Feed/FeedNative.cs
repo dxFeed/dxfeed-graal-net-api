@@ -13,7 +13,6 @@ using DxFeed.Graal.Net.Native.Interop;
 using DxFeed.Graal.Net.Native.Promise;
 using DxFeed.Graal.Net.Native.Subscription;
 using DxFeed.Graal.Net.Native.SymbolMappers;
-using DxFeed.Graal.Net.Native.Symbols;
 
 namespace DxFeed.Graal.Net.Native.Feed;
 
@@ -44,33 +43,11 @@ internal sealed unsafe class FeedNative
     public void DetachSubscriptionAndClear(SubscriptionNative subscriptionNative) =>
         FeedImport.DetachSubscriptionAndClear(GetCurrentThread(), _feedHandle, subscriptionNative.GetHandle());
 
-    public PromiseNative GetLastEventPromise(EventCodeNative eventCode, object symbol)
-    {
-        var symbolNative = (SymbolNative*)0;
-        try
-        {
-            symbolNative = SymbolMapper.CreateNative(symbol);
-            return FeedImport.GetLastEventPromise(GetCurrentThread(), _feedHandle, eventCode, symbolNative);
-        }
-        finally
-        {
-            SymbolMapper.ReleaseNative(symbolNative);
-        }
-    }
+    public PromiseNative GetLastEventPromise(EventCodeNative eventCode, object symbol) =>
+        FeedImport.GetLastEventPromise(GetCurrentThread(), _feedHandle, eventCode, symbol);
 
-    public PromiseNative GetTimeSeriesPromise(EventCodeNative eventCode, object symbol, long from, long to)
-    {
-        var symbolNative = (SymbolNative*)0;
-        try
-        {
-            symbolNative = SymbolMapper.CreateNative(symbol);
-            return FeedImport.GetTimeSeriesPromise(GetCurrentThread(), _feedHandle, eventCode, symbolNative, from, to);
-        }
-        finally
-        {
-            SymbolMapper.ReleaseNative(symbolNative);
-        }
-    }
+    public PromiseNative GetTimeSeriesPromise(EventCodeNative eventCode, object symbol, long from, long to) =>
+        FeedImport.GetTimeSeriesPromise(GetCurrentThread(), _feedHandle, eventCode, symbol, from, to);
 
     internal FeedHandle* GetHandle() =>
         _feedHandle;
@@ -132,7 +109,8 @@ internal sealed unsafe class FeedNative
             nint thread,
             FeedHandle* feedHandle,
             EventCodeNative eventCodes,
-            SymbolNative* symbol,
+            [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(SymbolMarshaler))]
+            object value,
             long from,
             long to);
 
@@ -145,7 +123,8 @@ internal sealed unsafe class FeedNative
             nint thread,
             FeedHandle* feedHandle,
             EventCodeNative eventCodes,
-            SymbolNative* symbol);
+            [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(SymbolMarshaler))]
+            object value);
 
         [DllImport(
             ImportInfo.DllName,

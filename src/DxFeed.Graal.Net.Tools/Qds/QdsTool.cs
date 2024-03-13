@@ -19,6 +19,6 @@ public class QdsTool : AbstractTool<QdsArgs>
     public override void Run(QdsArgs args)
     {
         SystemProperty.SetProperties(ParseProperties(args.Properties));
-        QdsUtil.RunTool(CommandLineStringSplitter.Instance.Split(args.PassedArgs));
+        QdsTools.RunTool(CommandLineStringSplitter.Instance.Split(args.PassedArgs));
     }
 }
