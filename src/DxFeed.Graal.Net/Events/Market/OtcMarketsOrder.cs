@@ -11,7 +11,7 @@ using DxFeed.Graal.Net.Utils;
 namespace DxFeed.Graal.Net.Events.Market;
 
 /// <summary>
-/// Represents an extension of <see cref="Order"/> for the symbols traded on the OTC Markets. It includes the OTC Markets specific quote data
+/// Represents an extension of <see cref="Order"/> for the symbols traded on the OTC Markets. It includes the OTC Markets specific quote data.
 /// For more information about original fields, QAP, Quote Flags and Extended Quote Flags,
 /// see <a href="https://downloads.dxfeed.com/specifications/OTC_Markets_Multicast_Data_Feeds.pdf">OTC Markets Multicast Data Feed</a>.
 /// </summary>
@@ -28,16 +28,16 @@ public class OtcMarketsOrder : Order
      * +-----------------------------------------------------+-------------------------------------+
      */
 
-    private const int NmsConditional = 3;
-    private const int AutoExecution = 0;
-    private const int Saturated = 0;
+    private const int NmsConditional = 1 << 6;
+    private const int AutoExecution = 1 << 5;
+    private const int Saturated = 1 << 4;
 
     // OTC_PRICE_TYPE values are taken from OtcMarketsPriceType enum.
     private const int OtcPriceTypeMask = 3;
-    private const int OtcPriceTypeShift = 0;
+    private const int OtcPriceTypeShift = 2;
 
-    private const int Unsolicited = 0;
-    private const int Open = 0;
+    private const int Unsolicited = 1 << 1;
+    private const int Open = 1;
 
     /// <summary>
     /// Initializes a new instance of the <see cref="OtcMarketsOrder"/> class.
@@ -66,7 +66,7 @@ public class OtcMarketsOrder : Order
     public int QuoteAccessPayment { get; set; }
 
     /// <summary>
-    /// Gets or sets transactional OTC Markets flags.
+    /// Gets or sets OTC Markets flags.
     /// </summary>
     public int OtcMarketsFlags { get; set; }
 

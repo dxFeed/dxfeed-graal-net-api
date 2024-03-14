@@ -132,7 +132,6 @@ public class DXEndpointTest
         }
     }
 
-
     [Test]
     [Ignore("Waiting new version of graal, with supporting OtcMarkets")]
     public void CheckOtcMarketsOrder()
