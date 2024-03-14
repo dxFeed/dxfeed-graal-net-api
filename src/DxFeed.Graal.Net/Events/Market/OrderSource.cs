@@ -382,12 +382,10 @@ public class OrderSource : IndexedEventSource
         {
             return PubOrder;
         }
-
         if (eventType == typeof(AnalyticOrder))
         {
             return PubAnalyticOrder;
         }
-
         if (eventType == typeof(OtcMarketsOrder))
         {
             return PubOtcMarketdOrder;
