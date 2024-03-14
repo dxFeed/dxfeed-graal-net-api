@@ -11,7 +11,7 @@ namespace DxFeed.Graal.Net.Native.Events.Market;
 
 /// <summary>
 /// The structure contains all the fields required
-/// to build an <see cref="AnalyticOrder"/>.
+/// to build an <see cref="OtcMarketsOrder"/>.
 /// </summary>
 [StructLayout(LayoutKind.Sequential)]
 internal readonly record struct OtcMarketsOrderNative(
