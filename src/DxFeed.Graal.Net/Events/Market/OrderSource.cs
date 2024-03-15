@@ -246,6 +246,11 @@ public class OrderSource : IndexedEventSource
     public static readonly OrderSource memx = new("memx", PubOrder);
 
     /// <summary>
+    /// Blue Ocean Technologies Alternative Trading System.
+    /// </summary>
+    public static readonly OrderSource OCEA = new("OCEA", PubOrder);
+
+    /// <summary>
     /// Pink Sheets. Record for price level book.
     /// Pink sheets are listings for stocks that trade over-the-counter (OTC).
     /// </summary>
