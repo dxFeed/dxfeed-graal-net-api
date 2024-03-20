@@ -6,7 +6,9 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Threading.Tasks;
 using DxFeed.Graal.Net.Native.ErrorHandling;
+using DxFeed.Graal.Net.Utils;
 
 namespace DxFeed.Graal.Net.Native.Graal;
 
@@ -32,6 +34,11 @@ namespace DxFeed.Graal.Net.Native.Graal;
 /// </summary>
 internal class Isolate
 {
+    /// <summary>
+    /// Factory for the creation of instance isolate.
+    /// </summary>
+    private static readonly TaskFactory<IntPtr> SingleThreadTaskFactory = new(new SingleThreadTaskScheduler());
+
     /// <summary>
     /// A singleton lazy-initialization instance of <see cref="Isolate"/>.
     /// </summary>
@@ -86,8 +93,13 @@ internal class Isolate
     /// <returns>Returns <see cref="Isolate"/>.</returns>
     private static Isolate CreateIsolate()
     {
-        ErrorCheck.SafeCall(GraalCreateIsolate(0, out var isolate, out _));
-        return new Isolate(isolate);
+        var task = SingleThreadTaskFactory.StartNew(
+            () =>
+            {
+                ErrorCheck.SafeCall(GraalCreateIsolate(0, out var isolate, out _));
+                return isolate;
+            });
+        return new Isolate(task.Result);
     }
 
     /// <summary>
