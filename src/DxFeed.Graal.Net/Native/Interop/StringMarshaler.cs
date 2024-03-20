@@ -32,7 +32,7 @@ internal class StringMarshaler : AbstractMarshaler
     }
 
     public override void CleanUpFromManaged(IntPtr ptr) =>
-        Marshal.FreeCoTaskMem(ptr);
+        Marshal.ZeroFreeCoTaskMemUTF8(ptr);
 
     public override void CleanUpFromNative(IntPtr ptr) =>
         SafeCall(Import.Release(Isolate.CurrentThread, ptr));
