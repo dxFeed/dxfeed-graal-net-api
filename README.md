@@ -375,9 +375,10 @@ sudo /usr/bin/xattr -r -d com.apple.quarantine <directory_with_tools>
 - [x] [DxFeedLiveIpfSample](https://github.com/dxFeed/dxfeed-graal-net-api/tree/main/samples/DxFeedLiveIpfSample) is a
   simple demonstration of how to get live updates for Instrument Profiles
 - [ ] DxFeedPublishProfiles is a simple demonstration of how to publish market events
-- [ ] ScheduleSample is a simple demonstration of how to get various scheduling information for instruments
-- [x] [FetchDailyCandles](https://github.com/dxFeed/dxfeed-graal-net-api/tree/main/samples/FetchDailyCandles) is a simple
-  demonstration of how to fetch last N-days of candles for a specified symbol
+- [x] [ScheduleSample](https://github.com/dxFeed/dxfeed-graal-net-api/tree/main/samples/ScheduleSample) is a simple
+  demonstration of how to get various scheduling information for instruments
+- [x] [FetchDailyCandles](https://github.com/dxFeed/dxfeed-graal-net-api/tree/main/samples/FetchDailyCandles) is a
+  simple demonstration of how to fetch last N-days of candles for a specified symbol
 
 ## Current State
 
@@ -527,7 +528,7 @@ sudo /usr/bin/xattr -r -d com.apple.quarantine <directory_with_tools>
 - [x] [InstrumentProfileConnection](https://docs.dxfeed.com/dxfeed/api/com/dxfeed/ipf/live/InstrumentProfileConnection.html)
   connects to an instrument profile URL and reads instrument profiles with support of streaming live updates
 
-- [ ] [Schedule](https://docs.dxfeed.com/dxfeed/api/com/dxfeed/schedule/Schedule.html)
+- [x] [Schedule](https://docs.dxfeed.com/dxfeed/api/com/dxfeed/schedule/Schedule.html)
   provides an API to retrieving and exploring the trading schedules of various exchanges and different financial
   instrument classes
   ([Java API sample](https://github.com/devexperts/QD/blob/master/dxfeed-samples/src/main/java/com/dxfeed/sample/schedule/ScheduleSample.java))
