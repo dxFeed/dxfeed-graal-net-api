@@ -66,7 +66,6 @@ internal class DayHandle : JavaHandle
         return handles;
     }
 
-
     public SessionHandle GetSessionByTime(long time) =>
         SafeCall(Import.GetSessionByTime(CurrentThread, this, time));
 
@@ -88,7 +87,7 @@ internal class DayHandle : JavaHandle
     public bool CheckEquals(DayHandle other) =>
         SafeCall(Import.NativeEquals(CurrentThread, this, other)) != 0;
 
-    public string ToString() =>
+    public override string ToString() =>
         SafeCall(Import.ToString(CurrentThread, this));
 
     private static class Import

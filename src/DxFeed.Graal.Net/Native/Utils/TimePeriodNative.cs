@@ -35,7 +35,6 @@ internal class TimePeriodNative : JavaHandle
             EntryPoint = "dxfg_TimePeriod_ZERO")]
         public static extern TimePeriodNative Zero(nint thread);
 
-
         [DllImport(
             ImportInfo.DllName,
             CallingConvention = CallingConvention.Cdecl,

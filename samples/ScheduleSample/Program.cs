@@ -20,13 +20,13 @@ internal abstract class Program
     {
         if (args.Length is < 3 or > 4)
         {
-            Console.WriteLine("wrong number of arguments");
-            Console.WriteLine("usage:  ScheduleSample  <defaults>  <profiles>  <symbol>  [time]");
-            Console.WriteLine("where:  <defaults>  is a URL to Schedule API defaults file");
-            Console.WriteLine("        <profiles>  is a URL to IPF file");
-            Console.WriteLine("        <symbol>    is a ticker symbol used for sample");
-            Console.WriteLine("        [time]      is a time used for sample in a format yyyy-MM-dd-HH:mm:ss");
-            Console.WriteLine("sample: schedule.properties.zip  sample.ipf.zip  IBM  2011-05-26-14:15:00");
+            Console.WriteLine(@"wrong number of arguments
+usage:  ScheduleSample  <defaults>  <profiles>  <symbol>  [time]
+where:  <defaults>  is a URL to Schedule API defaults file
+        <profiles>  is a URL to IPF file
+        <symbol>    is a ticker symbol used for sample
+        [time]      is a time used for sample in a format yyyy-MM-dd-HH:mm:ss
+sample: schedule.properties.zip  sample.ipf.zip  IBM  2011-05-26-14:15:00");
             return;
         }
 

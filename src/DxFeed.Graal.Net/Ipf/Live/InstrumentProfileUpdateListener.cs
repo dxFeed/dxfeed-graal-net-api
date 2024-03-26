@@ -11,4 +11,5 @@ namespace DxFeed.Graal.Net.Ipf.Live;
 /// <summary>
 /// Notifies about instrument profile changes.
 /// </summary>
+/// <param name="profiles">The list of instruments profile.</param>
 public delegate void InstrumentProfileUpdateListener(List<InstrumentProfile> profiles);

@@ -61,7 +61,6 @@ internal class InstrumentProfileConnectionHandle : JavaHandle
             nint thread,
             InstrumentProfileConnectionHandle instrumentProfileConnection);
 
-
         [DllImport(
             ImportInfo.DllName,
             CallingConvention = CallingConvention.Cdecl,

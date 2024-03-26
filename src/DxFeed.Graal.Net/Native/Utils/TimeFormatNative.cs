@@ -1,4 +1,4 @@
-// <copyright file="TimeFormat.cs" company="Devexperts LLC">
+// <copyright file="TimeFormatNative.cs" company="Devexperts LLC">
 // Copyright © 2022 Devexperts LLC. All rights reserved.
 // This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 // If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
@@ -37,6 +37,7 @@ internal class TimeFormatNative : JavaHandle
     }
 
     internal TimeFormatNative WithMillis() => ErrorCheck.SafeCall(Import.TimeFormatWithMillis(CurrentThread, this));
+
     internal TimeFormatNative AsFullIso() => ErrorCheck.SafeCall(Import.TimeFormatAsFullIso(CurrentThread, this));
 
     internal DateTimeOffset Parse(string value)
