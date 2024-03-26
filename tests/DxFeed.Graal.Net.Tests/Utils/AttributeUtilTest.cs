@@ -18,7 +18,7 @@ namespace DxFeed.Graal.Net.Tests.Utils;
 public class AttributeUtilTests
 {
     [AttributeUsage(AttributeTargets.Class, Inherited = true)]
-    private class DummyAttribute : Attribute
+    private sealed class DummyAttribute : Attribute
     {
         public DummyAttribute(string value) =>
             Value = value;
@@ -31,11 +31,11 @@ public class AttributeUtilTests
     {
     }
 
-    private class DummyInheritedClass : BaseDummyClass
+    private sealed class DummyInheritedClass : BaseDummyClass
     {
     }
 
-    private class DummyNonAttributedClass
+    private sealed class DummyNonAttributedClass
     {
     }
 

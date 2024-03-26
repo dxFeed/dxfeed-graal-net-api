@@ -12,7 +12,7 @@ using static DxFeed.Graal.Net.Native.ErrorHandling.ErrorCheck;
 namespace DxFeed.Graal.Net.Native.Schedules;
 
 [SuppressMessage("ReSharper", "ClassNeverInstantiated.Global", Justification = "Created by marshaler")]
-internal class DayFilterHandle : JavaHandle
+internal sealed class DayFilterHandle : JavaHandle
 {
     public static DayFilterHandle GetInstance(int id) =>
         SafeCall(Import.GetInstance(CurrentThread, id));

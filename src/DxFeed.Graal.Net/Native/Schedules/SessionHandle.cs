@@ -14,7 +14,7 @@ using static DxFeed.Graal.Net.Native.ErrorHandling.ErrorCheck;
 namespace DxFeed.Graal.Net.Native.Schedules;
 
 [SuppressMessage("ReSharper", "ClassNeverInstantiated.Global", Justification = "Created by marshaler")]
-internal class SessionHandle : JavaHandle
+internal sealed class SessionHandle : JavaHandle
 {
     public SessionHandle(IntPtr handle)
         : base(handle)

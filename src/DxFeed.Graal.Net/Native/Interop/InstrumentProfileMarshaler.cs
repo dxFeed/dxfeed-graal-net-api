@@ -12,7 +12,7 @@ using static DxFeed.Graal.Net.Native.ErrorHandling.ErrorCheck;
 
 namespace DxFeed.Graal.Net.Native.Interop;
 
-internal class InstrumentProfileMarshaler : AbstractMarshaler
+internal sealed class InstrumentProfileMarshaler : AbstractMarshaler
 {
     private static readonly Lazy<InstrumentProfileMarshaler> Instance = new();
 

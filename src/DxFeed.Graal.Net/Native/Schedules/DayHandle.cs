@@ -8,12 +8,11 @@ using System;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using DxFeed.Graal.Net.Native.Interop;
-using DxFeed.Graal.Net.Schedules;
 using static DxFeed.Graal.Net.Native.ErrorHandling.ErrorCheck;
 
 namespace DxFeed.Graal.Net.Native.Schedules;
 
-internal class DayHandle : JavaHandle
+internal sealed class DayHandle : JavaHandle
 {
     public int GetDayId() =>
         SafeCall(Import.GetDayId(CurrentThread, this));

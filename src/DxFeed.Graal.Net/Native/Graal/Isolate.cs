@@ -32,7 +32,7 @@ namespace DxFeed.Graal.Net.Native.Graal;
 /// Each native method is associated with a specific <see cref="Isolate"/>,
 /// and takes an <see cref="IsolateThread"/> as its first argument.
 /// </summary>
-internal class Isolate
+internal sealed class Isolate
 {
     /// <summary>
     /// Factory for the creation of instance isolate.

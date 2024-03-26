@@ -10,7 +10,7 @@ using static DxFeed.Graal.Net.Native.ErrorHandling.ErrorCheck;
 
 namespace DxFeed.Graal.Net.Native.Ipf;
 
-internal class InstrumentProfileConnectionHandle : JavaHandle
+internal sealed class InstrumentProfileConnectionHandle : JavaHandle
 {
     public static InstrumentProfileConnectionHandle Create(string address, InstrumentProfileCollectorHandle collector) =>
         SafeCall(Import.CreateConnection(CurrentThread, address, collector));

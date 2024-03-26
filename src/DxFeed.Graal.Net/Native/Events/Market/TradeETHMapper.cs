@@ -12,7 +12,7 @@ using DxFeed.Graal.Net.Events.Market;
 
 namespace DxFeed.Graal.Net.Native.Events.Market;
 
-internal class TradeETHMapper : TradeBaseMapper<TradeETH, TradeETHNative>
+internal sealed class TradeETHMapper : TradeBaseMapper<TradeETH, TradeETHNative>
 {
     public override unsafe IEventType FromNative(EventTypeNative* eventType) =>
         Convert((TradeETHNative*)eventType);

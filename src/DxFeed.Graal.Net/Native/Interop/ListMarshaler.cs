@@ -11,7 +11,7 @@ using System.Runtime.InteropServices;
 
 namespace DxFeed.Graal.Net.Native.Interop;
 
-internal class ListMarshaler<T> : AbstractMarshaler
+internal sealed class ListMarshaler<T> : AbstractMarshaler
     where T : AbstractMarshaler, new()
 {
     private static readonly Lazy<ListMarshaler<T>> Instance = new();

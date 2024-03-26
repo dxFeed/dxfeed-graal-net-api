@@ -14,7 +14,7 @@ using static DxFeed.Graal.Net.Native.ErrorHandling.ErrorCheck;
 namespace DxFeed.Graal.Net.Native.Schedules;
 
 [SuppressMessage("ReSharper", "ClassNeverInstantiated.Global", Justification = "Created by marshaler")]
-internal class ScheduleHandle : JavaHandle
+internal sealed class ScheduleHandle : JavaHandle
 {
     public static ScheduleHandle GetInstance(InstrumentProfile profile) =>
         SafeCall(Import.GetInstance(CurrentThread, profile));

@@ -11,21 +11,8 @@ using DxFeed.Graal.Net.Native.Interop;
 
 namespace DxFeed.Graal.Net.Native.Utils;
 
-internal class TimeFormatNative : JavaHandle
+internal sealed class TimeFormatNative : JavaHandle
 {
-    private class TimeZoneNative : JavaHandle
-    {
-        internal static TimeZoneNative Default()
-        {
-            return ErrorCheck.SafeCall(Import.TimeZoneDefault(CurrentThread));
-        }
-
-        internal static TimeZoneNative Create(string timeZoneId)
-        {
-            return ErrorCheck.SafeCall(Import.TimeZoneWithID(CurrentThread, timeZoneId));
-        }
-    }
-
     internal static TimeFormatNative Default() => ErrorCheck.SafeCall(Import.TimeFormatDefault(CurrentThread));
 
     internal static TimeFormatNative GMT() => ErrorCheck.SafeCall(Import.TimeFormatGMT(CurrentThread));
@@ -85,7 +72,6 @@ internal class TimeFormatNative : JavaHandle
             nint thread,
             TimeFormatNative timeFormat);
 
-
         [DllImport(
             ImportInfo.DllName,
             CallingConvention = CallingConvention.Cdecl,
@@ -136,5 +122,18 @@ internal class TimeFormatNative : JavaHandle
             nint thread,
             [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(StringMarshaler))]
             string key);
+    }
+
+    private sealed class TimeZoneNative : JavaHandle
+    {
+        internal static TimeZoneNative Default()
+        {
+            return ErrorCheck.SafeCall(Import.TimeZoneDefault(CurrentThread));
+        }
+
+        internal static TimeZoneNative Create(string timeZoneId)
+        {
+            return ErrorCheck.SafeCall(Import.TimeZoneWithID(CurrentThread, timeZoneId));
+        }
     }
 }

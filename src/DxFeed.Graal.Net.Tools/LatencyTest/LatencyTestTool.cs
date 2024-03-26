@@ -33,8 +33,7 @@ public class LatencyTestTool : AbstractTool<LatencyTestArgs>
         private static readonly string DiagnosticHeader = PlatformUtils.PlatformDiagInfo;
         private static readonly NumberFormatInfo SpaceNumFormat = new() { NumberGroupSeparator = " " };
 
-        private readonly LatencyTestArgs args;
-        private readonly List<string> ignoringExhanges = new();
+        private readonly List<string> ignoringExchanges = new();
         private readonly Timer _timer;
 
         private readonly Stopwatch _timerDiff = new();
@@ -54,7 +53,7 @@ public class LatencyTestTool : AbstractTool<LatencyTestArgs>
         private double _minTotal = double.MaxValue;
         private double _maxTotal = double.MinValue;
 
-        private readonly ConcurrentSet<string?> _symbols = new();
+        private readonly ConcurrentSet<string> _symbols = new();
         private readonly ConcurrentBag<long> _deltaTime = new();
 
         private readonly TimeSpan _measurementPeriod;
@@ -63,7 +62,7 @@ public class LatencyTestTool : AbstractTool<LatencyTestArgs>
         {
             if (args.IgnoreExchanges != null)
             {
-                ignoringExhanges = args.IgnoreExchanges.Split(',').ToList();
+                ignoringExchanges = args.IgnoreExchanges.Split(',').ToList();
             }
 
             _timerDiff.Restart();
@@ -88,7 +87,7 @@ public class LatencyTestTool : AbstractTool<LatencyTestArgs>
                 switch (e)
                 {
                     case Quote quote:
-                        if (ignoringExhanges.Count !=0 && (ignoringExhanges.Contains(quote.AskExchangeCode.ToString()) || ignoringExhanges.Contains(quote.BidExchangeCode.ToString())))
+                        if (ignoringExchanges.Count !=0 && (ignoringExchanges.Contains(quote.AskExchangeCode.ToString()) || ignoringExchanges.Contains(quote.BidExchangeCode.ToString())))
                         {
                             continue;
                         }
@@ -96,10 +95,10 @@ public class LatencyTestTool : AbstractTool<LatencyTestArgs>
                         deltaTime = time - quote.Time;
                         ++validEvent;
                         _deltaTime.Add(deltaTime);
-                        _symbols.Add(e.EventSymbol);
+                        _symbols.Add(e.EventSymbol!);
                         break;
                     case Trade trade:
-                        if (ignoringExhanges.Count !=0 && ignoringExhanges.Contains(trade.ExchangeCode.ToString()))
+                        if (ignoringExchanges.Count !=0 && ignoringExchanges.Contains(trade.ExchangeCode.ToString()))
                         {
                             continue;
                         }
@@ -107,16 +106,16 @@ public class LatencyTestTool : AbstractTool<LatencyTestArgs>
                         deltaTime = time - trade.Time;
                         ++validEvent;
                         _deltaTime.Add(deltaTime);
-                        _symbols.Add(e.EventSymbol);
+                        _symbols.Add(e.EventSymbol!);
                         break;
                     case TradeETH tradeETH:
                         deltaTime = time - tradeETH.Time;
                         ++validEvent;
                         _deltaTime.Add(deltaTime);
-                        _symbols.Add(e.EventSymbol);
+                        _symbols.Add(e.EventSymbol!);
                         break;
                     case TimeAndSale timeAndSale:
-                        if (ignoringExhanges.Count !=0 && (ignoringExhanges.Contains(timeAndSale.ExchangeCode.ToString())))
+                        if (ignoringExchanges.Count !=0 && (ignoringExchanges.Contains(timeAndSale.ExchangeCode.ToString())))
                         {
                             continue;
                         }
@@ -128,7 +127,7 @@ public class LatencyTestTool : AbstractTool<LatencyTestArgs>
                         deltaTime = time - timeAndSale.Time;
                         ++validEvent;
                         _deltaTime.Add(deltaTime);
-                        _symbols.Add(e.EventSymbol);
+                        _symbols.Add(e.EventSymbol!);
                         break;
                 }
             }
