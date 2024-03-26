@@ -9,7 +9,7 @@ using DxFeed.Graal.Net.Events.Options;
 
 namespace DxFeed.Graal.Net.Native.Events.Options;
 
-internal class SeriesMapper : EventTypeMapper<Series, SeriesNative>
+internal sealed class SeriesMapper : EventTypeMapper<Series, SeriesNative>
 {
     public override unsafe IEventType FromNative(EventTypeNative* eventType) =>
         Convert((SeriesNative*)eventType);

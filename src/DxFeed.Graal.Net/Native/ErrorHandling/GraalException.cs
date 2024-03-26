@@ -28,6 +28,9 @@ public sealed class GraalException : Exception
         : base(CreateErrorMessage(errorCode)) =>
         ErrorCode = errorCode;
 
+#if NET8_0_OR_GREATER
+    [Obsolete("NET8_0_OR_GREATER", DiagnosticId = "SYSLIB0051")]
+#endif
     private GraalException(SerializationInfo info, StreamingContext context)
         : base(info, context) =>
         ErrorCode = (GraalErrorCode)info.GetValue(nameof(ErrorCode), typeof(GraalErrorCode))!;
@@ -38,6 +41,9 @@ public sealed class GraalException : Exception
     public GraalErrorCode ErrorCode { get; }
 
     /// <inheritdoc/>
+#if NET8_0_OR_GREATER
+    [Obsolete("NET8_0_OR_GREATER", DiagnosticId = "SYSLIB0051")]
+#endif
     public override void GetObjectData(SerializationInfo info, StreamingContext context)
     {
         base.GetObjectData(info, context);

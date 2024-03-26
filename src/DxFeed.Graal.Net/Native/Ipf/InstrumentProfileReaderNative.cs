@@ -12,7 +12,7 @@ using static DxFeed.Graal.Net.Native.ErrorHandling.ErrorCheck;
 
 namespace DxFeed.Graal.Net.Native.Ipf;
 
-internal class InstrumentProfileReaderNative : JavaHandle
+internal sealed class InstrumentProfileReaderNative : JavaHandle
 {
     public static string? ResolveSourceUrl(string address) =>
         SafeCall(NativeResolveSourceUrl(CurrentThread, address));

@@ -16,7 +16,7 @@ using DxFeed.Graal.Net.Native.Interop;
 
 namespace DxFeed.Graal.Net.Native.SymbolMappers;
 
-internal class SymbolMarshaler : AbstractMarshaler
+internal sealed class SymbolMarshaler : AbstractMarshaler
 {
     private static readonly Lazy<SymbolMarshaler> Instance = new();
 

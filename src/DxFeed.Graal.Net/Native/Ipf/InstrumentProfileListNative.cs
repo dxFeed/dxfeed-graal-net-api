@@ -5,7 +5,6 @@
 // </copyright>
 
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using DxFeed.Graal.Net.Ipf;
@@ -14,7 +13,7 @@ using DxFeed.Graal.Net.Native.Interop;
 
 namespace DxFeed.Graal.Net.Native.Ipf;
 
-internal class InstrumentProfileListNative : JavaHandle
+internal sealed class InstrumentProfileListNative : JavaHandle
 {
     public unsafe List<InstrumentProfile> ToList()
     {

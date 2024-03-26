@@ -9,7 +9,7 @@ using DxFeed.Graal.Net.Events.Candles;
 
 namespace DxFeed.Graal.Net.Native.Events.Candles;
 
-internal class CandleMapper : EventTypeMapper<Candle, CandleNative>
+internal sealed class CandleMapper : EventTypeMapper<Candle, CandleNative>
 {
     public override unsafe IEventType FromNative(EventTypeNative* eventType) =>
         Convert((CandleNative*)eventType);

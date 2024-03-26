@@ -175,7 +175,7 @@ internal abstract class Program
         }
     }
 
-    private class InputParam<T>
+    private sealed class InputParam<T>
     {
         private T _value;
 

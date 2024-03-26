@@ -1,4 +1,4 @@
-// <copyright file="TimeFormat.cs" company="Devexperts LLC">
+// <copyright file="TimeFormatNative.cs" company="Devexperts LLC">
 // Copyright © 2022 Devexperts LLC. All rights reserved.
 // This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 // If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
@@ -11,21 +11,8 @@ using DxFeed.Graal.Net.Native.Interop;
 
 namespace DxFeed.Graal.Net.Native.Utils;
 
-internal class TimeFormatNative : JavaHandle
+internal sealed class TimeFormatNative : JavaHandle
 {
-    private class TimeZoneNative : JavaHandle
-    {
-        internal static TimeZoneNative Default()
-        {
-            return ErrorCheck.SafeCall(Import.TimeZoneDefault(CurrentThread));
-        }
-
-        internal static TimeZoneNative Create(string timeZoneId)
-        {
-            return ErrorCheck.SafeCall(Import.TimeZoneWithID(CurrentThread, timeZoneId));
-        }
-    }
-
     internal static TimeFormatNative Default() => ErrorCheck.SafeCall(Import.TimeFormatDefault(CurrentThread));
 
     internal static TimeFormatNative GMT() => ErrorCheck.SafeCall(Import.TimeFormatGMT(CurrentThread));
@@ -37,6 +24,7 @@ internal class TimeFormatNative : JavaHandle
     }
 
     internal TimeFormatNative WithMillis() => ErrorCheck.SafeCall(Import.TimeFormatWithMillis(CurrentThread, this));
+
     internal TimeFormatNative AsFullIso() => ErrorCheck.SafeCall(Import.TimeFormatAsFullIso(CurrentThread, this));
 
     internal DateTimeOffset Parse(string value)
@@ -83,7 +71,6 @@ internal class TimeFormatNative : JavaHandle
         public static extern TimeFormatNative TimeFormatWithMillis(
             nint thread,
             TimeFormatNative timeFormat);
-
 
         [DllImport(
             ImportInfo.DllName,
@@ -135,5 +122,18 @@ internal class TimeFormatNative : JavaHandle
             nint thread,
             [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(StringMarshaler))]
             string key);
+    }
+
+    private sealed class TimeZoneNative : JavaHandle
+    {
+        internal static TimeZoneNative Default()
+        {
+            return ErrorCheck.SafeCall(Import.TimeZoneDefault(CurrentThread));
+        }
+
+        internal static TimeZoneNative Create(string timeZoneId)
+        {
+            return ErrorCheck.SafeCall(Import.TimeZoneWithID(CurrentThread, timeZoneId));
+        }
     }
 }

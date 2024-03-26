@@ -9,7 +9,7 @@ using DxFeed.Graal.Net.Events.Market;
 
 namespace DxFeed.Graal.Net.Native.Events.Market;
 
-internal class OptionSaleMapper : EventTypeMapper<OptionSale, OptionSaleNative>
+internal sealed class OptionSaleMapper : EventTypeMapper<OptionSale, OptionSaleNative>
 {
     public override unsafe IEventType FromNative(EventTypeNative* eventType) =>
         Convert((OptionSaleNative*)eventType);

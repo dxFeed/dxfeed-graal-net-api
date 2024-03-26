@@ -18,7 +18,7 @@ namespace DxFeed.Graal.Net.Native.Graal;
 /// that can be passed to an entry point as an execution context,
 /// requiring the calling thread to be attached to this isolate.
 /// </summary>
-internal class IsolateThread
+internal sealed class IsolateThread
 {
     /// <summary>
     /// Thread exit callback.

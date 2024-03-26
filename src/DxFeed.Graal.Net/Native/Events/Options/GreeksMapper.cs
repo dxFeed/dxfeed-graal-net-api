@@ -9,7 +9,7 @@ using DxFeed.Graal.Net.Events.Options;
 
 namespace DxFeed.Graal.Net.Native.Events.Options;
 
-internal class GreeksMapper : EventTypeMapper<Greeks, GreeksNative>
+internal sealed class GreeksMapper : EventTypeMapper<Greeks, GreeksNative>
 {
     public override unsafe IEventType FromNative(EventTypeNative* eventType) =>
         Convert((GreeksNative*)eventType);

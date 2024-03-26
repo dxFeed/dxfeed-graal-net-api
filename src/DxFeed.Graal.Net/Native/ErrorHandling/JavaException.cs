@@ -32,6 +32,9 @@ public sealed class JavaException : Exception
         JavaStackTrace = stackTrace;
     }
 
+#if NET8_0_OR_GREATER
+    [Obsolete("NET8_0_OR_GREATER", DiagnosticId = "SYSLIB0051")]
+#endif
     private JavaException(SerializationInfo info, StreamingContext context)
         : base(info, context)
     {
@@ -54,6 +57,9 @@ public sealed class JavaException : Exception
         JavaStackTrace + base.StackTrace;
 
     /// <inheritdoc/>
+#if NET8_0_OR_GREATER
+    [Obsolete("NET8_0_OR_GREATER", DiagnosticId = "SYSLIB0051")]
+#endif
     public override void GetObjectData(SerializationInfo info, StreamingContext context)
     {
         base.GetObjectData(info, context);

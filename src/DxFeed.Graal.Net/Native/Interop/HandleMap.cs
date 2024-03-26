@@ -10,7 +10,7 @@ using System.Diagnostics.CodeAnalysis;
 
 namespace DxFeed.Graal.Net.Native.Interop;
 
-internal class HandleMap<TListener, THandle>
+internal sealed class HandleMap<TListener, THandle>
     where TListener : notnull
     where THandle : JavaHandle
 {
