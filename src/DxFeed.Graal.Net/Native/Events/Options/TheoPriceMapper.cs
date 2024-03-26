@@ -9,7 +9,7 @@ using DxFeed.Graal.Net.Events.Options;
 
 namespace DxFeed.Graal.Net.Native.Events.Options;
 
-internal class TheoPriceMapper : EventTypeMapper<TheoPrice, TheoPriceNative>
+internal sealed class TheoPriceMapper : EventTypeMapper<TheoPrice, TheoPriceNative>
 {
     public override unsafe IEventType FromNative(EventTypeNative* eventType) =>
         Convert((TheoPriceNative*)eventType);

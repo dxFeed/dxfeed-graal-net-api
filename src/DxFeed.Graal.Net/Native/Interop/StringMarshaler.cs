@@ -11,7 +11,7 @@ using static DxFeed.Graal.Net.Native.ErrorHandling.ErrorCheck;
 
 namespace DxFeed.Graal.Net.Native.Interop;
 
-internal class StringMarshaler : AbstractMarshaler
+internal sealed class StringMarshaler : AbstractMarshaler
 {
     private static readonly Lazy<StringMarshaler> Instance = new();
 
@@ -32,7 +32,7 @@ internal class StringMarshaler : AbstractMarshaler
     }
 
     public override void CleanUpFromManaged(IntPtr ptr) =>
-        Marshal.FreeCoTaskMem(ptr);
+        Marshal.ZeroFreeCoTaskMemUTF8(ptr);
 
     public override void CleanUpFromNative(IntPtr ptr) =>
         SafeCall(Import.Release(Isolate.CurrentThread, ptr));

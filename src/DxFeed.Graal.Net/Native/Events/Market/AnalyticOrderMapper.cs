@@ -9,7 +9,7 @@ using DxFeed.Graal.Net.Events.Market;
 
 namespace DxFeed.Graal.Net.Native.Events.Market;
 
-internal class AnalyticOrderMapper : OrderBaseMapper<AnalyticOrder, AnalyticOrderNative>
+internal sealed class AnalyticOrderMapper : OrderBaseMapper<AnalyticOrder, AnalyticOrderNative>
 {
     private static readonly OrderMapper OrderMapper = new();
 

@@ -10,7 +10,7 @@ using DxFeed.Graal.Net.Native.Interop;
 
 namespace DxFeed.Graal.Net.Native.Utils;
 
-internal class TimePeriodNative : JavaHandle
+internal sealed class TimePeriodNative : JavaHandle
 {
     internal static TimePeriodNative Zero() => ErrorCheck.SafeCall(Import.Zero(CurrentThread));
 
@@ -34,7 +34,6 @@ internal class TimePeriodNative : JavaHandle
             CharSet = CharSet.Ansi,
             EntryPoint = "dxfg_TimePeriod_ZERO")]
         public static extern TimePeriodNative Zero(nint thread);
-
 
         [DllImport(
             ImportInfo.DllName,
