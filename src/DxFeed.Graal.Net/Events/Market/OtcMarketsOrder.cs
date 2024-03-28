@@ -136,6 +136,7 @@ public class OtcMarketsOrder : Order
     /// <returns>The string representation.</returns>
     public override string ToString() =>
         "OtcMarketsOrder{" + BaseFieldsToString() +
+        ", marketMaker='" + StringUtil.EncodeNullableString(MarketMaker) + "'" +
         ", QAP=" + QuoteAccessPayment +
         ", open=" + Open +
         ", unsolicited=" + Unsolicited +
