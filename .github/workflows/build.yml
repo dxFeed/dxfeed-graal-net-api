@@ -17,7 +17,7 @@ jobs:
           - os: ubuntu-latest
             OS_NAME: linux-x64
           - os: macos-latest
-            OS_NAME: osx-x64
+            OS_NAME: osx-arm64
 
     steps:
       - name: Checkout
@@ -27,6 +27,8 @@ jobs:
         uses: actions/setup-dotnet@v4
         with:
           dotnet-version: |
+            6.0.x
+            7.0.x
             8.0.x
 
       - name: Restore Dependencies
@@ -55,6 +57,8 @@ jobs:
         uses: actions/setup-dotnet@v4
         with:
           dotnet-version: |
+            6.0.x
+            7.0.x
             8.0.x
 
       - name: Publish Tools

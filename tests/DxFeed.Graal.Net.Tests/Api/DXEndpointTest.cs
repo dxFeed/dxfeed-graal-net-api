@@ -133,7 +133,6 @@ public class DXEndpointTest
     }
 
     [Test]
-    [Ignore("Waiting new version of graal, with supporting OtcMarkets")]
     public void CheckOtcMarketsOrder()
     {
         const string SYMBOL1 = "AAPL_TEST1";
@@ -226,7 +225,7 @@ public class DXEndpointTest
                         Assert.That(received.QuoteAccessPayment, Is.EqualTo(-30));
                         Assert.That(received.IsOpen, Is.True);
                         Assert.That(received.IsUnsolicited, Is.False);
-                        Assert.That(received.OtcMarketsPriceType, Is.EqualTo(OtcMarketsPriceType.Actual));
+                        Assert.That(received.OtcMarketsPriceType, Is.EqualTo(OtcMarketsPriceType.Wanted));
                         Assert.That(received.IsSaturated, Is.True);
                         Assert.That(received.IsAutoExecution, Is.False);
                         Assert.That(received.IsNmsConditional, Is.False);

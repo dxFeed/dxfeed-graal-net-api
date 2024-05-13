@@ -1,5 +1,7 @@
+* Add OtcMarketsOrder and #pink source
 * Add Schedule
 * Fix an error when the isolate was not created in the main thread
+* Add Custom Marshalers and Graal parsers
 * Add TimeFormat, TimePeriod and SymbolParser
 * Add GetSymbols and SetSymbols for DXFeedSubscription
 
