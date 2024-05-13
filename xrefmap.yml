@@ -777,6 +777,19 @@ references:
   isSpec: "True"
   fullName: DxFeed.Graal.Net.Api.DXFeedSubscription.GetEventTypes
   nameWithType: DXFeedSubscription.GetEventTypes
+- uid: DxFeed.Graal.Net.Api.DXFeedSubscription.GetSymbols
+  name: GetSymbols()
+  href: docs/api/DxFeed.Graal.Net.Api.DXFeedSubscription.html#DxFeed_Graal_Net_Api_DXFeedSubscription_GetSymbols
+  commentId: M:DxFeed.Graal.Net.Api.DXFeedSubscription.GetSymbols
+  fullName: DxFeed.Graal.Net.Api.DXFeedSubscription.GetSymbols()
+  nameWithType: DXFeedSubscription.GetSymbols()
+- uid: DxFeed.Graal.Net.Api.DXFeedSubscription.GetSymbols*
+  name: GetSymbols
+  href: docs/api/DxFeed.Graal.Net.Api.DXFeedSubscription.html#DxFeed_Graal_Net_Api_DXFeedSubscription_GetSymbols_
+  commentId: Overload:DxFeed.Graal.Net.Api.DXFeedSubscription.GetSymbols
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Api.DXFeedSubscription.GetSymbols
+  nameWithType: DXFeedSubscription.GetSymbols
 - uid: DxFeed.Graal.Net.Api.DXFeedSubscription.IsClosed
   name: IsClosed
   href: docs/api/DxFeed.Graal.Net.Api.DXFeedSubscription.html#DxFeed_Graal_Net_Api_DXFeedSubscription_IsClosed
@@ -841,6 +854,31 @@ references:
   isSpec: "True"
   fullName: DxFeed.Graal.Net.Api.DXFeedSubscription.RemoveSymbols
   nameWithType: DXFeedSubscription.RemoveSymbols
+- uid: DxFeed.Graal.Net.Api.DXFeedSubscription.SetSymbols(System.Collections.Generic.IEnumerable{System.Object})
+  name: SetSymbols(IEnumerable<object>)
+  href: docs/api/DxFeed.Graal.Net.Api.DXFeedSubscription.html#DxFeed_Graal_Net_Api_DXFeedSubscription_SetSymbols_System_Collections_Generic_IEnumerable_System_Object__
+  commentId: M:DxFeed.Graal.Net.Api.DXFeedSubscription.SetSymbols(System.Collections.Generic.IEnumerable{System.Object})
+  name.vb: SetSymbols(IEnumerable(Of Object))
+  fullName: DxFeed.Graal.Net.Api.DXFeedSubscription.SetSymbols(System.Collections.Generic.IEnumerable<object>)
+  fullName.vb: DxFeed.Graal.Net.Api.DXFeedSubscription.SetSymbols(System.Collections.Generic.IEnumerable(Of Object))
+  nameWithType: DXFeedSubscription.SetSymbols(IEnumerable<object>)
+  nameWithType.vb: DXFeedSubscription.SetSymbols(IEnumerable(Of Object))
+- uid: DxFeed.Graal.Net.Api.DXFeedSubscription.SetSymbols(System.Object[])
+  name: SetSymbols(params object[])
+  href: docs/api/DxFeed.Graal.Net.Api.DXFeedSubscription.html#DxFeed_Graal_Net_Api_DXFeedSubscription_SetSymbols_System_Object___
+  commentId: M:DxFeed.Graal.Net.Api.DXFeedSubscription.SetSymbols(System.Object[])
+  name.vb: SetSymbols(ParamArray Object())
+  fullName: DxFeed.Graal.Net.Api.DXFeedSubscription.SetSymbols(params object[])
+  fullName.vb: DxFeed.Graal.Net.Api.DXFeedSubscription.SetSymbols(ParamArray Object())
+  nameWithType: DXFeedSubscription.SetSymbols(params object[])
+  nameWithType.vb: DXFeedSubscription.SetSymbols(ParamArray Object())
+- uid: DxFeed.Graal.Net.Api.DXFeedSubscription.SetSymbols*
+  name: SetSymbols
+  href: docs/api/DxFeed.Graal.Net.Api.DXFeedSubscription.html#DxFeed_Graal_Net_Api_DXFeedSubscription_SetSymbols_
+  commentId: Overload:DxFeed.Graal.Net.Api.DXFeedSubscription.SetSymbols
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Api.DXFeedSubscription.SetSymbols
+  nameWithType: DXFeedSubscription.SetSymbols
 - uid: DxFeed.Graal.Net.Api.DXPublisher
   name: DXPublisher
   href: docs/api/DxFeed.Graal.Net.Api.DXPublisher.html
@@ -5059,6 +5097,12 @@ references:
   commentId: F:DxFeed.Graal.Net.Events.Market.OrderSource.NTV
   fullName: DxFeed.Graal.Net.Events.Market.OrderSource.NTV
   nameWithType: OrderSource.NTV
+- uid: DxFeed.Graal.Net.Events.Market.OrderSource.OCEA
+  name: OCEA
+  href: docs/api/DxFeed.Graal.Net.Events.Market.OrderSource.html#DxFeed_Graal_Net_Events_Market_OrderSource_OCEA
+  commentId: F:DxFeed.Graal.Net.Events.Market.OrderSource.OCEA
+  fullName: DxFeed.Graal.Net.Events.Market.OrderSource.OCEA
+  nameWithType: OrderSource.OCEA
 - uid: DxFeed.Graal.Net.Events.Market.OrderSource.REGIONAL_ASK
   name: REGIONAL_ASK
   href: docs/api/DxFeed.Graal.Net.Events.Market.OrderSource.html#DxFeed_Graal_Net_Events_Market_OrderSource_REGIONAL_ASK
@@ -5138,6 +5182,12 @@ references:
   commentId: F:DxFeed.Graal.Net.Events.Market.OrderSource.ntv
   fullName: DxFeed.Graal.Net.Events.Market.OrderSource.ntv
   nameWithType: OrderSource.ntv
+- uid: DxFeed.Graal.Net.Events.Market.OrderSource.pink
+  name: pink
+  href: docs/api/DxFeed.Graal.Net.Events.Market.OrderSource.html#DxFeed_Graal_Net_Events_Market_OrderSource_pink
+  commentId: F:DxFeed.Graal.Net.Events.Market.OrderSource.pink
+  fullName: DxFeed.Graal.Net.Events.Market.OrderSource.pink
+  nameWithType: OrderSource.pink
 - uid: DxFeed.Graal.Net.Events.Market.OrderSource.smfe
   name: smfe
   href: docs/api/DxFeed.Graal.Net.Events.Market.OrderSource.html#DxFeed_Graal_Net_Events_Market_OrderSource_smfe
@@ -5150,6 +5200,181 @@ references:
   commentId: F:DxFeed.Graal.Net.Events.Market.OrderSource.xeur
   fullName: DxFeed.Graal.Net.Events.Market.OrderSource.xeur
   nameWithType: OrderSource.xeur
+- uid: DxFeed.Graal.Net.Events.Market.OtcMarketsOrder
+  name: OtcMarketsOrder
+  href: docs/api/DxFeed.Graal.Net.Events.Market.OtcMarketsOrder.html
+  commentId: T:DxFeed.Graal.Net.Events.Market.OtcMarketsOrder
+  fullName: DxFeed.Graal.Net.Events.Market.OtcMarketsOrder
+  nameWithType: OtcMarketsOrder
+- uid: DxFeed.Graal.Net.Events.Market.OtcMarketsOrder.#ctor
+  name: OtcMarketsOrder()
+  href: docs/api/DxFeed.Graal.Net.Events.Market.OtcMarketsOrder.html#DxFeed_Graal_Net_Events_Market_OtcMarketsOrder__ctor
+  commentId: M:DxFeed.Graal.Net.Events.Market.OtcMarketsOrder.#ctor
+  name.vb: New()
+  fullName: DxFeed.Graal.Net.Events.Market.OtcMarketsOrder.OtcMarketsOrder()
+  fullName.vb: DxFeed.Graal.Net.Events.Market.OtcMarketsOrder.New()
+  nameWithType: OtcMarketsOrder.OtcMarketsOrder()
+  nameWithType.vb: OtcMarketsOrder.New()
+- uid: DxFeed.Graal.Net.Events.Market.OtcMarketsOrder.#ctor(System.String)
+  name: OtcMarketsOrder(string?)
+  href: docs/api/DxFeed.Graal.Net.Events.Market.OtcMarketsOrder.html#DxFeed_Graal_Net_Events_Market_OtcMarketsOrder__ctor_System_String_
+  commentId: M:DxFeed.Graal.Net.Events.Market.OtcMarketsOrder.#ctor(System.String)
+  name.vb: New(String)
+  fullName: DxFeed.Graal.Net.Events.Market.OtcMarketsOrder.OtcMarketsOrder(string?)
+  fullName.vb: DxFeed.Graal.Net.Events.Market.OtcMarketsOrder.New(String)
+  nameWithType: OtcMarketsOrder.OtcMarketsOrder(string?)
+  nameWithType.vb: OtcMarketsOrder.New(String)
+- uid: DxFeed.Graal.Net.Events.Market.OtcMarketsOrder.#ctor*
+  name: OtcMarketsOrder
+  href: docs/api/DxFeed.Graal.Net.Events.Market.OtcMarketsOrder.html#DxFeed_Graal_Net_Events_Market_OtcMarketsOrder__ctor_
+  commentId: Overload:DxFeed.Graal.Net.Events.Market.OtcMarketsOrder.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: DxFeed.Graal.Net.Events.Market.OtcMarketsOrder.OtcMarketsOrder
+  fullName.vb: DxFeed.Graal.Net.Events.Market.OtcMarketsOrder.New
+  nameWithType: OtcMarketsOrder.OtcMarketsOrder
+  nameWithType.vb: OtcMarketsOrder.New
+- uid: DxFeed.Graal.Net.Events.Market.OtcMarketsOrder.IsAutoExecution
+  name: IsAutoExecution
+  href: docs/api/DxFeed.Graal.Net.Events.Market.OtcMarketsOrder.html#DxFeed_Graal_Net_Events_Market_OtcMarketsOrder_IsAutoExecution
+  commentId: P:DxFeed.Graal.Net.Events.Market.OtcMarketsOrder.IsAutoExecution
+  fullName: DxFeed.Graal.Net.Events.Market.OtcMarketsOrder.IsAutoExecution
+  nameWithType: OtcMarketsOrder.IsAutoExecution
+- uid: DxFeed.Graal.Net.Events.Market.OtcMarketsOrder.IsAutoExecution*
+  name: IsAutoExecution
+  href: docs/api/DxFeed.Graal.Net.Events.Market.OtcMarketsOrder.html#DxFeed_Graal_Net_Events_Market_OtcMarketsOrder_IsAutoExecution_
+  commentId: Overload:DxFeed.Graal.Net.Events.Market.OtcMarketsOrder.IsAutoExecution
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Events.Market.OtcMarketsOrder.IsAutoExecution
+  nameWithType: OtcMarketsOrder.IsAutoExecution
+- uid: DxFeed.Graal.Net.Events.Market.OtcMarketsOrder.IsNmsConditional
+  name: IsNmsConditional
+  href: docs/api/DxFeed.Graal.Net.Events.Market.OtcMarketsOrder.html#DxFeed_Graal_Net_Events_Market_OtcMarketsOrder_IsNmsConditional
+  commentId: P:DxFeed.Graal.Net.Events.Market.OtcMarketsOrder.IsNmsConditional
+  fullName: DxFeed.Graal.Net.Events.Market.OtcMarketsOrder.IsNmsConditional
+  nameWithType: OtcMarketsOrder.IsNmsConditional
+- uid: DxFeed.Graal.Net.Events.Market.OtcMarketsOrder.IsNmsConditional*
+  name: IsNmsConditional
+  href: docs/api/DxFeed.Graal.Net.Events.Market.OtcMarketsOrder.html#DxFeed_Graal_Net_Events_Market_OtcMarketsOrder_IsNmsConditional_
+  commentId: Overload:DxFeed.Graal.Net.Events.Market.OtcMarketsOrder.IsNmsConditional
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Events.Market.OtcMarketsOrder.IsNmsConditional
+  nameWithType: OtcMarketsOrder.IsNmsConditional
+- uid: DxFeed.Graal.Net.Events.Market.OtcMarketsOrder.IsOpen
+  name: IsOpen
+  href: docs/api/DxFeed.Graal.Net.Events.Market.OtcMarketsOrder.html#DxFeed_Graal_Net_Events_Market_OtcMarketsOrder_IsOpen
+  commentId: P:DxFeed.Graal.Net.Events.Market.OtcMarketsOrder.IsOpen
+  fullName: DxFeed.Graal.Net.Events.Market.OtcMarketsOrder.IsOpen
+  nameWithType: OtcMarketsOrder.IsOpen
+- uid: DxFeed.Graal.Net.Events.Market.OtcMarketsOrder.IsOpen*
+  name: IsOpen
+  href: docs/api/DxFeed.Graal.Net.Events.Market.OtcMarketsOrder.html#DxFeed_Graal_Net_Events_Market_OtcMarketsOrder_IsOpen_
+  commentId: Overload:DxFeed.Graal.Net.Events.Market.OtcMarketsOrder.IsOpen
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Events.Market.OtcMarketsOrder.IsOpen
+  nameWithType: OtcMarketsOrder.IsOpen
+- uid: DxFeed.Graal.Net.Events.Market.OtcMarketsOrder.IsSaturated
+  name: IsSaturated
+  href: docs/api/DxFeed.Graal.Net.Events.Market.OtcMarketsOrder.html#DxFeed_Graal_Net_Events_Market_OtcMarketsOrder_IsSaturated
+  commentId: P:DxFeed.Graal.Net.Events.Market.OtcMarketsOrder.IsSaturated
+  fullName: DxFeed.Graal.Net.Events.Market.OtcMarketsOrder.IsSaturated
+  nameWithType: OtcMarketsOrder.IsSaturated
+- uid: DxFeed.Graal.Net.Events.Market.OtcMarketsOrder.IsSaturated*
+  name: IsSaturated
+  href: docs/api/DxFeed.Graal.Net.Events.Market.OtcMarketsOrder.html#DxFeed_Graal_Net_Events_Market_OtcMarketsOrder_IsSaturated_
+  commentId: Overload:DxFeed.Graal.Net.Events.Market.OtcMarketsOrder.IsSaturated
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Events.Market.OtcMarketsOrder.IsSaturated
+  nameWithType: OtcMarketsOrder.IsSaturated
+- uid: DxFeed.Graal.Net.Events.Market.OtcMarketsOrder.IsUnsolicited
+  name: IsUnsolicited
+  href: docs/api/DxFeed.Graal.Net.Events.Market.OtcMarketsOrder.html#DxFeed_Graal_Net_Events_Market_OtcMarketsOrder_IsUnsolicited
+  commentId: P:DxFeed.Graal.Net.Events.Market.OtcMarketsOrder.IsUnsolicited
+  fullName: DxFeed.Graal.Net.Events.Market.OtcMarketsOrder.IsUnsolicited
+  nameWithType: OtcMarketsOrder.IsUnsolicited
+- uid: DxFeed.Graal.Net.Events.Market.OtcMarketsOrder.IsUnsolicited*
+  name: IsUnsolicited
+  href: docs/api/DxFeed.Graal.Net.Events.Market.OtcMarketsOrder.html#DxFeed_Graal_Net_Events_Market_OtcMarketsOrder_IsUnsolicited_
+  commentId: Overload:DxFeed.Graal.Net.Events.Market.OtcMarketsOrder.IsUnsolicited
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Events.Market.OtcMarketsOrder.IsUnsolicited
+  nameWithType: OtcMarketsOrder.IsUnsolicited
+- uid: DxFeed.Graal.Net.Events.Market.OtcMarketsOrder.OtcMarketsFlags
+  name: OtcMarketsFlags
+  href: docs/api/DxFeed.Graal.Net.Events.Market.OtcMarketsOrder.html#DxFeed_Graal_Net_Events_Market_OtcMarketsOrder_OtcMarketsFlags
+  commentId: P:DxFeed.Graal.Net.Events.Market.OtcMarketsOrder.OtcMarketsFlags
+  fullName: DxFeed.Graal.Net.Events.Market.OtcMarketsOrder.OtcMarketsFlags
+  nameWithType: OtcMarketsOrder.OtcMarketsFlags
+- uid: DxFeed.Graal.Net.Events.Market.OtcMarketsOrder.OtcMarketsFlags*
+  name: OtcMarketsFlags
+  href: docs/api/DxFeed.Graal.Net.Events.Market.OtcMarketsOrder.html#DxFeed_Graal_Net_Events_Market_OtcMarketsOrder_OtcMarketsFlags_
+  commentId: Overload:DxFeed.Graal.Net.Events.Market.OtcMarketsOrder.OtcMarketsFlags
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Events.Market.OtcMarketsOrder.OtcMarketsFlags
+  nameWithType: OtcMarketsOrder.OtcMarketsFlags
+- uid: DxFeed.Graal.Net.Events.Market.OtcMarketsOrder.OtcMarketsPriceType
+  name: OtcMarketsPriceType
+  href: docs/api/DxFeed.Graal.Net.Events.Market.OtcMarketsOrder.html#DxFeed_Graal_Net_Events_Market_OtcMarketsOrder_OtcMarketsPriceType
+  commentId: P:DxFeed.Graal.Net.Events.Market.OtcMarketsOrder.OtcMarketsPriceType
+  fullName: DxFeed.Graal.Net.Events.Market.OtcMarketsOrder.OtcMarketsPriceType
+  nameWithType: OtcMarketsOrder.OtcMarketsPriceType
+- uid: DxFeed.Graal.Net.Events.Market.OtcMarketsOrder.OtcMarketsPriceType*
+  name: OtcMarketsPriceType
+  href: docs/api/DxFeed.Graal.Net.Events.Market.OtcMarketsOrder.html#DxFeed_Graal_Net_Events_Market_OtcMarketsOrder_OtcMarketsPriceType_
+  commentId: Overload:DxFeed.Graal.Net.Events.Market.OtcMarketsOrder.OtcMarketsPriceType
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Events.Market.OtcMarketsOrder.OtcMarketsPriceType
+  nameWithType: OtcMarketsOrder.OtcMarketsPriceType
+- uid: DxFeed.Graal.Net.Events.Market.OtcMarketsOrder.QuoteAccessPayment
+  name: QuoteAccessPayment
+  href: docs/api/DxFeed.Graal.Net.Events.Market.OtcMarketsOrder.html#DxFeed_Graal_Net_Events_Market_OtcMarketsOrder_QuoteAccessPayment
+  commentId: P:DxFeed.Graal.Net.Events.Market.OtcMarketsOrder.QuoteAccessPayment
+  fullName: DxFeed.Graal.Net.Events.Market.OtcMarketsOrder.QuoteAccessPayment
+  nameWithType: OtcMarketsOrder.QuoteAccessPayment
+- uid: DxFeed.Graal.Net.Events.Market.OtcMarketsOrder.QuoteAccessPayment*
+  name: QuoteAccessPayment
+  href: docs/api/DxFeed.Graal.Net.Events.Market.OtcMarketsOrder.html#DxFeed_Graal_Net_Events_Market_OtcMarketsOrder_QuoteAccessPayment_
+  commentId: Overload:DxFeed.Graal.Net.Events.Market.OtcMarketsOrder.QuoteAccessPayment
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Events.Market.OtcMarketsOrder.QuoteAccessPayment
+  nameWithType: OtcMarketsOrder.QuoteAccessPayment
+- uid: DxFeed.Graal.Net.Events.Market.OtcMarketsOrder.ToString
+  name: ToString()
+  href: docs/api/DxFeed.Graal.Net.Events.Market.OtcMarketsOrder.html#DxFeed_Graal_Net_Events_Market_OtcMarketsOrder_ToString
+  commentId: M:DxFeed.Graal.Net.Events.Market.OtcMarketsOrder.ToString
+  fullName: DxFeed.Graal.Net.Events.Market.OtcMarketsOrder.ToString()
+  nameWithType: OtcMarketsOrder.ToString()
+- uid: DxFeed.Graal.Net.Events.Market.OtcMarketsOrder.ToString*
+  name: ToString
+  href: docs/api/DxFeed.Graal.Net.Events.Market.OtcMarketsOrder.html#DxFeed_Graal_Net_Events_Market_OtcMarketsOrder_ToString_
+  commentId: Overload:DxFeed.Graal.Net.Events.Market.OtcMarketsOrder.ToString
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Events.Market.OtcMarketsOrder.ToString
+  nameWithType: OtcMarketsOrder.ToString
+- uid: DxFeed.Graal.Net.Events.Market.OtcMarketsPriceType
+  name: OtcMarketsPriceType
+  href: docs/api/DxFeed.Graal.Net.Events.Market.OtcMarketsPriceType.html
+  commentId: T:DxFeed.Graal.Net.Events.Market.OtcMarketsPriceType
+  fullName: DxFeed.Graal.Net.Events.Market.OtcMarketsPriceType
+  nameWithType: OtcMarketsPriceType
+- uid: DxFeed.Graal.Net.Events.Market.OtcMarketsPriceType.Actual
+  name: Actual
+  href: docs/api/DxFeed.Graal.Net.Events.Market.OtcMarketsPriceType.html#DxFeed_Graal_Net_Events_Market_OtcMarketsPriceType_Actual
+  commentId: F:DxFeed.Graal.Net.Events.Market.OtcMarketsPriceType.Actual
+  fullName: DxFeed.Graal.Net.Events.Market.OtcMarketsPriceType.Actual
+  nameWithType: OtcMarketsPriceType.Actual
+- uid: DxFeed.Graal.Net.Events.Market.OtcMarketsPriceType.Unpriced
+  name: Unpriced
+  href: docs/api/DxFeed.Graal.Net.Events.Market.OtcMarketsPriceType.html#DxFeed_Graal_Net_Events_Market_OtcMarketsPriceType_Unpriced
+  commentId: F:DxFeed.Graal.Net.Events.Market.OtcMarketsPriceType.Unpriced
+  fullName: DxFeed.Graal.Net.Events.Market.OtcMarketsPriceType.Unpriced
+  nameWithType: OtcMarketsPriceType.Unpriced
+- uid: DxFeed.Graal.Net.Events.Market.OtcMarketsPriceType.Wanted
+  name: Wanted
+  href: docs/api/DxFeed.Graal.Net.Events.Market.OtcMarketsPriceType.html#DxFeed_Graal_Net_Events_Market_OtcMarketsPriceType_Wanted
+  commentId: F:DxFeed.Graal.Net.Events.Market.OtcMarketsPriceType.Wanted
+  fullName: DxFeed.Graal.Net.Events.Market.OtcMarketsPriceType.Wanted
+  nameWithType: OtcMarketsPriceType.Wanted
 - uid: DxFeed.Graal.Net.Events.Market.PriceType
   name: PriceType
   href: docs/api/DxFeed.Graal.Net.Events.Market.PriceType.html
@@ -8938,6 +9163,12 @@ references:
   commentId: F:DxFeed.Graal.Net.Native.Events.EventCodeNative.OrderBase
   fullName: DxFeed.Graal.Net.Native.Events.EventCodeNative.OrderBase
   nameWithType: EventCodeNative.OrderBase
+- uid: DxFeed.Graal.Net.Native.Events.EventCodeNative.OtcMarketsOrder
+  name: OtcMarketsOrder
+  href: docs/api/DxFeed.Graal.Net.Native.Events.EventCodeNative.html#DxFeed_Graal_Net_Native_Events_EventCodeNative_OtcMarketsOrder
+  commentId: F:DxFeed.Graal.Net.Native.Events.EventCodeNative.OtcMarketsOrder
+  fullName: DxFeed.Graal.Net.Native.Events.EventCodeNative.OtcMarketsOrder
+  nameWithType: EventCodeNative.OtcMarketsOrder
 - uid: DxFeed.Graal.Net.Native.Events.EventCodeNative.Profile
   name: Profile
   href: docs/api/DxFeed.Graal.Net.Native.Events.EventCodeNative.html#DxFeed_Graal_Net_Native_Events_EventCodeNative_Profile
@@ -8998,6 +9229,975 @@ references:
   commentId: F:DxFeed.Graal.Net.Native.Events.EventCodeNative.Underlying
   fullName: DxFeed.Graal.Net.Native.Events.EventCodeNative.Underlying
   nameWithType: EventCodeNative.Underlying
+- uid: DxFeed.Graal.Net.Schedules
+  name: DxFeed.Graal.Net.Schedules
+  href: docs/api/DxFeed.Graal.Net.Schedules.html
+  commentId: N:DxFeed.Graal.Net.Schedules
+  fullName: DxFeed.Graal.Net.Schedules
+  nameWithType: DxFeed.Graal.Net.Schedules
+- uid: DxFeed.Graal.Net.Schedules.Day
+  name: Day
+  href: docs/api/DxFeed.Graal.Net.Schedules.Day.html
+  commentId: T:DxFeed.Graal.Net.Schedules.Day
+  fullName: DxFeed.Graal.Net.Schedules.Day
+  nameWithType: Day
+- uid: DxFeed.Graal.Net.Schedules.Day.ContainsTime(System.Int64)
+  name: ContainsTime(long)
+  href: docs/api/DxFeed.Graal.Net.Schedules.Day.html#DxFeed_Graal_Net_Schedules_Day_ContainsTime_System_Int64_
+  commentId: M:DxFeed.Graal.Net.Schedules.Day.ContainsTime(System.Int64)
+  name.vb: ContainsTime(Long)
+  fullName: DxFeed.Graal.Net.Schedules.Day.ContainsTime(long)
+  fullName.vb: DxFeed.Graal.Net.Schedules.Day.ContainsTime(Long)
+  nameWithType: Day.ContainsTime(long)
+  nameWithType.vb: Day.ContainsTime(Long)
+- uid: DxFeed.Graal.Net.Schedules.Day.ContainsTime*
+  name: ContainsTime
+  href: docs/api/DxFeed.Graal.Net.Schedules.Day.html#DxFeed_Graal_Net_Schedules_Day_ContainsTime_
+  commentId: Overload:DxFeed.Graal.Net.Schedules.Day.ContainsTime
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Schedules.Day.ContainsTime
+  nameWithType: Day.ContainsTime
+- uid: DxFeed.Graal.Net.Schedules.Day.DayId
+  name: DayId
+  href: docs/api/DxFeed.Graal.Net.Schedules.Day.html#DxFeed_Graal_Net_Schedules_Day_DayId
+  commentId: P:DxFeed.Graal.Net.Schedules.Day.DayId
+  fullName: DxFeed.Graal.Net.Schedules.Day.DayId
+  nameWithType: Day.DayId
+- uid: DxFeed.Graal.Net.Schedules.Day.DayId*
+  name: DayId
+  href: docs/api/DxFeed.Graal.Net.Schedules.Day.html#DxFeed_Graal_Net_Schedules_Day_DayId_
+  commentId: Overload:DxFeed.Graal.Net.Schedules.Day.DayId
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Schedules.Day.DayId
+  nameWithType: Day.DayId
+- uid: DxFeed.Graal.Net.Schedules.Day.DayOfMonth
+  name: DayOfMonth
+  href: docs/api/DxFeed.Graal.Net.Schedules.Day.html#DxFeed_Graal_Net_Schedules_Day_DayOfMonth
+  commentId: P:DxFeed.Graal.Net.Schedules.Day.DayOfMonth
+  fullName: DxFeed.Graal.Net.Schedules.Day.DayOfMonth
+  nameWithType: Day.DayOfMonth
+- uid: DxFeed.Graal.Net.Schedules.Day.DayOfMonth*
+  name: DayOfMonth
+  href: docs/api/DxFeed.Graal.Net.Schedules.Day.html#DxFeed_Graal_Net_Schedules_Day_DayOfMonth_
+  commentId: Overload:DxFeed.Graal.Net.Schedules.Day.DayOfMonth
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Schedules.Day.DayOfMonth
+  nameWithType: Day.DayOfMonth
+- uid: DxFeed.Graal.Net.Schedules.Day.DayOfWeek
+  name: DayOfWeek
+  href: docs/api/DxFeed.Graal.Net.Schedules.Day.html#DxFeed_Graal_Net_Schedules_Day_DayOfWeek
+  commentId: P:DxFeed.Graal.Net.Schedules.Day.DayOfWeek
+  fullName: DxFeed.Graal.Net.Schedules.Day.DayOfWeek
+  nameWithType: Day.DayOfWeek
+- uid: DxFeed.Graal.Net.Schedules.Day.DayOfWeek*
+  name: DayOfWeek
+  href: docs/api/DxFeed.Graal.Net.Schedules.Day.html#DxFeed_Graal_Net_Schedules_Day_DayOfWeek_
+  commentId: Overload:DxFeed.Graal.Net.Schedules.Day.DayOfWeek
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Schedules.Day.DayOfWeek
+  nameWithType: Day.DayOfWeek
+- uid: DxFeed.Graal.Net.Schedules.Day.EndTime
+  name: EndTime
+  href: docs/api/DxFeed.Graal.Net.Schedules.Day.html#DxFeed_Graal_Net_Schedules_Day_EndTime
+  commentId: P:DxFeed.Graal.Net.Schedules.Day.EndTime
+  fullName: DxFeed.Graal.Net.Schedules.Day.EndTime
+  nameWithType: Day.EndTime
+- uid: DxFeed.Graal.Net.Schedules.Day.EndTime*
+  name: EndTime
+  href: docs/api/DxFeed.Graal.Net.Schedules.Day.html#DxFeed_Graal_Net_Schedules_Day_EndTime_
+  commentId: Overload:DxFeed.Graal.Net.Schedules.Day.EndTime
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Schedules.Day.EndTime
+  nameWithType: Day.EndTime
+- uid: DxFeed.Graal.Net.Schedules.Day.Equals(System.Object)
+  name: Equals(object?)
+  href: docs/api/DxFeed.Graal.Net.Schedules.Day.html#DxFeed_Graal_Net_Schedules_Day_Equals_System_Object_
+  commentId: M:DxFeed.Graal.Net.Schedules.Day.Equals(System.Object)
+  name.vb: Equals(Object)
+  fullName: DxFeed.Graal.Net.Schedules.Day.Equals(object?)
+  fullName.vb: DxFeed.Graal.Net.Schedules.Day.Equals(Object)
+  nameWithType: Day.Equals(object?)
+  nameWithType.vb: Day.Equals(Object)
+- uid: DxFeed.Graal.Net.Schedules.Day.Equals*
+  name: Equals
+  href: docs/api/DxFeed.Graal.Net.Schedules.Day.html#DxFeed_Graal_Net_Schedules_Day_Equals_
+  commentId: Overload:DxFeed.Graal.Net.Schedules.Day.Equals
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Schedules.Day.Equals
+  nameWithType: Day.Equals
+- uid: DxFeed.Graal.Net.Schedules.Day.GetFirstSession(DxFeed.Graal.Net.Schedules.SessionFilter)
+  name: GetFirstSession(SessionFilter)
+  href: docs/api/DxFeed.Graal.Net.Schedules.Day.html#DxFeed_Graal_Net_Schedules_Day_GetFirstSession_DxFeed_Graal_Net_Schedules_SessionFilter_
+  commentId: M:DxFeed.Graal.Net.Schedules.Day.GetFirstSession(DxFeed.Graal.Net.Schedules.SessionFilter)
+  fullName: DxFeed.Graal.Net.Schedules.Day.GetFirstSession(DxFeed.Graal.Net.Schedules.SessionFilter)
+  nameWithType: Day.GetFirstSession(SessionFilter)
+- uid: DxFeed.Graal.Net.Schedules.Day.GetFirstSession*
+  name: GetFirstSession
+  href: docs/api/DxFeed.Graal.Net.Schedules.Day.html#DxFeed_Graal_Net_Schedules_Day_GetFirstSession_
+  commentId: Overload:DxFeed.Graal.Net.Schedules.Day.GetFirstSession
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Schedules.Day.GetFirstSession
+  nameWithType: Day.GetFirstSession
+- uid: DxFeed.Graal.Net.Schedules.Day.GetHashCode
+  name: GetHashCode()
+  href: docs/api/DxFeed.Graal.Net.Schedules.Day.html#DxFeed_Graal_Net_Schedules_Day_GetHashCode
+  commentId: M:DxFeed.Graal.Net.Schedules.Day.GetHashCode
+  fullName: DxFeed.Graal.Net.Schedules.Day.GetHashCode()
+  nameWithType: Day.GetHashCode()
+- uid: DxFeed.Graal.Net.Schedules.Day.GetHashCode*
+  name: GetHashCode
+  href: docs/api/DxFeed.Graal.Net.Schedules.Day.html#DxFeed_Graal_Net_Schedules_Day_GetHashCode_
+  commentId: Overload:DxFeed.Graal.Net.Schedules.Day.GetHashCode
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Schedules.Day.GetHashCode
+  nameWithType: Day.GetHashCode
+- uid: DxFeed.Graal.Net.Schedules.Day.GetLastSession(DxFeed.Graal.Net.Schedules.SessionFilter)
+  name: GetLastSession(SessionFilter)
+  href: docs/api/DxFeed.Graal.Net.Schedules.Day.html#DxFeed_Graal_Net_Schedules_Day_GetLastSession_DxFeed_Graal_Net_Schedules_SessionFilter_
+  commentId: M:DxFeed.Graal.Net.Schedules.Day.GetLastSession(DxFeed.Graal.Net.Schedules.SessionFilter)
+  fullName: DxFeed.Graal.Net.Schedules.Day.GetLastSession(DxFeed.Graal.Net.Schedules.SessionFilter)
+  nameWithType: Day.GetLastSession(SessionFilter)
+- uid: DxFeed.Graal.Net.Schedules.Day.GetLastSession*
+  name: GetLastSession
+  href: docs/api/DxFeed.Graal.Net.Schedules.Day.html#DxFeed_Graal_Net_Schedules_Day_GetLastSession_
+  commentId: Overload:DxFeed.Graal.Net.Schedules.Day.GetLastSession
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Schedules.Day.GetLastSession
+  nameWithType: Day.GetLastSession
+- uid: DxFeed.Graal.Net.Schedules.Day.GetNextDay(DxFeed.Graal.Net.Schedules.DayFilter)
+  name: GetNextDay(DayFilter)
+  href: docs/api/DxFeed.Graal.Net.Schedules.Day.html#DxFeed_Graal_Net_Schedules_Day_GetNextDay_DxFeed_Graal_Net_Schedules_DayFilter_
+  commentId: M:DxFeed.Graal.Net.Schedules.Day.GetNextDay(DxFeed.Graal.Net.Schedules.DayFilter)
+  fullName: DxFeed.Graal.Net.Schedules.Day.GetNextDay(DxFeed.Graal.Net.Schedules.DayFilter)
+  nameWithType: Day.GetNextDay(DayFilter)
+- uid: DxFeed.Graal.Net.Schedules.Day.GetNextDay*
+  name: GetNextDay
+  href: docs/api/DxFeed.Graal.Net.Schedules.Day.html#DxFeed_Graal_Net_Schedules_Day_GetNextDay_
+  commentId: Overload:DxFeed.Graal.Net.Schedules.Day.GetNextDay
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Schedules.Day.GetNextDay
+  nameWithType: Day.GetNextDay
+- uid: DxFeed.Graal.Net.Schedules.Day.GetPrevDay(DxFeed.Graal.Net.Schedules.DayFilter)
+  name: GetPrevDay(DayFilter)
+  href: docs/api/DxFeed.Graal.Net.Schedules.Day.html#DxFeed_Graal_Net_Schedules_Day_GetPrevDay_DxFeed_Graal_Net_Schedules_DayFilter_
+  commentId: M:DxFeed.Graal.Net.Schedules.Day.GetPrevDay(DxFeed.Graal.Net.Schedules.DayFilter)
+  fullName: DxFeed.Graal.Net.Schedules.Day.GetPrevDay(DxFeed.Graal.Net.Schedules.DayFilter)
+  nameWithType: Day.GetPrevDay(DayFilter)
+- uid: DxFeed.Graal.Net.Schedules.Day.GetPrevDay*
+  name: GetPrevDay
+  href: docs/api/DxFeed.Graal.Net.Schedules.Day.html#DxFeed_Graal_Net_Schedules_Day_GetPrevDay_
+  commentId: Overload:DxFeed.Graal.Net.Schedules.Day.GetPrevDay
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Schedules.Day.GetPrevDay
+  nameWithType: Day.GetPrevDay
+- uid: DxFeed.Graal.Net.Schedules.Day.GetSessionByTime(System.Int64)
+  name: GetSessionByTime(long)
+  href: docs/api/DxFeed.Graal.Net.Schedules.Day.html#DxFeed_Graal_Net_Schedules_Day_GetSessionByTime_System_Int64_
+  commentId: M:DxFeed.Graal.Net.Schedules.Day.GetSessionByTime(System.Int64)
+  name.vb: GetSessionByTime(Long)
+  fullName: DxFeed.Graal.Net.Schedules.Day.GetSessionByTime(long)
+  fullName.vb: DxFeed.Graal.Net.Schedules.Day.GetSessionByTime(Long)
+  nameWithType: Day.GetSessionByTime(long)
+  nameWithType.vb: Day.GetSessionByTime(Long)
+- uid: DxFeed.Graal.Net.Schedules.Day.GetSessionByTime*
+  name: GetSessionByTime
+  href: docs/api/DxFeed.Graal.Net.Schedules.Day.html#DxFeed_Graal_Net_Schedules_Day_GetSessionByTime_
+  commentId: Overload:DxFeed.Graal.Net.Schedules.Day.GetSessionByTime
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Schedules.Day.GetSessionByTime
+  nameWithType: Day.GetSessionByTime
+- uid: DxFeed.Graal.Net.Schedules.Day.GetSessions
+  name: GetSessions()
+  href: docs/api/DxFeed.Graal.Net.Schedules.Day.html#DxFeed_Graal_Net_Schedules_Day_GetSessions
+  commentId: M:DxFeed.Graal.Net.Schedules.Day.GetSessions
+  fullName: DxFeed.Graal.Net.Schedules.Day.GetSessions()
+  nameWithType: Day.GetSessions()
+- uid: DxFeed.Graal.Net.Schedules.Day.GetSessions*
+  name: GetSessions
+  href: docs/api/DxFeed.Graal.Net.Schedules.Day.html#DxFeed_Graal_Net_Schedules_Day_GetSessions_
+  commentId: Overload:DxFeed.Graal.Net.Schedules.Day.GetSessions
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Schedules.Day.GetSessions
+  nameWithType: Day.GetSessions
+- uid: DxFeed.Graal.Net.Schedules.Day.IsHoliday
+  name: IsHoliday
+  href: docs/api/DxFeed.Graal.Net.Schedules.Day.html#DxFeed_Graal_Net_Schedules_Day_IsHoliday
+  commentId: P:DxFeed.Graal.Net.Schedules.Day.IsHoliday
+  fullName: DxFeed.Graal.Net.Schedules.Day.IsHoliday
+  nameWithType: Day.IsHoliday
+- uid: DxFeed.Graal.Net.Schedules.Day.IsHoliday*
+  name: IsHoliday
+  href: docs/api/DxFeed.Graal.Net.Schedules.Day.html#DxFeed_Graal_Net_Schedules_Day_IsHoliday_
+  commentId: Overload:DxFeed.Graal.Net.Schedules.Day.IsHoliday
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Schedules.Day.IsHoliday
+  nameWithType: Day.IsHoliday
+- uid: DxFeed.Graal.Net.Schedules.Day.IsShortDay
+  name: IsShortDay
+  href: docs/api/DxFeed.Graal.Net.Schedules.Day.html#DxFeed_Graal_Net_Schedules_Day_IsShortDay
+  commentId: P:DxFeed.Graal.Net.Schedules.Day.IsShortDay
+  fullName: DxFeed.Graal.Net.Schedules.Day.IsShortDay
+  nameWithType: Day.IsShortDay
+- uid: DxFeed.Graal.Net.Schedules.Day.IsShortDay*
+  name: IsShortDay
+  href: docs/api/DxFeed.Graal.Net.Schedules.Day.html#DxFeed_Graal_Net_Schedules_Day_IsShortDay_
+  commentId: Overload:DxFeed.Graal.Net.Schedules.Day.IsShortDay
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Schedules.Day.IsShortDay
+  nameWithType: Day.IsShortDay
+- uid: DxFeed.Graal.Net.Schedules.Day.IsTrading
+  name: IsTrading
+  href: docs/api/DxFeed.Graal.Net.Schedules.Day.html#DxFeed_Graal_Net_Schedules_Day_IsTrading
+  commentId: P:DxFeed.Graal.Net.Schedules.Day.IsTrading
+  fullName: DxFeed.Graal.Net.Schedules.Day.IsTrading
+  nameWithType: Day.IsTrading
+- uid: DxFeed.Graal.Net.Schedules.Day.IsTrading*
+  name: IsTrading
+  href: docs/api/DxFeed.Graal.Net.Schedules.Day.html#DxFeed_Graal_Net_Schedules_Day_IsTrading_
+  commentId: Overload:DxFeed.Graal.Net.Schedules.Day.IsTrading
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Schedules.Day.IsTrading
+  nameWithType: Day.IsTrading
+- uid: DxFeed.Graal.Net.Schedules.Day.MonthOfYear
+  name: MonthOfYear
+  href: docs/api/DxFeed.Graal.Net.Schedules.Day.html#DxFeed_Graal_Net_Schedules_Day_MonthOfYear
+  commentId: P:DxFeed.Graal.Net.Schedules.Day.MonthOfYear
+  fullName: DxFeed.Graal.Net.Schedules.Day.MonthOfYear
+  nameWithType: Day.MonthOfYear
+- uid: DxFeed.Graal.Net.Schedules.Day.MonthOfYear*
+  name: MonthOfYear
+  href: docs/api/DxFeed.Graal.Net.Schedules.Day.html#DxFeed_Graal_Net_Schedules_Day_MonthOfYear_
+  commentId: Overload:DxFeed.Graal.Net.Schedules.Day.MonthOfYear
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Schedules.Day.MonthOfYear
+  nameWithType: Day.MonthOfYear
+- uid: DxFeed.Graal.Net.Schedules.Day.ResetTime
+  name: ResetTime
+  href: docs/api/DxFeed.Graal.Net.Schedules.Day.html#DxFeed_Graal_Net_Schedules_Day_ResetTime
+  commentId: P:DxFeed.Graal.Net.Schedules.Day.ResetTime
+  fullName: DxFeed.Graal.Net.Schedules.Day.ResetTime
+  nameWithType: Day.ResetTime
+- uid: DxFeed.Graal.Net.Schedules.Day.ResetTime*
+  name: ResetTime
+  href: docs/api/DxFeed.Graal.Net.Schedules.Day.html#DxFeed_Graal_Net_Schedules_Day_ResetTime_
+  commentId: Overload:DxFeed.Graal.Net.Schedules.Day.ResetTime
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Schedules.Day.ResetTime
+  nameWithType: Day.ResetTime
+- uid: DxFeed.Graal.Net.Schedules.Day.Schedule
+  name: Schedule
+  href: docs/api/DxFeed.Graal.Net.Schedules.Day.html#DxFeed_Graal_Net_Schedules_Day_Schedule
+  commentId: P:DxFeed.Graal.Net.Schedules.Day.Schedule
+  fullName: DxFeed.Graal.Net.Schedules.Day.Schedule
+  nameWithType: Day.Schedule
+- uid: DxFeed.Graal.Net.Schedules.Day.Schedule*
+  name: Schedule
+  href: docs/api/DxFeed.Graal.Net.Schedules.Day.html#DxFeed_Graal_Net_Schedules_Day_Schedule_
+  commentId: Overload:DxFeed.Graal.Net.Schedules.Day.Schedule
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Schedules.Day.Schedule
+  nameWithType: Day.Schedule
+- uid: DxFeed.Graal.Net.Schedules.Day.StartTime
+  name: StartTime
+  href: docs/api/DxFeed.Graal.Net.Schedules.Day.html#DxFeed_Graal_Net_Schedules_Day_StartTime
+  commentId: P:DxFeed.Graal.Net.Schedules.Day.StartTime
+  fullName: DxFeed.Graal.Net.Schedules.Day.StartTime
+  nameWithType: Day.StartTime
+- uid: DxFeed.Graal.Net.Schedules.Day.StartTime*
+  name: StartTime
+  href: docs/api/DxFeed.Graal.Net.Schedules.Day.html#DxFeed_Graal_Net_Schedules_Day_StartTime_
+  commentId: Overload:DxFeed.Graal.Net.Schedules.Day.StartTime
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Schedules.Day.StartTime
+  nameWithType: Day.StartTime
+- uid: DxFeed.Graal.Net.Schedules.Day.ToString
+  name: ToString()
+  href: docs/api/DxFeed.Graal.Net.Schedules.Day.html#DxFeed_Graal_Net_Schedules_Day_ToString
+  commentId: M:DxFeed.Graal.Net.Schedules.Day.ToString
+  fullName: DxFeed.Graal.Net.Schedules.Day.ToString()
+  nameWithType: Day.ToString()
+- uid: DxFeed.Graal.Net.Schedules.Day.ToString*
+  name: ToString
+  href: docs/api/DxFeed.Graal.Net.Schedules.Day.html#DxFeed_Graal_Net_Schedules_Day_ToString_
+  commentId: Overload:DxFeed.Graal.Net.Schedules.Day.ToString
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Schedules.Day.ToString
+  nameWithType: Day.ToString
+- uid: DxFeed.Graal.Net.Schedules.Day.TryGetFirstSession(DxFeed.Graal.Net.Schedules.SessionFilter,DxFeed.Graal.Net.Schedules.Session@)
+  name: TryGetFirstSession(SessionFilter, out Session)
+  href: docs/api/DxFeed.Graal.Net.Schedules.Day.html#DxFeed_Graal_Net_Schedules_Day_TryGetFirstSession_DxFeed_Graal_Net_Schedules_SessionFilter_DxFeed_Graal_Net_Schedules_Session__
+  commentId: M:DxFeed.Graal.Net.Schedules.Day.TryGetFirstSession(DxFeed.Graal.Net.Schedules.SessionFilter,DxFeed.Graal.Net.Schedules.Session@)
+  name.vb: TryGetFirstSession(SessionFilter, Session)
+  fullName: DxFeed.Graal.Net.Schedules.Day.TryGetFirstSession(DxFeed.Graal.Net.Schedules.SessionFilter, out DxFeed.Graal.Net.Schedules.Session)
+  fullName.vb: DxFeed.Graal.Net.Schedules.Day.TryGetFirstSession(DxFeed.Graal.Net.Schedules.SessionFilter, DxFeed.Graal.Net.Schedules.Session)
+  nameWithType: Day.TryGetFirstSession(SessionFilter, out Session)
+  nameWithType.vb: Day.TryGetFirstSession(SessionFilter, Session)
+- uid: DxFeed.Graal.Net.Schedules.Day.TryGetFirstSession*
+  name: TryGetFirstSession
+  href: docs/api/DxFeed.Graal.Net.Schedules.Day.html#DxFeed_Graal_Net_Schedules_Day_TryGetFirstSession_
+  commentId: Overload:DxFeed.Graal.Net.Schedules.Day.TryGetFirstSession
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Schedules.Day.TryGetFirstSession
+  nameWithType: Day.TryGetFirstSession
+- uid: DxFeed.Graal.Net.Schedules.Day.TryGetLastSession(DxFeed.Graal.Net.Schedules.SessionFilter,DxFeed.Graal.Net.Schedules.Session@)
+  name: TryGetLastSession(SessionFilter, out Session)
+  href: docs/api/DxFeed.Graal.Net.Schedules.Day.html#DxFeed_Graal_Net_Schedules_Day_TryGetLastSession_DxFeed_Graal_Net_Schedules_SessionFilter_DxFeed_Graal_Net_Schedules_Session__
+  commentId: M:DxFeed.Graal.Net.Schedules.Day.TryGetLastSession(DxFeed.Graal.Net.Schedules.SessionFilter,DxFeed.Graal.Net.Schedules.Session@)
+  name.vb: TryGetLastSession(SessionFilter, Session)
+  fullName: DxFeed.Graal.Net.Schedules.Day.TryGetLastSession(DxFeed.Graal.Net.Schedules.SessionFilter, out DxFeed.Graal.Net.Schedules.Session)
+  fullName.vb: DxFeed.Graal.Net.Schedules.Day.TryGetLastSession(DxFeed.Graal.Net.Schedules.SessionFilter, DxFeed.Graal.Net.Schedules.Session)
+  nameWithType: Day.TryGetLastSession(SessionFilter, out Session)
+  nameWithType.vb: Day.TryGetLastSession(SessionFilter, Session)
+- uid: DxFeed.Graal.Net.Schedules.Day.TryGetLastSession*
+  name: TryGetLastSession
+  href: docs/api/DxFeed.Graal.Net.Schedules.Day.html#DxFeed_Graal_Net_Schedules_Day_TryGetLastSession_
+  commentId: Overload:DxFeed.Graal.Net.Schedules.Day.TryGetLastSession
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Schedules.Day.TryGetLastSession
+  nameWithType: Day.TryGetLastSession
+- uid: DxFeed.Graal.Net.Schedules.Day.TryGetNextDay(DxFeed.Graal.Net.Schedules.DayFilter,DxFeed.Graal.Net.Schedules.Day@)
+  name: TryGetNextDay(DayFilter, out Day)
+  href: docs/api/DxFeed.Graal.Net.Schedules.Day.html#DxFeed_Graal_Net_Schedules_Day_TryGetNextDay_DxFeed_Graal_Net_Schedules_DayFilter_DxFeed_Graal_Net_Schedules_Day__
+  commentId: M:DxFeed.Graal.Net.Schedules.Day.TryGetNextDay(DxFeed.Graal.Net.Schedules.DayFilter,DxFeed.Graal.Net.Schedules.Day@)
+  name.vb: TryGetNextDay(DayFilter, Day)
+  fullName: DxFeed.Graal.Net.Schedules.Day.TryGetNextDay(DxFeed.Graal.Net.Schedules.DayFilter, out DxFeed.Graal.Net.Schedules.Day)
+  fullName.vb: DxFeed.Graal.Net.Schedules.Day.TryGetNextDay(DxFeed.Graal.Net.Schedules.DayFilter, DxFeed.Graal.Net.Schedules.Day)
+  nameWithType: Day.TryGetNextDay(DayFilter, out Day)
+  nameWithType.vb: Day.TryGetNextDay(DayFilter, Day)
+- uid: DxFeed.Graal.Net.Schedules.Day.TryGetNextDay*
+  name: TryGetNextDay
+  href: docs/api/DxFeed.Graal.Net.Schedules.Day.html#DxFeed_Graal_Net_Schedules_Day_TryGetNextDay_
+  commentId: Overload:DxFeed.Graal.Net.Schedules.Day.TryGetNextDay
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Schedules.Day.TryGetNextDay
+  nameWithType: Day.TryGetNextDay
+- uid: DxFeed.Graal.Net.Schedules.Day.TryGetPrevDay(DxFeed.Graal.Net.Schedules.DayFilter,DxFeed.Graal.Net.Schedules.Day@)
+  name: TryGetPrevDay(DayFilter, out Day)
+  href: docs/api/DxFeed.Graal.Net.Schedules.Day.html#DxFeed_Graal_Net_Schedules_Day_TryGetPrevDay_DxFeed_Graal_Net_Schedules_DayFilter_DxFeed_Graal_Net_Schedules_Day__
+  commentId: M:DxFeed.Graal.Net.Schedules.Day.TryGetPrevDay(DxFeed.Graal.Net.Schedules.DayFilter,DxFeed.Graal.Net.Schedules.Day@)
+  name.vb: TryGetPrevDay(DayFilter, Day)
+  fullName: DxFeed.Graal.Net.Schedules.Day.TryGetPrevDay(DxFeed.Graal.Net.Schedules.DayFilter, out DxFeed.Graal.Net.Schedules.Day)
+  fullName.vb: DxFeed.Graal.Net.Schedules.Day.TryGetPrevDay(DxFeed.Graal.Net.Schedules.DayFilter, DxFeed.Graal.Net.Schedules.Day)
+  nameWithType: Day.TryGetPrevDay(DayFilter, out Day)
+  nameWithType.vb: Day.TryGetPrevDay(DayFilter, Day)
+- uid: DxFeed.Graal.Net.Schedules.Day.TryGetPrevDay*
+  name: TryGetPrevDay
+  href: docs/api/DxFeed.Graal.Net.Schedules.Day.html#DxFeed_Graal_Net_Schedules_Day_TryGetPrevDay_
+  commentId: Overload:DxFeed.Graal.Net.Schedules.Day.TryGetPrevDay
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Schedules.Day.TryGetPrevDay
+  nameWithType: Day.TryGetPrevDay
+- uid: DxFeed.Graal.Net.Schedules.Day.Year
+  name: Year
+  href: docs/api/DxFeed.Graal.Net.Schedules.Day.html#DxFeed_Graal_Net_Schedules_Day_Year
+  commentId: P:DxFeed.Graal.Net.Schedules.Day.Year
+  fullName: DxFeed.Graal.Net.Schedules.Day.Year
+  nameWithType: Day.Year
+- uid: DxFeed.Graal.Net.Schedules.Day.Year*
+  name: Year
+  href: docs/api/DxFeed.Graal.Net.Schedules.Day.html#DxFeed_Graal_Net_Schedules_Day_Year_
+  commentId: Overload:DxFeed.Graal.Net.Schedules.Day.Year
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Schedules.Day.Year
+  nameWithType: Day.Year
+- uid: DxFeed.Graal.Net.Schedules.Day.YearMonthDay
+  name: YearMonthDay
+  href: docs/api/DxFeed.Graal.Net.Schedules.Day.html#DxFeed_Graal_Net_Schedules_Day_YearMonthDay
+  commentId: P:DxFeed.Graal.Net.Schedules.Day.YearMonthDay
+  fullName: DxFeed.Graal.Net.Schedules.Day.YearMonthDay
+  nameWithType: Day.YearMonthDay
+- uid: DxFeed.Graal.Net.Schedules.Day.YearMonthDay*
+  name: YearMonthDay
+  href: docs/api/DxFeed.Graal.Net.Schedules.Day.html#DxFeed_Graal_Net_Schedules_Day_YearMonthDay_
+  commentId: Overload:DxFeed.Graal.Net.Schedules.Day.YearMonthDay
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Schedules.Day.YearMonthDay
+  nameWithType: Day.YearMonthDay
+- uid: DxFeed.Graal.Net.Schedules.DayFilter
+  name: DayFilter
+  href: docs/api/DxFeed.Graal.Net.Schedules.DayFilter.html
+  commentId: T:DxFeed.Graal.Net.Schedules.DayFilter
+  fullName: DxFeed.Graal.Net.Schedules.DayFilter
+  nameWithType: DayFilter
+- uid: DxFeed.Graal.Net.Schedules.DayFilter.ANY
+  name: ANY
+  href: docs/api/DxFeed.Graal.Net.Schedules.DayFilter.html#DxFeed_Graal_Net_Schedules_DayFilter_ANY
+  commentId: F:DxFeed.Graal.Net.Schedules.DayFilter.ANY
+  fullName: DxFeed.Graal.Net.Schedules.DayFilter.ANY
+  nameWithType: DayFilter.ANY
+- uid: DxFeed.Graal.Net.Schedules.DayFilter.FRIDAY
+  name: FRIDAY
+  href: docs/api/DxFeed.Graal.Net.Schedules.DayFilter.html#DxFeed_Graal_Net_Schedules_DayFilter_FRIDAY
+  commentId: F:DxFeed.Graal.Net.Schedules.DayFilter.FRIDAY
+  fullName: DxFeed.Graal.Net.Schedules.DayFilter.FRIDAY
+  nameWithType: DayFilter.FRIDAY
+- uid: DxFeed.Graal.Net.Schedules.DayFilter.HOLIDAY
+  name: HOLIDAY
+  href: docs/api/DxFeed.Graal.Net.Schedules.DayFilter.html#DxFeed_Graal_Net_Schedules_DayFilter_HOLIDAY
+  commentId: F:DxFeed.Graal.Net.Schedules.DayFilter.HOLIDAY
+  fullName: DxFeed.Graal.Net.Schedules.DayFilter.HOLIDAY
+  nameWithType: DayFilter.HOLIDAY
+- uid: DxFeed.Graal.Net.Schedules.DayFilter.MONDAY
+  name: MONDAY
+  href: docs/api/DxFeed.Graal.Net.Schedules.DayFilter.html#DxFeed_Graal_Net_Schedules_DayFilter_MONDAY
+  commentId: F:DxFeed.Graal.Net.Schedules.DayFilter.MONDAY
+  fullName: DxFeed.Graal.Net.Schedules.DayFilter.MONDAY
+  nameWithType: DayFilter.MONDAY
+- uid: DxFeed.Graal.Net.Schedules.DayFilter.NON_TRADING
+  name: NON_TRADING
+  href: docs/api/DxFeed.Graal.Net.Schedules.DayFilter.html#DxFeed_Graal_Net_Schedules_DayFilter_NON_TRADING
+  commentId: F:DxFeed.Graal.Net.Schedules.DayFilter.NON_TRADING
+  fullName: DxFeed.Graal.Net.Schedules.DayFilter.NON_TRADING
+  nameWithType: DayFilter.NON_TRADING
+- uid: DxFeed.Graal.Net.Schedules.DayFilter.SATURDAY
+  name: SATURDAY
+  href: docs/api/DxFeed.Graal.Net.Schedules.DayFilter.html#DxFeed_Graal_Net_Schedules_DayFilter_SATURDAY
+  commentId: F:DxFeed.Graal.Net.Schedules.DayFilter.SATURDAY
+  fullName: DxFeed.Graal.Net.Schedules.DayFilter.SATURDAY
+  nameWithType: DayFilter.SATURDAY
+- uid: DxFeed.Graal.Net.Schedules.DayFilter.SHORT_DAY
+  name: SHORT_DAY
+  href: docs/api/DxFeed.Graal.Net.Schedules.DayFilter.html#DxFeed_Graal_Net_Schedules_DayFilter_SHORT_DAY
+  commentId: F:DxFeed.Graal.Net.Schedules.DayFilter.SHORT_DAY
+  fullName: DxFeed.Graal.Net.Schedules.DayFilter.SHORT_DAY
+  nameWithType: DayFilter.SHORT_DAY
+- uid: DxFeed.Graal.Net.Schedules.DayFilter.SUNDAY
+  name: SUNDAY
+  href: docs/api/DxFeed.Graal.Net.Schedules.DayFilter.html#DxFeed_Graal_Net_Schedules_DayFilter_SUNDAY
+  commentId: F:DxFeed.Graal.Net.Schedules.DayFilter.SUNDAY
+  fullName: DxFeed.Graal.Net.Schedules.DayFilter.SUNDAY
+  nameWithType: DayFilter.SUNDAY
+- uid: DxFeed.Graal.Net.Schedules.DayFilter.THURSDAY
+  name: THURSDAY
+  href: docs/api/DxFeed.Graal.Net.Schedules.DayFilter.html#DxFeed_Graal_Net_Schedules_DayFilter_THURSDAY
+  commentId: F:DxFeed.Graal.Net.Schedules.DayFilter.THURSDAY
+  fullName: DxFeed.Graal.Net.Schedules.DayFilter.THURSDAY
+  nameWithType: DayFilter.THURSDAY
+- uid: DxFeed.Graal.Net.Schedules.DayFilter.TRADING
+  name: TRADING
+  href: docs/api/DxFeed.Graal.Net.Schedules.DayFilter.html#DxFeed_Graal_Net_Schedules_DayFilter_TRADING
+  commentId: F:DxFeed.Graal.Net.Schedules.DayFilter.TRADING
+  fullName: DxFeed.Graal.Net.Schedules.DayFilter.TRADING
+  nameWithType: DayFilter.TRADING
+- uid: DxFeed.Graal.Net.Schedules.DayFilter.TUESDAY
+  name: TUESDAY
+  href: docs/api/DxFeed.Graal.Net.Schedules.DayFilter.html#DxFeed_Graal_Net_Schedules_DayFilter_TUESDAY
+  commentId: F:DxFeed.Graal.Net.Schedules.DayFilter.TUESDAY
+  fullName: DxFeed.Graal.Net.Schedules.DayFilter.TUESDAY
+  nameWithType: DayFilter.TUESDAY
+- uid: DxFeed.Graal.Net.Schedules.DayFilter.WEDNESDAY
+  name: WEDNESDAY
+  href: docs/api/DxFeed.Graal.Net.Schedules.DayFilter.html#DxFeed_Graal_Net_Schedules_DayFilter_WEDNESDAY
+  commentId: F:DxFeed.Graal.Net.Schedules.DayFilter.WEDNESDAY
+  fullName: DxFeed.Graal.Net.Schedules.DayFilter.WEDNESDAY
+  nameWithType: DayFilter.WEDNESDAY
+- uid: DxFeed.Graal.Net.Schedules.DayFilter.WEEK_DAY
+  name: WEEK_DAY
+  href: docs/api/DxFeed.Graal.Net.Schedules.DayFilter.html#DxFeed_Graal_Net_Schedules_DayFilter_WEEK_DAY
+  commentId: F:DxFeed.Graal.Net.Schedules.DayFilter.WEEK_DAY
+  fullName: DxFeed.Graal.Net.Schedules.DayFilter.WEEK_DAY
+  nameWithType: DayFilter.WEEK_DAY
+- uid: DxFeed.Graal.Net.Schedules.DayFilter.WEEK_END
+  name: WEEK_END
+  href: docs/api/DxFeed.Graal.Net.Schedules.DayFilter.html#DxFeed_Graal_Net_Schedules_DayFilter_WEEK_END
+  commentId: F:DxFeed.Graal.Net.Schedules.DayFilter.WEEK_END
+  fullName: DxFeed.Graal.Net.Schedules.DayFilter.WEEK_END
+  nameWithType: DayFilter.WEEK_END
+- uid: DxFeed.Graal.Net.Schedules.Schedule
+  name: Schedule
+  href: docs/api/DxFeed.Graal.Net.Schedules.Schedule.html
+  commentId: T:DxFeed.Graal.Net.Schedules.Schedule
+  fullName: DxFeed.Graal.Net.Schedules.Schedule
+  nameWithType: Schedule
+- uid: DxFeed.Graal.Net.Schedules.Schedule.DownloadDefaults(System.String)
+  name: DownloadDefaults(string)
+  href: docs/api/DxFeed.Graal.Net.Schedules.Schedule.html#DxFeed_Graal_Net_Schedules_Schedule_DownloadDefaults_System_String_
+  commentId: M:DxFeed.Graal.Net.Schedules.Schedule.DownloadDefaults(System.String)
+  name.vb: DownloadDefaults(String)
+  fullName: DxFeed.Graal.Net.Schedules.Schedule.DownloadDefaults(string)
+  fullName.vb: DxFeed.Graal.Net.Schedules.Schedule.DownloadDefaults(String)
+  nameWithType: Schedule.DownloadDefaults(string)
+  nameWithType.vb: Schedule.DownloadDefaults(String)
+- uid: DxFeed.Graal.Net.Schedules.Schedule.DownloadDefaults*
+  name: DownloadDefaults
+  href: docs/api/DxFeed.Graal.Net.Schedules.Schedule.html#DxFeed_Graal_Net_Schedules_Schedule_DownloadDefaults_
+  commentId: Overload:DxFeed.Graal.Net.Schedules.Schedule.DownloadDefaults
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Schedules.Schedule.DownloadDefaults
+  nameWithType: Schedule.DownloadDefaults
+- uid: DxFeed.Graal.Net.Schedules.Schedule.GetDayById(System.Int32)
+  name: GetDayById(int)
+  href: docs/api/DxFeed.Graal.Net.Schedules.Schedule.html#DxFeed_Graal_Net_Schedules_Schedule_GetDayById_System_Int32_
+  commentId: M:DxFeed.Graal.Net.Schedules.Schedule.GetDayById(System.Int32)
+  name.vb: GetDayById(Integer)
+  fullName: DxFeed.Graal.Net.Schedules.Schedule.GetDayById(int)
+  fullName.vb: DxFeed.Graal.Net.Schedules.Schedule.GetDayById(Integer)
+  nameWithType: Schedule.GetDayById(int)
+  nameWithType.vb: Schedule.GetDayById(Integer)
+- uid: DxFeed.Graal.Net.Schedules.Schedule.GetDayById*
+  name: GetDayById
+  href: docs/api/DxFeed.Graal.Net.Schedules.Schedule.html#DxFeed_Graal_Net_Schedules_Schedule_GetDayById_
+  commentId: Overload:DxFeed.Graal.Net.Schedules.Schedule.GetDayById
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Schedules.Schedule.GetDayById
+  nameWithType: Schedule.GetDayById
+- uid: DxFeed.Graal.Net.Schedules.Schedule.GetDayByTime(System.Int64)
+  name: GetDayByTime(long)
+  href: docs/api/DxFeed.Graal.Net.Schedules.Schedule.html#DxFeed_Graal_Net_Schedules_Schedule_GetDayByTime_System_Int64_
+  commentId: M:DxFeed.Graal.Net.Schedules.Schedule.GetDayByTime(System.Int64)
+  name.vb: GetDayByTime(Long)
+  fullName: DxFeed.Graal.Net.Schedules.Schedule.GetDayByTime(long)
+  fullName.vb: DxFeed.Graal.Net.Schedules.Schedule.GetDayByTime(Long)
+  nameWithType: Schedule.GetDayByTime(long)
+  nameWithType.vb: Schedule.GetDayByTime(Long)
+- uid: DxFeed.Graal.Net.Schedules.Schedule.GetDayByTime*
+  name: GetDayByTime
+  href: docs/api/DxFeed.Graal.Net.Schedules.Schedule.html#DxFeed_Graal_Net_Schedules_Schedule_GetDayByTime_
+  commentId: Overload:DxFeed.Graal.Net.Schedules.Schedule.GetDayByTime
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Schedules.Schedule.GetDayByTime
+  nameWithType: Schedule.GetDayByTime
+- uid: DxFeed.Graal.Net.Schedules.Schedule.GetDayByYearMonthDay(System.Int32)
+  name: GetDayByYearMonthDay(int)
+  href: docs/api/DxFeed.Graal.Net.Schedules.Schedule.html#DxFeed_Graal_Net_Schedules_Schedule_GetDayByYearMonthDay_System_Int32_
+  commentId: M:DxFeed.Graal.Net.Schedules.Schedule.GetDayByYearMonthDay(System.Int32)
+  name.vb: GetDayByYearMonthDay(Integer)
+  fullName: DxFeed.Graal.Net.Schedules.Schedule.GetDayByYearMonthDay(int)
+  fullName.vb: DxFeed.Graal.Net.Schedules.Schedule.GetDayByYearMonthDay(Integer)
+  nameWithType: Schedule.GetDayByYearMonthDay(int)
+  nameWithType.vb: Schedule.GetDayByYearMonthDay(Integer)
+- uid: DxFeed.Graal.Net.Schedules.Schedule.GetDayByYearMonthDay*
+  name: GetDayByYearMonthDay
+  href: docs/api/DxFeed.Graal.Net.Schedules.Schedule.html#DxFeed_Graal_Net_Schedules_Schedule_GetDayByYearMonthDay_
+  commentId: Overload:DxFeed.Graal.Net.Schedules.Schedule.GetDayByYearMonthDay
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Schedules.Schedule.GetDayByYearMonthDay
+  nameWithType: Schedule.GetDayByYearMonthDay
+- uid: DxFeed.Graal.Net.Schedules.Schedule.GetInstance(DxFeed.Graal.Net.Ipf.InstrumentProfile)
+  name: GetInstance(InstrumentProfile)
+  href: docs/api/DxFeed.Graal.Net.Schedules.Schedule.html#DxFeed_Graal_Net_Schedules_Schedule_GetInstance_DxFeed_Graal_Net_Ipf_InstrumentProfile_
+  commentId: M:DxFeed.Graal.Net.Schedules.Schedule.GetInstance(DxFeed.Graal.Net.Ipf.InstrumentProfile)
+  fullName: DxFeed.Graal.Net.Schedules.Schedule.GetInstance(DxFeed.Graal.Net.Ipf.InstrumentProfile)
+  nameWithType: Schedule.GetInstance(InstrumentProfile)
+- uid: DxFeed.Graal.Net.Schedules.Schedule.GetInstance(DxFeed.Graal.Net.Ipf.InstrumentProfile,System.String)
+  name: GetInstance(InstrumentProfile, string)
+  href: docs/api/DxFeed.Graal.Net.Schedules.Schedule.html#DxFeed_Graal_Net_Schedules_Schedule_GetInstance_DxFeed_Graal_Net_Ipf_InstrumentProfile_System_String_
+  commentId: M:DxFeed.Graal.Net.Schedules.Schedule.GetInstance(DxFeed.Graal.Net.Ipf.InstrumentProfile,System.String)
+  name.vb: GetInstance(InstrumentProfile, String)
+  fullName: DxFeed.Graal.Net.Schedules.Schedule.GetInstance(DxFeed.Graal.Net.Ipf.InstrumentProfile, string)
+  fullName.vb: DxFeed.Graal.Net.Schedules.Schedule.GetInstance(DxFeed.Graal.Net.Ipf.InstrumentProfile, String)
+  nameWithType: Schedule.GetInstance(InstrumentProfile, string)
+  nameWithType.vb: Schedule.GetInstance(InstrumentProfile, String)
+- uid: DxFeed.Graal.Net.Schedules.Schedule.GetInstance(System.String)
+  name: GetInstance(string)
+  href: docs/api/DxFeed.Graal.Net.Schedules.Schedule.html#DxFeed_Graal_Net_Schedules_Schedule_GetInstance_System_String_
+  commentId: M:DxFeed.Graal.Net.Schedules.Schedule.GetInstance(System.String)
+  name.vb: GetInstance(String)
+  fullName: DxFeed.Graal.Net.Schedules.Schedule.GetInstance(string)
+  fullName.vb: DxFeed.Graal.Net.Schedules.Schedule.GetInstance(String)
+  nameWithType: Schedule.GetInstance(string)
+  nameWithType.vb: Schedule.GetInstance(String)
+- uid: DxFeed.Graal.Net.Schedules.Schedule.GetInstance*
+  name: GetInstance
+  href: docs/api/DxFeed.Graal.Net.Schedules.Schedule.html#DxFeed_Graal_Net_Schedules_Schedule_GetInstance_
+  commentId: Overload:DxFeed.Graal.Net.Schedules.Schedule.GetInstance
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Schedules.Schedule.GetInstance
+  nameWithType: Schedule.GetInstance
+- uid: DxFeed.Graal.Net.Schedules.Schedule.GetName
+  name: GetName()
+  href: docs/api/DxFeed.Graal.Net.Schedules.Schedule.html#DxFeed_Graal_Net_Schedules_Schedule_GetName
+  commentId: M:DxFeed.Graal.Net.Schedules.Schedule.GetName
+  fullName: DxFeed.Graal.Net.Schedules.Schedule.GetName()
+  nameWithType: Schedule.GetName()
+- uid: DxFeed.Graal.Net.Schedules.Schedule.GetName*
+  name: GetName
+  href: docs/api/DxFeed.Graal.Net.Schedules.Schedule.html#DxFeed_Graal_Net_Schedules_Schedule_GetName_
+  commentId: Overload:DxFeed.Graal.Net.Schedules.Schedule.GetName
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Schedules.Schedule.GetName
+  nameWithType: Schedule.GetName
+- uid: DxFeed.Graal.Net.Schedules.Schedule.GetNearestSessionByTime(System.Int64,DxFeed.Graal.Net.Schedules.SessionFilter)
+  name: GetNearestSessionByTime(long, SessionFilter)
+  href: docs/api/DxFeed.Graal.Net.Schedules.Schedule.html#DxFeed_Graal_Net_Schedules_Schedule_GetNearestSessionByTime_System_Int64_DxFeed_Graal_Net_Schedules_SessionFilter_
+  commentId: M:DxFeed.Graal.Net.Schedules.Schedule.GetNearestSessionByTime(System.Int64,DxFeed.Graal.Net.Schedules.SessionFilter)
+  name.vb: GetNearestSessionByTime(Long, SessionFilter)
+  fullName: DxFeed.Graal.Net.Schedules.Schedule.GetNearestSessionByTime(long, DxFeed.Graal.Net.Schedules.SessionFilter)
+  fullName.vb: DxFeed.Graal.Net.Schedules.Schedule.GetNearestSessionByTime(Long, DxFeed.Graal.Net.Schedules.SessionFilter)
+  nameWithType: Schedule.GetNearestSessionByTime(long, SessionFilter)
+  nameWithType.vb: Schedule.GetNearestSessionByTime(Long, SessionFilter)
+- uid: DxFeed.Graal.Net.Schedules.Schedule.GetNearestSessionByTime*
+  name: GetNearestSessionByTime
+  href: docs/api/DxFeed.Graal.Net.Schedules.Schedule.html#DxFeed_Graal_Net_Schedules_Schedule_GetNearestSessionByTime_
+  commentId: Overload:DxFeed.Graal.Net.Schedules.Schedule.GetNearestSessionByTime
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Schedules.Schedule.GetNearestSessionByTime
+  nameWithType: Schedule.GetNearestSessionByTime
+- uid: DxFeed.Graal.Net.Schedules.Schedule.GetSessionByTime(System.Int64)
+  name: GetSessionByTime(long)
+  href: docs/api/DxFeed.Graal.Net.Schedules.Schedule.html#DxFeed_Graal_Net_Schedules_Schedule_GetSessionByTime_System_Int64_
+  commentId: M:DxFeed.Graal.Net.Schedules.Schedule.GetSessionByTime(System.Int64)
+  name.vb: GetSessionByTime(Long)
+  fullName: DxFeed.Graal.Net.Schedules.Schedule.GetSessionByTime(long)
+  fullName.vb: DxFeed.Graal.Net.Schedules.Schedule.GetSessionByTime(Long)
+  nameWithType: Schedule.GetSessionByTime(long)
+  nameWithType.vb: Schedule.GetSessionByTime(Long)
+- uid: DxFeed.Graal.Net.Schedules.Schedule.GetSessionByTime*
+  name: GetSessionByTime
+  href: docs/api/DxFeed.Graal.Net.Schedules.Schedule.html#DxFeed_Graal_Net_Schedules_Schedule_GetSessionByTime_
+  commentId: Overload:DxFeed.Graal.Net.Schedules.Schedule.GetSessionByTime
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Schedules.Schedule.GetSessionByTime
+  nameWithType: Schedule.GetSessionByTime
+- uid: DxFeed.Graal.Net.Schedules.Schedule.GetTimeZone
+  name: GetTimeZone()
+  href: docs/api/DxFeed.Graal.Net.Schedules.Schedule.html#DxFeed_Graal_Net_Schedules_Schedule_GetTimeZone
+  commentId: M:DxFeed.Graal.Net.Schedules.Schedule.GetTimeZone
+  fullName: DxFeed.Graal.Net.Schedules.Schedule.GetTimeZone()
+  nameWithType: Schedule.GetTimeZone()
+- uid: DxFeed.Graal.Net.Schedules.Schedule.GetTimeZone*
+  name: GetTimeZone
+  href: docs/api/DxFeed.Graal.Net.Schedules.Schedule.html#DxFeed_Graal_Net_Schedules_Schedule_GetTimeZone_
+  commentId: Overload:DxFeed.Graal.Net.Schedules.Schedule.GetTimeZone
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Schedules.Schedule.GetTimeZone
+  nameWithType: Schedule.GetTimeZone
+- uid: DxFeed.Graal.Net.Schedules.Schedule.GetTradingVenues(DxFeed.Graal.Net.Ipf.InstrumentProfile)
+  name: GetTradingVenues(InstrumentProfile)
+  href: docs/api/DxFeed.Graal.Net.Schedules.Schedule.html#DxFeed_Graal_Net_Schedules_Schedule_GetTradingVenues_DxFeed_Graal_Net_Ipf_InstrumentProfile_
+  commentId: M:DxFeed.Graal.Net.Schedules.Schedule.GetTradingVenues(DxFeed.Graal.Net.Ipf.InstrumentProfile)
+  fullName: DxFeed.Graal.Net.Schedules.Schedule.GetTradingVenues(DxFeed.Graal.Net.Ipf.InstrumentProfile)
+  nameWithType: Schedule.GetTradingVenues(InstrumentProfile)
+- uid: DxFeed.Graal.Net.Schedules.Schedule.GetTradingVenues*
+  name: GetTradingVenues
+  href: docs/api/DxFeed.Graal.Net.Schedules.Schedule.html#DxFeed_Graal_Net_Schedules_Schedule_GetTradingVenues_
+  commentId: Overload:DxFeed.Graal.Net.Schedules.Schedule.GetTradingVenues
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Schedules.Schedule.GetTradingVenues
+  nameWithType: Schedule.GetTradingVenues
+- uid: DxFeed.Graal.Net.Schedules.Schedule.SetDefaults(System.Byte[])
+  name: SetDefaults(byte[])
+  href: docs/api/DxFeed.Graal.Net.Schedules.Schedule.html#DxFeed_Graal_Net_Schedules_Schedule_SetDefaults_System_Byte___
+  commentId: M:DxFeed.Graal.Net.Schedules.Schedule.SetDefaults(System.Byte[])
+  name.vb: SetDefaults(Byte())
+  fullName: DxFeed.Graal.Net.Schedules.Schedule.SetDefaults(byte[])
+  fullName.vb: DxFeed.Graal.Net.Schedules.Schedule.SetDefaults(Byte())
+  nameWithType: Schedule.SetDefaults(byte[])
+  nameWithType.vb: Schedule.SetDefaults(Byte())
+- uid: DxFeed.Graal.Net.Schedules.Schedule.SetDefaults*
+  name: SetDefaults
+  href: docs/api/DxFeed.Graal.Net.Schedules.Schedule.html#DxFeed_Graal_Net_Schedules_Schedule_SetDefaults_
+  commentId: Overload:DxFeed.Graal.Net.Schedules.Schedule.SetDefaults
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Schedules.Schedule.SetDefaults
+  nameWithType: Schedule.SetDefaults
+- uid: DxFeed.Graal.Net.Schedules.Schedule.TryGetNearestSessionByTime(System.Int64,DxFeed.Graal.Net.Schedules.SessionFilter,DxFeed.Graal.Net.Schedules.Session@)
+  name: TryGetNearestSessionByTime(long, SessionFilter, out Session)
+  href: docs/api/DxFeed.Graal.Net.Schedules.Schedule.html#DxFeed_Graal_Net_Schedules_Schedule_TryGetNearestSessionByTime_System_Int64_DxFeed_Graal_Net_Schedules_SessionFilter_DxFeed_Graal_Net_Schedules_Session__
+  commentId: M:DxFeed.Graal.Net.Schedules.Schedule.TryGetNearestSessionByTime(System.Int64,DxFeed.Graal.Net.Schedules.SessionFilter,DxFeed.Graal.Net.Schedules.Session@)
+  name.vb: TryGetNearestSessionByTime(Long, SessionFilter, Session)
+  fullName: DxFeed.Graal.Net.Schedules.Schedule.TryGetNearestSessionByTime(long, DxFeed.Graal.Net.Schedules.SessionFilter, out DxFeed.Graal.Net.Schedules.Session)
+  fullName.vb: DxFeed.Graal.Net.Schedules.Schedule.TryGetNearestSessionByTime(Long, DxFeed.Graal.Net.Schedules.SessionFilter, DxFeed.Graal.Net.Schedules.Session)
+  nameWithType: Schedule.TryGetNearestSessionByTime(long, SessionFilter, out Session)
+  nameWithType.vb: Schedule.TryGetNearestSessionByTime(Long, SessionFilter, Session)
+- uid: DxFeed.Graal.Net.Schedules.Schedule.TryGetNearestSessionByTime*
+  name: TryGetNearestSessionByTime
+  href: docs/api/DxFeed.Graal.Net.Schedules.Schedule.html#DxFeed_Graal_Net_Schedules_Schedule_TryGetNearestSessionByTime_
+  commentId: Overload:DxFeed.Graal.Net.Schedules.Schedule.TryGetNearestSessionByTime
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Schedules.Schedule.TryGetNearestSessionByTime
+  nameWithType: Schedule.TryGetNearestSessionByTime
+- uid: DxFeed.Graal.Net.Schedules.Session
+  name: Session
+  href: docs/api/DxFeed.Graal.Net.Schedules.Session.html
+  commentId: T:DxFeed.Graal.Net.Schedules.Session
+  fullName: DxFeed.Graal.Net.Schedules.Session
+  nameWithType: Session
+- uid: DxFeed.Graal.Net.Schedules.Session.ContainsTime(System.Int64)
+  name: ContainsTime(long)
+  href: docs/api/DxFeed.Graal.Net.Schedules.Session.html#DxFeed_Graal_Net_Schedules_Session_ContainsTime_System_Int64_
+  commentId: M:DxFeed.Graal.Net.Schedules.Session.ContainsTime(System.Int64)
+  name.vb: ContainsTime(Long)
+  fullName: DxFeed.Graal.Net.Schedules.Session.ContainsTime(long)
+  fullName.vb: DxFeed.Graal.Net.Schedules.Session.ContainsTime(Long)
+  nameWithType: Session.ContainsTime(long)
+  nameWithType.vb: Session.ContainsTime(Long)
+- uid: DxFeed.Graal.Net.Schedules.Session.ContainsTime*
+  name: ContainsTime
+  href: docs/api/DxFeed.Graal.Net.Schedules.Session.html#DxFeed_Graal_Net_Schedules_Session_ContainsTime_
+  commentId: Overload:DxFeed.Graal.Net.Schedules.Session.ContainsTime
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Schedules.Session.ContainsTime
+  nameWithType: Session.ContainsTime
+- uid: DxFeed.Graal.Net.Schedules.Session.Day
+  name: Day
+  href: docs/api/DxFeed.Graal.Net.Schedules.Session.html#DxFeed_Graal_Net_Schedules_Session_Day
+  commentId: P:DxFeed.Graal.Net.Schedules.Session.Day
+  fullName: DxFeed.Graal.Net.Schedules.Session.Day
+  nameWithType: Session.Day
+- uid: DxFeed.Graal.Net.Schedules.Session.Day*
+  name: Day
+  href: docs/api/DxFeed.Graal.Net.Schedules.Session.html#DxFeed_Graal_Net_Schedules_Session_Day_
+  commentId: Overload:DxFeed.Graal.Net.Schedules.Session.Day
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Schedules.Session.Day
+  nameWithType: Session.Day
+- uid: DxFeed.Graal.Net.Schedules.Session.EndTime
+  name: EndTime
+  href: docs/api/DxFeed.Graal.Net.Schedules.Session.html#DxFeed_Graal_Net_Schedules_Session_EndTime
+  commentId: P:DxFeed.Graal.Net.Schedules.Session.EndTime
+  fullName: DxFeed.Graal.Net.Schedules.Session.EndTime
+  nameWithType: Session.EndTime
+- uid: DxFeed.Graal.Net.Schedules.Session.EndTime*
+  name: EndTime
+  href: docs/api/DxFeed.Graal.Net.Schedules.Session.html#DxFeed_Graal_Net_Schedules_Session_EndTime_
+  commentId: Overload:DxFeed.Graal.Net.Schedules.Session.EndTime
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Schedules.Session.EndTime
+  nameWithType: Session.EndTime
+- uid: DxFeed.Graal.Net.Schedules.Session.Equals(System.Object)
+  name: Equals(object?)
+  href: docs/api/DxFeed.Graal.Net.Schedules.Session.html#DxFeed_Graal_Net_Schedules_Session_Equals_System_Object_
+  commentId: M:DxFeed.Graal.Net.Schedules.Session.Equals(System.Object)
+  name.vb: Equals(Object)
+  fullName: DxFeed.Graal.Net.Schedules.Session.Equals(object?)
+  fullName.vb: DxFeed.Graal.Net.Schedules.Session.Equals(Object)
+  nameWithType: Session.Equals(object?)
+  nameWithType.vb: Session.Equals(Object)
+- uid: DxFeed.Graal.Net.Schedules.Session.Equals*
+  name: Equals
+  href: docs/api/DxFeed.Graal.Net.Schedules.Session.html#DxFeed_Graal_Net_Schedules_Session_Equals_
+  commentId: Overload:DxFeed.Graal.Net.Schedules.Session.Equals
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Schedules.Session.Equals
+  nameWithType: Session.Equals
+- uid: DxFeed.Graal.Net.Schedules.Session.GetHashCode
+  name: GetHashCode()
+  href: docs/api/DxFeed.Graal.Net.Schedules.Session.html#DxFeed_Graal_Net_Schedules_Session_GetHashCode
+  commentId: M:DxFeed.Graal.Net.Schedules.Session.GetHashCode
+  fullName: DxFeed.Graal.Net.Schedules.Session.GetHashCode()
+  nameWithType: Session.GetHashCode()
+- uid: DxFeed.Graal.Net.Schedules.Session.GetHashCode*
+  name: GetHashCode
+  href: docs/api/DxFeed.Graal.Net.Schedules.Session.html#DxFeed_Graal_Net_Schedules_Session_GetHashCode_
+  commentId: Overload:DxFeed.Graal.Net.Schedules.Session.GetHashCode
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Schedules.Session.GetHashCode
+  nameWithType: Session.GetHashCode
+- uid: DxFeed.Graal.Net.Schedules.Session.GetNextSession(DxFeed.Graal.Net.Schedules.SessionFilter)
+  name: GetNextSession(SessionFilter)
+  href: docs/api/DxFeed.Graal.Net.Schedules.Session.html#DxFeed_Graal_Net_Schedules_Session_GetNextSession_DxFeed_Graal_Net_Schedules_SessionFilter_
+  commentId: M:DxFeed.Graal.Net.Schedules.Session.GetNextSession(DxFeed.Graal.Net.Schedules.SessionFilter)
+  fullName: DxFeed.Graal.Net.Schedules.Session.GetNextSession(DxFeed.Graal.Net.Schedules.SessionFilter)
+  nameWithType: Session.GetNextSession(SessionFilter)
+- uid: DxFeed.Graal.Net.Schedules.Session.GetNextSession*
+  name: GetNextSession
+  href: docs/api/DxFeed.Graal.Net.Schedules.Session.html#DxFeed_Graal_Net_Schedules_Session_GetNextSession_
+  commentId: Overload:DxFeed.Graal.Net.Schedules.Session.GetNextSession
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Schedules.Session.GetNextSession
+  nameWithType: Session.GetNextSession
+- uid: DxFeed.Graal.Net.Schedules.Session.GetPrevSession(DxFeed.Graal.Net.Schedules.SessionFilter)
+  name: GetPrevSession(SessionFilter)
+  href: docs/api/DxFeed.Graal.Net.Schedules.Session.html#DxFeed_Graal_Net_Schedules_Session_GetPrevSession_DxFeed_Graal_Net_Schedules_SessionFilter_
+  commentId: M:DxFeed.Graal.Net.Schedules.Session.GetPrevSession(DxFeed.Graal.Net.Schedules.SessionFilter)
+  fullName: DxFeed.Graal.Net.Schedules.Session.GetPrevSession(DxFeed.Graal.Net.Schedules.SessionFilter)
+  nameWithType: Session.GetPrevSession(SessionFilter)
+- uid: DxFeed.Graal.Net.Schedules.Session.GetPrevSession*
+  name: GetPrevSession
+  href: docs/api/DxFeed.Graal.Net.Schedules.Session.html#DxFeed_Graal_Net_Schedules_Session_GetPrevSession_
+  commentId: Overload:DxFeed.Graal.Net.Schedules.Session.GetPrevSession
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Schedules.Session.GetPrevSession
+  nameWithType: Session.GetPrevSession
+- uid: DxFeed.Graal.Net.Schedules.Session.IsEmpty
+  name: IsEmpty
+  href: docs/api/DxFeed.Graal.Net.Schedules.Session.html#DxFeed_Graal_Net_Schedules_Session_IsEmpty
+  commentId: P:DxFeed.Graal.Net.Schedules.Session.IsEmpty
+  fullName: DxFeed.Graal.Net.Schedules.Session.IsEmpty
+  nameWithType: Session.IsEmpty
+- uid: DxFeed.Graal.Net.Schedules.Session.IsEmpty*
+  name: IsEmpty
+  href: docs/api/DxFeed.Graal.Net.Schedules.Session.html#DxFeed_Graal_Net_Schedules_Session_IsEmpty_
+  commentId: Overload:DxFeed.Graal.Net.Schedules.Session.IsEmpty
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Schedules.Session.IsEmpty
+  nameWithType: Session.IsEmpty
+- uid: DxFeed.Graal.Net.Schedules.Session.IsTrading
+  name: IsTrading
+  href: docs/api/DxFeed.Graal.Net.Schedules.Session.html#DxFeed_Graal_Net_Schedules_Session_IsTrading
+  commentId: P:DxFeed.Graal.Net.Schedules.Session.IsTrading
+  fullName: DxFeed.Graal.Net.Schedules.Session.IsTrading
+  nameWithType: Session.IsTrading
+- uid: DxFeed.Graal.Net.Schedules.Session.IsTrading*
+  name: IsTrading
+  href: docs/api/DxFeed.Graal.Net.Schedules.Session.html#DxFeed_Graal_Net_Schedules_Session_IsTrading_
+  commentId: Overload:DxFeed.Graal.Net.Schedules.Session.IsTrading
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Schedules.Session.IsTrading
+  nameWithType: Session.IsTrading
+- uid: DxFeed.Graal.Net.Schedules.Session.StartTime
+  name: StartTime
+  href: docs/api/DxFeed.Graal.Net.Schedules.Session.html#DxFeed_Graal_Net_Schedules_Session_StartTime
+  commentId: P:DxFeed.Graal.Net.Schedules.Session.StartTime
+  fullName: DxFeed.Graal.Net.Schedules.Session.StartTime
+  nameWithType: Session.StartTime
+- uid: DxFeed.Graal.Net.Schedules.Session.StartTime*
+  name: StartTime
+  href: docs/api/DxFeed.Graal.Net.Schedules.Session.html#DxFeed_Graal_Net_Schedules_Session_StartTime_
+  commentId: Overload:DxFeed.Graal.Net.Schedules.Session.StartTime
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Schedules.Session.StartTime
+  nameWithType: Session.StartTime
+- uid: DxFeed.Graal.Net.Schedules.Session.ToString
+  name: ToString()
+  href: docs/api/DxFeed.Graal.Net.Schedules.Session.html#DxFeed_Graal_Net_Schedules_Session_ToString
+  commentId: M:DxFeed.Graal.Net.Schedules.Session.ToString
+  fullName: DxFeed.Graal.Net.Schedules.Session.ToString()
+  nameWithType: Session.ToString()
+- uid: DxFeed.Graal.Net.Schedules.Session.ToString*
+  name: ToString
+  href: docs/api/DxFeed.Graal.Net.Schedules.Session.html#DxFeed_Graal_Net_Schedules_Session_ToString_
+  commentId: Overload:DxFeed.Graal.Net.Schedules.Session.ToString
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Schedules.Session.ToString
+  nameWithType: Session.ToString
+- uid: DxFeed.Graal.Net.Schedules.Session.TryGetNextSession(DxFeed.Graal.Net.Schedules.SessionFilter,DxFeed.Graal.Net.Schedules.Session@)
+  name: TryGetNextSession(SessionFilter, out Session)
+  href: docs/api/DxFeed.Graal.Net.Schedules.Session.html#DxFeed_Graal_Net_Schedules_Session_TryGetNextSession_DxFeed_Graal_Net_Schedules_SessionFilter_DxFeed_Graal_Net_Schedules_Session__
+  commentId: M:DxFeed.Graal.Net.Schedules.Session.TryGetNextSession(DxFeed.Graal.Net.Schedules.SessionFilter,DxFeed.Graal.Net.Schedules.Session@)
+  name.vb: TryGetNextSession(SessionFilter, Session)
+  fullName: DxFeed.Graal.Net.Schedules.Session.TryGetNextSession(DxFeed.Graal.Net.Schedules.SessionFilter, out DxFeed.Graal.Net.Schedules.Session)
+  fullName.vb: DxFeed.Graal.Net.Schedules.Session.TryGetNextSession(DxFeed.Graal.Net.Schedules.SessionFilter, DxFeed.Graal.Net.Schedules.Session)
+  nameWithType: Session.TryGetNextSession(SessionFilter, out Session)
+  nameWithType.vb: Session.TryGetNextSession(SessionFilter, Session)
+- uid: DxFeed.Graal.Net.Schedules.Session.TryGetNextSession*
+  name: TryGetNextSession
+  href: docs/api/DxFeed.Graal.Net.Schedules.Session.html#DxFeed_Graal_Net_Schedules_Session_TryGetNextSession_
+  commentId: Overload:DxFeed.Graal.Net.Schedules.Session.TryGetNextSession
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Schedules.Session.TryGetNextSession
+  nameWithType: Session.TryGetNextSession
+- uid: DxFeed.Graal.Net.Schedules.Session.TryGetPrevSession(DxFeed.Graal.Net.Schedules.SessionFilter,DxFeed.Graal.Net.Schedules.Session@)
+  name: TryGetPrevSession(SessionFilter, out Session)
+  href: docs/api/DxFeed.Graal.Net.Schedules.Session.html#DxFeed_Graal_Net_Schedules_Session_TryGetPrevSession_DxFeed_Graal_Net_Schedules_SessionFilter_DxFeed_Graal_Net_Schedules_Session__
+  commentId: M:DxFeed.Graal.Net.Schedules.Session.TryGetPrevSession(DxFeed.Graal.Net.Schedules.SessionFilter,DxFeed.Graal.Net.Schedules.Session@)
+  name.vb: TryGetPrevSession(SessionFilter, Session)
+  fullName: DxFeed.Graal.Net.Schedules.Session.TryGetPrevSession(DxFeed.Graal.Net.Schedules.SessionFilter, out DxFeed.Graal.Net.Schedules.Session)
+  fullName.vb: DxFeed.Graal.Net.Schedules.Session.TryGetPrevSession(DxFeed.Graal.Net.Schedules.SessionFilter, DxFeed.Graal.Net.Schedules.Session)
+  nameWithType: Session.TryGetPrevSession(SessionFilter, out Session)
+  nameWithType.vb: Session.TryGetPrevSession(SessionFilter, Session)
+- uid: DxFeed.Graal.Net.Schedules.Session.TryGetPrevSession*
+  name: TryGetPrevSession
+  href: docs/api/DxFeed.Graal.Net.Schedules.Session.html#DxFeed_Graal_Net_Schedules_Session_TryGetPrevSession_
+  commentId: Overload:DxFeed.Graal.Net.Schedules.Session.TryGetPrevSession
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Schedules.Session.TryGetPrevSession
+  nameWithType: Session.TryGetPrevSession
+- uid: DxFeed.Graal.Net.Schedules.Session.Type
+  name: Type
+  href: docs/api/DxFeed.Graal.Net.Schedules.Session.html#DxFeed_Graal_Net_Schedules_Session_Type
+  commentId: P:DxFeed.Graal.Net.Schedules.Session.Type
+  fullName: DxFeed.Graal.Net.Schedules.Session.Type
+  nameWithType: Session.Type
+- uid: DxFeed.Graal.Net.Schedules.Session.Type*
+  name: Type
+  href: docs/api/DxFeed.Graal.Net.Schedules.Session.html#DxFeed_Graal_Net_Schedules_Session_Type_
+  commentId: Overload:DxFeed.Graal.Net.Schedules.Session.Type
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Schedules.Session.Type
+  nameWithType: Session.Type
+- uid: DxFeed.Graal.Net.Schedules.SessionFilter
+  name: SessionFilter
+  href: docs/api/DxFeed.Graal.Net.Schedules.SessionFilter.html
+  commentId: T:DxFeed.Graal.Net.Schedules.SessionFilter
+  fullName: DxFeed.Graal.Net.Schedules.SessionFilter
+  nameWithType: SessionFilter
+- uid: DxFeed.Graal.Net.Schedules.SessionFilter.AFTER_MARKET
+  name: AFTER_MARKET
+  href: docs/api/DxFeed.Graal.Net.Schedules.SessionFilter.html#DxFeed_Graal_Net_Schedules_SessionFilter_AFTER_MARKET
+  commentId: F:DxFeed.Graal.Net.Schedules.SessionFilter.AFTER_MARKET
+  fullName: DxFeed.Graal.Net.Schedules.SessionFilter.AFTER_MARKET
+  nameWithType: SessionFilter.AFTER_MARKET
+- uid: DxFeed.Graal.Net.Schedules.SessionFilter.ANY
+  name: ANY
+  href: docs/api/DxFeed.Graal.Net.Schedules.SessionFilter.html#DxFeed_Graal_Net_Schedules_SessionFilter_ANY
+  commentId: F:DxFeed.Graal.Net.Schedules.SessionFilter.ANY
+  fullName: DxFeed.Graal.Net.Schedules.SessionFilter.ANY
+  nameWithType: SessionFilter.ANY
+- uid: DxFeed.Graal.Net.Schedules.SessionFilter.NON_TRADING
+  name: NON_TRADING
+  href: docs/api/DxFeed.Graal.Net.Schedules.SessionFilter.html#DxFeed_Graal_Net_Schedules_SessionFilter_NON_TRADING
+  commentId: F:DxFeed.Graal.Net.Schedules.SessionFilter.NON_TRADING
+  fullName: DxFeed.Graal.Net.Schedules.SessionFilter.NON_TRADING
+  nameWithType: SessionFilter.NON_TRADING
+- uid: DxFeed.Graal.Net.Schedules.SessionFilter.NO_TRADING
+  name: NO_TRADING
+  href: docs/api/DxFeed.Graal.Net.Schedules.SessionFilter.html#DxFeed_Graal_Net_Schedules_SessionFilter_NO_TRADING
+  commentId: F:DxFeed.Graal.Net.Schedules.SessionFilter.NO_TRADING
+  fullName: DxFeed.Graal.Net.Schedules.SessionFilter.NO_TRADING
+  nameWithType: SessionFilter.NO_TRADING
+- uid: DxFeed.Graal.Net.Schedules.SessionFilter.PRE_MARKET
+  name: PRE_MARKET
+  href: docs/api/DxFeed.Graal.Net.Schedules.SessionFilter.html#DxFeed_Graal_Net_Schedules_SessionFilter_PRE_MARKET
+  commentId: F:DxFeed.Graal.Net.Schedules.SessionFilter.PRE_MARKET
+  fullName: DxFeed.Graal.Net.Schedules.SessionFilter.PRE_MARKET
+  nameWithType: SessionFilter.PRE_MARKET
+- uid: DxFeed.Graal.Net.Schedules.SessionFilter.REGULAR
+  name: REGULAR
+  href: docs/api/DxFeed.Graal.Net.Schedules.SessionFilter.html#DxFeed_Graal_Net_Schedules_SessionFilter_REGULAR
+  commentId: F:DxFeed.Graal.Net.Schedules.SessionFilter.REGULAR
+  fullName: DxFeed.Graal.Net.Schedules.SessionFilter.REGULAR
+  nameWithType: SessionFilter.REGULAR
+- uid: DxFeed.Graal.Net.Schedules.SessionFilter.TRADING
+  name: TRADING
+  href: docs/api/DxFeed.Graal.Net.Schedules.SessionFilter.html#DxFeed_Graal_Net_Schedules_SessionFilter_TRADING
+  commentId: F:DxFeed.Graal.Net.Schedules.SessionFilter.TRADING
+  fullName: DxFeed.Graal.Net.Schedules.SessionFilter.TRADING
+  nameWithType: SessionFilter.TRADING
+- uid: DxFeed.Graal.Net.Schedules.SessionFilter.Type
+  name: Type
+  href: docs/api/DxFeed.Graal.Net.Schedules.SessionFilter.html#DxFeed_Graal_Net_Schedules_SessionFilter_Type
+  commentId: P:DxFeed.Graal.Net.Schedules.SessionFilter.Type
+  fullName: DxFeed.Graal.Net.Schedules.SessionFilter.Type
+  nameWithType: SessionFilter.Type
+- uid: DxFeed.Graal.Net.Schedules.SessionFilter.Type*
+  name: Type
+  href: docs/api/DxFeed.Graal.Net.Schedules.SessionFilter.html#DxFeed_Graal_Net_Schedules_SessionFilter_Type_
+  commentId: Overload:DxFeed.Graal.Net.Schedules.SessionFilter.Type
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Schedules.SessionFilter.Type
+  nameWithType: SessionFilter.Type
+- uid: DxFeed.Graal.Net.Schedules.SessionType
+  name: SessionType
+  href: docs/api/DxFeed.Graal.Net.Schedules.SessionType.html
+  commentId: T:DxFeed.Graal.Net.Schedules.SessionType
+  fullName: DxFeed.Graal.Net.Schedules.SessionType
+  nameWithType: SessionType
+- uid: DxFeed.Graal.Net.Schedules.SessionType.AFTER_MARKET
+  name: AFTER_MARKET
+  href: docs/api/DxFeed.Graal.Net.Schedules.SessionType.html#DxFeed_Graal_Net_Schedules_SessionType_AFTER_MARKET
+  commentId: F:DxFeed.Graal.Net.Schedules.SessionType.AFTER_MARKET
+  fullName: DxFeed.Graal.Net.Schedules.SessionType.AFTER_MARKET
+  nameWithType: SessionType.AFTER_MARKET
+- uid: DxFeed.Graal.Net.Schedules.SessionType.NO_TRADING
+  name: NO_TRADING
+  href: docs/api/DxFeed.Graal.Net.Schedules.SessionType.html#DxFeed_Graal_Net_Schedules_SessionType_NO_TRADING
+  commentId: F:DxFeed.Graal.Net.Schedules.SessionType.NO_TRADING
+  fullName: DxFeed.Graal.Net.Schedules.SessionType.NO_TRADING
+  nameWithType: SessionType.NO_TRADING
+- uid: DxFeed.Graal.Net.Schedules.SessionType.PRE_MARKET
+  name: PRE_MARKET
+  href: docs/api/DxFeed.Graal.Net.Schedules.SessionType.html#DxFeed_Graal_Net_Schedules_SessionType_PRE_MARKET
+  commentId: F:DxFeed.Graal.Net.Schedules.SessionType.PRE_MARKET
+  fullName: DxFeed.Graal.Net.Schedules.SessionType.PRE_MARKET
+  nameWithType: SessionType.PRE_MARKET
+- uid: DxFeed.Graal.Net.Schedules.SessionType.REGULAR
+  name: REGULAR
+  href: docs/api/DxFeed.Graal.Net.Schedules.SessionType.html#DxFeed_Graal_Net_Schedules_SessionType_REGULAR
+  commentId: F:DxFeed.Graal.Net.Schedules.SessionType.REGULAR
+  fullName: DxFeed.Graal.Net.Schedules.SessionType.REGULAR
+  nameWithType: SessionType.REGULAR
 - uid: DxFeed.Graal.Net.SystemProperty
   name: SystemProperty
   href: docs/api/DxFeed.Graal.Net.SystemProperty.html
@@ -9650,28 +10850,28 @@ references:
   commentId: F:DxFeed.Graal.Net.Utils.PlatformUtils.PlatformDiagInfo
   fullName: DxFeed.Graal.Net.Utils.PlatformUtils.PlatformDiagInfo
   nameWithType: PlatformUtils.PlatformDiagInfo
-- uid: DxFeed.Graal.Net.Utils.QdsUtil
-  name: QdsUtil
-  href: docs/api/DxFeed.Graal.Net.Utils.QdsUtil.html
-  commentId: T:DxFeed.Graal.Net.Utils.QdsUtil
-  fullName: DxFeed.Graal.Net.Utils.QdsUtil
-  nameWithType: QdsUtil
-- uid: DxFeed.Graal.Net.Utils.QdsUtil.RunTool(System.Collections.Generic.IEnumerable{System.String})
+- uid: DxFeed.Graal.Net.Utils.QdsTools
+  name: QdsTools
+  href: docs/api/DxFeed.Graal.Net.Utils.QdsTools.html
+  commentId: T:DxFeed.Graal.Net.Utils.QdsTools
+  fullName: DxFeed.Graal.Net.Utils.QdsTools
+  nameWithType: QdsTools
+- uid: DxFeed.Graal.Net.Utils.QdsTools.RunTool(System.Collections.Generic.IEnumerable{System.String})
   name: RunTool(IEnumerable<string>)
-  href: docs/api/DxFeed.Graal.Net.Utils.QdsUtil.html#DxFeed_Graal_Net_Utils_QdsUtil_RunTool_System_Collections_Generic_IEnumerable_System_String__
-  commentId: M:DxFeed.Graal.Net.Utils.QdsUtil.RunTool(System.Collections.Generic.IEnumerable{System.String})
+  href: docs/api/DxFeed.Graal.Net.Utils.QdsTools.html#DxFeed_Graal_Net_Utils_QdsTools_RunTool_System_Collections_Generic_IEnumerable_System_String__
+  commentId: M:DxFeed.Graal.Net.Utils.QdsTools.RunTool(System.Collections.Generic.IEnumerable{System.String})
   name.vb: RunTool(IEnumerable(Of String))
-  fullName: DxFeed.Graal.Net.Utils.QdsUtil.RunTool(System.Collections.Generic.IEnumerable<string>)
-  fullName.vb: DxFeed.Graal.Net.Utils.QdsUtil.RunTool(System.Collections.Generic.IEnumerable(Of String))
-  nameWithType: QdsUtil.RunTool(IEnumerable<string>)
-  nameWithType.vb: QdsUtil.RunTool(IEnumerable(Of String))
-- uid: DxFeed.Graal.Net.Utils.QdsUtil.RunTool*
+  fullName: DxFeed.Graal.Net.Utils.QdsTools.RunTool(System.Collections.Generic.IEnumerable<string>)
+  fullName.vb: DxFeed.Graal.Net.Utils.QdsTools.RunTool(System.Collections.Generic.IEnumerable(Of String))
+  nameWithType: QdsTools.RunTool(IEnumerable<string>)
+  nameWithType.vb: QdsTools.RunTool(IEnumerable(Of String))
+- uid: DxFeed.Graal.Net.Utils.QdsTools.RunTool*
   name: RunTool
-  href: docs/api/DxFeed.Graal.Net.Utils.QdsUtil.html#DxFeed_Graal_Net_Utils_QdsUtil_RunTool_
-  commentId: Overload:DxFeed.Graal.Net.Utils.QdsUtil.RunTool
+  href: docs/api/DxFeed.Graal.Net.Utils.QdsTools.html#DxFeed_Graal_Net_Utils_QdsTools_RunTool_
+  commentId: Overload:DxFeed.Graal.Net.Utils.QdsTools.RunTool
   isSpec: "True"
-  fullName: DxFeed.Graal.Net.Utils.QdsUtil.RunTool
-  nameWithType: QdsUtil.RunTool
+  fullName: DxFeed.Graal.Net.Utils.QdsTools.RunTool
+  nameWithType: QdsTools.RunTool
 - uid: DxFeed.Graal.Net.Utils.ReflectionUtil
   name: ReflectionUtil
   href: docs/api/DxFeed.Graal.Net.Utils.ReflectionUtil.html
@@ -9812,6 +11012,28 @@ references:
   isSpec: "True"
   fullName: DxFeed.Graal.Net.Utils.StringUtil.EncodeNullableString
   nameWithType: StringUtil.EncodeNullableString
+- uid: DxFeed.Graal.Net.Utils.SymbolParser
+  name: SymbolParser
+  href: docs/api/DxFeed.Graal.Net.Utils.SymbolParser.html
+  commentId: T:DxFeed.Graal.Net.Utils.SymbolParser
+  fullName: DxFeed.Graal.Net.Utils.SymbolParser
+  nameWithType: SymbolParser
+- uid: DxFeed.Graal.Net.Utils.SymbolParser.Parse(System.String)
+  name: Parse(string)
+  href: docs/api/DxFeed.Graal.Net.Utils.SymbolParser.html#DxFeed_Graal_Net_Utils_SymbolParser_Parse_System_String_
+  commentId: M:DxFeed.Graal.Net.Utils.SymbolParser.Parse(System.String)
+  name.vb: Parse(String)
+  fullName: DxFeed.Graal.Net.Utils.SymbolParser.Parse(string)
+  fullName.vb: DxFeed.Graal.Net.Utils.SymbolParser.Parse(String)
+  nameWithType: SymbolParser.Parse(string)
+  nameWithType.vb: SymbolParser.Parse(String)
+- uid: DxFeed.Graal.Net.Utils.SymbolParser.Parse*
+  name: Parse
+  href: docs/api/DxFeed.Graal.Net.Utils.SymbolParser.html#DxFeed_Graal_Net_Utils_SymbolParser_Parse_
+  commentId: Overload:DxFeed.Graal.Net.Utils.SymbolParser.Parse
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Utils.SymbolParser.Parse
+  nameWithType: SymbolParser.Parse
 - uid: DxFeed.Graal.Net.Utils.TimeFormat
   name: TimeFormat
   href: docs/api/DxFeed.Graal.Net.Utils.TimeFormat.html
@@ -9831,47 +11053,28 @@ references:
   isSpec: "True"
   fullName: DxFeed.Graal.Net.Utils.TimeFormat.AsFullIso
   nameWithType: TimeFormat.AsFullIso
-- uid: DxFeed.Graal.Net.Utils.TimeFormat.AsOnlyDate
-  name: AsOnlyDate()
-  href: docs/api/DxFeed.Graal.Net.Utils.TimeFormat.html#DxFeed_Graal_Net_Utils_TimeFormat_AsOnlyDate
-  commentId: M:DxFeed.Graal.Net.Utils.TimeFormat.AsOnlyDate
-  fullName: DxFeed.Graal.Net.Utils.TimeFormat.AsOnlyDate()
-  nameWithType: TimeFormat.AsOnlyDate()
-- uid: DxFeed.Graal.Net.Utils.TimeFormat.AsOnlyDate*
-  name: AsOnlyDate
-  href: docs/api/DxFeed.Graal.Net.Utils.TimeFormat.html#DxFeed_Graal_Net_Utils_TimeFormat_AsOnlyDate_
-  commentId: Overload:DxFeed.Graal.Net.Utils.TimeFormat.AsOnlyDate
+- uid: DxFeed.Graal.Net.Utils.TimeFormat.Default
+  name: Default
+  href: docs/api/DxFeed.Graal.Net.Utils.TimeFormat.html#DxFeed_Graal_Net_Utils_TimeFormat_Default
+  commentId: P:DxFeed.Graal.Net.Utils.TimeFormat.Default
+  fullName: DxFeed.Graal.Net.Utils.TimeFormat.Default
+  nameWithType: TimeFormat.Default
+- uid: DxFeed.Graal.Net.Utils.TimeFormat.Default*
+  name: Default
+  href: docs/api/DxFeed.Graal.Net.Utils.TimeFormat.html#DxFeed_Graal_Net_Utils_TimeFormat_Default_
+  commentId: Overload:DxFeed.Graal.Net.Utils.TimeFormat.Default
   isSpec: "True"
-  fullName: DxFeed.Graal.Net.Utils.TimeFormat.AsOnlyDate
-  nameWithType: TimeFormat.AsOnlyDate
-- uid: DxFeed.Graal.Net.Utils.TimeFormat.Create(System.Func{System.TimeZoneInfo})
-  name: Create(Func<TimeZoneInfo>)
-  href: docs/api/DxFeed.Graal.Net.Utils.TimeFormat.html#DxFeed_Graal_Net_Utils_TimeFormat_Create_System_Func_System_TimeZoneInfo__
-  commentId: M:DxFeed.Graal.Net.Utils.TimeFormat.Create(System.Func{System.TimeZoneInfo})
-  name.vb: Create(Func(Of TimeZoneInfo))
-  fullName: DxFeed.Graal.Net.Utils.TimeFormat.Create(System.Func<System.TimeZoneInfo>)
-  fullName.vb: DxFeed.Graal.Net.Utils.TimeFormat.Create(System.Func(Of System.TimeZoneInfo))
-  nameWithType: TimeFormat.Create(Func<TimeZoneInfo>)
-  nameWithType.vb: TimeFormat.Create(Func(Of TimeZoneInfo))
-- uid: DxFeed.Graal.Net.Utils.TimeFormat.Create(System.TimeZoneInfo)
-  name: Create(TimeZoneInfo)
-  href: docs/api/DxFeed.Graal.Net.Utils.TimeFormat.html#DxFeed_Graal_Net_Utils_TimeFormat_Create_System_TimeZoneInfo_
-  commentId: M:DxFeed.Graal.Net.Utils.TimeFormat.Create(System.TimeZoneInfo)
-  fullName: DxFeed.Graal.Net.Utils.TimeFormat.Create(System.TimeZoneInfo)
-  nameWithType: TimeFormat.Create(TimeZoneInfo)
-- uid: DxFeed.Graal.Net.Utils.TimeFormat.Create*
-  name: Create
-  href: docs/api/DxFeed.Graal.Net.Utils.TimeFormat.html#DxFeed_Graal_Net_Utils_TimeFormat_Create_
-  commentId: Overload:DxFeed.Graal.Net.Utils.TimeFormat.Create
-  isSpec: "True"
-  fullName: DxFeed.Graal.Net.Utils.TimeFormat.Create
-  nameWithType: TimeFormat.Create
-- uid: DxFeed.Graal.Net.Utils.TimeFormat.Format(System.DateTimeOffset)
-  name: Format(DateTimeOffset)
-  href: docs/api/DxFeed.Graal.Net.Utils.TimeFormat.html#DxFeed_Graal_Net_Utils_TimeFormat_Format_System_DateTimeOffset_
-  commentId: M:DxFeed.Graal.Net.Utils.TimeFormat.Format(System.DateTimeOffset)
-  fullName: DxFeed.Graal.Net.Utils.TimeFormat.Format(System.DateTimeOffset)
-  nameWithType: TimeFormat.Format(DateTimeOffset)
+  fullName: DxFeed.Graal.Net.Utils.TimeFormat.Default
+  nameWithType: TimeFormat.Default
+- uid: DxFeed.Graal.Net.Utils.TimeFormat.Format(System.Int64)
+  name: Format(long)
+  href: docs/api/DxFeed.Graal.Net.Utils.TimeFormat.html#DxFeed_Graal_Net_Utils_TimeFormat_Format_System_Int64_
+  commentId: M:DxFeed.Graal.Net.Utils.TimeFormat.Format(System.Int64)
+  name.vb: Format(Long)
+  fullName: DxFeed.Graal.Net.Utils.TimeFormat.Format(long)
+  fullName.vb: DxFeed.Graal.Net.Utils.TimeFormat.Format(Long)
+  nameWithType: TimeFormat.Format(long)
+  nameWithType.vb: TimeFormat.Format(Long)
 - uid: DxFeed.Graal.Net.Utils.TimeFormat.Format*
   name: Format
   href: docs/api/DxFeed.Graal.Net.Utils.TimeFormat.html#DxFeed_Graal_Net_Utils_TimeFormat_Format_
@@ -9879,51 +11082,19 @@ references:
   isSpec: "True"
   fullName: DxFeed.Graal.Net.Utils.TimeFormat.Format
   nameWithType: TimeFormat.Format
-- uid: DxFeed.Graal.Net.Utils.TimeFormat.FormatFromMillis(System.Int64)
-  name: FormatFromMillis(long)
-  href: docs/api/DxFeed.Graal.Net.Utils.TimeFormat.html#DxFeed_Graal_Net_Utils_TimeFormat_FormatFromMillis_System_Int64_
-  commentId: M:DxFeed.Graal.Net.Utils.TimeFormat.FormatFromMillis(System.Int64)
-  name.vb: FormatFromMillis(Long)
-  fullName: DxFeed.Graal.Net.Utils.TimeFormat.FormatFromMillis(long)
-  fullName.vb: DxFeed.Graal.Net.Utils.TimeFormat.FormatFromMillis(Long)
-  nameWithType: TimeFormat.FormatFromMillis(long)
-  nameWithType.vb: TimeFormat.FormatFromMillis(Long)
-- uid: DxFeed.Graal.Net.Utils.TimeFormat.FormatFromMillis*
-  name: FormatFromMillis
-  href: docs/api/DxFeed.Graal.Net.Utils.TimeFormat.html#DxFeed_Graal_Net_Utils_TimeFormat_FormatFromMillis_
-  commentId: Overload:DxFeed.Graal.Net.Utils.TimeFormat.FormatFromMillis
+- uid: DxFeed.Graal.Net.Utils.TimeFormat.GMT
+  name: GMT
+  href: docs/api/DxFeed.Graal.Net.Utils.TimeFormat.html#DxFeed_Graal_Net_Utils_TimeFormat_GMT
+  commentId: P:DxFeed.Graal.Net.Utils.TimeFormat.GMT
+  fullName: DxFeed.Graal.Net.Utils.TimeFormat.GMT
+  nameWithType: TimeFormat.GMT
+- uid: DxFeed.Graal.Net.Utils.TimeFormat.GMT*
+  name: GMT
+  href: docs/api/DxFeed.Graal.Net.Utils.TimeFormat.html#DxFeed_Graal_Net_Utils_TimeFormat_GMT_
+  commentId: Overload:DxFeed.Graal.Net.Utils.TimeFormat.GMT
   isSpec: "True"
-  fullName: DxFeed.Graal.Net.Utils.TimeFormat.FormatFromMillis
-  nameWithType: TimeFormat.FormatFromMillis
-- uid: DxFeed.Graal.Net.Utils.TimeFormat.FormatFromSeconds(System.Int64)
-  name: FormatFromSeconds(long)
-  href: docs/api/DxFeed.Graal.Net.Utils.TimeFormat.html#DxFeed_Graal_Net_Utils_TimeFormat_FormatFromSeconds_System_Int64_
-  commentId: M:DxFeed.Graal.Net.Utils.TimeFormat.FormatFromSeconds(System.Int64)
-  name.vb: FormatFromSeconds(Long)
-  fullName: DxFeed.Graal.Net.Utils.TimeFormat.FormatFromSeconds(long)
-  fullName.vb: DxFeed.Graal.Net.Utils.TimeFormat.FormatFromSeconds(Long)
-  nameWithType: TimeFormat.FormatFromSeconds(long)
-  nameWithType.vb: TimeFormat.FormatFromSeconds(Long)
-- uid: DxFeed.Graal.Net.Utils.TimeFormat.FormatFromSeconds*
-  name: FormatFromSeconds
-  href: docs/api/DxFeed.Graal.Net.Utils.TimeFormat.html#DxFeed_Graal_Net_Utils_TimeFormat_FormatFromSeconds_
-  commentId: Overload:DxFeed.Graal.Net.Utils.TimeFormat.FormatFromSeconds
-  isSpec: "True"
-  fullName: DxFeed.Graal.Net.Utils.TimeFormat.FormatFromSeconds
-  nameWithType: TimeFormat.FormatFromSeconds
-- uid: DxFeed.Graal.Net.Utils.TimeFormat.Local
-  name: Local
-  href: docs/api/DxFeed.Graal.Net.Utils.TimeFormat.html#DxFeed_Graal_Net_Utils_TimeFormat_Local
-  commentId: P:DxFeed.Graal.Net.Utils.TimeFormat.Local
-  fullName: DxFeed.Graal.Net.Utils.TimeFormat.Local
-  nameWithType: TimeFormat.Local
-- uid: DxFeed.Graal.Net.Utils.TimeFormat.Local*
-  name: Local
-  href: docs/api/DxFeed.Graal.Net.Utils.TimeFormat.html#DxFeed_Graal_Net_Utils_TimeFormat_Local_
-  commentId: Overload:DxFeed.Graal.Net.Utils.TimeFormat.Local
-  isSpec: "True"
-  fullName: DxFeed.Graal.Net.Utils.TimeFormat.Local
-  nameWithType: TimeFormat.Local
+  fullName: DxFeed.Graal.Net.Utils.TimeFormat.GMT
+  nameWithType: TimeFormat.GMT
 - uid: DxFeed.Graal.Net.Utils.TimeFormat.Parse(System.String)
   name: Parse(string)
   href: docs/api/DxFeed.Graal.Net.Utils.TimeFormat.html#DxFeed_Graal_Net_Utils_TimeFormat_Parse_System_String_
@@ -9940,19 +11111,6 @@ references:
   isSpec: "True"
   fullName: DxFeed.Graal.Net.Utils.TimeFormat.Parse
   nameWithType: TimeFormat.Parse
-- uid: DxFeed.Graal.Net.Utils.TimeFormat.Utc
-  name: Utc
-  href: docs/api/DxFeed.Graal.Net.Utils.TimeFormat.html#DxFeed_Graal_Net_Utils_TimeFormat_Utc
-  commentId: P:DxFeed.Graal.Net.Utils.TimeFormat.Utc
-  fullName: DxFeed.Graal.Net.Utils.TimeFormat.Utc
-  nameWithType: TimeFormat.Utc
-- uid: DxFeed.Graal.Net.Utils.TimeFormat.Utc*
-  name: Utc
-  href: docs/api/DxFeed.Graal.Net.Utils.TimeFormat.html#DxFeed_Graal_Net_Utils_TimeFormat_Utc_
-  commentId: Overload:DxFeed.Graal.Net.Utils.TimeFormat.Utc
-  isSpec: "True"
-  fullName: DxFeed.Graal.Net.Utils.TimeFormat.Utc
-  nameWithType: TimeFormat.Utc
 - uid: DxFeed.Graal.Net.Utils.TimeFormat.WithMillis
   name: WithMillis()
   href: docs/api/DxFeed.Graal.Net.Utils.TimeFormat.html#DxFeed_Graal_Net_Utils_TimeFormat_WithMillis
@@ -9966,19 +11124,6 @@ references:
   isSpec: "True"
   fullName: DxFeed.Graal.Net.Utils.TimeFormat.WithMillis
   nameWithType: TimeFormat.WithMillis
-- uid: DxFeed.Graal.Net.Utils.TimeFormat.WithTimeZone
-  name: WithTimeZone()
-  href: docs/api/DxFeed.Graal.Net.Utils.TimeFormat.html#DxFeed_Graal_Net_Utils_TimeFormat_WithTimeZone
-  commentId: M:DxFeed.Graal.Net.Utils.TimeFormat.WithTimeZone
-  fullName: DxFeed.Graal.Net.Utils.TimeFormat.WithTimeZone()
-  nameWithType: TimeFormat.WithTimeZone()
-- uid: DxFeed.Graal.Net.Utils.TimeFormat.WithTimeZone*
-  name: WithTimeZone
-  href: docs/api/DxFeed.Graal.Net.Utils.TimeFormat.html#DxFeed_Graal_Net_Utils_TimeFormat_WithTimeZone_
-  commentId: Overload:DxFeed.Graal.Net.Utils.TimeFormat.WithTimeZone
-  isSpec: "True"
-  fullName: DxFeed.Graal.Net.Utils.TimeFormat.WithTimeZone
-  nameWithType: TimeFormat.WithTimeZone
 - uid: DxFeed.Graal.Net.Utils.TimeNanosUtil
   name: TimeNanosUtil
   href: docs/api/DxFeed.Graal.Net.Utils.TimeNanosUtil.html
@@ -10033,6 +11178,28 @@ references:
   isSpec: "True"
   fullName: DxFeed.Graal.Net.Utils.TimeNanosUtil.GetNanosFromMillisAndNanoPart
   nameWithType: TimeNanosUtil.GetNanosFromMillisAndNanoPart
+- uid: DxFeed.Graal.Net.Utils.TimePeriod
+  name: TimePeriod
+  href: docs/api/DxFeed.Graal.Net.Utils.TimePeriod.html
+  commentId: T:DxFeed.Graal.Net.Utils.TimePeriod
+  fullName: DxFeed.Graal.Net.Utils.TimePeriod
+  nameWithType: TimePeriod
+- uid: DxFeed.Graal.Net.Utils.TimePeriod.ValueOf(System.String)
+  name: ValueOf(string)
+  href: docs/api/DxFeed.Graal.Net.Utils.TimePeriod.html#DxFeed_Graal_Net_Utils_TimePeriod_ValueOf_System_String_
+  commentId: M:DxFeed.Graal.Net.Utils.TimePeriod.ValueOf(System.String)
+  name.vb: ValueOf(String)
+  fullName: DxFeed.Graal.Net.Utils.TimePeriod.ValueOf(string)
+  fullName.vb: DxFeed.Graal.Net.Utils.TimePeriod.ValueOf(String)
+  nameWithType: TimePeriod.ValueOf(string)
+  nameWithType.vb: TimePeriod.ValueOf(String)
+- uid: DxFeed.Graal.Net.Utils.TimePeriod.ValueOf*
+  name: ValueOf
+  href: docs/api/DxFeed.Graal.Net.Utils.TimePeriod.html#DxFeed_Graal_Net_Utils_TimePeriod_ValueOf_
+  commentId: Overload:DxFeed.Graal.Net.Utils.TimePeriod.ValueOf
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Utils.TimePeriod.ValueOf
+  nameWithType: TimePeriod.ValueOf
 - uid: DxFeed.Graal.Net.Utils.TimeUtil
   name: TimeUtil
   href: docs/api/DxFeed.Graal.Net.Utils.TimeUtil.html

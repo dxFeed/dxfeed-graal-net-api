@@ -29,15 +29,15 @@
       <meta name="loc:changeTheme" content="Change theme">
       <meta name="loc:copy" content="Copy">
       <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
   </head>
-
-  <script type="module" src="./../../public/docfx.min.js"></script>
-
-  <script>
-    const theme = localStorage.getItem('theme') || 'auto'
-    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
-  </script>
-
 
   <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
     <header class="bg-body border-bottom">
@@ -136,14 +136,10 @@ For more details see <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/even
       <dt><a class="xref" href="DxFeed.Graal.Net.Events.Candles.CandlePriceLevel.html">CandlePriceLevel</a></dt>
       <dd><p>Candle price level attribute of <a class="xref" href="DxFeed.Graal.Net.Events.Candles.CandleSymbol.html">CandleSymbol</a> defines how candles shall be aggregated in respect to
 price interval. The negative or infinite values of price interval are treated as exceptional.</p>
-<ul>
-<li>Price interval may be equal to zero. It means every unique price creates a particular candle
-to aggregate all events with this price for the chosen <a class="xref" href="DxFeed.Graal.Net.Events.Candles.CandlePeriod.html">CandlePeriod</a>.</li>
-<li>Non-zero price level creates sequence of intervals starting from 0:
+<ul><li>Price interval may be equal to zero. It means every unique price creates a particular candle
+to aggregate all events with this price for the chosen <a class="xref" href="DxFeed.Graal.Net.Events.Candles.CandlePeriod.html">CandlePeriod</a>.</li><li>Non-zero price level creates sequence of intervals starting from 0:
 ...,[-pl;0),[0;pl),[pl;2*pl),...,[n*pl,n*pl+pl).
-Events aggregated by chosen <a class="xref" href="DxFeed.Graal.Net.Events.Candles.CandlePeriod.html">CandlePeriod</a> and price intervals.</li>
-</ul>
-<br>
+Events aggregated by chosen <a class="xref" href="DxFeed.Graal.Net.Events.Candles.CandlePeriod.html">CandlePeriod</a> and price intervals.</li></ul><br>
 For more details see <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/event/candle/CandlePriceLevel.html">Javadoc</a>.
 </dd>
     </dl>

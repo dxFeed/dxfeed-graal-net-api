@@ -1,0 +1,638 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class OtcMarketsOrder | dxFeed Graal .NET API </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class OtcMarketsOrder | dxFeed Graal .NET API ">
+      
+      <meta name="description" content="Represents an extension of  for the symbols traded on the OTC Markets. It includes the OTC Markets specific quote data. For more information about original fields, QAP, Quote Flags and Extended Quote Flags, see OTC Markets Multicast Data Feed.">
+      <link rel="icon" href="../../docs/images/favicon.png">
+      <link rel="stylesheet" href="../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../public/main.css">
+      <meta name="docfx:navrel" content="../../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/dxFeed/dxfeed-graal-net-api/new/1.3.0/apiSpec/new?filename=DxFeed_Graal_Net_Events_Market_OtcMarketsOrder.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Market.OtcMarketsOrder%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../index.html">
+            <img id="logo" class="svg" src="../../docs/images/logo.svg" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="DxFeed.Graal.Net.Events.Market.OtcMarketsOrder">
+
+
+
+  <h1 id="DxFeed_Graal_Net_Events_Market_OtcMarketsOrder" data-uid="DxFeed.Graal.Net.Events.Market.OtcMarketsOrder" class="text-break">
+Class OtcMarketsOrder  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/1.3.0/src/DxFeed.Graal.Net/Events/Market/OtcMarketsOrder.cs/#L18"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="DxFeed.html">DxFeed</a>.<a class="xref" href="DxFeed.Graal.html">Graal</a>.<a class="xref" href="DxFeed.Graal.Net.html">Net</a>.<a class="xref" href="DxFeed.Graal.Net.Events.html">Events</a>.<a class="xref" href="DxFeed.Graal.Net.Events.Market.html">Market</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>DxFeed.Graal.Net.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>Represents an extension of <a class="xref" href="DxFeed.Graal.Net.Events.Market.Order.html">Order</a> for the symbols traded on the OTC Markets. It includes the OTC Markets specific quote data.
+For more information about original fields, QAP, Quote Flags and Extended Quote Flags,
+see <a href="https://downloads.dxfeed.com/specifications/OTC_Markets_Multicast_Data_Feeds.pdf">OTC Markets Multicast Data Feed</a>.</p>
+</div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[EventCode(EventCodeNative.OtcMarketsOrder)]
+public class OtcMarketsOrder : Order, IIndexedEvent, IEventType</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><a class="xref" href="DxFeed.Graal.Net.Events.Market.MarketEvent.html">MarketEvent</a></div>
+      <div><a class="xref" href="DxFeed.Graal.Net.Events.Market.OrderBase.html">OrderBase</a></div>
+      <div><a class="xref" href="DxFeed.Graal.Net.Events.Market.Order.html">Order</a></div>
+      <div><span class="xref">OtcMarketsOrder</span></div>
+    </dd>
+  </dl>
+
+  <dl class="typelist implements">
+    <dt>Implements</dt>
+    <dd>
+      <div><a class="xref" href="DxFeed.Graal.Net.Events.IIndexedEvent.html">IIndexedEvent</a></div>
+      <div><a class="xref" href="DxFeed.Graal.Net.Events.IEventType.html">IEventType</a></div>
+    </dd>
+  </dl>
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="DxFeed.Graal.Net.Events.Market.Order.html#DxFeed_Graal_Net_Events_Market_Order_MarketMaker">Order.MarketMaker</a>
+    </div>
+    <div>
+      <a class="xref" href="DxFeed.Graal.Net.Events.Market.OrderBase.html#DxFeed_Graal_Net_Events_Market_OrderBase_MaxSequence">OrderBase.MaxSequence</a>
+    </div>
+    <div>
+      <a class="xref" href="DxFeed.Graal.Net.Events.Market.OrderBase.html#DxFeed_Graal_Net_Events_Market_OrderBase_EventSource">OrderBase.EventSource</a>
+    </div>
+    <div>
+      <a class="xref" href="DxFeed.Graal.Net.Events.Market.OrderBase.html#DxFeed_Graal_Net_Events_Market_OrderBase_EventFlags">OrderBase.EventFlags</a>
+    </div>
+    <div>
+      <a class="xref" href="DxFeed.Graal.Net.Events.Market.OrderBase.html#DxFeed_Graal_Net_Events_Market_OrderBase_Index">OrderBase.Index</a>
+    </div>
+    <div>
+      <a class="xref" href="DxFeed.Graal.Net.Events.Market.OrderBase.html#DxFeed_Graal_Net_Events_Market_OrderBase_TimeSequence">OrderBase.TimeSequence</a>
+    </div>
+    <div>
+      <a class="xref" href="DxFeed.Graal.Net.Events.Market.OrderBase.html#DxFeed_Graal_Net_Events_Market_OrderBase_Time">OrderBase.Time</a>
+    </div>
+    <div>
+      <a class="xref" href="DxFeed.Graal.Net.Events.Market.OrderBase.html#DxFeed_Graal_Net_Events_Market_OrderBase_TimeNanoPart">OrderBase.TimeNanoPart</a>
+    </div>
+    <div>
+      <a class="xref" href="DxFeed.Graal.Net.Events.Market.OrderBase.html#DxFeed_Graal_Net_Events_Market_OrderBase_Sequence">OrderBase.Sequence</a>
+    </div>
+    <div>
+      <a class="xref" href="DxFeed.Graal.Net.Events.Market.OrderBase.html#DxFeed_Graal_Net_Events_Market_OrderBase_TimeNanos">OrderBase.TimeNanos</a>
+    </div>
+    <div>
+      <a class="xref" href="DxFeed.Graal.Net.Events.Market.OrderBase.html#DxFeed_Graal_Net_Events_Market_OrderBase_Action">OrderBase.Action</a>
+    </div>
+    <div>
+      <a class="xref" href="DxFeed.Graal.Net.Events.Market.OrderBase.html#DxFeed_Graal_Net_Events_Market_OrderBase_ActionTime">OrderBase.ActionTime</a>
+    </div>
+    <div>
+      <a class="xref" href="DxFeed.Graal.Net.Events.Market.OrderBase.html#DxFeed_Graal_Net_Events_Market_OrderBase_OrderId">OrderBase.OrderId</a>
+    </div>
+    <div>
+      <a class="xref" href="DxFeed.Graal.Net.Events.Market.OrderBase.html#DxFeed_Graal_Net_Events_Market_OrderBase_AuxOrderId">OrderBase.AuxOrderId</a>
+    </div>
+    <div>
+      <a class="xref" href="DxFeed.Graal.Net.Events.Market.OrderBase.html#DxFeed_Graal_Net_Events_Market_OrderBase_Price">OrderBase.Price</a>
+    </div>
+    <div>
+      <a class="xref" href="DxFeed.Graal.Net.Events.Market.OrderBase.html#DxFeed_Graal_Net_Events_Market_OrderBase_Size">OrderBase.Size</a>
+    </div>
+    <div>
+      <a class="xref" href="DxFeed.Graal.Net.Events.Market.OrderBase.html#DxFeed_Graal_Net_Events_Market_OrderBase_HasSize">OrderBase.HasSize</a>
+    </div>
+    <div>
+      <a class="xref" href="DxFeed.Graal.Net.Events.Market.OrderBase.html#DxFeed_Graal_Net_Events_Market_OrderBase_ExecutedSize">OrderBase.ExecutedSize</a>
+    </div>
+    <div>
+      <a class="xref" href="DxFeed.Graal.Net.Events.Market.OrderBase.html#DxFeed_Graal_Net_Events_Market_OrderBase_Count">OrderBase.Count</a>
+    </div>
+    <div>
+      <a class="xref" href="DxFeed.Graal.Net.Events.Market.OrderBase.html#DxFeed_Graal_Net_Events_Market_OrderBase_TradeId">OrderBase.TradeId</a>
+    </div>
+    <div>
+      <a class="xref" href="DxFeed.Graal.Net.Events.Market.OrderBase.html#DxFeed_Graal_Net_Events_Market_OrderBase_TradePrice">OrderBase.TradePrice</a>
+    </div>
+    <div>
+      <a class="xref" href="DxFeed.Graal.Net.Events.Market.OrderBase.html#DxFeed_Graal_Net_Events_Market_OrderBase_TradeSize">OrderBase.TradeSize</a>
+    </div>
+    <div>
+      <a class="xref" href="DxFeed.Graal.Net.Events.Market.OrderBase.html#DxFeed_Graal_Net_Events_Market_OrderBase_ExchangeCode">OrderBase.ExchangeCode</a>
+    </div>
+    <div>
+      <a class="xref" href="DxFeed.Graal.Net.Events.Market.OrderBase.html#DxFeed_Graal_Net_Events_Market_OrderBase_OrderSide">OrderBase.OrderSide</a>
+    </div>
+    <div>
+      <a class="xref" href="DxFeed.Graal.Net.Events.Market.OrderBase.html#DxFeed_Graal_Net_Events_Market_OrderBase_Scope">OrderBase.Scope</a>
+    </div>
+    <div>
+      <a class="xref" href="DxFeed.Graal.Net.Events.Market.OrderBase.html#DxFeed_Graal_Net_Events_Market_OrderBase_BaseFieldsToString">OrderBase.BaseFieldsToString()</a>
+    </div>
+    <div>
+      <a class="xref" href="DxFeed.Graal.Net.Events.Market.MarketEvent.html#DxFeed_Graal_Net_Events_Market_MarketEvent_EventSymbol">MarketEvent.EventSymbol</a>
+    </div>
+    <div>
+      <a class="xref" href="DxFeed.Graal.Net.Events.Market.MarketEvent.html#DxFeed_Graal_Net_Events_Market_MarketEvent_EventTime">MarketEvent.EventTime</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+  </dd></dl>
+
+
+
+
+
+
+  <h2 class="section" id="constructors">Constructors
+</h2>
+
+
+  <a id="DxFeed_Graal_Net_Events_Market_OtcMarketsOrder__ctor_" data-uid="DxFeed.Graal.Net.Events.Market.OtcMarketsOrder.#ctor*"></a>
+
+  <h3 id="DxFeed_Graal_Net_Events_Market_OtcMarketsOrder__ctor" data-uid="DxFeed.Graal.Net.Events.Market.OtcMarketsOrder.#ctor">
+  OtcMarketsOrder()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/1.3.0/src/DxFeed.Graal.Net/Events/Market/OtcMarketsOrder.cs/#L45"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="DxFeed.Graal.Net.Events.Market.OtcMarketsOrder.html">OtcMarketsOrder</a> class.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public OtcMarketsOrder()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DxFeed_Graal_Net_Events_Market_OtcMarketsOrder__ctor_" data-uid="DxFeed.Graal.Net.Events.Market.OtcMarketsOrder.#ctor*"></a>
+
+  <h3 id="DxFeed_Graal_Net_Events_Market_OtcMarketsOrder__ctor_System_String_" data-uid="DxFeed.Graal.Net.Events.Market.OtcMarketsOrder.#ctor(System.String)">
+  OtcMarketsOrder(string?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/1.3.0/src/DxFeed.Graal.Net/Events/Market/OtcMarketsOrder.cs/#L53"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="DxFeed.Graal.Net.Events.Market.OtcMarketsOrder.html">OtcMarketsOrder</a> class with the specified event symbol.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public OtcMarketsOrder(string? eventSymbol)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>eventSymbol</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>The specified event symbol.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="DxFeed_Graal_Net_Events_Market_OtcMarketsOrder_IsAutoExecution_" data-uid="DxFeed.Graal.Net.Events.Market.OtcMarketsOrder.IsAutoExecution*"></a>
+
+  <h3 id="DxFeed_Graal_Net_Events_Market_OtcMarketsOrder_IsAutoExecution" data-uid="DxFeed.Graal.Net.Events.Market.OtcMarketsOrder.IsAutoExecution">
+  IsAutoExecution
+  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/1.3.0/src/DxFeed.Graal.Net/Events/Market/OtcMarketsOrder.cs/#L115"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets or sets a value indicating whether this event is in 'AutoEx' mode.
+If this event is in 'AutoEx' mode then a response to an OTC Link trade message will be immediate.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsAutoExecution { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="DxFeed_Graal_Net_Events_Market_OtcMarketsOrder_IsNmsConditional_" data-uid="DxFeed.Graal.Net.Events.Market.OtcMarketsOrder.IsNmsConditional*"></a>
+
+  <h3 id="DxFeed_Graal_Net_Events_Market_OtcMarketsOrder_IsNmsConditional" data-uid="DxFeed.Graal.Net.Events.Market.OtcMarketsOrder.IsNmsConditional">
+  IsNmsConditional
+  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/1.3.0/src/DxFeed.Graal.Net/Events/Market/OtcMarketsOrder.cs/#L127"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets or sets a value indicating whether event represents a NMS conditional.
+This flag indicates the displayed <a class="xref" href="DxFeed.Graal.Net.Events.Market.OrderBase.html#DxFeed_Graal_Net_Events_Market_OrderBase_Size">Size</a>
+is a round lot at least two times greater than the minimum round lot size in the security
+and a trade message relating to the event cannot be sent or filled for less than the displayed size.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsNmsConditional { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="DxFeed_Graal_Net_Events_Market_OtcMarketsOrder_IsOpen_" data-uid="DxFeed.Graal.Net.Events.Market.OtcMarketsOrder.IsOpen*"></a>
+
+  <h3 id="DxFeed_Graal_Net_Events_Market_OtcMarketsOrder_IsOpen" data-uid="DxFeed.Graal.Net.Events.Market.OtcMarketsOrder.IsOpen">
+  IsOpen
+  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/1.3.0/src/DxFeed.Graal.Net/Events/Market/OtcMarketsOrder.cs/#L77"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets or sets a value indicating whether this event is available for business within the operating hours of the OTC Link system.
+All quotes will be closed at the start of the trading day and will remain closed until the traders open theirs.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsOpen { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="DxFeed_Graal_Net_Events_Market_OtcMarketsOrder_IsSaturated_" data-uid="DxFeed.Graal.Net.Events.Market.OtcMarketsOrder.IsSaturated*"></a>
+
+  <h3 id="DxFeed_Graal_Net_Events_Market_OtcMarketsOrder_IsSaturated" data-uid="DxFeed.Graal.Net.Events.Market.OtcMarketsOrder.IsSaturated">
+  IsSaturated
+  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/1.3.0/src/DxFeed.Graal.Net/Events/Market/OtcMarketsOrder.cs/#L105"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets or sets a value indicating whether this event should NOT be considered for the inside price.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsSaturated { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="DxFeed_Graal_Net_Events_Market_OtcMarketsOrder_IsUnsolicited_" data-uid="DxFeed.Graal.Net.Events.Market.OtcMarketsOrder.IsUnsolicited*"></a>
+
+  <h3 id="DxFeed_Graal_Net_Events_Market_OtcMarketsOrder_IsUnsolicited" data-uid="DxFeed.Graal.Net.Events.Market.OtcMarketsOrder.IsUnsolicited">
+  IsUnsolicited
+  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/1.3.0/src/DxFeed.Graal.Net/Events/Market/OtcMarketsOrder.cs/#L86"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets or sets a value indicating whether this event is unsolicited.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsUnsolicited { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="DxFeed_Graal_Net_Events_Market_OtcMarketsOrder_OtcMarketsFlags_" data-uid="DxFeed.Graal.Net.Events.Market.OtcMarketsOrder.OtcMarketsFlags*"></a>
+
+  <h3 id="DxFeed_Graal_Net_Events_Market_OtcMarketsOrder_OtcMarketsFlags" data-uid="DxFeed.Graal.Net.Events.Market.OtcMarketsOrder.OtcMarketsFlags">
+  OtcMarketsFlags
+  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/1.3.0/src/DxFeed.Graal.Net/Events/Market/OtcMarketsOrder.cs/#L71"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets or sets OTC Markets flags.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int OtcMarketsFlags { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="DxFeed_Graal_Net_Events_Market_OtcMarketsOrder_OtcMarketsPriceType_" data-uid="DxFeed.Graal.Net.Events.Market.OtcMarketsOrder.OtcMarketsPriceType*"></a>
+
+  <h3 id="DxFeed_Graal_Net_Events_Market_OtcMarketsOrder_OtcMarketsPriceType" data-uid="DxFeed.Graal.Net.Events.Market.OtcMarketsOrder.OtcMarketsPriceType">
+  OtcMarketsPriceType
+  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/1.3.0/src/DxFeed.Graal.Net/Events/Market/OtcMarketsOrder.cs/#L95"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets or sets OTC Markets price type of this OTC Markets order events.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public OtcMarketsPriceType OtcMarketsPriceType { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DxFeed.Graal.Net.Events.Market.OtcMarketsPriceType.html">OtcMarketsPriceType</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="DxFeed_Graal_Net_Events_Market_OtcMarketsOrder_QuoteAccessPayment_" data-uid="DxFeed.Graal.Net.Events.Market.OtcMarketsOrder.QuoteAccessPayment*"></a>
+
+  <h3 id="DxFeed_Graal_Net_Events_Market_OtcMarketsOrder_QuoteAccessPayment" data-uid="DxFeed.Graal.Net.Events.Market.OtcMarketsOrder.QuoteAccessPayment">
+  QuoteAccessPayment
+  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/1.3.0/src/DxFeed.Graal.Net/Events/Market/OtcMarketsOrder.cs/#L66"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets or sets Quote Access Payment (QAP) of this OTC Markets order.</p>
+<p>QAP functionality allows participants to dynamically set access fees or rebates,
+in real-time and on a per-security basis through OTC Dealer or OTC FIX connections.
+Positive integers (1 to 30) indicate a rebate, and negative integers (-1 to -30) indicate an access fee.
+0 indicates no rebate or access fee.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int QuoteAccessPayment { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="DxFeed_Graal_Net_Events_Market_OtcMarketsOrder_ToString_" data-uid="DxFeed.Graal.Net.Events.Market.OtcMarketsOrder.ToString*"></a>
+
+  <h3 id="DxFeed_Graal_Net_Events_Market_OtcMarketsOrder_ToString" data-uid="DxFeed.Graal.Net.Events.Market.OtcMarketsOrder.ToString">
+  ToString()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/1.3.0/src/DxFeed.Graal.Net/Events/Market/OtcMarketsOrder.cs/#L137"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns string representation of this otc markets order event.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override string ToString()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>The string representation.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Copyright © 2022 Devexperts LLC</span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

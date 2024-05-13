@@ -1,0 +1,1189 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class Day | dxFeed Graal .NET API </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class Day | dxFeed Graal .NET API ">
+      
+      <meta name="description" content="Day represents a continuous period of time approximately 24 hours long. The day is aligned to the start and the end of business activities of a certain business entity or business process. For example, the day may be aligned to a trading schedule of a particular instrument on an exchange. Thus, different days may start and end at various local times depending on the related trading schedules.  The length of the day depends on the trading schedule and other circumstances. For example, it is possible that day for Monday is longer than 24 hours because it includes part of Sunday; consequently, the day for Sunday will be shorter than 24 hours to avoid overlapping with Monday.  Days do not overlap with each other - rather they form consecutive chain of adjacent periods of time that cover entire time scale. The point on a border line is considered to belong to following day that starts there.  Each day consists of sessions that cover entire duration of the day. If day contains at least one trading session (i.e. session within which trading activity is allowed), then the day is considered trading day. Otherwise the day is considered non-trading day (e.g. weekend or holiday).  Day may contain sessions with zero duration - e.g. indices that post value once a day. Such sessions can be of any appropriate type, trading or non-trading. Day may have zero duration as well - e.g. when all time within it is transferred to other days.">
+      <link rel="icon" href="../../docs/images/favicon.png">
+      <link rel="stylesheet" href="../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../public/main.css">
+      <meta name="docfx:navrel" content="../../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/dxFeed/dxfeed-graal-net-api/new/1.3.0/apiSpec/new?filename=DxFeed_Graal_Net_Schedules_Day.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Schedules.Day%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../index.html">
+            <img id="logo" class="svg" src="../../docs/images/logo.svg" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="DxFeed.Graal.Net.Schedules.Day">
+
+
+
+  <h1 id="DxFeed_Graal_Net_Schedules_Day" data-uid="DxFeed.Graal.Net.Schedules.Day" class="text-break">
+Class Day  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/1.3.0/src/DxFeed.Graal.Net/Schedules/Day.cs/#L36"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="DxFeed.html">DxFeed</a>.<a class="xref" href="DxFeed.Graal.html">Graal</a>.<a class="xref" href="DxFeed.Graal.Net.html">Net</a>.<a class="xref" href="DxFeed.Graal.Net.Schedules.html">Schedules</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>DxFeed.Graal.Net.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p><b>Day</b> represents a continuous period of time approximately 24 hours long. The day is aligned
+to the start and the end of business activities of a certain business entity or business process.
+For example, the day may be aligned to a trading schedule of a particular instrument on an exchange.
+Thus, different days may start and end at various local times depending on the related trading schedules.</p>
+<p></p>
+The length of the day depends on the trading schedule and other circumstances. For example, it is possible
+that day for Monday is longer than 24 hours because it includes part of Sunday; consequently, the day for
+Sunday will be shorter than 24 hours to avoid overlapping with Monday.
+<p></p>
+Days do not overlap with each other - rather they form consecutive chain of adjacent periods of time that
+cover entire time scale. The point on a border line is considered to belong to following day that starts there.
+<p></p>
+Each day consists of sessions that cover entire duration of the day. If day contains at least one trading
+session (i.e. session within which trading activity is allowed), then the day is considered trading day.
+Otherwise the day is considered non-trading day (e.g. weekend or holiday).
+<p></p>
+Day may contain sessions with zero duration - e.g. indices that post value once a day.
+Such sessions can be of any appropriate type, trading or non-trading.
+Day may have zero duration as well - e.g. when all time within it is transferred to other days.
+</div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class Day</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><span class="xref">Day</span></div>
+    </dd>
+  </dl>
+
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+  </dd></dl>
+
+
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="DxFeed_Graal_Net_Schedules_Day_DayId_" data-uid="DxFeed.Graal.Net.Schedules.Day.DayId*"></a>
+
+  <h3 id="DxFeed_Graal_Net_Schedules_Day_DayId" data-uid="DxFeed.Graal.Net.Schedules.Day.DayId">
+  DayId
+  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/1.3.0/src/DxFeed.Graal.Net/Schedules/Day.cs/#L55"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets number of this day since January 1, 1970. (that day has identifier of 0
+and previous days have negative identifiers).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int DayId { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="DxFeed_Graal_Net_Schedules_Day_DayOfMonth_" data-uid="DxFeed.Graal.Net.Schedules.Day.DayOfMonth*"></a>
+
+  <h3 id="DxFeed_Graal_Net_Schedules_Day_DayOfMonth" data-uid="DxFeed.Graal.Net.Schedules.Day.DayOfMonth">
+  DayOfMonth
+  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/1.3.0/src/DxFeed.Graal.Net/Schedules/Day.cs/#L83"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets ordinal day number in the month starting with <b>1</b> for the first day of month.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int DayOfMonth { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="DxFeed_Graal_Net_Schedules_Day_DayOfWeek_" data-uid="DxFeed.Graal.Net.Schedules.Day.DayOfWeek*"></a>
+
+  <h3 id="DxFeed_Graal_Net_Schedules_Day_DayOfWeek" data-uid="DxFeed.Graal.Net.Schedules.Day.DayOfWeek">
+  DayOfWeek
+  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/1.3.0/src/DxFeed.Graal.Net/Schedules/Day.cs/#L89"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets ordinal day number in the week starting with <b>1=Monday</b> and ending with <b>7=Sunday</b>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int DayOfWeek { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="DxFeed_Graal_Net_Schedules_Day_EndTime_" data-uid="DxFeed.Graal.Net.Schedules.Day.EndTime*"></a>
+
+  <h3 id="DxFeed_Graal_Net_Schedules_Day_EndTime" data-uid="DxFeed.Graal.Net.Schedules.Day.EndTime">
+  EndTime
+  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/1.3.0/src/DxFeed.Graal.Net/Schedules/Day.cs/#L122"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets end time of this day (exclusive).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public long EndTime { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="DxFeed_Graal_Net_Schedules_Day_IsHoliday_" data-uid="DxFeed.Graal.Net.Schedules.Day.IsHoliday*"></a>
+
+  <h3 id="DxFeed_Graal_Net_Schedules_Day_IsHoliday" data-uid="DxFeed.Graal.Net.Schedules.Day.IsHoliday">
+  IsHoliday
+  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/1.3.0/src/DxFeed.Graal.Net/Schedules/Day.cs/#L96"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets a value indicating whether this day is an exchange holiday.
+Usually there are no trading takes place on an exchange holiday.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsHoliday { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="DxFeed_Graal_Net_Schedules_Day_IsShortDay_" data-uid="DxFeed.Graal.Net.Schedules.Day.IsShortDay*"></a>
+
+  <h3 id="DxFeed_Graal_Net_Schedules_Day_IsShortDay" data-uid="DxFeed.Graal.Net.Schedules.Day.IsShortDay">
+  IsShortDay
+  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/1.3.0/src/DxFeed.Graal.Net/Schedules/Day.cs/#L103"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets a value indicating whether this day is a short day.
+Usually trading stops earlier on a short day.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsShortDay { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="DxFeed_Graal_Net_Schedules_Day_IsTrading_" data-uid="DxFeed.Graal.Net.Schedules.Day.IsTrading*"></a>
+
+  <h3 id="DxFeed_Graal_Net_Schedules_Day_IsTrading" data-uid="DxFeed.Graal.Net.Schedules.Day.IsTrading">
+  IsTrading
+  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/1.3.0/src/DxFeed.Graal.Net/Schedules/Day.cs/#L110"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets a value indicating whether trading activity is allowed within this day.
+Positive result assumes that day has at least one trading session.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsTrading { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="DxFeed_Graal_Net_Schedules_Day_MonthOfYear_" data-uid="DxFeed.Graal.Net.Schedules.Day.MonthOfYear*"></a>
+
+  <h3 id="DxFeed_Graal_Net_Schedules_Day_MonthOfYear" data-uid="DxFeed.Graal.Net.Schedules.Day.MonthOfYear">
+  MonthOfYear
+  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/1.3.0/src/DxFeed.Graal.Net/Schedules/Day.cs/#L77"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets calendar month number in the year starting with <b>1=January</b> and ending with <b>12=December</b>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int MonthOfYear { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="DxFeed_Graal_Net_Schedules_Day_ResetTime_" data-uid="DxFeed.Graal.Net.Schedules.Day.ResetTime*"></a>
+
+  <h3 id="DxFeed_Graal_Net_Schedules_Day_ResetTime" data-uid="DxFeed.Graal.Net.Schedules.Day.ResetTime">
+  ResetTime
+  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/1.3.0/src/DxFeed.Graal.Net/Schedules/Day.cs/#L129"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets reset time for this day.
+Reset of daily data is performed on trading days only, the result has no meaning for non-trading days.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public long ResetTime { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="DxFeed_Graal_Net_Schedules_Day_Schedule_" data-uid="DxFeed.Graal.Net.Schedules.Day.Schedule*"></a>
+
+  <h3 id="DxFeed_Graal_Net_Schedules_Day_Schedule" data-uid="DxFeed.Graal.Net.Schedules.Day.Schedule">
+  Schedule
+  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/1.3.0/src/DxFeed.Graal.Net/Schedules/Day.cs/#L49"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets schedule to which this day belongs.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Schedule Schedule { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DxFeed.Graal.Net.Schedules.Schedule.html">Schedule</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="DxFeed_Graal_Net_Schedules_Day_StartTime_" data-uid="DxFeed.Graal.Net.Schedules.Day.StartTime*"></a>
+
+  <h3 id="DxFeed_Graal_Net_Schedules_Day_StartTime" data-uid="DxFeed.Graal.Net.Schedules.Day.StartTime">
+  StartTime
+  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/1.3.0/src/DxFeed.Graal.Net/Schedules/Day.cs/#L116"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets start time of this day (inclusive).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public long StartTime { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="DxFeed_Graal_Net_Schedules_Day_Year_" data-uid="DxFeed.Graal.Net.Schedules.Day.Year*"></a>
+
+  <h3 id="DxFeed_Graal_Net_Schedules_Day_Year" data-uid="DxFeed.Graal.Net.Schedules.Day.Year">
+  Year
+  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/1.3.0/src/DxFeed.Graal.Net/Schedules/Day.cs/#L71"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets calendar year - i.e. it returns <code>1977</code> for the year <code>1977</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int Year { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="DxFeed_Graal_Net_Schedules_Day_YearMonthDay_" data-uid="DxFeed.Graal.Net.Schedules.Day.YearMonthDay*"></a>
+
+  <h3 id="DxFeed_Graal_Net_Schedules_Day_YearMonthDay" data-uid="DxFeed.Graal.Net.Schedules.Day.YearMonthDay">
+  YearMonthDay
+  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/1.3.0/src/DxFeed.Graal.Net/Schedules/Day.cs/#L65"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets year, month and day numbers decimally packed in the following way:</p>
+<pre><code class="lang-csharp">YearMonthDay = year * 10000 + month * 100 + day</code></pre>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int YearMonthDay { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+  <h4 class="section" id="DxFeed_Graal_Net_Schedules_Day_YearMonthDay_examples">Examples</h4>
+  <p>September 28, 1977 has value 19770928.</p>
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="DxFeed_Graal_Net_Schedules_Day_ContainsTime_" data-uid="DxFeed.Graal.Net.Schedules.Day.ContainsTime*"></a>
+
+  <h3 id="DxFeed_Graal_Net_Schedules_Day_ContainsTime_System_Int64_" data-uid="DxFeed.Graal.Net.Schedules.Day.ContainsTime(System.Int64)">
+  ContainsTime(long)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/1.3.0/src/DxFeed.Graal.Net/Schedules/Day.cs/#L139"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Determines whether a specified time falls within the current day.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool ContainsTime(long time)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>time</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></dt>
+    <dd><p>The time to check</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p><code>true</code> if the specified time is within the start and end time of the day; otherwise, <code>false</code>.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DxFeed_Graal_Net_Schedules_Day_Equals_" data-uid="DxFeed.Graal.Net.Schedules.Day.Equals*"></a>
+
+  <h3 id="DxFeed_Graal_Net_Schedules_Day_Equals_System_Object_" data-uid="DxFeed.Graal.Net.Schedules.Day.Equals(System.Object)">
+  Equals(object?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/1.3.0/src/DxFeed.Graal.Net/Schedules/Day.cs/#L324"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Indicates whether some other object is &quot;equal to&quot; this one.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override bool Equals(object? obj)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>obj</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></dt>
+    <dd><p>The object to compare with the current object.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p><code>true</code> if the specified object is equal to the current object; otherwise, <code>false</code>.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DxFeed_Graal_Net_Schedules_Day_GetFirstSession_" data-uid="DxFeed.Graal.Net.Schedules.Day.GetFirstSession*"></a>
+
+  <h3 id="DxFeed_Graal_Net_Schedules_Day_GetFirstSession_DxFeed_Graal_Net_Schedules_SessionFilter_" data-uid="DxFeed.Graal.Net.Schedules.Day.GetFirstSession(DxFeed.Graal.Net.Schedules.SessionFilter)">
+  GetFirstSession(SessionFilter)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/1.3.0/src/DxFeed.Graal.Net/Schedules/Day.cs/#L199"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets the first session of the day that is accepted by the specified filter, or null if no such session is found.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Session? GetFirstSession(SessionFilter filter)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>filter</code> <a class="xref" href="DxFeed.Graal.Net.Schedules.SessionFilter.html">SessionFilter</a></dt>
+    <dd><p>The filter used to evaluate sessions.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DxFeed.Graal.Net.Schedules.Session.html">Session</a></dt>
+    <dd><p>The first session of the day that meets the filter criteria; otherwise, null.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DxFeed_Graal_Net_Schedules_Day_GetHashCode_" data-uid="DxFeed.Graal.Net.Schedules.Day.GetHashCode*"></a>
+
+  <h3 id="DxFeed_Graal_Net_Schedules_Day_GetHashCode" data-uid="DxFeed.Graal.Net.Schedules.Day.GetHashCode">
+  GetHashCode()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/1.3.0/src/DxFeed.Graal.Net/Schedules/Day.cs/#L316"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets a hash code value for this object.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override int GetHashCode()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>A hash code value for this object.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DxFeed_Graal_Net_Schedules_Day_GetLastSession_" data-uid="DxFeed.Graal.Net.Schedules.Day.GetLastSession*"></a>
+
+  <h3 id="DxFeed_Graal_Net_Schedules_Day_GetLastSession_DxFeed_Graal_Net_Schedules_SessionFilter_" data-uid="DxFeed.Graal.Net.Schedules.Day.GetLastSession(DxFeed.Graal.Net.Schedules.SessionFilter)">
+  GetLastSession(SessionFilter)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/1.3.0/src/DxFeed.Graal.Net/Schedules/Day.cs/#L237"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets the last session of the day that is accepted by the specified filter, or null if no such session is found.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Session? GetLastSession(SessionFilter filter)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>filter</code> <a class="xref" href="DxFeed.Graal.Net.Schedules.SessionFilter.html">SessionFilter</a></dt>
+    <dd><p>The filter used to evaluate sessions.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DxFeed.Graal.Net.Schedules.Session.html">Session</a></dt>
+    <dd><p>The last session of the day that meets the filter criteria; otherwise, null.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DxFeed_Graal_Net_Schedules_Day_GetNextDay_" data-uid="DxFeed.Graal.Net.Schedules.Day.GetNextDay*"></a>
+
+  <h3 id="DxFeed_Graal_Net_Schedules_Day_GetNextDay_DxFeed_Graal_Net_Schedules_DayFilter_" data-uid="DxFeed.Graal.Net.Schedules.Day.GetNextDay(DxFeed.Graal.Net.Schedules.DayFilter)">
+  GetNextDay(DayFilter)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/1.3.0/src/DxFeed.Graal.Net/Schedules/Day.cs/#L309"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets the following day that is accepted by the specified filter, if such a day exists.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Day? GetNextDay(DayFilter filter)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>filter</code> <a class="xref" href="DxFeed.Graal.Net.Schedules.DayFilter.html">DayFilter</a></dt>
+    <dd><p>The filter used to determine the suitability of days.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DxFeed.Graal.Net.Schedules.Day.html">Day</a></dt>
+    <dd><p>The nearest following day that meets the filter criteria; otherwise, <code>null</code> if no suitable day is found
+within the search period of up to a year in the future.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+  <h4 class="section" id="DxFeed_Graal_Net_Schedules_Day_GetNextDay_DxFeed_Graal_Net_Schedules_DayFilter__remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>This method provides a convenient way to access the next day without handling the output parameter directly.</p>
+</div>
+
+
+
+
+  <a id="DxFeed_Graal_Net_Schedules_Day_GetPrevDay_" data-uid="DxFeed.Graal.Net.Schedules.Day.GetPrevDay*"></a>
+
+  <h3 id="DxFeed_Graal_Net_Schedules_Day_GetPrevDay_DxFeed_Graal_Net_Schedules_DayFilter_" data-uid="DxFeed.Graal.Net.Schedules.Day.GetPrevDay(DxFeed.Graal.Net.Schedules.DayFilter)">
+  GetPrevDay(DayFilter)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/1.3.0/src/DxFeed.Graal.Net/Schedules/Day.cs/#L273"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets the previous day that is accepted by the specified filter, if such a day exists.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Day? GetPrevDay(DayFilter filter)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>filter</code> <a class="xref" href="DxFeed.Graal.Net.Schedules.DayFilter.html">DayFilter</a></dt>
+    <dd><p>The filter used to evaluate each day.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DxFeed.Graal.Net.Schedules.Day.html">Day</a></dt>
+    <dd><p>The nearest previous day that meets the filter criteria; otherwise, <code>null</code> if no suitable day is found
+within the search period of up to a year back in time.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+  <h4 class="section" id="DxFeed_Graal_Net_Schedules_Day_GetPrevDay_DxFeed_Graal_Net_Schedules_DayFilter__remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>This method provides a convenient way to access the previous day without handling the output parameter directly.</p>
+</div>
+
+
+
+
+  <a id="DxFeed_Graal_Net_Schedules_Day_GetSessionByTime_" data-uid="DxFeed.Graal.Net.Schedules.Day.GetSessionByTime*"></a>
+
+  <h3 id="DxFeed_Graal_Net_Schedules_Day_GetSessionByTime_System_Int64_" data-uid="DxFeed.Graal.Net.Schedules.Day.GetSessionByTime(System.Int64)">
+  GetSessionByTime(long)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/1.3.0/src/DxFeed.Graal.Net/Schedules/Day.cs/#L161"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets session belonging to this day that contains specified time.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Session GetSessionByTime(long time)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>time</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></dt>
+    <dd><p>The time to search for.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DxFeed.Graal.Net.Schedules.Session.html">Session</a></dt>
+    <dd><p>The session that contains specified time.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DxFeed.Graal.Net.Native.ErrorHandling.JavaException.html">JavaException</a></dt>
+    <dd><p>If no such session was found within this day.</p>
+</dd>
+  </dl>
+
+
+
+  <a id="DxFeed_Graal_Net_Schedules_Day_GetSessions_" data-uid="DxFeed.Graal.Net.Schedules.Day.GetSessions*"></a>
+
+  <h3 id="DxFeed_Graal_Net_Schedules_Day_GetSessions" data-uid="DxFeed.Graal.Net.Schedules.Day.GetSessions">
+  GetSessions()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/1.3.0/src/DxFeed.Graal.Net/Schedules/Day.cs/#L149"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets list of sessions that constitute this day.
+This method will throw <a class="xref" href="DxFeed.Graal.Net.Native.ErrorHandling.JavaException.html">JavaException</a> if specified time
+falls outside of valid date range from 0001-01-02 to 9999-12-30.
+The list is ordered according to natural order of sessions - how they occur one after another.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IEnumerable&lt;Session&gt; GetSessions()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="DxFeed.Graal.Net.Schedules.Session.html">Session</a>&gt;</dt>
+    <dd><p>The list of sessions.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DxFeed_Graal_Net_Schedules_Day_ToString_" data-uid="DxFeed.Graal.Net.Schedules.Day.ToString*"></a>
+
+  <h3 id="DxFeed_Graal_Net_Schedules_Day_ToString" data-uid="DxFeed.Graal.Net.Schedules.Day.ToString">
+  ToString()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/1.3.0/src/DxFeed.Graal.Net/Schedules/Day.cs/#L343"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns string representation of this object.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override string ToString()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>The string representation.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DxFeed_Graal_Net_Schedules_Day_TryGetFirstSession_" data-uid="DxFeed.Graal.Net.Schedules.Day.TryGetFirstSession*"></a>
+
+  <h3 id="DxFeed_Graal_Net_Schedules_Day_TryGetFirstSession_DxFeed_Graal_Net_Schedules_SessionFilter_DxFeed_Graal_Net_Schedules_Session__" data-uid="DxFeed.Graal.Net.Schedules.Day.TryGetFirstSession(DxFeed.Graal.Net.Schedules.SessionFilter,DxFeed.Graal.Net.Schedules.Session@)">
+  TryGetFirstSession(SessionFilter, out Session)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/1.3.0/src/DxFeed.Graal.Net/Schedules/Day.cs/#L179"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Attempts to find the first session belonging to this day accepted by specified filter.
+This method does not cross the day boundary.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool TryGetFirstSession(SessionFilter filter, out Session session)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>filter</code> <a class="xref" href="DxFeed.Graal.Net.Schedules.SessionFilter.html">SessionFilter</a></dt>
+    <dd><p>The filter used to evaluate sessions.</p>
+</dd>
+    <dt><code>session</code> <a class="xref" href="DxFeed.Graal.Net.Schedules.Session.html">Session</a></dt>
+    <dd><p>The first session that is accepted by the filter.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p><code>true</code> if a session meeting the filter criteria is found within the day; otherwise, <code>false</code>.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+  <h4 class="section" id="DxFeed_Graal_Net_Schedules_Day_TryGetFirstSession_DxFeed_Graal_Net_Schedules_SessionFilter_DxFeed_Graal_Net_Schedules_Session___examples">Examples</h4>
+  <p>To find the first trading session of any type:</p>
+<pre><code class="lang-csharp">bool found = TryGetFirstSession(SessionFilter.TRADING, out Session session);</code></pre>
+<p>To find the first regular trading session:</p>
+<pre><code class="lang-csharp">bool found = TryGetFirstSession(SessionFilter.REGULAR, out Session session);</code></pre>
+
+
+
+
+
+
+  <a id="DxFeed_Graal_Net_Schedules_Day_TryGetLastSession_" data-uid="DxFeed.Graal.Net.Schedules.Day.TryGetLastSession*"></a>
+
+  <h3 id="DxFeed_Graal_Net_Schedules_Day_TryGetLastSession_DxFeed_Graal_Net_Schedules_SessionFilter_DxFeed_Graal_Net_Schedules_Session__" data-uid="DxFeed.Graal.Net.Schedules.Day.TryGetLastSession(DxFeed.Graal.Net.Schedules.SessionFilter,DxFeed.Graal.Net.Schedules.Session@)">
+  TryGetLastSession(SessionFilter, out Session)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/1.3.0/src/DxFeed.Graal.Net/Schedules/Day.cs/#L217"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Attempts to find the last session belonging to this day accepted by specified filter.
+This method does not cross the day boundary.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool TryGetLastSession(SessionFilter filter, out Session session)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>filter</code> <a class="xref" href="DxFeed.Graal.Net.Schedules.SessionFilter.html">SessionFilter</a></dt>
+    <dd><p>The filter used to evaluate sessions.</p>
+</dd>
+    <dt><code>session</code> <a class="xref" href="DxFeed.Graal.Net.Schedules.Session.html">Session</a></dt>
+    <dd><p>The first session that is accepted by the filter.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p><code>true</code> if a session meeting the filter criteria is found within the day; otherwise, <code>false</code>.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+  <h4 class="section" id="DxFeed_Graal_Net_Schedules_Day_TryGetLastSession_DxFeed_Graal_Net_Schedules_SessionFilter_DxFeed_Graal_Net_Schedules_Session___examples">Examples</h4>
+  <p>To find last trading session of any type use this code:</p>
+<pre><code class="lang-csharp">bool found = TryGetLastSession(SessionFilter.TRADING, out Session session);</code></pre>
+<p>To find last regular trading session use this code:</p>
+<pre><code class="lang-csharp">bool found = TryGetLastSession(SessionFilter.REGULAR, out Session session);</code></pre>
+
+
+
+
+
+
+  <a id="DxFeed_Graal_Net_Schedules_Day_TryGetNextDay_" data-uid="DxFeed.Graal.Net.Schedules.Day.TryGetNextDay*"></a>
+
+  <h3 id="DxFeed_Graal_Net_Schedules_Day_TryGetNextDay_DxFeed_Graal_Net_Schedules_DayFilter_DxFeed_Graal_Net_Schedules_Day__" data-uid="DxFeed.Graal.Net.Schedules.Day.TryGetNextDay(DxFeed.Graal.Net.Schedules.DayFilter,DxFeed.Graal.Net.Schedules.Day@)">
+  TryGetNextDay(DayFilter, out Day)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/1.3.0/src/DxFeed.Graal.Net/Schedules/Day.cs/#L285"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Attempts to find the following day accepted by specified filter.
+This method looks for appropriate day up to a year in the future.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool TryGetNextDay(DayFilter filter, out Day day)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>filter</code> <a class="xref" href="DxFeed.Graal.Net.Schedules.DayFilter.html">DayFilter</a></dt>
+    <dd><p>The filter used to evaluate each day.</p>
+</dd>
+    <dt><code>day</code> <a class="xref" href="DxFeed.Graal.Net.Schedules.Day.html">Day</a></dt>
+    <dd><p>The nearest following day that is accepted by the filter.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p><b>true</b> if a suitable day is found; otherwise, <b>false</b>.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DxFeed_Graal_Net_Schedules_Day_TryGetPrevDay_" data-uid="DxFeed.Graal.Net.Schedules.Day.TryGetPrevDay*"></a>
+
+  <h3 id="DxFeed_Graal_Net_Schedules_Day_TryGetPrevDay_DxFeed_Graal_Net_Schedules_DayFilter_DxFeed_Graal_Net_Schedules_Day__" data-uid="DxFeed.Graal.Net.Schedules.Day.TryGetPrevDay(DxFeed.Graal.Net.Schedules.DayFilter,DxFeed.Graal.Net.Schedules.Day@)">
+  TryGetPrevDay(DayFilter, out Day)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/1.3.0/src/DxFeed.Graal.Net/Schedules/Day.cs/#L249"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Attempts to find the previous day accepted by specified filter.
+This method looks for appropriate day up to a year back in time.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool TryGetPrevDay(DayFilter filter, out Day day)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>filter</code> <a class="xref" href="DxFeed.Graal.Net.Schedules.DayFilter.html">DayFilter</a></dt>
+    <dd><p>The filter used to evaluate each day.</p>
+</dd>
+    <dt><code>day</code> <a class="xref" href="DxFeed.Graal.Net.Schedules.Day.html">Day</a></dt>
+    <dd><p>The nearest previous day that is accepted by the filter.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p><b>true</b> if a suitable day is found; otherwise, <b>false</b>.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Copyright © 2022 Devexperts LLC</span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

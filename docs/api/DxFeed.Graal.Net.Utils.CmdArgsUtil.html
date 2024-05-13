@@ -16,7 +16,7 @@
       <meta name="docfx:rel" content="../../">
       
       
-      <meta name="docfx:docurl" content="https://github.com/dxFeed/dxfeed-graal-net-api/new/1.2.1/apiSpec/new?filename=DxFeed_Graal_Net_Utils_CmdArgsUtil.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Utils.CmdArgsUtil%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="docfx:docurl" content="https://github.com/dxFeed/dxfeed-graal-net-api/new/1.3.0/apiSpec/new?filename=DxFeed_Graal_Net_Utils_CmdArgsUtil.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Utils.CmdArgsUtil%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -29,15 +29,15 @@
       <meta name="loc:changeTheme" content="Change theme">
       <meta name="loc:copy" content="Copy">
       <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
   </head>
-
-  <script type="module" src="./../../public/docfx.min.js"></script>
-
-  <script>
-    const theme = localStorage.getItem('theme') || 'auto'
-    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
-  </script>
-
 
   <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
     <header class="bg-body border-bottom">
@@ -89,7 +89,7 @@
 
 
   <h1 id="DxFeed_Graal_Net_Utils_CmdArgsUtil" data-uid="DxFeed.Graal.Net.Utils.CmdArgsUtil" class="text-break">
-Class CmdArgsUtil  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/1.2.1/src/DxFeed.Graal.Net/Utils/CmdArgsUtil.cs/#L21"><i class="bi bi-code-slash"></i></a>
+Class CmdArgsUtil  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/1.3.0/src/DxFeed.Graal.Net/Utils/CmdArgsUtil.cs/#L17"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -157,28 +157,12 @@ Class CmdArgsUtil  <a class="header-action link-secondary" title="View source" h
 
   <h3 id="DxFeed_Graal_Net_Utils_CmdArgsUtil_ParseFromTime_System_String_" data-uid="DxFeed.Graal.Net.Utils.CmdArgsUtil.ParseFromTime(System.String)">
   ParseFromTime(string)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/1.2.1/src/DxFeed.Graal.Net/Utils/CmdArgsUtil.cs/#L130"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/1.3.0/src/DxFeed.Graal.Net/Utils/CmdArgsUtil.cs/#L55"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>Converts the specified string representation of a date and time
-to its <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.datetimeoffset">DateTimeOffset</a> in current <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.timezoneinfo">TimeZoneInfo</a>
-and <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.globalization.cultureinfo.invariantculture">InvariantCulture</a>.
-If no time zone is specified in the parsed string, the string is assumed to denote a local time,
-and converted to current <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.timezoneinfo">TimeZoneInfo</a>.
-<br>
-It accepts the following formats.
-<br><ul><li><b><tt>0</tt></b> is parsed as zero time in UTC.
-</li><li><b><tt>&lt;long-value-in-milliseconds&gt;</tt></b>
-The value in milliseconds since Unix epoch since Unix epoch.
-It should be positive and have at least 9 digits
-(otherwise it could not be distinguished from date in format <tt>'yyyymmdd'</tt>).
-Each date since 1970-01-03 can be represented in this form.
-</li><li><b><tt>&lt;date&gt;[&lt;time&gt;][&lt;timezone&gt;]</tt></b>
-If time is missing it is supposed to be <tt>'00:00:00'</tt>.
-</li></ul><ul><li><b>&lt;date&gt;</b> is one of:
-<ul><li><b><tt>yyyy-MM-dd</tt></b></li><li><b><tt>yyyyMMdd</tt></b></li></ul></li><li><b>&lt;time&gt;</b> is one of:
-<ul><li><b><tt>HH:mm:ss[.sss]</tt></b></li><li><b><tt>HHmmss[.sss]</tt></b></li></ul></li><li><b>&lt;timezone&gt;</b> is one of:
-<ul><li><b><tt>[+-]HH:mm</tt></b></li><li><b><tt>[+-]HHmm</tt></b></li><li><b><tt>Z</tt></b> for UTC.</li></ul></li></ul>
+  <div class="markdown level1 summary"><p>Reads Date from String.
+This method is designed to understand
+<a href="http://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a> formatted date and time.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
@@ -195,7 +179,7 @@ If time is missing it is supposed to be <tt>'00:00:00'</tt>.
   <h4 class="section">Returns</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.datetimeoffset">DateTimeOffset</a></dt>
-    <dd><p>Returns <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.datetimeoffset">DateTimeOffset</a> parsed from input value.</p>
+    <dd><p>The date parsed from value.</p>
 </dd>
   </dl>
 
@@ -206,12 +190,6 @@ If time is missing it is supposed to be <tt>'00:00:00'</tt>.
 
 
 
-  <h4 class="section">Exceptions</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentexception">ArgumentException</a></dt>
-    <dd><p>If input value has wrong format.</p>
-</dd>
-  </dl>
 
 
 
@@ -219,7 +197,7 @@ If time is missing it is supposed to be <tt>'00:00:00'</tt>.
 
   <h3 id="DxFeed_Graal_Net_Utils_CmdArgsUtil_ParseProperties_System_String_" data-uid="DxFeed.Graal.Net.Utils.CmdArgsUtil.ParseProperties(System.String)">
   ParseProperties(string)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/1.2.1/src/DxFeed.Graal.Net/Utils/CmdArgsUtil.cs/#L140"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/1.3.0/src/DxFeed.Graal.Net/Utils/CmdArgsUtil.cs/#L64"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Parses the input collection of strings and returns a collection of key-value properties.
@@ -265,7 +243,7 @@ The input strings should look like comma-separated: &quot;key=value&quot;.</p>
 
   <h3 id="DxFeed_Graal_Net_Utils_CmdArgsUtil_ParseSymbols_System_String_" data-uid="DxFeed.Graal.Net.Utils.CmdArgsUtil.ParseSymbols(System.String)">
   ParseSymbols(string)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/1.2.1/src/DxFeed.Graal.Net/Utils/CmdArgsUtil.cs/#L28"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/1.3.0/src/DxFeed.Graal.Net/Utils/CmdArgsUtil.cs/#L24"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Parses an input string and returns a set of symbols.</p>
@@ -304,7 +282,7 @@ The input strings should look like comma-separated: &quot;key=value&quot;.</p>
 
   <h3 id="DxFeed_Graal_Net_Utils_CmdArgsUtil_ParseTypes_System_String_" data-uid="DxFeed.Graal.Net.Utils.CmdArgsUtil.ParseTypes(System.String)">
   ParseTypes(string)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/1.2.1/src/DxFeed.Graal.Net/Utils/CmdArgsUtil.cs/#L107"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/1.3.0/src/DxFeed.Graal.Net/Utils/CmdArgsUtil.cs/#L32"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Parses an input string and returns a set of event types.</p>

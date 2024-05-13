@@ -29,15 +29,15 @@
       <meta name="loc:changeTheme" content="Change theme">
       <meta name="loc:copy" content="Copy">
       <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
   </head>
-
-  <script type="module" src="./../../public/docfx.min.js"></script>
-
-  <script>
-    const theme = localStorage.getItem('theme') || 'auto'
-    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
-  </script>
-
 
   <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
     <header class="bg-body border-bottom">
@@ -122,18 +122,11 @@ For more details see <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/even
 <p>Regional symbol subscription receives events only from a designated exchange, marketplace, or venue
 instead of receiving composite events from all venues (by default). Regional symbol is composed from a
 <i>base symbol</i>, ampersand character ('&amp;'), and an exchange code character. For example,</p>
-<ul>
-<li>"SPY" is the symbol for composite events for SPDR S&amp;P 500 ETF from all exchanges,</li>
-<li>"SPY&amp;N" is the symbol for event for SPDR S&amp;P 500 ETF that originate only from NYSE marketplace.</li>
-</ul>
-<h3>Symbol attributes</h3>
+<ul><li>"SPY" is the symbol for composite events for SPDR S&amp;P 500 ETF from all exchanges,</li><li>"SPY&amp;N" is the symbol for event for SPDR S&amp;P 500 ETF that originate only from NYSE marketplace.</li></ul><h3>Symbol attributes</h3>
 <p>Market event symbols can have a number of attributes attached to then in curly braces
 with &quot;&lt;key&gt;=&lt;value&gt;&quot; paris separated by commas. For example,</p>
-<ul>
-<li>"SPY{price=bid}" is the market symbol "SPY" with an attribute key "price" set to value "bid".</li>
-<li>"SPY(=5m,tho=true}" is the market symbol "SPY" with two attributes. One has an empty key and
-value "5m", while the other has key "tho" and value "true".</li>
-</ul>
+<ul><li>"SPY{price=bid}" is the market symbol "SPY" with an attribute key "price" set to value "bid".</li><li>"SPY(=5m,tho=true}" is the market symbol "SPY" with two attributes. One has an empty key and
+value "5m", while the other has key "tho" and value "true".</li></ul>
 The methods in this class always maintain attribute keys in alphabetic order.
 <br>
 For more details see <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/event/market/MarketEventSymbols.html">Javadoc</a>.
@@ -169,13 +162,10 @@ and <a class="xref" href="DxFeed.Graal.Net.Events.Market.SpreadOrder.html">Sprea
 Order events represent a snapshot for a full available market depth for a symbol.
 The collection of order events of a symbol represents the most recent information that is
 available about orders on the market at any given moment of time.
-<br>
-<a class="xref" href="DxFeed.Graal.Net.Events.Market.Order.html">Order</a> event represents market depth for a <b>specific symbol</b>.
-<br>
-<a class="xref" href="DxFeed.Graal.Net.Events.Market.AnalyticOrder.html">AnalyticOrder</a> event represents market depth for a <b>specific symbol</b>
+<br><a class="xref" href="DxFeed.Graal.Net.Events.Market.Order.html">Order</a> event represents market depth for a <b>specific symbol</b>.
+<br><a class="xref" href="DxFeed.Graal.Net.Events.Market.AnalyticOrder.html">AnalyticOrder</a> event represents market depth for a <b>specific symbol</b>
 extended with an analytic information, for example, whether particular order represent an iceberg or not.
-<br>
-<a class="xref" href="DxFeed.Graal.Net.Events.Market.SpreadOrder.html">SpreadOrder</a> event represents market depth for <b>all spreads on a given underlying symbol</b>.
+<br><a class="xref" href="DxFeed.Graal.Net.Events.Market.SpreadOrder.html">SpreadOrder</a> event represents market depth for <b>all spreads on a given underlying symbol</b>.
 <br>
 For more details see <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/event/market/OrderBase.html">Javadoc</a>.</p>
 </dd>
@@ -183,23 +173,23 @@ For more details see <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/even
     <dl class="jumplist">
       <dt><a class="xref" href="DxFeed.Graal.Net.Events.Market.OrderSource.html">OrderSource</a></dt>
       <dd><p>Identifies source of <a class="xref" href="DxFeed.Graal.Net.Events.Market.Order.html">Order</a>, <a class="xref" href="DxFeed.Graal.Net.Events.Market.AnalyticOrder.html">AnalyticOrder</a> and <a class="xref" href="DxFeed.Graal.Net.Events.Market.SpreadOrder.html">SpreadOrder</a> events.</p>
-<ul>
-<li>
-<em>Synthetic</em> sources <a class="xref" href="DxFeed.Graal.Net.Events.Market.OrderSource.html#DxFeed_Graal_Net_Events_Market_OrderSource_COMPOSITE_BID">COMPOSITE_BID</a>, <a class="xref" href="DxFeed.Graal.Net.Events.Market.OrderSource.html#DxFeed_Graal_Net_Events_Market_OrderSource_COMPOSITE_ASK">COMPOSITE_ASK</a>,
+<ul><li><em>Synthetic</em> sources <a class="xref" href="DxFeed.Graal.Net.Events.Market.OrderSource.html#DxFeed_Graal_Net_Events_Market_OrderSource_COMPOSITE_BID">COMPOSITE_BID</a>, <a class="xref" href="DxFeed.Graal.Net.Events.Market.OrderSource.html#DxFeed_Graal_Net_Events_Market_OrderSource_COMPOSITE_ASK">COMPOSITE_ASK</a>,
     <a class="xref" href="DxFeed.Graal.Net.Events.Market.OrderSource.html#DxFeed_Graal_Net_Events_Market_OrderSource_REGIONAL_BID">REGIONAL_BID</a> and <a class="xref" href="DxFeed.Graal.Net.Events.Market.OrderSource.html#DxFeed_Graal_Net_Events_Market_OrderSource_REGIONAL_ASK">REGIONAL_ASK</a> are provided for convenience of a consolidated
     order book and are automatically generated based on the corresponding <a class="xref" href="DxFeed.Graal.Net.Events.Market.Quote.html">Quote</a> events.
-</li>
-<li>
-<em>Aggregate</em> sources <a class="xref" href="DxFeed.Graal.Net.Events.Market.OrderSource.html#DxFeed_Graal_Net_Events_Market_OrderSource_AGGREGATE_BID">AGGREGATE_BID</a>  and <a class="xref" href="DxFeed.Graal.Net.Events.Market.OrderSource.html#DxFeed_Graal_Net_Events_Market_OrderSource_AGGREGATE_ASK">AGGREGATE_ASK</a>  provide
+</li><li><em>Aggregate</em> sources <a class="xref" href="DxFeed.Graal.Net.Events.Market.OrderSource.html#DxFeed_Graal_Net_Events_Market_OrderSource_AGGREGATE_BID">AGGREGATE_BID</a>  and <a class="xref" href="DxFeed.Graal.Net.Events.Market.OrderSource.html#DxFeed_Graal_Net_Events_Market_OrderSource_AGGREGATE_ASK">AGGREGATE_ASK</a>  provide
     futures depth (aggregated by price level) and NASDAQ Level II (top of book for each market maker).
     These source cannot be directly published to via dxFeed API.
-</li>
-<li>
-<a class="xref" href="DxFeed.Graal.Net.Events.Market.OrderSource.html#DxFeed_Graal_Net_Events_Market_OrderSource_IsPublishable_System_Type_">IsPublishable(Type)</a> sources <a class="xref" href="DxFeed.Graal.Net.Events.Market.OrderSource.html#DxFeed_Graal_Net_Events_Market_OrderSource_DEFAULT">DEFAULT</a>, <a class="xref" href="DxFeed.Graal.Net.Events.Market.OrderSource.html#DxFeed_Graal_Net_Events_Market_OrderSource_NTV">NTV</a> and <a class="xref" href="DxFeed.Graal.Net.Events.Market.OrderSource.html#DxFeed_Graal_Net_Events_Market_OrderSource_ISE">ISE</a>
+</li><li><a class="xref" href="DxFeed.Graal.Net.Events.Market.OrderSource.html#DxFeed_Graal_Net_Events_Market_OrderSource_IsPublishable_System_Type_">IsPublishable(Type)</a> sources <a class="xref" href="DxFeed.Graal.Net.Events.Market.OrderSource.html#DxFeed_Graal_Net_Events_Market_OrderSource_DEFAULT">DEFAULT</a>, <a class="xref" href="DxFeed.Graal.Net.Events.Market.OrderSource.html#DxFeed_Graal_Net_Events_Market_OrderSource_NTV">NTV</a> and <a class="xref" href="DxFeed.Graal.Net.Events.Market.OrderSource.html#DxFeed_Graal_Net_Events_Market_OrderSource_ISE">ISE</a>
     support full range of dxFeed API features.
-</li>
-</ul>
+</li></ul>
 For more details see <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/event/market/OrderSource.html">Javadoc</a>.
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="DxFeed.Graal.Net.Events.Market.OtcMarketsOrder.html">OtcMarketsOrder</a></dt>
+      <dd><p>Represents an extension of <a class="xref" href="DxFeed.Graal.Net.Events.Market.Order.html">Order</a> for the symbols traded on the OTC Markets. It includes the OTC Markets specific quote data.
+For more information about original fields, QAP, Quote Flags and Extended Quote Flags,
+see <a href="https://downloads.dxfeed.com/specifications/OTC_Markets_Multicast_Data_Feeds.pdf">OTC Markets Multicast Data Feed</a>.</p>
 </dd>
     </dl>
     <dl class="jumplist">
@@ -305,6 +295,12 @@ For more details see <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/even
       <dt><a class="xref" href="DxFeed.Graal.Net.Events.Market.OrderAction.html">OrderAction</a></dt>
       <dd><p>Action enum for the Full Order Book (FOB) Orders. Action describes business meaning of the
 <a class="xref" href="DxFeed.Graal.Net.Events.Market.Order.html">Order</a> event: whether order was added or replaced, partially or fully executed, etc.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="DxFeed.Graal.Net.Events.Market.OtcMarketsPriceType.html">OtcMarketsPriceType</a></dt>
+      <dd><p>Type of prices on the OTC Markets.</p>
+<p>Please see <a href="https://downloads.dxfeed.com/specifications/OTC_Markets_Data_Display_Requirements.pdf">OTC Markets Data Display Requirements</a></p>
 </dd>
     </dl>
     <dl class="jumplist">

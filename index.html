@@ -16,7 +16,7 @@
       <meta name="docfx:rel" content="">
       
       
-      <meta name="docfx:docurl" content="https://github.com/dxFeed/dxfeed-graal-net-api/blob/1.2.1/index.md/#L1">
+      <meta name="docfx:docurl" content="https://github.com/dxFeed/dxfeed-graal-net-api/blob/1.3.0/index.md/#L1">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -29,15 +29,15 @@
       <meta name="loc:changeTheme" content="Change theme">
       <meta name="loc:copy" content="Copy">
       <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
   </head>
-
-  <script type="module" src="./public/docfx.min.js"></script>
-
-  <script>
-    const theme = localStorage.getItem('theme') || 'auto'
-    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
-  </script>
-
 
   <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
     <header class="bg-body border-bottom">
@@ -63,23 +63,9 @@
     </header>
 
     <main class="container-xxl">
-      <div class="toc-offcanvas">
-        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
-          <div class="offcanvas-header">
-            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
-          </div>
-          <div class="offcanvas-body">
-            <nav class="toc" id="toc"></nav>
-          </div>
-        </div>
-      </div>
 
       <div class="content">
         <div class="actionbar">
-          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
-            <i class="bi bi-list"></i>
-          </button>
 
           <nav id="breadcrumb"></nav>
         </div>
@@ -102,7 +88,7 @@ the <a href="#overview">Overview</a> section.<br></p>
 <img src="https://img.shields.io/badge/platform-win--x64%20%7C%20linux--x64%20%7C%20osx--x64%20%7C%20osx--arm64-lightgrey" alt="Platform">
 <a href="https://dotnet.microsoft.com/en-us/"><img src="https://img.shields.io/badge/.NET_version-net6.0%20%7C%20net7.0%20%7C%20net8.0-blueviolet" alt="NET"></a>
 <a href="https://github.com/dxFeed/dxfeed-graal-net-api/releases/latest"><img src="https://img.shields.io/github/v/release/dxFeed/dxfeed-graal-net-api" alt="Release"></a>
-<a href="https://dxfeed.jfrog.io/artifactory/nuget-open/com/dxfeed/graal-net/"><img src="https://img.shields.io/badge/nuget-1.2.1-blue" alt="Nuget"></a>
+<a href="https://dxfeed.jfrog.io/artifactory/nuget-open/com/dxfeed/graal-net/"><img src="https://img.shields.io/badge/nuget-1.3.0-blue" alt="Nuget"></a>
 <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/master/LICENSE"><img src="https://img.shields.io/badge/license-MPL--2.0-orange" alt="License"></a></p>
 <h2 id="table-of-contents">Table of Contents</h2>
 <ul>
@@ -111,7 +97,6 @@ the <a href="#overview">Overview</a> section.<br></p>
 <li><a href="#reasons-for-the-new-net-api-repository">Reasons for the New .NET API Repository</a></li>
 <li><a href="#benefits-of-the-new-version">Benefits of the New Version</a></li>
 <li><a href="#milestones">Milestones</a></li>
-<li><a href="#future-development">Future Development</a></li>
 <li><a href="#migration">Migration</a></li>
 <li><a href="#implementation-details">Implementation Details</a></li>
 <li><a href="#architectural-restrictions-and-other-limitations-of-the-old-version">Architectural Restrictions and Other Limitations in the Old Version</a></li>
@@ -151,19 +136,6 @@ API.</p>
 <p>The old version will be considered deprecated, and at the end of 2024, we plan to end the service.
 If you’re already our customer and have difficulty with a future transition, please contact us via
 our <a href="https://jira.in.devexperts.com/servicedesk/customer/portal/1">customer portal</a>.</p>
-<h3 id="future-development">Future Development</h3>
-<p>Features planned with <strong>high priority</strong>:</p>
-<ul>
-<li>Add necessary entities for more convenient API
-usage (<a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/model/TimeSeriesEventModel.html">TimeSeriesEventModel</a>, <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/model/market/OrderBookModel.html">OrderBookModel</a>, etc.)</li>
-<li>Implement a model
-of <a href="https://kb.dxfeed.com/en/data-services/real-time-data-services/-net-api-incremental-updates.html">incremental updates</a>
-in Java API and add it to .NET API</li>
-<li>Implement OrderBookModel with advanced logic (e.g., OnNewBook, OnBookUpdate, OnBookIncrementalChange) in Java API and
-add it to .NET API</li>
-<li>Add samples or implement a convenient API
-for <a href="https://kb.dxfeed.com/en/data-services/aggregated-data-services/candlewebservice.html">Candlewebservice</a></li>
-</ul>
 <h3 id="migration">Migration</h3>
 <p>To help you rewrite the existing API calls, we’ve prepared <a href="#samples">samples</a> demonstrating how to work with the new
 API and how several functionalities are implemented. More examples will follow. The table below shows the sample mapping
@@ -209,7 +181,7 @@ ready to answer any questions and help with the transition.</p>
 <td style="text-align: center;">5</td>
 <td style="text-align: left;">How to receive snapshots of <code>TimeAndSale</code>, <code>Candle</code>, <code>Series</code>, <code>Greeks</code> events on a given time interval without live subscription</td>
 <td style="text-align: left;"><a href="https://github.com/dxFeed/dxfeed-net-api/tree/master/samples/dxf_simple_data_retrieving_sample">dxf_simple_data_retrieving_sample</a></td>
-<td style="text-align: left;"><em>Q2’2024</em>, please see <a href="#future-development">TBD</a> section</td>
+<td style="text-align: left;"><a href="https://github.com/dxFeed/dxfeed-graal-net-api/tree/main/samples/FetchDailyCandles">FetchDailyCandles</a></td>
 </tr>
 <tr>
 <td style="text-align: center;">6</td>
@@ -373,14 +345,14 @@ will be amended, <em>&quot;best practices&quot;</em>, specific language restrict
 </table>
 <h4 id="requirements-1">Requirements</h4>
 <ul>
-<li>.NET (not required for self-contained assemblies)</li>
+<li>.NET 6.0+ (not required for self-contained assemblies)</li>
 <li><a href="https://aka.ms/vs/17/release/vc_redist.x64.exe">Visual C++ Redistributable for Visual Studio 2015</a></li>
 </ul>
 <h3 id="linux">Linux</h3>
 <p>Only x64 versions are supported.</p>
 <h4 id="requirements-2">Requirements</h4>
 <ul>
-<li>.NET (not required for self-contained assemblies)</li>
+<li>.NET 6.0+ (not required for self-contained assemblies)</li>
 </ul>
 <h4 id="libc-compatibility">Libc compatibility</h4>
 <ul>
@@ -414,7 +386,7 @@ will be amended, <em>&quot;best practices&quot;</em>, specific language restrict
 <p>Is supported in the Rosetta 2 x64 emulator.</p>
 <h4 id="requirements-3">Requirements</h4>
 <ul>
-<li>.NET (not required for self-contained assemblies)</li>
+<li>.NET 6.0+ (not required for self-contained assemblies)</li>
 </ul>
 <h2 id="installation">Installation</h2>
 <p>Add this <a href="https://dxfeed.jfrog.io/artifactory/api/nuget/v3/nuget-open">package source</a> to NuGet config.
@@ -548,206 +520,144 @@ is a simple demonstration of how to write events to a tape file</li>
 demonstration of how to get Instrument Profiles</li>
 <li class="task-list-item"><input disabled="disabled" type="checkbox" checked="checked"> <a href="https://github.com/dxFeed/dxfeed-graal-net-api/tree/main/samples/DxFeedLiveIpfSample">DxFeedLiveIpfSample</a> is a
 simple demonstration of how to get live updates for Instrument Profiles</li>
-<li class="task-list-item"><input disabled="disabled" type="checkbox"> DxFeedPublishProfiles is a simple demonstration of how to publish market events</li>
-<li class="task-list-item"><input disabled="disabled" type="checkbox"> ScheduleSample is a simple demonstration of how to get various scheduling information for instruments</li>
-<li class="task-list-item"><input disabled="disabled" type="checkbox" checked="checked"> FetchDailyCandles is a simple demonstration of how to fetch last N-days of candles for a specified symbol</li>
+<li class="task-list-item"><input disabled="disabled" type="checkbox" checked="checked"> <a href="https://github.com/dxFeed/dxfeed-graal-net-api/tree/main/samples/ScheduleSample">ScheduleSample</a> is a simple demonstration of how to get various scheduling information for instruments</li>
+<li class="task-list-item"><input disabled="disabled" type="checkbox" checked="checked"> <a href="https://github.com/dxFeed/dxfeed-graal-net-api/tree/main/samples/FetchDailyCandles">FetchDailyCandles</a> is a simple
+demonstration of how to fetch last N-days of candles for a specified symbol</li>
 </ul>
 <h2 id="current-state">Current State</h2>
 <h3 id="endpoint-roles">Endpoint Roles</h3>
 <ul class="contains-task-list">
-<li class="task-list-item"><p><input disabled="disabled" type="checkbox" checked="checked"> <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/api/DXEndpoint.Role.html#FEED">FEED</a>
+<li class="task-list-item"><p><input disabled="disabled" type="checkbox" checked="checked"> <a href="https://dxfeed.github.io/dxfeed-graal-net-api/docs/api/DxFeed.Graal.Net.Api.DXEndpoint.Role.html#fields">FEED</a>
 connects to the remote data feed provider and is optimized for real-time or delayed data processing,
-<strong>this is a default role</strong>
-(<a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/main/samples/DxFeedConnect/Program.cs">.NET API sample</a>)</p>
+this is a default role</p>
 </li>
-<li class="task-list-item"><p><input disabled="disabled" type="checkbox" checked="checked"> <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/api/DXEndpoint.Role.html#STREAM_FEED">STREAM_FEED</a>
+<li class="task-list-item"><p><input disabled="disabled" type="checkbox" checked="checked"> <a href="https://dxfeed.github.io/dxfeed-graal-net-api/docs/api/DxFeed.Graal.Net.Api.DXEndpoint.Role.html#fields">STREAM_FEED</a>
 is similar to <code>Feed</code> and also connects to the remote data feed provider but is designed for bulk data parsing from
 files
-(<a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/main/samples/DxFeedFileParser/Program.cs">.NET API sample</a>)</p>
+(<a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/main/samples/DxFeedFileParser/Program.cs">DxFeedFileParser</a>)</p>
 </li>
-<li class="task-list-item"><p><input disabled="disabled" type="checkbox" checked="checked"> <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/api/DXEndpoint.Role.html#PUBLISHER">PUBLISHER</a>
+<li class="task-list-item"><p><input disabled="disabled" type="checkbox" checked="checked"> <a href="https://dxfeed.github.io/dxfeed-graal-net-api/docs/api/DxFeed.Graal.Net.Api.DXEndpoint.Role.html#fields">PUBLISHER</a>
 connects to the remote publisher hub (also known as multiplexor) or creates a publisher on the local host
-(<a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/main/samples/WriteTapeFile/Program.cs">.NET API sample</a>)</p>
+(<a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/main/samples/WriteTapeFile/Program.cs">WriteTapeFile</a>)</p>
 </li>
-<li class="task-list-item"><p><input disabled="disabled" type="checkbox" checked="checked"> <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/api/DXEndpoint.Role.html#STREAM_PUBLISHER">STREAM_PUBLISHER</a>
+<li class="task-list-item"><p><input disabled="disabled" type="checkbox" checked="checked"> <a href="https://dxfeed.github.io/dxfeed-graal-net-api/docs/api/DxFeed.Graal.Net.Api.DXEndpoint.Role.html#fields">STREAM_PUBLISHER</a>
 is similar to <code>Publisher</code> and also connects to the remote publisher hub, but is designed for bulk data publishing
-(<a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/main/samples/ConvertTapeFile/Program.cs">.NET API sample</a>)</p>
+(<a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/main/samples/ConvertTapeFile/Program.cs">ConvertTapeFile</a>)</p>
 </li>
-<li class="task-list-item"><p><input disabled="disabled" type="checkbox" checked="checked"> <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/api/DXEndpoint.Role.html#LOCAL_HUB">LOCAL_HUB</a>
+<li class="task-list-item"><p><input disabled="disabled" type="checkbox" checked="checked"> <a href="https://dxfeed.github.io/dxfeed-graal-net-api/docs/api/DxFeed.Graal.Net.Api.DXEndpoint.Role.html#fields">LOCAL_HUB</a>
 is a local hub without the ability to establish network connections. Events published via <code>Publisher</code> are delivered to
 local <code>Feed</code> only</p>
-</li>
-<li class="task-list-item"><p><input disabled="disabled" type="checkbox"> <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/api/DXEndpoint.Role.html#ON_DEMAND_FEED">ON_DEMAND_FEED</a>
-is similar to <code>Feed</code>, but it is designed to be used
-with  <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/ondemand/OnDemandService.html">OnDemandService</a> for historical
-data replay only</p>
 </li>
 </ul>
 <h3 id="event-types">Event Types</h3>
 <ul class="contains-task-list">
-<li class="task-list-item"><p><input disabled="disabled" type="checkbox" checked="checked"> <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/event/market/Order.html">Order</a>
+<li class="task-list-item"><p><input disabled="disabled" type="checkbox" checked="checked"> <a href="https://dxfeed.github.io/dxfeed-graal-net-api/docs/api/DxFeed.Graal.Net.Events.Market.Order.html">Order</a>
 is a snapshot of the full available market depth for a symbol</p>
 </li>
-<li class="task-list-item"><p><input disabled="disabled" type="checkbox" checked="checked"> <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/event/market/SpreadOrder.html">SpreadOrder</a>
+<li class="task-list-item"><p><input disabled="disabled" type="checkbox" checked="checked"> <a href="https://dxfeed.github.io/dxfeed-graal-net-api/docs/api/DxFeed.Graal.Net.Events.Market.SpreadOrder.html">SpreadOrder</a>
 is a snapshot of the full available market depth for all spreads</p>
 </li>
-<li class="task-list-item"><p><input disabled="disabled" type="checkbox" checked="checked"> <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/event/market/AnalyticOrder.html">AnalyticOrder</a>
+<li class="task-list-item"><p><input disabled="disabled" type="checkbox" checked="checked"> <a href="https://dxfeed.github.io/dxfeed-graal-net-api/docs/api/DxFeed.Graal.Net.Events.Market.AnalyticOrder.html">AnalyticOrder</a>
 is an <code>Order</code> extension that introduces analytic information, such as adding iceberg-related information to a given
 order</p>
 </li>
-<li class="task-list-item"><p><input disabled="disabled" type="checkbox" checked="checked"> <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/event/market/Trade.html">Trade</a>
+<li class="task-list-item"><p><input disabled="disabled" type="checkbox" checked="checked"> <a href="https://dxfeed.github.io/dxfeed-graal-net-api/docs/api/DxFeed.Graal.Net.Events.Market.Trade.html">Trade</a>
 is a snapshot of the price and size of the last trade during regular trading hours and an overall day volume and day
 turnover</p>
 </li>
-<li class="task-list-item"><p><input disabled="disabled" type="checkbox" checked="checked"> <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/event/market/TradeETH.html">TradeETH</a>
+<li class="task-list-item"><p><input disabled="disabled" type="checkbox" checked="checked"> <a href="https://dxfeed.github.io/dxfeed-graal-net-api/docs/api/DxFeed.Graal.Net.Events.Market.TradeETH.html">TradeETH</a>
 is a snapshot of the price and size of the last trade during extended trading hours and the extended trading hours day
 volume and day turnover</p>
 </li>
-<li class="task-list-item"><p><input disabled="disabled" type="checkbox" checked="checked"> <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/event/candle/Candle.html">Candle</a>
+<li class="task-list-item"><p><input disabled="disabled" type="checkbox" checked="checked"> <a href="https://dxfeed.github.io/dxfeed-graal-net-api/docs/api/DxFeed.Graal.Net.Events.Candles.Candle.html">Candle</a>
 event with open, high, low, and close prices and other information for a specific period</p>
 </li>
-<li class="task-list-item"><p><input disabled="disabled" type="checkbox" checked="checked"> <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/event/market/Quote.html">Quote</a>
+<li class="task-list-item"><p><input disabled="disabled" type="checkbox" checked="checked"> <a href="https://dxfeed.github.io/dxfeed-graal-net-api/docs/api/DxFeed.Graal.Net.Events.Market.Quote.html">Quote</a>
 is a snapshot of the best bid and ask prices and other fields that change with each quote</p>
 </li>
-<li class="task-list-item"><p><input disabled="disabled" type="checkbox" checked="checked"> <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/event/market/Profile.html">Profile</a>
+<li class="task-list-item"><p><input disabled="disabled" type="checkbox" checked="checked"> <a href="https://dxfeed.github.io/dxfeed-graal-net-api/docs/api/DxFeed.Graal.Net.Events.Market.Profile.html">Profile</a>
 is a snapshot that contains the security instrument description</p>
 </li>
-<li class="task-list-item"><p><input disabled="disabled" type="checkbox" checked="checked"> <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/event/market/Summary.html">Summary</a>
+<li class="task-list-item"><p><input disabled="disabled" type="checkbox" checked="checked"> <a href="https://dxfeed.github.io/dxfeed-graal-net-api/docs/api/DxFeed.Graal.Net.Events.Market.Summary.html">Summary</a>
 is a snapshot of the trading session, including session highs, lows, etc.</p>
 </li>
-<li class="task-list-item"><p><input disabled="disabled" type="checkbox" checked="checked"> <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/event/market/TimeAndSale.html">TimeAndSale</a>
+<li class="task-list-item"><p><input disabled="disabled" type="checkbox" checked="checked"> <a href="https://dxfeed.github.io/dxfeed-graal-net-api/docs/api/DxFeed.Graal.Net.Events.Market.TimeAndSale.html">TimeAndSale</a>
 represents a trade or other market event with price, such as the open/close price of a market, etc.</p>
 </li>
-<li class="task-list-item"><p><input disabled="disabled" type="checkbox" checked="checked"> <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/event/option/Greeks.html">Greeks</a>
+<li class="task-list-item"><p><input disabled="disabled" type="checkbox" checked="checked"> <a href="https://dxfeed.github.io/dxfeed-graal-net-api/docs/api/DxFeed.Graal.Net.Events.Options.Greeks.html">Greeks</a>
 is a snapshot of the option price, Black-Scholes volatility, and greeks</p>
 </li>
-<li class="task-list-item"><p><input disabled="disabled" type="checkbox" checked="checked"> <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/event/option/Series.html">Series</a>
+<li class="task-list-item"><p><input disabled="disabled" type="checkbox" checked="checked"> <a href="https://dxfeed.github.io/dxfeed-graal-net-api/docs/api/DxFeed.Graal.Net.Events.Options.Series.html">Series</a>
 is a snapshot of computed values available for all options series for a given underlying symbol based on options
 market prices</p>
 </li>
-<li class="task-list-item"><p><input disabled="disabled" type="checkbox" checked="checked"> <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/event/option/TheoPrice.html">TheoPrice</a>
+<li class="task-list-item"><p><input disabled="disabled" type="checkbox" checked="checked"> <a href="https://dxfeed.github.io/dxfeed-graal-net-api/docs/api/DxFeed.Graal.Net.Events.Options.TheoPrice.html">TheoPrice</a>
 is a snapshot of the theoretical option price computation that is periodically performed
 by <a href="http://www.devexperts.com/en/products/price.html">dxPrice</a> model-free computation</p>
 </li>
-<li class="task-list-item"><p><input disabled="disabled" type="checkbox" checked="checked"> <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/event/option/Underlying.html">Underlying</a>
+<li class="task-list-item"><p><input disabled="disabled" type="checkbox" checked="checked"> <a href="https://dxfeed.github.io/dxfeed-graal-net-api/docs/api/DxFeed.Graal.Net.Events.Options.Underlying.html">Underlying</a>
 is a snapshot of computed values available for an option underlying symbol based on the market’s option prices</p>
 </li>
-<li class="task-list-item"><p><input disabled="disabled" type="checkbox" checked="checked"> <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/event/market/OptionSale.html">OptionSale</a>
+<li class="task-list-item"><p><input disabled="disabled" type="checkbox" checked="checked"> <a href="https://dxfeed.github.io/dxfeed-graal-net-api/docs/api/DxFeed.Graal.Net.Events.Market.OptionSale.html">OptionSale</a>
 represents a trade or another market event with the price (for example, market open/close price, etc.) for each option
 symbol listed under the specified <code>Underlying</code></p>
 </li>
-<li class="task-list-item"><p><input disabled="disabled" type="checkbox"> <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/event/misc/Configuration.html">Configuration</a>
-is an event with an application-specific attachment</p>
-</li>
-<li class="task-list-item"><p><input disabled="disabled" type="checkbox"> <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/event/misc/Message.html">Message</a>
-is an event with an application-specific attachment</p>
+<li class="task-list-item"><p><input disabled="disabled" type="checkbox"> <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/event/market/OtcMarketsOrder.html">OtcMarketsOrder</a> represents an
+extension of <code>Order</code> for the symbols traded on the OTC Markets</p>
 </li>
 </ul>
 <h3 id="subscription-symbols">Subscription Symbols</h3>
 <ul class="contains-task-list">
-<li class="task-list-item"><p><input disabled="disabled" type="checkbox" checked="checked"> <a href="https://learn.microsoft.com/en-us/dotnet/api/system.string?view=net-6.0">String</a>
-is a string representation of the symbol</p>
+<li class="task-list-item"><p><input disabled="disabled" type="checkbox" checked="checked"> String is a string representation of the symbol</p>
 </li>
-<li class="task-list-item"><p><input disabled="disabled" type="checkbox" checked="checked"> <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/api/osub/TimeSeriesSubscriptionSymbol.html">TimeSeriesSubscriptionSymbol</a>
+<li class="task-list-item"><p><input disabled="disabled" type="checkbox" checked="checked"> <a href="https://dxfeed.github.io/dxfeed-graal-net-api/docs/api/DxFeed.Graal.Net.Api.Osub.TimeSeriesSubscriptionSymbol.html">TimeSeriesSubscriptionSymbol</a>
 represents subscription to time-series events</p>
 </li>
-<li class="task-list-item"><p><input disabled="disabled" type="checkbox" checked="checked"> <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/api/osub/IndexedEventSubscriptionSymbol.html">IndexedEventSubscriptionSymbol</a>
+<li class="task-list-item"><p><input disabled="disabled" type="checkbox" checked="checked"> <a href="https://dxfeed.github.io/dxfeed-graal-net-api/docs/api/DxFeed.Graal.Net.Api.Osub.IndexedEventSubscriptionSymbol.html">IndexedEventSubscriptionSymbol</a>
 represents subscription to a specific source of indexed events</p>
 </li>
-<li class="task-list-item"><p><input disabled="disabled" type="checkbox" checked="checked"> <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/api/osub/WildcardSymbol.html">WildcardSymbol.ALL</a>
+<li class="task-list-item"><p><input disabled="disabled" type="checkbox" checked="checked"> <a href="https://dxfeed.github.io/dxfeed-graal-net-api/docs/api/DxFeed.Graal.Net.Api.Osub.WildcardSymbol.html">WildcardSymbol.ALL</a>
 represents a  <em>wildcard</em> subscription to all events of the specific event type</p>
 </li>
-<li class="task-list-item"><p><input disabled="disabled" type="checkbox" checked="checked"> <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/event/candle/CandleSymbol.html">CandleSymbol</a>
-is a symbol used with <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/api/DXFeedSubscription.html">DXFeedSubscription</a>
-class to subscribe for <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/event/candle/Candle.html">Candle</a> events</p>
+<li class="task-list-item"><p><input disabled="disabled" type="checkbox" checked="checked"> <a href="https://dxfeed.github.io/dxfeed-graal-net-api/docs/api/DxFeed.Graal.Net.Events.Candles.CandleSymbol.html">CandleSymbol</a>
+is a symbol used with <a href="https://dxfeed.github.io/dxfeed-graal-net-api/docs/api/DxFeed.Graal.Net.Api.DXFeedSubscription.html">DXFeedSubscription</a>
+class to subscribe for <a href="https://dxfeed.github.io/dxfeed-graal-net-api/docs/api/DxFeed.Graal.Net.Events.Candles.Candle.html">Candle</a> events</p>
 </li>
 </ul>
 <h3 id="subscriptions--models">Subscriptions &amp; Models</h3>
 <ul class="contains-task-list">
-<li class="task-list-item"><p><input disabled="disabled" type="checkbox" checked="checked"> <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/api/DXFeedSubscription.html">DXFeedSubscription</a>
+<li class="task-list-item"><p><input disabled="disabled" type="checkbox" checked="checked"> <a href="https://dxfeed.github.io/dxfeed-graal-net-api/docs/api/DxFeed.Graal.Net.Api.DXFeedSubscription.html">DXFeedSubscription</a>
 is a subscription for a set of symbols and event types</p>
 </li>
-<li class="task-list-item"><p><input disabled="disabled" type="checkbox"> <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/api/DXFeedTimeSeriesSubscription.html">DXFeedTimeSeriesSubscription</a>
-extends <code>DXFeedSubscription</code> to conveniently subscribe to time series events for a set of symbols and event types
-(<a href="https://github.com/devexperts/QD/blob/master/dxfeed-samples/src/main/java/com/dxfeed/sample/api/DXFeedConnect.java">Java API sample</a>)</p>
-</li>
-<li class="task-list-item"><p><input disabled="disabled" type="checkbox"> <a href="https://github.com/devexperts/QD/blob/master/dxfeed-api/src/main/java/com/dxfeed/api/osub/ObservableSubscription.java">ObservableSubscription</a>
-is an observable set of subscription symbols for the specific event
-type (<a href="https://github.com/devexperts/QD/blob/master/dxfeed-samples/src/main/java/com/dxfeed/sample/_simple_/PublishProfiles.java">Java API sample</a>)</p>
-</li>
-<li class="task-list-item"><p><input disabled="disabled" type="checkbox"> <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/api/DXFeed.html#getLastEvent-E-">GetLastEvent</a>
+<li class="task-list-item"><p><input disabled="disabled" type="checkbox" checked="checked"> <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/api/DXFeed.html#getLastEvent-E-">GetLastEvent</a>
 returns the last event for the specified event instance
-(<a href="https://github.com/devexperts/QD/blob/master/dxfeed-samples/src/main/java/com/dxfeed/sample/api/DXFeedSample.java">Java API sample</a>)</p>
-</li>
-<li class="task-list-item"><p><input disabled="disabled" type="checkbox"> <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/api/DXFeed.html#getLastEvents-java.util.Collection-">GetLastEvents</a>
-returns the last events for the specified event instances list</p>
-</li>
-<li class="task-list-item"><p><input disabled="disabled" type="checkbox" checked="checked"> <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/api/DXFeed.html#getLastEventPromise-java.lang.Class-java.lang.Object-">GetLastEventPromise</a>
-requests the last event for the specified event type and symbol</p>
-</li>
-<li class="task-list-item"><p><input disabled="disabled" type="checkbox"> <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/api/DXFeed.html#getLastEventsPromises-java.lang.Class-java.util.Collection-">GetLastEventsPromises</a>
-requests the last events for the specified event type and symbol collection</p>
-</li>
-<li class="task-list-item"><p><input disabled="disabled" type="checkbox"> <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/api/DXFeed.html#getLastEventIfSubscribed-java.lang.Class-java.lang.Object-">GetLastEventIfSubscribed</a>
-returns the last event for the specified event type and symbol if there’s a subscription for it</p>
-</li>
-<li class="task-list-item"><p><input disabled="disabled" type="checkbox"> <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/api/DXFeed.html#getIndexedEventsPromise-java.lang.Class-java.lang.Object-com.dxfeed.event.IndexedEventSource-">GetIndexedEventsPromise</a>
-requests an indexed events list for the specified event type, symbol, and source</p>
-</li>
-<li class="task-list-item"><p><input disabled="disabled" type="checkbox"> <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/api/DXFeed.html#getIndexedEventsIfSubscribed-java.lang.Class-java.lang.Object-com.dxfeed.event.IndexedEventSource-">GetIndexedEventsIfSubscribed</a>
-returns a list of indexed events for the specified event type, symbol, and source, if there’s a subscription for it</p>
+(<a href="https://github.com/dxFeed/dxfeed-graal-net-api/tree/main/samples/DxFeedSample">DxFeedSample</a>)</p>
 </li>
 <li class="task-list-item"><p><input disabled="disabled" type="checkbox" checked="checked"> <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/api/DXFeed.html#getTimeSeriesPromise-java.lang.Class-java.lang.Object-long-long-">GetTimeSeriesPromise</a>
 requests time series events for the specified event type, symbol, and time range</p>
 </li>
-<li class="task-list-item"><p><input disabled="disabled" type="checkbox"> <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/api/DXFeed.html#getTimeSeriesIfSubscribed-java.lang.Class-java.lang.Object-long-long-">GetTimeSeriesIfSubscribed</a>
-requests time series events for the specified event type, symbol, and time range if there’s a subscription for it</p>
-</li>
-<li class="task-list-item"><p><input disabled="disabled" type="checkbox"> <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/model/TimeSeriesEventModel.html">TimeSeriesEventModel</a>
-is a model of a list of time series events
-(<a href="https://github.com/devexperts/QD/blob/master/dxfeed-samples/src/main/java/com/dxfeed/sample/ui/swing/DXFeedCandleChart.java">Java API sample</a>)</p>
-</li>
-<li class="task-list-item"><p><input disabled="disabled" type="checkbox"> <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/model/IndexedEventModel.html">IndexedEventModel</a>
-is an indexed event list model
-(<a href="https://github.com/devexperts/QD/blob/master/dxfeed-samples/src/main/java/com/dxfeed/sample/ui/swing/DXFeedTimeAndSales.java">Java API sample</a>)</p>
-</li>
-<li class="task-list-item"><p><input disabled="disabled" type="checkbox"> <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/model/market/OrderBookModel.html">OrderBookModel</a>
-is a model of convenient Order Book management
-(<a href="https://github.com/devexperts/QD/blob/master/dxfeed-samples/src/main/java/com/dxfeed/sample/ui/swing/DXFeedMarketDepth.java">Java API sample</a>)</p>
-</li>
 </ul>
 <h3 id="ipf--schedule">IPF &amp; Schedule</h3>
 <ul class="contains-task-list">
-<li class="task-list-item"><p><input disabled="disabled" type="checkbox" checked="checked"> <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/ipf/InstrumentProfile.html">InstrumentProfile</a>
+<li class="task-list-item"><p><input disabled="disabled" type="checkbox" checked="checked"> <a href="https://dxfeed.github.io/dxfeed-graal-net-api/docs/api/DxFeed.Graal.Net.Ipf.InstrumentProfile.html">InstrumentProfile</a>
 represents basic profile information about a market instrument
-(<a href="https://github.com/devexperts/QD/blob/master/dxfeed-samples/src/main/java/com/dxfeed/sample/ipf/DXFeedIpfConnect.java">Java API sample</a>)</p>
+(<a href="https://github.com/dxFeed/dxfeed-graal-net-api/tree/main/samples/DxFeedIpfConnect">DxFeedIpfConnect</a>)</p>
 </li>
-<li class="task-list-item"><p><input disabled="disabled" type="checkbox" checked="checked"> <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/ipf/InstrumentProfileReader.html">InstrumentProfileReader</a> reads
+<li class="task-list-item"><p><input disabled="disabled" type="checkbox" checked="checked"> <a href="https://dxfeed.github.io/dxfeed-graal-net-api/docs/api/DxFeed.Graal.Net.Ipf.InstrumentProfileReader.html">InstrumentProfileReader</a> reads
 instrument profiles from the stream using Instrument Profile Format (IPF)</p>
 </li>
-<li class="task-list-item"><p><input disabled="disabled" type="checkbox" checked="checked"> <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/ipf/live/InstrumentProfileCollector.html">InstrumentProfileCollector</a>
+<li class="task-list-item"><p><input disabled="disabled" type="checkbox" checked="checked"> <a href="https://dxfeed.github.io/dxfeed-graal-net-api/docs/api/DxFeed.Graal.Net.Ipf.Live.InstrumentProfileCollector.html">InstrumentProfileCollector</a>
 collects instrument profile updates and provides the live instrument profiles list
-(<a href="https://github.com/devexperts/QD/blob/master/dxfeed-samples/src/main/java/com/dxfeed/sample/ipf/DXFeedLiveIpfSample.java">Java API sample</a>)</p>
+(<a href="https://github.com/dxFeed/dxfeed-graal-net-api/tree/main/samples/DxFeedLiveIpfSample">DxFeedLiveIpfSample</a>)</p>
 </li>
-<li class="task-list-item"><p><input disabled="disabled" type="checkbox"> <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/ipf/live/InstrumentProfileConnection.html">InstrumentProfileConnection</a>
+<li class="task-list-item"><p><input disabled="disabled" type="checkbox" checked="checked"> <a href="https://dxfeed.github.io/dxfeed-graal-net-api/docs/api/DxFeed.Graal.Net.Ipf.Live.InstrumentProfileConnection.html">InstrumentProfileConnection</a>
 connects to an instrument profile URL and reads instrument profiles with support of streaming live updates</p>
 </li>
-<li class="task-list-item"><p><input disabled="disabled" type="checkbox"> <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/schedule/Schedule.html">Schedule</a>
+<li class="task-list-item"><p><input disabled="disabled" type="checkbox" checked="checked"> <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/schedule/Schedule.html">Schedule</a>
 provides an API to retrieving and exploring the trading schedules of various exchanges and different financial
 instrument classes
-(<a href="https://github.com/devexperts/QD/blob/master/dxfeed-samples/src/main/java/com/dxfeed/sample/schedule/ScheduleSample.java">Java API sample</a>)</p>
+(<a href="https://github.com/dxFeed/dxfeed-graal-net-api/tree/main/samples/ScheduleSample">ScheduleSample</a>)</p>
 </li>
-<li class="task-list-item"><p><input disabled="disabled" type="checkbox"> <a href="https://github.com/devexperts/QD/blob/master/dxfeed-api/src/main/java/com/dxfeed/ipf/option/OptionSeries.java">Option Series</a>
-is a series of call and put options with different strike sharing the same attributes of expiration, last trading day,
-spc, multiplies,
-etc. (<a href="https://github.com/devexperts/QD/blob/master/dxfeed-samples/src/main/java/com/dxfeed/sample/ipf/option/DXFeedOptionChain.java">Java API sample</a>)</p>
-</li>
-</ul>
-<h3 id="services">Services</h3>
-<ul class="contains-task-list">
-<li class="task-list-item"><input disabled="disabled" type="checkbox"> <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/ondemand/OnDemandService.html">OnDemandService</a>
-provides on-demand historical tick data replay controls
-(<a href="https://github.com/devexperts/QD/blob/master/dxfeed-samples/src/main/java/com/dxfeed/sample/ondemand/OnDemandSample.java">Java API sample</a>)</li>
 </ul>
 
 </article>

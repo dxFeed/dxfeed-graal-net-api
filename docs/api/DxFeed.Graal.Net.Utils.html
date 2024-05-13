@@ -29,15 +29,15 @@
       <meta name="loc:changeTheme" content="Change theme">
       <meta name="loc:copy" content="Copy">
       <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
   </head>
-
-  <script type="module" src="./../../public/docfx.min.js"></script>
-
-  <script>
-    const theme = localStorage.getItem('theme') || 'auto'
-    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
-  </script>
-
 
   <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
     <header class="bg-body border-bottom">
@@ -144,7 +144,7 @@ Porting Java class <code>java.lang.Math</code> and <code>com.devexperts.util.Mat
 </dd>
     </dl>
     <dl class="jumplist">
-      <dt><a class="xref" href="DxFeed.Graal.Net.Utils.QdsUtil.html">QdsUtil</a></dt>
+      <dt><a class="xref" href="DxFeed.Graal.Net.Utils.QdsTools.html">QdsTools</a></dt>
       <dd><p>Provides utility methods for running qds-tools using the DxFeed Graal.NET infrastructure.</p>
 </dd>
     </dl>
@@ -160,6 +160,11 @@ Used to manipulate types.</p>
 </dd>
     </dl>
     <dl class="jumplist">
+      <dt><a class="xref" href="DxFeed.Graal.Net.Utils.SymbolParser.html">SymbolParser</a></dt>
+      <dd><p>Utility class for parsing symbols.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
       <dt><a class="xref" href="DxFeed.Graal.Net.Utils.TimeFormat.html">TimeFormat</a></dt>
       <dd><p>Utility class for parsing and formatting dates and times in ISO-compatible format.</p>
 </dd>
@@ -169,6 +174,11 @@ Used to manipulate types.</p>
       <dd><p>A collection of static utility methods for manipulation of time measured in nanoseconds since Unix epoch.
 <br>
 Porting Java class <code>com.dxfeed.event.impl.TimeNanosUtil</code>.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="DxFeed.Graal.Net.Utils.TimePeriod.html">TimePeriod</a></dt>
+      <dd><p>A collection of utility methods for creation Timespan with support for ISO8601 duration format.</p>
 </dd>
     </dl>
     <dl class="jumplist">

@@ -1,0 +1,703 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class Session | dxFeed Graal .NET API </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class Session | dxFeed Graal .NET API ">
+      
+      <meta name="description" content="Session represents a continuous period of time during which apply same rules regarding trading activity. For example, regular trading session is a period of time consisting of one day of business activities in a financial market, from the opening bell to the closing bell, when regular trading occurs.  Sessions can be either trading or non-trading, with different sets of rules and reasons to exist. Sessions do not overlap with each other - rather they form consecutive chain of adjacent periods of time that cover entire time scale. The point on a border line is considered to belong to following session that starts there. Each session completely fits inside a certain day. Day may contain sessions with zero duration - e.g. indices that post value once a day. Such sessions can be of any appropriate type, trading or non-trading.">
+      <link rel="icon" href="../../docs/images/favicon.png">
+      <link rel="stylesheet" href="../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../public/main.css">
+      <meta name="docfx:navrel" content="../../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/dxFeed/dxfeed-graal-net-api/new/1.3.0/apiSpec/new?filename=DxFeed_Graal_Net_Schedules_Session.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Schedules.Session%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../index.html">
+            <img id="logo" class="svg" src="../../docs/images/logo.svg" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="DxFeed.Graal.Net.Schedules.Session">
+
+
+
+  <h1 id="DxFeed_Graal_Net_Schedules_Session" data-uid="DxFeed.Graal.Net.Schedules.Session" class="text-break">
+Class Session  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/1.3.0/src/DxFeed.Graal.Net/Schedules/Session.cs/#L24"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="DxFeed.html">DxFeed</a>.<a class="xref" href="DxFeed.Graal.html">Graal</a>.<a class="xref" href="DxFeed.Graal.Net.html">Net</a>.<a class="xref" href="DxFeed.Graal.Net.Schedules.html">Schedules</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>DxFeed.Graal.Net.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p><b>Session</b> represents a continuous period of time during which apply same rules regarding trading activity.
+For example, <pre><code class="lang-csharp">regular trading session</code></pre> is a period of time consisting of one day of business activities
+in a financial market, from the opening bell to the closing bell, when regular trading occurs.
+<p></p>
+Sessions can be either <b>trading</b> or <b>non-trading</b>, with different sets of rules and reasons to exist.
+Sessions do not overlap with each other - rather they form consecutive chain of adjacent periods of time that
+cover entire time scale. The point on a border line is considered to belong to following session that starts there.
+Each session completely fits inside a certain day. Day may contain sessions with zero duration - e.g. indices
+that post value once a day. Such sessions can be of any appropriate type, trading or non-trading.
+</div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class Session</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><span class="xref">Session</span></div>
+    </dd>
+  </dl>
+
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+  </dd></dl>
+
+
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="DxFeed_Graal_Net_Schedules_Session_Day_" data-uid="DxFeed.Graal.Net.Schedules.Session.Day*"></a>
+
+  <h3 id="DxFeed_Graal_Net_Schedules_Session_Day" data-uid="DxFeed.Graal.Net.Schedules.Session.Day">
+  Day
+  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/1.3.0/src/DxFeed.Graal.Net/Schedules/Session.cs/#L40"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets day to which this session belongs.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Day Day { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DxFeed.Graal.Net.Schedules.Day.html">Day</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="DxFeed_Graal_Net_Schedules_Session_EndTime_" data-uid="DxFeed.Graal.Net.Schedules.Session.EndTime*"></a>
+
+  <h3 id="DxFeed_Graal_Net_Schedules_Session_EndTime" data-uid="DxFeed.Graal.Net.Schedules.Session.EndTime">
+  EndTime
+  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/1.3.0/src/DxFeed.Graal.Net/Schedules/Session.cs/#L76"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets end time of this session (exclusive).
+For normal sessions the end time is greater than the start time, for empty sessions they are equal.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public long EndTime { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="DxFeed_Graal_Net_Schedules_Session_IsEmpty_" data-uid="DxFeed.Graal.Net.Schedules.Session.IsEmpty*"></a>
+
+  <h3 id="DxFeed_Graal_Net_Schedules_Session_IsEmpty" data-uid="DxFeed.Graal.Net.Schedules.Session.IsEmpty">
+  IsEmpty
+  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/1.3.0/src/DxFeed.Graal.Net/Schedules/Session.cs/#L62"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets a value indicating whether this session has zero duration.
+Empty sessions can be used for indices that post value once a day or for convenience.
+Such sessions can be of any appropriate type, trading or non-trading.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsEmpty { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="DxFeed_Graal_Net_Schedules_Session_IsTrading_" data-uid="DxFeed.Graal.Net.Schedules.Session.IsTrading*"></a>
+
+  <h3 id="DxFeed_Graal_Net_Schedules_Session_IsTrading" data-uid="DxFeed.Graal.Net.Schedules.Session.IsTrading">
+  IsTrading
+  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/1.3.0/src/DxFeed.Graal.Net/Schedules/Session.cs/#L54"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets a value indicating whether trading activity is allowed within this session.
+Some sessions may have zero duration - e.g. indices that post value once a day.
+Such sessions can be of any appropriate type, trading or non-trading.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsTrading { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="DxFeed_Graal_Net_Schedules_Session_StartTime_" data-uid="DxFeed.Graal.Net.Schedules.Session.StartTime*"></a>
+
+  <h3 id="DxFeed_Graal_Net_Schedules_Session_StartTime" data-uid="DxFeed.Graal.Net.Schedules.Session.StartTime">
+  StartTime
+  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/1.3.0/src/DxFeed.Graal.Net/Schedules/Session.cs/#L69"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets start time of this session (inclusive).
+For normal sessions the start time is less than the end time, for empty sessions they are equal.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public long StartTime { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="DxFeed_Graal_Net_Schedules_Session_Type_" data-uid="DxFeed.Graal.Net.Schedules.Session.Type*"></a>
+
+  <h3 id="DxFeed_Graal_Net_Schedules_Session_Type" data-uid="DxFeed.Graal.Net.Schedules.Session.Type">
+  Type
+  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/1.3.0/src/DxFeed.Graal.Net/Schedules/Session.cs/#L46"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets type of this session.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public SessionType Type { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DxFeed.Graal.Net.Schedules.SessionType.html">SessionType</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="DxFeed_Graal_Net_Schedules_Session_ContainsTime_" data-uid="DxFeed.Graal.Net.Schedules.Session.ContainsTime*"></a>
+
+  <h3 id="DxFeed_Graal_Net_Schedules_Session_ContainsTime_System_Int64_" data-uid="DxFeed.Graal.Net.Schedules.Session.ContainsTime(System.Int64)">
+  ContainsTime(long)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/1.3.0/src/DxFeed.Graal.Net/Schedules/Session.cs/#L86"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Determines whether a specified time belongs to this session.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool ContainsTime(long time)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>time</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></dt>
+    <dd><p>The time to check</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p><code>true</code> if the specified time is belongs to this session; otherwise, <code>false</code>.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DxFeed_Graal_Net_Schedules_Session_Equals_" data-uid="DxFeed.Graal.Net.Schedules.Session.Equals*"></a>
+
+  <h3 id="DxFeed_Graal_Net_Schedules_Session_Equals_System_Object_" data-uid="DxFeed.Graal.Net.Schedules.Session.Equals(System.Object)">
+  Equals(object?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/1.3.0/src/DxFeed.Graal.Net/Schedules/Session.cs/#L181"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Indicates whether some other object is &quot;equal to&quot; this one.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override bool Equals(object? obj)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>obj</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></dt>
+    <dd><p>The object to compare with the current object.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p><code>true</code> if the specified object is equal to the current object; otherwise, <code>false</code>.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DxFeed_Graal_Net_Schedules_Session_GetHashCode_" data-uid="DxFeed.Graal.Net.Schedules.Session.GetHashCode*"></a>
+
+  <h3 id="DxFeed_Graal_Net_Schedules_Session_GetHashCode" data-uid="DxFeed.Graal.Net.Schedules.Session.GetHashCode">
+  GetHashCode()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/1.3.0/src/DxFeed.Graal.Net/Schedules/Session.cs/#L173"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets a hash code value for this object.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override int GetHashCode()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>A hash code value for this object.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DxFeed_Graal_Net_Schedules_Session_GetNextSession_" data-uid="DxFeed.Graal.Net.Schedules.Session.GetNextSession*"></a>
+
+  <h3 id="DxFeed_Graal_Net_Schedules_Session_GetNextSession_DxFeed_Graal_Net_Schedules_SessionFilter_" data-uid="DxFeed.Graal.Net.Schedules.Session.GetNextSession(DxFeed.Graal.Net.Schedules.SessionFilter)">
+  GetNextSession(SessionFilter)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/1.3.0/src/DxFeed.Graal.Net/Schedules/Session.cs/#L166"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Retrieves the following session that is accepted by the specified filter, if such a session exists.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Session? GetNextSession(SessionFilter filter)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>filter</code> <a class="xref" href="DxFeed.Graal.Net.Schedules.SessionFilter.html">SessionFilter</a></dt>
+    <dd><p>The filter used to determine the suitability of sessions.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DxFeed.Graal.Net.Schedules.Session.html">Session</a></dt>
+    <dd><p>The nearest following session that meets the filter criteria; otherwise, <code>null</code> if no suitable session
+is found within the search period of up to a year in the future.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DxFeed_Graal_Net_Schedules_Session_GetPrevSession_" data-uid="DxFeed.Graal.Net.Schedules.Session.GetPrevSession*"></a>
+
+  <h3 id="DxFeed_Graal_Net_Schedules_Session_GetPrevSession_DxFeed_Graal_Net_Schedules_SessionFilter_" data-uid="DxFeed.Graal.Net.Schedules.Session.GetPrevSession(DxFeed.Graal.Net.Schedules.SessionFilter)">
+  GetPrevSession(SessionFilter)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/1.3.0/src/DxFeed.Graal.Net/Schedules/Session.cs/#L126"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets the previous session that is accepted by the specified filter, if such a session exists.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Session? GetPrevSession(SessionFilter filter)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>filter</code> <a class="xref" href="DxFeed.Graal.Net.Schedules.SessionFilter.html">SessionFilter</a></dt>
+    <dd><p>The filter used to determine the suitability of sessions.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DxFeed.Graal.Net.Schedules.Session.html">Session</a></dt>
+    <dd><p>The nearest previous session that meets the filter criteria; otherwise, <code>null</code> if no suitable session
+is found within the search period of up to a year back in time.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DxFeed_Graal_Net_Schedules_Session_ToString_" data-uid="DxFeed.Graal.Net.Schedules.Session.ToString*"></a>
+
+  <h3 id="DxFeed_Graal_Net_Schedules_Session_ToString" data-uid="DxFeed.Graal.Net.Schedules.Session.ToString">
+  ToString()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/1.3.0/src/DxFeed.Graal.Net/Schedules/Session.cs/#L200"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns string representation of this object.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override string ToString()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>The string representation.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DxFeed_Graal_Net_Schedules_Session_TryGetNextSession_" data-uid="DxFeed.Graal.Net.Schedules.Session.TryGetNextSession*"></a>
+
+  <h3 id="DxFeed_Graal_Net_Schedules_Session_TryGetNextSession_DxFeed_Graal_Net_Schedules_SessionFilter_DxFeed_Graal_Net_Schedules_Session__" data-uid="DxFeed.Graal.Net.Schedules.Session.TryGetNextSession(DxFeed.Graal.Net.Schedules.SessionFilter,DxFeed.Graal.Net.Schedules.Session@)">
+  TryGetNextSession(SessionFilter, out Session)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/1.3.0/src/DxFeed.Graal.Net/Schedules/Session.cs/#L145"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Attempts to find the following session accepted by specified filter.
+This method may cross the day boundary and return appropriate session from
+following days - up to a year in the future.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool TryGetNextSession(SessionFilter filter, out Session session)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>filter</code> <a class="xref" href="DxFeed.Graal.Net.Schedules.SessionFilter.html">SessionFilter</a></dt>
+    <dd><p>The filter used to evaluate sessions.</p>
+</dd>
+    <dt><code>session</code> <a class="xref" href="DxFeed.Graal.Net.Schedules.Session.html">Session</a></dt>
+    <dd><p>The nearest following session that is accepted by the filter.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p><code>true</code> if a session meeting the filter criteria is found; otherwise, <code>false</code>.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+  <h4 class="section" id="DxFeed_Graal_Net_Schedules_Session_TryGetNextSession_DxFeed_Graal_Net_Schedules_SessionFilter_DxFeed_Graal_Net_Schedules_Session___examples">Examples</h4>
+  <p>To find following trading session of any type use this code:</p>
+<pre><code class="lang-csharp">bool found = TryGetNextSession(SessionFilter.TRADING, out Session session);</code></pre>
+<p>To find following regular trading session use this code:</p>
+<pre><code class="lang-csharp">bool found = TryGetNextSession(SessionFilter.REGULAR, out Session session);</code></pre>
+
+
+
+
+
+
+  <a id="DxFeed_Graal_Net_Schedules_Session_TryGetPrevSession_" data-uid="DxFeed.Graal.Net.Schedules.Session.TryGetPrevSession*"></a>
+
+  <h3 id="DxFeed_Graal_Net_Schedules_Session_TryGetPrevSession_DxFeed_Graal_Net_Schedules_SessionFilter_DxFeed_Graal_Net_Schedules_Session__" data-uid="DxFeed.Graal.Net.Schedules.Session.TryGetPrevSession(DxFeed.Graal.Net.Schedules.SessionFilter,DxFeed.Graal.Net.Schedules.Session@)">
+  TryGetPrevSession(SessionFilter, out Session)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/1.3.0/src/DxFeed.Graal.Net/Schedules/Session.cs/#L105"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Attempts to find the previous session accepted by specified filter.
+This method may cross the day boundary and return appropriate session from
+previous days - up to a year back in time.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool TryGetPrevSession(SessionFilter filter, out Session session)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>filter</code> <a class="xref" href="DxFeed.Graal.Net.Schedules.SessionFilter.html">SessionFilter</a></dt>
+    <dd><p>The filter used to evaluate sessions.</p>
+</dd>
+    <dt><code>session</code> <a class="xref" href="DxFeed.Graal.Net.Schedules.Session.html">Session</a></dt>
+    <dd><p>The nearest previous session that is accepted by the filter.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p><code>true</code> if a session meeting the filter criteria is found; otherwise, <code>false</code>.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+  <h4 class="section" id="DxFeed_Graal_Net_Schedules_Session_TryGetPrevSession_DxFeed_Graal_Net_Schedules_SessionFilter_DxFeed_Graal_Net_Schedules_Session___examples">Examples</h4>
+  <p>To find previous trading session of any type use this code:</p>
+<pre><code class="lang-csharp">bool found = TryGetPrevSession(SessionFilter.TRADING, out Session session);</code></pre>
+<p>To find previous regular trading session use this code:</p>
+<pre><code class="lang-csharp">bool found = TryGetPrevSession(SessionFilter.REGULAR, out Session session);</code></pre>
+
+
+
+
+
+
+
+</article>
+
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Copyright © 2022 Devexperts LLC</span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

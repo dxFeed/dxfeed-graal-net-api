@@ -6,7 +6,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="title" content="Class InstrumentProfileReader | dxFeed Graal .NET API ">
       
-      <meta name="description" content="Reads instrument profiles from the stream using Instrument Profile Format (IPF). Please see Instrument Profile Format documentation for complete description. This reader automatically uses data formats as specified in the stream.  This reader is intended for &amp;quot;one time only&amp;quot; usage: create new instances for new IPF reads.  For backward compatibility reader can be configured with system property &amp;quot;com.dxfeed.ipf.complete&amp;quot; to control the strategy for missing &amp;quot;##COMPLETE&amp;quot; tag when reading IPF, possible values are:      warn - show warning in the log (default)     error - throw exception (future default)     ignore - do nothing (for backward compatibility)">
+      <meta name="description" content="Reads instrument profiles from the stream using Instrument Profile Format (IPF). Please see Instrument Profile Format documentation for complete description. This reader automatically uses data formats as specified in the stream.  This reader is intended for &amp;quot;one time only&amp;quot; usage: create new instances for new IPF reads.  For backward compatibility reader can be configured with system property &amp;quot;com.dxfeed.ipf.complete&amp;quot; to control the strategy for missing &amp;quot;##COMPLETE&amp;quot; tag when reading IPF, possible values are: warn - show warning in the log (default)error - throw exception (future default)ignore - do nothing (for backward compatibility)">
       <link rel="icon" href="../../docs/images/favicon.png">
       <link rel="stylesheet" href="../../public/docfx.min.css">
       <link rel="stylesheet" href="../../public/main.css">
@@ -16,7 +16,7 @@
       <meta name="docfx:rel" content="../../">
       
       
-      <meta name="docfx:docurl" content="https://github.com/dxFeed/dxfeed-graal-net-api/new/1.2.1/apiSpec/new?filename=DxFeed_Graal_Net_Ipf_InstrumentProfileReader.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Ipf.InstrumentProfileReader%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="docfx:docurl" content="https://github.com/dxFeed/dxfeed-graal-net-api/new/1.3.0/apiSpec/new?filename=DxFeed_Graal_Net_Ipf_InstrumentProfileReader.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Ipf.InstrumentProfileReader%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -29,15 +29,15 @@
       <meta name="loc:changeTheme" content="Change theme">
       <meta name="loc:copy" content="Copy">
       <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
   </head>
-
-  <script type="module" src="./../../public/docfx.min.js"></script>
-
-  <script>
-    const theme = localStorage.getItem('theme') || 'auto'
-    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
-  </script>
-
 
   <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
     <header class="bg-body border-bottom">
@@ -89,7 +89,7 @@
 
 
   <h1 id="DxFeed_Graal_Net_Ipf_InstrumentProfileReader" data-uid="DxFeed.Graal.Net.Ipf.InstrumentProfileReader" class="text-break">
-Class InstrumentProfileReader  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/1.2.1/src/DxFeed.Graal.Net/Ipf/InstrumentProfileReader.cs/#L27"><i class="bi bi-code-slash"></i></a>
+Class InstrumentProfileReader  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/1.3.0/src/DxFeed.Graal.Net/Ipf/InstrumentProfileReader.cs/#L27"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -105,11 +105,7 @@ This reader is intended for &quot;one time only&quot; usage: create new instance
 <br>
 For backward compatibility reader can be configured with system property &quot;com.dxfeed.ipf.complete&quot; to control
 the strategy for missing &quot;##COMPLETE&quot; tag when reading IPF, possible values are:</p>
-<ul>
-    <li><code>warn</code> - show warning in the log (default)</li>
-    <li><code>error</code> - throw exception (future default)</li>
-    <li><code>ignore</code> - do nothing (for backward compatibility)</li>
-</ul>
+<ul><li><code>warn</code> - show warning in the log (default)</li><li><code>error</code> - throw exception (future default)</li><li><code>ignore</code> - do nothing (for backward compatibility)</li></ul>
 </div>
   <div class="markdown conceptual"></div>
 
@@ -169,7 +165,7 @@ the strategy for missing &quot;##COMPLETE&quot; tag when reading IPF, possible v
 
   <h3 id="DxFeed_Graal_Net_Ipf_InstrumentProfileReader_GetLastModified" data-uid="DxFeed.Graal.Net.Ipf.InstrumentProfileReader.GetLastModified">
   GetLastModified()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/1.2.1/src/DxFeed.Graal.Net/Ipf/InstrumentProfileReader.cs/#L52"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/1.3.0/src/DxFeed.Graal.Net/Ipf/InstrumentProfileReader.cs/#L52"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Returns last modification time (in milliseconds) from last <a class="xref" href="DxFeed.Graal.Net.Ipf.InstrumentProfileReader.html#DxFeed_Graal_Net_Ipf_InstrumentProfileReader_ReadFromFile_System_String_">ReadFromFile(string)</a> operation
@@ -203,7 +199,7 @@ or zero if it is unknown.</p>
 
   <h3 id="DxFeed_Graal_Net_Ipf_InstrumentProfileReader_ReadFromFile_System_String_" data-uid="DxFeed.Graal.Net.Ipf.InstrumentProfileReader.ReadFromFile(System.String)">
   ReadFromFile(string)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/1.2.1/src/DxFeed.Graal.Net/Ipf/InstrumentProfileReader.cs/#L76"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/1.3.0/src/DxFeed.Graal.Net/Ipf/InstrumentProfileReader.cs/#L76"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Reads and returns instrument profiles from specified file.
@@ -251,7 +247,7 @@ This operation updates <a class="xref" href="DxFeed.Graal.Net.Ipf.InstrumentProf
 
   <h3 id="DxFeed_Graal_Net_Ipf_InstrumentProfileReader_ReadFromFile_System_String_System_String_System_String_" data-uid="DxFeed.Graal.Net.Ipf.InstrumentProfileReader.ReadFromFile(System.String,System.String,System.String)">
   ReadFromFile(string, string?, string?)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/1.2.1/src/DxFeed.Graal.Net/Ipf/InstrumentProfileReader.cs/#L95"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/1.3.0/src/DxFeed.Graal.Net/Ipf/InstrumentProfileReader.cs/#L95"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Reads and returns instrument profiles from specified file.
@@ -305,7 +301,7 @@ This operation updates <a class="xref" href="DxFeed.Graal.Net.Ipf.InstrumentProf
 
   <h3 id="DxFeed_Graal_Net_Ipf_InstrumentProfileReader_ResolveSourceUrl_System_String_" data-uid="DxFeed.Graal.Net.Ipf.InstrumentProfileReader.ResolveSourceUrl(System.String)">
   ResolveSourceUrl(string)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/1.2.1/src/DxFeed.Graal.Net/Ipf/InstrumentProfileReader.cs/#L44"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/1.3.0/src/DxFeed.Graal.Net/Ipf/InstrumentProfileReader.cs/#L44"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Resolves the given address specification into its corresponding URL format, particularly transforming
@@ -352,7 +348,7 @@ pattern, or that have invalid port numbers, are returned unchanged.</p>
 
   <h3 id="DxFeed_Graal_Net_Ipf_InstrumentProfileReader_WasComplete" data-uid="DxFeed.Graal.Net.Ipf.InstrumentProfileReader.WasComplete">
   WasComplete()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/1.2.1/src/DxFeed.Graal.Net/Ipf/InstrumentProfileReader.cs/#L59"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/1.3.0/src/DxFeed.Graal.Net/Ipf/InstrumentProfileReader.cs/#L59"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Returns <code>true</code> if IPF was fully read on last <a class="xref" href="DxFeed.Graal.Net.Ipf.InstrumentProfileReader.html#DxFeed_Graal_Net_Ipf_InstrumentProfileReader_ReadFromFile_System_String_">ReadFromFile(string)</a> operation.</p>

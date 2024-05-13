@@ -6,7 +6,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="title" content="Class OrderSource | dxFeed Graal .NET API ">
       
-      <meta name="description" content="Identifies source of ,  and  events.   Synthetic sources , ,      and  are provided for convenience of a consolidated     order book and are automatically generated based on the corresponding  events.   Aggregate sources   and   provide     futures depth (aggregated by price level) and NASDAQ Level II (top of book for each market maker).     These source cannot be directly published to via dxFeed API.    sources ,  and      support full range of dxFeed API features.   For more details see Javadoc.">
+      <meta name="description" content="Identifies source of ,  and  events. Synthetic sources , ,      and  are provided for convenience of a consolidated     order book and are automatically generated based on the corresponding  events. Aggregate sources   and   provide     futures depth (aggregated by price level) and NASDAQ Level II (top of book for each market maker).     These source cannot be directly published to via dxFeed API.  sources ,  and      support full range of dxFeed API features.  For more details see Javadoc.">
       <link rel="icon" href="../../docs/images/favicon.png">
       <link rel="stylesheet" href="../../public/docfx.min.css">
       <link rel="stylesheet" href="../../public/main.css">
@@ -16,7 +16,7 @@
       <meta name="docfx:rel" content="../../">
       
       
-      <meta name="docfx:docurl" content="https://github.com/dxFeed/dxfeed-graal-net-api/new/1.2.1/apiSpec/new?filename=DxFeed_Graal_Net_Events_Market_OrderSource.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Market.OrderSource%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="docfx:docurl" content="https://github.com/dxFeed/dxfeed-graal-net-api/new/1.3.0/apiSpec/new?filename=DxFeed_Graal_Net_Events_Market_OrderSource.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Market.OrderSource%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -29,15 +29,15 @@
       <meta name="loc:changeTheme" content="Change theme">
       <meta name="loc:copy" content="Copy">
       <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
   </head>
-
-  <script type="module" src="./../../public/docfx.min.js"></script>
-
-  <script>
-    const theme = localStorage.getItem('theme') || 'auto'
-    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
-  </script>
-
 
   <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
     <header class="bg-body border-bottom">
@@ -89,7 +89,7 @@
 
 
   <h1 id="DxFeed_Graal_Net_Events_Market_OrderSource" data-uid="DxFeed.Graal.Net.Events.Market.OrderSource" class="text-break">
-Class OrderSource  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/1.2.1/src/DxFeed.Graal.Net/Events/Market/OrderSource.cs/#L38"><i class="bi bi-code-slash"></i></a>
+Class OrderSource  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/1.3.0/src/DxFeed.Graal.Net/Events/Market/OrderSource.cs/#L38"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -98,22 +98,15 @@ Class OrderSource  <a class="header-action link-secondary" title="View source" h
   </div>
 
   <div class="markdown summary"><p>Identifies source of <a class="xref" href="DxFeed.Graal.Net.Events.Market.Order.html">Order</a>, <a class="xref" href="DxFeed.Graal.Net.Events.Market.AnalyticOrder.html">AnalyticOrder</a> and <a class="xref" href="DxFeed.Graal.Net.Events.Market.SpreadOrder.html">SpreadOrder</a> events.</p>
-<ul>
-<li>
-<em>Synthetic</em> sources <a class="xref" href="DxFeed.Graal.Net.Events.Market.OrderSource.html#DxFeed_Graal_Net_Events_Market_OrderSource_COMPOSITE_BID">COMPOSITE_BID</a>, <a class="xref" href="DxFeed.Graal.Net.Events.Market.OrderSource.html#DxFeed_Graal_Net_Events_Market_OrderSource_COMPOSITE_ASK">COMPOSITE_ASK</a>,
+<ul><li><em>Synthetic</em> sources <a class="xref" href="DxFeed.Graal.Net.Events.Market.OrderSource.html#DxFeed_Graal_Net_Events_Market_OrderSource_COMPOSITE_BID">COMPOSITE_BID</a>, <a class="xref" href="DxFeed.Graal.Net.Events.Market.OrderSource.html#DxFeed_Graal_Net_Events_Market_OrderSource_COMPOSITE_ASK">COMPOSITE_ASK</a>,
     <a class="xref" href="DxFeed.Graal.Net.Events.Market.OrderSource.html#DxFeed_Graal_Net_Events_Market_OrderSource_REGIONAL_BID">REGIONAL_BID</a> and <a class="xref" href="DxFeed.Graal.Net.Events.Market.OrderSource.html#DxFeed_Graal_Net_Events_Market_OrderSource_REGIONAL_ASK">REGIONAL_ASK</a> are provided for convenience of a consolidated
     order book and are automatically generated based on the corresponding <a class="xref" href="DxFeed.Graal.Net.Events.Market.Quote.html">Quote</a> events.
-</li>
-<li>
-<em>Aggregate</em> sources <a class="xref" href="DxFeed.Graal.Net.Events.Market.OrderSource.html#DxFeed_Graal_Net_Events_Market_OrderSource_AGGREGATE_BID">AGGREGATE_BID</a>  and <a class="xref" href="DxFeed.Graal.Net.Events.Market.OrderSource.html#DxFeed_Graal_Net_Events_Market_OrderSource_AGGREGATE_ASK">AGGREGATE_ASK</a>  provide
+</li><li><em>Aggregate</em> sources <a class="xref" href="DxFeed.Graal.Net.Events.Market.OrderSource.html#DxFeed_Graal_Net_Events_Market_OrderSource_AGGREGATE_BID">AGGREGATE_BID</a>  and <a class="xref" href="DxFeed.Graal.Net.Events.Market.OrderSource.html#DxFeed_Graal_Net_Events_Market_OrderSource_AGGREGATE_ASK">AGGREGATE_ASK</a>  provide
     futures depth (aggregated by price level) and NASDAQ Level II (top of book for each market maker).
     These source cannot be directly published to via dxFeed API.
-</li>
-<li>
-<a class="xref" href="DxFeed.Graal.Net.Events.Market.OrderSource.html#DxFeed_Graal_Net_Events_Market_OrderSource_IsPublishable_System_Type_">IsPublishable(Type)</a> sources <a class="xref" href="DxFeed.Graal.Net.Events.Market.OrderSource.html#DxFeed_Graal_Net_Events_Market_OrderSource_DEFAULT">DEFAULT</a>, <a class="xref" href="DxFeed.Graal.Net.Events.Market.OrderSource.html#DxFeed_Graal_Net_Events_Market_OrderSource_NTV">NTV</a> and <a class="xref" href="DxFeed.Graal.Net.Events.Market.OrderSource.html#DxFeed_Graal_Net_Events_Market_OrderSource_ISE">ISE</a>
+</li><li><a class="xref" href="DxFeed.Graal.Net.Events.Market.OrderSource.html#DxFeed_Graal_Net_Events_Market_OrderSource_IsPublishable_System_Type_">IsPublishable(Type)</a> sources <a class="xref" href="DxFeed.Graal.Net.Events.Market.OrderSource.html#DxFeed_Graal_Net_Events_Market_OrderSource_DEFAULT">DEFAULT</a>, <a class="xref" href="DxFeed.Graal.Net.Events.Market.OrderSource.html#DxFeed_Graal_Net_Events_Market_OrderSource_NTV">NTV</a> and <a class="xref" href="DxFeed.Graal.Net.Events.Market.OrderSource.html#DxFeed_Graal_Net_Events_Market_OrderSource_ISE">ISE</a>
     support full range of dxFeed API features.
-</li>
-</ul>
+</li></ul>
 For more details see <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/event/market/OrderSource.html">Javadoc</a>.
 </div>
   <div class="markdown conceptual"></div>
@@ -180,7 +173,7 @@ For more details see <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/even
 
   <h3 id="DxFeed_Graal_Net_Events_Market_OrderSource_ABE" data-uid="DxFeed.Graal.Net.Events.Market.OrderSource.ABE">
   ABE
-  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/1.2.1/src/DxFeed.Graal.Net/Events/Market/OrderSource.cs/#L181"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/1.3.0/src/DxFeed.Graal.Net/Events/Market/OrderSource.cs/#L181"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>ABE (abe.io) exchange.</p>
@@ -211,7 +204,7 @@ For more details see <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/even
 
   <h3 id="DxFeed_Graal_Net_Events_Market_OrderSource_AGGREGATE_ASK" data-uid="DxFeed.Graal.Net.Events.Market.OrderSource.AGGREGATE_ASK">
   AGGREGATE_ASK
-  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/1.2.1/src/DxFeed.Graal.Net/Events/Market/OrderSource.cs/#L91"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/1.3.0/src/DxFeed.Graal.Net/Events/Market/OrderSource.cs/#L91"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Ask side of an aggregate order book (futures depth and NASDAQ Level II).
@@ -243,7 +236,7 @@ This source cannot be directly published via dxFeed API, but otherwise it is ful
 
   <h3 id="DxFeed_Graal_Net_Events_Market_OrderSource_AGGREGATE_BID" data-uid="DxFeed.Graal.Net.Events.Market.OrderSource.AGGREGATE_BID">
   AGGREGATE_BID
-  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/1.2.1/src/DxFeed.Graal.Net/Events/Market/OrderSource.cs/#L85"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/1.3.0/src/DxFeed.Graal.Net/Events/Market/OrderSource.cs/#L85"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Bid side of an aggregate order book (futures depth and NASDAQ Level II).
@@ -275,7 +268,7 @@ This source cannot be directly published via dxFeed API, but otherwise it is ful
 
   <h3 id="DxFeed_Graal_Net_Events_Market_OrderSource_BATE" data-uid="DxFeed.Graal.Net.Events.Market.OrderSource.BATE">
   BATE
-  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/1.2.1/src/DxFeed.Graal.Net/Events/Market/OrderSource.cs/#L151"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/1.3.0/src/DxFeed.Graal.Net/Events/Market/OrderSource.cs/#L151"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Bats Europe BXE Exchange.</p>
@@ -306,7 +299,7 @@ This source cannot be directly published via dxFeed API, but otherwise it is ful
 
   <h3 id="DxFeed_Graal_Net_Events_Market_OrderSource_BI20" data-uid="DxFeed.Graal.Net.Events.Market.OrderSource.BI20">
   BI20
-  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/1.2.1/src/DxFeed.Graal.Net/Events/Market/OrderSource.cs/#L176"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/1.3.0/src/DxFeed.Graal.Net/Events/Market/OrderSource.cs/#L176"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Borsa Istanbul Exchange. Record for particular top 20 order book.</p>
@@ -337,7 +330,7 @@ This source cannot be directly published via dxFeed API, but otherwise it is ful
 
   <h3 id="DxFeed_Graal_Net_Events_Market_OrderSource_BXTR" data-uid="DxFeed.Graal.Net.Events.Market.OrderSource.BXTR">
   BXTR
-  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/1.2.1/src/DxFeed.Graal.Net/Events/Market/OrderSource.cs/#L166"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/1.3.0/src/DxFeed.Graal.Net/Events/Market/OrderSource.cs/#L166"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Bats Europe TRF.</p>
@@ -368,7 +361,7 @@ This source cannot be directly published via dxFeed API, but otherwise it is ful
 
   <h3 id="DxFeed_Graal_Net_Events_Market_OrderSource_BYX" data-uid="DxFeed.Graal.Net.Events.Market.OrderSource.BYX">
   BYX
-  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/1.2.1/src/DxFeed.Graal.Net/Events/Market/OrderSource.cs/#L141"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/1.3.0/src/DxFeed.Graal.Net/Events/Market/OrderSource.cs/#L141"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Bats BYX Exchange.</p>
@@ -399,7 +392,7 @@ This source cannot be directly published via dxFeed API, but otherwise it is ful
 
   <h3 id="DxFeed_Graal_Net_Events_Market_OrderSource_BZX" data-uid="DxFeed.Graal.Net.Events.Market.OrderSource.BZX">
   BZX
-  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/1.2.1/src/DxFeed.Graal.Net/Events/Market/OrderSource.cs/#L146"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/1.3.0/src/DxFeed.Graal.Net/Events/Market/OrderSource.cs/#L146"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Bats BZX Exchange.</p>
@@ -430,7 +423,7 @@ This source cannot be directly published via dxFeed API, but otherwise it is ful
 
   <h3 id="DxFeed_Graal_Net_Events_Market_OrderSource_C2OX" data-uid="DxFeed.Graal.Net.Events.Market.OrderSource.C2OX">
   C2OX
-  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/1.2.1/src/DxFeed.Graal.Net/Events/Market/OrderSource.cs/#L221"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/1.3.0/src/DxFeed.Graal.Net/Events/Market/OrderSource.cs/#L221"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>CBOE Options C2 Exchange.</p>
@@ -461,7 +454,7 @@ This source cannot be directly published via dxFeed API, but otherwise it is ful
 
   <h3 id="DxFeed_Graal_Net_Events_Market_OrderSource_CEUX" data-uid="DxFeed.Graal.Net.Events.Market.OrderSource.CEUX">
   CEUX
-  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/1.2.1/src/DxFeed.Graal.Net/Events/Market/OrderSource.cs/#L161"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/1.3.0/src/DxFeed.Graal.Net/Events/Market/OrderSource.cs/#L161"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Bats Europe DXE Exchange.</p>
@@ -492,7 +485,7 @@ This source cannot be directly published via dxFeed API, but otherwise it is ful
 
   <h3 id="DxFeed_Graal_Net_Events_Market_OrderSource_CFE" data-uid="DxFeed.Graal.Net.Events.Market.OrderSource.CFE">
   CFE
-  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/1.2.1/src/DxFeed.Graal.Net/Events/Market/OrderSource.cs/#L216"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/1.3.0/src/DxFeed.Graal.Net/Events/Market/OrderSource.cs/#L216"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>CBOE Futures Exchange.</p>
@@ -523,7 +516,7 @@ This source cannot be directly published via dxFeed API, but otherwise it is ful
 
   <h3 id="DxFeed_Graal_Net_Events_Market_OrderSource_CHIX" data-uid="DxFeed.Graal.Net.Events.Market.OrderSource.CHIX">
   CHIX
-  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/1.2.1/src/DxFeed.Graal.Net/Events/Market/OrderSource.cs/#L156"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/1.3.0/src/DxFeed.Graal.Net/Events/Market/OrderSource.cs/#L156"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Bats Europe CXE Exchange.</p>
@@ -554,7 +547,7 @@ This source cannot be directly published via dxFeed API, but otherwise it is ful
 
   <h3 id="DxFeed_Graal_Net_Events_Market_OrderSource_COMPOSITE_ASK" data-uid="DxFeed.Graal.Net.Events.Market.OrderSource.COMPOSITE_ASK">
   COMPOSITE_ASK
-  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/1.2.1/src/DxFeed.Graal.Net/Events/Market/OrderSource.cs/#L65"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/1.3.0/src/DxFeed.Graal.Net/Events/Market/OrderSource.cs/#L65"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Ask side of a composite <a class="xref" href="DxFeed.Graal.Net.Events.Market.Quote.html">Quote</a>.
@@ -587,7 +580,7 @@ The subscription on composite <a class="xref" href="DxFeed.Graal.Net.Events.Mark
 
   <h3 id="DxFeed_Graal_Net_Events_Market_OrderSource_COMPOSITE_BID" data-uid="DxFeed.Graal.Net.Events.Market.OrderSource.COMPOSITE_BID">
   COMPOSITE_BID
-  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/1.2.1/src/DxFeed.Graal.Net/Events/Market/OrderSource.cs/#L58"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/1.3.0/src/DxFeed.Graal.Net/Events/Market/OrderSource.cs/#L58"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Bid side of a composite <a class="xref" href="DxFeed.Graal.Net.Events.Market.Quote.html">Quote</a>.
@@ -620,7 +613,7 @@ The subscription on composite <a class="xref" href="DxFeed.Graal.Net.Events.Mark
 
   <h3 id="DxFeed_Graal_Net_Events_Market_OrderSource_DEA" data-uid="DxFeed.Graal.Net.Events.Market.OrderSource.DEA">
   DEA
-  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/1.2.1/src/DxFeed.Graal.Net/Events/Market/OrderSource.cs/#L131"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/1.3.0/src/DxFeed.Graal.Net/Events/Market/OrderSource.cs/#L131"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Direct-Edge EDGA Exchange.</p>
@@ -651,7 +644,7 @@ The subscription on composite <a class="xref" href="DxFeed.Graal.Net.Events.Mark
 
   <h3 id="DxFeed_Graal_Net_Events_Market_OrderSource_DEFAULT" data-uid="DxFeed.Graal.Net.Events.Market.OrderSource.DEFAULT">
   DEFAULT
-  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/1.2.1/src/DxFeed.Graal.Net/Events/Market/OrderSource.cs/#L50"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/1.3.0/src/DxFeed.Graal.Net/Events/Market/OrderSource.cs/#L50"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Default source for publishing custom order books.</p>
@@ -682,7 +675,7 @@ The subscription on composite <a class="xref" href="DxFeed.Graal.Net.Events.Mark
 
   <h3 id="DxFeed_Graal_Net_Events_Market_OrderSource_DEX" data-uid="DxFeed.Graal.Net.Events.Market.OrderSource.DEX">
   DEX
-  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/1.2.1/src/DxFeed.Graal.Net/Events/Market/OrderSource.cs/#L136"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/1.3.0/src/DxFeed.Graal.Net/Events/Market/OrderSource.cs/#L136"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Direct-Edge EDGX Exchange.</p>
@@ -713,7 +706,7 @@ The subscription on composite <a class="xref" href="DxFeed.Graal.Net.Events.Mark
 
   <h3 id="DxFeed_Graal_Net_Events_Market_OrderSource_ERIS" data-uid="DxFeed.Graal.Net.Events.Market.OrderSource.ERIS">
   ERIS
-  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/1.2.1/src/DxFeed.Graal.Net/Events/Market/OrderSource.cs/#L201"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/1.3.0/src/DxFeed.Graal.Net/Events/Market/OrderSource.cs/#L201"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Eris Exchange group of companies.</p>
@@ -744,7 +737,7 @@ The subscription on composite <a class="xref" href="DxFeed.Graal.Net.Events.Mark
 
   <h3 id="DxFeed_Graal_Net_Events_Market_OrderSource_ESPD" data-uid="DxFeed.Graal.Net.Events.Market.OrderSource.ESPD">
   ESPD
-  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/1.2.1/src/DxFeed.Graal.Net/Events/Market/OrderSource.cs/#L111"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/1.3.0/src/DxFeed.Graal.Net/Events/Market/OrderSource.cs/#L111"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>NASDAQ eSpeed.</p>
@@ -775,7 +768,7 @@ The subscription on composite <a class="xref" href="DxFeed.Graal.Net.Events.Mark
 
   <h3 id="DxFeed_Graal_Net_Events_Market_OrderSource_FAIR" data-uid="DxFeed.Graal.Net.Events.Market.OrderSource.FAIR">
   FAIR
-  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/1.2.1/src/DxFeed.Graal.Net/Events/Market/OrderSource.cs/#L186"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/1.3.0/src/DxFeed.Graal.Net/Events/Market/OrderSource.cs/#L186"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>FAIR (FairX) exchange.</p>
@@ -806,7 +799,7 @@ The subscription on composite <a class="xref" href="DxFeed.Graal.Net.Events.Mark
 
   <h3 id="DxFeed_Graal_Net_Events_Market_OrderSource_GLBX" data-uid="DxFeed.Graal.Net.Events.Market.OrderSource.GLBX">
   GLBX
-  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/1.2.1/src/DxFeed.Graal.Net/Events/Market/OrderSource.cs/#L191"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/1.3.0/src/DxFeed.Graal.Net/Events/Market/OrderSource.cs/#L191"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>CME Globex.</p>
@@ -837,7 +830,7 @@ The subscription on composite <a class="xref" href="DxFeed.Graal.Net.Events.Mark
 
   <h3 id="DxFeed_Graal_Net_Events_Market_OrderSource_ICE" data-uid="DxFeed.Graal.Net.Events.Market.OrderSource.ICE">
   ICE
-  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/1.2.1/src/DxFeed.Graal.Net/Events/Market/OrderSource.cs/#L121"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/1.3.0/src/DxFeed.Graal.Net/Events/Market/OrderSource.cs/#L121"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Intercontinental Exchange.</p>
@@ -868,7 +861,7 @@ The subscription on composite <a class="xref" href="DxFeed.Graal.Net.Events.Mark
 
   <h3 id="DxFeed_Graal_Net_Events_Market_OrderSource_ISE" data-uid="DxFeed.Graal.Net.Events.Market.OrderSource.ISE">
   ISE
-  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/1.2.1/src/DxFeed.Graal.Net/Events/Market/OrderSource.cs/#L126"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/1.3.0/src/DxFeed.Graal.Net/Events/Market/OrderSource.cs/#L126"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>International Securities Exchange.</p>
@@ -899,7 +892,7 @@ The subscription on composite <a class="xref" href="DxFeed.Graal.Net.Events.Mark
 
   <h3 id="DxFeed_Graal_Net_Events_Market_OrderSource_IST" data-uid="DxFeed.Graal.Net.Events.Market.OrderSource.IST">
   IST
-  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/1.2.1/src/DxFeed.Graal.Net/Events/Market/OrderSource.cs/#L171"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/1.3.0/src/DxFeed.Graal.Net/Events/Market/OrderSource.cs/#L171"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Borsa Istanbul Exchange.</p>
@@ -930,7 +923,7 @@ The subscription on composite <a class="xref" href="DxFeed.Graal.Net.Events.Mark
 
   <h3 id="DxFeed_Graal_Net_Events_Market_OrderSource_MEMX" data-uid="DxFeed.Graal.Net.Events.Market.OrderSource.MEMX">
   MEMX
-  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/1.2.1/src/DxFeed.Graal.Net/Events/Market/OrderSource.cs/#L241"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/1.3.0/src/DxFeed.Graal.Net/Events/Market/OrderSource.cs/#L241"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Members Exchange.</p>
@@ -961,7 +954,7 @@ The subscription on composite <a class="xref" href="DxFeed.Graal.Net.Events.Mark
 
   <h3 id="DxFeed_Graal_Net_Events_Market_OrderSource_NFX" data-uid="DxFeed.Graal.Net.Events.Market.OrderSource.NFX">
   NFX
-  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/1.2.1/src/DxFeed.Graal.Net/Events/Market/OrderSource.cs/#L106"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/1.3.0/src/DxFeed.Graal.Net/Events/Market/OrderSource.cs/#L106"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>NASDAQ Futures Exchange.</p>
@@ -992,7 +985,7 @@ The subscription on composite <a class="xref" href="DxFeed.Graal.Net.Events.Mark
 
   <h3 id="DxFeed_Graal_Net_Events_Market_OrderSource_NTV" data-uid="DxFeed.Graal.Net.Events.Market.OrderSource.NTV">
   NTV
-  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/1.2.1/src/DxFeed.Graal.Net/Events/Market/OrderSource.cs/#L96"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/1.3.0/src/DxFeed.Graal.Net/Events/Market/OrderSource.cs/#L96"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>NASDAQ Total View.</p>
@@ -1021,9 +1014,40 @@ The subscription on composite <a class="xref" href="DxFeed.Graal.Net.Events.Mark
 
 
 
+  <h3 id="DxFeed_Graal_Net_Events_Market_OrderSource_OCEA" data-uid="DxFeed.Graal.Net.Events.Market.OrderSource.OCEA">
+  OCEA
+  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/1.3.0/src/DxFeed.Graal.Net/Events/Market/OrderSource.cs/#L251"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Blue Ocean Technologies Alternative Trading System.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly OrderSource OCEA</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DxFeed.Graal.Net.Events.Market.OrderSource.html">OrderSource</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
   <h3 id="DxFeed_Graal_Net_Events_Market_OrderSource_REGIONAL_ASK" data-uid="DxFeed.Graal.Net.Events.Market.OrderSource.REGIONAL_ASK">
   REGIONAL_ASK
-  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/1.2.1/src/DxFeed.Graal.Net/Events/Market/OrderSource.cs/#L79"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/1.3.0/src/DxFeed.Graal.Net/Events/Market/OrderSource.cs/#L79"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Ask side of a regional <a class="xref" href="DxFeed.Graal.Net.Events.Market.Quote.html">Quote</a>.
@@ -1056,7 +1080,7 @@ The subscription on regional <a class="xref" href="DxFeed.Graal.Net.Events.Marke
 
   <h3 id="DxFeed_Graal_Net_Events_Market_OrderSource_REGIONAL_BID" data-uid="DxFeed.Graal.Net.Events.Market.OrderSource.REGIONAL_BID">
   REGIONAL_BID
-  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/1.2.1/src/DxFeed.Graal.Net/Events/Market/OrderSource.cs/#L72"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/1.3.0/src/DxFeed.Graal.Net/Events/Market/OrderSource.cs/#L72"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Bid side of a regional <a class="xref" href="DxFeed.Graal.Net.Events.Market.Quote.html">Quote</a>.
@@ -1089,7 +1113,7 @@ The subscription on regional <a class="xref" href="DxFeed.Graal.Net.Events.Marke
 
   <h3 id="DxFeed_Graal_Net_Events_Market_OrderSource_SMFE" data-uid="DxFeed.Graal.Net.Events.Market.OrderSource.SMFE">
   SMFE
-  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/1.2.1/src/DxFeed.Graal.Net/Events/Market/OrderSource.cs/#L226"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/1.3.0/src/DxFeed.Graal.Net/Events/Market/OrderSource.cs/#L226"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Small Exchange.</p>
@@ -1120,7 +1144,7 @@ The subscription on regional <a class="xref" href="DxFeed.Graal.Net.Events.Marke
 
   <h3 id="DxFeed_Graal_Net_Events_Market_OrderSource_XEUR" data-uid="DxFeed.Graal.Net.Events.Market.OrderSource.XEUR">
   XEUR
-  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/1.2.1/src/DxFeed.Graal.Net/Events/Market/OrderSource.cs/#L206"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/1.3.0/src/DxFeed.Graal.Net/Events/Market/OrderSource.cs/#L206"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Eurex Exchange.</p>
@@ -1151,7 +1175,7 @@ The subscription on regional <a class="xref" href="DxFeed.Graal.Net.Events.Marke
 
   <h3 id="DxFeed_Graal_Net_Events_Market_OrderSource_XNFI" data-uid="DxFeed.Graal.Net.Events.Market.OrderSource.XNFI">
   XNFI
-  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/1.2.1/src/DxFeed.Graal.Net/Events/Market/OrderSource.cs/#L116"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/1.3.0/src/DxFeed.Graal.Net/Events/Market/OrderSource.cs/#L116"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>NASDAQ Fixed Income.</p>
@@ -1182,7 +1206,7 @@ The subscription on regional <a class="xref" href="DxFeed.Graal.Net.Events.Marke
 
   <h3 id="DxFeed_Graal_Net_Events_Market_OrderSource_glbx" data-uid="DxFeed.Graal.Net.Events.Market.OrderSource.glbx">
   glbx
-  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/1.2.1/src/DxFeed.Graal.Net/Events/Market/OrderSource.cs/#L196"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/1.3.0/src/DxFeed.Graal.Net/Events/Market/OrderSource.cs/#L196"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>CME Globex. Record for price level book.</p>
@@ -1213,7 +1237,7 @@ The subscription on regional <a class="xref" href="DxFeed.Graal.Net.Events.Marke
 
   <h3 id="DxFeed_Graal_Net_Events_Market_OrderSource_iex" data-uid="DxFeed.Graal.Net.Events.Market.OrderSource.iex">
   iex
-  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/1.2.1/src/DxFeed.Graal.Net/Events/Market/OrderSource.cs/#L236"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/1.3.0/src/DxFeed.Graal.Net/Events/Market/OrderSource.cs/#L236"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Investors exchange. Record for price level book.</p>
@@ -1244,7 +1268,7 @@ The subscription on regional <a class="xref" href="DxFeed.Graal.Net.Events.Marke
 
   <h3 id="DxFeed_Graal_Net_Events_Market_OrderSource_memx" data-uid="DxFeed.Graal.Net.Events.Market.OrderSource.memx">
   memx
-  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/1.2.1/src/DxFeed.Graal.Net/Events/Market/OrderSource.cs/#L246"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/1.3.0/src/DxFeed.Graal.Net/Events/Market/OrderSource.cs/#L246"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Members Exchange. Record for price level book.</p>
@@ -1275,7 +1299,7 @@ The subscription on regional <a class="xref" href="DxFeed.Graal.Net.Events.Marke
 
   <h3 id="DxFeed_Graal_Net_Events_Market_OrderSource_ntv" data-uid="DxFeed.Graal.Net.Events.Market.OrderSource.ntv">
   ntv
-  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/1.2.1/src/DxFeed.Graal.Net/Events/Market/OrderSource.cs/#L101"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/1.3.0/src/DxFeed.Graal.Net/Events/Market/OrderSource.cs/#L101"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>NASDAQ Total View. Record for price level book.</p>
@@ -1304,9 +1328,41 @@ The subscription on regional <a class="xref" href="DxFeed.Graal.Net.Events.Marke
 
 
 
+  <h3 id="DxFeed_Graal_Net_Events_Market_OrderSource_pink" data-uid="DxFeed.Graal.Net.Events.Market.OrderSource.pink">
+  pink
+  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/1.3.0/src/DxFeed.Graal.Net/Events/Market/OrderSource.cs/#L257"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Pink Sheets. Record for price level book.
+Pink sheets are listings for stocks that trade over-the-counter (OTC).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly OrderSource pink</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DxFeed.Graal.Net.Events.Market.OrderSource.html">OrderSource</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
   <h3 id="DxFeed_Graal_Net_Events_Market_OrderSource_smfe" data-uid="DxFeed.Graal.Net.Events.Market.OrderSource.smfe">
   smfe
-  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/1.2.1/src/DxFeed.Graal.Net/Events/Market/OrderSource.cs/#L231"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/1.3.0/src/DxFeed.Graal.Net/Events/Market/OrderSource.cs/#L231"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Small Exchange. Record for price level book.</p>
@@ -1337,7 +1393,7 @@ The subscription on regional <a class="xref" href="DxFeed.Graal.Net.Events.Marke
 
   <h3 id="DxFeed_Graal_Net_Events_Market_OrderSource_xeur" data-uid="DxFeed.Graal.Net.Events.Market.OrderSource.xeur">
   xeur
-  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/1.2.1/src/DxFeed.Graal.Net/Events/Market/OrderSource.cs/#L211"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/1.3.0/src/DxFeed.Graal.Net/Events/Market/OrderSource.cs/#L211"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Eurex Exchange. Record for price level book.</p>
@@ -1373,7 +1429,7 @@ The subscription on regional <a class="xref" href="DxFeed.Graal.Net.Events.Marke
 
   <h3 id="DxFeed_Graal_Net_Events_Market_OrderSource_IsFullOrderBook" data-uid="DxFeed.Graal.Net.Events.Market.OrderSource.IsFullOrderBook">
   IsFullOrderBook
-  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/1.2.1/src/DxFeed.Graal.Net/Events/Market/OrderSource.cs/#L329"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/1.3.0/src/DxFeed.Graal.Net/Events/Market/OrderSource.cs/#L345"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Gets a value indicating whether this source supports Full Order Book.</p>
@@ -1409,7 +1465,7 @@ The subscription on regional <a class="xref" href="DxFeed.Graal.Net.Events.Marke
 
   <h3 id="DxFeed_Graal_Net_Events_Market_OrderSource_GetEventTypeMask_System_Type_" data-uid="DxFeed.Graal.Net.Events.Market.OrderSource.GetEventTypeMask(System.Type)">
   GetEventTypeMask(Type)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/1.2.1/src/DxFeed.Graal.Net/Events/Market/OrderSource.cs/#L368"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/1.3.0/src/DxFeed.Graal.Net/Events/Market/OrderSource.cs/#L384"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Gets type mask by specified event type.</p>
@@ -1454,7 +1510,7 @@ The subscription on regional <a class="xref" href="DxFeed.Graal.Net.Events.Marke
 
   <h3 id="DxFeed_Graal_Net_Events_Market_OrderSource_IsPublishable_System_Type_" data-uid="DxFeed.Graal.Net.Events.Market.OrderSource.IsPublishable(System.Type)">
   IsPublishable(Type)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/1.2.1/src/DxFeed.Graal.Net/Events/Market/OrderSource.cs/#L403"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/1.3.0/src/DxFeed.Graal.Net/Events/Market/OrderSource.cs/#L421"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Gets a value indicating whether the given event type can be directly published with this source.
@@ -1502,7 +1558,7 @@ events can be directly published with this source.</p>
 
   <h3 id="DxFeed_Graal_Net_Events_Market_OrderSource_IsSpecialSourceId_System_Int32_" data-uid="DxFeed.Graal.Net.Events.Market.OrderSource.IsSpecialSourceId(System.Int32)">
   IsSpecialSourceId(int)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/1.2.1/src/DxFeed.Graal.Net/Events/Market/OrderSource.cs/#L338"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/1.3.0/src/DxFeed.Graal.Net/Events/Market/OrderSource.cs/#L354"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Determines whether specified source identifier refers to special order source.
@@ -1542,7 +1598,7 @@ Special order sources are used for wrapping non-order events into order events.<
 
   <h3 id="DxFeed_Graal_Net_Events_Market_OrderSource_ValueOf_System_Int32_" data-uid="DxFeed.Graal.Net.Events.Market.OrderSource.ValueOf(System.Int32)">
   ValueOf(int)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/1.2.1/src/DxFeed.Graal.Net/Events/Market/OrderSource.cs/#L347"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/1.3.0/src/DxFeed.Graal.Net/Events/Market/OrderSource.cs/#L363"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Returns order source for the specified source identifier.</p>
@@ -1587,7 +1643,7 @@ Special order sources are used for wrapping non-order events into order events.<
 
   <h3 id="DxFeed_Graal_Net_Events_Market_OrderSource_ValueOf_System_String_" data-uid="DxFeed.Graal.Net.Events.Market.OrderSource.ValueOf(System.String)">
   ValueOf(string)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/1.2.1/src/DxFeed.Graal.Net/Events/Market/OrderSource.cs/#L357"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/1.3.0/src/DxFeed.Graal.Net/Events/Market/OrderSource.cs/#L373"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Returns order source for the specified source name.

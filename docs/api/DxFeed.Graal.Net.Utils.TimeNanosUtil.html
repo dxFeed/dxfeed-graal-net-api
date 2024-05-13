@@ -16,7 +16,7 @@
       <meta name="docfx:rel" content="../../">
       
       
-      <meta name="docfx:docurl" content="https://github.com/dxFeed/dxfeed-graal-net-api/new/1.2.1/apiSpec/new?filename=DxFeed_Graal_Net_Utils_TimeNanosUtil.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Utils.TimeNanosUtil%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="docfx:docurl" content="https://github.com/dxFeed/dxfeed-graal-net-api/new/1.3.0/apiSpec/new?filename=DxFeed_Graal_Net_Utils_TimeNanosUtil.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Utils.TimeNanosUtil%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -29,15 +29,15 @@
       <meta name="loc:changeTheme" content="Change theme">
       <meta name="loc:copy" content="Copy">
       <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
   </head>
-
-  <script type="module" src="./../../public/docfx.min.js"></script>
-
-  <script>
-    const theme = localStorage.getItem('theme') || 'auto'
-    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
-  </script>
-
 
   <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
     <header class="bg-body border-bottom">
@@ -89,7 +89,7 @@
 
 
   <h1 id="DxFeed_Graal_Net_Utils_TimeNanosUtil" data-uid="DxFeed.Graal.Net.Utils.TimeNanosUtil" class="text-break">
-Class TimeNanosUtil  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/1.2.1/src/DxFeed.Graal.Net/Utils/TimeNanosUtil.cs/#L14"><i class="bi bi-code-slash"></i></a>
+Class TimeNanosUtil  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/1.3.0/src/DxFeed.Graal.Net/Utils/TimeNanosUtil.cs/#L14"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -159,14 +159,13 @@ Porting Java class <code>com.dxfeed.event.impl.TimeNanosUtil</code>.</p>
 
   <h3 id="DxFeed_Graal_Net_Utils_TimeNanosUtil_GetMillisFromNanos_System_Int64_" data-uid="DxFeed.Graal.Net.Utils.TimeNanosUtil.GetMillisFromNanos(System.Int64)">
   GetMillisFromNanos(long)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/1.2.1/src/DxFeed.Graal.Net/Utils/TimeNanosUtil.cs/#L40"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/1.3.0/src/DxFeed.Graal.Net/Utils/TimeNanosUtil.cs/#L40"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Returns time measured in milliseconds since Unix epoch from the time in nanoseconds.
 Idea is that nano part of time shall be within [0..999999] interval
 so that the following equation always holds:</p>
-<pre><code class="lang-csharp">GetMillisFromNanos(timeNanos) * 1_000_000 + GetNanoPartFromNanos(timeNanos) == timeNanos</code></pre>
-<p><a class="xref" href="DxFeed.Graal.Net.Utils.TimeNanosUtil.html#DxFeed_Graal_Net_Utils_TimeNanosUtil_GetNanoPartFromNanos_System_Int64_">GetNanoPartFromNanos(long)</a></p>
+<pre><code class="lang-csharp">GetMillisFromNanos(timeNanos) * 1_000_000 + GetNanoPartFromNanos(timeNanos) == timeNanos</code></pre><a class="xref" href="DxFeed.Graal.Net.Utils.TimeNanosUtil.html#DxFeed_Graal_Net_Utils_TimeNanosUtil_GetNanoPartFromNanos_System_Int64_">GetNanoPartFromNanos(long)</a>
 </div>
   <div class="markdown level1 conceptual"></div>
 
@@ -202,14 +201,13 @@ so that the following equation always holds:</p>
 
   <h3 id="DxFeed_Graal_Net_Utils_TimeNanosUtil_GetNanoPartFromNanos_System_Int64_" data-uid="DxFeed.Graal.Net.Utils.TimeNanosUtil.GetNanoPartFromNanos(System.Int64)">
   GetNanoPartFromNanos(long)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/1.2.1/src/DxFeed.Graal.Net/Utils/TimeNanosUtil.cs/#L52"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/1.3.0/src/DxFeed.Graal.Net/Utils/TimeNanosUtil.cs/#L52"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Returns nano part of time.
 Idea is that nano part of time shall be within [0..999999] interval
 so that the following equation always holds:</p>
-<pre><code class="lang-csharp">GetMillisFromNanos(timeNanos) * 1_000_000 + GetNanoPartFromNanos(timeNanos) == timeNanos</code></pre>
-<p><a class="xref" href="DxFeed.Graal.Net.Utils.TimeNanosUtil.html#DxFeed_Graal_Net_Utils_TimeNanosUtil_GetMillisFromNanos_System_Int64_">GetMillisFromNanos(long)</a></p>
+<pre><code class="lang-csharp">GetMillisFromNanos(timeNanos) * 1_000_000 + GetNanoPartFromNanos(timeNanos) == timeNanos</code></pre><a class="xref" href="DxFeed.Graal.Net.Utils.TimeNanosUtil.html#DxFeed_Graal_Net_Utils_TimeNanosUtil_GetMillisFromNanos_System_Int64_">GetMillisFromNanos(long)</a>
 </div>
   <div class="markdown level1 conceptual"></div>
 
@@ -245,7 +243,7 @@ so that the following equation always holds:</p>
 
   <h3 id="DxFeed_Graal_Net_Utils_TimeNanosUtil_GetNanosFromMillisAndNanoPart_System_Int64_System_Int32_" data-uid="DxFeed.Graal.Net.Utils.TimeNanosUtil.GetNanosFromMillisAndNanoPart(System.Int64,System.Int32)">
   GetNanosFromMillisAndNanoPart(long, int)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/1.2.1/src/DxFeed.Graal.Net/Utils/TimeNanosUtil.cs/#L28"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/1.3.0/src/DxFeed.Graal.Net/Utils/TimeNanosUtil.cs/#L28"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Returns time measured in nanoseconds since Unix epoch from the time in milliseconds and its nano part.

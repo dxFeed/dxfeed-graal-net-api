@@ -16,7 +16,7 @@
       <meta name="docfx:rel" content="../../">
       
       
-      <meta name="docfx:docurl" content="https://github.com/dxFeed/dxfeed-graal-net-api/new/1.2.1/apiSpec/new?filename=DxFeed_Graal_Net_Utils_TimeFormat.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Utils.TimeFormat%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="docfx:docurl" content="https://github.com/dxFeed/dxfeed-graal-net-api/new/1.3.0/apiSpec/new?filename=DxFeed_Graal_Net_Utils_TimeFormat.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Utils.TimeFormat%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -29,15 +29,15 @@
       <meta name="loc:changeTheme" content="Change theme">
       <meta name="loc:copy" content="Copy">
       <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
   </head>
-
-  <script type="module" src="./../../public/docfx.min.js"></script>
-
-  <script>
-    const theme = localStorage.getItem('theme') || 'auto'
-    document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
-  </script>
-
 
   <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
     <header class="bg-body border-bottom">
@@ -89,7 +89,7 @@
 
 
   <h1 id="DxFeed_Graal_Net_Utils_TimeFormat" data-uid="DxFeed.Graal.Net.Utils.TimeFormat" class="text-break">
-Class TimeFormat  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/1.2.1/src/DxFeed.Graal.Net/Utils/TimeFormat.cs/#L17"><i class="bi bi-code-slash"></i></a>
+Class TimeFormat  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/1.3.0/src/DxFeed.Graal.Net/Utils/TimeFormat.cs/#L15"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -153,19 +153,19 @@ Class TimeFormat  <a class="header-action link-secondary" title="View source" hr
 </h2>
 
 
-  <a id="DxFeed_Graal_Net_Utils_TimeFormat_Local_" data-uid="DxFeed.Graal.Net.Utils.TimeFormat.Local*"></a>
+  <a id="DxFeed_Graal_Net_Utils_TimeFormat_Default_" data-uid="DxFeed.Graal.Net.Utils.TimeFormat.Default*"></a>
 
-  <h3 id="DxFeed_Graal_Net_Utils_TimeFormat_Local" data-uid="DxFeed.Graal.Net.Utils.TimeFormat.Local">
-  Local
-  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/1.2.1/src/DxFeed.Graal.Net/Utils/TimeFormat.cs/#L125"><i class="bi bi-code-slash"></i></a>
+  <h3 id="DxFeed_Graal_Net_Utils_TimeFormat_Default" data-uid="DxFeed.Graal.Net.Utils.TimeFormat.Default">
+  Default
+  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/1.3.0/src/DxFeed.Graal.Net/Utils/TimeFormat.cs/#L38"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>Gets instance <a class="xref" href="DxFeed.Graal.Net.Utils.TimeFormat.html">TimeFormat</a> with <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.timezoneinfo">TimeZoneInfo</a>.<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.timezoneinfo.local">Local</a>.</p>
+  <div class="markdown level1 summary"><p>Gets TimeFormat instance that corresponds to default timezone.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static TimeFormat Local { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">public static TimeFormat Default { get; }</code></pre>
   </div>
 
 
@@ -175,7 +175,8 @@ Class TimeFormat  <a class="header-action link-secondary" title="View source" hr
   <h4 class="section">Property Value</h4>
   <dl class="parameters">
     <dt><a class="xref" href="DxFeed.Graal.Net.Utils.TimeFormat.html">TimeFormat</a></dt>
-    <dd></dd>
+    <dd><p>The time format.</p>
+</dd>
   </dl>
 
 
@@ -185,19 +186,19 @@ Class TimeFormat  <a class="header-action link-secondary" title="View source" hr
 
 
 
-  <a id="DxFeed_Graal_Net_Utils_TimeFormat_Utc_" data-uid="DxFeed.Graal.Net.Utils.TimeFormat.Utc*"></a>
+  <a id="DxFeed_Graal_Net_Utils_TimeFormat_GMT_" data-uid="DxFeed.Graal.Net.Utils.TimeFormat.GMT*"></a>
 
-  <h3 id="DxFeed_Graal_Net_Utils_TimeFormat_Utc" data-uid="DxFeed.Graal.Net.Utils.TimeFormat.Utc">
-  Utc
-  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/1.2.1/src/DxFeed.Graal.Net/Utils/TimeFormat.cs/#L131"><i class="bi bi-code-slash"></i></a>
+  <h3 id="DxFeed_Graal_Net_Utils_TimeFormat_GMT" data-uid="DxFeed.Graal.Net.Utils.TimeFormat.GMT">
+  GMT
+  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/1.3.0/src/DxFeed.Graal.Net/Utils/TimeFormat.cs/#L44"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>Gets instance <a class="xref" href="DxFeed.Graal.Net.Utils.TimeFormat.html">TimeFormat</a> with <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.timezoneinfo">TimeZoneInfo</a>.<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.timezoneinfo.utc">Utc</a>.</p>
+  <div class="markdown level1 summary"><p>Gets TimeFormat instance that corresponds to GMT timezone.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static TimeFormat Utc { get; }</code></pre>
+    <pre><code class="lang-csharp hljs">public static TimeFormat GMT { get; }</code></pre>
   </div>
 
 
@@ -207,7 +208,8 @@ Class TimeFormat  <a class="header-action link-secondary" title="View source" hr
   <h4 class="section">Property Value</h4>
   <dl class="parameters">
     <dt><a class="xref" href="DxFeed.Graal.Net.Utils.TimeFormat.html">TimeFormat</a></dt>
-    <dd></dd>
+    <dd><p>The time format.</p>
+</dd>
   </dl>
 
 
@@ -225,10 +227,10 @@ Class TimeFormat  <a class="header-action link-secondary" title="View source" hr
 
   <h3 id="DxFeed_Graal_Net_Utils_TimeFormat_AsFullIso" data-uid="DxFeed.Graal.Net.Utils.TimeFormat.AsFullIso">
   AsFullIso()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/1.2.1/src/DxFeed.Graal.Net/Utils/TimeFormat.cs/#L291"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/1.3.0/src/DxFeed.Graal.Net/Utils/TimeFormat.cs/#L56"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>Sets the current format as Full Iso.</p>
+  <div class="markdown level1 summary"><p>Returns TimeFormat instance that produces full ISO8610 string of &quot;yyyy-MM-dd'T'HH:mm:ss.SSSX&quot;.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
@@ -240,132 +242,7 @@ Class TimeFormat  <a class="header-action link-secondary" title="View source" hr
   <h4 class="section">Returns</h4>
   <dl class="parameters">
     <dt><a class="xref" href="DxFeed.Graal.Net.Utils.TimeFormat.html">TimeFormat</a></dt>
-    <dd><p>Returns <a class="xref" href="DxFeed.Graal.Net.Utils.TimeFormat.html">TimeFormat</a>.</p>
-</dd>
-  </dl>
-
-
-
-
-
-
-  <h4 class="section" id="DxFeed_Graal_Net_Utils_TimeFormat_AsFullIso_examples">Examples</h4>
-  <p>1970-01-01T00:00:00.0000000+00:00.</p>
-
-
-
-
-
-
-  <a id="DxFeed_Graal_Net_Utils_TimeFormat_AsOnlyDate_" data-uid="DxFeed.Graal.Net.Utils.TimeFormat.AsOnlyDate*"></a>
-
-  <h3 id="DxFeed_Graal_Net_Utils_TimeFormat_AsOnlyDate" data-uid="DxFeed.Graal.Net.Utils.TimeFormat.AsOnlyDate">
-  AsOnlyDate()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/1.2.1/src/DxFeed.Graal.Net/Utils/TimeFormat.cs/#L283"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"><p>Sets the current format as Only Date.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public TimeFormat AsOnlyDate()</code></pre>
-  </div>
-
-
-  <h4 class="section">Returns</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="DxFeed.Graal.Net.Utils.TimeFormat.html">TimeFormat</a></dt>
-    <dd><p>Returns <a class="xref" href="DxFeed.Graal.Net.Utils.TimeFormat.html">TimeFormat</a>.</p>
-</dd>
-  </dl>
-
-
-
-
-
-
-  <h4 class="section" id="DxFeed_Graal_Net_Utils_TimeFormat_AsOnlyDate_examples">Examples</h4>
-  <ol start="19700101">
-<li></li>
-</ol>
-
-
-
-
-
-
-  <a id="DxFeed_Graal_Net_Utils_TimeFormat_Create_" data-uid="DxFeed.Graal.Net.Utils.TimeFormat.Create*"></a>
-
-  <h3 id="DxFeed_Graal_Net_Utils_TimeFormat_Create_System_Func_System_TimeZoneInfo__" data-uid="DxFeed.Graal.Net.Utils.TimeFormat.Create(System.Func{System.TimeZoneInfo})">
-  Create(Func&lt;TimeZoneInfo&gt;)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/1.2.1/src/DxFeed.Graal.Net/Utils/TimeFormat.cs/#L155"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"><p>Creates a new instance of <a class="xref" href="DxFeed.Graal.Net.Utils.TimeFormat.html">TimeFormat</a>
-with a specified <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.timezoneinfo">TimeZoneInfo</a> encapsulates
-in <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.func-1">Func&lt;TResult&gt;</a> and <a class="xref" href="DxFeed.Graal.Net.Utils.TimeFormat.html#DxFeed_Graal_Net_Utils_TimeFormat_DefaultFormat">DefaultFormat</a>.
-The <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.timezoneinfo">TimeZoneInfo</a>  is made as a func because, you should always access
-the local time zone through the TimeZoneInfo.Local (same for TimeZoneInfo.Utc) property rather
-than assigning the local time zone to a TimeZoneInfo object variable.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static TimeFormat Create(Func&lt;TimeZoneInfo&gt; timeZone)</code></pre>
-  </div>
-
-  <h4 class="section">Parameters</h4>
-  <dl class="parameters">
-    <dt><code>timeZone</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.func-1">Func</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.timezoneinfo">TimeZoneInfo</a>&gt;</dt>
-    <dd><p>The specified <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.timezoneinfo">TimeZoneInfo</a> encapsulates in <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.func-1">Func&lt;TResult&gt;</a>.</p>
-</dd>
-  </dl>
-
-  <h4 class="section">Returns</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="DxFeed.Graal.Net.Utils.TimeFormat.html">TimeFormat</a></dt>
-    <dd><p>Returns new instance <a class="xref" href="DxFeed.Graal.Net.Utils.TimeFormat.html">TimeFormat</a>.</p>
-</dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
-
-  <a id="DxFeed_Graal_Net_Utils_TimeFormat_Create_" data-uid="DxFeed.Graal.Net.Utils.TimeFormat.Create*"></a>
-
-  <h3 id="DxFeed_Graal_Net_Utils_TimeFormat_Create_System_TimeZoneInfo_" data-uid="DxFeed.Graal.Net.Utils.TimeFormat.Create(System.TimeZoneInfo)">
-  Create(TimeZoneInfo)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/1.2.1/src/DxFeed.Graal.Net/Utils/TimeFormat.cs/#L140"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"><p>Creates a new instance of <a class="xref" href="DxFeed.Graal.Net.Utils.TimeFormat.html">TimeFormat</a>
-with a specified <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.timezoneinfo">TimeZoneInfo</a> and <a class="xref" href="DxFeed.Graal.Net.Utils.TimeFormat.html#DxFeed_Graal_Net_Utils_TimeFormat_DefaultFormat">DefaultFormat</a>.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static TimeFormat Create(TimeZoneInfo timeZone)</code></pre>
-  </div>
-
-  <h4 class="section">Parameters</h4>
-  <dl class="parameters">
-    <dt><code>timeZone</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.timezoneinfo">TimeZoneInfo</a></dt>
-    <dd><p>The specified <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.timezoneinfo">TimeZoneInfo</a>.</p>
-</dd>
-  </dl>
-
-  <h4 class="section">Returns</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="DxFeed.Graal.Net.Utils.TimeFormat.html">TimeFormat</a></dt>
-    <dd><p>Returns new instance <a class="xref" href="DxFeed.Graal.Net.Utils.TimeFormat.html">TimeFormat</a>.</p>
+    <dd><p>The time format.</p>
 </dd>
   </dl>
 
@@ -381,114 +258,33 @@ with a specified <a class="xref" href="https://learn.microsoft.com/dotnet/api/sy
 
   <a id="DxFeed_Graal_Net_Utils_TimeFormat_Format_" data-uid="DxFeed.Graal.Net.Utils.TimeFormat.Format*"></a>
 
-  <h3 id="DxFeed_Graal_Net_Utils_TimeFormat_Format_System_DateTimeOffset_" data-uid="DxFeed.Graal.Net.Utils.TimeFormat.Format(System.DateTimeOffset)">
-  Format(DateTimeOffset)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/1.2.1/src/DxFeed.Graal.Net/Utils/TimeFormat.cs/#L329"><i class="bi bi-code-slash"></i></a>
+  <h3 id="DxFeed_Graal_Net_Utils_TimeFormat_Format_System_Int64_" data-uid="DxFeed.Graal.Net.Utils.TimeFormat.Format(System.Int64)">
+  Format(long)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/1.3.0/src/DxFeed.Graal.Net/Utils/TimeFormat.cs/#L75"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>Converts the value of the specified <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.datetimeoffset">DateTimeOffset</a> object
-to its equivalent string representation using the current format <a class="xref" href="DxFeed.Graal.Net.Utils.TimeFormat.html#DxFeed_Graal_Net_Utils_TimeFormat_CreateFormatString">CreateFormatString()</a>,
-current <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.timezoneinfo">TimeZoneInfo</a> and <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.globalization.cultureinfo.invariantculture">InvariantCulture</a>.</p>
+  <div class="markdown level1 summary"><p>Converts value into string according to the format like <code>yyyyMMdd-HHmmss</code>.
+When <a class="xref" href="DxFeed.Graal.Net.Utils.TimeFormat.html#DxFeed_Graal_Net_Utils_TimeFormat_WithMillis">WithMillis()</a> was used to acquire this TimeFormat instance,
+the milliseconds are also included as <code>.sss</code>.
+When value == 0 this method returns string &quot;0&quot;.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string Format(DateTimeOffset dateTimeOffset)</code></pre>
+    <pre><code class="lang-csharp hljs">public string Format(long value)</code></pre>
   </div>
 
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
-    <dt><code>dateTimeOffset</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.datetimeoffset">DateTimeOffset</a></dt>
-    <dd><p>The <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.datetimeoffset">DateTimeOffset</a> object.</p>
+    <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></dt>
+    <dd><p>The milliseconds since January 1, 1970, 00:00:00 GMT.</p>
 </dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
-    <dd><p>The string representation.</p>
-</dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
-
-  <a id="DxFeed_Graal_Net_Utils_TimeFormat_FormatFromMillis_" data-uid="DxFeed.Graal.Net.Utils.TimeFormat.FormatFromMillis*"></a>
-
-  <h3 id="DxFeed_Graal_Net_Utils_TimeFormat_FormatFromMillis_System_Int64_" data-uid="DxFeed.Graal.Net.Utils.TimeFormat.FormatFromMillis(System.Int64)">
-  FormatFromMillis(long)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/1.2.1/src/DxFeed.Graal.Net/Utils/TimeFormat.cs/#L311"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"><p>Converts the value in milliseconds since Unix epoch
-to its equivalent string representation using the current format <a class="xref" href="DxFeed.Graal.Net.Utils.TimeFormat.html#DxFeed_Graal_Net_Utils_TimeFormat_CreateFormatString">CreateFormatString()</a>,
-current <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.timezoneinfo">TimeZoneInfo</a> and <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.globalization.cultureinfo.invariantculture">InvariantCulture</a>.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string FormatFromMillis(long timeMillis)</code></pre>
-  </div>
-
-  <h4 class="section">Parameters</h4>
-  <dl class="parameters">
-    <dt><code>timeMillis</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></dt>
-    <dd><p>The time measured in milliseconds since Unix epoch.</p>
-</dd>
-  </dl>
-
-  <h4 class="section">Returns</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
-    <dd><p>The string representation of the date, or <code>&quot;0&quot;</code> if timeMillis is <code>0</code>.</p>
-</dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
-
-  <a id="DxFeed_Graal_Net_Utils_TimeFormat_FormatFromSeconds_" data-uid="DxFeed.Graal.Net.Utils.TimeFormat.FormatFromSeconds*"></a>
-
-  <h3 id="DxFeed_Graal_Net_Utils_TimeFormat_FormatFromSeconds_System_Int64_" data-uid="DxFeed.Graal.Net.Utils.TimeFormat.FormatFromSeconds(System.Int64)">
-  FormatFromSeconds(long)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/1.2.1/src/DxFeed.Graal.Net/Utils/TimeFormat.cs/#L301"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"><p>Converts the value in seconds since Unix epoch
-to its equivalent string representation using the current format <a class="xref" href="DxFeed.Graal.Net.Utils.TimeFormat.html#DxFeed_Graal_Net_Utils_TimeFormat_CreateFormatString">CreateFormatString()</a>,
-current <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.timezoneinfo">TimeZoneInfo</a> and <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.globalization.cultureinfo.invariantculture">InvariantCulture</a>.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string FormatFromSeconds(long timeSeconds)</code></pre>
-  </div>
-
-  <h4 class="section">Parameters</h4>
-  <dl class="parameters">
-    <dt><code>timeSeconds</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></dt>
-    <dd><p>The time measured in seconds since Unix epoch.</p>
-</dd>
-  </dl>
-
-  <h4 class="section">Returns</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
-    <dd><p>The string representation of the date, or <code>&quot;0&quot;</code> if timeSeconds is <code>0</code>.</p>
+    <dd><p>The string representation of data and time.</p>
 </dd>
   </dl>
 
@@ -506,57 +302,12 @@ current <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.time
 
   <h3 id="DxFeed_Graal_Net_Utils_TimeFormat_Parse_System_String_" data-uid="DxFeed.Graal.Net.Utils.TimeFormat.Parse(System.String)">
   Parse(string)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/1.2.1/src/DxFeed.Graal.Net/Utils/TimeFormat.cs/#L220"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/1.3.0/src/DxFeed.Graal.Net/Utils/TimeFormat.cs/#L65"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>Converts the specified string representation of a date and time
-to its <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.datetimeoffset">DateTimeOffset</a> in current <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.timezoneinfo">TimeZoneInfo</a>
-and <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.globalization.cultureinfo.invariantculture">InvariantCulture</a>.
-If no time zone is specified in the parsed string, the string is assumed to denote a local time,
-and converted to current <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.timezoneinfo">TimeZoneInfo</a>.
-<br>
-It accepts the following formats.
-<br></p>
-<ul>
-<li>
-<b><tt>0</tt></b> is parsed as zero time in UTC.
-</li>
-<li>
-<b><tt>&lt;long-value-in-milliseconds&gt;</tt></b>
-The value in milliseconds since Unix epoch since Unix epoch.
-It should be positive and have at least 9 digits
-(otherwise it could not be distinguished from date in format <tt>'yyyymmdd'</tt>).
-Each date since 1970-01-03 can be represented in this form.
-</li>
-<li>
-<b><tt>&lt;date&gt;[&lt;time&gt;][&lt;timezone&gt;]</tt></b>
-If time is missing it is supposed to be <tt>'00:00:00'</tt>.
-</li>
-</ul>
-<ul>
-<li>
-<b>&lt;date&gt;</b> is one of:
-<ul>
-    <li><b><tt>yyyy-MM-dd</tt></b></li>
-    <li><b><tt>yyyyMMdd</tt></b></li>
-</ul>
-</li>
-<li>
-<b>&lt;time&gt;</b> is one of:
-<ul>
-    <li><b><tt>HH:mm:ss[.sss]</tt></b></li>
-    <li><b><tt>HHmmss[.sss]</tt></b></li>
-</ul>
-</li>
-<li>
-<b>&lt;timezone&gt;</b> is one of:
-<ul>
-    <li><b><tt>[+-]HH:mm</tt></b></li>
-    <li><b><tt>[+-]HHmm</tt></b></li>
-    <li><b><tt>Z</tt></b> for UTC.</li>
-</ul>
-</li>
-</ul>
+  <div class="markdown level1 summary"><p>Reads Date from String.
+This method is designed to understand
+<a href="http://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a> formatted date and time.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
@@ -567,14 +318,14 @@ If time is missing it is supposed to be <tt>'00:00:00'</tt>.
   <h4 class="section">Parameters</h4>
   <dl class="parameters">
     <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
-    <dd><p>The input value for parse.</p>
+    <dd><p>The string value to parse.</p>
 </dd>
   </dl>
 
   <h4 class="section">Returns</h4>
   <dl class="parameters">
     <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.datetimeoffset">DateTimeOffset</a></dt>
-    <dd><p>Returns <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.datetimeoffset">DateTimeOffset</a> parsed from input value.</p>
+    <dd><p>The date parsed from value.</p>
 </dd>
   </dl>
 
@@ -585,12 +336,6 @@ If time is missing it is supposed to be <tt>'00:00:00'</tt>.
 
 
 
-  <h4 class="section">Exceptions</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentexception">ArgumentException</a></dt>
-    <dd><p>If input value has wrong format.</p>
-</dd>
-  </dl>
 
 
 
@@ -598,10 +343,10 @@ If time is missing it is supposed to be <tt>'00:00:00'</tt>.
 
   <h3 id="DxFeed_Graal_Net_Utils_TimeFormat_WithMillis" data-uid="DxFeed.Graal.Net.Utils.TimeFormat.WithMillis">
   WithMillis()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/1.2.1/src/DxFeed.Graal.Net/Utils/TimeFormat.cs/#L267"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/1.3.0/src/DxFeed.Graal.Net/Utils/TimeFormat.cs/#L50"><i class="bi bi-code-slash"></i></a>
   </h3>
 
-  <div class="markdown level1 summary"><p>Adds milliseconds to the current format string.</p>
+  <div class="markdown level1 summary"><p>Returns TimeFormat instance that also includes milliseconds into string when using <a class="xref" href="DxFeed.Graal.Net.Utils.TimeFormat.html#DxFeed_Graal_Net_Utils_TimeFormat_Format_System_Int64_">Format(long)</a> format} method.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
 
@@ -613,7 +358,7 @@ If time is missing it is supposed to be <tt>'00:00:00'</tt>.
   <h4 class="section">Returns</h4>
   <dl class="parameters">
     <dt><a class="xref" href="DxFeed.Graal.Net.Utils.TimeFormat.html">TimeFormat</a></dt>
-    <dd><p>Returns <a class="xref" href="DxFeed.Graal.Net.Utils.TimeFormat.html">TimeFormat</a>.</p>
+    <dd><p>The time format.</p>
 </dd>
   </dl>
 
@@ -621,45 +366,6 @@ If time is missing it is supposed to be <tt>'00:00:00'</tt>.
 
 
 
-
-  <h4 class="section" id="DxFeed_Graal_Net_Utils_TimeFormat_WithMillis_examples">Examples</h4>
-  <p>19700101-000000.000.</p>
-
-
-
-
-
-
-  <a id="DxFeed_Graal_Net_Utils_TimeFormat_WithTimeZone_" data-uid="DxFeed.Graal.Net.Utils.TimeFormat.WithTimeZone*"></a>
-
-  <h3 id="DxFeed_Graal_Net_Utils_TimeFormat_WithTimeZone" data-uid="DxFeed.Graal.Net.Utils.TimeFormat.WithTimeZone">
-  WithTimeZone()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/1.2.1/src/DxFeed.Graal.Net/Utils/TimeFormat.cs/#L275"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"><p>Adds Time Zone to the current format string.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public TimeFormat WithTimeZone()</code></pre>
-  </div>
-
-
-  <h4 class="section">Returns</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="DxFeed.Graal.Net.Utils.TimeFormat.html">TimeFormat</a></dt>
-    <dd><p>Returns <a class="xref" href="DxFeed.Graal.Net.Utils.TimeFormat.html">TimeFormat</a>.</p>
-</dd>
-  </dl>
-
-
-
-
-
-
-  <h4 class="section" id="DxFeed_Graal_Net_Utils_TimeFormat_WithTimeZone_examples">Examples</h4>
-  <p>19700101-000000+00:00.</p>
 
 
 
