@@ -1,3 +1,4 @@
+* Bump GraalVM to JDK 22.0.1
 * Add OtcMarketsOrder and #pink source
 * Add Schedule
 * Fix an error when the isolate was not created in the main thread
