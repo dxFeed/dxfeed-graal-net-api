@@ -26,7 +26,6 @@ the [Overview](#overview) section.<br>
     * [Reasons for the New .NET API Repository](#reasons-for-the-new-net-api-repository)
     * [Benefits of the New Version](#benefits-of-the-new-version)
     * [Milestones](#milestones)
-    * [Future Development](#future-development)
     * [Migration](#migration)
     * [Implementation Details](#implementation-details)
     * [Architectural Restrictions and Other Limitations in the Old Version](#architectural-restrictions-and-other-limitations-of-the-old-version)
@@ -66,17 +65,6 @@ API.
 The old version will be considered deprecated, and at the end of 2024, we plan to end the service.
 If you’re already our customer and have difficulty with a future transition, please contact us via
 our [customer portal](https://jira.in.devexperts.com/servicedesk/customer/portal/1).
-
-### Future Development
-
-* Add necessary entities for more convenient API
-  usage ([TimeSeriesEventModel](https://docs.dxfeed.com/dxfeed/api/com/dxfeed/model/TimeSeriesEventModel.html), [OrderBookModel](https://docs.dxfeed.com/dxfeed/api/com/dxfeed/model/market/OrderBookModel.html),
-  etc.)
-* Implement a model
-  of [incremental updates](https://kb.dxfeed.com/en/data-services/real-time-data-services/-net-api-incremental-updates.html)
-  in Java API and add it to .NET API
-* Add samples or implement a convenient API
-  for [Candlewebservice](https://kb.dxfeed.com/en/data-services/aggregated-data-services/candlewebservice.html)
 
 ### Migration
 
@@ -374,161 +362,137 @@ sudo /usr/bin/xattr -r -d com.apple.quarantine <directory_with_tools>
   demonstration of how to get Instrument Profiles
 - [x] [DxFeedLiveIpfSample](https://github.com/dxFeed/dxfeed-graal-net-api/tree/main/samples/DxFeedLiveIpfSample) is a
   simple demonstration of how to get live updates for Instrument Profiles
-- [ ] DxFeedPublishProfiles is a simple demonstration of how to publish market events
-- [x] [ScheduleSample](https://github.com/dxFeed/dxfeed-graal-net-api/tree/main/samples/ScheduleSample) is a simple
-  demonstration of how to get various scheduling information for instruments
-- [x] [FetchDailyCandles](https://github.com/dxFeed/dxfeed-graal-net-api/tree/main/samples/FetchDailyCandles) is a
-  simple demonstration of how to fetch last N-days of candles for a specified symbol
+- [x] [ScheduleSample](https://github.com/dxFeed/dxfeed-graal-net-api/tree/main/samples/ScheduleSample) is a simple demonstration of how to get various scheduling information for instruments
+- [x] [FetchDailyCandles](https://github.com/dxFeed/dxfeed-graal-net-api/tree/main/samples/FetchDailyCandles) is a simple
+  demonstration of how to fetch last N-days of candles for a specified symbol
 
 ## Current State
 
 ### Endpoint Roles
 
-- [x] [FEED](https://docs.dxfeed.com/dxfeed/api/com/dxfeed/api/DXEndpoint.Role.html#FEED)
+- [x] [FEED](https://dxfeed.github.io/dxfeed-graal-net-api/docs/api/DxFeed.Graal.Net.Api.DXEndpoint.Role.html#fields)
   connects to the remote data feed provider and is optimized for real-time or delayed data processing,
-  **this is a default role**
-  ([.NET API sample](https://github.com/dxFeed/dxfeed-graal-net-api/blob/main/samples/DxFeedConnect/Program.cs))
+  this is a default role
 
-- [x] [STREAM_FEED](https://docs.dxfeed.com/dxfeed/api/com/dxfeed/api/DXEndpoint.Role.html#STREAM_FEED)
+- [x] [STREAM_FEED](https://dxfeed.github.io/dxfeed-graal-net-api/docs/api/DxFeed.Graal.Net.Api.DXEndpoint.Role.html#fields)
   is similar to `Feed` and also connects to the remote data feed provider but is designed for bulk data parsing from
   files
-  ([.NET API sample](https://github.com/dxFeed/dxfeed-graal-net-api/blob/main/samples/DxFeedFileParser/Program.cs))
+  ([DxFeedFileParser](https://github.com/dxFeed/dxfeed-graal-net-api/blob/main/samples/DxFeedFileParser/Program.cs))
 
-- [x] [PUBLISHER](https://docs.dxfeed.com/dxfeed/api/com/dxfeed/api/DXEndpoint.Role.html#PUBLISHER)
+- [x] [PUBLISHER](https://dxfeed.github.io/dxfeed-graal-net-api/docs/api/DxFeed.Graal.Net.Api.DXEndpoint.Role.html#fields)
   connects to the remote publisher hub (also known as multiplexor) or creates a publisher on the local host
-  ([.NET API sample](https://github.com/dxFeed/dxfeed-graal-net-api/blob/main/samples/WriteTapeFile/Program.cs))
+  ([WriteTapeFile](https://github.com/dxFeed/dxfeed-graal-net-api/blob/main/samples/WriteTapeFile/Program.cs))
 
-- [x] [STREAM_PUBLISHER](https://docs.dxfeed.com/dxfeed/api/com/dxfeed/api/DXEndpoint.Role.html#STREAM_PUBLISHER)
+- [x] [STREAM_PUBLISHER](https://dxfeed.github.io/dxfeed-graal-net-api/docs/api/DxFeed.Graal.Net.Api.DXEndpoint.Role.html#fields)
   is similar to `Publisher` and also connects to the remote publisher hub, but is designed for bulk data publishing
-  ([.NET API sample](https://github.com/dxFeed/dxfeed-graal-net-api/blob/main/samples/ConvertTapeFile/Program.cs))
+  ([ConvertTapeFile](https://github.com/dxFeed/dxfeed-graal-net-api/blob/main/samples/ConvertTapeFile/Program.cs))
 
-- [x] [LOCAL_HUB](https://docs.dxfeed.com/dxfeed/api/com/dxfeed/api/DXEndpoint.Role.html#LOCAL_HUB)
+- [x] [LOCAL_HUB](https://dxfeed.github.io/dxfeed-graal-net-api/docs/api/DxFeed.Graal.Net.Api.DXEndpoint.Role.html#fields)
   is a local hub without the ability to establish network connections. Events published via `Publisher` are delivered to
   local `Feed` only
 
 ### Event Types
 
-- [x] [Order](https://docs.dxfeed.com/dxfeed/api/com/dxfeed/event/market/Order.html)
+- [x] [Order](https://dxfeed.github.io/dxfeed-graal-net-api/docs/api/DxFeed.Graal.Net.Events.Market.Order.html)
   is a snapshot of the full available market depth for a symbol
 
-- [x] [SpreadOrder](https://docs.dxfeed.com/dxfeed/api/com/dxfeed/event/market/SpreadOrder.html)
+- [x] [SpreadOrder](https://dxfeed.github.io/dxfeed-graal-net-api/docs/api/DxFeed.Graal.Net.Events.Market.SpreadOrder.html)
   is a snapshot of the full available market depth for all spreads
 
-- [x] [AnalyticOrder](https://docs.dxfeed.com/dxfeed/api/com/dxfeed/event/market/AnalyticOrder.html)
+- [x] [AnalyticOrder](https://dxfeed.github.io/dxfeed-graal-net-api/docs/api/DxFeed.Graal.Net.Events.Market.AnalyticOrder.html)
   is an `Order` extension that introduces analytic information, such as adding iceberg-related information to a given
   order
 
-- [x] [Trade](https://docs.dxfeed.com/dxfeed/api/com/dxfeed/event/market/Trade.html)
+- [x] [Trade](https://dxfeed.github.io/dxfeed-graal-net-api/docs/api/DxFeed.Graal.Net.Events.Market.Trade.html)
   is a snapshot of the price and size of the last trade during regular trading hours and an overall day volume and day
   turnover
 
-- [x] [TradeETH](https://docs.dxfeed.com/dxfeed/api/com/dxfeed/event/market/TradeETH.html)
+- [x] [TradeETH](https://dxfeed.github.io/dxfeed-graal-net-api/docs/api/DxFeed.Graal.Net.Events.Market.TradeETH.html)
   is a snapshot of the price and size of the last trade during extended trading hours and the extended trading hours day
   volume and day turnover
 
-- [x] [Candle](https://docs.dxfeed.com/dxfeed/api/com/dxfeed/event/candle/Candle.html)
+- [x] [Candle](https://dxfeed.github.io/dxfeed-graal-net-api/docs/api/DxFeed.Graal.Net.Events.Candles.Candle.html)
   event with open, high, low, and close prices and other information for a specific period
 
-- [x] [Quote](https://docs.dxfeed.com/dxfeed/api/com/dxfeed/event/market/Quote.html)
+- [x] [Quote](https://dxfeed.github.io/dxfeed-graal-net-api/docs/api/DxFeed.Graal.Net.Events.Market.Quote.html)
   is a snapshot of the best bid and ask prices and other fields that change with each quote
 
-- [x] [Profile](https://docs.dxfeed.com/dxfeed/api/com/dxfeed/event/market/Profile.html)
+- [x] [Profile](https://dxfeed.github.io/dxfeed-graal-net-api/docs/api/DxFeed.Graal.Net.Events.Market.Profile.html)
   is a snapshot that contains the security instrument description
 
-- [x] [Summary](https://docs.dxfeed.com/dxfeed/api/com/dxfeed/event/market/Summary.html)
+- [x] [Summary](https://dxfeed.github.io/dxfeed-graal-net-api/docs/api/DxFeed.Graal.Net.Events.Market.Summary.html)
   is a snapshot of the trading session, including session highs, lows, etc.
 
-- [x] [TimeAndSale](https://docs.dxfeed.com/dxfeed/api/com/dxfeed/event/market/TimeAndSale.html)
+- [x] [TimeAndSale](https://dxfeed.github.io/dxfeed-graal-net-api/docs/api/DxFeed.Graal.Net.Events.Market.TimeAndSale.html)
   represents a trade or other market event with price, such as the open/close price of a market, etc.
 
-- [x] [Greeks](https://docs.dxfeed.com/dxfeed/api/com/dxfeed/event/option/Greeks.html)
+- [x] [Greeks](https://dxfeed.github.io/dxfeed-graal-net-api/docs/api/DxFeed.Graal.Net.Events.Options.Greeks.html)
   is a snapshot of the option price, Black-Scholes volatility, and greeks
 
-- [x] [Series](https://docs.dxfeed.com/dxfeed/api/com/dxfeed/event/option/Series.html)
+- [x] [Series](https://dxfeed.github.io/dxfeed-graal-net-api/docs/api/DxFeed.Graal.Net.Events.Options.Series.html)
   is a snapshot of computed values available for all options series for a given underlying symbol based on options
   market prices
 
-- [x] [TheoPrice](https://docs.dxfeed.com/dxfeed/api/com/dxfeed/event/option/TheoPrice.html)
+- [x] [TheoPrice](https://dxfeed.github.io/dxfeed-graal-net-api/docs/api/DxFeed.Graal.Net.Events.Options.TheoPrice.html)
   is a snapshot of the theoretical option price computation that is periodically performed
   by [dxPrice](http://www.devexperts.com/en/products/price.html) model-free computation
 
-- [x] [Underlying](https://docs.dxfeed.com/dxfeed/api/com/dxfeed/event/option/Underlying.html)
+- [x] [Underlying](https://dxfeed.github.io/dxfeed-graal-net-api/docs/api/DxFeed.Graal.Net.Events.Options.Underlying.html)
   is a snapshot of computed values available for an option underlying symbol based on the market’s option prices
 
-- [x] [OptionSale](https://docs.dxfeed.com/dxfeed/api/com/dxfeed/event/market/OptionSale.html)
+- [x] [OptionSale](https://dxfeed.github.io/dxfeed-graal-net-api/docs/api/DxFeed.Graal.Net.Events.Market.OptionSale.html)
   represents a trade or another market event with the price (for example, market open/close price, etc.) for each option
   symbol listed under the specified `Underlying`
 
 - [ ] [OtcMarketsOrder](https://docs.dxfeed.com/dxfeed/api/com/dxfeed/event/market/OtcMarketsOrder.html) represents an
-  extension of `Order` for the symbols traded on the OTC Markets.
+  extension of `Order` for the symbols traded on the OTC Markets
 
 ### Subscription Symbols
 
-- [x] [String](https://learn.microsoft.com/en-us/dotnet/api/system.string?view=net-6.0)
-  is a string representation of the symbol
+- [x] String is a string representation of the symbol
 
-- [x] [TimeSeriesSubscriptionSymbol](https://docs.dxfeed.com/dxfeed/api/com/dxfeed/api/osub/TimeSeriesSubscriptionSymbol.html)
+- [x] [TimeSeriesSubscriptionSymbol](https://dxfeed.github.io/dxfeed-graal-net-api/docs/api/DxFeed.Graal.Net.Api.Osub.TimeSeriesSubscriptionSymbol.html)
   represents subscription to time-series events
 
-- [x] [IndexedEventSubscriptionSymbol](https://docs.dxfeed.com/dxfeed/api/com/dxfeed/api/osub/IndexedEventSubscriptionSymbol.html)
+- [x] [IndexedEventSubscriptionSymbol](https://dxfeed.github.io/dxfeed-graal-net-api/docs/api/DxFeed.Graal.Net.Api.Osub.IndexedEventSubscriptionSymbol.html)
   represents subscription to a specific source of indexed events
 
-- [x] [WildcardSymbol.ALL](https://docs.dxfeed.com/dxfeed/api/com/dxfeed/api/osub/WildcardSymbol.html)
+- [x] [WildcardSymbol.ALL](https://dxfeed.github.io/dxfeed-graal-net-api/docs/api/DxFeed.Graal.Net.Api.Osub.WildcardSymbol.html)
   represents a  *wildcard* subscription to all events of the specific event type
 
-- [x] [CandleSymbol](https://docs.dxfeed.com/dxfeed/api/com/dxfeed/event/candle/CandleSymbol.html)
-  is a symbol used with [DXFeedSubscription](https://docs.dxfeed.com/dxfeed/api/com/dxfeed/api/DXFeedSubscription.html)
-  class to subscribe for [Candle](https://docs.dxfeed.com/dxfeed/api/com/dxfeed/event/candle/Candle.html) events
+- [x] [CandleSymbol](https://dxfeed.github.io/dxfeed-graal-net-api/docs/api/DxFeed.Graal.Net.Events.Candles.CandleSymbol.html)
+  is a symbol used with [DXFeedSubscription](https://dxfeed.github.io/dxfeed-graal-net-api/docs/api/DxFeed.Graal.Net.Api.DXFeedSubscription.html)
+  class to subscribe for [Candle](https://dxfeed.github.io/dxfeed-graal-net-api/docs/api/DxFeed.Graal.Net.Events.Candles.Candle.html) events
 
 ### Subscriptions & Models
 
-- [x] [DXFeedSubscription](https://docs.dxfeed.com/dxfeed/api/com/dxfeed/api/DXFeedSubscription.html)
+- [x] [DXFeedSubscription](https://dxfeed.github.io/dxfeed-graal-net-api/docs/api/DxFeed.Graal.Net.Api.DXFeedSubscription.html)
   is a subscription for a set of symbols and event types
-
-- [ ] [DXFeedTimeSeriesSubscription](https://docs.dxfeed.com/dxfeed/api/com/dxfeed/api/DXFeedTimeSeriesSubscription.html)
-  extends `DXFeedSubscription` to conveniently subscribe to time series events for a set of symbols and event types
-  ([Java API sample](https://github.com/devexperts/QD/blob/master/dxfeed-samples/src/main/java/com/dxfeed/sample/api/DXFeedConnect.java))
-
-- [ ] [ObservableSubscription](https://github.com/devexperts/QD/blob/master/dxfeed-api/src/main/java/com/dxfeed/api/osub/ObservableSubscription.java)
-  is an observable set of subscription symbols for the specific event
-  type ([Java API sample](https://github.com/devexperts/QD/blob/master/dxfeed-samples/src/main/java/com/dxfeed/sample/_simple_/PublishProfiles.java))
 
 - [x] [GetLastEvent](https://docs.dxfeed.com/dxfeed/api/com/dxfeed/api/DXFeed.html#getLastEvent-E-)
   returns the last event for the specified event instance
-  ([Java API sample](https://github.com/devexperts/QD/blob/master/dxfeed-samples/src/main/java/com/dxfeed/sample/api/DXFeedSample.java))
+  ([DxFeedSample](https://github.com/dxFeed/dxfeed-graal-net-api/tree/main/samples/DxFeedSample))
 
 - [x] [GetTimeSeriesPromise](https://docs.dxfeed.com/dxfeed/api/com/dxfeed/api/DXFeed.html#getTimeSeriesPromise-java.lang.Class-java.lang.Object-long-long-)
   requests time series events for the specified event type, symbol, and time range
 
-- [ ] [TimeSeriesEventModel](https://docs.dxfeed.com/dxfeed/api/com/dxfeed/model/TimeSeriesEventModel.html)
-  is a model of a list of time series events
-  ([Java API sample](https://github.com/devexperts/QD/blob/master/dxfeed-samples/src/main/java/com/dxfeed/sample/ui/swing/DXFeedCandleChart.java))
-
-- [ ] [IndexedEventModel](https://docs.dxfeed.com/dxfeed/api/com/dxfeed/model/IndexedEventModel.html)
-  is an indexed event list model
-  ([Java API sample](https://github.com/devexperts/QD/blob/master/dxfeed-samples/src/main/java/com/dxfeed/sample/ui/swing/DXFeedTimeAndSales.java))
-
-- [ ] [OrderBookModel](https://docs.dxfeed.com/dxfeed/api/com/dxfeed/model/market/OrderBookModel.html)
-  is a model of convenient Order Book management
-  ([Java API sample](https://github.com/devexperts/QD/blob/master/dxfeed-samples/src/main/java/com/dxfeed/sample/ui/swing/DXFeedMarketDepth.java))
-
 ### IPF & Schedule
 
-- [x] [InstrumentProfile](https://docs.dxfeed.com/dxfeed/api/com/dxfeed/ipf/InstrumentProfile.html)
+- [x] [InstrumentProfile](https://dxfeed.github.io/dxfeed-graal-net-api/docs/api/DxFeed.Graal.Net.Ipf.InstrumentProfile.html)
   represents basic profile information about a market instrument
-  ([Java API sample](https://github.com/devexperts/QD/blob/master/dxfeed-samples/src/main/java/com/dxfeed/sample/ipf/DXFeedIpfConnect.java))
+  ([DxFeedIpfConnect](https://github.com/dxFeed/dxfeed-graal-net-api/tree/main/samples/DxFeedIpfConnect))
 
-- [x] [InstrumentProfileReader](https://docs.dxfeed.com/dxfeed/api/com/dxfeed/ipf/InstrumentProfileReader.html) reads
+- [x] [InstrumentProfileReader](https://dxfeed.github.io/dxfeed-graal-net-api/docs/api/DxFeed.Graal.Net.Ipf.InstrumentProfileReader.html) reads
   instrument profiles from the stream using Instrument Profile Format (IPF)
 
-- [x] [InstrumentProfileCollector](https://docs.dxfeed.com/dxfeed/api/com/dxfeed/ipf/live/InstrumentProfileCollector.html)
+- [x] [InstrumentProfileCollector](https://dxfeed.github.io/dxfeed-graal-net-api/docs/api/DxFeed.Graal.Net.Ipf.Live.InstrumentProfileCollector.html)
   collects instrument profile updates and provides the live instrument profiles list
-  ([Java API sample](https://github.com/devexperts/QD/blob/master/dxfeed-samples/src/main/java/com/dxfeed/sample/ipf/DXFeedLiveIpfSample.java))
+  ([DxFeedLiveIpfSample](https://github.com/dxFeed/dxfeed-graal-net-api/tree/main/samples/DxFeedLiveIpfSample))
 
-- [x] [InstrumentProfileConnection](https://docs.dxfeed.com/dxfeed/api/com/dxfeed/ipf/live/InstrumentProfileConnection.html)
+- [x] [InstrumentProfileConnection](https://dxfeed.github.io/dxfeed-graal-net-api/docs/api/DxFeed.Graal.Net.Ipf.Live.InstrumentProfileConnection.html)
   connects to an instrument profile URL and reads instrument profiles with support of streaming live updates
 
 - [x] [Schedule](https://docs.dxfeed.com/dxfeed/api/com/dxfeed/schedule/Schedule.html)
   provides an API to retrieving and exploring the trading schedules of various exchanges and different financial
   instrument classes
-  ([Java API sample](https://github.com/devexperts/QD/blob/master/dxfeed-samples/src/main/java/com/dxfeed/sample/schedule/ScheduleSample.java))
+  ([ScheduleSample](https://github.com/dxFeed/dxfeed-graal-net-api/tree/main/samples/ScheduleSample))

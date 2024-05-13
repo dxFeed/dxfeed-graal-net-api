@@ -96,6 +96,11 @@ public enum EventCodeNative
     AnalyticOrder,
 
     /// <summary>
+    /// <see cref="OtcMarketsOrder"/>.
+    /// </summary>
+    OtcMarketsOrder,
+
+    /// <summary>
     /// <see cref="SpreadOrder"/>.
     /// </summary>
     SpreadOrder,
