@@ -85,6 +85,7 @@ public class AnalyticOrder : Order
     /// <returns>The string representation.</returns>
     public override string ToString() =>
         "AnalyticOrder{" + BaseFieldsToString() +
+        ", marketMaker='" + StringUtil.EncodeNullableString(MarketMaker) + "'" +
         ", icebergPeakSize=" + IcebergPeakSize +
         ", icebergHiddenSize=" + IcebergHiddenSize +
         ", icebergExecutedSize=" + IcebergExecutedSize +

@@ -48,7 +48,7 @@ public class OrderSource : IndexedEventSource
     /// Default source for publishing custom order books.
     /// </summary>
     public static new readonly OrderSource DEFAULT = new(0, "DEFAULT",
-        PubOrder | PubAnalyticOrder | PubSpreadOrder | FullOrderBook);
+        PubOrder | PubAnalyticOrder | PubOtcMarketdOrder | PubSpreadOrder | FullOrderBook);
 
     /// <summary>
     /// Bid side of a composite <see cref="Quote"/>.
@@ -246,6 +246,17 @@ public class OrderSource : IndexedEventSource
     public static readonly OrderSource memx = new("memx", PubOrder);
 
     /// <summary>
+    /// Blue Ocean Technologies Alternative Trading System.
+    /// </summary>
+    public static readonly OrderSource OCEA = new("OCEA", PubOrder);
+
+    /// <summary>
+    /// Pink Sheets. Record for price level book.
+    /// Pink sheets are listings for stocks that trade over-the-counter (OTC).
+    /// </summary>
+    public static readonly OrderSource pink = new("pink", PubOrder | PubOtcMarketdOrder);
+
+    /// <summary>
     /// The binary flags representing <see cref="Order"/>.
     /// </summary>
     private const int PubOrder = 0x0001;
@@ -256,14 +267,19 @@ public class OrderSource : IndexedEventSource
     private const int PubAnalyticOrder = 0x0002;
 
     /// <summary>
+    /// The binary flags representing <see cref="OtcMarketsOrder"/>.
+    /// </summary>
+    private const int PubOtcMarketdOrder = 0x0004;
+
+    /// <summary>
     /// The binary flags representing <see cref="SpreadOrder"/>.
     /// </summary>
-    private const int PubSpreadOrder = 0x0004;
+    private const int PubSpreadOrder = 0x0008;
 
     /// <summary>
     /// The binary flags representing Full Order Book.
     /// </summary>
-    private const int FullOrderBook = 0x0008;
+    private const int FullOrderBook = 0x0010;
 
     /// <summary>
     /// Set of binary flags for current <see cref="OrderSource"/>.
@@ -300,7 +316,7 @@ public class OrderSource : IndexedEventSource
         }
 
         // Flag FullOrderBook requires that source must be publishable.
-        if ((pubFlags & FullOrderBook) != 0 && (pubFlags & (PubOrder | PubAnalyticOrder | PubSpreadOrder)) == 0)
+        if ((pubFlags & FullOrderBook) != 0 && (pubFlags & (PubOrder | PubAnalyticOrder | PubOtcMarketdOrder | PubSpreadOrder)) == 0)
         {
             throw new ArgumentException("Unpublishable full order book order", nameof(pubFlags));
         }
@@ -371,12 +387,14 @@ public class OrderSource : IndexedEventSource
         {
             return PubOrder;
         }
-
         if (eventType == typeof(AnalyticOrder))
         {
             return PubAnalyticOrder;
         }
-
+        if (eventType == typeof(OtcMarketsOrder))
+        {
+            return PubOtcMarketdOrder;
+        }
         if (eventType == typeof(SpreadOrder))
         {
             return PubSpreadOrder;
