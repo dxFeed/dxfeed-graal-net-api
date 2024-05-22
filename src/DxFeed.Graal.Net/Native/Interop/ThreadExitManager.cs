@@ -40,7 +40,7 @@ internal static class ThreadExitManager
             UnregisterCallbackDelegate = UnregisterCallbackWindows;
             EnableCallbackForCurrentThreadDelegate = EnableCallbackForCurrentThreadWindows;
         }
-        else if (PlatformUtils.IsMacOs)
+        else if (PlatformUtils.IsMacOS)
         {
             RegisterCallbackDelegate = RegisterCallbackMacOs;
             UnregisterCallbackDelegate = UnregisterCallbackMacOs;
