@@ -1,5 +1,5 @@
 // <copyright file="Tools.cs" company="Devexperts LLC">
-// Copyright © 2022 Devexperts LLC. All rights reserved.
+// Copyright © 2024 Devexperts LLC. All rights reserved.
 // This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 // If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
 // </copyright>
@@ -15,7 +15,7 @@ namespace DxFeed.Graal.Net.Tools;
 
 public static class Tools
 {
-    private static readonly IReadOnlyDictionary<string, Type> AvailableTools =
+    private static readonly Dictionary<string, Type> AvailableTools =
         Assembly.GetAssembly(typeof(AbstractTool))?.GetTypes()
             .Where(typeof(AbstractTool).IsAssignableFrom)
             .Where(t => t is { IsAbstract: false, IsClass: true })
@@ -44,7 +44,7 @@ public static class Tools
     {
         var helpScreen = new HelpScreen { AutoHelp = false, AutoVersion = false, AddDashesToOption = false, };
 
-        if (!args.Any() || args[0].Equals("--help"))
+        if (args.Length == 0 || args[0].Equals("--help"))
         {
             helpScreen.TypeScreen = HelpScreen.ScreenTypes.Help;
             helpScreen.AddUsage(new[] { "<tool> [...]" });
