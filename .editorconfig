@@ -197,6 +197,10 @@ dotnet_diagnostic.CA1720.severity = none
 dotnet_diagnostic.CA1510.severity = none      
 # CA1861: Avoid constant arrays as arguments
 dotnet_diagnostic.CA1861.severity = none
+# CA1846 : Prefer 'AsSpan' over 'Substring' when span-based overloads are available
+dotnet_diagnostic.CA1846.severity = none
+# CA1845 : Use span-based 'string.Concat' and 'AsSpan' instead of 'Substring'
+dotnet_diagnostic.CA1845.severity = none
 ##########################################
 # Formatting Rules
 # https://docs.microsoft.com/dotnet/fundamentals/code-analysis/style-rules/formatting-rules

@@ -1,5 +1,5 @@
 // <copyright file="MarketEventSymbols.cs" company="Devexperts LLC">
-// Copyright © 2022 Devexperts LLC. All rights reserved.
+// Copyright © 2024 Devexperts LLC. All rights reserved.
 // This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 // If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
 // </copyright>
@@ -85,7 +85,7 @@ public static class MarketEventSymbols
             : GetBaseSymbolInternal(symbol, i) + $"{ExchangeSeparator}{exchangeCode}";
         return i == symbol.Length
             ? result
-            : string.Concat(result, symbol.AsSpan(i));
+            : string.Concat(result, symbol.Substring(i));
     }
 
     /// <summary>
@@ -123,12 +123,12 @@ public static class MarketEventSymbols
         var i = GetLengthWithoutAttributesInternal(symbol);
         if (HasExchangeCodeInternal(symbol, i))
         {
-            return $"{baseSymbol}{ExchangeSeparator}{symbol[i - 1]}{symbol[i..]}";
+            return $"{baseSymbol}{ExchangeSeparator}{symbol[i - 1]}{symbol.Substring(i)}";
         }
 
         return i == symbol.Length
             ? baseSymbol
-            : string.Concat(baseSymbol, symbol.AsSpan(i));
+            : string.Concat(baseSymbol, symbol.Substring(i));
     }
 
     /// <summary>
@@ -228,7 +228,9 @@ public static class MarketEventSymbols
         length >= 2 && symbol[length - 2] == ExchangeSeparator;
 
     private static string GetBaseSymbolInternal(string symbol, int length) =>
-        HasExchangeCodeInternal(symbol, length) ? symbol[..(length - 2)] : symbol[..length];
+        HasExchangeCodeInternal(symbol, length)
+            ? symbol.Substring(0, length - 2)
+            : symbol.Substring(0, length);
 
     private static bool HasAttributesInternal(string symbol, int length)
     {
@@ -250,7 +252,7 @@ public static class MarketEventSymbols
     private static string? GetKeyInternal(string symbol, int i)
     {
         var val = symbol.IndexOf(AttributeValue, i);
-        return val < 0 ? null : symbol[i..val];
+        return val < 0 ? null : symbol.Substring(i, val - i);
     }
 
     private static int GetNextKeyInternal(string symbol, int i)
@@ -264,7 +266,7 @@ public static class MarketEventSymbols
     {
         var startPos = symbol.IndexOf(AttributeValue, i) + 1;
         var endPos = j - 1;
-        return symbol[startPos..endPos];
+        return symbol.Substring(startPos, endPos - startPos);
     }
 
     private static string DropKeyAndValueInternal(string symbol, int length, int i, int j)
@@ -273,12 +275,12 @@ public static class MarketEventSymbols
         if (j == symbol.Length)
         {
             result = i == length + 1
-                ? symbol[..length]
-                : string.Concat(symbol.AsSpan(0, i - 1), symbol.AsSpan(j - 1));
+                ? symbol.Substring(0, length)
+                : string.Concat(symbol.Substring(0, i - 1), symbol.Substring(j - 1));
         }
         else
         {
-            result = string.Concat(symbol.AsSpan(0, i), symbol.AsSpan(j));
+            result = string.Concat(symbol.Substring(0, i), symbol.Substring(j));
         }
 
         return result;
@@ -349,6 +351,7 @@ public static class MarketEventSymbols
             return $"{symbol}{AttributesOpen}{key}{AttributeValue}{value}{AttributesClose}";
         }
 
+        string attr;
         var i = length + 1;
         var added = false;
         while (i < symbol.Length)
@@ -369,13 +372,15 @@ public static class MarketEventSymbols
                     break;
                 case 0:
                     // Replace value.
-                    symbol = symbol[..i] + $"{key}{AttributeValue}{value}" + symbol[(j - 1)..];
+                    attr = $"{key}{AttributeValue}{value}";
+                    symbol = symbol.Substring(0, i) + attr + symbol.Substring(j - 1);
                     added = true;
                     i += key.Length + value.Length + 2;
                     break;
                 case > 0 when !added:
                     // Insert value here.
-                    symbol = symbol[..i] + $"{key}{AttributeValue}{value}{AttributesSeparator}" + symbol[i..];
+                    attr = $"{key}{AttributeValue}{value}{AttributesSeparator}";
+                    symbol = symbol.Substring(0, i) + attr + symbol.Substring(i);
                     added = true;
                     i += key.Length + value.Length + 2;
                     break;
@@ -387,9 +392,10 @@ public static class MarketEventSymbols
 
         // Change this condition so that it does not always evaluate to 'false'. False positive.
 #pragma warning disable S2583
+        attr = $"{AttributesSeparator}{key}{AttributeValue}{value}";
         return added
             ? symbol
-            : symbol[..(i - 1)] + $"{AttributesSeparator}{key}{AttributeValue}{value}" + symbol[(i - 1)..];
+            : symbol.Substring(0, i - 1) + attr + symbol.Substring(i - 1);
 #pragma warning restore S2583
     }
 }

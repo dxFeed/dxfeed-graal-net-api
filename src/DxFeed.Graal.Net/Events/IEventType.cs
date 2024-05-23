@@ -1,13 +1,10 @@
 // <copyright file="IEventType.cs" company="Devexperts LLC">
-// Copyright © 2022 Devexperts LLC. All rights reserved.
+// Copyright © 2024 Devexperts LLC. All rights reserved.
 // This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 // If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
 // </copyright>
 
-using System;
-using System.Collections.Generic;
 using DxFeed.Graal.Net.Api;
-using DxFeed.Graal.Net.Utils;
 
 namespace DxFeed.Graal.Net.Events;
 
@@ -34,11 +31,4 @@ public interface IEventType
     /// <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/event/EventType.html#getEventTime--">Javadoc</a>.
     /// </summary>
     long EventTime { get; set; }
-
-    /// <summary>
-    /// Gets all types that implement this interface.
-    /// </summary>
-    /// <returns>Returns a collection of event types.</returns>
-    static IEnumerable<Type> GetEventTypes() =>
-        ReflectionUtil.GetInheritedTypes(typeof(IEventType));
 }
