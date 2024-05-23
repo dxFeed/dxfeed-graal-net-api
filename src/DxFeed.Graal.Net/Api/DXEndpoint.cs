@@ -1,5 +1,5 @@
 // <copyright file="DXEndpoint.cs" company="Devexperts LLC">
-// Copyright © 2022 Devexperts LLC. All rights reserved.
+// Copyright © 2024 Devexperts LLC. All rights reserved.
 // This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 // If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
 // </copyright>
@@ -486,7 +486,10 @@ public sealed class DXEndpoint : IDisposable
     /// <exception cref="ArgumentNullException">If user is null.</exception>
     public DXEndpoint User(string user)
     {
-        ArgumentNullException.ThrowIfNull(user);
+        if (user == null)
+        {
+            throw new ArgumentNullException(nameof(user));
+        }
 
         _endpointNative.User(user);
         return this;
@@ -502,7 +505,10 @@ public sealed class DXEndpoint : IDisposable
     /// <exception cref="ArgumentNullException">If password is null.</exception>
     public DXEndpoint Password(string password)
     {
-        ArgumentNullException.ThrowIfNull(password);
+        if (password == null)
+        {
+            throw new ArgumentNullException(nameof(password));
+        }
 
         _endpointNative.Password(password);
         return this;
@@ -538,7 +544,10 @@ public sealed class DXEndpoint : IDisposable
     /// <exception cref="JavaException">If address string is malformed.</exception>
     public DXEndpoint Connect(string address)
     {
-        ArgumentNullException.ThrowIfNull(address);
+        if (address == null)
+        {
+            throw new ArgumentNullException(nameof(address));
+        }
 
         _endpointNative.Connect(address);
         return this;
@@ -696,7 +705,7 @@ public sealed class DXEndpoint : IDisposable
         /// <summary>
         /// A counter that is incremented every time an endpoint is created.
         /// </summary>
-        private static ulong _instancesNumerator;
+        private static long _instancesNumerator;
 
         /// <summary>
         /// This lazy builder instance is used only to define supported properties.
@@ -801,7 +810,10 @@ public sealed class DXEndpoint : IDisposable
         /// <exception cref="ArgumentNullException">If the key is null.</exception>
         public bool SupportsProperty(string key)
         {
-            ArgumentNullException.ThrowIfNull(key);
+            if (key == null)
+            {
+                throw new ArgumentNullException(nameof(key));
+            }
 
             // Use a separate instance of the builder to define supported properties.
             return _builderForDefineSupportProperties.Value.SupportsProperty(key);
