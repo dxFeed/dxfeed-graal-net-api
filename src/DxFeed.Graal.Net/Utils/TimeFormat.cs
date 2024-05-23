@@ -44,7 +44,7 @@ public class TimeFormat
     public static TimeFormat GMT => _gmt.Value;
 
     /// <summary>
-    /// Returns TimeFormat instance that also includes milliseconds into string when using <see cref="Format"/> format} method.
+    /// Returns TimeFormat instance that also includes milliseconds into string when using <see cref="Format"/> format method.
     /// </summary>
     /// <returns>The time format.</returns>
     public TimeFormat WithMillis() => _defaultWithMillis.Value;
