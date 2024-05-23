@@ -1,5 +1,5 @@
 // <copyright file="DXFeedSubscription.cs" company="Devexperts LLC">
-// Copyright © 2022 Devexperts LLC. All rights reserved.
+// Copyright © 2024 Devexperts LLC. All rights reserved.
 // This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 // If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
 // </copyright>
@@ -31,7 +31,7 @@ public sealed class DXFeedSubscription : IObservableSubscription, IDisposable
     /// <summary>
     /// List of event types associated with this <see cref="DXFeedSubscription"/>.
     /// </summary>
-    private readonly IReadOnlySet<Type> _eventTypeSet;
+    private readonly ISet<Type> _eventTypeSet;
 
     /// <summary>
     /// A delegate to pass to native code.
@@ -54,7 +54,7 @@ public sealed class DXFeedSubscription : IObservableSubscription, IDisposable
     /// </summary>
     /// <param name="subscriptionNative">The specified subscription native.</param>
     /// <param name="eventTypesSet">The list of event types.</param>
-    internal unsafe DXFeedSubscription(SubscriptionNative subscriptionNative, IReadOnlySet<Type> eventTypesSet)
+    internal unsafe DXFeedSubscription(SubscriptionNative subscriptionNative, ISet<Type> eventTypesSet)
     {
         _subscriptionNative = subscriptionNative;
         _eventTypeSet = eventTypesSet;
@@ -66,7 +66,7 @@ public sealed class DXFeedSubscription : IObservableSubscription, IDisposable
         _subscriptionNative.IsClosed();
 
     /// <inheritdoc/>
-    public IReadOnlySet<Type> GetEventTypes() =>
+    public ISet<Type> GetEventTypes() =>
         _eventTypeSet;
 
     /// <inheritdoc/>
@@ -149,7 +149,7 @@ public sealed class DXFeedSubscription : IObservableSubscription, IDisposable
     /// the subscribed symbols at the time of invocation or a weakly consistent view of the set.
     /// </summary>
     /// <returns>The collection of symbols.</returns>
-    public IReadOnlySet<object> GetSymbols() =>
+    public ISet<object> GetSymbols() =>
         _subscriptionNative.GetSymbols();
 
     /// <summary>

@@ -1,5 +1,5 @@
 // <copyright file="IObservableSubscription.cs" company="Devexperts LLC">
-// Copyright © 2022 Devexperts LLC. All rights reserved.
+// Copyright © 2024 Devexperts LLC. All rights reserved.
 // This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 // If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
 // </copyright>
@@ -29,7 +29,7 @@ public interface IObservableSubscription
     /// <a hreh="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/api/osub/ObservableSubscription.html#getEventTypes--">Javadoc</a>.
     /// </summary>
     /// <returns>Returns a set of subscribed event types.</returns>
-    IReadOnlySet<Type> GetEventTypes();
+    ISet<Type> GetEventTypes();
 
     /// <summary>
     /// Gets a value indicating whether if this subscription contains the corresponding event type.
