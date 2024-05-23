@@ -1,5 +1,5 @@
 // <copyright file="CandlePrice.cs" company="Devexperts LLC">
-// Copyright © 2022 Devexperts LLC. All rights reserved.
+// Copyright © 2024 Devexperts LLC. All rights reserved.
 // This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 // If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
 // </copyright>
@@ -190,7 +190,7 @@ public class CandlePrice : ICandleSymbolProperty
             return ByValue.Values.First(price =>
             {
                 var ps = price.ToString();
-                return ps.Length >= n && ps[..n].Equals(s, StringComparison.OrdinalIgnoreCase);
+                return ps.Length >= n && ps.Substring(0, n).Equals(s, StringComparison.OrdinalIgnoreCase);
             });
         }
         catch

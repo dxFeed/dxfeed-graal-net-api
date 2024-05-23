@@ -1,12 +1,11 @@
 // <copyright file="Program.cs" company="Devexperts LLC">
-// Copyright © 2022 Devexperts LLC. All rights reserved.
+// Copyright © 2024 Devexperts LLC. All rights reserved.
 // This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 // If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
 // </copyright>
 
 using DxFeed.Graal.Net.Api;
 using DxFeed.Graal.Net.Api.Osub;
-using DxFeed.Graal.Net.Events;
 
 // Sections of code should not be "commented out". Ignored intentionally as a demo.
 #pragma warning disable S125
@@ -41,7 +40,7 @@ internal abstract class ConvertTapeFile
 
         // Create and link event processor for all types of events.
         // Note: Set of processed event types could be limited if needed.
-        var eventTypes = IEventType.GetEventTypes();
+        var eventTypes = DXEndpoint.GetEventTypes();
         var sub = inputEndpoint.GetFeed().CreateSubscription(eventTypes);
         sub.AddEventListener(events =>
         {

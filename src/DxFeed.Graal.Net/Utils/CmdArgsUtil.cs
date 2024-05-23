@@ -7,7 +7,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using DxFeed.Graal.Net.Events;
+using DxFeed.Graal.Net.Api;
 
 namespace DxFeed.Graal.Net.Utils;
 
@@ -32,7 +32,7 @@ public static class CmdArgsUtil
     public static IEnumerable<Type> ParseTypes(string types)
     {
         var availableTypes = new Dictionary<string, Type>(
-            ReflectionUtil.CreateTypesDictionary(IEventType.GetEventTypes()),
+            ReflectionUtil.CreateTypesDictionary(DXEndpoint.GetEventTypes()),
             StringComparer.OrdinalIgnoreCase);
 
         var result = new HashSet<Type>();

@@ -1,12 +1,11 @@
 // <copyright file="Program.cs" company="Devexperts LLC">
-// Copyright © 2022 Devexperts LLC. All rights reserved.
+// Copyright © 2024 Devexperts LLC. All rights reserved.
 // This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 // If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
 // </copyright>
 
 using System;
 using DxFeed.Graal.Net.Api;
-using DxFeed.Graal.Net.Events;
 using DxFeed.Graal.Net.Utils;
 
 namespace DxFeed.Graal.Net.Samples;
@@ -20,7 +19,7 @@ internal abstract class DxFeedFileParser
 
     private static void PrintUsage()
     {
-        var eventTypeNames = ReflectionUtil.CreateTypesString(IEventType.GetEventTypes());
+        var eventTypeNames = ReflectionUtil.CreateTypesString(DXEndpoint.GetEventTypes());
         var usageString = $@"
 Usage:
 DxFeedFileParser <file> <type> <symbol>

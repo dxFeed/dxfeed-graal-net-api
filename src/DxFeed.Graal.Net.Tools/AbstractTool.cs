@@ -7,11 +7,10 @@
 using System;
 using System.Collections.Generic;
 using System.Globalization;
-using System.Linq;
 using System.Text;
 using CommandLine;
+using DxFeed.Graal.Net.Api;
 using DxFeed.Graal.Net.Api.Osub;
-using DxFeed.Graal.Net.Events;
 using DxFeed.Graal.Net.Tools.Attributes;
 using DxFeed.Graal.Net.Tools.Help;
 using DxFeed.Graal.Net.Utils;
@@ -61,7 +60,7 @@ public abstract class AbstractTool
         types = types.Trim().Trim(',');
 
         return types.Equals("all", StringComparison.OrdinalIgnoreCase)
-            ? IEventType.GetEventTypes()
+            ? DXEndpoint.GetEventTypes()
             : CmdArgsUtil.ParseTypes(types);
     }
 

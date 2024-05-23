@@ -1,5 +1,5 @@
 // <copyright file="CandlePeriod.cs" company="Devexperts LLC">
-// Copyright © 2022 Devexperts LLC. All rights reserved.
+// Copyright © 2024 Devexperts LLC. All rights reserved.
 // This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 // If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
 // </copyright>
@@ -149,8 +149,8 @@ public class CandlePeriod : ICandleSymbolProperty
             }
         }
 
-        var value = s[..i];
-        var type = s[i..];
+        var value = s.Substring(0, i);
+        var type = s.Substring(i);
 
         return string.IsNullOrEmpty(value)
             ? ValueOf(1, CandleType.Parse(type))

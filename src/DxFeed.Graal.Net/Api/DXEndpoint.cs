@@ -11,6 +11,7 @@ using System.IO;
 using System.Runtime.InteropServices;
 using System.Threading;
 using DxFeed.Graal.Net.Api.Osub;
+using DxFeed.Graal.Net.Events;
 using DxFeed.Graal.Net.Native.Endpoint;
 using DxFeed.Graal.Net.Native.ErrorHandling;
 using DxFeed.Graal.Net.Utils;
@@ -382,6 +383,13 @@ public sealed class DXEndpoint : IDisposable
     /// <returns>Returns singleton instance of <see cref="DXEndpoint"/>.</returns>
     public static DXEndpoint GetInstance(Role role) =>
         Instances.GetOrAdd(role, r => new Lazy<DXEndpoint>(() => Create(r))).Value;
+
+    /// <summary>
+    /// Gets all <see cref="IEventType"/> types supported by <see cref="DXEndpoint"/>.
+    /// </summary>
+    /// <returns>A collection of event types.</returns>
+    public static IEnumerable<Type> GetEventTypes() =>
+        ReflectionUtil.GetInheritedTypes(typeof(IEventType));
 
     /// <summary>
     /// Creates new <see cref="Builder"/> instance.
