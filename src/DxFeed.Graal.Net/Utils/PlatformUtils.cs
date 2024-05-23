@@ -22,7 +22,7 @@ public static class PlatformUtils
     /// <summary>
     /// Indicates whether the current application is running on macOS.
     /// </summary>
-    public static readonly bool IsMacOS = RuntimeInformation.IsOSPlatform(OSPlatform.OSX);
+    public static readonly bool IsMacOs = RuntimeInformation.IsOSPlatform(OSPlatform.OSX);
 
     /// <summary>
     /// Indicates whether the current application is running on Linux.
@@ -52,7 +52,7 @@ public static class PlatformUtils
     /// <summary>
     /// Indicates whether the current application is running on Apple Silicon SoC.
     /// </summary>
-    public static readonly bool IsAppleSilicon = IsMacOS && OsArch == Architecture.Arm64;
+    public static readonly bool IsAppleSilicon = IsMacOs && OsArch == Architecture.Arm64;
 
     /// <summary>
     /// Gets the number of logical processors on the machine.
@@ -81,7 +81,7 @@ public static class PlatformUtils
             return $"Windows({osVersion.Version})";
         }
 
-        if (IsMacOS)
+        if (IsMacOs)
         {
             return $"macOS({osVersion.Version})";
         }
