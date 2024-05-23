@@ -10,7 +10,7 @@ namespace DxFeed.Graal.Net.Schedules;
 
 /// <summary>
 /// Defines type of a session - what kind of trading activity is allowed (if any),
-/// what rules are used, what impact on daily trading statistics it has, etc..
+/// what rules are used, what impact on daily trading statistics it has, etc.
 /// The <see cref="NO_TRADING"/> session type is used for non-trading sessions.
 /// <p/>
 /// Some exchanges support all session types defined here, others do not.
