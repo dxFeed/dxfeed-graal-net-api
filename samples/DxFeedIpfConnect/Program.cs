@@ -1,15 +1,15 @@
 ﻿// <copyright file="Program.cs" company="Devexperts LLC">
-// Copyright © 2022 Devexperts LLC. All rights reserved.
+// Copyright © 2024 Devexperts LLC. All rights reserved.
 // This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 // If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
 // </copyright>
 
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using DxFeed.Graal.Net.Api;
-using DxFeed.Graal.Net.Events;
 using DxFeed.Graal.Net.Ipf;
 using DxFeed.Graal.Net.Utils;
 
@@ -26,7 +26,7 @@ internal abstract class Program
     {
         if (args.Length != 2)
         {
-            var eventTypeNames = ReflectionUtil.CreateTypesString(IEventType.GetEventTypes());
+            var eventTypeNames = ReflectionUtil.CreateTypesString(DXEndpoint.GetEventTypes());
             Console.WriteLine("usage: DXFeedIpfConnect <type> <ipf-file>");
             Console.WriteLine("where: <type>     is dxfeed event type (" + eventTypeNames + ")");
             Console.WriteLine("       <ipf-file> is name of instrument profiles file");
@@ -63,13 +63,10 @@ internal abstract class Program
             profile.Type.Equals("STOCK", StringComparison.Ordinal); // stocks
         var result = new List<string>();
         Console.WriteLine("Selected symbols are:");
-        foreach (var profile in profiles)
+        foreach (var profile in profiles.Where(profile => filter(profile)))
         {
-            if (filter(profile))
-            {
-                result.Add(profile.Symbol);
-                Console.WriteLine($"{profile.Symbol} ({profile.Description})");
-            }
+            result.Add(profile.Symbol);
+            Console.WriteLine($"{profile.Symbol} ({profile.Description})");
         }
 
         return result;

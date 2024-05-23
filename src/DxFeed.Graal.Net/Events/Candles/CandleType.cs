@@ -1,5 +1,5 @@
 // <copyright file="CandleType.cs" company="Devexperts LLC">
-// Copyright © 2022 Devexperts LLC. All rights reserved.
+// Copyright © 2024 Devexperts LLC. All rights reserved.
 // This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 // If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
 // </copyright>
@@ -287,20 +287,20 @@ public class CandleType
             return result;
         }
 
-        // Slow path for for everything else.
+        // Slow path for everything else.
         try
         {
             return ByValue.Values.First(type =>
             {
                 var name = type.Name;
-                if (name.Length >= n && name[..n].Equals(s, StringComparison.OrdinalIgnoreCase))
+                if (name.Length >= n && name.Substring(0, n).Equals(s, StringComparison.OrdinalIgnoreCase))
                 {
                     return true;
                 }
 
                 // Ticks, Minutes, Seconds, etc.
                 return s.EndsWith("s", StringComparison.OrdinalIgnoreCase) &&
-                       name.Equals(s[..(n - 1)], StringComparison.OrdinalIgnoreCase);
+                       name.Equals(s.Substring(0, n - 1), StringComparison.OrdinalIgnoreCase);
             });
         }
         catch
