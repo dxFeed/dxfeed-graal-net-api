@@ -115,8 +115,6 @@ dotnet_diagnostic.IDE0046.severity = suggestion
 dotnet_style_prefer_compound_assignment = true:warning
 dotnet_style_prefer_simplified_interpolation = true:warning
 dotnet_style_prefer_simplified_boolean_expressions = true:warning
-dotnet_diagnostic.CA1510.severity = none       # Use ArgumentNullException throw helper
-dotnet_diagnostic.CA1861.severity = none
 # Null-checking preferences
 dotnet_style_coalesce_expression = true:warning
 dotnet_style_null_propagation = true:warning
@@ -195,7 +193,10 @@ dotnet_diagnostic.IDE0010.severity = none
 # SA1000: Keywords should be spaced correctly
 dotnet_diagnostic.SA1000.severity = none
 dotnet_diagnostic.CA1720.severity = none
-
+# CA1510: Use ArgumentNullException throw helper
+dotnet_diagnostic.CA1510.severity = none      
+# CA1861: Avoid constant arrays as arguments
+dotnet_diagnostic.CA1861.severity = none
 ##########################################
 # Formatting Rules
 # https://docs.microsoft.com/dotnet/fundamentals/code-analysis/style-rules/formatting-rules
