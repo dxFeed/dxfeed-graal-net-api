@@ -5,7 +5,6 @@
 // </copyright>
 
 using System.Collections.Generic;
-using System.Diagnostics.CodeAnalysis;
 using DxFeed.Graal.Net.Ipf;
 using DxFeed.Graal.Net.Native.ErrorHandling;
 using DxFeed.Graal.Net.Native.Schedules;
@@ -145,9 +144,9 @@ public class Schedule
     /// <param name="session">When this method returns, contains the session that is nearest to the specified time and accepted by the specified filter, if such a session is found; otherwise, null.</param>
     /// <returns><c>true</c> if a session meeting the filter criteria is found; otherwise, <c>false</c>.</returns>
     /// <exception cref="JavaException">Thrown if the specified time falls outside of the valid date range from 0001-01-02 to 9999-12-30.</exception>
-    public bool TryGetNearestSessionByTime(long time, SessionFilter filter, [MaybeNullWhen(false)] out Session session)
+    public bool TryGetNearestSessionByTime(long time, SessionFilter filter, out Session session)
     {
-        session = null;
+        session = null!;
         var prev = handle.FindNearestSessionByTime(time, filter.Handle);
         if (prev == null)
         {

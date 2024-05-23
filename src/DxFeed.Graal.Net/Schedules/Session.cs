@@ -5,7 +5,6 @@
 // </copyright>
 
 using System;
-using System.Diagnostics.CodeAnalysis;
 using DxFeed.Graal.Net.Native.Schedules;
 
 namespace DxFeed.Graal.Net.Schedules;
@@ -102,9 +101,9 @@ public class Session
     /// To find previous regular trading session use this code:
     /// <code>bool found = TryGetPrevSession(SessionFilter.REGULAR, out Session session);</code>
     /// </example>
-    public bool TryGetPrevSession(SessionFilter filter, [MaybeNullWhen(false)] out Session session)
+    public bool TryGetPrevSession(SessionFilter filter, out Session session)
     {
-        session = null;
+        session = null!;
         var prev = handle.FindPrevSession(filter.Handle);
         if (prev == null)
         {
@@ -142,9 +141,9 @@ public class Session
     /// To find following regular trading session use this code:
     /// <code>bool found = TryGetNextSession(SessionFilter.REGULAR, out Session session);</code>
     /// </example>
-    public bool TryGetNextSession(SessionFilter filter, [MaybeNullWhen(false)] out Session session)
+    public bool TryGetNextSession(SessionFilter filter, out Session session)
     {
-        session = null;
+        session = null!;
         var prev = handle.FindNextSession(filter.Handle);
         if (prev == null)
         {
