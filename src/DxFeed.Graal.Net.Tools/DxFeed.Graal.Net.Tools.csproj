@@ -4,6 +4,8 @@
     <OutputType>Exe</OutputType>
     <InvariantGlobalization>true</InvariantGlobalization>
     <LangVersion>11</LangVersion>
+    <NoWarn>$(NoWarn);NU5104</NoWarn>
+    <SatelliteResourceLanguages>en-US;en</SatelliteResourceLanguages>
   </PropertyGroup>
 
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">

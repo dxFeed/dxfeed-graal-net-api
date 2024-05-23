@@ -1,11 +1,10 @@
 // <copyright file="EnumUtil.cs" company="Devexperts LLC">
-// Copyright © 2022 Devexperts LLC. All rights reserved.
+// Copyright © 2024 Devexperts LLC. All rights reserved.
 // This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 // If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
 // </copyright>
 
 using System;
-using System.Numerics;
 
 namespace DxFeed.Graal.Net.Utils;
 
@@ -28,29 +27,13 @@ public static class EnumUtil
     public static T ValueOf<T>(T value)
         where T : struct, Enum
     {
-        if (Enum.IsDefined(value))
+        if (Enum.IsDefined(typeof(T), value))
         {
             return value;
         }
 
         throw new ArgumentException($"{typeof(T)} has no value: {value}", nameof(value));
     }
-
-    /// <summary>
-    /// Returns an enum constant of the specified enum type with the specified value,
-    /// or a default value if the specified enum type does not have
-    /// a constant with the specified value.
-    /// </summary>
-    /// <param name="value">The specified value.</param>
-    /// <param name="defaultValue">The default enum value.</param>
-    /// <typeparam name="T">The specified enum type.</typeparam>
-    /// <returns>
-    /// The enum constant of the specified enum type with the specified value
-    /// or default value, if specified enum type has no constant with the specified value.
-    /// </returns>
-    public static T ValueOf<T>(T value, T defaultValue)
-        where T : struct, Enum =>
-        Enum.IsDefined(value) ? value : defaultValue;
 
     /// <summary>
     /// Gets the number of values for the specified enum type.
@@ -84,9 +67,7 @@ public static class EnumUtil
     /// <seealso cref="CreateEnumArrayByValue{T}"/>
     public static T[] CreateEnumBitMaskArrayByValue<T>(T defaultValue)
         where T : struct, Enum =>
-        CreateEnumArrayByValue(
-            defaultValue,
-            (int)BitOperations.RoundUpToPowerOf2((uint)GetCountValues<T>()));
+        CreateEnumArrayByValue(defaultValue, (int)MathUtil.RoundUpToPowerOf2((uint)GetCountValues<T>()));
 
     /// <summary>
     /// Creates an array containing elements of the specified enum type <c>T</c>, of the specified length.
@@ -114,7 +95,11 @@ public static class EnumUtil
 
         var values = (T[])Enum.GetValues(typeof(T));
         var result = new T[length];
-        Array.Fill(result, defaultValue);
+        for (var i = 0; i < result.Length; ++i)
+        {
+            result[i] = defaultValue;
+        }
+
         Array.Copy(values, result, Math.Min(values.Length, length));
         return result;
     }

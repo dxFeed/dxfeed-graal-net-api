@@ -1,5 +1,5 @@
 // <copyright file="TimeFormat.cs" company="Devexperts LLC">
-// Copyright © 2022 Devexperts LLC. All rights reserved.
+// Copyright © 2024 Devexperts LLC. All rights reserved.
 // This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 // If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
 // </copyright>
@@ -44,7 +44,7 @@ public class TimeFormat
     public static TimeFormat GMT => _gmt.Value;
 
     /// <summary>
-    /// Returns TimeFormat instance that also includes milliseconds into string when using <see cref="Format"/> format} method.
+    /// Returns TimeFormat instance that also includes milliseconds into string when using <see cref="Format"/> format method.
     /// </summary>
     /// <returns>The time format.</returns>
     public TimeFormat WithMillis() => _defaultWithMillis.Value;
