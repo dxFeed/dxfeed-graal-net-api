@@ -1,5 +1,5 @@
 // <copyright file="MathUtil.cs" company="Devexperts LLC">
-// Copyright © 2022 Devexperts LLC. All rights reserved.
+// Copyright © 2024 Devexperts LLC. All rights reserved.
 // This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 // If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
 // </copyright>
@@ -103,6 +103,29 @@ public static class MathUtil
     /// <returns>Returns <c>true</c> if x represents a power of two.</returns>
     public static bool IsPowerOfTwo(long x) =>
         x > 0 && (x & (x - 1)) == 0;
+
+    /// <summary>
+    /// Rounds up the given value to the nearest power of 2.
+    /// </summary>
+    /// <param name="value">The value to round up.</param>
+    /// <returns>
+    /// The smallest power of two that's greater than or equal to value.
+    /// If value is 0 or the result overflows, returns 0.</returns>
+    /// <remarks>
+    /// This method uses bit manipulation to round up to the nearest power of 2.
+    /// The algorithm is based on the "Bit Twiddling Hacks" by Sean Eron Anderson.
+    /// See: https://graphics.stanford.edu/~seander/bithacks.html#RoundUpPowerOf2
+    /// </remarks>
+    public static uint RoundUpToPowerOf2(uint value)
+    {
+        --value;
+        value |= value >> 1;
+        value |= value >> 2;
+        value |= value >> 4;
+        value |= value >> 8;
+        value |= value >> 16;
+        return value + 1;
+    }
 
     /// <summary>
     /// Checks if the specified number is a -0.0 (negative zero).
