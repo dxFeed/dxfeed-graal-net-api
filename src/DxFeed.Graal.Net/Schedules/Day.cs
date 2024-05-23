@@ -5,7 +5,6 @@
 // </copyright>
 
 using System.Collections.Generic;
-using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using DxFeed.Graal.Net.Native.ErrorHandling;
 using DxFeed.Graal.Net.Native.Schedules;
@@ -176,9 +175,9 @@ public class Day
     /// To find the first regular trading session:
     /// <code>bool found = TryGetFirstSession(SessionFilter.REGULAR, out Session session);</code>
     /// </example>
-    public bool TryGetFirstSession(SessionFilter filter, [MaybeNullWhen(false)] out Session session)
+    public bool TryGetFirstSession(SessionFilter filter, out Session session)
     {
-        session = null;
+        session = null!;
         var first = this.handle.FindFirstSession(filter.Handle);
         if (first == null)
         {
@@ -214,9 +213,9 @@ public class Day
     /// To find last regular trading session use this code:
     /// <code>bool found = TryGetLastSession(SessionFilter.REGULAR, out Session session);</code>
     /// </example>
-    public bool TryGetLastSession(SessionFilter filter, [MaybeNullWhen(false)] out Session session)
+    public bool TryGetLastSession(SessionFilter filter, out Session session)
     {
-        session = null;
+        session = null!;
         var first = this.handle.FindLastSession(filter.Handle);
         if (first == null)
         {
@@ -246,9 +245,9 @@ public class Day
     /// <returns>
     /// <b>true</b> if a suitable day is found; otherwise, <b>false</b>.
     /// </returns>
-    public bool TryGetPrevDay(DayFilter filter, [MaybeNullWhen(false)] out Day day)
+    public bool TryGetPrevDay(DayFilter filter, out Day day)
     {
-        day = null;
+        day = null!;
         var prev = this.handle.FindPrevDay(filter.Handle);
         if (prev == null)
         {
@@ -282,9 +281,9 @@ public class Day
     /// <returns>
     /// <b>true</b> if a suitable day is found; otherwise, <b>false</b>.
     /// </returns>
-    public bool TryGetNextDay(DayFilter filter, [MaybeNullWhen(false)] out Day day)
+    public bool TryGetNextDay(DayFilter filter, out Day day)
     {
-        day = null;
+        day = null!;
         var next = this.handle.FindNextDay(filter.Handle);
         if (next == null)
         {
