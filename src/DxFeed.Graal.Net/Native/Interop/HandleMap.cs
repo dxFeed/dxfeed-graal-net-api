@@ -6,7 +6,6 @@
 
 using System;
 using System.Collections.Concurrent;
-using System.Diagnostics.CodeAnalysis;
 
 namespace DxFeed.Graal.Net.Native.Interop;
 
@@ -37,7 +36,7 @@ internal sealed class HandleMap<TListener, THandle>
         handle = null!;
         lock (syncRoot)
         {
-            if (listeners.TryGetValue(listener, out var handles) && handles.TryTake(out handle))
+            if (listeners.TryGetValue(listener, out var handles) && handles.TryTake(out handle!))
             {
                 if (handles.IsEmpty)
                 {
