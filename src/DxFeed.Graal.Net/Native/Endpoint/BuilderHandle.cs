@@ -1,5 +1,5 @@
 // <copyright file="BuilderHandle.cs" company="Devexperts LLC">
-// Copyright © 2022 Devexperts LLC. All rights reserved.
+// Copyright © 2024 Devexperts LLC. All rights reserved.
 // This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 // If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
 // </copyright>
@@ -60,8 +60,8 @@ internal sealed class BuilderHandle : JavaHandle
         public static extern int WithProperty(
             nint thread,
             BuilderHandle builder,
-            [MarshalAs(UnmanagedType.LPUTF8Str)] string key,
-            [MarshalAs(UnmanagedType.LPUTF8Str)] string value);
+            [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(StringMarshaler))] string key,
+            [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(StringMarshaler))] string value);
 
         [DllImport(
             ImportInfo.DllName,
@@ -74,7 +74,7 @@ internal sealed class BuilderHandle : JavaHandle
         public static extern int SupportsProperty(
             nint thread,
             BuilderHandle builder,
-            [MarshalAs(UnmanagedType.LPUTF8Str)] string key);
+            [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(StringMarshaler))] string key);
 
         [DllImport(
             ImportInfo.DllName,
