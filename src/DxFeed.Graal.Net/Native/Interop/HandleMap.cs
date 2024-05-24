@@ -32,7 +32,7 @@ internal sealed class HandleMap<TListener, THandle>
         }
     }
 
-    public bool TryRemove(TListener listener,out THandle handle)
+    public bool TryRemove(TListener listener, out THandle handle)
     {
         handle = null!;
         lock (syncRoot)
