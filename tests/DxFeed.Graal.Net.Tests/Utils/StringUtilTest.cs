@@ -51,7 +51,8 @@ public class StringUtilTest
                     Assert.Multiple(() =>
                     {
                         Assert.That(str, Does.StartWith("\\u"));
-                        Assert.That(int.Parse(str[2..], NumberStyles.HexNumber, InvariantCulture), Is.EqualTo(c));
+                        str = str.Substring(2);
+                        Assert.That(int.Parse(str, NumberStyles.HexNumber, InvariantCulture), Is.EqualTo(c));
                     });
                     break;
             }

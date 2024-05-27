@@ -20,7 +20,7 @@ internal sealed class TimeFormatTest
 
         Assert.Multiple(() =>
         {
-            Assert.That(defaultTimeFormat.Parse(" 0    "), Is.EqualTo(DateTimeOffset.UnixEpoch));
+            Assert.That(defaultTimeFormat.Parse(" 0    "), Is.EqualTo(UnixEpoch));
             Assert.That(defaultTimeFormat.Parse("20070101-123456"),
                 Is.EqualTo((DateTimeOffset)new DateTime(2007, 01, 01, 12, 34, 56, DateTimeKind.Local)));
             Assert.That(defaultTimeFormat.Parse("20070101-123456.123"),
@@ -82,7 +82,7 @@ internal sealed class TimeFormatTest
     {
         Assert.Multiple(() =>
         {
-            Assert.That(gmtTimeFormat.Parse(" 0    "), Is.EqualTo(DateTimeOffset.UnixEpoch));
+            Assert.That(gmtTimeFormat.Parse(" 0    "), Is.EqualTo(UnixEpoch));
             Assert.That(gmtTimeFormat.Parse("20070101-123456"),
                 Is.EqualTo((DateTimeOffset)new DateTime(2007, 01, 01, 12, 34, 56, DateTimeKind.Utc)));
             Assert.That(gmtTimeFormat.Parse("20070101-123456.123"),
@@ -202,8 +202,8 @@ internal sealed class TimeFormatTest
         var b2 = gmt.Parse("T12:12:12");
         Assert.That(b1, Is.EqualTo(b2));
 
-        var c1 = gmt.Parse("1234567890"); // long;
-        var c2 = DateTimeOffset.UnixEpoch.AddMilliseconds(1234567890);
+        var c1 = gmt.Parse("1234567890"); // number
+        var c2 = UnixEpoch.AddMilliseconds(1234567890);
         Assert.That(c1, Is.EqualTo(c2));
     }
 
@@ -216,4 +216,7 @@ internal sealed class TimeFormatTest
             Assert.That(TimeFormat.GMT.Format(long.MaxValue),
                 Is.EqualTo(long.MaxValue.ToString(CultureInfo.InvariantCulture)));
         });
+
+    private static DateTimeOffset UnixEpoch =>
+        new(1970, 1, 1, 0, 0, 0, TimeSpan.Zero);
 }
