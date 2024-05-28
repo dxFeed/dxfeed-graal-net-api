@@ -3,7 +3,7 @@
     <!-- Project info -->
     <Company>Devexperts</Company>
     <Copyright>Copyright © 2022 Devexperts LLC</Copyright>
-    <Authors>dxFeed API</Authors>
+    <Authors>dxFeed API Team</Authors>
     <PackageLicenseExpression>MPL-2.0</PackageLicenseExpression>
     <RepositoryType>git</RepositoryType>
     <RepositoryUrl>https://github.com/dxfeed/dxfeed-graal-net-api/</RepositoryUrl>
@@ -11,10 +11,13 @@
     <PackageIcon>favicon.png</PackageIcon>
     <PackageTags>api, market data, dxfeed</PackageTags>
     <PackageDescription>This package provides access to dxFeed(https://www.dxfeed.com/) market data.</PackageDescription>
-    <Description>This library is built as a language specific wrapper over dxFeed Java API which in turn was compiled with GraalVM Native Image.</Description>
+    <Description>
+      For .NET developers, this library offers easy access to dxFeed market data. Built upon the GraalVM Native Image
+      and our flagship dxFeed Java API, it provides a seamless experience for .NET-based applications.
+    </Description>
 
     <!-- Project setting -->
-    <TargetFrameworks>net6.0;net7.0;net8.0</TargetFrameworks>
+    <TargetFrameworks>netstandard2.0;net6.0;net7.0;net8.0</TargetFrameworks>
     <LangVersion>10</LangVersion>
     <Nullable>enable</Nullable>
     <CodeAnalysisRuleSet>../../StyleCop.xml</CodeAnalysisRuleSet>
