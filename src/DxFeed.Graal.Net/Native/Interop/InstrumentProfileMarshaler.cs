@@ -21,6 +21,11 @@ internal sealed class InstrumentProfileMarshaler : AbstractMarshaler
 
     public override unsafe object? ConvertNativeToManaged(IntPtr native)
     {
+        if (native == IntPtr.Zero)
+        {
+            return null;
+        }
+
         var profile = (InstrumentProfileNative*)native;
         return new InstrumentProfile
         {

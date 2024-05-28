@@ -5,7 +5,6 @@
 // </copyright>
 
 using System.Runtime.InteropServices;
-using DxFeed.Graal.Net.Ipf;
 using DxFeed.Graal.Net.Native.Interop;
 
 namespace DxFeed.Graal.Net.Native.Ipf;
