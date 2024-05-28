@@ -3,7 +3,7 @@
   <PropertyGroup>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
-    <NoWarn>SYSLIB1054</NoWarn> <!-- For net7.0 -->
+    <NoWarn>SYSLIB1054</NoWarn> <!-- For net7.0 and greater. SYSLIB diagnostics for P/Invoke source generation -->
   </PropertyGroup>
 
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
@@ -17,13 +17,13 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="DxFeed.Graal.Native" Version="1.1.16" />
-    <PackageReference Include="Microsoft.Extensions.Caching.Memory" Version="8.0.0" />
     <PackageReference Include="StyleCop.Analyzers" Version="1.2.0-beta.556">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="System.Collections.Immutable" Version="8.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Caching.Memory" Version="8.0.0"/>
+    <PackageReference Include="System.Collections.Immutable" Version="8.0.0"/>
+    <PackageReference Include="DxFeed.Graal.Native" Version="1.1.17"/>
   </ItemGroup>
 
 </Project>
