@@ -15,7 +15,7 @@ the [Overview](#overview) section.<br>
 ![Build](https://github.com/dxFeed/dxfeed-graal-net-api/actions/workflows/build.yml/badge.svg)
 ![CodeQL](https://github.com/dxFeed/dxfeed-graal-net-api/actions/workflows/codeql.yml/badge.svg)
 ![Platform](https://img.shields.io/badge/platform-win--x64%20%7C%20linux--x64%20%7C%20osx--x64%20%7C%20osx--arm64-lightgrey)
-[![NET](https://img.shields.io/badge/.NET_version-net6.0%20%7C%20net7.0%20%7C%20net8.0-blueviolet)](https://dotnet.microsoft.com/en-us/)
+[![NET](https://img.shields.io/badge/.NET_version-netstandard2.0%20%7C%20net6.0%20%7C%20net7.0%20%7C%20net8.0-blueviolet)](https://dotnet.microsoft.com/en-us/)
 [![Release](https://img.shields.io/github/v/release/dxFeed/dxfeed-graal-net-api)](https://github.com/dxFeed/dxfeed-graal-net-api/releases/latest)
 [![Nuget](https://img.shields.io/badge/nuget-1.3.1-blue)](https://dxfeed.jfrog.io/artifactory/nuget-open/com/dxfeed/graal-net/)
 [![License](https://img.shields.io/badge/license-MPL--2.0-orange)](https://github.com/dxFeed/dxfeed-graal-net-api/blob/master/LICENSE)
@@ -158,7 +158,7 @@ Only x64 versions are supported.
 
 #### Requirements
 
-* .NET 6.0+ (not required for self-contained assemblies)
+* .NET compatible with .NET Standard 2.0 (not required for self-contained assemblies)
 * [Visual C++ Redistributable for Visual Studio 2015][vc_redist]
 
 [Windows-client]: https://www.microsoft.com/windows/
@@ -175,7 +175,7 @@ Only x64 versions are supported.
 
 #### Requirements
 
-* .NET 6.0+ (not required for self-contained assemblies)
+* .NET compatible with .NET Standard 2.0 (not required for self-contained assemblies)
 
 #### Libc compatibility
 
@@ -203,12 +203,14 @@ Is supported in the Rosetta 2 x64 emulator.
 
 #### Requirements
 
-* .NET 6.0+ (not required for self-contained assemblies)
+* .NET compatible with .NET Standard 2.0 (not required for self-contained assemblies)
 
 ## Installation
 
 Add this [package source](https://dxfeed.jfrog.io/artifactory/api/nuget/v3/nuget-open) to NuGet config.
-<br/>
+> If you are using .NET Framework and building for platform target `AnyCPU`, be sure to uncheck `Prefer 32-bit` in
+> `Properties->Build `for the project. We only support 64-bit builds.
+
 For example, you can create a [NuGet.Config](NuGet.Config) file in your solution folder with the following content:
 
 ```xml
@@ -362,8 +364,10 @@ sudo /usr/bin/xattr -r -d com.apple.quarantine <directory_with_tools>
   demonstration of how to get Instrument Profiles
 - [x] [DxFeedLiveIpfSample](https://github.com/dxFeed/dxfeed-graal-net-api/tree/main/samples/DxFeedLiveIpfSample) is a
   simple demonstration of how to get live updates for Instrument Profiles
-- [x] [ScheduleSample](https://github.com/dxFeed/dxfeed-graal-net-api/tree/main/samples/ScheduleSample) is a simple demonstration of how to get various scheduling information for instruments
-- [x] [FetchDailyCandles](https://github.com/dxFeed/dxfeed-graal-net-api/tree/main/samples/FetchDailyCandles) is a simple
+- [x] [ScheduleSample](https://github.com/dxFeed/dxfeed-graal-net-api/tree/main/samples/ScheduleSample) is a simple
+  demonstration of how to get various scheduling information for instruments
+- [x] [FetchDailyCandles](https://github.com/dxFeed/dxfeed-graal-net-api/tree/main/samples/FetchDailyCandles) is a
+  simple
   demonstration of how to fetch last N-days of candles for a specified symbol
 
 ## Current State
@@ -461,8 +465,11 @@ sudo /usr/bin/xattr -r -d com.apple.quarantine <directory_with_tools>
   represents a  *wildcard* subscription to all events of the specific event type
 
 - [x] [CandleSymbol](https://dxfeed.github.io/dxfeed-graal-net-api/docs/api/DxFeed.Graal.Net.Events.Candles.CandleSymbol.html)
-  is a symbol used with [DXFeedSubscription](https://dxfeed.github.io/dxfeed-graal-net-api/docs/api/DxFeed.Graal.Net.Api.DXFeedSubscription.html)
-  class to subscribe for [Candle](https://dxfeed.github.io/dxfeed-graal-net-api/docs/api/DxFeed.Graal.Net.Events.Candles.Candle.html) events
+  is a symbol used
+  with [DXFeedSubscription](https://dxfeed.github.io/dxfeed-graal-net-api/docs/api/DxFeed.Graal.Net.Api.DXFeedSubscription.html)
+  class to subscribe
+  for [Candle](https://dxfeed.github.io/dxfeed-graal-net-api/docs/api/DxFeed.Graal.Net.Events.Candles.Candle.html)
+  events
 
 ### Subscriptions & Models
 
@@ -482,7 +489,8 @@ sudo /usr/bin/xattr -r -d com.apple.quarantine <directory_with_tools>
   represents basic profile information about a market instrument
   ([DxFeedIpfConnect](https://github.com/dxFeed/dxfeed-graal-net-api/tree/main/samples/DxFeedIpfConnect))
 
-- [x] [InstrumentProfileReader](https://dxfeed.github.io/dxfeed-graal-net-api/docs/api/DxFeed.Graal.Net.Ipf.InstrumentProfileReader.html) reads
+- [x] [InstrumentProfileReader](https://dxfeed.github.io/dxfeed-graal-net-api/docs/api/DxFeed.Graal.Net.Ipf.InstrumentProfileReader.html)
+  reads
   instrument profiles from the stream using Instrument Profile Format (IPF)
 
 - [x] [InstrumentProfileCollector](https://dxfeed.github.io/dxfeed-graal-net-api/docs/api/DxFeed.Graal.Net.Ipf.Live.InstrumentProfileCollector.html)

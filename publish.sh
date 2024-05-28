@@ -26,7 +26,7 @@ publish_fdd() {
         -p:DebugSymbols=false \
         --framework "$target_framework" \
         -c Release \
-        -o "$output_path"/"$project_name"/fdd-"$target_framework"/
+        -o "$output_path"/"$project_name"/"$target_framework"/
 }
 
 # Function to publish self-contained deployment (SCD)
@@ -42,11 +42,11 @@ publish_scd() {
         --framework "$target_framework" \
         --self-contained true \
         -c Release \
-        -o "$output_path"/"$project_name"/scd-"$target_platform"/
+        -o "$output_path"/"$project_name"/"$target_platform"/
 
     # Sign the macOS application if the target platform is macOS
     case "$target_platform" in
-      *osx*) sign "$output_path/$project_name/scd-$target_platform/$project_name" ;;
+      *osx*) sign "$output_path/$project_name/$target_platform/$project_name" ;;
     esac
 }
 

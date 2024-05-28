@@ -1,12 +1,10 @@
-* Port Native to netstandard 2.0
-* Port API to netstandard 2.0
-* Port Events to netstandard 2.0
+* Build all samples into one directory to reduce the size on disk
+* Keep only self-contained builds for DxFeed.Graal.Net.Tools
+* Add compatibility with netstandard 2.0
   - BACKWARD-INCOMPATIBLE CHANGE:
   The list of event flags moves from the IIndexedEvent interface to the new EventFlags class.
   - BACKWARD-INCOMPATIBLE CHANGE:
   Method GetEventTypes moves from the IEventType interface to DXEndpoint class.
-* Port Schedule to netstandard 2.0
-* Port Utils to netstandard 2.0
 * Fix copyright header in Utils
 * Fix build warnings
 * Bump StyleCop.Analyzers
