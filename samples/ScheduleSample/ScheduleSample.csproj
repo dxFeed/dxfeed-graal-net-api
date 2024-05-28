@@ -3,17 +3,19 @@
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <RootNamespace>DxFeed.Graal.Net.Samples</RootNamespace>
+    <TargetFramework>net6.0</TargetFramework>
   </PropertyGroup>
 
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
-    <OutputPath>../../artifacts/Debug/Samples/ScheduleSample/</OutputPath>
+    <OutputPath>../../artifacts/Debug/Samples/</OutputPath>
   </PropertyGroup>
 
   <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
-    <OutputPath>../../artifacts/Release/Samples/ScheduleSample/</OutputPath>
+    <OutputPath>../../artifacts/Release/Samples/</OutputPath>
   </PropertyGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\..\src\DxFeed.Graal.Net\DxFeed.Graal.Net.csproj"/>
   </ItemGroup>
+
 </Project>
