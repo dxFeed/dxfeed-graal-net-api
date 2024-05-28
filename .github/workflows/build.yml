@@ -41,7 +41,7 @@ jobs:
         run: dotnet test --configuration Release --no-build --verbosity normal --logger:"console;verbosity=normal"
 
       - name: Pack Project
-        run: dotnet pack -c Release
+        run: dotnet pack src/DxFeed.Graal.Net -c Release
 
   release:
     needs: build_and_test
@@ -87,7 +87,7 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Pack NuGet
-        run: dotnet pack -c Release --property:PackageOutputPath=${{ github.workspace }}/artifacts/Packages
+        run: dotnet pack src/DxFeed.Graal.Net -c Release --property:PackageOutputPath=${{ github.workspace }}/artifacts/Packages
 
       - name: Upload NuGet
         run: |
