@@ -63,11 +63,6 @@ jobs:
 
       - name: Publish Tools
         run: |
-          frameworks="net6.0 net7.0 net8.0"
-          echo "$frameworks" | tr ' ' '\n' | while read -r framework; do
-            ./publish.sh DxFeed.Graal.Net.Tools "$framework"
-          done
-
           platforms="win-x64 linux-x64 osx-x64 osx-arm64"
           echo "$platforms" | tr ' ' '\n' | while read -r platform; do
             ./publish.sh DxFeed.Graal.Net.Tools net8.0 "$platform"
