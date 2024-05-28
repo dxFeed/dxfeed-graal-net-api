@@ -1,5 +1,5 @@
 // <copyright file="StringNative.cs" company="Devexperts LLC">
-// Copyright © 2022 Devexperts LLC. All rights reserved.
+// Copyright © 2024 Devexperts LLC. All rights reserved.
 // This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 // If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
 // </copyright>
@@ -14,7 +14,7 @@ namespace DxFeed.Graal.Net.Native.Interop;
 /// </summary>
 /// <param name="NativeStringPtr">The unsafe pointer to null-terminated UTF-8 string.</param>
 [StructLayout(LayoutKind.Sequential)]
-internal readonly record struct StringNative(nint NativeStringPtr)
+internal record struct StringNative(nint NativeStringPtr)
 {
     public static implicit operator StringNative(string? value) =>
         ValueOf(value);
@@ -29,13 +29,13 @@ internal readonly record struct StringNative(nint NativeStringPtr)
     /// <param name="value">The specified string.</param>
     /// <returns>The <see cref="StringNative"/>.</returns>
     public static StringNative ValueOf(string? value) =>
-        new() { NativeStringPtr = Marshal.StringToCoTaskMemUTF8(value) };
+        new() { NativeStringPtr = Utf8StringMarshaler.StringToCoTaskMemUTF8(value) };
 
     /// <summary>
     /// Releases all associated resources.
     /// </summary>
     public void Release() =>
-        Marshal.ZeroFreeCoTaskMemUTF8(NativeStringPtr);
+        Utf8StringMarshaler.ZeroFreeCoTaskMemUTF8(NativeStringPtr);
 
     /// <summary>
     /// Allocates a managed <see cref="string"/> and copies all characters
@@ -46,5 +46,5 @@ internal readonly record struct StringNative(nint NativeStringPtr)
     /// if the value of the ptr parameter is not null; otherwise, this method returns null.
     /// </returns>
     public override string? ToString() =>
-        Marshal.PtrToStringUTF8(NativeStringPtr);
+        Utf8StringMarshaler.PtrToStringUTF8(NativeStringPtr);
 }

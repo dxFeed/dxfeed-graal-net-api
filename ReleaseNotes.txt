@@ -1,3 +1,4 @@
+* Port Native to netstandard 2.0
 * Port API to netstandard 2.0
 * Port Events to netstandard 2.0
   - BACKWARD-INCOMPATIBLE CHANGE:

@@ -1,12 +1,11 @@
 ﻿// <copyright file="Program.cs" company="Devexperts LLC">
-// Copyright © 2022 Devexperts LLC. All rights reserved.
+// Copyright © 2024 Devexperts LLC. All rights reserved.
 // This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 // If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
 // </copyright>
 
 using System;
 using System.Collections.Concurrent;
-using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
 using DxFeed.Graal.Net.Ipf;
@@ -26,7 +25,7 @@ internal abstract class Program
             return;
         }
 
-        var url = (args.Length > 0) ? args[0] : DXFEED_IPF_URL;
+        var url = args.Length > 0 ? args[0] : DXFEED_IPF_URL;
 
         var collector = new InstrumentProfileCollector();
         var connection = InstrumentProfileConnection.CreateConnection(url, collector);
@@ -49,7 +48,7 @@ internal abstract class Program
             {
                 if (InstrumentProfileType.REMOVED.Name.Equals(profile.GetType().Name, StringComparison.Ordinal)) {
                     // Profile was removed - remove it from our data model
-                    profiles.Remove(profile.Symbol, out _);
+                    profiles.TryRemove(profile.Symbol, out _);
                 } else {
                     // Profile was updated - collector only notifies us if profile was changed
                     profiles.TryAdd(profile.Symbol, profile);

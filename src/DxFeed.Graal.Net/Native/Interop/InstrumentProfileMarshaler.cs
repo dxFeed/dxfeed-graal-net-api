@@ -21,6 +21,11 @@ internal sealed class InstrumentProfileMarshaler : AbstractMarshaler
 
     public override unsafe object? ConvertNativeToManaged(IntPtr native)
     {
+        if (native == IntPtr.Zero)
+        {
+            return null;
+        }
+
         var profile = (InstrumentProfileNative*)native;
         return new InstrumentProfile
         {
@@ -140,7 +145,7 @@ internal sealed class InstrumentProfileMarshaler : AbstractMarshaler
         SafeCall(Import.ReleaseList(Isolate.CurrentThread, ptr));
 
     [StructLayout(LayoutKind.Sequential)]
-    private readonly record struct InstrumentProfileNative(
+    private record struct InstrumentProfileNative(
         StringNative Type,
         StringNative Symbol,
         StringNative Description,

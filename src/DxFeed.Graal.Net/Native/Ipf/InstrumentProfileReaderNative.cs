@@ -1,5 +1,5 @@
 // <copyright file="InstrumentProfileReaderNative.cs" company="Devexperts LLC">
-// Copyright © 2022 Devexperts LLC. All rights reserved.
+// Copyright © 2024 Devexperts LLC. All rights reserved.
 // This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 // If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
 // </copyright>
@@ -43,7 +43,7 @@ internal sealed class InstrumentProfileReaderNative : JavaHandle
     [return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(StringMarshaler))]
     private static extern string? NativeResolveSourceUrl(
         nint thread,
-        [MarshalAs(UnmanagedType.LPUTF8Str)] string address);
+        [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(StringMarshaler))] string address);
 
     [DllImport(
         ImportInfo.DllName,
@@ -81,7 +81,7 @@ internal sealed class InstrumentProfileReaderNative : JavaHandle
     private static extern InstrumentProfileListNative NativeReadFromFile(
         nint thread,
         InstrumentProfileReaderNative reader,
-        [MarshalAs(UnmanagedType.LPUTF8Str)] string address,
-        [MarshalAs(UnmanagedType.LPUTF8Str)] string? user,
-        [MarshalAs(UnmanagedType.LPUTF8Str)] string? password);
+        [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(StringMarshaler))] string address,
+        [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(StringMarshaler))] string? user,
+        [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(StringMarshaler))] string? password);
 }

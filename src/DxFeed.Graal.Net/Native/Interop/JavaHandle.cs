@@ -1,11 +1,10 @@
 // <copyright file="JavaHandle.cs" company="Devexperts LLC">
-// Copyright © 2022 Devexperts LLC. All rights reserved.
+// Copyright © 2024 Devexperts LLC. All rights reserved.
 // This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 // If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
 // </copyright>
 
 using System;
-using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using DxFeed.Graal.Net.Native.ErrorHandling;
 using DxFeed.Graal.Net.Native.Graal;
@@ -27,6 +26,8 @@ namespace DxFeed.Graal.Net.Native.Interop;
 /// </remarks>
 internal abstract class JavaHandle : SafeHandle
 {
+    private static readonly Delegate OnFinalizeDelegate = new OnFinalizeDelegateType(OnFinalize);
+
     /// <summary>
     /// Initializes a new instance of the <see cref="JavaHandle"/> class.
     /// By default, this class assumes ownership of the handle.
@@ -50,6 +51,9 @@ internal abstract class JavaHandle : SafeHandle
     protected JavaHandle(IntPtr handle, bool isOwnHandle = true)
         : base(IntPtr.Zero, isOwnHandle) =>
         SetHandle(handle);
+
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    private delegate void OnFinalizeDelegateType(IntPtr thread, GCHandle netHandle);
 
     /// <summary>
     /// Gets a value indicating whether the handle is invalid.
@@ -77,7 +81,7 @@ internal abstract class JavaHandle : SafeHandle
     /// If an exception occurs during the process, any allocated resources are properly disposed of.
     /// </remarks>
     /// <exception cref="Exception">Throws an exception if the handle creation or registration process fails.</exception>
-    protected static unsafe T CreateAndRegisterFinalize<T>(object obj, Func<GCHandle, T> create)
+    protected static T CreateAndRegisterFinalize<T>(object obj, Func<GCHandle, T> create)
         where T : JavaHandle
     {
         var netHandle = GCHandle.Alloc(obj, GCHandleType.Normal);
@@ -85,7 +89,7 @@ internal abstract class JavaHandle : SafeHandle
         try
         {
             javaHandle = create(netHandle);
-            ErrorCheck.SafeCall(Import.RegisterFinalize(CurrentThread, javaHandle, &OnFinalize, netHandle));
+            ErrorCheck.SafeCall(Import.RegisterFinalize(CurrentThread, javaHandle, OnFinalizeDelegate, netHandle));
             return javaHandle;
         }
         catch (Exception)
@@ -136,8 +140,8 @@ internal abstract class JavaHandle : SafeHandle
     /// the associated .NET object will be deregistered, and its handle will be released.
     /// </remarks>
     /// <seealso cref="OnFinalize"/>
-    protected unsafe void RegisterFinalize(GCHandle netHandle) =>
-        ErrorCheck.SafeCall(Import.RegisterFinalize(CurrentThread, this, &OnFinalize, netHandle));
+    protected void RegisterFinalize(GCHandle netHandle) =>
+        ErrorCheck.SafeCall(Import.RegisterFinalize(CurrentThread, this, OnFinalizeDelegate, netHandle));
 
     /// <summary>
     /// Handles the finalization callback from the native side.
@@ -146,11 +150,6 @@ internal abstract class JavaHandle : SafeHandle
     /// <param name="netHandle">
     /// The .NET <see cref="GCHandle"/> object associated with the Java object being finalized.
     /// </param>
-    /// <remarks>
-    /// This method is marked with <see cref="UnmanagedCallersOnlyAttribute"/> to be invoked ony from native code.
-    /// It frees the <see cref="GCHandle"/> associated with the Java object when the Java object is finalized.
-    /// </remarks>
-    [UnmanagedCallersOnly(CallConvs = new[] { typeof(CallConvCdecl) })]
     private static void OnFinalize(nint thread, GCHandle netHandle)
     {
         if (netHandle.IsAllocated)
@@ -175,10 +174,10 @@ internal abstract class JavaHandle : SafeHandle
             CallingConvention = CallingConvention.Cdecl,
             CharSet = CharSet.Ansi,
             EntryPoint = "dxfg_Object_finalize")]
-        public static extern unsafe int RegisterFinalize(
+        public static extern int RegisterFinalize(
             nint thread,
             JavaHandle javaHandle,
-            delegate* unmanaged[Cdecl]<nint, GCHandle, void> listener,
+            Delegate listener,
             GCHandle netHandle);
     }
 }
