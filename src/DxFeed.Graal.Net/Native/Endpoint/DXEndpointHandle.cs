@@ -1,5 +1,5 @@
 // <copyright file="DXEndpointHandle.cs" company="Devexperts LLC">
-// Copyright © 2022 Devexperts LLC. All rights reserved.
+// Copyright © 2024 Devexperts LLC. All rights reserved.
 // This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 // If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
 // </copyright>
@@ -92,7 +92,7 @@ internal sealed unsafe class DXEndpointHandle : JavaHandle
         public static extern int SetUser(
             nint thread,
             DXEndpointHandle endpoint,
-            [MarshalAs(UnmanagedType.LPUTF8Str)] string user);
+            [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(StringMarshaler))] string user);
 
         [DllImport(
             ImportInfo.DllName,
@@ -105,7 +105,7 @@ internal sealed unsafe class DXEndpointHandle : JavaHandle
         public static extern int SetPassword(
             nint thread,
             DXEndpointHandle endpoint,
-            [MarshalAs(UnmanagedType.LPUTF8Str)] string password);
+            [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(StringMarshaler))] string password);
 
         [DllImport(
             ImportInfo.DllName,
@@ -118,7 +118,7 @@ internal sealed unsafe class DXEndpointHandle : JavaHandle
         public static extern int Connect(
             nint thread,
             DXEndpointHandle endpoint,
-            [MarshalAs(UnmanagedType.LPUTF8Str)] string address);
+            [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(StringMarshaler))] string address);
 
         [DllImport(
             ImportInfo.DllName,

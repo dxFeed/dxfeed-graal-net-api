@@ -1,5 +1,5 @@
 // <copyright file="StringMarshaler.cs" company="Devexperts LLC">
-// Copyright © 2022 Devexperts LLC. All rights reserved.
+// Copyright © 2024 Devexperts LLC. All rights reserved.
 // This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 // If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
 // </copyright>
@@ -19,7 +19,7 @@ internal sealed class StringMarshaler : AbstractMarshaler
         Instance.Value;
 
     public override object? ConvertNativeToManaged(IntPtr native) =>
-        Marshal.PtrToStringUTF8(native);
+        Utf8StringMarshaler.PtrToStringUTF8(native);
 
     public override IntPtr ConvertManagedToNative(object? managed)
     {
@@ -28,11 +28,11 @@ internal sealed class StringMarshaler : AbstractMarshaler
             throw new ArgumentException("Managed object must be a string.", nameof(managed));
         }
 
-        return Marshal.StringToCoTaskMemUTF8(str);
+        return Utf8StringMarshaler.StringToCoTaskMemUTF8(str);
     }
 
     public override void CleanUpFromManaged(IntPtr ptr) =>
-        Marshal.ZeroFreeCoTaskMemUTF8(ptr);
+        Utf8StringMarshaler.ZeroFreeCoTaskMemUTF8(ptr);
 
     public override void CleanUpFromNative(IntPtr ptr) =>
         SafeCall(Import.Release(Isolate.CurrentThread, ptr));
