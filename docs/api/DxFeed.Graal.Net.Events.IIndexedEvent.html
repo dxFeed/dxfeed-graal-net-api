@@ -16,7 +16,7 @@
       <meta name="docfx:rel" content="../../">
       
       
-      <meta name="docfx:docurl" content="https://github.com/dxFeed/dxfeed-graal-net-api/new/1.3.1/apiSpec/new?filename=DxFeed_Graal_Net_Events_IIndexedEvent.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.IIndexedEvent%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="docfx:docurl" content="https://github.com/dxFeed/dxfeed-graal-net-api/new/2.0.0/apiSpec/new?filename=DxFeed_Graal_Net_Events_IIndexedEvent.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.IIndexedEvent%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -89,7 +89,7 @@
 
 
   <h1 id="DxFeed_Graal_Net_Events_IIndexedEvent" data-uid="DxFeed.Graal.Net.Events.IIndexedEvent" class="text-break">
-Interface IIndexedEvent  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/1.3.1/src/DxFeed.Graal.Net/Events/IIndexedEvent.cs/#L20"><i class="bi bi-code-slash"></i></a>
+Interface IIndexedEvent  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/2.0.0/src/DxFeed.Graal.Net/Events/IIndexedEvent.cs/#L20"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -126,214 +126,7 @@ For more details see <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/even
     <div>
       <a class="xref" href="DxFeed.Graal.Net.Events.IEventType.html#DxFeed_Graal_Net_Events_IEventType_EventTime">IEventType.EventTime</a>
     </div>
-    <div>
-      <a class="xref" href="DxFeed.Graal.Net.Events.IEventType.html#DxFeed_Graal_Net_Events_IEventType_GetEventTypes">IEventType.GetEventTypes()</a>
-    </div>
   </dd></dl>
-
-
-
-
-
-
-  <h2 class="section" id="fields">Fields
-</h2>
-
-
-
-  <h3 id="DxFeed_Graal_Net_Events_IIndexedEvent_RemoveEvent" data-uid="DxFeed.Graal.Net.Events.IIndexedEvent.RemoveEvent">
-  RemoveEvent
-  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/1.3.1/src/DxFeed.Graal.Net/Events/IIndexedEvent.cs/#L31"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"><p>Indicates that the event with the corresponding index has to be removed.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const int RemoveEvent = 2</code></pre>
-  </div>
-
-
-
-
-  <h4 class="section">Field Value</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
-  <h3 id="DxFeed_Graal_Net_Events_IIndexedEvent_SnapShotMode" data-uid="DxFeed.Graal.Net.Events.IIndexedEvent.SnapShotMode">
-  SnapShotMode
-  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/1.3.1/src/DxFeed.Graal.Net/Events/IIndexedEvent.cs/#L64"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"><p>Is used to instruct dxFeed to use snapshot mode.
-It is intended to be used only for publishing to activate (if not yet activated) snapshot mode.
-The difference from <a class="xref" href="DxFeed.Graal.Net.Events.IIndexedEvent.html#DxFeed_Graal_Net_Events_IIndexedEvent_SnapshotBegin">SnapshotBegin</a> flag is that <a class="xref" href="DxFeed.Graal.Net.Events.IIndexedEvent.html#DxFeed_Graal_Net_Events_IIndexedEvent_SnapShotMode">SnapShotMode</a>
-only switches on snapshot mode without starting snapshot synchronization protocol.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const int SnapShotMode = 64</code></pre>
-  </div>
-
-
-
-
-  <h4 class="section">Field Value</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
-  <h3 id="DxFeed_Graal_Net_Events_IIndexedEvent_SnapshotBegin" data-uid="DxFeed.Graal.Net.Events.IIndexedEvent.SnapshotBegin">
-  SnapshotBegin
-  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/1.3.1/src/DxFeed.Graal.Net/Events/IIndexedEvent.cs/#L36"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"><p>Indicates when the loading of a snapshot starts.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const int SnapshotBegin = 4</code></pre>
-  </div>
-
-
-
-
-  <h4 class="section">Field Value</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
-  <h3 id="DxFeed_Graal_Net_Events_IIndexedEvent_SnapshotEnd" data-uid="DxFeed.Graal.Net.Events.IIndexedEvent.SnapshotEnd">
-  SnapshotEnd
-  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/1.3.1/src/DxFeed.Graal.Net/Events/IIndexedEvent.cs/#L46"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"><p><a class="xref" href="DxFeed.Graal.Net.Events.IIndexedEvent.html#DxFeed_Graal_Net_Events_IIndexedEvent_SnapshotEnd">SnapshotEnd</a> or <a class="xref" href="DxFeed.Graal.Net.Events.IIndexedEvent.html#DxFeed_Graal_Net_Events_IIndexedEvent_SnapshotSnip">SnapshotSnip</a> indicates the end of a snapshot.
-The difference between <a class="xref" href="DxFeed.Graal.Net.Events.IIndexedEvent.html#DxFeed_Graal_Net_Events_IIndexedEvent_SnapshotEnd">SnapshotEnd</a>  and <a class="xref" href="DxFeed.Graal.Net.Events.IIndexedEvent.html#DxFeed_Graal_Net_Events_IIndexedEvent_SnapshotSnip">SnapshotSnip</a> is the following:
-<a class="xref" href="DxFeed.Graal.Net.Events.IIndexedEvent.html#DxFeed_Graal_Net_Events_IIndexedEvent_SnapshotEnd">SnapshotEnd</a> indicates that the data source sent all the data pertaining to
-the subscription for the corresponding indexed event,
-while <a class="xref" href="DxFeed.Graal.Net.Events.IIndexedEvent.html#DxFeed_Graal_Net_Events_IIndexedEvent_SnapshotSnip">SnapshotSnip</a> indicates that some limit on the amount of data was reached
-and while there still might be more data available, it will not be provided.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const int SnapshotEnd = 8</code></pre>
-  </div>
-
-
-
-
-  <h4 class="section">Field Value</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
-  <h3 id="DxFeed_Graal_Net_Events_IIndexedEvent_SnapshotSnip" data-uid="DxFeed.Graal.Net.Events.IIndexedEvent.SnapshotSnip">
-  SnapshotSnip
-  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/1.3.1/src/DxFeed.Graal.Net/Events/IIndexedEvent.cs/#L56"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"><p><a class="xref" href="DxFeed.Graal.Net.Events.IIndexedEvent.html#DxFeed_Graal_Net_Events_IIndexedEvent_SnapshotEnd">SnapshotEnd</a> or <a class="xref" href="DxFeed.Graal.Net.Events.IIndexedEvent.html#DxFeed_Graal_Net_Events_IIndexedEvent_SnapshotSnip">SnapshotSnip</a> indicates the end of a snapshot.
-The difference between <a class="xref" href="DxFeed.Graal.Net.Events.IIndexedEvent.html#DxFeed_Graal_Net_Events_IIndexedEvent_SnapshotEnd">SnapshotEnd</a>  and <a class="xref" href="DxFeed.Graal.Net.Events.IIndexedEvent.html#DxFeed_Graal_Net_Events_IIndexedEvent_SnapshotSnip">SnapshotSnip</a> is the following:
-<a class="xref" href="DxFeed.Graal.Net.Events.IIndexedEvent.html#DxFeed_Graal_Net_Events_IIndexedEvent_SnapshotEnd">SnapshotEnd</a> indicates that the data source sent all the data pertaining to
-the subscription for the corresponding indexed event,
-while <a class="xref" href="DxFeed.Graal.Net.Events.IIndexedEvent.html#DxFeed_Graal_Net_Events_IIndexedEvent_SnapshotSnip">SnapshotSnip</a> indicates that some limit on the amount of data was reached
-and while there still might be more data available, it will not be provided.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const int SnapshotSnip = 16</code></pre>
-  </div>
-
-
-
-
-  <h4 class="section">Field Value</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
-    <dd></dd>
-  </dl>
-
-
-
-
-
-
-
-
-
-
-  <h3 id="DxFeed_Graal_Net_Events_IIndexedEvent_TxPending" data-uid="DxFeed.Graal.Net.Events.IIndexedEvent.TxPending">
-  TxPending
-  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/1.3.1/src/DxFeed.Graal.Net/Events/IIndexedEvent.cs/#L26"><i class="bi bi-code-slash"></i></a>
-  </h3>
-
-  <div class="markdown level1 summary"><p>Indicates a pending transactional update. When <a class="xref" href="DxFeed.Graal.Net.Events.IIndexedEvent.html#DxFeed_Graal_Net_Events_IIndexedEvent_TxPending">TxPending</a> is 1,
-it means that an ongoing transaction update, that spans multiple events, is in process.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public const int TxPending = 1</code></pre>
-  </div>
-
-
-
-
-  <h4 class="section">Field Value</h4>
-  <dl class="parameters">
-    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
-    <dd></dd>
-  </dl>
-
-
-
 
 
 
@@ -348,7 +141,7 @@ it means that an ongoing transaction update, that spans multiple events, is in p
 
   <h3 id="DxFeed_Graal_Net_Events_IIndexedEvent_EventFlags" data-uid="DxFeed.Graal.Net.Events.IIndexedEvent.EventFlags">
   EventFlags
-  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/1.3.1/src/DxFeed.Graal.Net/Events/IIndexedEvent.cs/#L74"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/2.0.0/src/DxFeed.Graal.Net/Events/IIndexedEvent.cs/#L30"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Gets or sets transactional event flags.</p>
@@ -380,7 +173,7 @@ it means that an ongoing transaction update, that spans multiple events, is in p
 
   <h3 id="DxFeed_Graal_Net_Events_IIndexedEvent_EventSource" data-uid="DxFeed.Graal.Net.Events.IIndexedEvent.EventSource">
   EventSource
-  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/1.3.1/src/DxFeed.Graal.Net/Events/IIndexedEvent.cs/#L69"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/2.0.0/src/DxFeed.Graal.Net/Events/IIndexedEvent.cs/#L25"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Gets source of this event.</p>
@@ -412,7 +205,7 @@ it means that an ongoing transaction update, that spans multiple events, is in p
 
   <h3 id="DxFeed_Graal_Net_Events_IIndexedEvent_Index" data-uid="DxFeed.Graal.Net.Events.IIndexedEvent.Index">
   Index
-  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/1.3.1/src/DxFeed.Graal.Net/Events/IIndexedEvent.cs/#L79"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/2.0.0/src/DxFeed.Graal.Net/Events/IIndexedEvent.cs/#L35"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Gets or sets unique per-symbol index of this event.</p>

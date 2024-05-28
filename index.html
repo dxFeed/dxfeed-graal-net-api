@@ -16,7 +16,7 @@
       <meta name="docfx:rel" content="">
       
       
-      <meta name="docfx:docurl" content="https://github.com/dxFeed/dxfeed-graal-net-api/blob/1.3.1/index.md/#L1">
+      <meta name="docfx:docurl" content="https://github.com/dxFeed/dxfeed-graal-net-api/blob/2.0.0/index.md/#L1">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -86,9 +86,9 @@ the <a href="#overview">Overview</a> section.<br></p>
 <p><img src="https://github.com/dxFeed/dxfeed-graal-net-api/actions/workflows/build.yml/badge.svg" alt="Build">
 <img src="https://github.com/dxFeed/dxfeed-graal-net-api/actions/workflows/codeql.yml/badge.svg" alt="CodeQL">
 <img src="https://img.shields.io/badge/platform-win--x64%20%7C%20linux--x64%20%7C%20osx--x64%20%7C%20osx--arm64-lightgrey" alt="Platform">
-<a href="https://dotnet.microsoft.com/en-us/"><img src="https://img.shields.io/badge/.NET_version-net6.0%20%7C%20net7.0%20%7C%20net8.0-blueviolet" alt="NET"></a>
+<a href="https://dotnet.microsoft.com/en-us/"><img src="https://img.shields.io/badge/.NET_version-netstandard2.0%20%7C%20net6.0%20%7C%20net7.0%20%7C%20net8.0-blueviolet" alt="NET"></a>
 <a href="https://github.com/dxFeed/dxfeed-graal-net-api/releases/latest"><img src="https://img.shields.io/github/v/release/dxFeed/dxfeed-graal-net-api" alt="Release"></a>
-<a href="https://dxfeed.jfrog.io/artifactory/nuget-open/com/dxfeed/graal-net/"><img src="https://img.shields.io/badge/nuget-1.3.1-blue" alt="Nuget"></a>
+<a href="https://dxfeed.jfrog.io/artifactory/nuget-open/com/dxfeed/graal-net/"><img src="https://img.shields.io/badge/nuget-2.0.0-blue" alt="Nuget"></a>
 <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/master/LICENSE"><img src="https://img.shields.io/badge/license-MPL--2.0-orange" alt="License"></a></p>
 <h2 id="table-of-contents">Table of Contents</h2>
 <ul>
@@ -345,14 +345,14 @@ will be amended, <em>&quot;best practices&quot;</em>, specific language restrict
 </table>
 <h4 id="requirements-1">Requirements</h4>
 <ul>
-<li>.NET 6.0+ (not required for self-contained assemblies)</li>
+<li>.NET compatible with .NET Standard 2.0 (not required for self-contained assemblies)</li>
 <li><a href="https://aka.ms/vs/17/release/vc_redist.x64.exe">Visual C++ Redistributable for Visual Studio 2015</a></li>
 </ul>
 <h3 id="linux">Linux</h3>
 <p>Only x64 versions are supported.</p>
 <h4 id="requirements-2">Requirements</h4>
 <ul>
-<li>.NET 6.0+ (not required for self-contained assemblies)</li>
+<li>.NET compatible with .NET Standard 2.0 (not required for self-contained assemblies)</li>
 </ul>
 <h4 id="libc-compatibility">Libc compatibility</h4>
 <ul>
@@ -386,12 +386,15 @@ will be amended, <em>&quot;best practices&quot;</em>, specific language restrict
 <p>Is supported in the Rosetta 2 x64 emulator.</p>
 <h4 id="requirements-3">Requirements</h4>
 <ul>
-<li>.NET 6.0+ (not required for self-contained assemblies)</li>
+<li>.NET compatible with .NET Standard 2.0 (not required for self-contained assemblies)</li>
 </ul>
 <h2 id="installation">Installation</h2>
-<p>Add this <a href="https://dxfeed.jfrog.io/artifactory/api/nuget/v3/nuget-open">package source</a> to NuGet config.
-<br>
-For example, you can create a <a href="NuGet.Config">NuGet.Config</a> file in your solution folder with the following content:</p>
+<p>Add this <a href="https://dxfeed.jfrog.io/artifactory/api/nuget/v3/nuget-open">package source</a> to NuGet config.</p>
+<blockquote>
+<p>If you are using .NET Framework and building for platform target <code>AnyCPU</code>, be sure to uncheck <code>Prefer 32-bit</code> in
+<code>Properties-&gt;Build </code>for the project. We only support 64-bit builds.</p>
+</blockquote>
+<p>For example, you can create a <a href="NuGet.Config">NuGet.Config</a> file in your solution folder with the following content:</p>
 <pre><code class="lang-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
 
 &lt;configuration&gt;
@@ -520,8 +523,10 @@ is a simple demonstration of how to write events to a tape file</li>
 demonstration of how to get Instrument Profiles</li>
 <li class="task-list-item"><input disabled="disabled" type="checkbox" checked="checked"> <a href="https://github.com/dxFeed/dxfeed-graal-net-api/tree/main/samples/DxFeedLiveIpfSample">DxFeedLiveIpfSample</a> is a
 simple demonstration of how to get live updates for Instrument Profiles</li>
-<li class="task-list-item"><input disabled="disabled" type="checkbox" checked="checked"> <a href="https://github.com/dxFeed/dxfeed-graal-net-api/tree/main/samples/ScheduleSample">ScheduleSample</a> is a simple demonstration of how to get various scheduling information for instruments</li>
-<li class="task-list-item"><input disabled="disabled" type="checkbox" checked="checked"> <a href="https://github.com/dxFeed/dxfeed-graal-net-api/tree/main/samples/FetchDailyCandles">FetchDailyCandles</a> is a simple
+<li class="task-list-item"><input disabled="disabled" type="checkbox" checked="checked"> <a href="https://github.com/dxFeed/dxfeed-graal-net-api/tree/main/samples/ScheduleSample">ScheduleSample</a> is a simple
+demonstration of how to get various scheduling information for instruments</li>
+<li class="task-list-item"><input disabled="disabled" type="checkbox" checked="checked"> <a href="https://github.com/dxFeed/dxfeed-graal-net-api/tree/main/samples/FetchDailyCandles">FetchDailyCandles</a> is a
+simple
 demonstration of how to fetch last N-days of candles for a specified symbol</li>
 </ul>
 <h2 id="current-state">Current State</h2>
@@ -620,8 +625,11 @@ represents subscription to a specific source of indexed events</p>
 represents a  <em>wildcard</em> subscription to all events of the specific event type</p>
 </li>
 <li class="task-list-item"><p><input disabled="disabled" type="checkbox" checked="checked"> <a href="https://dxfeed.github.io/dxfeed-graal-net-api/docs/api/DxFeed.Graal.Net.Events.Candles.CandleSymbol.html">CandleSymbol</a>
-is a symbol used with <a href="https://dxfeed.github.io/dxfeed-graal-net-api/docs/api/DxFeed.Graal.Net.Api.DXFeedSubscription.html">DXFeedSubscription</a>
-class to subscribe for <a href="https://dxfeed.github.io/dxfeed-graal-net-api/docs/api/DxFeed.Graal.Net.Events.Candles.Candle.html">Candle</a> events</p>
+is a symbol used
+with <a href="https://dxfeed.github.io/dxfeed-graal-net-api/docs/api/DxFeed.Graal.Net.Api.DXFeedSubscription.html">DXFeedSubscription</a>
+class to subscribe
+for <a href="https://dxfeed.github.io/dxfeed-graal-net-api/docs/api/DxFeed.Graal.Net.Events.Candles.Candle.html">Candle</a>
+events</p>
 </li>
 </ul>
 <h3 id="subscriptions--models">Subscriptions &amp; Models</h3>
@@ -643,7 +651,8 @@ requests time series events for the specified event type, symbol, and time range
 represents basic profile information about a market instrument
 (<a href="https://github.com/dxFeed/dxfeed-graal-net-api/tree/main/samples/DxFeedIpfConnect">DxFeedIpfConnect</a>)</p>
 </li>
-<li class="task-list-item"><p><input disabled="disabled" type="checkbox" checked="checked"> <a href="https://dxfeed.github.io/dxfeed-graal-net-api/docs/api/DxFeed.Graal.Net.Ipf.InstrumentProfileReader.html">InstrumentProfileReader</a> reads
+<li class="task-list-item"><p><input disabled="disabled" type="checkbox" checked="checked"> <a href="https://dxfeed.github.io/dxfeed-graal-net-api/docs/api/DxFeed.Graal.Net.Ipf.InstrumentProfileReader.html">InstrumentProfileReader</a>
+reads
 instrument profiles from the stream using Instrument Profile Format (IPF)</p>
 </li>
 <li class="task-list-item"><p><input disabled="disabled" type="checkbox" checked="checked"> <a href="https://dxfeed.github.io/dxfeed-graal-net-api/docs/api/DxFeed.Graal.Net.Ipf.Live.InstrumentProfileCollector.html">InstrumentProfileCollector</a>

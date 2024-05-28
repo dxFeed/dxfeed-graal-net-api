@@ -347,6 +347,19 @@ references:
   isSpec: "True"
   fullName: DxFeed.Graal.Net.Api.DXEndpoint.Dispose
   nameWithType: DXEndpoint.Dispose
+- uid: DxFeed.Graal.Net.Api.DXEndpoint.GetEventTypes
+  name: GetEventTypes()
+  href: docs/api/DxFeed.Graal.Net.Api.DXEndpoint.html#DxFeed_Graal_Net_Api_DXEndpoint_GetEventTypes
+  commentId: M:DxFeed.Graal.Net.Api.DXEndpoint.GetEventTypes
+  fullName: DxFeed.Graal.Net.Api.DXEndpoint.GetEventTypes()
+  nameWithType: DXEndpoint.GetEventTypes()
+- uid: DxFeed.Graal.Net.Api.DXEndpoint.GetEventTypes*
+  name: GetEventTypes
+  href: docs/api/DxFeed.Graal.Net.Api.DXEndpoint.html#DxFeed_Graal_Net_Api_DXEndpoint_GetEventTypes_
+  commentId: Overload:DxFeed.Graal.Net.Api.DXEndpoint.GetEventTypes
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Api.DXEndpoint.GetEventTypes
+  nameWithType: DXEndpoint.GetEventTypes
 - uid: DxFeed.Graal.Net.Api.DXEndpoint.GetFeed
   name: GetFeed()
   href: docs/api/DxFeed.Graal.Net.Api.DXEndpoint.html#DxFeed_Graal_Net_Api_DXEndpoint_GetFeed
@@ -3328,6 +3341,126 @@ references:
   isSpec: "True"
   fullName: DxFeed.Graal.Net.Events.EventCodeAttribute.GetEventCodes
   nameWithType: EventCodeAttribute.GetEventCodes
+- uid: DxFeed.Graal.Net.Events.EventFlags
+  name: EventFlags
+  href: docs/api/DxFeed.Graal.Net.Events.EventFlags.html
+  commentId: T:DxFeed.Graal.Net.Events.EventFlags
+  fullName: DxFeed.Graal.Net.Events.EventFlags
+  nameWithType: EventFlags
+- uid: DxFeed.Graal.Net.Events.EventFlags.IsPending(DxFeed.Graal.Net.Events.IIndexedEvent)
+  name: IsPending(IIndexedEvent)
+  href: docs/api/DxFeed.Graal.Net.Events.EventFlags.html#DxFeed_Graal_Net_Events_EventFlags_IsPending_DxFeed_Graal_Net_Events_IIndexedEvent_
+  commentId: M:DxFeed.Graal.Net.Events.EventFlags.IsPending(DxFeed.Graal.Net.Events.IIndexedEvent)
+  fullName: DxFeed.Graal.Net.Events.EventFlags.IsPending(DxFeed.Graal.Net.Events.IIndexedEvent)
+  nameWithType: EventFlags.IsPending(IIndexedEvent)
+- uid: DxFeed.Graal.Net.Events.EventFlags.IsPending*
+  name: IsPending
+  href: docs/api/DxFeed.Graal.Net.Events.EventFlags.html#DxFeed_Graal_Net_Events_EventFlags_IsPending_
+  commentId: Overload:DxFeed.Graal.Net.Events.EventFlags.IsPending
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Events.EventFlags.IsPending
+  nameWithType: EventFlags.IsPending
+- uid: DxFeed.Graal.Net.Events.EventFlags.IsRemove(DxFeed.Graal.Net.Events.IIndexedEvent)
+  name: IsRemove(IIndexedEvent)
+  href: docs/api/DxFeed.Graal.Net.Events.EventFlags.html#DxFeed_Graal_Net_Events_EventFlags_IsRemove_DxFeed_Graal_Net_Events_IIndexedEvent_
+  commentId: M:DxFeed.Graal.Net.Events.EventFlags.IsRemove(DxFeed.Graal.Net.Events.IIndexedEvent)
+  fullName: DxFeed.Graal.Net.Events.EventFlags.IsRemove(DxFeed.Graal.Net.Events.IIndexedEvent)
+  nameWithType: EventFlags.IsRemove(IIndexedEvent)
+- uid: DxFeed.Graal.Net.Events.EventFlags.IsRemove*
+  name: IsRemove
+  href: docs/api/DxFeed.Graal.Net.Events.EventFlags.html#DxFeed_Graal_Net_Events_EventFlags_IsRemove_
+  commentId: Overload:DxFeed.Graal.Net.Events.EventFlags.IsRemove
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Events.EventFlags.IsRemove
+  nameWithType: EventFlags.IsRemove
+- uid: DxFeed.Graal.Net.Events.EventFlags.IsSnapshotBegin(DxFeed.Graal.Net.Events.IIndexedEvent)
+  name: IsSnapshotBegin(IIndexedEvent)
+  href: docs/api/DxFeed.Graal.Net.Events.EventFlags.html#DxFeed_Graal_Net_Events_EventFlags_IsSnapshotBegin_DxFeed_Graal_Net_Events_IIndexedEvent_
+  commentId: M:DxFeed.Graal.Net.Events.EventFlags.IsSnapshotBegin(DxFeed.Graal.Net.Events.IIndexedEvent)
+  fullName: DxFeed.Graal.Net.Events.EventFlags.IsSnapshotBegin(DxFeed.Graal.Net.Events.IIndexedEvent)
+  nameWithType: EventFlags.IsSnapshotBegin(IIndexedEvent)
+- uid: DxFeed.Graal.Net.Events.EventFlags.IsSnapshotBegin*
+  name: IsSnapshotBegin
+  href: docs/api/DxFeed.Graal.Net.Events.EventFlags.html#DxFeed_Graal_Net_Events_EventFlags_IsSnapshotBegin_
+  commentId: Overload:DxFeed.Graal.Net.Events.EventFlags.IsSnapshotBegin
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Events.EventFlags.IsSnapshotBegin
+  nameWithType: EventFlags.IsSnapshotBegin
+- uid: DxFeed.Graal.Net.Events.EventFlags.IsSnapshotEnd(DxFeed.Graal.Net.Events.IIndexedEvent)
+  name: IsSnapshotEnd(IIndexedEvent)
+  href: docs/api/DxFeed.Graal.Net.Events.EventFlags.html#DxFeed_Graal_Net_Events_EventFlags_IsSnapshotEnd_DxFeed_Graal_Net_Events_IIndexedEvent_
+  commentId: M:DxFeed.Graal.Net.Events.EventFlags.IsSnapshotEnd(DxFeed.Graal.Net.Events.IIndexedEvent)
+  fullName: DxFeed.Graal.Net.Events.EventFlags.IsSnapshotEnd(DxFeed.Graal.Net.Events.IIndexedEvent)
+  nameWithType: EventFlags.IsSnapshotEnd(IIndexedEvent)
+- uid: DxFeed.Graal.Net.Events.EventFlags.IsSnapshotEnd*
+  name: IsSnapshotEnd
+  href: docs/api/DxFeed.Graal.Net.Events.EventFlags.html#DxFeed_Graal_Net_Events_EventFlags_IsSnapshotEnd_
+  commentId: Overload:DxFeed.Graal.Net.Events.EventFlags.IsSnapshotEnd
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Events.EventFlags.IsSnapshotEnd
+  nameWithType: EventFlags.IsSnapshotEnd
+- uid: DxFeed.Graal.Net.Events.EventFlags.IsSnapshotEndOrSnip(DxFeed.Graal.Net.Events.IIndexedEvent)
+  name: IsSnapshotEndOrSnip(IIndexedEvent)
+  href: docs/api/DxFeed.Graal.Net.Events.EventFlags.html#DxFeed_Graal_Net_Events_EventFlags_IsSnapshotEndOrSnip_DxFeed_Graal_Net_Events_IIndexedEvent_
+  commentId: M:DxFeed.Graal.Net.Events.EventFlags.IsSnapshotEndOrSnip(DxFeed.Graal.Net.Events.IIndexedEvent)
+  fullName: DxFeed.Graal.Net.Events.EventFlags.IsSnapshotEndOrSnip(DxFeed.Graal.Net.Events.IIndexedEvent)
+  nameWithType: EventFlags.IsSnapshotEndOrSnip(IIndexedEvent)
+- uid: DxFeed.Graal.Net.Events.EventFlags.IsSnapshotEndOrSnip*
+  name: IsSnapshotEndOrSnip
+  href: docs/api/DxFeed.Graal.Net.Events.EventFlags.html#DxFeed_Graal_Net_Events_EventFlags_IsSnapshotEndOrSnip_
+  commentId: Overload:DxFeed.Graal.Net.Events.EventFlags.IsSnapshotEndOrSnip
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Events.EventFlags.IsSnapshotEndOrSnip
+  nameWithType: EventFlags.IsSnapshotEndOrSnip
+- uid: DxFeed.Graal.Net.Events.EventFlags.IsSnapshotSnip(DxFeed.Graal.Net.Events.IIndexedEvent)
+  name: IsSnapshotSnip(IIndexedEvent)
+  href: docs/api/DxFeed.Graal.Net.Events.EventFlags.html#DxFeed_Graal_Net_Events_EventFlags_IsSnapshotSnip_DxFeed_Graal_Net_Events_IIndexedEvent_
+  commentId: M:DxFeed.Graal.Net.Events.EventFlags.IsSnapshotSnip(DxFeed.Graal.Net.Events.IIndexedEvent)
+  fullName: DxFeed.Graal.Net.Events.EventFlags.IsSnapshotSnip(DxFeed.Graal.Net.Events.IIndexedEvent)
+  nameWithType: EventFlags.IsSnapshotSnip(IIndexedEvent)
+- uid: DxFeed.Graal.Net.Events.EventFlags.IsSnapshotSnip*
+  name: IsSnapshotSnip
+  href: docs/api/DxFeed.Graal.Net.Events.EventFlags.html#DxFeed_Graal_Net_Events_EventFlags_IsSnapshotSnip_
+  commentId: Overload:DxFeed.Graal.Net.Events.EventFlags.IsSnapshotSnip
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Events.EventFlags.IsSnapshotSnip
+  nameWithType: EventFlags.IsSnapshotSnip
+- uid: DxFeed.Graal.Net.Events.EventFlags.RemoveEvent
+  name: RemoveEvent
+  href: docs/api/DxFeed.Graal.Net.Events.EventFlags.html#DxFeed_Graal_Net_Events_EventFlags_RemoveEvent
+  commentId: F:DxFeed.Graal.Net.Events.EventFlags.RemoveEvent
+  fullName: DxFeed.Graal.Net.Events.EventFlags.RemoveEvent
+  nameWithType: EventFlags.RemoveEvent
+- uid: DxFeed.Graal.Net.Events.EventFlags.SnapShotMode
+  name: SnapShotMode
+  href: docs/api/DxFeed.Graal.Net.Events.EventFlags.html#DxFeed_Graal_Net_Events_EventFlags_SnapShotMode
+  commentId: F:DxFeed.Graal.Net.Events.EventFlags.SnapShotMode
+  fullName: DxFeed.Graal.Net.Events.EventFlags.SnapShotMode
+  nameWithType: EventFlags.SnapShotMode
+- uid: DxFeed.Graal.Net.Events.EventFlags.SnapshotBegin
+  name: SnapshotBegin
+  href: docs/api/DxFeed.Graal.Net.Events.EventFlags.html#DxFeed_Graal_Net_Events_EventFlags_SnapshotBegin
+  commentId: F:DxFeed.Graal.Net.Events.EventFlags.SnapshotBegin
+  fullName: DxFeed.Graal.Net.Events.EventFlags.SnapshotBegin
+  nameWithType: EventFlags.SnapshotBegin
+- uid: DxFeed.Graal.Net.Events.EventFlags.SnapshotEnd
+  name: SnapshotEnd
+  href: docs/api/DxFeed.Graal.Net.Events.EventFlags.html#DxFeed_Graal_Net_Events_EventFlags_SnapshotEnd
+  commentId: F:DxFeed.Graal.Net.Events.EventFlags.SnapshotEnd
+  fullName: DxFeed.Graal.Net.Events.EventFlags.SnapshotEnd
+  nameWithType: EventFlags.SnapshotEnd
+- uid: DxFeed.Graal.Net.Events.EventFlags.SnapshotSnip
+  name: SnapshotSnip
+  href: docs/api/DxFeed.Graal.Net.Events.EventFlags.html#DxFeed_Graal_Net_Events_EventFlags_SnapshotSnip
+  commentId: F:DxFeed.Graal.Net.Events.EventFlags.SnapshotSnip
+  fullName: DxFeed.Graal.Net.Events.EventFlags.SnapshotSnip
+  nameWithType: EventFlags.SnapshotSnip
+- uid: DxFeed.Graal.Net.Events.EventFlags.TxPending
+  name: TxPending
+  href: docs/api/DxFeed.Graal.Net.Events.EventFlags.html#DxFeed_Graal_Net_Events_EventFlags_TxPending
+  commentId: F:DxFeed.Graal.Net.Events.EventFlags.TxPending
+  fullName: DxFeed.Graal.Net.Events.EventFlags.TxPending
+  nameWithType: EventFlags.TxPending
 - uid: DxFeed.Graal.Net.Events.IEventType
   name: IEventType
   href: docs/api/DxFeed.Graal.Net.Events.IEventType.html
@@ -3360,19 +3493,6 @@ references:
   isSpec: "True"
   fullName: DxFeed.Graal.Net.Events.IEventType.EventTime
   nameWithType: IEventType.EventTime
-- uid: DxFeed.Graal.Net.Events.IEventType.GetEventTypes
-  name: GetEventTypes()
-  href: docs/api/DxFeed.Graal.Net.Events.IEventType.html#DxFeed_Graal_Net_Events_IEventType_GetEventTypes
-  commentId: M:DxFeed.Graal.Net.Events.IEventType.GetEventTypes
-  fullName: DxFeed.Graal.Net.Events.IEventType.GetEventTypes()
-  nameWithType: IEventType.GetEventTypes()
-- uid: DxFeed.Graal.Net.Events.IEventType.GetEventTypes*
-  name: GetEventTypes
-  href: docs/api/DxFeed.Graal.Net.Events.IEventType.html#DxFeed_Graal_Net_Events_IEventType_GetEventTypes_
-  commentId: Overload:DxFeed.Graal.Net.Events.IEventType.GetEventTypes
-  isSpec: "True"
-  fullName: DxFeed.Graal.Net.Events.IEventType.GetEventTypes
-  nameWithType: IEventType.GetEventTypes
 - uid: DxFeed.Graal.Net.Events.IIndexedEvent
   name: IIndexedEvent
   href: docs/api/DxFeed.Graal.Net.Events.IIndexedEvent.html
@@ -3418,42 +3538,6 @@ references:
   isSpec: "True"
   fullName: DxFeed.Graal.Net.Events.IIndexedEvent.Index
   nameWithType: IIndexedEvent.Index
-- uid: DxFeed.Graal.Net.Events.IIndexedEvent.RemoveEvent
-  name: RemoveEvent
-  href: docs/api/DxFeed.Graal.Net.Events.IIndexedEvent.html#DxFeed_Graal_Net_Events_IIndexedEvent_RemoveEvent
-  commentId: F:DxFeed.Graal.Net.Events.IIndexedEvent.RemoveEvent
-  fullName: DxFeed.Graal.Net.Events.IIndexedEvent.RemoveEvent
-  nameWithType: IIndexedEvent.RemoveEvent
-- uid: DxFeed.Graal.Net.Events.IIndexedEvent.SnapShotMode
-  name: SnapShotMode
-  href: docs/api/DxFeed.Graal.Net.Events.IIndexedEvent.html#DxFeed_Graal_Net_Events_IIndexedEvent_SnapShotMode
-  commentId: F:DxFeed.Graal.Net.Events.IIndexedEvent.SnapShotMode
-  fullName: DxFeed.Graal.Net.Events.IIndexedEvent.SnapShotMode
-  nameWithType: IIndexedEvent.SnapShotMode
-- uid: DxFeed.Graal.Net.Events.IIndexedEvent.SnapshotBegin
-  name: SnapshotBegin
-  href: docs/api/DxFeed.Graal.Net.Events.IIndexedEvent.html#DxFeed_Graal_Net_Events_IIndexedEvent_SnapshotBegin
-  commentId: F:DxFeed.Graal.Net.Events.IIndexedEvent.SnapshotBegin
-  fullName: DxFeed.Graal.Net.Events.IIndexedEvent.SnapshotBegin
-  nameWithType: IIndexedEvent.SnapshotBegin
-- uid: DxFeed.Graal.Net.Events.IIndexedEvent.SnapshotEnd
-  name: SnapshotEnd
-  href: docs/api/DxFeed.Graal.Net.Events.IIndexedEvent.html#DxFeed_Graal_Net_Events_IIndexedEvent_SnapshotEnd
-  commentId: F:DxFeed.Graal.Net.Events.IIndexedEvent.SnapshotEnd
-  fullName: DxFeed.Graal.Net.Events.IIndexedEvent.SnapshotEnd
-  nameWithType: IIndexedEvent.SnapshotEnd
-- uid: DxFeed.Graal.Net.Events.IIndexedEvent.SnapshotSnip
-  name: SnapshotSnip
-  href: docs/api/DxFeed.Graal.Net.Events.IIndexedEvent.html#DxFeed_Graal_Net_Events_IIndexedEvent_SnapshotSnip
-  commentId: F:DxFeed.Graal.Net.Events.IIndexedEvent.SnapshotSnip
-  fullName: DxFeed.Graal.Net.Events.IIndexedEvent.SnapshotSnip
-  nameWithType: IIndexedEvent.SnapshotSnip
-- uid: DxFeed.Graal.Net.Events.IIndexedEvent.TxPending
-  name: TxPending
-  href: docs/api/DxFeed.Graal.Net.Events.IIndexedEvent.html#DxFeed_Graal_Net_Events_IIndexedEvent_TxPending
-  commentId: F:DxFeed.Graal.Net.Events.IIndexedEvent.TxPending
-  fullName: DxFeed.Graal.Net.Events.IIndexedEvent.TxPending
-  nameWithType: IIndexedEvent.TxPending
 - uid: DxFeed.Graal.Net.Events.ILastingEvent
   name: ILastingEvent
   href: docs/api/DxFeed.Graal.Net.Events.ILastingEvent.html
@@ -9229,6 +9313,60 @@ references:
   commentId: F:DxFeed.Graal.Net.Native.Events.EventCodeNative.Underlying
   fullName: DxFeed.Graal.Net.Native.Events.EventCodeNative.Underlying
   nameWithType: EventCodeNative.Underlying
+- uid: DxFeed.Graal.Net.Native.Interop
+  name: DxFeed.Graal.Net.Native.Interop
+  href: docs/api/DxFeed.Graal.Net.Native.Interop.html
+  commentId: N:DxFeed.Graal.Net.Native.Interop
+  fullName: DxFeed.Graal.Net.Native.Interop
+  nameWithType: DxFeed.Graal.Net.Native.Interop
+- uid: DxFeed.Graal.Net.Native.Interop.Utf8StringMarshaler
+  name: Utf8StringMarshaler
+  href: docs/api/DxFeed.Graal.Net.Native.Interop.Utf8StringMarshaler.html
+  commentId: T:DxFeed.Graal.Net.Native.Interop.Utf8StringMarshaler
+  fullName: DxFeed.Graal.Net.Native.Interop.Utf8StringMarshaler
+  nameWithType: Utf8StringMarshaler
+- uid: DxFeed.Graal.Net.Native.Interop.Utf8StringMarshaler.PtrToStringUTF8(System.IntPtr)
+  name: PtrToStringUTF8(IntPtr)
+  href: docs/api/DxFeed.Graal.Net.Native.Interop.Utf8StringMarshaler.html#DxFeed_Graal_Net_Native_Interop_Utf8StringMarshaler_PtrToStringUTF8_System_IntPtr_
+  commentId: M:DxFeed.Graal.Net.Native.Interop.Utf8StringMarshaler.PtrToStringUTF8(System.IntPtr)
+  fullName: DxFeed.Graal.Net.Native.Interop.Utf8StringMarshaler.PtrToStringUTF8(System.IntPtr)
+  nameWithType: Utf8StringMarshaler.PtrToStringUTF8(IntPtr)
+- uid: DxFeed.Graal.Net.Native.Interop.Utf8StringMarshaler.PtrToStringUTF8*
+  name: PtrToStringUTF8
+  href: docs/api/DxFeed.Graal.Net.Native.Interop.Utf8StringMarshaler.html#DxFeed_Graal_Net_Native_Interop_Utf8StringMarshaler_PtrToStringUTF8_
+  commentId: Overload:DxFeed.Graal.Net.Native.Interop.Utf8StringMarshaler.PtrToStringUTF8
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Native.Interop.Utf8StringMarshaler.PtrToStringUTF8
+  nameWithType: Utf8StringMarshaler.PtrToStringUTF8
+- uid: DxFeed.Graal.Net.Native.Interop.Utf8StringMarshaler.StringToCoTaskMemUTF8(System.String)
+  name: StringToCoTaskMemUTF8(string?)
+  href: docs/api/DxFeed.Graal.Net.Native.Interop.Utf8StringMarshaler.html#DxFeed_Graal_Net_Native_Interop_Utf8StringMarshaler_StringToCoTaskMemUTF8_System_String_
+  commentId: M:DxFeed.Graal.Net.Native.Interop.Utf8StringMarshaler.StringToCoTaskMemUTF8(System.String)
+  name.vb: StringToCoTaskMemUTF8(String)
+  fullName: DxFeed.Graal.Net.Native.Interop.Utf8StringMarshaler.StringToCoTaskMemUTF8(string?)
+  fullName.vb: DxFeed.Graal.Net.Native.Interop.Utf8StringMarshaler.StringToCoTaskMemUTF8(String)
+  nameWithType: Utf8StringMarshaler.StringToCoTaskMemUTF8(string?)
+  nameWithType.vb: Utf8StringMarshaler.StringToCoTaskMemUTF8(String)
+- uid: DxFeed.Graal.Net.Native.Interop.Utf8StringMarshaler.StringToCoTaskMemUTF8*
+  name: StringToCoTaskMemUTF8
+  href: docs/api/DxFeed.Graal.Net.Native.Interop.Utf8StringMarshaler.html#DxFeed_Graal_Net_Native_Interop_Utf8StringMarshaler_StringToCoTaskMemUTF8_
+  commentId: Overload:DxFeed.Graal.Net.Native.Interop.Utf8StringMarshaler.StringToCoTaskMemUTF8
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Native.Interop.Utf8StringMarshaler.StringToCoTaskMemUTF8
+  nameWithType: Utf8StringMarshaler.StringToCoTaskMemUTF8
+- uid: DxFeed.Graal.Net.Native.Interop.Utf8StringMarshaler.ZeroFreeCoTaskMemUTF8(System.IntPtr)
+  name: ZeroFreeCoTaskMemUTF8(IntPtr)
+  href: docs/api/DxFeed.Graal.Net.Native.Interop.Utf8StringMarshaler.html#DxFeed_Graal_Net_Native_Interop_Utf8StringMarshaler_ZeroFreeCoTaskMemUTF8_System_IntPtr_
+  commentId: M:DxFeed.Graal.Net.Native.Interop.Utf8StringMarshaler.ZeroFreeCoTaskMemUTF8(System.IntPtr)
+  fullName: DxFeed.Graal.Net.Native.Interop.Utf8StringMarshaler.ZeroFreeCoTaskMemUTF8(System.IntPtr)
+  nameWithType: Utf8StringMarshaler.ZeroFreeCoTaskMemUTF8(IntPtr)
+- uid: DxFeed.Graal.Net.Native.Interop.Utf8StringMarshaler.ZeroFreeCoTaskMemUTF8*
+  name: ZeroFreeCoTaskMemUTF8
+  href: docs/api/DxFeed.Graal.Net.Native.Interop.Utf8StringMarshaler.html#DxFeed_Graal_Net_Native_Interop_Utf8StringMarshaler_ZeroFreeCoTaskMemUTF8_
+  commentId: Overload:DxFeed.Graal.Net.Native.Interop.Utf8StringMarshaler.ZeroFreeCoTaskMemUTF8
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Native.Interop.Utf8StringMarshaler.ZeroFreeCoTaskMemUTF8
+  nameWithType: Utf8StringMarshaler.ZeroFreeCoTaskMemUTF8
 - uid: DxFeed.Graal.Net.Schedules
   name: DxFeed.Graal.Net.Schedules
   href: docs/api/DxFeed.Graal.Net.Schedules.html
@@ -10679,15 +10817,6 @@ references:
   fullName.vb: DxFeed.Graal.Net.Utils.EnumUtil.ValueOf(Of T)(T)
   nameWithType: EnumUtil.ValueOf<T>(T)
   nameWithType.vb: EnumUtil.ValueOf(Of T)(T)
-- uid: DxFeed.Graal.Net.Utils.EnumUtil.ValueOf``1(``0,``0)
-  name: ValueOf<T>(T, T)
-  href: docs/api/DxFeed.Graal.Net.Utils.EnumUtil.html#DxFeed_Graal_Net_Utils_EnumUtil_ValueOf__1___0___0_
-  commentId: M:DxFeed.Graal.Net.Utils.EnumUtil.ValueOf``1(``0,``0)
-  name.vb: ValueOf(Of T)(T, T)
-  fullName: DxFeed.Graal.Net.Utils.EnumUtil.ValueOf<T>(T, T)
-  fullName.vb: DxFeed.Graal.Net.Utils.EnumUtil.ValueOf(Of T)(T, T)
-  nameWithType: EnumUtil.ValueOf<T>(T, T)
-  nameWithType.vb: EnumUtil.ValueOf(Of T)(T, T)
 - uid: DxFeed.Graal.Net.Utils.MathUtil
   name: MathUtil
   href: docs/api/DxFeed.Graal.Net.Utils.MathUtil.html
@@ -10790,6 +10919,22 @@ references:
   isSpec: "True"
   fullName: DxFeed.Graal.Net.Utils.MathUtil.IsPowerOfTwo
   nameWithType: MathUtil.IsPowerOfTwo
+- uid: DxFeed.Graal.Net.Utils.MathUtil.RoundUpToPowerOf2(System.UInt32)
+  name: RoundUpToPowerOf2(uint)
+  href: docs/api/DxFeed.Graal.Net.Utils.MathUtil.html#DxFeed_Graal_Net_Utils_MathUtil_RoundUpToPowerOf2_System_UInt32_
+  commentId: M:DxFeed.Graal.Net.Utils.MathUtil.RoundUpToPowerOf2(System.UInt32)
+  name.vb: RoundUpToPowerOf2(UInteger)
+  fullName: DxFeed.Graal.Net.Utils.MathUtil.RoundUpToPowerOf2(uint)
+  fullName.vb: DxFeed.Graal.Net.Utils.MathUtil.RoundUpToPowerOf2(UInteger)
+  nameWithType: MathUtil.RoundUpToPowerOf2(uint)
+  nameWithType.vb: MathUtil.RoundUpToPowerOf2(UInteger)
+- uid: DxFeed.Graal.Net.Utils.MathUtil.RoundUpToPowerOf2*
+  name: RoundUpToPowerOf2
+  href: docs/api/DxFeed.Graal.Net.Utils.MathUtil.html#DxFeed_Graal_Net_Utils_MathUtil_RoundUpToPowerOf2_
+  commentId: Overload:DxFeed.Graal.Net.Utils.MathUtil.RoundUpToPowerOf2
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Utils.MathUtil.RoundUpToPowerOf2
+  nameWithType: MathUtil.RoundUpToPowerOf2
 - uid: DxFeed.Graal.Net.Utils.PlatformUtils
   name: PlatformUtils
   href: docs/api/DxFeed.Graal.Net.Utils.PlatformUtils.html
