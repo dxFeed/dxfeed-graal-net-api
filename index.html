@@ -16,7 +16,7 @@
       <meta name="docfx:rel" content="">
       
       
-      <meta name="docfx:docurl" content="https://github.com/dxFeed/dxfeed-graal-net-api/blob/2.0.0/index.md/#L1">
+      <meta name="docfx:docurl" content="https://github.com/dxFeed/dxfeed-graal-net-api/blob/2.0.1/index.md/#L1">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -88,7 +88,7 @@ the <a href="#overview">Overview</a> section.<br></p>
 <img src="https://img.shields.io/badge/platform-win--x64%20%7C%20linux--x64%20%7C%20osx--x64%20%7C%20osx--arm64-lightgrey" alt="Platform">
 <a href="https://dotnet.microsoft.com/en-us/"><img src="https://img.shields.io/badge/.NET_version-netstandard2.0%20%7C%20net6.0%20%7C%20net7.0%20%7C%20net8.0-blueviolet" alt="NET"></a>
 <a href="https://github.com/dxFeed/dxfeed-graal-net-api/releases/latest"><img src="https://img.shields.io/github/v/release/dxFeed/dxfeed-graal-net-api" alt="Release"></a>
-<a href="https://dxfeed.jfrog.io/artifactory/nuget-open/com/dxfeed/graal-net/"><img src="https://img.shields.io/badge/nuget-2.0.0-blue" alt="Nuget"></a>
+<a href="https://dxfeed.jfrog.io/artifactory/nuget-open/com/dxfeed/graal-net/"><img src="https://img.shields.io/badge/nuget-2.0.1-blue" alt="Nuget"></a>
 <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/master/LICENSE"><img src="https://img.shields.io/badge/license-MPL--2.0-orange" alt="License"></a></p>
 <h2 id="table-of-contents">Table of Contents</h2>
 <ul>
@@ -356,8 +356,9 @@ will be amended, <em>&quot;best practices&quot;</em>, specific language restrict
 </ul>
 <h4 id="libc-compatibility">Libc compatibility</h4>
 <ul>
-<li><a href="https://www.gnu.org/software/libc/">glibc</a>: 2.35+ (from Ubuntu 22.04)</li>
-<li><a href="https://musl.libc.org/">musl</a>: temporarily unsupported</li>
+<li><a href="https://www.gnu.org/software/libc/">glibc</a>: 2.17+ (from Oracle Linux 7)</li>
+<li><a href="https://musl.libc.org/">musl</a>: gcompat (glibc compatibility layer) for musl is required. Installation on alpine
+linux <code>apk update &amp;&amp; apk add gcompat libstdc++</code></li>
 </ul>
 <h4 id="libpthread-compatibility">Libpthread compatibility</h4>
 <p>A symlink on libpthread.so, libpthread.so.0, or libcoreclr.so must exist.</p>
@@ -389,21 +390,40 @@ will be amended, <em>&quot;best practices&quot;</em>, specific language restrict
 <li>.NET compatible with .NET Standard 2.0 (not required for self-contained assemblies)</li>
 </ul>
 <h2 id="installation">Installation</h2>
-<p>Add this <a href="https://dxfeed.jfrog.io/artifactory/api/nuget/v3/nuget-open">package source</a> to NuGet config.</p>
-<blockquote>
-<p>If you are using .NET Framework and building for platform target <code>AnyCPU</code>, be sure to uncheck <code>Prefer 32-bit</code> in
-<code>Properties-&gt;Build </code>for the project. We only support 64-bit builds.</p>
-</blockquote>
-<p>For example, you can create a <a href="NuGet.Config">NuGet.Config</a> file in your solution folder with the following content:</p>
+<p>Add the following <a href="https://dxfeed.jfrog.io/artifactory/api/nuget/v3/nuget-open">package source</a>
+to your <code>NuGet.Config</code> file.</p>
+<h4 id="for-linux-and-macos">For Linux and macOS:</h4>
+<p>The <code>NuGet.Config</code> file is usually located at <code>~/.config/NuGet/NuGet.Config</code>.</p>
+<h4 id="for-windows">For Windows:</h4>
+<p>The <code>NuGet.Config</code> file is usually located at <code>%appdata%\NuGet\NuGet.Config</code>.</p>
+<p>An example of what this file might look like:</p>
 <pre><code class="lang-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
-
 &lt;configuration&gt;
     &lt;packageSources&gt;
+        &lt;add key=&quot;nuget.org&quot; value=&quot;https://api.nuget.org/v3/index.json&quot; protocolVersion=&quot;3&quot;/&gt;
         &lt;add key=&quot;dxFeed&quot; value=&quot;https://dxfeed.jfrog.io/artifactory/api/nuget/v3/nuget-open&quot; protocolVersion=&quot;3&quot;/&gt;
     &lt;/packageSources&gt;
 &lt;/configuration&gt;
 </code></pre>
-<p>Then add the <em>DxFeed.Graal.Net</em> package to your project using the NuGet package manager.</p>
+<p>Then add the <code>DxFeed.Graal.Net</code> package to your project using the NuGet package manager.</p>
+<h4 id="using-visual-studio">Using Visual Studio:</h4>
+<ol>
+<li>Open your solution in Visual Studio.</li>
+<li>Right-click on the project in <code>Solution Explorer</code> and select <code>Manage NuGet Packages</code>.</li>
+<li>Switch to the <code>Browse</code> tab, select the dxFeed source, and search for <code>DxFeed.Graal.Net</code>.</li>
+<li>Click <code>Install</code> to add the package to your project.</li>
+</ol>
+<h4 id="using-jetbrains-rider">Using JetBrains Rider:</h4>
+<ol>
+<li>Open your solution in JetBrains Rider.</li>
+<li>Right-click on the project in the <code>Solution</code> and select <code>Manage NuGet Packages</code>.</li>
+<li>Switch to the <code>Packages</code> tab, select the dxFeed source, and search for <code>DxFeed.Graal.Net</code>.</li>
+<li>Right-click on the package and select <code>Install</code> to add the package to your project.</li>
+</ol>
+<blockquote>
+<p>If you are using .NET Framework and building for platform target <code>AnyCPU</code>, be sure to uncheck <code>Prefer 32-bit</code> in
+<code>Properties-&gt;Build </code>for the project. We only support 64-bit builds.</p>
+</blockquote>
 <h2 id="usage">Usage</h2>
 <h3 id="how-to-connect-to-qd-endpoint">How to connect to QD endpoint</h3>
 <pre><code class="lang-csharp">using System;
