@@ -1,14 +1,12 @@
 // <copyright file="Isolate.cs" company="Devexperts LLC">
-// Copyright © 2022 Devexperts LLC. All rights reserved.
+// Copyright © 2024 Devexperts LLC. All rights reserved.
 // This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 // If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
 // </copyright>
 
 using System;
 using System.Runtime.InteropServices;
-using System.Threading.Tasks;
 using DxFeed.Graal.Net.Native.ErrorHandling;
-using DxFeed.Graal.Net.Utils;
 
 namespace DxFeed.Graal.Net.Native.Graal;
 
@@ -34,11 +32,6 @@ namespace DxFeed.Graal.Net.Native.Graal;
 /// </summary>
 internal sealed class Isolate
 {
-    /// <summary>
-    /// Factory for the creation of instance isolate.
-    /// </summary>
-    private static readonly TaskFactory<IntPtr> SingleThreadTaskFactory = new(new SingleThreadTaskScheduler());
-
     /// <summary>
     /// A singleton lazy-initialization instance of <see cref="Isolate"/>.
     /// </summary>
@@ -93,13 +86,8 @@ internal sealed class Isolate
     /// <returns>Returns <see cref="Isolate"/>.</returns>
     private static Isolate CreateIsolate()
     {
-        var task = SingleThreadTaskFactory.StartNew(
-            () =>
-            {
-                ErrorCheck.SafeCall(GraalCreateIsolate(0, out var isolate, out _));
-                return isolate;
-            });
-        return new Isolate(task.Result);
+        ErrorCheck.SafeCall(GraalCreateIsolate(0, out var isolate, out _));
+        return new Isolate(isolate);
     }
 
     /// <summary>

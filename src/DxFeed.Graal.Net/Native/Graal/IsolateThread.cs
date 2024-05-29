@@ -1,12 +1,11 @@
 // <copyright file="IsolateThread.cs" company="Devexperts LLC">
-// Copyright © 2022 Devexperts LLC. All rights reserved.
+// Copyright © 2024 Devexperts LLC. All rights reserved.
 // This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 // If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
 // </copyright>
 
 using System;
 using System.Runtime.InteropServices;
-using System.Threading;
 using DxFeed.Graal.Net.Native.ErrorHandling;
 using DxFeed.Graal.Net.Native.Interop;
 
@@ -30,13 +29,6 @@ internal sealed class IsolateThread
     /// Registered thread exit id callback.
     /// </summary>
     private static readonly int ThreadExitCallbackId = ThreadExitManager.RegisterCallback(OnThreadExit);
-
-    /// <summary>
-    /// Thread-local storage contains all attached <see cref="IsolateThread"/>.
-    /// All <see cref="IsolateThread"/> attached to <see cref="Isolate"/> singleton.
-    /// </summary>
-    private static readonly ThreadLocal<IsolateThread> IsolateThreads =
-        new(() => GetOrAttachIsolateThread(Isolate.Instance));
 
     /// <summary>
     /// Opaque pointer to such a structure can be passed to an entry point as the execution context,
@@ -64,7 +56,7 @@ internal sealed class IsolateThread
     /// </summary>
     /// <value>The <see cref="IsolateThread"/>.</value>
     public static IsolateThread CurrentThread =>
-        IsolateThreads.Value!;
+        GetOrAttachIsolateThread(Isolate.Instance);
 
     /// <summary>
     /// Implicit conversions operator to pass <see cref="IsolateThread"/> to native calls.

@@ -1,3 +1,5 @@
+* Fix: Exception when closing an app under .NET Framework
+
 ## Version 2.0.0
 
 * Build all samples into one directory to reduce the size on disk
