@@ -179,8 +179,9 @@ Only x64 versions are supported.
 
 #### Libc compatibility
 
-- [glibc][glibc]: 2.35+ (from Ubuntu 22.04)
-- [musl][musl]: temporarily unsupported
+- [glibc][glibc]: 2.17+ (from Oracle Linux 7)
+- [musl][musl]: gcompat (glibc compatibility layer) for musl is required. Installation on alpine
+  linux `apk update && apk add gcompat libstdc++`
 
 #### Libpthread compatibility
 
@@ -207,23 +208,47 @@ Is supported in the Rosetta 2 x64 emulator.
 
 ## Installation
 
-Add this [package source](https://dxfeed.jfrog.io/artifactory/api/nuget/v3/nuget-open) to NuGet config.
-> If you are using .NET Framework and building for platform target `AnyCPU`, be sure to uncheck `Prefer 32-bit` in
-> `Properties->Build `for the project. We only support 64-bit builds.
+Add the following [package source](https://dxfeed.jfrog.io/artifactory/api/nuget/v3/nuget-open)
+to your `NuGet.Config` file.
 
-For example, you can create a [NuGet.Config](NuGet.Config) file in your solution folder with the following content:
+#### For Linux and macOS:
+
+The `NuGet.Config` file is usually located at `~/.config/NuGet/NuGet.Config`.
+
+#### For Windows:
+
+The `NuGet.Config` file is usually located at `%appdata%\NuGet\NuGet.Config`.
+
+An example of what this file might look like:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
-
 <configuration>
     <packageSources>
+        <add key="nuget.org" value="https://api.nuget.org/v3/index.json" protocolVersion="3"/>
         <add key="dxFeed" value="https://dxfeed.jfrog.io/artifactory/api/nuget/v3/nuget-open" protocolVersion="3"/>
     </packageSources>
 </configuration>
 ```
 
-Then add the *DxFeed.Graal.Net* package to your project using the NuGet package manager.
+Then add the `DxFeed.Graal.Net` package to your project using the NuGet package manager.
+
+#### Using Visual Studio:
+
+1. Open your solution in Visual Studio.
+2. Right-click on the project in `Solution Explorer` and select `Manage NuGet Packages`.
+3. Switch to the `Browse` tab, select the dxFeed source, and search for `DxFeed.Graal.Net`.
+4. Click `Install` to add the package to your project.
+
+#### Using JetBrains Rider:
+
+1. Open your solution in JetBrains Rider.
+2. Right-click on the project in the `Solution` and select `Manage NuGet Packages`.
+3. Switch to the `Packages` tab, select the dxFeed source, and search for `DxFeed.Graal.Net`.
+4. Right-click on the package and select `Install` to add the package to your project.
+
+> If you are using .NET Framework and building for platform target `AnyCPU`, be sure to uncheck `Prefer 32-bit` in
+> `Properties->Build `for the project. We only support 64-bit builds.
 
 ## Usage
 
