@@ -1,3 +1,5 @@
+* Fix: Schedule memory leak
+
 ## Version 2.0.1
 
 * Fix: Exception when closing an app under .NET Framework

@@ -62,6 +62,8 @@ internal sealed class DayHandle : JavaHandle
             handles.Add(new SessionHandle((IntPtr)ptr->Elements[i]));
         }
 
+        SafeCall(Import.ReleaseSessionList(CurrentThread, (nint)ptr));
+
         return handles;
     }
 
@@ -88,6 +90,9 @@ internal sealed class DayHandle : JavaHandle
 
     public override string ToString() =>
         SafeCall(Import.ToString(CurrentThread, this));
+
+    protected override void Release() =>
+        SafeCall(Import.ReleaseDay(CurrentThread, handle));
 
     private static class Import
     {
@@ -248,5 +253,23 @@ internal sealed class DayHandle : JavaHandle
             EntryPoint = "dxfg_Day_toString")]
         [return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(StringMarshaler))]
         public static extern string ToString(nint thread, DayHandle day);
+
+        [DllImport(
+            ImportInfo.DllName,
+            CallingConvention = CallingConvention.Cdecl,
+            CharSet = CharSet.Ansi,
+            EntryPoint = "dxfg_SessionList_release")]
+        public static extern int ReleaseSessionList(
+            nint thread,
+            nint handle);
+
+        [DllImport(
+            ImportInfo.DllName,
+            CallingConvention = CallingConvention.Cdecl,
+            CharSet = CharSet.Ansi,
+            EntryPoint = "dxfg_Day_release")]
+        public static extern int ReleaseDay(
+            nint thread,
+            nint handle);
     }
 }

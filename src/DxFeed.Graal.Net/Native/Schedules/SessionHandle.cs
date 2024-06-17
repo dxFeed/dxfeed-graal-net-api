@@ -16,6 +16,10 @@ namespace DxFeed.Graal.Net.Native.Schedules;
 [SuppressMessage("ReSharper", "ClassNeverInstantiated.Global", Justification = "Created by marshaler")]
 internal sealed class SessionHandle : JavaHandle
 {
+    public SessionHandle()
+    {
+    }
+
     public SessionHandle(IntPtr handle)
         : base(handle)
     {
@@ -56,6 +60,9 @@ internal sealed class SessionHandle : JavaHandle
 
     public new string ToString() =>
         SafeCall(Import.ToString(CurrentThread, this));
+
+    protected override void Release() =>
+        SafeCall(Import.ReleaseSession(CurrentThread, handle));
 
     private static class Import
     {
@@ -152,5 +159,14 @@ internal sealed class SessionHandle : JavaHandle
             EntryPoint = "dxfg_Session_toString")]
         [return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(StringMarshaler))]
         public static extern string ToString(nint thread, SessionHandle session);
+
+        [DllImport(
+            ImportInfo.DllName,
+            CallingConvention = CallingConvention.Cdecl,
+            CharSet = CharSet.Ansi,
+            EntryPoint = "dxfg_Session_release")]
+        public static extern int ReleaseSession(
+            nint thread,
+            nint handle);
     }
 }
