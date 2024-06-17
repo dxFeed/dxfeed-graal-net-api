@@ -104,6 +104,7 @@ internal sealed class InstrumentProfileMarshaler : AbstractMarshaler
             SettlementStyle = profile.SettlementStyle,
             PriceIncrements = profile.PriceIncrements,
             TradingHours = profile.TradingHours,
+            CustomFields = IntPtr.Zero,
         };
         return (IntPtr)ptr;
     }
@@ -176,7 +177,8 @@ internal sealed class InstrumentProfileMarshaler : AbstractMarshaler
         StringNative ExpirationStyle,
         StringNative SettlementStyle,
         StringNative PriceIncrements,
-        StringNative TradingHours);
+        StringNative TradingHours,
+        IntPtr CustomFields);
 
     private static class Import
     {
