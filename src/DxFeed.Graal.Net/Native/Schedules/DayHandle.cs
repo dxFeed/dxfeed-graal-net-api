@@ -258,7 +258,7 @@ internal sealed class DayHandle : JavaHandle
             ImportInfo.DllName,
             CallingConvention = CallingConvention.Cdecl,
             CharSet = CharSet.Ansi,
-            EntryPoint = "dxfg_SessionList_release")]
+            EntryPoint = "dxfg_SessionList_wrapper_release")]
         public static extern int ReleaseSessionList(
             nint thread,
             nint handle);
