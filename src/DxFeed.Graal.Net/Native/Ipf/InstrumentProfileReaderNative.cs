@@ -36,7 +36,8 @@ internal sealed class InstrumentProfileReaderNative : JavaHandle
 
     public List<InstrumentProfile> ReadFromFile(string address, AuthToken? authToken)
     {
-        using var result = SafeCall(NativeReadFromFile(CurrentThread, this, address, authToken?.Handle));
+        var tokenHandle = authToken == null ? new AuthTokenHandle() : authToken.Handle;
+        using var result = SafeCall(NativeReadFromFile(CurrentThread, this, address, tokenHandle));
         return result.ToList();
     }
 
@@ -105,5 +106,5 @@ internal sealed class InstrumentProfileReaderNative : JavaHandle
         nint thread,
         InstrumentProfileReaderNative reader,
         [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(StringMarshaler))] string address,
-        AuthTokenHandle? authToken);
+        AuthTokenHandle authToken);
 }
