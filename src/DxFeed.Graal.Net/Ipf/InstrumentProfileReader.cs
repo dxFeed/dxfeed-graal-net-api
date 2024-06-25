@@ -113,5 +113,5 @@ public class InstrumentProfileReader
     /// <param name="token">The token (maybe null).</param>
     /// <returns>The list of instrument profiles.</returns>
     public List<InstrumentProfile> ReadFromFile(string address, AuthToken? token) =>
-        throw new NotImplementedException();
+        ipfReaderNative.ReadFromFile(address, token);
 }

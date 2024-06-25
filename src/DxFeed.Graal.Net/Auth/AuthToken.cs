@@ -72,6 +72,9 @@ public class AuthToken
     public string Value =>
         handle.GetValue();
 
+    internal AuthTokenHandle Handle =>
+        handle;
+
     /// <summary>
     /// Constructs an <see cref="AuthToken"/> from the specified string.
     /// </summary>

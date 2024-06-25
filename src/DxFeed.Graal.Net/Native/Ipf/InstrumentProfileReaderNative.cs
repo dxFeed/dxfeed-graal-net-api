@@ -6,7 +6,9 @@
 
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
+using DxFeed.Graal.Net.Auth;
 using DxFeed.Graal.Net.Ipf;
+using DxFeed.Graal.Net.Native.Auth;
 using DxFeed.Graal.Net.Native.Interop;
 using static DxFeed.Graal.Net.Native.ErrorHandling.ErrorCheck;
 
@@ -29,6 +31,12 @@ internal sealed class InstrumentProfileReaderNative : JavaHandle
     public List<InstrumentProfile> ReadFromFile(string address, string? user, string? password)
     {
         using var result = SafeCall(NativeReadFromFile(CurrentThread, this, address, user, password));
+        return result.ToList();
+    }
+
+    public List<InstrumentProfile> ReadFromFile(string address, AuthToken? authToken)
+    {
+        using var result = SafeCall(NativeReadFromFile(CurrentThread, this, address, authToken?.Handle));
         return result.ToList();
     }
 
@@ -84,4 +92,18 @@ internal sealed class InstrumentProfileReaderNative : JavaHandle
         [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(StringMarshaler))] string address,
         [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(StringMarshaler))] string? user,
         [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(StringMarshaler))] string? password);
+
+    [DllImport(
+        ImportInfo.DllName,
+        CallingConvention = CallingConvention.Cdecl,
+        CharSet = CharSet.Ansi,
+        ExactSpelling = true,
+        BestFitMapping = false,
+        ThrowOnUnmappableChar = true,
+        EntryPoint = "dxfg_InstrumentProfileReader_readFromFile3")]
+    private static extern InstrumentProfileListNative NativeReadFromFile(
+        nint thread,
+        InstrumentProfileReaderNative reader,
+        [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(StringMarshaler))] string address,
+        AuthTokenHandle? authToken);
 }
