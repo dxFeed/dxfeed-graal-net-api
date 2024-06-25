@@ -58,7 +58,7 @@ internal abstract class Program
         await Task.Delay(Timeout.Infinite);
     }
 
-    private static List<string> GetSymbols(string filename, AuthToken token)
+    private static List<string> GetSymbols(string filename, AuthToken? token)
     {
         Console.WriteLine($"Reading instruments from {filename}");
         var profiles = new InstrumentProfileReader().ReadFromFile(filename, token);
