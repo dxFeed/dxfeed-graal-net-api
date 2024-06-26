@@ -12,7 +12,7 @@ using DxFeed.Graal.Net.Native.Interop;
 namespace DxFeed.Graal.Net.Native.Auth;
 
 [SuppressMessage("ReSharper", "ClassNeverInstantiated.Global", Justification = "Created by marshaler")]
-internal class AuthTokenHandle : JavaHandle
+internal sealed class AuthTokenHandle : JavaHandle
 {
     public static AuthTokenHandle ValueOf(string str) =>
         ErrorCheck.SafeCall(Import.ValueOf(CurrentThread, str));
