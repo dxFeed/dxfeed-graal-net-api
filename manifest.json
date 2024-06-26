@@ -182,6 +182,26 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "docs/api/DxFeed.Graal.Net.Auth.AuthToken.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/api/DxFeed.Graal.Net.Auth.AuthToken.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/DxFeed.Graal.Net.Auth.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/api/DxFeed.Graal.Net.Auth.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "docs/api/DxFeed.Graal.Net.Events.Candles.Candle.yml",
       "output": {
         ".html": {

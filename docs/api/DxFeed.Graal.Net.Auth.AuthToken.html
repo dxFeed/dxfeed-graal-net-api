@@ -1,0 +1,821 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class AuthToken | dxFeed Graal .NET API </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class AuthToken | dxFeed Graal .NET API ">
+      
+      <meta name="description" content="The AuthToken class represents an authorization token and encapsulates information about the authorization scheme and its associated value. An AuthToken consists of the following components: Scheme - The authorization scheme (e.g., &quot;Basic&quot; or &quot;Bearer&quot;).     Value - The encoded value, which is scheme-dependent (e.g., an access token per RFC6750     or Base64-encoded &quot;user:password&quot; per RFC2617).        String representation - A string that combines the scheme and value in the format: [scheme + &quot; &quot; + value].">
+      <link rel="icon" href="../../docs/images/favicon.png">
+      <link rel="stylesheet" href="../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../public/main.css">
+      <meta name="docfx:navrel" content="../../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/dxFeed/dxfeed-graal-net-api/new/2.1.0/apiSpec/new?filename=DxFeed_Graal_Net_Auth_AuthToken.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Auth.AuthToken%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../index.html">
+            <img id="logo" class="svg" src="../../docs/images/logo.svg" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="DxFeed.Graal.Net.Auth.AuthToken">
+
+
+
+  <h1 id="DxFeed_Graal_Net_Auth_AuthToken" data-uid="DxFeed.Graal.Net.Auth.AuthToken" class="text-break">
+Class AuthToken  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/2.1.0/src/DxFeed.Graal.Net/Auth/AuthToken.cs/#L28"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="DxFeed.html">DxFeed</a>.<a class="xref" href="DxFeed.Graal.html">Graal</a>.<a class="xref" href="DxFeed.Graal.Net.html">Net</a>.<a class="xref" href="DxFeed.Graal.Net.Auth.html">Auth</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>DxFeed.Graal.Net.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>The <code>AuthToken</code> class represents an authorization token and encapsulates information
+about the authorization scheme and its associated value.</p>
+<p></p>An AuthToken consists of the following components:
+<ul><li>Scheme - The authorization scheme (e.g., "Basic" or "Bearer").</li><li>
+    Value - The encoded value, which is scheme-dependent (e.g., an access token per RFC6750
+    or Base64-encoded "user:password" per RFC2617).
+  </li><li>
+    String representation - A string that combines the scheme and value in the format: [scheme + " " + value].
+  </li></ul>
+</div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class AuthToken</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><span class="xref">AuthToken</span></div>
+    </dd>
+  </dl>
+
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+  </dd></dl>
+
+
+
+
+
+
+  <h2 class="section" id="fields">Fields
+</h2>
+
+
+
+  <h3 id="DxFeed_Graal_Net_Auth_AuthToken_BasicScheme" data-uid="DxFeed.Graal.Net.Auth.AuthToken.BasicScheme">
+  BasicScheme
+  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/2.1.0/src/DxFeed.Graal.Net/Auth/AuthToken.cs/#L33"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The Basic Authentication Scheme.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const string BasicScheme = &quot;Basic&quot;</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="DxFeed_Graal_Net_Auth_AuthToken_BearerScheme" data-uid="DxFeed.Graal.Net.Auth.AuthToken.BearerScheme">
+  BearerScheme
+  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/2.1.0/src/DxFeed.Graal.Net/Auth/AuthToken.cs/#L38"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The Bearer Authentication (token authentication) Scheme.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const string BearerScheme = &quot;Bearer&quot;</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="DxFeed_Graal_Net_Auth_AuthToken_HttpAuthorization_" data-uid="DxFeed.Graal.Net.Auth.AuthToken.HttpAuthorization*"></a>
+
+  <h3 id="DxFeed_Graal_Net_Auth_AuthToken_HttpAuthorization" data-uid="DxFeed.Graal.Net.Auth.AuthToken.HttpAuthorization">
+  HttpAuthorization
+  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/2.1.0/src/DxFeed.Graal.Net/Auth/AuthToken.cs/#L48"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets the HTTP authorization header value.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string HttpAuthorization { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="DxFeed_Graal_Net_Auth_AuthToken_Password_" data-uid="DxFeed.Graal.Net.Auth.AuthToken.Password*"></a>
+
+  <h3 id="DxFeed_Graal_Net_Auth_AuthToken_Password" data-uid="DxFeed.Graal.Net.Auth.AuthToken.Password">
+  Password
+  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/2.1.0/src/DxFeed.Graal.Net/Auth/AuthToken.cs/#L60"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets the password or <code>null</code> if it is not known or applicable.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string? Password { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="DxFeed_Graal_Net_Auth_AuthToken_Scheme_" data-uid="DxFeed.Graal.Net.Auth.AuthToken.Scheme*"></a>
+
+  <h3 id="DxFeed_Graal_Net_Auth_AuthToken_Scheme" data-uid="DxFeed.Graal.Net.Auth.AuthToken.Scheme">
+  Scheme
+  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/2.1.0/src/DxFeed.Graal.Net/Auth/AuthToken.cs/#L66"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets the authentication scheme.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string Scheme { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="DxFeed_Graal_Net_Auth_AuthToken_User_" data-uid="DxFeed.Graal.Net.Auth.AuthToken.User*"></a>
+
+  <h3 id="DxFeed_Graal_Net_Auth_AuthToken_User" data-uid="DxFeed.Graal.Net.Auth.AuthToken.User">
+  User
+  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/2.1.0/src/DxFeed.Graal.Net/Auth/AuthToken.cs/#L54"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets the username or <code>null</code> if it is not known or applicable.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string? User { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="DxFeed_Graal_Net_Auth_AuthToken_Value_" data-uid="DxFeed.Graal.Net.Auth.AuthToken.Value*"></a>
+
+  <h3 id="DxFeed_Graal_Net_Auth_AuthToken_Value" data-uid="DxFeed.Graal.Net.Auth.AuthToken.Value">
+  Value
+  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/2.1.0/src/DxFeed.Graal.Net/Auth/AuthToken.cs/#L72"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Gets the access token for RFC6750 or the Base64-encoded &quot;username:password&quot; for RFC2617.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string Value { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="DxFeed_Graal_Net_Auth_AuthToken_CreateBasicToken_" data-uid="DxFeed.Graal.Net.Auth.AuthToken.CreateBasicToken*"></a>
+
+  <h3 id="DxFeed_Graal_Net_Auth_AuthToken_CreateBasicToken_System_String_" data-uid="DxFeed.Graal.Net.Auth.AuthToken.CreateBasicToken(System.String)">
+  CreateBasicToken(string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/2.1.0/src/DxFeed.Graal.Net/Auth/AuthToken.cs/#L98"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Constructs an <a class="xref" href="DxFeed.Graal.Net.Auth.AuthToken.html">AuthToken</a> with the specified username and password per RFC2617.
+Username and password can be empty.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static AuthToken CreateBasicToken(string userPassword)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>userPassword</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>The string containing the username and password in the format <code>username:password</code>.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DxFeed.Graal.Net.Auth.AuthToken.html">AuthToken</a></dt>
+    <dd><p>The constructed <a class="xref" href="DxFeed.Graal.Net.Auth.AuthToken.html">AuthToken</a>.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DxFeed.Graal.Net.Native.ErrorHandling.JavaException.html">JavaException</a></dt>
+    <dd><p>If the userPassword is malformed.</p>
+</dd>
+  </dl>
+
+
+
+  <a id="DxFeed_Graal_Net_Auth_AuthToken_CreateBasicToken_" data-uid="DxFeed.Graal.Net.Auth.AuthToken.CreateBasicToken*"></a>
+
+  <h3 id="DxFeed_Graal_Net_Auth_AuthToken_CreateBasicToken_System_String_System_String_" data-uid="DxFeed.Graal.Net.Auth.AuthToken.CreateBasicToken(System.String,System.String)">
+  CreateBasicToken(string, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/2.1.0/src/DxFeed.Graal.Net/Auth/AuthToken.cs/#L108"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Constructs an <a class="xref" href="DxFeed.Graal.Net.Auth.AuthToken.html">AuthToken</a> with the specified username and password per RFC2617.
+Username and password can be empty.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static AuthToken CreateBasicToken(string user, string password)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>user</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>The username/</p>
+</dd>
+    <dt><code>password</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>The password.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DxFeed.Graal.Net.Auth.AuthToken.html">AuthToken</a></dt>
+    <dd><p>The constructed <a class="xref" href="DxFeed.Graal.Net.Auth.AuthToken.html">AuthToken</a>.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DxFeed_Graal_Net_Auth_AuthToken_CreateBasicTokenOrNull_" data-uid="DxFeed.Graal.Net.Auth.AuthToken.CreateBasicTokenOrNull*"></a>
+
+  <h3 id="DxFeed_Graal_Net_Auth_AuthToken_CreateBasicTokenOrNull_System_String_System_String_" data-uid="DxFeed.Graal.Net.Auth.AuthToken.CreateBasicTokenOrNull(System.String,System.String)">
+  CreateBasicTokenOrNull(string?, string?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/2.1.0/src/DxFeed.Graal.Net/Auth/AuthToken.cs/#L118"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Constructs an <a class="xref" href="DxFeed.Graal.Net.Auth.AuthToken.html">AuthToken</a> with the specified username and password per RFC2617.
+If both the username and password are empty or <code>null</code>, returns <code>null</code>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static AuthToken? CreateBasicTokenOrNull(string? user, string? password)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>user</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>The username.</p>
+</dd>
+    <dt><code>password</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>The password.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DxFeed.Graal.Net.Auth.AuthToken.html">AuthToken</a></dt>
+    <dd><p>The constructed <a class="xref" href="DxFeed.Graal.Net.Auth.AuthToken.html">AuthToken</a> or <code>null</code>.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DxFeed_Graal_Net_Auth_AuthToken_CreateBearerToken_" data-uid="DxFeed.Graal.Net.Auth.AuthToken.CreateBearerToken*"></a>
+
+  <h3 id="DxFeed_Graal_Net_Auth_AuthToken_CreateBearerToken_System_String_" data-uid="DxFeed.Graal.Net.Auth.AuthToken.CreateBearerToken(System.String)">
+  CreateBearerToken(string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/2.1.0/src/DxFeed.Graal.Net/Auth/AuthToken.cs/#L130"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Constructs an <a class="xref" href="DxFeed.Graal.Net.Auth.AuthToken.html">AuthToken</a> with the specified bearer token per RFC6750.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static AuthToken CreateBearerToken(string token)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>token</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>The access token.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DxFeed.Graal.Net.Auth.AuthToken.html">AuthToken</a></dt>
+    <dd><p>The constructed <a class="xref" href="DxFeed.Graal.Net.Auth.AuthToken.html">AuthToken</a>.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DxFeed.Graal.Net.Native.ErrorHandling.JavaException.html">JavaException</a></dt>
+    <dd><p>If the token is empty.</p>
+</dd>
+  </dl>
+
+
+
+  <a id="DxFeed_Graal_Net_Auth_AuthToken_CreateBearerTokenOrNull_" data-uid="DxFeed.Graal.Net.Auth.AuthToken.CreateBearerTokenOrNull*"></a>
+
+  <h3 id="DxFeed_Graal_Net_Auth_AuthToken_CreateBearerTokenOrNull_System_String_" data-uid="DxFeed.Graal.Net.Auth.AuthToken.CreateBearerTokenOrNull(System.String)">
+  CreateBearerTokenOrNull(string?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/2.1.0/src/DxFeed.Graal.Net/Auth/AuthToken.cs/#L138"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Constructs an <a class="xref" href="DxFeed.Graal.Net.Auth.AuthToken.html">AuthToken</a> with the specified bearer token per RFC6750.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static AuthToken? CreateBearerTokenOrNull(string? token)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>token</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>The access token.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DxFeed.Graal.Net.Auth.AuthToken.html">AuthToken</a></dt>
+    <dd><p>The constructed <a class="xref" href="DxFeed.Graal.Net.Auth.AuthToken.html">AuthToken</a> or <code>null</code>.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DxFeed_Graal_Net_Auth_AuthToken_CreateCustomToken_" data-uid="DxFeed.Graal.Net.Auth.AuthToken.CreateCustomToken*"></a>
+
+  <h3 id="DxFeed_Graal_Net_Auth_AuthToken_CreateCustomToken_System_String_System_String_" data-uid="DxFeed.Graal.Net.Auth.AuthToken.CreateCustomToken(System.String,System.String)">
+  CreateCustomToken(string, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/2.1.0/src/DxFeed.Graal.Net/Auth/AuthToken.cs/#L151"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Constructs an <a class="xref" href="DxFeed.Graal.Net.Auth.AuthToken.html">AuthToken</a> with a custom scheme and value.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static AuthToken CreateCustomToken(string scheme, string value)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>scheme</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>The custom scheme.</p>
+</dd>
+    <dt><code>value</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>The custom value.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DxFeed.Graal.Net.Auth.AuthToken.html">AuthToken</a></dt>
+    <dd><p>The constructed <a class="xref" href="DxFeed.Graal.Net.Auth.AuthToken.html">AuthToken</a>.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DxFeed.Graal.Net.Native.ErrorHandling.JavaException.html">JavaException</a></dt>
+    <dd><p>If the scheme or value is empty.</p>
+</dd>
+  </dl>
+
+
+
+  <a id="DxFeed_Graal_Net_Auth_AuthToken_Equals_" data-uid="DxFeed.Graal.Net.Auth.AuthToken.Equals*"></a>
+
+  <h3 id="DxFeed_Graal_Net_Auth_AuthToken_Equals_System_Object_" data-uid="DxFeed.Graal.Net.Auth.AuthToken.Equals(System.Object)">
+  Equals(object?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/2.1.0/src/DxFeed.Graal.Net/Auth/AuthToken.cs/#L159"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Determines whether the specified object is equal to the current object.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override bool Equals(object? obj)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>obj</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></dt>
+    <dd><p>The object to compare with the current object.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p><code>true</code> if the specified object is equal to the current object; otherwise, <code>false</code>.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DxFeed_Graal_Net_Auth_AuthToken_GetHashCode_" data-uid="DxFeed.Graal.Net.Auth.AuthToken.GetHashCode*"></a>
+
+  <h3 id="DxFeed_Graal_Net_Auth_AuthToken_GetHashCode" data-uid="DxFeed.Graal.Net.Auth.AuthToken.GetHashCode">
+  GetHashCode()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/2.1.0/src/DxFeed.Graal.Net/Auth/AuthToken.cs/#L166"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns a hash code value for this object.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override int GetHashCode()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>A hash code value for this object.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DxFeed_Graal_Net_Auth_AuthToken_ToString_" data-uid="DxFeed.Graal.Net.Auth.AuthToken.ToString*"></a>
+
+  <h3 id="DxFeed_Graal_Net_Auth_AuthToken_ToString" data-uid="DxFeed.Graal.Net.Auth.AuthToken.ToString">
+  ToString()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/2.1.0/src/DxFeed.Graal.Net/Auth/AuthToken.cs/#L173"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns string representation of this token.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override string ToString()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>The string representation.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DxFeed_Graal_Net_Auth_AuthToken_ValueOf_" data-uid="DxFeed.Graal.Net.Auth.AuthToken.ValueOf*"></a>
+
+  <h3 id="DxFeed_Graal_Net_Auth_AuthToken_ValueOf_System_String_" data-uid="DxFeed.Graal.Net.Auth.AuthToken.ValueOf(System.String)">
+  ValueOf(string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/2.1.0/src/DxFeed.Graal.Net/Auth/AuthToken.cs/#L86"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Constructs an <a class="xref" href="DxFeed.Graal.Net.Auth.AuthToken.html">AuthToken</a> from the specified string.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static AuthToken ValueOf(string str)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>str</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>The string with space-separated scheme and value.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DxFeed.Graal.Net.Auth.AuthToken.html">AuthToken</a></dt>
+    <dd><p>The constructed <a class="xref" href="DxFeed.Graal.Net.Auth.AuthToken.html">AuthToken</a>.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DxFeed.Graal.Net.Native.ErrorHandling.JavaException.html">JavaException</a></dt>
+    <dd><p>If the string is malformed, or if the scheme is &quot;Basic&quot; but the format does not comply with RFC2617.</p>
+</dd>
+  </dl>
+
+
+
+
+</article>
+
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Copyright © 2022 Devexperts LLC</span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

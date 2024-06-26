@@ -1326,6 +1326,242 @@ references:
   isSpec: "True"
   fullName: DxFeed.Graal.Net.Api.Osub.WildcardSymbol.ToString
   nameWithType: WildcardSymbol.ToString
+- uid: DxFeed.Graal.Net.Auth
+  name: DxFeed.Graal.Net.Auth
+  href: docs/api/DxFeed.Graal.Net.Auth.html
+  commentId: N:DxFeed.Graal.Net.Auth
+  fullName: DxFeed.Graal.Net.Auth
+  nameWithType: DxFeed.Graal.Net.Auth
+- uid: DxFeed.Graal.Net.Auth.AuthToken
+  name: AuthToken
+  href: docs/api/DxFeed.Graal.Net.Auth.AuthToken.html
+  commentId: T:DxFeed.Graal.Net.Auth.AuthToken
+  fullName: DxFeed.Graal.Net.Auth.AuthToken
+  nameWithType: AuthToken
+- uid: DxFeed.Graal.Net.Auth.AuthToken.BasicScheme
+  name: BasicScheme
+  href: docs/api/DxFeed.Graal.Net.Auth.AuthToken.html#DxFeed_Graal_Net_Auth_AuthToken_BasicScheme
+  commentId: F:DxFeed.Graal.Net.Auth.AuthToken.BasicScheme
+  fullName: DxFeed.Graal.Net.Auth.AuthToken.BasicScheme
+  nameWithType: AuthToken.BasicScheme
+- uid: DxFeed.Graal.Net.Auth.AuthToken.BearerScheme
+  name: BearerScheme
+  href: docs/api/DxFeed.Graal.Net.Auth.AuthToken.html#DxFeed_Graal_Net_Auth_AuthToken_BearerScheme
+  commentId: F:DxFeed.Graal.Net.Auth.AuthToken.BearerScheme
+  fullName: DxFeed.Graal.Net.Auth.AuthToken.BearerScheme
+  nameWithType: AuthToken.BearerScheme
+- uid: DxFeed.Graal.Net.Auth.AuthToken.CreateBasicToken(System.String)
+  name: CreateBasicToken(string)
+  href: docs/api/DxFeed.Graal.Net.Auth.AuthToken.html#DxFeed_Graal_Net_Auth_AuthToken_CreateBasicToken_System_String_
+  commentId: M:DxFeed.Graal.Net.Auth.AuthToken.CreateBasicToken(System.String)
+  name.vb: CreateBasicToken(String)
+  fullName: DxFeed.Graal.Net.Auth.AuthToken.CreateBasicToken(string)
+  fullName.vb: DxFeed.Graal.Net.Auth.AuthToken.CreateBasicToken(String)
+  nameWithType: AuthToken.CreateBasicToken(string)
+  nameWithType.vb: AuthToken.CreateBasicToken(String)
+- uid: DxFeed.Graal.Net.Auth.AuthToken.CreateBasicToken(System.String,System.String)
+  name: CreateBasicToken(string, string)
+  href: docs/api/DxFeed.Graal.Net.Auth.AuthToken.html#DxFeed_Graal_Net_Auth_AuthToken_CreateBasicToken_System_String_System_String_
+  commentId: M:DxFeed.Graal.Net.Auth.AuthToken.CreateBasicToken(System.String,System.String)
+  name.vb: CreateBasicToken(String, String)
+  fullName: DxFeed.Graal.Net.Auth.AuthToken.CreateBasicToken(string, string)
+  fullName.vb: DxFeed.Graal.Net.Auth.AuthToken.CreateBasicToken(String, String)
+  nameWithType: AuthToken.CreateBasicToken(string, string)
+  nameWithType.vb: AuthToken.CreateBasicToken(String, String)
+- uid: DxFeed.Graal.Net.Auth.AuthToken.CreateBasicToken*
+  name: CreateBasicToken
+  href: docs/api/DxFeed.Graal.Net.Auth.AuthToken.html#DxFeed_Graal_Net_Auth_AuthToken_CreateBasicToken_
+  commentId: Overload:DxFeed.Graal.Net.Auth.AuthToken.CreateBasicToken
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Auth.AuthToken.CreateBasicToken
+  nameWithType: AuthToken.CreateBasicToken
+- uid: DxFeed.Graal.Net.Auth.AuthToken.CreateBasicTokenOrNull(System.String,System.String)
+  name: CreateBasicTokenOrNull(string?, string?)
+  href: docs/api/DxFeed.Graal.Net.Auth.AuthToken.html#DxFeed_Graal_Net_Auth_AuthToken_CreateBasicTokenOrNull_System_String_System_String_
+  commentId: M:DxFeed.Graal.Net.Auth.AuthToken.CreateBasicTokenOrNull(System.String,System.String)
+  name.vb: CreateBasicTokenOrNull(String, String)
+  fullName: DxFeed.Graal.Net.Auth.AuthToken.CreateBasicTokenOrNull(string?, string?)
+  fullName.vb: DxFeed.Graal.Net.Auth.AuthToken.CreateBasicTokenOrNull(String, String)
+  nameWithType: AuthToken.CreateBasicTokenOrNull(string?, string?)
+  nameWithType.vb: AuthToken.CreateBasicTokenOrNull(String, String)
+- uid: DxFeed.Graal.Net.Auth.AuthToken.CreateBasicTokenOrNull*
+  name: CreateBasicTokenOrNull
+  href: docs/api/DxFeed.Graal.Net.Auth.AuthToken.html#DxFeed_Graal_Net_Auth_AuthToken_CreateBasicTokenOrNull_
+  commentId: Overload:DxFeed.Graal.Net.Auth.AuthToken.CreateBasicTokenOrNull
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Auth.AuthToken.CreateBasicTokenOrNull
+  nameWithType: AuthToken.CreateBasicTokenOrNull
+- uid: DxFeed.Graal.Net.Auth.AuthToken.CreateBearerToken(System.String)
+  name: CreateBearerToken(string)
+  href: docs/api/DxFeed.Graal.Net.Auth.AuthToken.html#DxFeed_Graal_Net_Auth_AuthToken_CreateBearerToken_System_String_
+  commentId: M:DxFeed.Graal.Net.Auth.AuthToken.CreateBearerToken(System.String)
+  name.vb: CreateBearerToken(String)
+  fullName: DxFeed.Graal.Net.Auth.AuthToken.CreateBearerToken(string)
+  fullName.vb: DxFeed.Graal.Net.Auth.AuthToken.CreateBearerToken(String)
+  nameWithType: AuthToken.CreateBearerToken(string)
+  nameWithType.vb: AuthToken.CreateBearerToken(String)
+- uid: DxFeed.Graal.Net.Auth.AuthToken.CreateBearerToken*
+  name: CreateBearerToken
+  href: docs/api/DxFeed.Graal.Net.Auth.AuthToken.html#DxFeed_Graal_Net_Auth_AuthToken_CreateBearerToken_
+  commentId: Overload:DxFeed.Graal.Net.Auth.AuthToken.CreateBearerToken
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Auth.AuthToken.CreateBearerToken
+  nameWithType: AuthToken.CreateBearerToken
+- uid: DxFeed.Graal.Net.Auth.AuthToken.CreateBearerTokenOrNull(System.String)
+  name: CreateBearerTokenOrNull(string?)
+  href: docs/api/DxFeed.Graal.Net.Auth.AuthToken.html#DxFeed_Graal_Net_Auth_AuthToken_CreateBearerTokenOrNull_System_String_
+  commentId: M:DxFeed.Graal.Net.Auth.AuthToken.CreateBearerTokenOrNull(System.String)
+  name.vb: CreateBearerTokenOrNull(String)
+  fullName: DxFeed.Graal.Net.Auth.AuthToken.CreateBearerTokenOrNull(string?)
+  fullName.vb: DxFeed.Graal.Net.Auth.AuthToken.CreateBearerTokenOrNull(String)
+  nameWithType: AuthToken.CreateBearerTokenOrNull(string?)
+  nameWithType.vb: AuthToken.CreateBearerTokenOrNull(String)
+- uid: DxFeed.Graal.Net.Auth.AuthToken.CreateBearerTokenOrNull*
+  name: CreateBearerTokenOrNull
+  href: docs/api/DxFeed.Graal.Net.Auth.AuthToken.html#DxFeed_Graal_Net_Auth_AuthToken_CreateBearerTokenOrNull_
+  commentId: Overload:DxFeed.Graal.Net.Auth.AuthToken.CreateBearerTokenOrNull
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Auth.AuthToken.CreateBearerTokenOrNull
+  nameWithType: AuthToken.CreateBearerTokenOrNull
+- uid: DxFeed.Graal.Net.Auth.AuthToken.CreateCustomToken(System.String,System.String)
+  name: CreateCustomToken(string, string)
+  href: docs/api/DxFeed.Graal.Net.Auth.AuthToken.html#DxFeed_Graal_Net_Auth_AuthToken_CreateCustomToken_System_String_System_String_
+  commentId: M:DxFeed.Graal.Net.Auth.AuthToken.CreateCustomToken(System.String,System.String)
+  name.vb: CreateCustomToken(String, String)
+  fullName: DxFeed.Graal.Net.Auth.AuthToken.CreateCustomToken(string, string)
+  fullName.vb: DxFeed.Graal.Net.Auth.AuthToken.CreateCustomToken(String, String)
+  nameWithType: AuthToken.CreateCustomToken(string, string)
+  nameWithType.vb: AuthToken.CreateCustomToken(String, String)
+- uid: DxFeed.Graal.Net.Auth.AuthToken.CreateCustomToken*
+  name: CreateCustomToken
+  href: docs/api/DxFeed.Graal.Net.Auth.AuthToken.html#DxFeed_Graal_Net_Auth_AuthToken_CreateCustomToken_
+  commentId: Overload:DxFeed.Graal.Net.Auth.AuthToken.CreateCustomToken
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Auth.AuthToken.CreateCustomToken
+  nameWithType: AuthToken.CreateCustomToken
+- uid: DxFeed.Graal.Net.Auth.AuthToken.Equals(System.Object)
+  name: Equals(object?)
+  href: docs/api/DxFeed.Graal.Net.Auth.AuthToken.html#DxFeed_Graal_Net_Auth_AuthToken_Equals_System_Object_
+  commentId: M:DxFeed.Graal.Net.Auth.AuthToken.Equals(System.Object)
+  name.vb: Equals(Object)
+  fullName: DxFeed.Graal.Net.Auth.AuthToken.Equals(object?)
+  fullName.vb: DxFeed.Graal.Net.Auth.AuthToken.Equals(Object)
+  nameWithType: AuthToken.Equals(object?)
+  nameWithType.vb: AuthToken.Equals(Object)
+- uid: DxFeed.Graal.Net.Auth.AuthToken.Equals*
+  name: Equals
+  href: docs/api/DxFeed.Graal.Net.Auth.AuthToken.html#DxFeed_Graal_Net_Auth_AuthToken_Equals_
+  commentId: Overload:DxFeed.Graal.Net.Auth.AuthToken.Equals
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Auth.AuthToken.Equals
+  nameWithType: AuthToken.Equals
+- uid: DxFeed.Graal.Net.Auth.AuthToken.GetHashCode
+  name: GetHashCode()
+  href: docs/api/DxFeed.Graal.Net.Auth.AuthToken.html#DxFeed_Graal_Net_Auth_AuthToken_GetHashCode
+  commentId: M:DxFeed.Graal.Net.Auth.AuthToken.GetHashCode
+  fullName: DxFeed.Graal.Net.Auth.AuthToken.GetHashCode()
+  nameWithType: AuthToken.GetHashCode()
+- uid: DxFeed.Graal.Net.Auth.AuthToken.GetHashCode*
+  name: GetHashCode
+  href: docs/api/DxFeed.Graal.Net.Auth.AuthToken.html#DxFeed_Graal_Net_Auth_AuthToken_GetHashCode_
+  commentId: Overload:DxFeed.Graal.Net.Auth.AuthToken.GetHashCode
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Auth.AuthToken.GetHashCode
+  nameWithType: AuthToken.GetHashCode
+- uid: DxFeed.Graal.Net.Auth.AuthToken.HttpAuthorization
+  name: HttpAuthorization
+  href: docs/api/DxFeed.Graal.Net.Auth.AuthToken.html#DxFeed_Graal_Net_Auth_AuthToken_HttpAuthorization
+  commentId: P:DxFeed.Graal.Net.Auth.AuthToken.HttpAuthorization
+  fullName: DxFeed.Graal.Net.Auth.AuthToken.HttpAuthorization
+  nameWithType: AuthToken.HttpAuthorization
+- uid: DxFeed.Graal.Net.Auth.AuthToken.HttpAuthorization*
+  name: HttpAuthorization
+  href: docs/api/DxFeed.Graal.Net.Auth.AuthToken.html#DxFeed_Graal_Net_Auth_AuthToken_HttpAuthorization_
+  commentId: Overload:DxFeed.Graal.Net.Auth.AuthToken.HttpAuthorization
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Auth.AuthToken.HttpAuthorization
+  nameWithType: AuthToken.HttpAuthorization
+- uid: DxFeed.Graal.Net.Auth.AuthToken.Password
+  name: Password
+  href: docs/api/DxFeed.Graal.Net.Auth.AuthToken.html#DxFeed_Graal_Net_Auth_AuthToken_Password
+  commentId: P:DxFeed.Graal.Net.Auth.AuthToken.Password
+  fullName: DxFeed.Graal.Net.Auth.AuthToken.Password
+  nameWithType: AuthToken.Password
+- uid: DxFeed.Graal.Net.Auth.AuthToken.Password*
+  name: Password
+  href: docs/api/DxFeed.Graal.Net.Auth.AuthToken.html#DxFeed_Graal_Net_Auth_AuthToken_Password_
+  commentId: Overload:DxFeed.Graal.Net.Auth.AuthToken.Password
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Auth.AuthToken.Password
+  nameWithType: AuthToken.Password
+- uid: DxFeed.Graal.Net.Auth.AuthToken.Scheme
+  name: Scheme
+  href: docs/api/DxFeed.Graal.Net.Auth.AuthToken.html#DxFeed_Graal_Net_Auth_AuthToken_Scheme
+  commentId: P:DxFeed.Graal.Net.Auth.AuthToken.Scheme
+  fullName: DxFeed.Graal.Net.Auth.AuthToken.Scheme
+  nameWithType: AuthToken.Scheme
+- uid: DxFeed.Graal.Net.Auth.AuthToken.Scheme*
+  name: Scheme
+  href: docs/api/DxFeed.Graal.Net.Auth.AuthToken.html#DxFeed_Graal_Net_Auth_AuthToken_Scheme_
+  commentId: Overload:DxFeed.Graal.Net.Auth.AuthToken.Scheme
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Auth.AuthToken.Scheme
+  nameWithType: AuthToken.Scheme
+- uid: DxFeed.Graal.Net.Auth.AuthToken.ToString
+  name: ToString()
+  href: docs/api/DxFeed.Graal.Net.Auth.AuthToken.html#DxFeed_Graal_Net_Auth_AuthToken_ToString
+  commentId: M:DxFeed.Graal.Net.Auth.AuthToken.ToString
+  fullName: DxFeed.Graal.Net.Auth.AuthToken.ToString()
+  nameWithType: AuthToken.ToString()
+- uid: DxFeed.Graal.Net.Auth.AuthToken.ToString*
+  name: ToString
+  href: docs/api/DxFeed.Graal.Net.Auth.AuthToken.html#DxFeed_Graal_Net_Auth_AuthToken_ToString_
+  commentId: Overload:DxFeed.Graal.Net.Auth.AuthToken.ToString
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Auth.AuthToken.ToString
+  nameWithType: AuthToken.ToString
+- uid: DxFeed.Graal.Net.Auth.AuthToken.User
+  name: User
+  href: docs/api/DxFeed.Graal.Net.Auth.AuthToken.html#DxFeed_Graal_Net_Auth_AuthToken_User
+  commentId: P:DxFeed.Graal.Net.Auth.AuthToken.User
+  fullName: DxFeed.Graal.Net.Auth.AuthToken.User
+  nameWithType: AuthToken.User
+- uid: DxFeed.Graal.Net.Auth.AuthToken.User*
+  name: User
+  href: docs/api/DxFeed.Graal.Net.Auth.AuthToken.html#DxFeed_Graal_Net_Auth_AuthToken_User_
+  commentId: Overload:DxFeed.Graal.Net.Auth.AuthToken.User
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Auth.AuthToken.User
+  nameWithType: AuthToken.User
+- uid: DxFeed.Graal.Net.Auth.AuthToken.Value
+  name: Value
+  href: docs/api/DxFeed.Graal.Net.Auth.AuthToken.html#DxFeed_Graal_Net_Auth_AuthToken_Value
+  commentId: P:DxFeed.Graal.Net.Auth.AuthToken.Value
+  fullName: DxFeed.Graal.Net.Auth.AuthToken.Value
+  nameWithType: AuthToken.Value
+- uid: DxFeed.Graal.Net.Auth.AuthToken.Value*
+  name: Value
+  href: docs/api/DxFeed.Graal.Net.Auth.AuthToken.html#DxFeed_Graal_Net_Auth_AuthToken_Value_
+  commentId: Overload:DxFeed.Graal.Net.Auth.AuthToken.Value
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Auth.AuthToken.Value
+  nameWithType: AuthToken.Value
+- uid: DxFeed.Graal.Net.Auth.AuthToken.ValueOf(System.String)
+  name: ValueOf(string)
+  href: docs/api/DxFeed.Graal.Net.Auth.AuthToken.html#DxFeed_Graal_Net_Auth_AuthToken_ValueOf_System_String_
+  commentId: M:DxFeed.Graal.Net.Auth.AuthToken.ValueOf(System.String)
+  name.vb: ValueOf(String)
+  fullName: DxFeed.Graal.Net.Auth.AuthToken.ValueOf(string)
+  fullName.vb: DxFeed.Graal.Net.Auth.AuthToken.ValueOf(String)
+  nameWithType: AuthToken.ValueOf(string)
+  nameWithType.vb: AuthToken.ValueOf(String)
+- uid: DxFeed.Graal.Net.Auth.AuthToken.ValueOf*
+  name: ValueOf
+  href: docs/api/DxFeed.Graal.Net.Auth.AuthToken.html#DxFeed_Graal_Net_Auth_AuthToken_ValueOf_
+  commentId: Overload:DxFeed.Graal.Net.Auth.AuthToken.ValueOf
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Auth.AuthToken.ValueOf
+  nameWithType: AuthToken.ValueOf
 - uid: DxFeed.Graal.Net.Events
   name: DxFeed.Graal.Net.Events
   href: docs/api/DxFeed.Graal.Net.Events.html
@@ -8466,6 +8702,15 @@ references:
   fullName.vb: DxFeed.Graal.Net.Ipf.InstrumentProfileReader.ReadFromFile(String)
   nameWithType: InstrumentProfileReader.ReadFromFile(string)
   nameWithType.vb: InstrumentProfileReader.ReadFromFile(String)
+- uid: DxFeed.Graal.Net.Ipf.InstrumentProfileReader.ReadFromFile(System.String,DxFeed.Graal.Net.Auth.AuthToken)
+  name: ReadFromFile(string, AuthToken?)
+  href: docs/api/DxFeed.Graal.Net.Ipf.InstrumentProfileReader.html#DxFeed_Graal_Net_Ipf_InstrumentProfileReader_ReadFromFile_System_String_DxFeed_Graal_Net_Auth_AuthToken_
+  commentId: M:DxFeed.Graal.Net.Ipf.InstrumentProfileReader.ReadFromFile(System.String,DxFeed.Graal.Net.Auth.AuthToken)
+  name.vb: ReadFromFile(String, AuthToken)
+  fullName: DxFeed.Graal.Net.Ipf.InstrumentProfileReader.ReadFromFile(string, DxFeed.Graal.Net.Auth.AuthToken?)
+  fullName.vb: DxFeed.Graal.Net.Ipf.InstrumentProfileReader.ReadFromFile(String, DxFeed.Graal.Net.Auth.AuthToken)
+  nameWithType: InstrumentProfileReader.ReadFromFile(string, AuthToken?)
+  nameWithType.vb: InstrumentProfileReader.ReadFromFile(String, AuthToken)
 - uid: DxFeed.Graal.Net.Ipf.InstrumentProfileReader.ReadFromFile(System.String,System.String,System.String)
   name: ReadFromFile(string, string?, string?)
   href: docs/api/DxFeed.Graal.Net.Ipf.InstrumentProfileReader.html#DxFeed_Graal_Net_Ipf_InstrumentProfileReader_ReadFromFile_System_String_System_String_System_String_

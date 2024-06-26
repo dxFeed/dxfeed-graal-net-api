@@ -16,7 +16,7 @@
       <meta name="docfx:rel" content="../../">
       
       
-      <meta name="docfx:docurl" content="https://github.com/dxFeed/dxfeed-graal-net-api/new/2.0.2/apiSpec/new?filename=DxFeed_Graal_Net_Ipf_InstrumentProfileReader.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Ipf.InstrumentProfileReader%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="docfx:docurl" content="https://github.com/dxFeed/dxfeed-graal-net-api/new/2.1.0/apiSpec/new?filename=DxFeed_Graal_Net_Ipf_InstrumentProfileReader.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Ipf.InstrumentProfileReader%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -89,7 +89,7 @@
 
 
   <h1 id="DxFeed_Graal_Net_Ipf_InstrumentProfileReader" data-uid="DxFeed.Graal.Net.Ipf.InstrumentProfileReader" class="text-break">
-Class InstrumentProfileReader  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/2.0.2/src/DxFeed.Graal.Net/Ipf/InstrumentProfileReader.cs/#L27"><i class="bi bi-code-slash"></i></a>
+Class InstrumentProfileReader  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/2.1.0/src/DxFeed.Graal.Net/Ipf/InstrumentProfileReader.cs/#L28"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -165,7 +165,7 @@ the strategy for missing &quot;##COMPLETE&quot; tag when reading IPF, possible v
 
   <h3 id="DxFeed_Graal_Net_Ipf_InstrumentProfileReader_GetLastModified" data-uid="DxFeed.Graal.Net.Ipf.InstrumentProfileReader.GetLastModified">
   GetLastModified()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/2.0.2/src/DxFeed.Graal.Net/Ipf/InstrumentProfileReader.cs/#L52"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/2.1.0/src/DxFeed.Graal.Net/Ipf/InstrumentProfileReader.cs/#L53"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Returns last modification time (in milliseconds) from last <a class="xref" href="DxFeed.Graal.Net.Ipf.InstrumentProfileReader.html#DxFeed_Graal_Net_Ipf_InstrumentProfileReader_ReadFromFile_System_String_">ReadFromFile(string)</a> operation
@@ -199,7 +199,7 @@ or zero if it is unknown.</p>
 
   <h3 id="DxFeed_Graal_Net_Ipf_InstrumentProfileReader_ReadFromFile_System_String_" data-uid="DxFeed.Graal.Net.Ipf.InstrumentProfileReader.ReadFromFile(System.String)">
   ReadFromFile(string)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/2.0.2/src/DxFeed.Graal.Net/Ipf/InstrumentProfileReader.cs/#L76"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/2.1.0/src/DxFeed.Graal.Net/Ipf/InstrumentProfileReader.cs/#L77"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Reads and returns instrument profiles from specified file.
@@ -245,9 +245,58 @@ This operation updates <a class="xref" href="DxFeed.Graal.Net.Ipf.InstrumentProf
 
   <a id="DxFeed_Graal_Net_Ipf_InstrumentProfileReader_ReadFromFile_" data-uid="DxFeed.Graal.Net.Ipf.InstrumentProfileReader.ReadFromFile*"></a>
 
+  <h3 id="DxFeed_Graal_Net_Ipf_InstrumentProfileReader_ReadFromFile_System_String_DxFeed_Graal_Net_Auth_AuthToken_" data-uid="DxFeed.Graal.Net.Ipf.InstrumentProfileReader.ReadFromFile(System.String,DxFeed.Graal.Net.Auth.AuthToken)">
+  ReadFromFile(string, AuthToken?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/2.1.0/src/DxFeed.Graal.Net/Ipf/InstrumentProfileReader.cs/#L114"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Reads and returns instrument profiles from specified address with a specified token credentials.
+This method recognizes data compression formats &quot;zip&quot; and &quot;gzip&quot; automatically.
+In case of <em>zip</em> the first file entry will be read and parsed as a plain data stream.
+In case of <em>gzip</em> compressed content will be read and processed.
+In other cases data considered uncompressed and will be parsed as is.</p>
+<p></p>Specified token take precedence over authentication information that is supplied to this method
+as part of URL user info like <code>"http://user:password@host:port/path/file.ipf"</code>.
+<p>This operation updates <a class="xref" href="DxFeed.Graal.Net.Ipf.InstrumentProfileReader.html#DxFeed_Graal_Net_Ipf_InstrumentProfileReader_GetLastModified">GetLastModified()</a> and <a class="xref" href="DxFeed.Graal.Net.Ipf.InstrumentProfileReader.html#DxFeed_Graal_Net_Ipf_InstrumentProfileReader_WasComplete">WasComplete()</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public List&lt;InstrumentProfile&gt; ReadFromFile(string address, AuthToken? token)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>address</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>The URL of file to read from.</p>
+</dd>
+    <dt><code>token</code> <a class="xref" href="DxFeed.Graal.Net.Auth.AuthToken.html">AuthToken</a></dt>
+    <dd><p>The token (maybe null).</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="DxFeed.Graal.Net.Ipf.InstrumentProfile.html">InstrumentProfile</a>&gt;</dt>
+    <dd><p>The list of instrument profiles.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DxFeed_Graal_Net_Ipf_InstrumentProfileReader_ReadFromFile_" data-uid="DxFeed.Graal.Net.Ipf.InstrumentProfileReader.ReadFromFile*"></a>
+
   <h3 id="DxFeed_Graal_Net_Ipf_InstrumentProfileReader_ReadFromFile_System_String_System_String_System_String_" data-uid="DxFeed.Graal.Net.Ipf.InstrumentProfileReader.ReadFromFile(System.String,System.String,System.String)">
   ReadFromFile(string, string?, string?)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/2.0.2/src/DxFeed.Graal.Net/Ipf/InstrumentProfileReader.cs/#L95"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/2.1.0/src/DxFeed.Graal.Net/Ipf/InstrumentProfileReader.cs/#L96"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Reads and returns instrument profiles from specified file.
@@ -273,10 +322,10 @@ This operation updates <a class="xref" href="DxFeed.Graal.Net.Ipf.InstrumentProf
     <dd><p>The URL of file to read from.</p>
 </dd>
     <dt><code>user</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
-    <dd><p>The user name (may be null).</p>
+    <dd><p>The username (maybe null).</p>
 </dd>
     <dt><code>password</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
-    <dd><p>The password (may be null).</p>
+    <dd><p>The password (maybe null).</p>
 </dd>
   </dl>
 
@@ -301,7 +350,7 @@ This operation updates <a class="xref" href="DxFeed.Graal.Net.Ipf.InstrumentProf
 
   <h3 id="DxFeed_Graal_Net_Ipf_InstrumentProfileReader_ResolveSourceUrl_System_String_" data-uid="DxFeed.Graal.Net.Ipf.InstrumentProfileReader.ResolveSourceUrl(System.String)">
   ResolveSourceUrl(string)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/2.0.2/src/DxFeed.Graal.Net/Ipf/InstrumentProfileReader.cs/#L44"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/2.1.0/src/DxFeed.Graal.Net/Ipf/InstrumentProfileReader.cs/#L45"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Resolves the given address specification into its corresponding URL format, particularly transforming
@@ -348,7 +397,7 @@ pattern, or that have invalid port numbers, are returned unchanged.</p>
 
   <h3 id="DxFeed_Graal_Net_Ipf_InstrumentProfileReader_WasComplete" data-uid="DxFeed.Graal.Net.Ipf.InstrumentProfileReader.WasComplete">
   WasComplete()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/2.0.2/src/DxFeed.Graal.Net/Ipf/InstrumentProfileReader.cs/#L59"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/2.1.0/src/DxFeed.Graal.Net/Ipf/InstrumentProfileReader.cs/#L60"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Returns <code>true</code> if IPF was fully read on last <a class="xref" href="DxFeed.Graal.Net.Ipf.InstrumentProfileReader.html#DxFeed_Graal_Net_Ipf_InstrumentProfileReader_ReadFromFile_System_String_">ReadFromFile(string)</a> operation.</p>
