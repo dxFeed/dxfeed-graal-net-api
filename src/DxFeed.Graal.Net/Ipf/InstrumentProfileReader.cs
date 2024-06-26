@@ -1,10 +1,11 @@
 // <copyright file="InstrumentProfileReader.cs" company="Devexperts LLC">
-// Copyright © 2022 Devexperts LLC. All rights reserved.
+// Copyright © 2024 Devexperts LLC. All rights reserved.
 // This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 // If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
 // </copyright>
 
 using System.Collections.Generic;
+using DxFeed.Graal.Net.Auth;
 using DxFeed.Graal.Net.Native.Ipf;
 
 namespace DxFeed.Graal.Net.Ipf;
@@ -89,9 +90,27 @@ public class InstrumentProfileReader
     /// This operation updates <see cref="GetLastModified"/> and <see cref="WasComplete"/>.
     /// </summary>
     /// <param name="address">The URL of file to read from.</param>
-    /// <param name="user">The user name (may be null).</param>
-    /// <param name="password">The password (may be null).</param>
+    /// <param name="user">The username (maybe null).</param>
+    /// <param name="password">The password (maybe null).</param>
     /// <returns>The list of instrument profiles.</returns>
     public List<InstrumentProfile> ReadFromFile(string address, string? user, string? password) =>
         ipfReaderNative.ReadFromFile(address, user, password);
+
+    /// <summary>
+    /// Reads and returns instrument profiles from specified address with a specified token credentials.
+    /// This method recognizes data compression formats "zip" and "gzip" automatically.
+    /// In case of <em>zip</em> the first file entry will be read and parsed as a plain data stream.
+    /// In case of <em>gzip</em> compressed content will be read and processed.
+    /// In other cases data considered uncompressed and will be parsed as is.
+    ///
+    /// <p/>Specified token take precedence over authentication information that is supplied to this method
+    /// as part of URL user info like <c>"http://user:password@host:port/path/file.ipf"</c>.
+    ///
+    /// This operation updates <see cref="GetLastModified"/> and <see cref="WasComplete"/>.
+    /// </summary>
+    /// <param name="address">The URL of file to read from.</param>
+    /// <param name="token">The token (maybe null).</param>
+    /// <returns>The list of instrument profiles.</returns>
+    public List<InstrumentProfile> ReadFromFile(string address, AuthToken? token) =>
+        ipfReaderNative.ReadFromFile(address, token);
 }

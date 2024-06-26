@@ -68,6 +68,22 @@ internal abstract class JavaHandle : SafeHandle
     protected static IsolateThread CurrentThread =>
         IsolateThread.CurrentThread;
 
+    public override int GetHashCode() =>
+        Import.HashCode(CurrentThread, this);
+
+    public override bool Equals(object? obj)
+    {
+        if (obj is not JavaHandle that)
+        {
+            return false;
+        }
+
+        return Import.Equals(CurrentThread, this, that) != 0;
+    }
+
+    public override string ToString() =>
+        Import.ToString(CurrentThread, this);
+
     /// <summary>
     /// Creates a Java handle and registers it for finalization, along with a .NET object's GCHandle.
     /// </summary>
@@ -179,5 +195,36 @@ internal abstract class JavaHandle : SafeHandle
             JavaHandle javaHandle,
             Delegate listener,
             GCHandle netHandle);
+
+        [DllImport(
+            ImportInfo.DllName,
+            CallingConvention = CallingConvention.Cdecl,
+            CharSet = CharSet.Ansi,
+            ExactSpelling = true,
+            BestFitMapping = false,
+            ThrowOnUnmappableChar = true,
+            EntryPoint = "dxfg_Object_hashCode")]
+        public static extern int HashCode(nint thread, JavaHandle handle);
+
+        [DllImport(
+            ImportInfo.DllName,
+            CallingConvention = CallingConvention.Cdecl,
+            CharSet = CharSet.Ansi,
+            ExactSpelling = true,
+            BestFitMapping = false,
+            ThrowOnUnmappableChar = true,
+            EntryPoint = "dxfg_Object_equals")]
+        public static extern int Equals(nint thread, JavaHandle handle, JavaHandle other);
+
+        [DllImport(
+            ImportInfo.DllName,
+            CallingConvention = CallingConvention.Cdecl,
+            CharSet = CharSet.Ansi,
+            ExactSpelling = true,
+            BestFitMapping = false,
+            ThrowOnUnmappableChar = true,
+            EntryPoint = "dxfg_Object_toString")]
+        [return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(StringMarshaler))]
+        public static extern string ToString(nint thread, JavaHandle handle);
     }
 }
