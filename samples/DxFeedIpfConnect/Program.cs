@@ -10,6 +10,7 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using DxFeed.Graal.Net.Api;
+using DxFeed.Graal.Net.Auth;
 using DxFeed.Graal.Net.Ipf;
 using DxFeed.Graal.Net.Utils;
 
@@ -24,17 +25,20 @@ internal abstract class Program
 {
     public static async Task Main(string[] args)
     {
-        if (args.Length != 2)
+        if (args.Length < 2)
         {
             var eventTypeNames = ReflectionUtil.CreateTypesString(DXEndpoint.GetEventTypes());
-            Console.WriteLine("usage: DXFeedIpfConnect <type> <ipf-file>");
+            Console.WriteLine("usage: DXFeedIpfConnect <type> <ipf-file> [token]");
             Console.WriteLine("where: <type>     is dxfeed event type (" + eventTypeNames + ")");
             Console.WriteLine("       <ipf-file> is name of instrument profiles file");
+            Console.WriteLine("       [token]    is authorization token, e.g 'Bearer <token>'");
+
             return;
         }
 
         var type = args[0];
         var ipfFile = args[1];
+        var token = args.Length > 2 ? AuthToken.ValueOf(args[2]) : null;
 
         var eventType = CmdArgsUtil.ParseTypes(type);
         var sub = DXFeed.GetInstance().CreateSubscription(eventType);
@@ -49,15 +53,15 @@ internal abstract class Program
         });
 
         // Adds specified symbol.
-        sub.AddSymbols(GetSymbols(ipfFile));
+        sub.AddSymbols(GetSymbols(ipfFile, token));
 
         await Task.Delay(Timeout.Infinite);
     }
 
-    private static List<string> GetSymbols(string filename)
+    private static List<string> GetSymbols(string filename, AuthToken? token)
     {
         Console.WriteLine($"Reading instruments from {filename}");
-        var profiles = new InstrumentProfileReader().ReadFromFile(filename);
+        var profiles = new InstrumentProfileReader().ReadFromFile(filename, token);
         // This is just a sample, any arbitrary filtering may go here.
         var filter = (InstrumentProfile profile) =>
             profile.Type.Equals("STOCK", StringComparison.Ordinal); // stocks

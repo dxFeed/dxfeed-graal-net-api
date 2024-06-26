@@ -4,6 +4,7 @@
 // If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
 // </copyright>
 
+using System.Net.NetworkInformation;
 using DxFeed.Graal.Net.Api;
 using DxFeed.Graal.Net.Api.Osub;
 using DxFeed.Graal.Net.Events;
@@ -17,6 +18,26 @@ namespace DxFeed.Graal.Net.Tests.Api;
 [TestFixture]
 public class DXEndpointTest
 {
+    [Test]
+    public void ConnectToLocalPublisher()
+    {
+        var countdownEvent = new CountdownEvent(1);
+
+        var pub = Create(Publisher).Connect(":5679");
+        var feed = Create(Feed);
+        feed.AddStateChangeListener((_, newState) =>
+        {
+            if (newState == State.Connected)
+            {
+                countdownEvent.Signal();
+            }
+        });
+        feed.Connect("localhost:5679");
+        Assert.That(countdownEvent.Wait(new TimeSpan(0, 0, 3)), Is.True);
+        pub.Close();
+        feed.Close();
+    }
+
     [Test]
     public void MultipleDisposeNotThrowException()
     {
