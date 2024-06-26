@@ -1,3 +1,5 @@
+## Version 2.1.0
+
 * [MDAPI-21] [Java] [SDK] NoSuchMethodError exception when creating a monitoring endpoint
 * [MDAPI-19] [.NET] [IPF] Allow set Bearer token for authentication
 
