@@ -271,7 +271,7 @@ public class TimeAndSale : MarketEvent, ITimeSeriesEvent
     /// Gets or sets implementation-specific flags.
     /// <b>Do not use this method directly.</b>
     /// </summary>
-    internal int Flags { get; set; }
+    public int Flags { get; set; }
 
     /// <summary>
     /// Returns string representation of this time and sale event.

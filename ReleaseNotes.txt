@@ -1,3 +1,5 @@
+* [MDAPI-22] [.NET] CandleWebService API sample
+
 ## Version 2.1.0
 
 * [MDAPI-21] [Java] [SDK] NoSuchMethodError exception when creating a monitoring endpoint
