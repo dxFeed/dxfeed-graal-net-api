@@ -6,6 +6,7 @@
 
 using System.Collections.Generic;
 using DxFeed.Graal.Net.Auth;
+using DxFeed.Graal.Net.Ipf.Live;
 using DxFeed.Graal.Net.Native.Ipf;
 
 namespace DxFeed.Graal.Net.Ipf;
@@ -14,10 +15,11 @@ namespace DxFeed.Graal.Net.Ipf;
 /// Reads instrument profiles from the stream using Instrument Profile Format (IPF).
 /// Please see <b>Instrument Profile Format</b> documentation for complete description.
 /// This reader automatically uses data formats as specified in the stream.
-/// <br/>
-/// This reader is intended for "one time only" usage: create new instances for new IPF reads.
-/// <br/>
-/// For backward compatibility reader can be configured with system property "com.dxfeed.ipf.complete" to control
+///
+/// <p/>This reader is intended for "one time only" usage: create new instances for new IPF reads.
+/// <p/>Use <see cref="InstrumentProfileConnection"/> if support for streaming updates of instrument profiles is needed.
+///
+/// <p/>For backward compatibility reader can be configured with system property "com.dxfeed.ipf.complete" to control
 /// the strategy for missing "##COMPLETE" tag when reading IPF, possible values are:
 /// <ul>
 ///     <li><c>warn</c> - show warning in the log (default)</li>
@@ -27,7 +29,7 @@ namespace DxFeed.Graal.Net.Ipf;
 /// </summary>
 public class InstrumentProfileReader
 {
-    private readonly InstrumentProfileReaderNative ipfReaderNative = InstrumentProfileReaderNative.Create();
+    private readonly InstrumentProfileReaderHandle ipfReaderNative = InstrumentProfileReaderHandle.Create();
 
     /// <summary>
     /// Resolves the given address specification into its corresponding URL format, particularly transforming
@@ -43,10 +45,10 @@ public class InstrumentProfileReader
     /// <param name="address">The address specification to be resolved into a URL.</param>
     /// <returns>The resolved URL corresponding to the specified address.</returns>
     public static string? ResolveSourceUrl(string address) =>
-        InstrumentProfileReaderNative.ResolveSourceUrl(address);
+        InstrumentProfileReaderHandle.ResolveSourceUrl(address);
 
     /// <summary>
-    /// Returns last modification time (in milliseconds) from last <see cref="ReadFromFile(string)"/> operation
+    /// Gets last modification time (in milliseconds) from last <see cref="ReadFromFile(string)"/> operation
     /// or zero if it is unknown.
     /// </summary>
     /// <returns>The last modification time.</returns>
@@ -66,11 +68,11 @@ public class InstrumentProfileReader
     /// In case of <em>zip</em> the first file entry will be read and parsed as a plain data stream.
     /// In case of <em>gzip</em> compressed content will be read and processed.
     /// In other cases data considered uncompressed and will be parsed as is.
-    /// <br/>
-    /// Authentication information can be supplied to this method as part of URL user info
+    ///
+    /// <p/>Authentication information can be supplied to this method as part of URL user info
     /// like <c>"http://user:password@host:port/path/file.ipf"</c>.
-    /// <br/>
-    /// This operation updates <see cref="GetLastModified"/> and <see cref="WasComplete"/>.
+    ///
+    /// <p/>This operation updates <see cref="GetLastModified"/> and <see cref="WasComplete"/>.
     /// </summary>
     /// <param name="address">The URL of file to read from.</param>
     /// <returns>The list of instrument profiles.</returns>
@@ -83,11 +85,11 @@ public class InstrumentProfileReader
     /// In case of <em>zip</em> the first file entry will be read and parsed as a plain data stream.
     /// In case of <em>gzip</em> compressed content will be read and processed.
     /// In other cases data considered uncompressed and will be parsed as is.
-    /// <br/>
-    /// Specified user and password take precedence over authentication information that is supplied to this method
+    ///
+    /// <p/>Specified user and password take precedence over authentication information that is supplied to this method
     /// as part of URL user info like <c>"http://user:password@host:port/path/file.ipf"</c>.
-    /// <br/>
-    /// This operation updates <see cref="GetLastModified"/> and <see cref="WasComplete"/>.
+    ///
+    /// <p/>This operation updates <see cref="GetLastModified"/> and <see cref="WasComplete"/>.
     /// </summary>
     /// <param name="address">The URL of file to read from.</param>
     /// <param name="user">The username (maybe null).</param>
@@ -106,7 +108,7 @@ public class InstrumentProfileReader
     /// <p/>Specified token take precedence over authentication information that is supplied to this method
     /// as part of URL user info like <c>"http://user:password@host:port/path/file.ipf"</c>.
     ///
-    /// This operation updates <see cref="GetLastModified"/> and <see cref="WasComplete"/>.
+    /// <p/>This operation updates <see cref="GetLastModified"/> and <see cref="WasComplete"/>.
     /// </summary>
     /// <param name="address">The URL of file to read from.</param>
     /// <param name="token">The token (maybe null).</param>

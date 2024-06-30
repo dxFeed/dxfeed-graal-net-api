@@ -9,6 +9,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Runtime.InteropServices;
 using DxFeed.Graal.Net.Ipf;
 using DxFeed.Graal.Net.Native.Interop;
+using DxFeed.Graal.Net.Native.Ipf;
 using static DxFeed.Graal.Net.Native.ErrorHandling.ErrorCheck;
 
 namespace DxFeed.Graal.Net.Native.Schedules;
@@ -17,16 +18,16 @@ namespace DxFeed.Graal.Net.Native.Schedules;
 internal sealed class ScheduleHandle : JavaHandle
 {
     public static ScheduleHandle GetInstance(InstrumentProfile profile) =>
-        SafeCall(Import.GetInstance(CurrentThread, profile));
+        SafeCall(Import.GetInstance(CurrentThread, profile.GetHandle()));
 
     public static ScheduleHandle GetInstance(string scheduleDefinition) =>
         SafeCall(Import.GetInstance(CurrentThread, scheduleDefinition));
 
     public static ScheduleHandle GetInstance(InstrumentProfile profile, string venue) =>
-        SafeCall(Import.GetInstance(CurrentThread, profile, venue));
+        SafeCall(Import.GetInstance(CurrentThread, profile.GetHandle(), venue));
 
     public static List<string> GetTradingVenues(InstrumentProfile profile) =>
-        SafeCall(Import.GetTradingVenues(CurrentThread, profile));
+        SafeCall(Import.GetTradingVenues(CurrentThread, profile.GetHandle()));
 
     public static void DownloadDefaults(string downloadConfig) =>
         SafeCall(Import.DownloadDefaults(CurrentThread, downloadConfig));
@@ -76,8 +77,7 @@ internal sealed class ScheduleHandle : JavaHandle
             EntryPoint = "dxfg_Schedule_getInstance")]
         public static extern ScheduleHandle GetInstance(
             nint thread,
-            [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(InstrumentProfileMarshaler))]
-            InstrumentProfile profile);
+            InstrumentProfileHandle profile);
 
         [DllImport(
             ImportInfo.DllName,
@@ -102,8 +102,7 @@ internal sealed class ScheduleHandle : JavaHandle
             EntryPoint = "dxfg_Schedule_getInstance3")]
         public static extern ScheduleHandle GetInstance(
             nint thread,
-            [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(InstrumentProfileMarshaler))]
-            InstrumentProfile profile,
+            InstrumentProfileHandle profile,
             [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(StringMarshaler))]
             string venue);
 
@@ -118,8 +117,7 @@ internal sealed class ScheduleHandle : JavaHandle
         [return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ListMarshaler<StringMarshaler>))]
         public static extern List<string> GetTradingVenues(
             nint thread,
-            [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(InstrumentProfileMarshaler))]
-            InstrumentProfile profile);
+            InstrumentProfileHandle profile);
 
         [DllImport(
             ImportInfo.DllName,

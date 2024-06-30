@@ -37,7 +37,6 @@ internal abstract class Program
         // Create an HTTP client with the base URL and the authentication token
         using var client = CreateHttpClient("https://tools.dxfeed.com/", token);
 
-
         var start = DateTimeOffset.Now.AddDays(-2).ToString("yyyyMMdd", InvariantCulture);
         var stop = DateTimeOffset.Now.AddDays(-1).ToString("yyyyMMdd", InvariantCulture);
         // URL for fetching candle events.
@@ -130,6 +129,11 @@ internal abstract class Program
     private static List<T> ParseEvents<T>(StreamReader reader)
         where T : ITimeSeriesEvent
     {
+        if (reader.EndOfStream)
+        {
+            return new List<T>();
+        }
+
         var config = new CsvConfiguration(InvariantCulture)
         {
             AllowComments = false, HasHeaderRecord = true, MissingFieldFound = null, DetectDelimiter = true,
