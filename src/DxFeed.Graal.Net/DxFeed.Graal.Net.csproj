@@ -23,7 +23,11 @@
     </PackageReference>
     <PackageReference Include="Microsoft.Extensions.Caching.Memory" Version="8.0.0"/>
     <PackageReference Include="System.Collections.Immutable" Version="8.0.0"/>
-    <PackageReference Include="DxFeed.Graal.Native" Version="1.1.21" />
+    <PackageReference Include="DxFeed.Graal.Native" Version="1.1.22" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <InternalsVisibleTo Include="DxFeed.Graal.Net.Tests" />
   </ItemGroup>
 
 </Project>

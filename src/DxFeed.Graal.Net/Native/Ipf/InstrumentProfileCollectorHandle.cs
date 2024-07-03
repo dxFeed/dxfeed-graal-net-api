@@ -11,7 +11,6 @@ using DxFeed.Graal.Net.Ipf;
 using DxFeed.Graal.Net.Ipf.Live;
 using DxFeed.Graal.Net.Native.ErrorHandling;
 using DxFeed.Graal.Net.Native.Interop;
-using DxFeed.Graal.Net.Native.Ipf.Handles;
 
 namespace DxFeed.Graal.Net.Native.Ipf;
 
@@ -25,6 +24,9 @@ internal sealed class InstrumentProfileCollectorHandle : JavaHandle
 
     public long GetLastUpdateTime() =>
         ErrorCheck.SafeCall(NativeGetLastUpdateTime(CurrentThread, this));
+
+    public void UpdateInstrumentProfile(InstrumentProfile ip) =>
+        ErrorCheck.SafeCall(NativeUpdateInstrumentProfile(CurrentThread, this, ip.GetHandle()));
 
     public IEnumerable<InstrumentProfile> View()
     {
@@ -67,6 +69,16 @@ internal sealed class InstrumentProfileCollectorHandle : JavaHandle
     private static extern long NativeGetLastUpdateTime(
         nint thread,
         InstrumentProfileCollectorHandle collector);
+
+    [DllImport(
+        ImportInfo.DllName,
+        CallingConvention = CallingConvention.Cdecl,
+        CharSet = CharSet.Ansi,
+        EntryPoint = "dxfg_InstrumentProfileCollector_updateInstrumentProfile")]
+    private static extern int NativeUpdateInstrumentProfile(
+        nint thread,
+        InstrumentProfileCollectorHandle collector,
+        InstrumentProfileHandle ip);
 
     [DllImport(
         ImportInfo.DllName,

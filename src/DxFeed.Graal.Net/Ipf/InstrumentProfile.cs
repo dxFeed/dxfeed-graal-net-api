@@ -4,10 +4,9 @@
 // If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
 // </copyright>
 
+using System.Collections.Generic;
+using DxFeed.Graal.Net.Native.Ipf;
 using DxFeed.Graal.Net.Utils;
-
-// Disable auto-property
-#pragma warning disable S2292
 
 namespace DxFeed.Graal.Net.Ipf;
 
@@ -18,44 +17,13 @@ namespace DxFeed.Graal.Net.Ipf;
 /// </summary>
 public class InstrumentProfile
 {
-    private string type = string.Empty;
-    private string symbol = string.Empty;
-    private string description = string.Empty;
-    private string localSymbol = string.Empty;
-    private string localDescription = string.Empty;
-    private string country = string.Empty;
-    private string opol = string.Empty;
-    private string exchangeData = string.Empty;
-    private string exchanges = string.Empty;
-    private string currency = string.Empty;
-    private string baseCurrency = string.Empty;
-    private string cfi = string.Empty;
-    private string isin = string.Empty;
-    private string sedol = string.Empty;
-    private string cusip = string.Empty;
-    private int icb;
-    private int sic;
-    private double multiplier;
-    private string product = string.Empty;
-    private string underlying = string.Empty;
-    private double spc;
-    private string additionalUnderlyings = string.Empty;
-    private string mmy = string.Empty;
-    private int expiration;
-    private int lastTrade;
-    private double strike;
-    private string optionType = string.Empty;
-    private string expirationStyle = string.Empty;
-    private string settlementStyle = string.Empty;
-    private string priceIncrements = string.Empty;
-    private string tradingHours = string.Empty;
+    private readonly InstrumentProfileHandle handle;
 
     /// <summary>
     /// Initializes a new instance of the <see cref="InstrumentProfile"/> class.
     /// </summary>
-    public InstrumentProfile()
-    {
-    }
+    public InstrumentProfile() =>
+        handle = InstrumentProfileHandle.Create();
 
     /// <summary>
     /// Initializes a new instance of the <see cref="InstrumentProfile"/> class,
@@ -68,40 +36,11 @@ public class InstrumentProfile
     /// It performs a deep copy, ensuring that the new instance does not share references with the original,
     /// making it safe from modifications to the original instance.
     /// </remarks>
-    public InstrumentProfile(InstrumentProfile ip)
-    {
-        type = ip.type;
-        symbol = ip.symbol;
-        description = ip.description;
-        localSymbol = ip.localSymbol;
-        localDescription = ip.localDescription;
-        country = ip.country;
-        opol = ip.opol;
-        exchangeData = ip.exchangeData;
-        exchanges = ip.exchanges;
-        currency = ip.currency;
-        baseCurrency = ip.baseCurrency;
-        cfi = ip.cfi;
-        isin = ip.isin;
-        sedol = ip.sedol;
-        cusip = ip.cusip;
-        icb = ip.icb;
-        sic = ip.sic;
-        multiplier = ip.multiplier;
-        product = ip.product;
-        underlying = ip.underlying;
-        spc = ip.spc;
-        additionalUnderlyings = ip.additionalUnderlyings;
-        mmy = ip.mmy;
-        expiration = ip.expiration;
-        lastTrade = ip.lastTrade;
-        strike = ip.strike;
-        optionType = ip.optionType;
-        expirationStyle = ip.expirationStyle;
-        settlementStyle = ip.settlementStyle;
-        priceIncrements = ip.priceIncrements;
-        tradingHours = ip.tradingHours;
-    }
+    public InstrumentProfile(InstrumentProfile ip) =>
+        handle = InstrumentProfileHandle.Create(ip.GetHandle());
+
+    internal InstrumentProfile(InstrumentProfileHandle handle) =>
+        this.handle = handle;
 
     /// <summary>
     /// Gets or sets type of instrument.
@@ -111,8 +50,8 @@ public class InstrumentProfile
     /// <example>"STOCK", "FUTURE", "OPTION".</example>
     public string Type
     {
-        get => type;
-        set => type = string.IsNullOrEmpty(value) ? string.Empty : value;
+        get => handle.Type;
+        set => handle.Type = value;
     }
 
     /// <summary>
@@ -123,8 +62,8 @@ public class InstrumentProfile
     /// <example>"GOOG", "/YGM9", ".ZYEAD".</example>
     public string Symbol
     {
-        get => symbol;
-        set => symbol = string.IsNullOrEmpty(value) ? string.Empty : value;
+        get => handle.Symbol;
+        set => handle.Symbol = value;
     }
 
     /// <summary>
@@ -134,8 +73,8 @@ public class InstrumentProfile
     /// <example>"Google Inc.", "Mini Gold Futures,Jun-2009,ETH".</example>
     public string Description
     {
-        get => description;
-        set => description = string.IsNullOrEmpty(value) ? string.Empty : value;
+        get => handle.Description;
+        set => handle.Description = value;
     }
 
     /// <summary>
@@ -144,8 +83,8 @@ public class InstrumentProfile
     /// </summary>
     public string LocalSymbol
     {
-        get => localSymbol;
-        set => localSymbol = string.IsNullOrEmpty(value) ? string.Empty : value;
+        get => handle.LocalSymbol;
+        set => handle.LocalSymbol = value;
     }
 
     /// <summary>
@@ -154,8 +93,8 @@ public class InstrumentProfile
     /// </summary>
     public string LocalDescription
     {
-        get => localDescription;
-        set => localDescription = string.IsNullOrEmpty(value) ? string.Empty : value;
+        get => handle.LocalDescription;
+        set => handle.LocalDescription = value;
     }
 
     /// <summary>
@@ -166,8 +105,8 @@ public class InstrumentProfile
     /// <example>"US", "RU".</example>
     public string Country
     {
-        get => country;
-        set => country = string.IsNullOrEmpty(value) ? string.Empty : value;
+        get => handle.Country;
+        set => handle.Country = value;
     }
 
     /// <summary>
@@ -180,8 +119,8 @@ public class InstrumentProfile
     /// <example>"XNAS", "RTSX".</example>
     public string OPOL
     {
-        get => opol;
-        set => opol = string.IsNullOrEmpty(value) ? string.Empty : value;
+        get => handle.OPOL;
+        set => handle.OPOL = value;
     }
 
     /// <summary>
@@ -190,13 +129,13 @@ public class InstrumentProfile
     /// </summary>
     public string ExchangeData
     {
-        get => exchangeData;
-        set => exchangeData = string.IsNullOrEmpty(value) ? string.Empty : value;
+        get => handle.ExchangeData;
+        set => handle.ExchangeData = value;
     }
 
     /// <summary>
     /// Gets or sets list of exchanges where instrument is quoted or traded.
-    /// Its shall use the following format:
+    /// It shall use the following format:
     /// <code>
     ///     &lt;VALUE&gt; ::= &lt;empty&gt; | &lt;LIST&gt;
     ///     &lt;IST&gt; ::= &lt;MIC&gt; | &lt;MIC&gt; &lt;semicolon&gt;
@@ -206,8 +145,8 @@ public class InstrumentProfile
     /// <example>"ARCX;CBSX;XNAS;XNYS".</example>
     public string Exchanges
     {
-        get => exchanges;
-        set => exchanges = string.IsNullOrEmpty(value) ? string.Empty : value;
+        get => handle.Exchanges;
+        set => handle.Exchanges = value;
     }
 
     /// <summary>
@@ -218,8 +157,8 @@ public class InstrumentProfile
     /// <example>"USD", "RUB".</example>
     public string Currency
     {
-        get => currency;
-        set => currency = string.IsNullOrEmpty(value) ? string.Empty : value;
+        get => handle.Currency;
+        set => handle.Currency = value;
     }
 
     /// <summary>
@@ -228,8 +167,8 @@ public class InstrumentProfile
     /// </summary>
     public string BaseCurrency
     {
-        get => baseCurrency;
-        set => baseCurrency = string.IsNullOrEmpty(value) ? string.Empty : value;
+        get => handle.BaseCurrency;
+        set => handle.BaseCurrency = value;
     }
 
     /// <summary>
@@ -243,8 +182,8 @@ public class InstrumentProfile
     /// <example>"ESNTPB", "ESXXXX", "ES", "OPASPS".</example>
     public string CFI
     {
-        get => cfi;
-        set => cfi = string.IsNullOrEmpty(value) ? string.Empty : value;
+        get => handle.CFI;
+        set => handle.CFI = value;
     }
 
     /// <summary>
@@ -256,8 +195,8 @@ public class InstrumentProfile
     /// <example>"DE0007100000", "US38259P5089".</example>
     public string ISIN
     {
-        get => isin;
-        set => isin = string.IsNullOrEmpty(value) ? string.Empty : value;
+        get => handle.ISIN;
+        set => handle.ISIN = value;
     }
 
     /// <summary>
@@ -269,8 +208,8 @@ public class InstrumentProfile
     /// <example>"2310967", "5766857".</example>
     public string SEDOL
     {
-        get => sedol;
-        set => sedol = string.IsNullOrEmpty(value) ? string.Empty : value;
+        get => handle.SEDOL;
+        set => handle.SEDOL = value;
     }
 
     /// <summary>
@@ -281,8 +220,8 @@ public class InstrumentProfile
     /// <example>"38259P508".</example>
     public string CUSIP
     {
-        get => cusip;
-        set => cusip = string.IsNullOrEmpty(value) ? string.Empty : value;
+        get => handle.CUSIP;
+        set => handle.CUSIP = value;
     }
 
     /// <summary>
@@ -294,8 +233,8 @@ public class InstrumentProfile
     /// <example>"9535".</example>
     public int ICB
     {
-        get => icb;
-        set => icb = value;
+        get => handle.ICB;
+        set => handle.ICB = value;
     }
 
     /// <summary>
@@ -307,8 +246,8 @@ public class InstrumentProfile
     /// <example>"7371".</example>
     public int SIC
     {
-        get => sic;
-        set => sic = value;
+        get => handle.SIC;
+        set => handle.SIC = value;
     }
 
     /// <summary>
@@ -317,8 +256,8 @@ public class InstrumentProfile
     /// <example>"100", "33.2".</example>
     public double Multiplier
     {
-        get => multiplier;
-        set => multiplier = value;
+        get => handle.Multiplier;
+        set => handle.Multiplier = value;
     }
 
     /// <summary>
@@ -327,8 +266,8 @@ public class InstrumentProfile
     /// <example>"/YG".</example>
     public string Product
     {
-        get => product;
-        set => product = string.IsNullOrEmpty(value) ? string.Empty : value;
+        get => handle.Product;
+        set => handle.Product = value;
     }
 
     /// <summary>
@@ -337,8 +276,8 @@ public class InstrumentProfile
     /// <example>"C", "/YGM9".</example>
     public string Underlying
     {
-        get => underlying;
-        set => underlying = string.IsNullOrEmpty(value) ? string.Empty : value;
+        get => handle.Underlying;
+        set => handle.Underlying = value;
     }
 
     /// <summary>
@@ -347,8 +286,8 @@ public class InstrumentProfile
     /// <example>"1", "100".</example>
     public double SPC
     {
-        get => spc;
-        set => spc = value;
+        get => handle.SPC;
+        set => handle.SPC = value;
     }
 
     /// <summary>
@@ -364,8 +303,8 @@ public class InstrumentProfile
     /// <example>"SE 50", "FIS 53; US$ 45.46".</example>
     public string AdditionalUnderlyings
     {
-        get => additionalUnderlyings;
-        set => additionalUnderlyings = string.IsNullOrEmpty(value) ? string.Empty : value;
+        get => handle.AdditionalUnderlyings;
+        set => handle.AdditionalUnderlyings = value;
     }
 
     /// <summary>
@@ -379,8 +318,8 @@ public class InstrumentProfile
     /// </summary>
     public string MMY
     {
-        get => mmy;
-        set => mmy = string.IsNullOrEmpty(value) ? string.Empty : value;
+        get => handle.MMY;
+        set => handle.MMY = value;
     }
 
     /// <summary>
@@ -389,8 +328,8 @@ public class InstrumentProfile
     /// <example><see cref="DayUtil.GetYearMonthDayByDayId">DayUtil.GetYearMonthDayByDayId(20090117)</see>.</example>
     public int Expiration
     {
-        get => expiration;
-        set => expiration = value;
+        get => handle.Expiration;
+        set => handle.Expiration = value;
     }
 
     /// <summary>
@@ -399,8 +338,8 @@ public class InstrumentProfile
     /// <example><see cref="DayUtil.GetYearMonthDayByDayId">DayUtil.GetYearMonthDayByDayId(20090117)</see>.</example>
     public int LastTrade
     {
-        get => lastTrade;
-        set => lastTrade = value;
+        get => handle.LastTrade;
+        set => handle.LastTrade = value;
     }
 
     /// <summary>
@@ -409,8 +348,8 @@ public class InstrumentProfile
     /// <example>"80", "22.5".</example>
     public double Strike
     {
-        get => strike;
-        set => strike = value;
+        get => handle.Strike;
+        set => handle.Strike = value;
     }
 
     /// <summary>
@@ -428,8 +367,8 @@ public class InstrumentProfile
     /// </summary>
     public string OptionType
     {
-        get => optionType;
-        set => optionType = string.IsNullOrEmpty(value) ? string.Empty : value;
+        get => handle.OptionType;
+        set => handle.OptionType = value;
     }
 
     /// <summary>
@@ -437,8 +376,8 @@ public class InstrumentProfile
     /// </summary>
     public string ExpirationStyle
     {
-        get => expirationStyle;
-        set => expirationStyle = string.IsNullOrEmpty(value) ? string.Empty : value;
+        get => handle.ExpirationStyle;
+        set => handle.ExpirationStyle = value;
     }
 
     /// <summary>
@@ -446,8 +385,8 @@ public class InstrumentProfile
     /// </summary>
     public string SettlementStyle
     {
-        get => settlementStyle;
-        set => settlementStyle = string.IsNullOrEmpty(value) ? string.Empty : value;
+        get => handle.SettlementStyle;
+        set => handle.SettlementStyle = value;
     }
 
     /// <summary>
@@ -463,23 +402,104 @@ public class InstrumentProfile
     /// <example>"0.25", "0.01 3; 0.05".</example>
     public string PriceIncrements
     {
-        get => priceIncrements;
-        set => priceIncrements = string.IsNullOrEmpty(value) ? string.Empty : value;
+        get => handle.PriceIncrements;
+        set => handle.PriceIncrements = value;
     }
 
     /// <summary>
     /// Gets or sets trading hours specification.
+    /// See <see cref="Schedules.Schedule.GetInstance(string)">Schedule.GetInstance(string)</see>.
     /// </summary>
     public string TradingHours
     {
-        get => tradingHours;
-        set => tradingHours = string.IsNullOrEmpty(value) ? string.Empty : value;
+        get => handle.TradingHours;
+        set => handle.TradingHours = value;
     }
+
+    /// <summary>
+    /// Gets the value of the field with the specified name.
+    /// </summary>
+    /// <param name="name">The name of the field.</param>
+    /// <returns>The field value, or an empty string if the field does not exist.</returns>
+    public string GetField(string name) =>
+        handle.GetField(name);
+
+    /// <summary>
+    /// Sets the value of the field with the specified name.
+    /// </summary>
+    /// <param name="name">The name of the field.</param>
+    /// <param name="value">The value to set for the field.</param>
+    public void SetField(string name, string value) =>
+        handle.SetField(name, value);
+
+    /// <summary>
+    /// Gets the numeric value of the field with the specified name.
+    /// </summary>
+    /// <param name="name">The name of the field.</param>
+    /// <returns>The numeric field value.</returns>
+    public double GetNumericField(string name) =>
+        handle.GetNumericField(name);
+
+    /// <summary>
+    /// Sets the numeric value of the field with the specified name.
+    /// </summary>
+    /// <param name="name">The name of the field.</param>
+    /// <param name="value">The numeric value to set for the field.</param>
+    public void SetNumericField(string name, double value) =>
+        handle.SetNumericField(name, value);
+
+    /// <summary>
+    /// Gets the day id value of the date field with the specified name.
+    /// See <see cref="DayUtil.GetYearMonthDayByDayId(int)"/>.
+    /// </summary>
+    /// <param name="name">The name of the date field.</param>
+    /// <returns>The day id field value.</returns>
+    public int GetDateField(string name) =>
+        handle.GetDateField(name);
+
+    /// <summary>
+    /// Sets the day id value of the date field with the specified name.
+    /// See <see cref="DayUtil.GetDayIdByYearMonthDay(int)"/>.
+    /// </summary>
+    /// <param name="name">The name of the date field.</param>
+    /// <param name="value">The day id value to set for the date field.</param>
+    public void SetDateField(string name, int value) =>
+        handle.SetDateField(name, value);
+
+    /// <summary>
+    /// Adds names of non-empty custom fields to the specified collection.
+    /// </summary>
+    /// <param name="targetFieldNames">
+    /// The collection to which the names of non-empty custom fields will be added.
+    /// </param>
+    /// <returns>
+    /// <c>true</c> if <paramref name="targetFieldNames"/> changed as a result of the call; otherwise, <c>false</c>.
+    /// </returns>
+    public bool AddNonEmptyCustomFieldNames(ICollection<string> targetFieldNames) =>
+        handle.AddNonEmptyCustomFieldNames(targetFieldNames);
+
+    /// <summary>
+    /// Determines whether the specified object is equal to the current object.
+    /// </summary>
+    /// <param name="obj">The object to compare with the current object.</param>
+    /// <returns><c>true</c> if the specified object is equal to the current object; otherwise, <c>false</c>.</returns>
+    public override bool Equals(object? obj) =>
+        obj is InstrumentProfile ip && handle.Equals(ip.GetHandle());
+
+    /// <summary>
+    /// Returns a hash code value for this object.
+    /// </summary>
+    /// <returns>A hash code value for this object.</returns>
+    public override int GetHashCode() =>
+        handle.GetHashCode();
 
     /// <summary>
     /// Returns a string representation of the instrument profile.
     /// </summary>
     /// <returns>The string representation.</returns>
     public override string ToString() =>
-        $"{Type} {Symbol}";
+       handle.ToString();
+
+    internal InstrumentProfileHandle GetHandle() =>
+        handle;
 }

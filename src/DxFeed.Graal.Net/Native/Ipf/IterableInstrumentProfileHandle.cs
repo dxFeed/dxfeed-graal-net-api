@@ -11,9 +11,9 @@ using DxFeed.Graal.Net.Ipf;
 using DxFeed.Graal.Net.Native.ErrorHandling;
 using DxFeed.Graal.Net.Native.Interop;
 
-namespace DxFeed.Graal.Net.Native.Ipf.Handles;
+namespace DxFeed.Graal.Net.Native.Ipf;
 
-internal sealed unsafe class IterableInstrumentProfileHandle : JavaHandle
+internal sealed class IterableInstrumentProfileHandle : JavaHandle
 {
     public IterableInstrumentProfileHandle()
     {
@@ -41,7 +41,7 @@ internal sealed unsafe class IterableInstrumentProfileHandle : JavaHandle
     public InstrumentProfile? Next()
     {
         var i = NativeNext(CurrentThread, this);
-        return i != null ? InstrumentProfileMapper.Convert(i) : null;
+        return i != null ? new InstrumentProfile(i) : null;
     }
 
     [DllImport(
@@ -64,7 +64,7 @@ internal sealed unsafe class IterableInstrumentProfileHandle : JavaHandle
         BestFitMapping = false,
         ThrowOnUnmappableChar = true,
         EntryPoint = "dxfg_Iterable_InstrumentProfile_next")]
-    private static extern InstrumentProfileNative* NativeNext(
+    private static extern InstrumentProfileHandle? NativeNext(
         nint thread,
         IterableInstrumentProfileHandle iterable);
 }
