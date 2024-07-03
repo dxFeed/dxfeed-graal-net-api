@@ -12,12 +12,16 @@ namespace DxFeed.Graal.Net.Ipf.Live;
 /// <summary>
 /// Collects instrument profile updates and provides the live list of instrument profiles.
 /// This class contains a map that keeps a unique instrument profile per symbol.
-/// This class is intended to be used with InstrumentProfileConnection as a repository
+/// This class is intended to be used with <see cref="InstrumentProfileConnection"/> as a repository
 /// that keeps profiles of all known instruments.
-/// As set of instrument profiles stored in this collector can be accessed with view method.
-/// A snapshot plus a live stream of updates can be accessed with addUpdateListener method.
-/// Removal of instrument profile is represented by an InstrumentProfile instance
-/// with a type equal to InstrumentProfileType.REMOVED.
+///
+/// <br/>As set of instrument profiles stored in this collector can be accessed with <see cref="View"/> method.
+/// A snapshot plus a live stream of updates can be accessed with <see cref="AddUpdateListener"/> method.
+///
+/// <br/>Removal of instrument profile is represented by an <see cref="InstrumentProfile"/> instance
+/// with a type equal to  <see cref="InstrumentProfileType.REMOVED"/>.
+///
+/// <br/><b>This class is thread-safe.</b>
 /// </summary>
 public class InstrumentProfileCollector
 {
@@ -57,6 +61,9 @@ public class InstrumentProfileCollector
     /// <param name="listener">The profile update listener.</param>
     public void RemoveUpdateListener(InstrumentProfileUpdateListener listener) =>
         handle.RemoveUpdateListener(listener);
+
+    internal void UpdateInstrumentProfile(InstrumentProfile ip) =>
+        handle.UpdateInstrumentProfile(ip);
 
     internal InstrumentProfileCollectorHandle GetHandle() =>
         handle;

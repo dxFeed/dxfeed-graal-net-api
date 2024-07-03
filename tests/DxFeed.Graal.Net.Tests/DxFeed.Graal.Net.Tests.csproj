@@ -36,4 +36,10 @@
     <ProjectReference Include="..\..\src\DxFeed.Graal.Net\DxFeed.Graal.Net.csproj"/>
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="ipf.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>

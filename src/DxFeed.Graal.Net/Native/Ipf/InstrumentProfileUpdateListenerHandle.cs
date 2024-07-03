@@ -11,7 +11,7 @@ using DxFeed.Graal.Net.Ipf.Live;
 using DxFeed.Graal.Net.Native.Interop;
 using static DxFeed.Graal.Net.Native.ErrorHandling.ErrorCheck;
 
-namespace DxFeed.Graal.Net.Native.Ipf.Handles;
+namespace DxFeed.Graal.Net.Native.Ipf;
 
 [SuppressMessage("ReSharper", "ClassNeverInstantiated.Global", Justification = "Created by marshaler")]
 internal sealed class InstrumentProfileUpdateListenerHandle : JavaHandle
