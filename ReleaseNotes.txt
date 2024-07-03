@@ -1,3 +1,6 @@
+## Version 2.2.0
+
+* [MDAPI-25] [.NET] [IPF] Implement custom fields in InstrumentProfile
 * [MDAPI-22] [.NET] CandleWebService API sample
 
 ## Version 2.1.0
