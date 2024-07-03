@@ -77,7 +77,7 @@
 
       <div class="content">
         <div class="actionbar">
-          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
             <i class="bi bi-list"></i>
           </button>
 
@@ -98,12 +98,13 @@ Classes
       <dt><a class="xref" href="DxFeed.Graal.Net.Ipf.Live.InstrumentProfileCollector.html">InstrumentProfileCollector</a></dt>
       <dd><p>Collects instrument profile updates and provides the live list of instrument profiles.
 This class contains a map that keeps a unique instrument profile per symbol.
-This class is intended to be used with InstrumentProfileConnection as a repository
-that keeps profiles of all known instruments.
-As set of instrument profiles stored in this collector can be accessed with view method.
-A snapshot plus a live stream of updates can be accessed with addUpdateListener method.
-Removal of instrument profile is represented by an InstrumentProfile instance
-with a type equal to InstrumentProfileType.REMOVED.</p>
+This class is intended to be used with <a class="xref" href="DxFeed.Graal.Net.Ipf.Live.InstrumentProfileConnection.html">InstrumentProfileConnection</a> as a repository
+that keeps profiles of all known instruments.</p>
+<p><br>As set of instrument profiles stored in this collector can be accessed with <a class="xref" href="DxFeed.Graal.Net.Ipf.Live.InstrumentProfileCollector.html#DxFeed_Graal_Net_Ipf_Live_InstrumentProfileCollector_View">View()</a> method.
+A snapshot plus a live stream of updates can be accessed with <a class="xref" href="DxFeed.Graal.Net.Ipf.Live.InstrumentProfileCollector.html#DxFeed_Graal_Net_Ipf_Live_InstrumentProfileCollector_AddUpdateListener_DxFeed_Graal_Net_Ipf_Live_InstrumentProfileUpdateListener_">AddUpdateListener(InstrumentProfileUpdateListener)</a> method.</p>
+<p><br>Removal of instrument profile is represented by an <a class="xref" href="DxFeed.Graal.Net.Ipf.InstrumentProfile.html">InstrumentProfile</a> instance
+with a type equal to  <a class="xref" href="DxFeed.Graal.Net.Ipf.InstrumentProfileType.html#DxFeed_Graal_Net_Ipf_InstrumentProfileType_REMOVED">REMOVED</a>.</p>
+<p><br><b>This class is thread-safe.</b></p>
 </dd>
     </dl>
     <dl class="jumplist">

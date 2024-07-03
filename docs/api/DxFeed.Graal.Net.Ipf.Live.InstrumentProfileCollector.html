@@ -6,7 +6,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <meta name="title" content="Class InstrumentProfileCollector | dxFeed Graal .NET API ">
       
-      <meta name="description" content="Collects instrument profile updates and provides the live list of instrument profiles. This class contains a map that keeps a unique instrument profile per symbol. This class is intended to be used with InstrumentProfileConnection as a repository that keeps profiles of all known instruments. As set of instrument profiles stored in this collector can be accessed with view method. A snapshot plus a live stream of updates can be accessed with addUpdateListener method. Removal of instrument profile is represented by an InstrumentProfile instance with a type equal to InstrumentProfileType.REMOVED.">
+      <meta name="description" content="Collects instrument profile updates and provides the live list of instrument profiles. This class contains a map that keeps a unique instrument profile per symbol. This class is intended to be used with  as a repository that keeps profiles of all known instruments. As set of instrument profiles stored in this collector can be accessed with  method. A snapshot plus a live stream of updates can be accessed with  method. Removal of instrument profile is represented by an  instance with a type equal to  . This class is thread-safe.">
       <link rel="icon" href="../../docs/images/favicon.png">
       <link rel="stylesheet" href="../../public/docfx.min.css">
       <link rel="stylesheet" href="../../public/main.css">
@@ -16,7 +16,7 @@
       <meta name="docfx:rel" content="../../">
       
       
-      <meta name="docfx:docurl" content="https://github.com/dxFeed/dxfeed-graal-net-api/new/2.1.0/apiSpec/new?filename=DxFeed_Graal_Net_Ipf_Live_InstrumentProfileCollector.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Ipf.Live.InstrumentProfileCollector%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="docfx:docurl" content="https://github.com/dxFeed/dxfeed-graal-net-api/new/2.2.0/apiSpec/new?filename=DxFeed_Graal_Net_Ipf_Live_InstrumentProfileCollector.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Ipf.Live.InstrumentProfileCollector%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -77,7 +77,7 @@
 
       <div class="content">
         <div class="actionbar">
-          <button class="btn btn-lg border-0 d-md-none" style="margin-top: -.65em; margin-left: -.8em" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
             <i class="bi bi-list"></i>
           </button>
 
@@ -89,7 +89,7 @@
 
 
   <h1 id="DxFeed_Graal_Net_Ipf_Live_InstrumentProfileCollector" data-uid="DxFeed.Graal.Net.Ipf.Live.InstrumentProfileCollector" class="text-break">
-Class InstrumentProfileCollector  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/2.1.0/src/DxFeed.Graal.Net/Ipf/Live/InstrumentProfileCollector.cs/#L22"><i class="bi bi-code-slash"></i></a>
+Class InstrumentProfileCollector  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/2.2.0/src/DxFeed.Graal.Net/Ipf/Live/InstrumentProfileCollector.cs/#L26"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -99,12 +99,13 @@ Class InstrumentProfileCollector  <a class="header-action link-secondary" title=
 
   <div class="markdown summary"><p>Collects instrument profile updates and provides the live list of instrument profiles.
 This class contains a map that keeps a unique instrument profile per symbol.
-This class is intended to be used with InstrumentProfileConnection as a repository
-that keeps profiles of all known instruments.
-As set of instrument profiles stored in this collector can be accessed with view method.
-A snapshot plus a live stream of updates can be accessed with addUpdateListener method.
-Removal of instrument profile is represented by an InstrumentProfile instance
-with a type equal to InstrumentProfileType.REMOVED.</p>
+This class is intended to be used with <a class="xref" href="DxFeed.Graal.Net.Ipf.Live.InstrumentProfileConnection.html">InstrumentProfileConnection</a> as a repository
+that keeps profiles of all known instruments.</p>
+<p><br>As set of instrument profiles stored in this collector can be accessed with <a class="xref" href="DxFeed.Graal.Net.Ipf.Live.InstrumentProfileCollector.html#DxFeed_Graal_Net_Ipf_Live_InstrumentProfileCollector_View">View()</a> method.
+A snapshot plus a live stream of updates can be accessed with <a class="xref" href="DxFeed.Graal.Net.Ipf.Live.InstrumentProfileCollector.html#DxFeed_Graal_Net_Ipf_Live_InstrumentProfileCollector_AddUpdateListener_DxFeed_Graal_Net_Ipf_Live_InstrumentProfileUpdateListener_">AddUpdateListener(InstrumentProfileUpdateListener)</a> method.</p>
+<p><br>Removal of instrument profile is represented by an <a class="xref" href="DxFeed.Graal.Net.Ipf.InstrumentProfile.html">InstrumentProfile</a> instance
+with a type equal to  <a class="xref" href="DxFeed.Graal.Net.Ipf.InstrumentProfileType.html#DxFeed_Graal_Net_Ipf_InstrumentProfileType_REMOVED">REMOVED</a>.</p>
+<p><br><b>This class is thread-safe.</b></p>
 </div>
   <div class="markdown conceptual"></div>
 
@@ -164,7 +165,7 @@ with a type equal to InstrumentProfileType.REMOVED.</p>
 
   <h3 id="DxFeed_Graal_Net_Ipf_Live_InstrumentProfileCollector_AddUpdateListener_DxFeed_Graal_Net_Ipf_Live_InstrumentProfileUpdateListener_" data-uid="DxFeed.Graal.Net.Ipf.Live.InstrumentProfileCollector.AddUpdateListener(DxFeed.Graal.Net.Ipf.Live.InstrumentProfileUpdateListener)">
   AddUpdateListener(InstrumentProfileUpdateListener)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/2.1.0/src/DxFeed.Graal.Net/Ipf/Live/InstrumentProfileCollector.cs/#L51"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/2.2.0/src/DxFeed.Graal.Net/Ipf/Live/InstrumentProfileCollector.cs/#L55"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Adds listener that is notified about any updates in the set of instrument profiles.
@@ -198,7 +199,7 @@ If a set of instrument profiles is not empty, then this listener will be immedia
 
   <h3 id="DxFeed_Graal_Net_Ipf_Live_InstrumentProfileCollector_GetLastUpdateTime" data-uid="DxFeed.Graal.Net.Ipf.Live.InstrumentProfileCollector.GetLastUpdateTime">
   GetLastUpdateTime()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/2.1.0/src/DxFeed.Graal.Net/Ipf/Live/InstrumentProfileCollector.cs/#L31"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/2.2.0/src/DxFeed.Graal.Net/Ipf/Live/InstrumentProfileCollector.cs/#L35"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Gets last modification time (in milliseconds) of instrument profiles or zero if it is unknown.
@@ -232,7 +233,7 @@ Note, that while the time is represented in milliseconds, the actual granularity
 
   <h3 id="DxFeed_Graal_Net_Ipf_Live_InstrumentProfileCollector_RemoveUpdateListener_DxFeed_Graal_Net_Ipf_Live_InstrumentProfileUpdateListener_" data-uid="DxFeed.Graal.Net.Ipf.Live.InstrumentProfileCollector.RemoveUpdateListener(DxFeed.Graal.Net.Ipf.Live.InstrumentProfileUpdateListener)">
   RemoveUpdateListener(InstrumentProfileUpdateListener)
-  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/2.1.0/src/DxFeed.Graal.Net/Ipf/Live/InstrumentProfileCollector.cs/#L58"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/2.2.0/src/DxFeed.Graal.Net/Ipf/Live/InstrumentProfileCollector.cs/#L62"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Removes listener that is notified about any updates in the set of instrument profiles.</p>
@@ -265,7 +266,7 @@ Note, that while the time is represented in milliseconds, the actual granularity
 
   <h3 id="DxFeed_Graal_Net_Ipf_Live_InstrumentProfileCollector_View" data-uid="DxFeed.Graal.Net.Ipf.Live.InstrumentProfileCollector.View">
   View()
-  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/2.1.0/src/DxFeed.Graal.Net/Ipf/Live/InstrumentProfileCollector.cs/#L43"><i class="bi bi-code-slash"></i></a>
+  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/2.2.0/src/DxFeed.Graal.Net/Ipf/Live/InstrumentProfileCollector.cs/#L47"><i class="bi bi-code-slash"></i></a>
   </h3>
 
   <div class="markdown level1 summary"><p>Gets a concurrent view of the set of instrument profiles.

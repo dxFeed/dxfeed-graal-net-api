@@ -6707,6 +6707,19 @@ references:
   isSpec: "True"
   fullName: DxFeed.Graal.Net.Events.Market.TimeAndSale.ExchangeSaleConditions
   nameWithType: TimeAndSale.ExchangeSaleConditions
+- uid: DxFeed.Graal.Net.Events.Market.TimeAndSale.Flags
+  name: Flags
+  href: docs/api/DxFeed.Graal.Net.Events.Market.TimeAndSale.html#DxFeed_Graal_Net_Events_Market_TimeAndSale_Flags
+  commentId: P:DxFeed.Graal.Net.Events.Market.TimeAndSale.Flags
+  fullName: DxFeed.Graal.Net.Events.Market.TimeAndSale.Flags
+  nameWithType: TimeAndSale.Flags
+- uid: DxFeed.Graal.Net.Events.Market.TimeAndSale.Flags*
+  name: Flags
+  href: docs/api/DxFeed.Graal.Net.Events.Market.TimeAndSale.html#DxFeed_Graal_Net_Events_Market_TimeAndSale_Flags_
+  commentId: Overload:DxFeed.Graal.Net.Events.Market.TimeAndSale.Flags
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Events.Market.TimeAndSale.Flags
+  nameWithType: TimeAndSale.Flags
 - uid: DxFeed.Graal.Net.Events.Market.TimeAndSale.Index
   name: Index
   href: docs/api/DxFeed.Graal.Net.Events.Market.TimeAndSale.html#DxFeed_Graal_Net_Events_Market_TimeAndSale_Index
@@ -8258,6 +8271,22 @@ references:
   fullName.vb: DxFeed.Graal.Net.Ipf.InstrumentProfile.New
   nameWithType: InstrumentProfile.InstrumentProfile
   nameWithType.vb: InstrumentProfile.New
+- uid: DxFeed.Graal.Net.Ipf.InstrumentProfile.AddNonEmptyCustomFieldNames(System.Collections.Generic.ICollection{System.String})
+  name: AddNonEmptyCustomFieldNames(ICollection<string>)
+  href: docs/api/DxFeed.Graal.Net.Ipf.InstrumentProfile.html#DxFeed_Graal_Net_Ipf_InstrumentProfile_AddNonEmptyCustomFieldNames_System_Collections_Generic_ICollection_System_String__
+  commentId: M:DxFeed.Graal.Net.Ipf.InstrumentProfile.AddNonEmptyCustomFieldNames(System.Collections.Generic.ICollection{System.String})
+  name.vb: AddNonEmptyCustomFieldNames(ICollection(Of String))
+  fullName: DxFeed.Graal.Net.Ipf.InstrumentProfile.AddNonEmptyCustomFieldNames(System.Collections.Generic.ICollection<string>)
+  fullName.vb: DxFeed.Graal.Net.Ipf.InstrumentProfile.AddNonEmptyCustomFieldNames(System.Collections.Generic.ICollection(Of String))
+  nameWithType: InstrumentProfile.AddNonEmptyCustomFieldNames(ICollection<string>)
+  nameWithType.vb: InstrumentProfile.AddNonEmptyCustomFieldNames(ICollection(Of String))
+- uid: DxFeed.Graal.Net.Ipf.InstrumentProfile.AddNonEmptyCustomFieldNames*
+  name: AddNonEmptyCustomFieldNames
+  href: docs/api/DxFeed.Graal.Net.Ipf.InstrumentProfile.html#DxFeed_Graal_Net_Ipf_InstrumentProfile_AddNonEmptyCustomFieldNames_
+  commentId: Overload:DxFeed.Graal.Net.Ipf.InstrumentProfile.AddNonEmptyCustomFieldNames
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Ipf.InstrumentProfile.AddNonEmptyCustomFieldNames
+  nameWithType: InstrumentProfile.AddNonEmptyCustomFieldNames
 - uid: DxFeed.Graal.Net.Ipf.InstrumentProfile.AdditionalUnderlyings
   name: AdditionalUnderlyings
   href: docs/api/DxFeed.Graal.Net.Ipf.InstrumentProfile.html#DxFeed_Graal_Net_Ipf_InstrumentProfile_AdditionalUnderlyings
@@ -8349,6 +8378,22 @@ references:
   isSpec: "True"
   fullName: DxFeed.Graal.Net.Ipf.InstrumentProfile.Description
   nameWithType: InstrumentProfile.Description
+- uid: DxFeed.Graal.Net.Ipf.InstrumentProfile.Equals(System.Object)
+  name: Equals(object?)
+  href: docs/api/DxFeed.Graal.Net.Ipf.InstrumentProfile.html#DxFeed_Graal_Net_Ipf_InstrumentProfile_Equals_System_Object_
+  commentId: M:DxFeed.Graal.Net.Ipf.InstrumentProfile.Equals(System.Object)
+  name.vb: Equals(Object)
+  fullName: DxFeed.Graal.Net.Ipf.InstrumentProfile.Equals(object?)
+  fullName.vb: DxFeed.Graal.Net.Ipf.InstrumentProfile.Equals(Object)
+  nameWithType: InstrumentProfile.Equals(object?)
+  nameWithType.vb: InstrumentProfile.Equals(Object)
+- uid: DxFeed.Graal.Net.Ipf.InstrumentProfile.Equals*
+  name: Equals
+  href: docs/api/DxFeed.Graal.Net.Ipf.InstrumentProfile.html#DxFeed_Graal_Net_Ipf_InstrumentProfile_Equals_
+  commentId: Overload:DxFeed.Graal.Net.Ipf.InstrumentProfile.Equals
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Ipf.InstrumentProfile.Equals
+  nameWithType: InstrumentProfile.Equals
 - uid: DxFeed.Graal.Net.Ipf.InstrumentProfile.ExchangeData
   name: ExchangeData
   href: docs/api/DxFeed.Graal.Net.Ipf.InstrumentProfile.html#DxFeed_Graal_Net_Ipf_InstrumentProfile_ExchangeData
@@ -8401,6 +8446,67 @@ references:
   isSpec: "True"
   fullName: DxFeed.Graal.Net.Ipf.InstrumentProfile.ExpirationStyle
   nameWithType: InstrumentProfile.ExpirationStyle
+- uid: DxFeed.Graal.Net.Ipf.InstrumentProfile.GetDateField(System.String)
+  name: GetDateField(string)
+  href: docs/api/DxFeed.Graal.Net.Ipf.InstrumentProfile.html#DxFeed_Graal_Net_Ipf_InstrumentProfile_GetDateField_System_String_
+  commentId: M:DxFeed.Graal.Net.Ipf.InstrumentProfile.GetDateField(System.String)
+  name.vb: GetDateField(String)
+  fullName: DxFeed.Graal.Net.Ipf.InstrumentProfile.GetDateField(string)
+  fullName.vb: DxFeed.Graal.Net.Ipf.InstrumentProfile.GetDateField(String)
+  nameWithType: InstrumentProfile.GetDateField(string)
+  nameWithType.vb: InstrumentProfile.GetDateField(String)
+- uid: DxFeed.Graal.Net.Ipf.InstrumentProfile.GetDateField*
+  name: GetDateField
+  href: docs/api/DxFeed.Graal.Net.Ipf.InstrumentProfile.html#DxFeed_Graal_Net_Ipf_InstrumentProfile_GetDateField_
+  commentId: Overload:DxFeed.Graal.Net.Ipf.InstrumentProfile.GetDateField
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Ipf.InstrumentProfile.GetDateField
+  nameWithType: InstrumentProfile.GetDateField
+- uid: DxFeed.Graal.Net.Ipf.InstrumentProfile.GetField(System.String)
+  name: GetField(string)
+  href: docs/api/DxFeed.Graal.Net.Ipf.InstrumentProfile.html#DxFeed_Graal_Net_Ipf_InstrumentProfile_GetField_System_String_
+  commentId: M:DxFeed.Graal.Net.Ipf.InstrumentProfile.GetField(System.String)
+  name.vb: GetField(String)
+  fullName: DxFeed.Graal.Net.Ipf.InstrumentProfile.GetField(string)
+  fullName.vb: DxFeed.Graal.Net.Ipf.InstrumentProfile.GetField(String)
+  nameWithType: InstrumentProfile.GetField(string)
+  nameWithType.vb: InstrumentProfile.GetField(String)
+- uid: DxFeed.Graal.Net.Ipf.InstrumentProfile.GetField*
+  name: GetField
+  href: docs/api/DxFeed.Graal.Net.Ipf.InstrumentProfile.html#DxFeed_Graal_Net_Ipf_InstrumentProfile_GetField_
+  commentId: Overload:DxFeed.Graal.Net.Ipf.InstrumentProfile.GetField
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Ipf.InstrumentProfile.GetField
+  nameWithType: InstrumentProfile.GetField
+- uid: DxFeed.Graal.Net.Ipf.InstrumentProfile.GetHashCode
+  name: GetHashCode()
+  href: docs/api/DxFeed.Graal.Net.Ipf.InstrumentProfile.html#DxFeed_Graal_Net_Ipf_InstrumentProfile_GetHashCode
+  commentId: M:DxFeed.Graal.Net.Ipf.InstrumentProfile.GetHashCode
+  fullName: DxFeed.Graal.Net.Ipf.InstrumentProfile.GetHashCode()
+  nameWithType: InstrumentProfile.GetHashCode()
+- uid: DxFeed.Graal.Net.Ipf.InstrumentProfile.GetHashCode*
+  name: GetHashCode
+  href: docs/api/DxFeed.Graal.Net.Ipf.InstrumentProfile.html#DxFeed_Graal_Net_Ipf_InstrumentProfile_GetHashCode_
+  commentId: Overload:DxFeed.Graal.Net.Ipf.InstrumentProfile.GetHashCode
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Ipf.InstrumentProfile.GetHashCode
+  nameWithType: InstrumentProfile.GetHashCode
+- uid: DxFeed.Graal.Net.Ipf.InstrumentProfile.GetNumericField(System.String)
+  name: GetNumericField(string)
+  href: docs/api/DxFeed.Graal.Net.Ipf.InstrumentProfile.html#DxFeed_Graal_Net_Ipf_InstrumentProfile_GetNumericField_System_String_
+  commentId: M:DxFeed.Graal.Net.Ipf.InstrumentProfile.GetNumericField(System.String)
+  name.vb: GetNumericField(String)
+  fullName: DxFeed.Graal.Net.Ipf.InstrumentProfile.GetNumericField(string)
+  fullName.vb: DxFeed.Graal.Net.Ipf.InstrumentProfile.GetNumericField(String)
+  nameWithType: InstrumentProfile.GetNumericField(string)
+  nameWithType.vb: InstrumentProfile.GetNumericField(String)
+- uid: DxFeed.Graal.Net.Ipf.InstrumentProfile.GetNumericField*
+  name: GetNumericField
+  href: docs/api/DxFeed.Graal.Net.Ipf.InstrumentProfile.html#DxFeed_Graal_Net_Ipf_InstrumentProfile_GetNumericField_
+  commentId: Overload:DxFeed.Graal.Net.Ipf.InstrumentProfile.GetNumericField
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Ipf.InstrumentProfile.GetNumericField
+  nameWithType: InstrumentProfile.GetNumericField
 - uid: DxFeed.Graal.Net.Ipf.InstrumentProfile.ICB
   name: ICB
   href: docs/api/DxFeed.Graal.Net.Ipf.InstrumentProfile.html#DxFeed_Graal_Net_Ipf_InstrumentProfile_ICB
@@ -8583,6 +8689,54 @@ references:
   isSpec: "True"
   fullName: DxFeed.Graal.Net.Ipf.InstrumentProfile.SPC
   nameWithType: InstrumentProfile.SPC
+- uid: DxFeed.Graal.Net.Ipf.InstrumentProfile.SetDateField(System.String,System.Int32)
+  name: SetDateField(string, int)
+  href: docs/api/DxFeed.Graal.Net.Ipf.InstrumentProfile.html#DxFeed_Graal_Net_Ipf_InstrumentProfile_SetDateField_System_String_System_Int32_
+  commentId: M:DxFeed.Graal.Net.Ipf.InstrumentProfile.SetDateField(System.String,System.Int32)
+  name.vb: SetDateField(String, Integer)
+  fullName: DxFeed.Graal.Net.Ipf.InstrumentProfile.SetDateField(string, int)
+  fullName.vb: DxFeed.Graal.Net.Ipf.InstrumentProfile.SetDateField(String, Integer)
+  nameWithType: InstrumentProfile.SetDateField(string, int)
+  nameWithType.vb: InstrumentProfile.SetDateField(String, Integer)
+- uid: DxFeed.Graal.Net.Ipf.InstrumentProfile.SetDateField*
+  name: SetDateField
+  href: docs/api/DxFeed.Graal.Net.Ipf.InstrumentProfile.html#DxFeed_Graal_Net_Ipf_InstrumentProfile_SetDateField_
+  commentId: Overload:DxFeed.Graal.Net.Ipf.InstrumentProfile.SetDateField
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Ipf.InstrumentProfile.SetDateField
+  nameWithType: InstrumentProfile.SetDateField
+- uid: DxFeed.Graal.Net.Ipf.InstrumentProfile.SetField(System.String,System.String)
+  name: SetField(string, string)
+  href: docs/api/DxFeed.Graal.Net.Ipf.InstrumentProfile.html#DxFeed_Graal_Net_Ipf_InstrumentProfile_SetField_System_String_System_String_
+  commentId: M:DxFeed.Graal.Net.Ipf.InstrumentProfile.SetField(System.String,System.String)
+  name.vb: SetField(String, String)
+  fullName: DxFeed.Graal.Net.Ipf.InstrumentProfile.SetField(string, string)
+  fullName.vb: DxFeed.Graal.Net.Ipf.InstrumentProfile.SetField(String, String)
+  nameWithType: InstrumentProfile.SetField(string, string)
+  nameWithType.vb: InstrumentProfile.SetField(String, String)
+- uid: DxFeed.Graal.Net.Ipf.InstrumentProfile.SetField*
+  name: SetField
+  href: docs/api/DxFeed.Graal.Net.Ipf.InstrumentProfile.html#DxFeed_Graal_Net_Ipf_InstrumentProfile_SetField_
+  commentId: Overload:DxFeed.Graal.Net.Ipf.InstrumentProfile.SetField
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Ipf.InstrumentProfile.SetField
+  nameWithType: InstrumentProfile.SetField
+- uid: DxFeed.Graal.Net.Ipf.InstrumentProfile.SetNumericField(System.String,System.Double)
+  name: SetNumericField(string, double)
+  href: docs/api/DxFeed.Graal.Net.Ipf.InstrumentProfile.html#DxFeed_Graal_Net_Ipf_InstrumentProfile_SetNumericField_System_String_System_Double_
+  commentId: M:DxFeed.Graal.Net.Ipf.InstrumentProfile.SetNumericField(System.String,System.Double)
+  name.vb: SetNumericField(String, Double)
+  fullName: DxFeed.Graal.Net.Ipf.InstrumentProfile.SetNumericField(string, double)
+  fullName.vb: DxFeed.Graal.Net.Ipf.InstrumentProfile.SetNumericField(String, Double)
+  nameWithType: InstrumentProfile.SetNumericField(string, double)
+  nameWithType.vb: InstrumentProfile.SetNumericField(String, Double)
+- uid: DxFeed.Graal.Net.Ipf.InstrumentProfile.SetNumericField*
+  name: SetNumericField
+  href: docs/api/DxFeed.Graal.Net.Ipf.InstrumentProfile.html#DxFeed_Graal_Net_Ipf_InstrumentProfile_SetNumericField_
+  commentId: Overload:DxFeed.Graal.Net.Ipf.InstrumentProfile.SetNumericField
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Ipf.InstrumentProfile.SetNumericField
+  nameWithType: InstrumentProfile.SetNumericField
 - uid: DxFeed.Graal.Net.Ipf.InstrumentProfile.SettlementStyle
   name: SettlementStyle
   href: docs/api/DxFeed.Graal.Net.Ipf.InstrumentProfile.html#DxFeed_Graal_Net_Ipf_InstrumentProfile_SettlementStyle

@@ -16,7 +16,7 @@
       <meta name="docfx:rel" content="">
       
       
-      <meta name="docfx:docurl" content="https://github.com/dxFeed/dxfeed-graal-net-api/blob/2.1.0/index.md/#L1">
+      <meta name="docfx:docurl" content="https://github.com/dxFeed/dxfeed-graal-net-api/blob/2.2.0/index.md/#L1">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -88,7 +88,7 @@ the <a href="#overview">Overview</a> section.<br></p>
 <img src="https://img.shields.io/badge/platform-win--x64%20%7C%20linux--x64%20%7C%20osx--x64%20%7C%20osx--arm64-lightgrey" alt="Platform">
 <a href="https://dotnet.microsoft.com/en-us/"><img src="https://img.shields.io/badge/.NET_version-netstandard2.0%20%7C%20net6.0%20%7C%20net7.0%20%7C%20net8.0-blueviolet" alt="NET"></a>
 <a href="https://github.com/dxFeed/dxfeed-graal-net-api/releases/latest"><img src="https://img.shields.io/github/v/release/dxFeed/dxfeed-graal-net-api" alt="Release"></a>
-<a href="https://dxfeed.jfrog.io/artifactory/nuget-open/com/dxfeed/graal-net/"><img src="https://img.shields.io/badge/nuget-2.1.0-blue" alt="Nuget"></a>
+<a href="https://dxfeed.jfrog.io/artifactory/nuget-open/com/dxfeed/graal-net/"><img src="https://img.shields.io/badge/nuget-2.2.0-blue" alt="Nuget"></a>
 <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/master/LICENSE"><img src="https://img.shields.io/badge/license-MPL--2.0-orange" alt="License"></a></p>
 <h2 id="table-of-contents">Table of Contents</h2>
 <ul>
@@ -150,6 +150,7 @@ ready to answer any questions and help with the transition.</p>
 <th style="text-align: left;">Sample</th>
 <th style="text-align: left;">Old Version</th>
 <th style="text-align: left;">New Version</th>
+<th></th>
 </tr>
 </thead>
 <tbody>
@@ -158,48 +159,56 @@ ready to answer any questions and help with the transition.</p>
 <td style="text-align: left;">How to get Instrument Profiles</td>
 <td style="text-align: left;"><a href="https://github.com/dxFeed/dxfeed-net-api/tree/master/samples/dxf_ipf_connect_sample">dxf_ipf_connect_sample</a></td>
 <td style="text-align: left;"><a href="https://github.com/dxFeed/dxfeed-graal-net-api/tree/main/samples/DxFeedIpfConnect">DxFeedIpfConnect</a></td>
+<td></td>
 </tr>
 <tr>
 <td style="text-align: center;">2</td>
 <td style="text-align: left;">How to get live updates for Instrument Profiles</td>
 <td style="text-align: left;"><a href="https://github.com/dxFeed/dxfeed-net-api/tree/master/samples/dxf_instrument_profile_live_sample">dxf_instrument_profile_live_sample</a></td>
 <td style="text-align: left;"><a href="https://github.com/dxFeed/dxfeed-graal-net-api/tree/main/samples/DxFeedLiveIpfSample">DxFeedLiveIpfSample</a></td>
+<td></td>
 </tr>
 <tr>
 <td style="text-align: center;">3</td>
 <td style="text-align: left;">How to subscribe to <code>Order</code>, <code>SpreadOrder</code>, <code>Candle</code>, <code>TimeAndSale</code>, <code>Greeks</code>, <code>Series</code> snapshots</td>
 <td style="text-align: left;"><a href="https://github.com/dxFeed/dxfeed-net-api/tree/master/samples/dxf_snapshot_sample">dxf_snapshot_sample</a></td>
 <td style="text-align: left;"><em>Q2’2024</em>, please see <a href="#future-development">TBD</a> section</td>
+<td></td>
 </tr>
 <tr>
 <td style="text-align: center;">4</td>
 <td style="text-align: left;">How to subscribe to depth of market</td>
 <td style="text-align: left;"><a href="https://github.com/dxFeed/dxfeed-net-api/tree/master/samples/dxf_price_level_book_sample">dxf_price_level_book_sample</a></td>
 <td style="text-align: left;"><em>Q2’2024</em>, please see <a href="#future-development">TBD</a> section</td>
+<td></td>
 </tr>
 <tr>
 <td style="text-align: center;">5</td>
 <td style="text-align: left;">How to receive snapshots of <code>TimeAndSale</code>, <code>Candle</code>, <code>Series</code>, <code>Greeks</code> events on a given time interval without live subscription</td>
 <td style="text-align: left;"><a href="https://github.com/dxFeed/dxfeed-net-api/tree/master/samples/dxf_simple_data_retrieving_sample">dxf_simple_data_retrieving_sample</a></td>
 <td style="text-align: left;"><a href="https://github.com/dxFeed/dxfeed-graal-net-api/tree/main/samples/FetchDailyCandles">FetchDailyCandles</a></td>
+<td></td>
 </tr>
 <tr>
 <td style="text-align: center;">6</td>
 <td style="text-align: left;">How to subscribe to order snapshot with incremental updates</td>
 <td style="text-align: left;"><a href="https://github.com/dxFeed/dxfeed-net-api/tree/master/samples/dxf_inc_order_snapshot_sample">dxf_inc_order_snapshot_sample</a></td>
 <td style="text-align: left;"><em>Q2’2024</em>, please see <a href="#future-development">TBD</a> section</td>
+<td></td>
 </tr>
 <tr>
 <td style="text-align: center;">7</td>
 <td style="text-align: left;">How to retrieve <code>Candle</code> data from the candle web service</td>
 <td style="text-align: left;"><a href="https://github.com/dxFeed/dxfeed-net-api/tree/master/samples/dxf_candle_data_retrieving_sample">dxf_candle_data_retrieving_sample</a></td>
-<td style="text-align: left;"><em>Q4’2024</em>, please see <a href="#future-development">TBD</a> section</td>
+<td style="text-align: left;"><a href="https://github.com/dxFeed/dxfeed-graal-net-api/tree/main/samples/CandleDataResponseReader">CandleDataResponseReader</a></td>
+<td></td>
 </tr>
 <tr>
 <td style="text-align: center;">8</td>
 <td style="text-align: left;">How to retrieve <code>TimeAndSale</code> data from the candle web service</td>
 <td style="text-align: left;"><a href="https://github.com/dxFeed/dxfeed-net-api/tree/master/samples/dxf_tns_data_retrieving_sample">dxf_tns_data_retrieving_sample</a></td>
-<td style="text-align: left;"><em>Q4’2024</em>, please see <a href="#future-development">TBD</a> section</td>
+<td style="text-align: left;"><a href="https://github.com/dxFeed/dxfeed-graal-net-api/tree/main/samples/CandleDataResponseReader">CandleDataResponseReader</a></td>
+<td></td>
 </tr>
 </tbody>
 </table>
@@ -546,10 +555,12 @@ simple demonstration of how to get live updates for Instrument Profiles</li>
 <li class="task-list-item"><input disabled="disabled" type="checkbox" checked="checked"> <a href="https://github.com/dxFeed/dxfeed-graal-net-api/tree/main/samples/ScheduleSample">ScheduleSample</a> is a simple
 demonstration of how to get various scheduling information for instruments</li>
 <li class="task-list-item"><input disabled="disabled" type="checkbox" checked="checked"> <a href="https://github.com/dxFeed/dxfeed-graal-net-api/tree/main/samples/FetchDailyCandles">FetchDailyCandles</a>
-is a  simple  demonstration of how to fetch last N-days of candles for a specified symbol</li>
+is a simple demonstration of how to fetch last N-days of candles for a specified symbol</li>
 <li class="task-list-item"><input disabled="disabled" type="checkbox" checked="checked"> <a href="https://github.com/dxFeed/dxfeed-graal-net-api/tree/main/samples/DxFeedReconnectSample">DxFeedReconnectSample</a>
 is a simple demonstration of how to connect to an endpoint, subscribe to market data events, handle reconnections
 and re-subscribing.</li>
+<li class="task-list-item"><input disabled="disabled" type="checkbox" checked="checked"> <a href="https://github.com/dxFeed/dxfeed-graal-net-api/tree/main/samples/CandleDataResponseReader">CandleDataResponseReader</a>
+is a simple demonstration of how to parse response from CandleData service.</li>
 </ul>
 <h2 id="current-state">Current State</h2>
 <h3 id="endpoint-roles">Endpoint Roles</h3>
