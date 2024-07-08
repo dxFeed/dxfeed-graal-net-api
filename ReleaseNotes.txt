@@ -1,3 +1,5 @@
+* [MDAPI-66] [.NET] Failed to build solution on Visual Studio 2022
+
 ## Version 2.2.0
 
 * [MDAPI-25] [.NET] [IPF] Implement custom fields in InstrumentProfile

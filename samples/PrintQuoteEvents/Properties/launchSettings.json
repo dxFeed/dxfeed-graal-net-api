@@ -3,7 +3,6 @@
   "profiles": {
     "Run": {
       "commandName": "Project",
-      "nativeDebugging": true,
       "commandLineArgs": "AAPL",
       "environmentVariables": {
       }
