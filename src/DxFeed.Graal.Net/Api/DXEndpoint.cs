@@ -14,6 +14,7 @@ using DxFeed.Graal.Net.Api.Osub;
 using DxFeed.Graal.Net.Events;
 using DxFeed.Graal.Net.Native.Endpoint;
 using DxFeed.Graal.Net.Native.ErrorHandling;
+using DxFeed.Graal.Net.Native.Executors;
 using DxFeed.Graal.Net.Utils;
 using static DxFeed.Graal.Net.Native.Endpoint.DXEndpointWrapper;
 
@@ -658,6 +659,13 @@ public sealed class DXEndpoint : IDisposable
     /// </summary>
     public void Dispose() =>
         Close();
+
+    /// <summary>
+    /// For testing only.
+    /// </summary>
+    /// <param name="executor">The executor.</param>
+    internal void Executor(InPlaceExecutor executor) =>
+        _endpointNative.Executor(executor);
 
     /// <summary>
     /// Closes all associated resources with this <see cref="DXEndpoint"/>.

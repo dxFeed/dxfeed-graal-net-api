@@ -11,5 +11,6 @@
     <Rule Id="SA1649" Action="None"/><!-- FileNameMustMatchTypeName -->
     <Rule Id="SA1310" Action="None"/><!-- FieldNamesMustNotContainUnderscore -->
     <Rule Id="SA1629" Action="None"/><!-- DocumentationTextMustEndWithAPeriod -->
+    <Rule Id="SA1401" Action="None"/><!-- FieldsMustBePrivate -->
   </Rules>
 </RuleSet>
