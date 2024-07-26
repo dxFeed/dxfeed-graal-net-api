@@ -1,0 +1,36 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFrameworks>net6.0</TargetFrameworks>
+    <Nullable>enable</Nullable>
+    <BuiltInComInteropSupport>true</BuiltInComInteropSupport>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <AvaloniaUseCompiledBindingsByDefault>true</AvaloniaUseCompiledBindingsByDefault>
+    <CodeAnalysisRuleSet>../../../StyleCop.xml</CodeAnalysisRuleSet>
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <OutputPath>../../artifacts/Debug/Samples/</OutputPath>
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <OutputPath>../../artifacts/Release/Samples/</OutputPath>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Avalonia" Version="11.0.10"/>
+    <PackageReference Include="Avalonia.Desktop" Version="11.0.10"/>
+    <PackageReference Include="Avalonia.Themes.Fluent" Version="11.0.10"/>
+    <PackageReference Include="Avalonia.Fonts.Inter" Version="11.0.10"/>
+    <PackageReference Include="Avalonia.Controls.DataGrid" Version="11.0.10" />
+    <PackageReference Include="Avalonia.Controls.TreeDataGrid" Version="11.0.10" />
+    <!--Condition below is needed to remove Avalonia.Diagnostics package from build output in Release configuration.-->
+    <PackageReference Condition="'$(Configuration)' == 'Debug'" Include="Avalonia.Diagnostics" Version="11.0.10"/>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\src\DxFeed.Graal.Net\DxFeed.Graal.Net.csproj"/>
+  </ItemGroup>
+
+</Project>

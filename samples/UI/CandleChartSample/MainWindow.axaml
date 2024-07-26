@@ -1,0 +1,52 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:scottPlot="clr-namespace:ScottPlot.Avalonia;assembly=ScottPlot.Avalonia"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="CandleChartSample.MainWindow"
+        WindowStartupLocation="CenterScreen"
+        Title="CandleChartSample">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0" HorizontalAlignment="Left" Margin="10" Grid.ColumnSpan="2">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Grid.Column="0" Text="Symbol" Margin="5" FontSize="12" VerticalAlignment="Center" />
+            <TextBox x:Name="SymbolTextBox"
+                     Grid.Column="1"
+                     Text="AAPL{=d}"
+                     FontSize="12"
+                     Width="180"
+                     Margin="5"
+                     KeyDown="OnKeyDown"
+                     LostFocus="OnLostFocus" />
+
+            <TextBlock Grid.Column="2" Text="From Time" Margin="5" FontSize="12" VerticalAlignment="Center" />
+            <TextBox x:Name="FromTimeTextBox"
+                     Grid.Column="3"
+                     FontSize="12"
+                     Width="180"
+                     Margin="5"
+                     KeyDown="OnKeyDown"
+                     LostFocus="OnLostFocus" />
+        </Grid>
+
+        <Grid Grid.Row="1" Grid.Column="0">
+            <scottPlot:AvaPlot Name="AvaPlot" />
+        </Grid>
+
+    </Grid>
+
+</Window>

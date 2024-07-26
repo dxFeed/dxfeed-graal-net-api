@@ -1,3 +1,10 @@
+* [MDAPI-115] [.NET] Add IncOrderSnapshot sample
+* [MDAPI-81] [.NET] Add MultipleMarketDepth sample
+* [MDAPI-93] [.NET] Add DxFeedMarketDepth sample
+* [MDAPI-109] [.NET] Add DxFeedCandleChart API sample
+* [MDAPI-107] [.NET] Implement TimeSeriesTxModel
+* [MDAPI-106] [.NET] Implement IndexedTxModel
+* [MDAPI-92] [.NET] Implement MarketDepthModel
 * [MDAPI-66] [.NET] Failed to build solution on Visual Studio 2022
 
 ## Version 2.2.0

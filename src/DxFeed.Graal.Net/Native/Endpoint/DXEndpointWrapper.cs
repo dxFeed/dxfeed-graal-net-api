@@ -5,6 +5,7 @@
 // </copyright>
 
 using System;
+using DxFeed.Graal.Net.Native.Executors;
 using DxFeed.Graal.Net.Native.Feed;
 using DxFeed.Graal.Net.Native.Interop;
 using DxFeed.Graal.Net.Native.Publisher;
@@ -18,6 +19,7 @@ internal sealed unsafe class DXEndpointWrapper : IDisposable
     private readonly Lazy<FeedNative> feed;
     private readonly Lazy<DXPublisherHandle> publisher;
     private readonly HandleMap<StateChangeListener, StateChangeListenerHandle> listeners;
+    private InPlaceExecutor? _executor;
 
     private DXEndpointWrapper(DXEndpointHandle endpoint)
     {
@@ -79,6 +81,12 @@ internal sealed unsafe class DXEndpointWrapper : IDisposable
 
     public DXPublisherHandle GetPublisher() =>
         publisher.Value;
+
+    public void Executor(InPlaceExecutor executor)
+    {
+        _executor = executor;
+        endpoint.Executor(executor);
+    }
 
     public void Dispose() =>
         Close();

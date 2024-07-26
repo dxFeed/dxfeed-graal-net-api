@@ -84,7 +84,7 @@ ready to answer any questions and help with the transition.
 | 3 | How to subscribe to `Order`, `SpreadOrder`, `Candle`, `TimeAndSale`, `Greeks`, `Series` snapshots                                 | [dxf_snapshot_sample](https://github.com/dxFeed/dxfeed-net-api/tree/master/samples/dxf_snapshot_sample)                               | *Q2’2024*, please see [TBD](#future-development) section                                                              |
 | 4 | How to subscribe to depth of market                                                                                               | [dxf_price_level_book_sample](https://github.com/dxFeed/dxfeed-net-api/tree/master/samples/dxf_price_level_book_sample)               | *Q2’2024*, please see [TBD](#future-development) section                                                              |
 | 5 | How to receive snapshots of `TimeAndSale`, `Candle`, `Series`, `Greeks` events on a given time interval without live subscription | [dxf_simple_data_retrieving_sample](https://github.com/dxFeed/dxfeed-net-api/tree/master/samples/dxf_simple_data_retrieving_sample)   | [FetchDailyCandles](https://github.com/dxFeed/dxfeed-graal-net-api/tree/main/samples/FetchDailyCandles)               |
-| 6 | How to subscribe to order snapshot with incremental updates                                                                       | [dxf_inc_order_snapshot_sample](https://github.com/dxFeed/dxfeed-net-api/tree/master/samples/dxf_inc_order_snapshot_sample)           | *Q2’2024*, please see [TBD](#future-development) section                                                              |
+| 6 | How to subscribe to order snapshot with incremental updates                                                                       | [dxf_inc_order_snapshot_sample](https://github.com/dxFeed/dxfeed-net-api/tree/master/samples/dxf_inc_order_snapshot_sample)           | [IncOrderSnapshotSample](https://github.com/dxFeed/dxfeed-graal-net-api/tree/main/samples/IncOrderSnapshotSample)     |
 | 7 | How to retrieve `Candle` data from the candle web service                                                                         | [dxf_candle_data_retrieving_sample](https://github.com/dxFeed/dxfeed-net-api/tree/master/samples/dxf_candle_data_retrieving_sample)   | [CandleDataResponseReader](https://github.com/dxFeed/dxfeed-graal-net-api/tree/main/samples/CandleDataResponseReader) |                                                                                         |
 | 8 | How to retrieve `TimeAndSale` data from the candle web service                                                                    | [dxf_tns_data_retrieving_sample](https://github.com/dxFeed/dxfeed-net-api/tree/master/samples/dxf_tns_data_retrieving_sample)         | [CandleDataResponseReader](https://github.com/dxFeed/dxfeed-graal-net-api/tree/main/samples/CandleDataResponseReader) |                                                                                         |
 
@@ -398,6 +398,14 @@ sudo /usr/bin/xattr -r -d com.apple.quarantine <directory_with_tools>
   and re-subscribing.
 - [x] [CandleDataResponseReader](https://github.com/dxFeed/dxfeed-graal-net-api/tree/main/samples/CandleDataResponseReader)
   is a simple demonstration of how to parse response from CandleData service.
+- [x] [MarketDepthModelSample](https://github.com/dxFeed/dxfeed-graal-net-api/tree/main/samples/UI/MarketDepthModelSample)
+  is a simple demonstration of how to draw a Market Depth using Avalonia UI.
+- [x] [CandleChartSample](https://github.com/dxFeed/dxfeed-graal-net-api/tree/main/samples/UI/CandleChartSample)
+  is a simple demonstration of how to draw a Candlestick Chart using Avalonia UI.
+- [x] [IncOrderSnapshotSample](https://github.com/dxFeed/dxfeed-graal-net-api/tree/main/samples/IncOrderSnapshotSample)
+  is a simple demonstration of how to subscribe to the Order event and handle snapshots and updates.
+- [x] [MultipleMarketDepthSample](https://github.com/dxFeed/dxfeed-graal-net-api/tree/main/samples/MultipleMarketDepthSample)
+  is a simple demonstration of how to use the `MarketDepthModel` to manage and display order books for multiple symbols.
 
 ## Current State
 

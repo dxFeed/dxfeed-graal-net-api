@@ -6,6 +6,7 @@
 
 using System.Diagnostics.CodeAnalysis;
 using System.Runtime.InteropServices;
+using DxFeed.Graal.Net.Native.Executors;
 using DxFeed.Graal.Net.Native.Feed;
 using DxFeed.Graal.Net.Native.Interop;
 using DxFeed.Graal.Net.Native.Publisher;
@@ -60,6 +61,9 @@ internal sealed unsafe class DXEndpointHandle : JavaHandle
 
     public DXPublisherHandle GetPublisher() =>
         SafeCall(Import.GetPublisher(CurrentThread, this));
+
+    public void Executor(InPlaceExecutor executor) =>
+        SafeCall(Import.Executor(CurrentThread, this, executor));
 
     private static class Import
     {
@@ -211,5 +215,15 @@ internal sealed unsafe class DXEndpointHandle : JavaHandle
         public static extern DXPublisherHandle GetPublisher(
             nint thread,
             DXEndpointHandle endpoint);
+
+        [DllImport(
+            ImportInfo.DllName,
+            CallingConvention = CallingConvention.Cdecl,
+            CharSet = CharSet.Ansi,
+            EntryPoint = "dxfg_DXEndpoint_executor")]
+        public static extern int Executor(
+            nint thread,
+            DXEndpointHandle endpoint,
+            InPlaceExecutor executor);
     }
 }
