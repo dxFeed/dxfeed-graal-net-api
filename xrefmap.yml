@@ -5218,6 +5218,12 @@ references:
   commentId: F:DxFeed.Graal.Net.Events.Market.OrderSource.AGGREGATE_BID
   fullName: DxFeed.Graal.Net.Events.Market.OrderSource.AGGREGATE_BID
   nameWithType: OrderSource.AGGREGATE_BID
+- uid: DxFeed.Graal.Net.Events.Market.OrderSource.ARCA
+  name: ARCA
+  href: docs/api/DxFeed.Graal.Net.Events.Market.OrderSource.html#DxFeed_Graal_Net_Events_Market_OrderSource_ARCA
+  commentId: F:DxFeed.Graal.Net.Events.Market.OrderSource.ARCA
+  fullName: DxFeed.Graal.Net.Events.Market.OrderSource.ARCA
+  nameWithType: OrderSource.ARCA
 - uid: DxFeed.Graal.Net.Events.Market.OrderSource.BATE
   name: BATE
   href: docs/api/DxFeed.Graal.Net.Events.Market.OrderSource.html#DxFeed_Graal_Net_Events_Market_OrderSource_BATE
@@ -5254,6 +5260,12 @@ references:
   commentId: F:DxFeed.Graal.Net.Events.Market.OrderSource.C2OX
   fullName: DxFeed.Graal.Net.Events.Market.OrderSource.C2OX
   nameWithType: OrderSource.C2OX
+- uid: DxFeed.Graal.Net.Events.Market.OrderSource.CEDX
+  name: CEDX
+  href: docs/api/DxFeed.Graal.Net.Events.Market.OrderSource.html#DxFeed_Graal_Net_Events_Market_OrderSource_CEDX
+  commentId: F:DxFeed.Graal.Net.Events.Market.OrderSource.CEDX
+  fullName: DxFeed.Graal.Net.Events.Market.OrderSource.CEDX
+  nameWithType: OrderSource.CEDX
 - uid: DxFeed.Graal.Net.Events.Market.OrderSource.CEUX
   name: CEUX
   href: docs/api/DxFeed.Graal.Net.Events.Market.OrderSource.html#DxFeed_Graal_Net_Events_Market_OrderSource_CEUX
@@ -5478,6 +5490,18 @@ references:
   commentId: F:DxFeed.Graal.Net.Events.Market.OrderSource.XNFI
   fullName: DxFeed.Graal.Net.Events.Market.OrderSource.XNFI
   nameWithType: OrderSource.XNFI
+- uid: DxFeed.Graal.Net.Events.Market.OrderSource.arca
+  name: arca
+  href: docs/api/DxFeed.Graal.Net.Events.Market.OrderSource.html#DxFeed_Graal_Net_Events_Market_OrderSource_arca
+  commentId: F:DxFeed.Graal.Net.Events.Market.OrderSource.arca
+  fullName: DxFeed.Graal.Net.Events.Market.OrderSource.arca
+  nameWithType: OrderSource.arca
+- uid: DxFeed.Graal.Net.Events.Market.OrderSource.cedx
+  name: cedx
+  href: docs/api/DxFeed.Graal.Net.Events.Market.OrderSource.html#DxFeed_Graal_Net_Events_Market_OrderSource_cedx
+  commentId: F:DxFeed.Graal.Net.Events.Market.OrderSource.cedx
+  fullName: DxFeed.Graal.Net.Events.Market.OrderSource.cedx
+  nameWithType: OrderSource.cedx
 - uid: DxFeed.Graal.Net.Events.Market.OrderSource.glbx
   name: glbx
   href: docs/api/DxFeed.Graal.Net.Events.Market.OrderSource.html#DxFeed_Graal_Net_Events_Market_OrderSource_glbx
@@ -9230,6 +9254,741 @@ references:
   commentId: T:DxFeed.Graal.Net.Ipf.Live.InstrumentProfileUpdateListener
   fullName: DxFeed.Graal.Net.Ipf.Live.InstrumentProfileUpdateListener
   nameWithType: InstrumentProfileUpdateListener
+- uid: DxFeed.Graal.Net.Models
+  name: DxFeed.Graal.Net.Models
+  href: docs/api/DxFeed.Graal.Net.Models.html
+  commentId: N:DxFeed.Graal.Net.Models
+  fullName: DxFeed.Graal.Net.Models
+  nameWithType: DxFeed.Graal.Net.Models
+- uid: DxFeed.Graal.Net.Models.AbstractTxModel`1
+  name: AbstractTxModel<TE>
+  href: docs/api/DxFeed.Graal.Net.Models.AbstractTxModel-1.html
+  commentId: T:DxFeed.Graal.Net.Models.AbstractTxModel`1
+  name.vb: AbstractTxModel(Of TE)
+  fullName: DxFeed.Graal.Net.Models.AbstractTxModel<TE>
+  fullName.vb: DxFeed.Graal.Net.Models.AbstractTxModel(Of TE)
+  nameWithType: AbstractTxModel<TE>
+  nameWithType.vb: AbstractTxModel(Of TE)
+- uid: DxFeed.Graal.Net.Models.AbstractTxModel`1.Builder
+  name: AbstractTxModel<TE>.Builder
+  href: docs/api/DxFeed.Graal.Net.Models.AbstractTxModel-1.Builder.html
+  commentId: T:DxFeed.Graal.Net.Models.AbstractTxModel`1.Builder
+  name.vb: AbstractTxModel(Of TE).Builder
+  fullName: DxFeed.Graal.Net.Models.AbstractTxModel<TE>.Builder
+  fullName.vb: DxFeed.Graal.Net.Models.AbstractTxModel(Of TE).Builder
+  nameWithType: AbstractTxModel<TE>.Builder
+  nameWithType.vb: AbstractTxModel(Of TE).Builder
+- uid: DxFeed.Graal.Net.Models.AbstractTxModel`1.Builder`2
+  name: AbstractTxModel<TE>.Builder<TB, TM>
+  href: docs/api/DxFeed.Graal.Net.Models.AbstractTxModel-1.Builder-2.html
+  commentId: T:DxFeed.Graal.Net.Models.AbstractTxModel`1.Builder`2
+  name.vb: AbstractTxModel(Of TE).Builder(Of TB, TM)
+  fullName: DxFeed.Graal.Net.Models.AbstractTxModel<TE>.Builder<TB, TM>
+  fullName.vb: DxFeed.Graal.Net.Models.AbstractTxModel(Of TE).Builder(Of TB, TM)
+  nameWithType: AbstractTxModel<TE>.Builder<TB, TM>
+  nameWithType.vb: AbstractTxModel(Of TE).Builder(Of TB, TM)
+- uid: DxFeed.Graal.Net.Models.AbstractTxModel`1.Builder`2.Build
+  name: Build()
+  href: docs/api/DxFeed.Graal.Net.Models.AbstractTxModel-1.Builder-2.html#DxFeed_Graal_Net_Models_AbstractTxModel_1_Builder_2_Build
+  commentId: M:DxFeed.Graal.Net.Models.AbstractTxModel`1.Builder`2.Build
+  fullName: DxFeed.Graal.Net.Models.AbstractTxModel<TE>.Builder<TB, TM>.Build()
+  fullName.vb: DxFeed.Graal.Net.Models.AbstractTxModel(Of TE).Builder(Of TB, TM).Build()
+  nameWithType: AbstractTxModel<TE>.Builder<TB, TM>.Build()
+  nameWithType.vb: AbstractTxModel(Of TE).Builder(Of TB, TM).Build()
+- uid: DxFeed.Graal.Net.Models.AbstractTxModel`1.Builder`2.Build*
+  name: Build
+  href: docs/api/DxFeed.Graal.Net.Models.AbstractTxModel-1.Builder-2.html#DxFeed_Graal_Net_Models_AbstractTxModel_1_Builder_2_Build_
+  commentId: Overload:DxFeed.Graal.Net.Models.AbstractTxModel`1.Builder`2.Build
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Models.AbstractTxModel<TE>.Builder<TB, TM>.Build
+  fullName.vb: DxFeed.Graal.Net.Models.AbstractTxModel(Of TE).Builder(Of TB, TM).Build
+  nameWithType: AbstractTxModel<TE>.Builder<TB, TM>.Build
+  nameWithType.vb: AbstractTxModel(Of TE).Builder(Of TB, TM).Build
+- uid: DxFeed.Graal.Net.Models.AbstractTxModel`1.Builder`2.WithBatchProcessing(System.Boolean)
+  name: WithBatchProcessing(bool)
+  href: docs/api/DxFeed.Graal.Net.Models.AbstractTxModel-1.Builder-2.html#DxFeed_Graal_Net_Models_AbstractTxModel_1_Builder_2_WithBatchProcessing_System_Boolean_
+  commentId: M:DxFeed.Graal.Net.Models.AbstractTxModel`1.Builder`2.WithBatchProcessing(System.Boolean)
+  name.vb: WithBatchProcessing(Boolean)
+  fullName: DxFeed.Graal.Net.Models.AbstractTxModel<TE>.Builder<TB, TM>.WithBatchProcessing(bool)
+  fullName.vb: DxFeed.Graal.Net.Models.AbstractTxModel(Of TE).Builder(Of TB, TM).WithBatchProcessing(Boolean)
+  nameWithType: AbstractTxModel<TE>.Builder<TB, TM>.WithBatchProcessing(bool)
+  nameWithType.vb: AbstractTxModel(Of TE).Builder(Of TB, TM).WithBatchProcessing(Boolean)
+- uid: DxFeed.Graal.Net.Models.AbstractTxModel`1.Builder`2.WithBatchProcessing*
+  name: WithBatchProcessing
+  href: docs/api/DxFeed.Graal.Net.Models.AbstractTxModel-1.Builder-2.html#DxFeed_Graal_Net_Models_AbstractTxModel_1_Builder_2_WithBatchProcessing_
+  commentId: Overload:DxFeed.Graal.Net.Models.AbstractTxModel`1.Builder`2.WithBatchProcessing
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Models.AbstractTxModel<TE>.Builder<TB, TM>.WithBatchProcessing
+  fullName.vb: DxFeed.Graal.Net.Models.AbstractTxModel(Of TE).Builder(Of TB, TM).WithBatchProcessing
+  nameWithType: AbstractTxModel<TE>.Builder<TB, TM>.WithBatchProcessing
+  nameWithType.vb: AbstractTxModel(Of TE).Builder(Of TB, TM).WithBatchProcessing
+- uid: DxFeed.Graal.Net.Models.AbstractTxModel`1.Builder`2.WithFeed(DxFeed.Graal.Net.Api.DXFeed)
+  name: WithFeed(DXFeed)
+  href: docs/api/DxFeed.Graal.Net.Models.AbstractTxModel-1.Builder-2.html#DxFeed_Graal_Net_Models_AbstractTxModel_1_Builder_2_WithFeed_DxFeed_Graal_Net_Api_DXFeed_
+  commentId: M:DxFeed.Graal.Net.Models.AbstractTxModel`1.Builder`2.WithFeed(DxFeed.Graal.Net.Api.DXFeed)
+  fullName: DxFeed.Graal.Net.Models.AbstractTxModel<TE>.Builder<TB, TM>.WithFeed(DxFeed.Graal.Net.Api.DXFeed)
+  fullName.vb: DxFeed.Graal.Net.Models.AbstractTxModel(Of TE).Builder(Of TB, TM).WithFeed(DxFeed.Graal.Net.Api.DXFeed)
+  nameWithType: AbstractTxModel<TE>.Builder<TB, TM>.WithFeed(DXFeed)
+  nameWithType.vb: AbstractTxModel(Of TE).Builder(Of TB, TM).WithFeed(DXFeed)
+- uid: DxFeed.Graal.Net.Models.AbstractTxModel`1.Builder`2.WithFeed*
+  name: WithFeed
+  href: docs/api/DxFeed.Graal.Net.Models.AbstractTxModel-1.Builder-2.html#DxFeed_Graal_Net_Models_AbstractTxModel_1_Builder_2_WithFeed_
+  commentId: Overload:DxFeed.Graal.Net.Models.AbstractTxModel`1.Builder`2.WithFeed
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Models.AbstractTxModel<TE>.Builder<TB, TM>.WithFeed
+  fullName.vb: DxFeed.Graal.Net.Models.AbstractTxModel(Of TE).Builder(Of TB, TM).WithFeed
+  nameWithType: AbstractTxModel<TE>.Builder<TB, TM>.WithFeed
+  nameWithType.vb: AbstractTxModel(Of TE).Builder(Of TB, TM).WithFeed
+- uid: DxFeed.Graal.Net.Models.AbstractTxModel`1.Builder`2.WithListener(DxFeed.Graal.Net.Models.TxModelListener{`0})
+  name: WithListener(TxModelListener<TE>)
+  href: docs/api/DxFeed.Graal.Net.Models.AbstractTxModel-1.Builder-2.html#DxFeed_Graal_Net_Models_AbstractTxModel_1_Builder_2_WithListener_DxFeed_Graal_Net_Models_TxModelListener__0__
+  commentId: M:DxFeed.Graal.Net.Models.AbstractTxModel`1.Builder`2.WithListener(DxFeed.Graal.Net.Models.TxModelListener{`0})
+  name.vb: WithListener(TxModelListener(Of TE))
+  fullName: DxFeed.Graal.Net.Models.AbstractTxModel<TE>.Builder<TB, TM>.WithListener(DxFeed.Graal.Net.Models.TxModelListener<TE>)
+  fullName.vb: DxFeed.Graal.Net.Models.AbstractTxModel(Of TE).Builder(Of TB, TM).WithListener(DxFeed.Graal.Net.Models.TxModelListener(Of TE))
+  nameWithType: AbstractTxModel<TE>.Builder<TB, TM>.WithListener(TxModelListener<TE>)
+  nameWithType.vb: AbstractTxModel(Of TE).Builder(Of TB, TM).WithListener(TxModelListener(Of TE))
+- uid: DxFeed.Graal.Net.Models.AbstractTxModel`1.Builder`2.WithListener*
+  name: WithListener
+  href: docs/api/DxFeed.Graal.Net.Models.AbstractTxModel-1.Builder-2.html#DxFeed_Graal_Net_Models_AbstractTxModel_1_Builder_2_WithListener_
+  commentId: Overload:DxFeed.Graal.Net.Models.AbstractTxModel`1.Builder`2.WithListener
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Models.AbstractTxModel<TE>.Builder<TB, TM>.WithListener
+  fullName.vb: DxFeed.Graal.Net.Models.AbstractTxModel(Of TE).Builder(Of TB, TM).WithListener
+  nameWithType: AbstractTxModel<TE>.Builder<TB, TM>.WithListener
+  nameWithType.vb: AbstractTxModel(Of TE).Builder(Of TB, TM).WithListener
+- uid: DxFeed.Graal.Net.Models.AbstractTxModel`1.Builder`2.WithSnapshotProcessing(System.Boolean)
+  name: WithSnapshotProcessing(bool)
+  href: docs/api/DxFeed.Graal.Net.Models.AbstractTxModel-1.Builder-2.html#DxFeed_Graal_Net_Models_AbstractTxModel_1_Builder_2_WithSnapshotProcessing_System_Boolean_
+  commentId: M:DxFeed.Graal.Net.Models.AbstractTxModel`1.Builder`2.WithSnapshotProcessing(System.Boolean)
+  name.vb: WithSnapshotProcessing(Boolean)
+  fullName: DxFeed.Graal.Net.Models.AbstractTxModel<TE>.Builder<TB, TM>.WithSnapshotProcessing(bool)
+  fullName.vb: DxFeed.Graal.Net.Models.AbstractTxModel(Of TE).Builder(Of TB, TM).WithSnapshotProcessing(Boolean)
+  nameWithType: AbstractTxModel<TE>.Builder<TB, TM>.WithSnapshotProcessing(bool)
+  nameWithType.vb: AbstractTxModel(Of TE).Builder(Of TB, TM).WithSnapshotProcessing(Boolean)
+- uid: DxFeed.Graal.Net.Models.AbstractTxModel`1.Builder`2.WithSnapshotProcessing*
+  name: WithSnapshotProcessing
+  href: docs/api/DxFeed.Graal.Net.Models.AbstractTxModel-1.Builder-2.html#DxFeed_Graal_Net_Models_AbstractTxModel_1_Builder_2_WithSnapshotProcessing_
+  commentId: Overload:DxFeed.Graal.Net.Models.AbstractTxModel`1.Builder`2.WithSnapshotProcessing
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Models.AbstractTxModel<TE>.Builder<TB, TM>.WithSnapshotProcessing
+  fullName.vb: DxFeed.Graal.Net.Models.AbstractTxModel(Of TE).Builder(Of TB, TM).WithSnapshotProcessing
+  nameWithType: AbstractTxModel<TE>.Builder<TB, TM>.WithSnapshotProcessing
+  nameWithType.vb: AbstractTxModel(Of TE).Builder(Of TB, TM).WithSnapshotProcessing
+- uid: DxFeed.Graal.Net.Models.AbstractTxModel`1.Builder`2.WithSymbol(System.Object)
+  name: WithSymbol(object)
+  href: docs/api/DxFeed.Graal.Net.Models.AbstractTxModel-1.Builder-2.html#DxFeed_Graal_Net_Models_AbstractTxModel_1_Builder_2_WithSymbol_System_Object_
+  commentId: M:DxFeed.Graal.Net.Models.AbstractTxModel`1.Builder`2.WithSymbol(System.Object)
+  name.vb: WithSymbol(Object)
+  fullName: DxFeed.Graal.Net.Models.AbstractTxModel<TE>.Builder<TB, TM>.WithSymbol(object)
+  fullName.vb: DxFeed.Graal.Net.Models.AbstractTxModel(Of TE).Builder(Of TB, TM).WithSymbol(Object)
+  nameWithType: AbstractTxModel<TE>.Builder<TB, TM>.WithSymbol(object)
+  nameWithType.vb: AbstractTxModel(Of TE).Builder(Of TB, TM).WithSymbol(Object)
+- uid: DxFeed.Graal.Net.Models.AbstractTxModel`1.Builder`2.WithSymbol*
+  name: WithSymbol
+  href: docs/api/DxFeed.Graal.Net.Models.AbstractTxModel-1.Builder-2.html#DxFeed_Graal_Net_Models_AbstractTxModel_1_Builder_2_WithSymbol_
+  commentId: Overload:DxFeed.Graal.Net.Models.AbstractTxModel`1.Builder`2.WithSymbol
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Models.AbstractTxModel<TE>.Builder<TB, TM>.WithSymbol
+  fullName.vb: DxFeed.Graal.Net.Models.AbstractTxModel(Of TE).Builder(Of TB, TM).WithSymbol
+  nameWithType: AbstractTxModel<TE>.Builder<TB, TM>.WithSymbol
+  nameWithType.vb: AbstractTxModel(Of TE).Builder(Of TB, TM).WithSymbol
+- uid: DxFeed.Graal.Net.Models.AbstractTxModel`1.Dispose
+  name: Dispose()
+  href: docs/api/DxFeed.Graal.Net.Models.AbstractTxModel-1.html#DxFeed_Graal_Net_Models_AbstractTxModel_1_Dispose
+  commentId: M:DxFeed.Graal.Net.Models.AbstractTxModel`1.Dispose
+  fullName: DxFeed.Graal.Net.Models.AbstractTxModel<TE>.Dispose()
+  fullName.vb: DxFeed.Graal.Net.Models.AbstractTxModel(Of TE).Dispose()
+  nameWithType: AbstractTxModel<TE>.Dispose()
+  nameWithType.vb: AbstractTxModel(Of TE).Dispose()
+- uid: DxFeed.Graal.Net.Models.AbstractTxModel`1.Dispose(System.Boolean)
+  name: Dispose(bool)
+  href: docs/api/DxFeed.Graal.Net.Models.AbstractTxModel-1.html#DxFeed_Graal_Net_Models_AbstractTxModel_1_Dispose_System_Boolean_
+  commentId: M:DxFeed.Graal.Net.Models.AbstractTxModel`1.Dispose(System.Boolean)
+  name.vb: Dispose(Boolean)
+  fullName: DxFeed.Graal.Net.Models.AbstractTxModel<TE>.Dispose(bool)
+  fullName.vb: DxFeed.Graal.Net.Models.AbstractTxModel(Of TE).Dispose(Boolean)
+  nameWithType: AbstractTxModel<TE>.Dispose(bool)
+  nameWithType.vb: AbstractTxModel(Of TE).Dispose(Boolean)
+- uid: DxFeed.Graal.Net.Models.AbstractTxModel`1.Dispose*
+  name: Dispose
+  href: docs/api/DxFeed.Graal.Net.Models.AbstractTxModel-1.html#DxFeed_Graal_Net_Models_AbstractTxModel_1_Dispose_
+  commentId: Overload:DxFeed.Graal.Net.Models.AbstractTxModel`1.Dispose
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Models.AbstractTxModel<TE>.Dispose
+  fullName.vb: DxFeed.Graal.Net.Models.AbstractTxModel(Of TE).Dispose
+  nameWithType: AbstractTxModel<TE>.Dispose
+  nameWithType.vb: AbstractTxModel(Of TE).Dispose
+- uid: DxFeed.Graal.Net.Models.AbstractTxModel`1.GetUndecoratedSymbol
+  name: GetUndecoratedSymbol()
+  href: docs/api/DxFeed.Graal.Net.Models.AbstractTxModel-1.html#DxFeed_Graal_Net_Models_AbstractTxModel_1_GetUndecoratedSymbol
+  commentId: M:DxFeed.Graal.Net.Models.AbstractTxModel`1.GetUndecoratedSymbol
+  fullName: DxFeed.Graal.Net.Models.AbstractTxModel<TE>.GetUndecoratedSymbol()
+  fullName.vb: DxFeed.Graal.Net.Models.AbstractTxModel(Of TE).GetUndecoratedSymbol()
+  nameWithType: AbstractTxModel<TE>.GetUndecoratedSymbol()
+  nameWithType.vb: AbstractTxModel(Of TE).GetUndecoratedSymbol()
+- uid: DxFeed.Graal.Net.Models.AbstractTxModel`1.GetUndecoratedSymbol*
+  name: GetUndecoratedSymbol
+  href: docs/api/DxFeed.Graal.Net.Models.AbstractTxModel-1.html#DxFeed_Graal_Net_Models_AbstractTxModel_1_GetUndecoratedSymbol_
+  commentId: Overload:DxFeed.Graal.Net.Models.AbstractTxModel`1.GetUndecoratedSymbol
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Models.AbstractTxModel<TE>.GetUndecoratedSymbol
+  fullName.vb: DxFeed.Graal.Net.Models.AbstractTxModel(Of TE).GetUndecoratedSymbol
+  nameWithType: AbstractTxModel<TE>.GetUndecoratedSymbol
+  nameWithType.vb: AbstractTxModel(Of TE).GetUndecoratedSymbol
+- uid: DxFeed.Graal.Net.Models.AbstractTxModel`1.IsBatchProcessing
+  name: IsBatchProcessing
+  href: docs/api/DxFeed.Graal.Net.Models.AbstractTxModel-1.html#DxFeed_Graal_Net_Models_AbstractTxModel_1_IsBatchProcessing
+  commentId: P:DxFeed.Graal.Net.Models.AbstractTxModel`1.IsBatchProcessing
+  fullName: DxFeed.Graal.Net.Models.AbstractTxModel<TE>.IsBatchProcessing
+  fullName.vb: DxFeed.Graal.Net.Models.AbstractTxModel(Of TE).IsBatchProcessing
+  nameWithType: AbstractTxModel<TE>.IsBatchProcessing
+  nameWithType.vb: AbstractTxModel(Of TE).IsBatchProcessing
+- uid: DxFeed.Graal.Net.Models.AbstractTxModel`1.IsBatchProcessing*
+  name: IsBatchProcessing
+  href: docs/api/DxFeed.Graal.Net.Models.AbstractTxModel-1.html#DxFeed_Graal_Net_Models_AbstractTxModel_1_IsBatchProcessing_
+  commentId: Overload:DxFeed.Graal.Net.Models.AbstractTxModel`1.IsBatchProcessing
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Models.AbstractTxModel<TE>.IsBatchProcessing
+  fullName.vb: DxFeed.Graal.Net.Models.AbstractTxModel(Of TE).IsBatchProcessing
+  nameWithType: AbstractTxModel<TE>.IsBatchProcessing
+  nameWithType.vb: AbstractTxModel(Of TE).IsBatchProcessing
+- uid: DxFeed.Graal.Net.Models.AbstractTxModel`1.IsSnapshotProcessing
+  name: IsSnapshotProcessing
+  href: docs/api/DxFeed.Graal.Net.Models.AbstractTxModel-1.html#DxFeed_Graal_Net_Models_AbstractTxModel_1_IsSnapshotProcessing
+  commentId: P:DxFeed.Graal.Net.Models.AbstractTxModel`1.IsSnapshotProcessing
+  fullName: DxFeed.Graal.Net.Models.AbstractTxModel<TE>.IsSnapshotProcessing
+  fullName.vb: DxFeed.Graal.Net.Models.AbstractTxModel(Of TE).IsSnapshotProcessing
+  nameWithType: AbstractTxModel<TE>.IsSnapshotProcessing
+  nameWithType.vb: AbstractTxModel(Of TE).IsSnapshotProcessing
+- uid: DxFeed.Graal.Net.Models.AbstractTxModel`1.IsSnapshotProcessing*
+  name: IsSnapshotProcessing
+  href: docs/api/DxFeed.Graal.Net.Models.AbstractTxModel-1.html#DxFeed_Graal_Net_Models_AbstractTxModel_1_IsSnapshotProcessing_
+  commentId: Overload:DxFeed.Graal.Net.Models.AbstractTxModel`1.IsSnapshotProcessing
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Models.AbstractTxModel<TE>.IsSnapshotProcessing
+  fullName.vb: DxFeed.Graal.Net.Models.AbstractTxModel(Of TE).IsSnapshotProcessing
+  nameWithType: AbstractTxModel<TE>.IsSnapshotProcessing
+  nameWithType.vb: AbstractTxModel(Of TE).IsSnapshotProcessing
+- uid: DxFeed.Graal.Net.Models.AbstractTxModel`1.SetSymbols(System.Collections.Generic.HashSet{System.Object})
+  name: SetSymbols(HashSet<object>)
+  href: docs/api/DxFeed.Graal.Net.Models.AbstractTxModel-1.html#DxFeed_Graal_Net_Models_AbstractTxModel_1_SetSymbols_System_Collections_Generic_HashSet_System_Object__
+  commentId: M:DxFeed.Graal.Net.Models.AbstractTxModel`1.SetSymbols(System.Collections.Generic.HashSet{System.Object})
+  name.vb: SetSymbols(HashSet(Of Object))
+  fullName: DxFeed.Graal.Net.Models.AbstractTxModel<TE>.SetSymbols(System.Collections.Generic.HashSet<object>)
+  fullName.vb: DxFeed.Graal.Net.Models.AbstractTxModel(Of TE).SetSymbols(System.Collections.Generic.HashSet(Of Object))
+  nameWithType: AbstractTxModel<TE>.SetSymbols(HashSet<object>)
+  nameWithType.vb: AbstractTxModel(Of TE).SetSymbols(HashSet(Of Object))
+- uid: DxFeed.Graal.Net.Models.AbstractTxModel`1.SetSymbols*
+  name: SetSymbols
+  href: docs/api/DxFeed.Graal.Net.Models.AbstractTxModel-1.html#DxFeed_Graal_Net_Models_AbstractTxModel_1_SetSymbols_
+  commentId: Overload:DxFeed.Graal.Net.Models.AbstractTxModel`1.SetSymbols
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Models.AbstractTxModel<TE>.SetSymbols
+  fullName.vb: DxFeed.Graal.Net.Models.AbstractTxModel(Of TE).SetSymbols
+  nameWithType: AbstractTxModel<TE>.SetSymbols
+  nameWithType.vb: AbstractTxModel(Of TE).SetSymbols
+- uid: DxFeed.Graal.Net.Models.IndexedTxModel`1
+  name: IndexedTxModel<TE>
+  href: docs/api/DxFeed.Graal.Net.Models.IndexedTxModel-1.html
+  commentId: T:DxFeed.Graal.Net.Models.IndexedTxModel`1
+  name.vb: IndexedTxModel(Of TE)
+  fullName: DxFeed.Graal.Net.Models.IndexedTxModel<TE>
+  fullName.vb: DxFeed.Graal.Net.Models.IndexedTxModel(Of TE)
+  nameWithType: IndexedTxModel<TE>
+  nameWithType.vb: IndexedTxModel(Of TE)
+- uid: DxFeed.Graal.Net.Models.IndexedTxModel`1.Builder
+  name: IndexedTxModel<TE>.Builder
+  href: docs/api/DxFeed.Graal.Net.Models.IndexedTxModel-1.Builder.html
+  commentId: T:DxFeed.Graal.Net.Models.IndexedTxModel`1.Builder
+  name.vb: IndexedTxModel(Of TE).Builder
+  fullName: DxFeed.Graal.Net.Models.IndexedTxModel<TE>.Builder
+  fullName.vb: DxFeed.Graal.Net.Models.IndexedTxModel(Of TE).Builder
+  nameWithType: IndexedTxModel<TE>.Builder
+  nameWithType.vb: IndexedTxModel(Of TE).Builder
+- uid: DxFeed.Graal.Net.Models.IndexedTxModel`1.Builder.Build
+  name: Build()
+  href: docs/api/DxFeed.Graal.Net.Models.IndexedTxModel-1.Builder.html#DxFeed_Graal_Net_Models_IndexedTxModel_1_Builder_Build
+  commentId: M:DxFeed.Graal.Net.Models.IndexedTxModel`1.Builder.Build
+  fullName: DxFeed.Graal.Net.Models.IndexedTxModel<TE>.Builder.Build()
+  fullName.vb: DxFeed.Graal.Net.Models.IndexedTxModel(Of TE).Builder.Build()
+  nameWithType: IndexedTxModel<TE>.Builder.Build()
+  nameWithType.vb: IndexedTxModel(Of TE).Builder.Build()
+- uid: DxFeed.Graal.Net.Models.IndexedTxModel`1.Builder.Build*
+  name: Build
+  href: docs/api/DxFeed.Graal.Net.Models.IndexedTxModel-1.Builder.html#DxFeed_Graal_Net_Models_IndexedTxModel_1_Builder_Build_
+  commentId: Overload:DxFeed.Graal.Net.Models.IndexedTxModel`1.Builder.Build
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Models.IndexedTxModel<TE>.Builder.Build
+  fullName.vb: DxFeed.Graal.Net.Models.IndexedTxModel(Of TE).Builder.Build
+  nameWithType: IndexedTxModel<TE>.Builder.Build
+  nameWithType.vb: IndexedTxModel(Of TE).Builder.Build
+- uid: DxFeed.Graal.Net.Models.IndexedTxModel`1.Builder.WithSources(DxFeed.Graal.Net.Events.IndexedEventSource[])
+  name: WithSources(params IndexedEventSource[])
+  href: docs/api/DxFeed.Graal.Net.Models.IndexedTxModel-1.Builder.html#DxFeed_Graal_Net_Models_IndexedTxModel_1_Builder_WithSources_DxFeed_Graal_Net_Events_IndexedEventSource___
+  commentId: M:DxFeed.Graal.Net.Models.IndexedTxModel`1.Builder.WithSources(DxFeed.Graal.Net.Events.IndexedEventSource[])
+  name.vb: WithSources(ParamArray IndexedEventSource())
+  fullName: DxFeed.Graal.Net.Models.IndexedTxModel<TE>.Builder.WithSources(params DxFeed.Graal.Net.Events.IndexedEventSource[])
+  fullName.vb: DxFeed.Graal.Net.Models.IndexedTxModel(Of TE).Builder.WithSources(ParamArray DxFeed.Graal.Net.Events.IndexedEventSource())
+  nameWithType: IndexedTxModel<TE>.Builder.WithSources(params IndexedEventSource[])
+  nameWithType.vb: IndexedTxModel(Of TE).Builder.WithSources(ParamArray IndexedEventSource())
+- uid: DxFeed.Graal.Net.Models.IndexedTxModel`1.Builder.WithSources(System.Collections.Generic.ICollection{DxFeed.Graal.Net.Events.IndexedEventSource})
+  name: WithSources(ICollection<IndexedEventSource>)
+  href: docs/api/DxFeed.Graal.Net.Models.IndexedTxModel-1.Builder.html#DxFeed_Graal_Net_Models_IndexedTxModel_1_Builder_WithSources_System_Collections_Generic_ICollection_DxFeed_Graal_Net_Events_IndexedEventSource__
+  commentId: M:DxFeed.Graal.Net.Models.IndexedTxModel`1.Builder.WithSources(System.Collections.Generic.ICollection{DxFeed.Graal.Net.Events.IndexedEventSource})
+  name.vb: WithSources(ICollection(Of IndexedEventSource))
+  fullName: DxFeed.Graal.Net.Models.IndexedTxModel<TE>.Builder.WithSources(System.Collections.Generic.ICollection<DxFeed.Graal.Net.Events.IndexedEventSource>)
+  fullName.vb: DxFeed.Graal.Net.Models.IndexedTxModel(Of TE).Builder.WithSources(System.Collections.Generic.ICollection(Of DxFeed.Graal.Net.Events.IndexedEventSource))
+  nameWithType: IndexedTxModel<TE>.Builder.WithSources(ICollection<IndexedEventSource>)
+  nameWithType.vb: IndexedTxModel(Of TE).Builder.WithSources(ICollection(Of IndexedEventSource))
+- uid: DxFeed.Graal.Net.Models.IndexedTxModel`1.Builder.WithSources*
+  name: WithSources
+  href: docs/api/DxFeed.Graal.Net.Models.IndexedTxModel-1.Builder.html#DxFeed_Graal_Net_Models_IndexedTxModel_1_Builder_WithSources_
+  commentId: Overload:DxFeed.Graal.Net.Models.IndexedTxModel`1.Builder.WithSources
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Models.IndexedTxModel<TE>.Builder.WithSources
+  fullName.vb: DxFeed.Graal.Net.Models.IndexedTxModel(Of TE).Builder.WithSources
+  nameWithType: IndexedTxModel<TE>.Builder.WithSources
+  nameWithType.vb: IndexedTxModel(Of TE).Builder.WithSources
+- uid: DxFeed.Graal.Net.Models.IndexedTxModel`1.GetSources
+  name: GetSources()
+  href: docs/api/DxFeed.Graal.Net.Models.IndexedTxModel-1.html#DxFeed_Graal_Net_Models_IndexedTxModel_1_GetSources
+  commentId: M:DxFeed.Graal.Net.Models.IndexedTxModel`1.GetSources
+  fullName: DxFeed.Graal.Net.Models.IndexedTxModel<TE>.GetSources()
+  fullName.vb: DxFeed.Graal.Net.Models.IndexedTxModel(Of TE).GetSources()
+  nameWithType: IndexedTxModel<TE>.GetSources()
+  nameWithType.vb: IndexedTxModel(Of TE).GetSources()
+- uid: DxFeed.Graal.Net.Models.IndexedTxModel`1.GetSources*
+  name: GetSources
+  href: docs/api/DxFeed.Graal.Net.Models.IndexedTxModel-1.html#DxFeed_Graal_Net_Models_IndexedTxModel_1_GetSources_
+  commentId: Overload:DxFeed.Graal.Net.Models.IndexedTxModel`1.GetSources
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Models.IndexedTxModel<TE>.GetSources
+  fullName.vb: DxFeed.Graal.Net.Models.IndexedTxModel(Of TE).GetSources
+  nameWithType: IndexedTxModel<TE>.GetSources
+  nameWithType.vb: IndexedTxModel(Of TE).GetSources
+- uid: DxFeed.Graal.Net.Models.IndexedTxModel`1.NewBuilder
+  name: NewBuilder()
+  href: docs/api/DxFeed.Graal.Net.Models.IndexedTxModel-1.html#DxFeed_Graal_Net_Models_IndexedTxModel_1_NewBuilder
+  commentId: M:DxFeed.Graal.Net.Models.IndexedTxModel`1.NewBuilder
+  fullName: DxFeed.Graal.Net.Models.IndexedTxModel<TE>.NewBuilder()
+  fullName.vb: DxFeed.Graal.Net.Models.IndexedTxModel(Of TE).NewBuilder()
+  nameWithType: IndexedTxModel<TE>.NewBuilder()
+  nameWithType.vb: IndexedTxModel(Of TE).NewBuilder()
+- uid: DxFeed.Graal.Net.Models.IndexedTxModel`1.NewBuilder*
+  name: NewBuilder
+  href: docs/api/DxFeed.Graal.Net.Models.IndexedTxModel-1.html#DxFeed_Graal_Net_Models_IndexedTxModel_1_NewBuilder_
+  commentId: Overload:DxFeed.Graal.Net.Models.IndexedTxModel`1.NewBuilder
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Models.IndexedTxModel<TE>.NewBuilder
+  fullName.vb: DxFeed.Graal.Net.Models.IndexedTxModel(Of TE).NewBuilder
+  nameWithType: IndexedTxModel<TE>.NewBuilder
+  nameWithType.vb: IndexedTxModel(Of TE).NewBuilder
+- uid: DxFeed.Graal.Net.Models.IndexedTxModel`1.SetSources(DxFeed.Graal.Net.Events.IndexedEventSource[])
+  name: SetSources(params IndexedEventSource[])
+  href: docs/api/DxFeed.Graal.Net.Models.IndexedTxModel-1.html#DxFeed_Graal_Net_Models_IndexedTxModel_1_SetSources_DxFeed_Graal_Net_Events_IndexedEventSource___
+  commentId: M:DxFeed.Graal.Net.Models.IndexedTxModel`1.SetSources(DxFeed.Graal.Net.Events.IndexedEventSource[])
+  name.vb: SetSources(ParamArray IndexedEventSource())
+  fullName: DxFeed.Graal.Net.Models.IndexedTxModel<TE>.SetSources(params DxFeed.Graal.Net.Events.IndexedEventSource[])
+  fullName.vb: DxFeed.Graal.Net.Models.IndexedTxModel(Of TE).SetSources(ParamArray DxFeed.Graal.Net.Events.IndexedEventSource())
+  nameWithType: IndexedTxModel<TE>.SetSources(params IndexedEventSource[])
+  nameWithType.vb: IndexedTxModel(Of TE).SetSources(ParamArray IndexedEventSource())
+- uid: DxFeed.Graal.Net.Models.IndexedTxModel`1.SetSources(System.Collections.Generic.ICollection{DxFeed.Graal.Net.Events.IndexedEventSource})
+  name: SetSources(ICollection<IndexedEventSource>)
+  href: docs/api/DxFeed.Graal.Net.Models.IndexedTxModel-1.html#DxFeed_Graal_Net_Models_IndexedTxModel_1_SetSources_System_Collections_Generic_ICollection_DxFeed_Graal_Net_Events_IndexedEventSource__
+  commentId: M:DxFeed.Graal.Net.Models.IndexedTxModel`1.SetSources(System.Collections.Generic.ICollection{DxFeed.Graal.Net.Events.IndexedEventSource})
+  name.vb: SetSources(ICollection(Of IndexedEventSource))
+  fullName: DxFeed.Graal.Net.Models.IndexedTxModel<TE>.SetSources(System.Collections.Generic.ICollection<DxFeed.Graal.Net.Events.IndexedEventSource>)
+  fullName.vb: DxFeed.Graal.Net.Models.IndexedTxModel(Of TE).SetSources(System.Collections.Generic.ICollection(Of DxFeed.Graal.Net.Events.IndexedEventSource))
+  nameWithType: IndexedTxModel<TE>.SetSources(ICollection<IndexedEventSource>)
+  nameWithType.vb: IndexedTxModel(Of TE).SetSources(ICollection(Of IndexedEventSource))
+- uid: DxFeed.Graal.Net.Models.IndexedTxModel`1.SetSources*
+  name: SetSources
+  href: docs/api/DxFeed.Graal.Net.Models.IndexedTxModel-1.html#DxFeed_Graal_Net_Models_IndexedTxModel_1_SetSources_
+  commentId: Overload:DxFeed.Graal.Net.Models.IndexedTxModel`1.SetSources
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Models.IndexedTxModel<TE>.SetSources
+  fullName.vb: DxFeed.Graal.Net.Models.IndexedTxModel(Of TE).SetSources
+  nameWithType: IndexedTxModel<TE>.SetSources
+  nameWithType.vb: IndexedTxModel(Of TE).SetSources
+- uid: DxFeed.Graal.Net.Models.MarketDepthModelListener`1
+  name: MarketDepthModelListener<TE>
+  href: docs/api/DxFeed.Graal.Net.Models.MarketDepthModelListener-1.html
+  commentId: T:DxFeed.Graal.Net.Models.MarketDepthModelListener`1
+  name.vb: MarketDepthModelListener(Of TE)
+  fullName: DxFeed.Graal.Net.Models.MarketDepthModelListener<TE>
+  fullName.vb: DxFeed.Graal.Net.Models.MarketDepthModelListener(Of TE)
+  nameWithType: MarketDepthModelListener<TE>
+  nameWithType.vb: MarketDepthModelListener(Of TE)
+- uid: DxFeed.Graal.Net.Models.MarketDepthModel`1
+  name: MarketDepthModel<TE>
+  href: docs/api/DxFeed.Graal.Net.Models.MarketDepthModel-1.html
+  commentId: T:DxFeed.Graal.Net.Models.MarketDepthModel`1
+  name.vb: MarketDepthModel(Of TE)
+  fullName: DxFeed.Graal.Net.Models.MarketDepthModel<TE>
+  fullName.vb: DxFeed.Graal.Net.Models.MarketDepthModel(Of TE)
+  nameWithType: MarketDepthModel<TE>
+  nameWithType.vb: MarketDepthModel(Of TE)
+- uid: DxFeed.Graal.Net.Models.MarketDepthModel`1.Builder
+  name: MarketDepthModel<TE>.Builder
+  href: docs/api/DxFeed.Graal.Net.Models.MarketDepthModel-1.Builder.html
+  commentId: T:DxFeed.Graal.Net.Models.MarketDepthModel`1.Builder
+  name.vb: MarketDepthModel(Of TE).Builder
+  fullName: DxFeed.Graal.Net.Models.MarketDepthModel<TE>.Builder
+  fullName.vb: DxFeed.Graal.Net.Models.MarketDepthModel(Of TE).Builder
+  nameWithType: MarketDepthModel<TE>.Builder
+  nameWithType.vb: MarketDepthModel(Of TE).Builder
+- uid: DxFeed.Graal.Net.Models.MarketDepthModel`1.Builder.Build
+  name: Build()
+  href: docs/api/DxFeed.Graal.Net.Models.MarketDepthModel-1.Builder.html#DxFeed_Graal_Net_Models_MarketDepthModel_1_Builder_Build
+  commentId: M:DxFeed.Graal.Net.Models.MarketDepthModel`1.Builder.Build
+  fullName: DxFeed.Graal.Net.Models.MarketDepthModel<TE>.Builder.Build()
+  fullName.vb: DxFeed.Graal.Net.Models.MarketDepthModel(Of TE).Builder.Build()
+  nameWithType: MarketDepthModel<TE>.Builder.Build()
+  nameWithType.vb: MarketDepthModel(Of TE).Builder.Build()
+- uid: DxFeed.Graal.Net.Models.MarketDepthModel`1.Builder.Build*
+  name: Build
+  href: docs/api/DxFeed.Graal.Net.Models.MarketDepthModel-1.Builder.html#DxFeed_Graal_Net_Models_MarketDepthModel_1_Builder_Build_
+  commentId: Overload:DxFeed.Graal.Net.Models.MarketDepthModel`1.Builder.Build
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Models.MarketDepthModel<TE>.Builder.Build
+  fullName.vb: DxFeed.Graal.Net.Models.MarketDepthModel(Of TE).Builder.Build
+  nameWithType: MarketDepthModel<TE>.Builder.Build
+  nameWithType.vb: MarketDepthModel(Of TE).Builder.Build
+- uid: DxFeed.Graal.Net.Models.MarketDepthModel`1.Builder.WithAggregationPeriod(System.Int64)
+  name: WithAggregationPeriod(long)
+  href: docs/api/DxFeed.Graal.Net.Models.MarketDepthModel-1.Builder.html#DxFeed_Graal_Net_Models_MarketDepthModel_1_Builder_WithAggregationPeriod_System_Int64_
+  commentId: M:DxFeed.Graal.Net.Models.MarketDepthModel`1.Builder.WithAggregationPeriod(System.Int64)
+  name.vb: WithAggregationPeriod(Long)
+  fullName: DxFeed.Graal.Net.Models.MarketDepthModel<TE>.Builder.WithAggregationPeriod(long)
+  fullName.vb: DxFeed.Graal.Net.Models.MarketDepthModel(Of TE).Builder.WithAggregationPeriod(Long)
+  nameWithType: MarketDepthModel<TE>.Builder.WithAggregationPeriod(long)
+  nameWithType.vb: MarketDepthModel(Of TE).Builder.WithAggregationPeriod(Long)
+- uid: DxFeed.Graal.Net.Models.MarketDepthModel`1.Builder.WithAggregationPeriod*
+  name: WithAggregationPeriod
+  href: docs/api/DxFeed.Graal.Net.Models.MarketDepthModel-1.Builder.html#DxFeed_Graal_Net_Models_MarketDepthModel_1_Builder_WithAggregationPeriod_
+  commentId: Overload:DxFeed.Graal.Net.Models.MarketDepthModel`1.Builder.WithAggregationPeriod
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Models.MarketDepthModel<TE>.Builder.WithAggregationPeriod
+  fullName.vb: DxFeed.Graal.Net.Models.MarketDepthModel(Of TE).Builder.WithAggregationPeriod
+  nameWithType: MarketDepthModel<TE>.Builder.WithAggregationPeriod
+  nameWithType.vb: MarketDepthModel(Of TE).Builder.WithAggregationPeriod
+- uid: DxFeed.Graal.Net.Models.MarketDepthModel`1.Builder.WithDepthLimit(System.Int32)
+  name: WithDepthLimit(int)
+  href: docs/api/DxFeed.Graal.Net.Models.MarketDepthModel-1.Builder.html#DxFeed_Graal_Net_Models_MarketDepthModel_1_Builder_WithDepthLimit_System_Int32_
+  commentId: M:DxFeed.Graal.Net.Models.MarketDepthModel`1.Builder.WithDepthLimit(System.Int32)
+  name.vb: WithDepthLimit(Integer)
+  fullName: DxFeed.Graal.Net.Models.MarketDepthModel<TE>.Builder.WithDepthLimit(int)
+  fullName.vb: DxFeed.Graal.Net.Models.MarketDepthModel(Of TE).Builder.WithDepthLimit(Integer)
+  nameWithType: MarketDepthModel<TE>.Builder.WithDepthLimit(int)
+  nameWithType.vb: MarketDepthModel(Of TE).Builder.WithDepthLimit(Integer)
+- uid: DxFeed.Graal.Net.Models.MarketDepthModel`1.Builder.WithDepthLimit*
+  name: WithDepthLimit
+  href: docs/api/DxFeed.Graal.Net.Models.MarketDepthModel-1.Builder.html#DxFeed_Graal_Net_Models_MarketDepthModel_1_Builder_WithDepthLimit_
+  commentId: Overload:DxFeed.Graal.Net.Models.MarketDepthModel`1.Builder.WithDepthLimit
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Models.MarketDepthModel<TE>.Builder.WithDepthLimit
+  fullName.vb: DxFeed.Graal.Net.Models.MarketDepthModel(Of TE).Builder.WithDepthLimit
+  nameWithType: MarketDepthModel<TE>.Builder.WithDepthLimit
+  nameWithType.vb: MarketDepthModel(Of TE).Builder.WithDepthLimit
+- uid: DxFeed.Graal.Net.Models.MarketDepthModel`1.Builder.WithFeed(DxFeed.Graal.Net.Api.DXFeed)
+  name: WithFeed(DXFeed)
+  href: docs/api/DxFeed.Graal.Net.Models.MarketDepthModel-1.Builder.html#DxFeed_Graal_Net_Models_MarketDepthModel_1_Builder_WithFeed_DxFeed_Graal_Net_Api_DXFeed_
+  commentId: M:DxFeed.Graal.Net.Models.MarketDepthModel`1.Builder.WithFeed(DxFeed.Graal.Net.Api.DXFeed)
+  fullName: DxFeed.Graal.Net.Models.MarketDepthModel<TE>.Builder.WithFeed(DxFeed.Graal.Net.Api.DXFeed)
+  fullName.vb: DxFeed.Graal.Net.Models.MarketDepthModel(Of TE).Builder.WithFeed(DxFeed.Graal.Net.Api.DXFeed)
+  nameWithType: MarketDepthModel<TE>.Builder.WithFeed(DXFeed)
+  nameWithType.vb: MarketDepthModel(Of TE).Builder.WithFeed(DXFeed)
+- uid: DxFeed.Graal.Net.Models.MarketDepthModel`1.Builder.WithFeed*
+  name: WithFeed
+  href: docs/api/DxFeed.Graal.Net.Models.MarketDepthModel-1.Builder.html#DxFeed_Graal_Net_Models_MarketDepthModel_1_Builder_WithFeed_
+  commentId: Overload:DxFeed.Graal.Net.Models.MarketDepthModel`1.Builder.WithFeed
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Models.MarketDepthModel<TE>.Builder.WithFeed
+  fullName.vb: DxFeed.Graal.Net.Models.MarketDepthModel(Of TE).Builder.WithFeed
+  nameWithType: MarketDepthModel<TE>.Builder.WithFeed
+  nameWithType.vb: MarketDepthModel(Of TE).Builder.WithFeed
+- uid: DxFeed.Graal.Net.Models.MarketDepthModel`1.Builder.WithListener(DxFeed.Graal.Net.Models.MarketDepthModelListener{`0})
+  name: WithListener(MarketDepthModelListener<TE>)
+  href: docs/api/DxFeed.Graal.Net.Models.MarketDepthModel-1.Builder.html#DxFeed_Graal_Net_Models_MarketDepthModel_1_Builder_WithListener_DxFeed_Graal_Net_Models_MarketDepthModelListener__0__
+  commentId: M:DxFeed.Graal.Net.Models.MarketDepthModel`1.Builder.WithListener(DxFeed.Graal.Net.Models.MarketDepthModelListener{`0})
+  name.vb: WithListener(MarketDepthModelListener(Of TE))
+  fullName: DxFeed.Graal.Net.Models.MarketDepthModel<TE>.Builder.WithListener(DxFeed.Graal.Net.Models.MarketDepthModelListener<TE>)
+  fullName.vb: DxFeed.Graal.Net.Models.MarketDepthModel(Of TE).Builder.WithListener(DxFeed.Graal.Net.Models.MarketDepthModelListener(Of TE))
+  nameWithType: MarketDepthModel<TE>.Builder.WithListener(MarketDepthModelListener<TE>)
+  nameWithType.vb: MarketDepthModel(Of TE).Builder.WithListener(MarketDepthModelListener(Of TE))
+- uid: DxFeed.Graal.Net.Models.MarketDepthModel`1.Builder.WithListener*
+  name: WithListener
+  href: docs/api/DxFeed.Graal.Net.Models.MarketDepthModel-1.Builder.html#DxFeed_Graal_Net_Models_MarketDepthModel_1_Builder_WithListener_
+  commentId: Overload:DxFeed.Graal.Net.Models.MarketDepthModel`1.Builder.WithListener
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Models.MarketDepthModel<TE>.Builder.WithListener
+  fullName.vb: DxFeed.Graal.Net.Models.MarketDepthModel(Of TE).Builder.WithListener
+  nameWithType: MarketDepthModel<TE>.Builder.WithListener
+  nameWithType.vb: MarketDepthModel(Of TE).Builder.WithListener
+- uid: DxFeed.Graal.Net.Models.MarketDepthModel`1.Builder.WithSources(DxFeed.Graal.Net.Events.IndexedEventSource[])
+  name: WithSources(params IndexedEventSource[])
+  href: docs/api/DxFeed.Graal.Net.Models.MarketDepthModel-1.Builder.html#DxFeed_Graal_Net_Models_MarketDepthModel_1_Builder_WithSources_DxFeed_Graal_Net_Events_IndexedEventSource___
+  commentId: M:DxFeed.Graal.Net.Models.MarketDepthModel`1.Builder.WithSources(DxFeed.Graal.Net.Events.IndexedEventSource[])
+  name.vb: WithSources(ParamArray IndexedEventSource())
+  fullName: DxFeed.Graal.Net.Models.MarketDepthModel<TE>.Builder.WithSources(params DxFeed.Graal.Net.Events.IndexedEventSource[])
+  fullName.vb: DxFeed.Graal.Net.Models.MarketDepthModel(Of TE).Builder.WithSources(ParamArray DxFeed.Graal.Net.Events.IndexedEventSource())
+  nameWithType: MarketDepthModel<TE>.Builder.WithSources(params IndexedEventSource[])
+  nameWithType.vb: MarketDepthModel(Of TE).Builder.WithSources(ParamArray IndexedEventSource())
+- uid: DxFeed.Graal.Net.Models.MarketDepthModel`1.Builder.WithSources(System.Collections.Generic.ICollection{DxFeed.Graal.Net.Events.IndexedEventSource})
+  name: WithSources(ICollection<IndexedEventSource>)
+  href: docs/api/DxFeed.Graal.Net.Models.MarketDepthModel-1.Builder.html#DxFeed_Graal_Net_Models_MarketDepthModel_1_Builder_WithSources_System_Collections_Generic_ICollection_DxFeed_Graal_Net_Events_IndexedEventSource__
+  commentId: M:DxFeed.Graal.Net.Models.MarketDepthModel`1.Builder.WithSources(System.Collections.Generic.ICollection{DxFeed.Graal.Net.Events.IndexedEventSource})
+  name.vb: WithSources(ICollection(Of IndexedEventSource))
+  fullName: DxFeed.Graal.Net.Models.MarketDepthModel<TE>.Builder.WithSources(System.Collections.Generic.ICollection<DxFeed.Graal.Net.Events.IndexedEventSource>)
+  fullName.vb: DxFeed.Graal.Net.Models.MarketDepthModel(Of TE).Builder.WithSources(System.Collections.Generic.ICollection(Of DxFeed.Graal.Net.Events.IndexedEventSource))
+  nameWithType: MarketDepthModel<TE>.Builder.WithSources(ICollection<IndexedEventSource>)
+  nameWithType.vb: MarketDepthModel(Of TE).Builder.WithSources(ICollection(Of IndexedEventSource))
+- uid: DxFeed.Graal.Net.Models.MarketDepthModel`1.Builder.WithSources*
+  name: WithSources
+  href: docs/api/DxFeed.Graal.Net.Models.MarketDepthModel-1.Builder.html#DxFeed_Graal_Net_Models_MarketDepthModel_1_Builder_WithSources_
+  commentId: Overload:DxFeed.Graal.Net.Models.MarketDepthModel`1.Builder.WithSources
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Models.MarketDepthModel<TE>.Builder.WithSources
+  fullName.vb: DxFeed.Graal.Net.Models.MarketDepthModel(Of TE).Builder.WithSources
+  nameWithType: MarketDepthModel<TE>.Builder.WithSources
+  nameWithType.vb: MarketDepthModel(Of TE).Builder.WithSources
+- uid: DxFeed.Graal.Net.Models.MarketDepthModel`1.Builder.WithSymbol(System.Object)
+  name: WithSymbol(object)
+  href: docs/api/DxFeed.Graal.Net.Models.MarketDepthModel-1.Builder.html#DxFeed_Graal_Net_Models_MarketDepthModel_1_Builder_WithSymbol_System_Object_
+  commentId: M:DxFeed.Graal.Net.Models.MarketDepthModel`1.Builder.WithSymbol(System.Object)
+  name.vb: WithSymbol(Object)
+  fullName: DxFeed.Graal.Net.Models.MarketDepthModel<TE>.Builder.WithSymbol(object)
+  fullName.vb: DxFeed.Graal.Net.Models.MarketDepthModel(Of TE).Builder.WithSymbol(Object)
+  nameWithType: MarketDepthModel<TE>.Builder.WithSymbol(object)
+  nameWithType.vb: MarketDepthModel(Of TE).Builder.WithSymbol(Object)
+- uid: DxFeed.Graal.Net.Models.MarketDepthModel`1.Builder.WithSymbol*
+  name: WithSymbol
+  href: docs/api/DxFeed.Graal.Net.Models.MarketDepthModel-1.Builder.html#DxFeed_Graal_Net_Models_MarketDepthModel_1_Builder_WithSymbol_
+  commentId: Overload:DxFeed.Graal.Net.Models.MarketDepthModel`1.Builder.WithSymbol
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Models.MarketDepthModel<TE>.Builder.WithSymbol
+  fullName.vb: DxFeed.Graal.Net.Models.MarketDepthModel(Of TE).Builder.WithSymbol
+  nameWithType: MarketDepthModel<TE>.Builder.WithSymbol
+  nameWithType.vb: MarketDepthModel(Of TE).Builder.WithSymbol
+- uid: DxFeed.Graal.Net.Models.MarketDepthModel`1.Dispose
+  name: Dispose()
+  href: docs/api/DxFeed.Graal.Net.Models.MarketDepthModel-1.html#DxFeed_Graal_Net_Models_MarketDepthModel_1_Dispose
+  commentId: M:DxFeed.Graal.Net.Models.MarketDepthModel`1.Dispose
+  fullName: DxFeed.Graal.Net.Models.MarketDepthModel<TE>.Dispose()
+  fullName.vb: DxFeed.Graal.Net.Models.MarketDepthModel(Of TE).Dispose()
+  nameWithType: MarketDepthModel<TE>.Dispose()
+  nameWithType.vb: MarketDepthModel(Of TE).Dispose()
+- uid: DxFeed.Graal.Net.Models.MarketDepthModel`1.Dispose*
+  name: Dispose
+  href: docs/api/DxFeed.Graal.Net.Models.MarketDepthModel-1.html#DxFeed_Graal_Net_Models_MarketDepthModel_1_Dispose_
+  commentId: Overload:DxFeed.Graal.Net.Models.MarketDepthModel`1.Dispose
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Models.MarketDepthModel<TE>.Dispose
+  fullName.vb: DxFeed.Graal.Net.Models.MarketDepthModel(Of TE).Dispose
+  nameWithType: MarketDepthModel<TE>.Dispose
+  nameWithType.vb: MarketDepthModel(Of TE).Dispose
+- uid: DxFeed.Graal.Net.Models.MarketDepthModel`1.GetAggregationPeriod
+  name: GetAggregationPeriod()
+  href: docs/api/DxFeed.Graal.Net.Models.MarketDepthModel-1.html#DxFeed_Graal_Net_Models_MarketDepthModel_1_GetAggregationPeriod
+  commentId: M:DxFeed.Graal.Net.Models.MarketDepthModel`1.GetAggregationPeriod
+  fullName: DxFeed.Graal.Net.Models.MarketDepthModel<TE>.GetAggregationPeriod()
+  fullName.vb: DxFeed.Graal.Net.Models.MarketDepthModel(Of TE).GetAggregationPeriod()
+  nameWithType: MarketDepthModel<TE>.GetAggregationPeriod()
+  nameWithType.vb: MarketDepthModel(Of TE).GetAggregationPeriod()
+- uid: DxFeed.Graal.Net.Models.MarketDepthModel`1.GetAggregationPeriod*
+  name: GetAggregationPeriod
+  href: docs/api/DxFeed.Graal.Net.Models.MarketDepthModel-1.html#DxFeed_Graal_Net_Models_MarketDepthModel_1_GetAggregationPeriod_
+  commentId: Overload:DxFeed.Graal.Net.Models.MarketDepthModel`1.GetAggregationPeriod
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Models.MarketDepthModel<TE>.GetAggregationPeriod
+  fullName.vb: DxFeed.Graal.Net.Models.MarketDepthModel(Of TE).GetAggregationPeriod
+  nameWithType: MarketDepthModel<TE>.GetAggregationPeriod
+  nameWithType.vb: MarketDepthModel(Of TE).GetAggregationPeriod
+- uid: DxFeed.Graal.Net.Models.MarketDepthModel`1.GetDepthLimit
+  name: GetDepthLimit()
+  href: docs/api/DxFeed.Graal.Net.Models.MarketDepthModel-1.html#DxFeed_Graal_Net_Models_MarketDepthModel_1_GetDepthLimit
+  commentId: M:DxFeed.Graal.Net.Models.MarketDepthModel`1.GetDepthLimit
+  fullName: DxFeed.Graal.Net.Models.MarketDepthModel<TE>.GetDepthLimit()
+  fullName.vb: DxFeed.Graal.Net.Models.MarketDepthModel(Of TE).GetDepthLimit()
+  nameWithType: MarketDepthModel<TE>.GetDepthLimit()
+  nameWithType.vb: MarketDepthModel(Of TE).GetDepthLimit()
+- uid: DxFeed.Graal.Net.Models.MarketDepthModel`1.GetDepthLimit*
+  name: GetDepthLimit
+  href: docs/api/DxFeed.Graal.Net.Models.MarketDepthModel-1.html#DxFeed_Graal_Net_Models_MarketDepthModel_1_GetDepthLimit_
+  commentId: Overload:DxFeed.Graal.Net.Models.MarketDepthModel`1.GetDepthLimit
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Models.MarketDepthModel<TE>.GetDepthLimit
+  fullName.vb: DxFeed.Graal.Net.Models.MarketDepthModel(Of TE).GetDepthLimit
+  nameWithType: MarketDepthModel<TE>.GetDepthLimit
+  nameWithType.vb: MarketDepthModel(Of TE).GetDepthLimit
+- uid: DxFeed.Graal.Net.Models.MarketDepthModel`1.NewBuilder
+  name: NewBuilder()
+  href: docs/api/DxFeed.Graal.Net.Models.MarketDepthModel-1.html#DxFeed_Graal_Net_Models_MarketDepthModel_1_NewBuilder
+  commentId: M:DxFeed.Graal.Net.Models.MarketDepthModel`1.NewBuilder
+  fullName: DxFeed.Graal.Net.Models.MarketDepthModel<TE>.NewBuilder()
+  fullName.vb: DxFeed.Graal.Net.Models.MarketDepthModel(Of TE).NewBuilder()
+  nameWithType: MarketDepthModel<TE>.NewBuilder()
+  nameWithType.vb: MarketDepthModel(Of TE).NewBuilder()
+- uid: DxFeed.Graal.Net.Models.MarketDepthModel`1.NewBuilder*
+  name: NewBuilder
+  href: docs/api/DxFeed.Graal.Net.Models.MarketDepthModel-1.html#DxFeed_Graal_Net_Models_MarketDepthModel_1_NewBuilder_
+  commentId: Overload:DxFeed.Graal.Net.Models.MarketDepthModel`1.NewBuilder
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Models.MarketDepthModel<TE>.NewBuilder
+  fullName.vb: DxFeed.Graal.Net.Models.MarketDepthModel(Of TE).NewBuilder
+  nameWithType: MarketDepthModel<TE>.NewBuilder
+  nameWithType.vb: MarketDepthModel(Of TE).NewBuilder
+- uid: DxFeed.Graal.Net.Models.MarketDepthModel`1.SetAggregationPeriod(System.Int64)
+  name: SetAggregationPeriod(long)
+  href: docs/api/DxFeed.Graal.Net.Models.MarketDepthModel-1.html#DxFeed_Graal_Net_Models_MarketDepthModel_1_SetAggregationPeriod_System_Int64_
+  commentId: M:DxFeed.Graal.Net.Models.MarketDepthModel`1.SetAggregationPeriod(System.Int64)
+  name.vb: SetAggregationPeriod(Long)
+  fullName: DxFeed.Graal.Net.Models.MarketDepthModel<TE>.SetAggregationPeriod(long)
+  fullName.vb: DxFeed.Graal.Net.Models.MarketDepthModel(Of TE).SetAggregationPeriod(Long)
+  nameWithType: MarketDepthModel<TE>.SetAggregationPeriod(long)
+  nameWithType.vb: MarketDepthModel(Of TE).SetAggregationPeriod(Long)
+- uid: DxFeed.Graal.Net.Models.MarketDepthModel`1.SetAggregationPeriod*
+  name: SetAggregationPeriod
+  href: docs/api/DxFeed.Graal.Net.Models.MarketDepthModel-1.html#DxFeed_Graal_Net_Models_MarketDepthModel_1_SetAggregationPeriod_
+  commentId: Overload:DxFeed.Graal.Net.Models.MarketDepthModel`1.SetAggregationPeriod
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Models.MarketDepthModel<TE>.SetAggregationPeriod
+  fullName.vb: DxFeed.Graal.Net.Models.MarketDepthModel(Of TE).SetAggregationPeriod
+  nameWithType: MarketDepthModel<TE>.SetAggregationPeriod
+  nameWithType.vb: MarketDepthModel(Of TE).SetAggregationPeriod
+- uid: DxFeed.Graal.Net.Models.MarketDepthModel`1.SetDepthLimit(System.Int32)
+  name: SetDepthLimit(int)
+  href: docs/api/DxFeed.Graal.Net.Models.MarketDepthModel-1.html#DxFeed_Graal_Net_Models_MarketDepthModel_1_SetDepthLimit_System_Int32_
+  commentId: M:DxFeed.Graal.Net.Models.MarketDepthModel`1.SetDepthLimit(System.Int32)
+  name.vb: SetDepthLimit(Integer)
+  fullName: DxFeed.Graal.Net.Models.MarketDepthModel<TE>.SetDepthLimit(int)
+  fullName.vb: DxFeed.Graal.Net.Models.MarketDepthModel(Of TE).SetDepthLimit(Integer)
+  nameWithType: MarketDepthModel<TE>.SetDepthLimit(int)
+  nameWithType.vb: MarketDepthModel(Of TE).SetDepthLimit(Integer)
+- uid: DxFeed.Graal.Net.Models.MarketDepthModel`1.SetDepthLimit*
+  name: SetDepthLimit
+  href: docs/api/DxFeed.Graal.Net.Models.MarketDepthModel-1.html#DxFeed_Graal_Net_Models_MarketDepthModel_1_SetDepthLimit_
+  commentId: Overload:DxFeed.Graal.Net.Models.MarketDepthModel`1.SetDepthLimit
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Models.MarketDepthModel<TE>.SetDepthLimit
+  fullName.vb: DxFeed.Graal.Net.Models.MarketDepthModel(Of TE).SetDepthLimit
+  nameWithType: MarketDepthModel<TE>.SetDepthLimit
+  nameWithType.vb: MarketDepthModel(Of TE).SetDepthLimit
+- uid: DxFeed.Graal.Net.Models.TimeSeriesTxModel`1
+  name: TimeSeriesTxModel<TE>
+  href: docs/api/DxFeed.Graal.Net.Models.TimeSeriesTxModel-1.html
+  commentId: T:DxFeed.Graal.Net.Models.TimeSeriesTxModel`1
+  name.vb: TimeSeriesTxModel(Of TE)
+  fullName: DxFeed.Graal.Net.Models.TimeSeriesTxModel<TE>
+  fullName.vb: DxFeed.Graal.Net.Models.TimeSeriesTxModel(Of TE)
+  nameWithType: TimeSeriesTxModel<TE>
+  nameWithType.vb: TimeSeriesTxModel(Of TE)
+- uid: DxFeed.Graal.Net.Models.TimeSeriesTxModel`1.Builder
+  name: TimeSeriesTxModel<TE>.Builder
+  href: docs/api/DxFeed.Graal.Net.Models.TimeSeriesTxModel-1.Builder.html
+  commentId: T:DxFeed.Graal.Net.Models.TimeSeriesTxModel`1.Builder
+  name.vb: TimeSeriesTxModel(Of TE).Builder
+  fullName: DxFeed.Graal.Net.Models.TimeSeriesTxModel<TE>.Builder
+  fullName.vb: DxFeed.Graal.Net.Models.TimeSeriesTxModel(Of TE).Builder
+  nameWithType: TimeSeriesTxModel<TE>.Builder
+  nameWithType.vb: TimeSeriesTxModel(Of TE).Builder
+- uid: DxFeed.Graal.Net.Models.TimeSeriesTxModel`1.Builder.Build
+  name: Build()
+  href: docs/api/DxFeed.Graal.Net.Models.TimeSeriesTxModel-1.Builder.html#DxFeed_Graal_Net_Models_TimeSeriesTxModel_1_Builder_Build
+  commentId: M:DxFeed.Graal.Net.Models.TimeSeriesTxModel`1.Builder.Build
+  fullName: DxFeed.Graal.Net.Models.TimeSeriesTxModel<TE>.Builder.Build()
+  fullName.vb: DxFeed.Graal.Net.Models.TimeSeriesTxModel(Of TE).Builder.Build()
+  nameWithType: TimeSeriesTxModel<TE>.Builder.Build()
+  nameWithType.vb: TimeSeriesTxModel(Of TE).Builder.Build()
+- uid: DxFeed.Graal.Net.Models.TimeSeriesTxModel`1.Builder.Build*
+  name: Build
+  href: docs/api/DxFeed.Graal.Net.Models.TimeSeriesTxModel-1.Builder.html#DxFeed_Graal_Net_Models_TimeSeriesTxModel_1_Builder_Build_
+  commentId: Overload:DxFeed.Graal.Net.Models.TimeSeriesTxModel`1.Builder.Build
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Models.TimeSeriesTxModel<TE>.Builder.Build
+  fullName.vb: DxFeed.Graal.Net.Models.TimeSeriesTxModel(Of TE).Builder.Build
+  nameWithType: TimeSeriesTxModel<TE>.Builder.Build
+  nameWithType.vb: TimeSeriesTxModel(Of TE).Builder.Build
+- uid: DxFeed.Graal.Net.Models.TimeSeriesTxModel`1.Builder.WithFromTime(System.Int64)
+  name: WithFromTime(long)
+  href: docs/api/DxFeed.Graal.Net.Models.TimeSeriesTxModel-1.Builder.html#DxFeed_Graal_Net_Models_TimeSeriesTxModel_1_Builder_WithFromTime_System_Int64_
+  commentId: M:DxFeed.Graal.Net.Models.TimeSeriesTxModel`1.Builder.WithFromTime(System.Int64)
+  name.vb: WithFromTime(Long)
+  fullName: DxFeed.Graal.Net.Models.TimeSeriesTxModel<TE>.Builder.WithFromTime(long)
+  fullName.vb: DxFeed.Graal.Net.Models.TimeSeriesTxModel(Of TE).Builder.WithFromTime(Long)
+  nameWithType: TimeSeriesTxModel<TE>.Builder.WithFromTime(long)
+  nameWithType.vb: TimeSeriesTxModel(Of TE).Builder.WithFromTime(Long)
+- uid: DxFeed.Graal.Net.Models.TimeSeriesTxModel`1.Builder.WithFromTime*
+  name: WithFromTime
+  href: docs/api/DxFeed.Graal.Net.Models.TimeSeriesTxModel-1.Builder.html#DxFeed_Graal_Net_Models_TimeSeriesTxModel_1_Builder_WithFromTime_
+  commentId: Overload:DxFeed.Graal.Net.Models.TimeSeriesTxModel`1.Builder.WithFromTime
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Models.TimeSeriesTxModel<TE>.Builder.WithFromTime
+  fullName.vb: DxFeed.Graal.Net.Models.TimeSeriesTxModel(Of TE).Builder.WithFromTime
+  nameWithType: TimeSeriesTxModel<TE>.Builder.WithFromTime
+  nameWithType.vb: TimeSeriesTxModel(Of TE).Builder.WithFromTime
+- uid: DxFeed.Graal.Net.Models.TimeSeriesTxModel`1.GetFromTime
+  name: GetFromTime()
+  href: docs/api/DxFeed.Graal.Net.Models.TimeSeriesTxModel-1.html#DxFeed_Graal_Net_Models_TimeSeriesTxModel_1_GetFromTime
+  commentId: M:DxFeed.Graal.Net.Models.TimeSeriesTxModel`1.GetFromTime
+  fullName: DxFeed.Graal.Net.Models.TimeSeriesTxModel<TE>.GetFromTime()
+  fullName.vb: DxFeed.Graal.Net.Models.TimeSeriesTxModel(Of TE).GetFromTime()
+  nameWithType: TimeSeriesTxModel<TE>.GetFromTime()
+  nameWithType.vb: TimeSeriesTxModel(Of TE).GetFromTime()
+- uid: DxFeed.Graal.Net.Models.TimeSeriesTxModel`1.GetFromTime*
+  name: GetFromTime
+  href: docs/api/DxFeed.Graal.Net.Models.TimeSeriesTxModel-1.html#DxFeed_Graal_Net_Models_TimeSeriesTxModel_1_GetFromTime_
+  commentId: Overload:DxFeed.Graal.Net.Models.TimeSeriesTxModel`1.GetFromTime
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Models.TimeSeriesTxModel<TE>.GetFromTime
+  fullName.vb: DxFeed.Graal.Net.Models.TimeSeriesTxModel(Of TE).GetFromTime
+  nameWithType: TimeSeriesTxModel<TE>.GetFromTime
+  nameWithType.vb: TimeSeriesTxModel(Of TE).GetFromTime
+- uid: DxFeed.Graal.Net.Models.TimeSeriesTxModel`1.NewBuilder
+  name: NewBuilder()
+  href: docs/api/DxFeed.Graal.Net.Models.TimeSeriesTxModel-1.html#DxFeed_Graal_Net_Models_TimeSeriesTxModel_1_NewBuilder
+  commentId: M:DxFeed.Graal.Net.Models.TimeSeriesTxModel`1.NewBuilder
+  fullName: DxFeed.Graal.Net.Models.TimeSeriesTxModel<TE>.NewBuilder()
+  fullName.vb: DxFeed.Graal.Net.Models.TimeSeriesTxModel(Of TE).NewBuilder()
+  nameWithType: TimeSeriesTxModel<TE>.NewBuilder()
+  nameWithType.vb: TimeSeriesTxModel(Of TE).NewBuilder()
+- uid: DxFeed.Graal.Net.Models.TimeSeriesTxModel`1.NewBuilder*
+  name: NewBuilder
+  href: docs/api/DxFeed.Graal.Net.Models.TimeSeriesTxModel-1.html#DxFeed_Graal_Net_Models_TimeSeriesTxModel_1_NewBuilder_
+  commentId: Overload:DxFeed.Graal.Net.Models.TimeSeriesTxModel`1.NewBuilder
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Models.TimeSeriesTxModel<TE>.NewBuilder
+  fullName.vb: DxFeed.Graal.Net.Models.TimeSeriesTxModel(Of TE).NewBuilder
+  nameWithType: TimeSeriesTxModel<TE>.NewBuilder
+  nameWithType.vb: TimeSeriesTxModel(Of TE).NewBuilder
+- uid: DxFeed.Graal.Net.Models.TimeSeriesTxModel`1.SetFromTime(System.Int64)
+  name: SetFromTime(long)
+  href: docs/api/DxFeed.Graal.Net.Models.TimeSeriesTxModel-1.html#DxFeed_Graal_Net_Models_TimeSeriesTxModel_1_SetFromTime_System_Int64_
+  commentId: M:DxFeed.Graal.Net.Models.TimeSeriesTxModel`1.SetFromTime(System.Int64)
+  name.vb: SetFromTime(Long)
+  fullName: DxFeed.Graal.Net.Models.TimeSeriesTxModel<TE>.SetFromTime(long)
+  fullName.vb: DxFeed.Graal.Net.Models.TimeSeriesTxModel(Of TE).SetFromTime(Long)
+  nameWithType: TimeSeriesTxModel<TE>.SetFromTime(long)
+  nameWithType.vb: TimeSeriesTxModel(Of TE).SetFromTime(Long)
+- uid: DxFeed.Graal.Net.Models.TimeSeriesTxModel`1.SetFromTime*
+  name: SetFromTime
+  href: docs/api/DxFeed.Graal.Net.Models.TimeSeriesTxModel-1.html#DxFeed_Graal_Net_Models_TimeSeriesTxModel_1_SetFromTime_
+  commentId: Overload:DxFeed.Graal.Net.Models.TimeSeriesTxModel`1.SetFromTime
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Models.TimeSeriesTxModel<TE>.SetFromTime
+  fullName.vb: DxFeed.Graal.Net.Models.TimeSeriesTxModel(Of TE).SetFromTime
+  nameWithType: TimeSeriesTxModel<TE>.SetFromTime
+  nameWithType.vb: TimeSeriesTxModel(Of TE).SetFromTime
+- uid: DxFeed.Graal.Net.Models.TxModelListener`1
+  name: TxModelListener<TE>
+  href: docs/api/DxFeed.Graal.Net.Models.TxModelListener-1.html
+  commentId: T:DxFeed.Graal.Net.Models.TxModelListener`1
+  name.vb: TxModelListener(Of TE)
+  fullName: DxFeed.Graal.Net.Models.TxModelListener<TE>
+  fullName.vb: DxFeed.Graal.Net.Models.TxModelListener(Of TE)
+  nameWithType: TxModelListener<TE>
+  nameWithType.vb: TxModelListener(Of TE)
 - uid: DxFeed.Graal.Net.Native.ErrorHandling
   name: DxFeed.Graal.Net.Native.ErrorHandling
   href: docs/api/DxFeed.Graal.Net.Native.ErrorHandling.html

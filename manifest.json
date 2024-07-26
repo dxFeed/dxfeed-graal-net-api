@@ -832,6 +832,126 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "docs/api/DxFeed.Graal.Net.Models.AbstractTxModel-1.Builder-2.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/api/DxFeed.Graal.Net.Models.AbstractTxModel-1.Builder-2.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/DxFeed.Graal.Net.Models.AbstractTxModel-1.Builder.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/api/DxFeed.Graal.Net.Models.AbstractTxModel-1.Builder.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/DxFeed.Graal.Net.Models.AbstractTxModel-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/api/DxFeed.Graal.Net.Models.AbstractTxModel-1.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/DxFeed.Graal.Net.Models.IndexedTxModel-1.Builder.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/api/DxFeed.Graal.Net.Models.IndexedTxModel-1.Builder.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/DxFeed.Graal.Net.Models.IndexedTxModel-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/api/DxFeed.Graal.Net.Models.IndexedTxModel-1.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/DxFeed.Graal.Net.Models.MarketDepthModel-1.Builder.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/api/DxFeed.Graal.Net.Models.MarketDepthModel-1.Builder.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/DxFeed.Graal.Net.Models.MarketDepthModel-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/api/DxFeed.Graal.Net.Models.MarketDepthModel-1.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/DxFeed.Graal.Net.Models.MarketDepthModelListener-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/api/DxFeed.Graal.Net.Models.MarketDepthModelListener-1.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/DxFeed.Graal.Net.Models.TimeSeriesTxModel-1.Builder.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/api/DxFeed.Graal.Net.Models.TimeSeriesTxModel-1.Builder.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/DxFeed.Graal.Net.Models.TimeSeriesTxModel-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/api/DxFeed.Graal.Net.Models.TimeSeriesTxModel-1.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/DxFeed.Graal.Net.Models.TxModelListener-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/api/DxFeed.Graal.Net.Models.TxModelListener-1.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/DxFeed.Graal.Net.Models.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/api/DxFeed.Graal.Net.Models.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "docs/api/DxFeed.Graal.Net.Native.ErrorHandling.GraalErrorCode.yml",
       "output": {
         ".html": {

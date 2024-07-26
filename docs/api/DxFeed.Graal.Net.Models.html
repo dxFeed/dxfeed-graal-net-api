@@ -1,0 +1,261 @@
+﻿<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Namespace DxFeed.Graal.Net.Models | dxFeed Graal .NET API </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Namespace DxFeed.Graal.Net.Models | dxFeed Graal .NET API ">
+      
+      
+      <link rel="icon" href="../../docs/images/favicon.png">
+      <link rel="stylesheet" href="../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../public/main.css">
+      <meta name="docfx:navrel" content="../../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../../">
+      
+      
+      
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../index.html">
+            <img id="logo" class="svg" src="../../docs/images/logo.svg" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled="" placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="DxFeed.Graal.Net.Models">
+
+  <h1 id="DxFeed_Graal_Net_Models" data-uid="DxFeed.Graal.Net.Models" class="text-break">Namespace DxFeed.Graal.Net.Models</h1>
+  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="markdown level0 remarks"></div>
+
+    <h3 id="classes">
+Classes
+</h3>
+    <dl class="jumplist">
+      <dt><a class="xref" href="DxFeed.Graal.Net.Models.AbstractTxModel-1.html">AbstractTxModel&lt;TE&gt;</a></dt>
+      <dd><p>Abstract base class for models that handle transactions of <a class="xref" href="DxFeed.Graal.Net.Events.IIndexedEvent.html">IIndexedEvent</a>.
+This model manages all snapshot and transaction logic, subscription handling, and listener notifications.</p>
+<p>This model is designed to handle incremental transactions. Users of this model only see the list
+of events in a consistent state. This model delays incoming events that are part of an incomplete snapshot
+or ongoing transaction until the snapshot is complete or the transaction has ended.</p><h3>Configuration</h3><p>This model must be configured using the <a class="xref" href="DxFeed.Graal.Net.Models.AbstractTxModel-1.Builder.html">AbstractTxModel&lt;TE&gt;.Builder</a>. Specific implementations can add additional
+configuration options as needed. This model requires a call to the <a class="xref" href="DxFeed.Graal.Net.Models.AbstractTxModel-1.html#DxFeed_Graal_Net_Models_AbstractTxModel_1_SetSymbols_System_Collections_Generic_HashSet_System_Object__">SetSymbols(HashSet&lt;object&gt;)</a> method
+(all inheritors must call this method) for subscription.</p><p>This model only supports single symbol subscriptions; multiple symbols cannot be configured.</p><h3>Resource management and closed models</h3><p>Attached model is a potential memory leak. If the pointer to attached model is lost, then there is no way
+to detach this model from the feed and the model will not be reclaimed by the garbage collector as long as the
+corresponding feed is still used. Detached model can be reclaimed by the garbage collector, but detaching model
+requires knowing the pointer to the feed at the place of the call, which is not always convenient.</p><p>The convenient way to detach model from the feed is to call its
+<a class="xref" href="DxFeed.Graal.Net.Models.AbstractTxModel-1.html#DxFeed_Graal_Net_Models_AbstractTxModel_1_Dispose">Dispose()</a> method.
+Closed model becomes permanently detached from all feeds, removes all its listeners and is guaranteed
+to be reclaimable by the garbage collector as soon as all external references to it are cleared.</p><h3>Threads and locks</h3><p>This class is thread-safe and can be used concurrently from multiple threads without external synchronization.</p>
+The corresponding <a class="xref" href="DxFeed.Graal.Net.Models.TxModelListener-1.html">TxModelListener&lt;TE&gt;</a> to never be concurrent
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="DxFeed.Graal.Net.Models.AbstractTxModel-1.Builder.html">AbstractTxModel&lt;TE&gt;.Builder</a></dt>
+      <dd><p>Non-generic version, for erasing a generic type.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="DxFeed.Graal.Net.Models.AbstractTxModel-1.Builder-2.html">AbstractTxModel&lt;TE&gt;.Builder&lt;TB, TM&gt;</a></dt>
+      <dd><p>Abstract builder for building models inherited from <a class="xref" href="DxFeed.Graal.Net.Models.AbstractTxModel-1.html">AbstractTxModel&lt;TE&gt;</a>.
+Specific implementations can add additional configuration options to this builder.</p>
+<p>Inheritors of this class must override the abstract method <a class="xref" href="DxFeed.Graal.Net.Models.AbstractTxModel-1.Builder-2.html#DxFeed_Graal_Net_Models_AbstractTxModel_1_Builder_2_Build">Build()</a> to build a specific model.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="DxFeed.Graal.Net.Models.IndexedTxModel-1.html">IndexedTxModel&lt;TE&gt;</a></dt>
+      <dd><p>An incremental model for indexed events.
+This model manages all snapshot and transaction logic, subscription handling, and listener notifications.</p>
+<p>This model is designed to handle incremental transactions. Users of this model only see the list
+of events in a consistent state. This model delays incoming events that are part of an incomplete snapshot
+or ongoing transaction until the snapshot is complete or the transaction has ended. This model notifies
+the user of received transactions through an installed <a class="xref" href="DxFeed.Graal.Net.Models.TxModelListener-1.html">TxModelListener&lt;TE&gt;</a>.</p><h3>Configuration</h3><p>This model must be configured using the <a class="xref" href="DxFeed.Graal.Net.Models.IndexedTxModel-1.Builder.html">IndexedTxModel&lt;TE&gt;.Builder</a> class, as most configuration
+settings cannot be changed once the model is built. This model requires configuration
+<a class="xref" href="DxFeed.Graal.Net.Models.AbstractTxModel-1.Builder-2.html#DxFeed_Graal_Net_Models_AbstractTxModel_1_Builder_2_WithSymbol_System_Object_">WithSymbol(object)</a> and
+<a class="xref" href="DxFeed.Graal.Net.Models.IndexedTxModel-1.Builder.html#DxFeed_Graal_Net_Models_IndexedTxModel_1_Builder_WithSources_DxFeed_Graal_Net_Events_IndexedEventSource___">WithSources(params IndexedEventSource[])</a> for subscription,
+and it must be <a class="xref" href="DxFeed.Graal.Net.Models.AbstractTxModel-1.Builder-2.html#DxFeed_Graal_Net_Models_AbstractTxModel_1_Builder_2_WithFeed_DxFeed_Graal_Net_Api_DXFeed_">WithFeed(DXFeed)</a> attached to a <a class="xref" href="DxFeed.Graal.Net.Api.DXFeed.html">DXFeed</a>
+instance to begin operation.
+For ease of use, some of these configurations can be changed after the model is built,
+see <a class="xref" href="DxFeed.Graal.Net.Models.IndexedTxModel-1.html#DxFeed_Graal_Net_Models_IndexedTxModel_1_SetSources_DxFeed_Graal_Net_Events_IndexedEventSource___">SetSources(params IndexedEventSource[])</a>.</p><p>This model only supports single symbol subscriptions; multiple symbols cannot be configured.</p><h3>Resource management and closed models</h3><p>Attached model is a potential memory leak. If the pointer to attached model is lost, then there is no way
+to detach this model from the feed and the model will not be reclaimed by the garbage collector as long as the
+corresponding feed is still used. Detached model can be reclaimed by the garbage collector, but detaching model
+requires knowing the pointer to the feed at the place of the call, which is not always convenient.</p><p>The convenient way to detach model from the feed is to call its
+<a class="xref" href="DxFeed.Graal.Net.Models.AbstractTxModel-1.html#DxFeed_Graal_Net_Models_AbstractTxModel_1_Dispose">Dispose()</a> method.
+Closed model becomes permanently detached from all feeds, removes all its listeners and is guaranteed
+to be reclaimable by the garbage collector as soon as all external references to it are cleared.</p><h3>Threads and locks</h3><p>This class is thread-safe and can be used concurrently from multiple threads without external synchronization.</p>
+The corresponding <a class="xref" href="DxFeed.Graal.Net.Models.TxModelListener-1.html">TxModelListener&lt;TE&gt;</a> to never be concurrent.
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="DxFeed.Graal.Net.Models.IndexedTxModel-1.Builder.html">IndexedTxModel&lt;TE&gt;.Builder</a></dt>
+      <dd><p>A builder class for creating an instance of <a class="xref" href="DxFeed.Graal.Net.Models.IndexedTxModel-1.html">IndexedTxModel&lt;TE&gt;</a>.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="DxFeed.Graal.Net.Models.MarketDepthModel-1.html">MarketDepthModel&lt;TE&gt;</a></dt>
+      <dd><p>Represents a model for market depth, tracking buy and sell orders and notifies listener
+of changes in the order book.</p>
+<p>This model can set depth limit and aggregation period. This model notifies
+the user of received transactions through an installed <a class="xref" href="DxFeed.Graal.Net.Models.MarketDepthModelListener-1.html">MarketDepthModelListener&lt;TE&gt;</a>.</p><p>The depth limit specifies the maximum number of buy or sell orders to maintain in the order book.
+For example, if the depth limit is set to 10, the model will only keep track of the top 10 buy orders
+and the top 10 sell orders. This helps in managing the size of the order book.</p><p>The aggregation period, specified in milliseconds, determines the frequency at which the model aggregates
+and notifies changes in the order book to the listeners. For instance, if the aggregation period is
+set to 1000 milliseconds the model will aggregate changes and notify listeners every second.
+A value of 0 means that changes are notified immediately.</p><h3>Configuration</h3><p>This model must be configured using the <a class="xref" href="DxFeed.Graal.Net.Models.MarketDepthModel-1.Builder.html">MarketDepthModel&lt;TE&gt;.Builder</a> class, as most configuration
+settings cannot be changed once the model is built. This model requires configuration
+<a class="xref" href="DxFeed.Graal.Net.Models.MarketDepthModel-1.Builder.html#DxFeed_Graal_Net_Models_MarketDepthModel_1_Builder_WithSymbol_System_Object_">WithSymbol(object)</a> and it must be <a class="xref" href="DxFeed.Graal.Net.Models.MarketDepthModel-1.Builder.html#DxFeed_Graal_Net_Models_MarketDepthModel_1_Builder_WithFeed_DxFeed_Graal_Net_Api_DXFeed_">WithFeed(DXFeed)</a> attached to a <a class="xref" href="DxFeed.Graal.Net.Api.DXFeed.html">DXFeed</a>
+instance to begin operation.</p><p>This model only supports single symbol subscriptions; multiple symbols cannot be configured.</p><h3>Resource management and closed models</h3><p>Attached model is a potential memory leak. If the pointer to attached model is lost, then there is no way
+to detach this model from the feed and the model will not be reclaimed by the garbage collector as long as the
+corresponding feed is still used. Detached model can be reclaimed by the garbage collector, but detaching model
+requires knowing the pointer to the feed at the place of the call, which is not always convenient.</p><p>The convenient way to detach model from the feed is to call its
+<a class="xref" href="DxFeed.Graal.Net.Models.MarketDepthModel-1.html#DxFeed_Graal_Net_Models_MarketDepthModel_1_Dispose">Dispose()</a> method.
+Closed model becomes permanently detached from all feeds, removes all its listeners and is guaranteed
+to be reclaimable by the garbage collector as soon as all external references to it are cleared.</p><h3>Threads and locks</h3><p>This class is thread-safe and can be used concurrently from multiple threads without external synchronization.</p>
+The corresponding <a class="xref" href="DxFeed.Graal.Net.Models.MarketDepthModelListener-1.html">MarketDepthModelListener&lt;TE&gt;</a> to never be concurrent.
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="DxFeed.Graal.Net.Models.MarketDepthModel-1.Builder.html">MarketDepthModel&lt;TE&gt;.Builder</a></dt>
+      <dd><p>Builder class for constructing instances of MarketDepthModel.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="DxFeed.Graal.Net.Models.TimeSeriesTxModel-1.html">TimeSeriesTxModel&lt;TE&gt;</a></dt>
+      <dd><p>An incremental model for time-series events.
+This model manages all snapshot and transaction logic, subscription handling, and listener notifications.</p>
+<p>This model is designed to handle incremental transactions. Users of this model only see the list
+of events in a consistent state. This model delays incoming events that are part of an incomplete snapshot
+or ongoing transaction until the snapshot is complete or the transaction has ended. This model notifies
+the user of received transactions through an installed <a class="xref" href="DxFeed.Graal.Net.Models.TxModelListener-1.html">TxModelListener&lt;TE&gt;</a>.</p><h3>Configuration</h3><p>This model must be configured using the <a class="xref" href="DxFeed.Graal.Net.Models.TimeSeriesTxModel-1.Builder.html">TimeSeriesTxModel&lt;TE&gt;.Builder</a> class, as most configuration
+settings cannot be changed once the model is built. This model requires configuration
+<a class="xref" href="DxFeed.Graal.Net.Models.AbstractTxModel-1.Builder-2.html#DxFeed_Graal_Net_Models_AbstractTxModel_1_Builder_2_WithSymbol_System_Object_">WithSymbol(object)</a> and <a class="xref" href="DxFeed.Graal.Net.Models.TimeSeriesTxModel-1.Builder.html#DxFeed_Graal_Net_Models_TimeSeriesTxModel_1_Builder_WithFromTime_System_Int64_">WithFromTime(long)</a>
+for subscription, and it must be <a class="xref" href="DxFeed.Graal.Net.Models.AbstractTxModel-1.Builder-2.html#DxFeed_Graal_Net_Models_AbstractTxModel_1_Builder_2_WithFeed_DxFeed_Graal_Net_Api_DXFeed_">WithFeed(DXFeed)</a> attached
+to a <a class="xref" href="DxFeed.Graal.Net.Api.DXFeed.html">DXFeed</a> instance to begin operation.
+For ease of use, some of these configurations can be changed after the model is built,
+see <a class="xref" href="DxFeed.Graal.Net.Models.TimeSeriesTxModel-1.html#DxFeed_Graal_Net_Models_TimeSeriesTxModel_1_SetFromTime_System_Int64_">SetFromTime(long)</a>.</p><p>This model only supports single symbol subscriptions; multiple symbols cannot be configured.</p><h3>Resource management and closed models</h3><p>Attached model is a potential memory leak. If the pointer to attached model is lost, then there is no way
+to detach this model from the feed and the model will not be reclaimed by the garbage collector as long as the
+corresponding feed is still used. Detached model can be reclaimed by the garbage collector, but detaching model
+requires knowing the pointer to the feed at the place of the call, which is not always convenient.</p><p>The convenient way to detach model from the feed is to call its
+<a class="xref" href="DxFeed.Graal.Net.Models.AbstractTxModel-1.html#DxFeed_Graal_Net_Models_AbstractTxModel_1_Dispose">Dispose()</a> method.
+Closed model becomes permanently detached from all feeds, removes all its listeners and is guaranteed
+to be reclaimable by the garbage collector as soon as all external references to it are cleared.</p><h3>Threads and locks</h3><p>This class is thread-safe and can be used concurrently from multiple threads without external synchronization.</p>
+The corresponding <a class="xref" href="DxFeed.Graal.Net.Models.TxModelListener-1.html">TxModelListener&lt;TE&gt;</a> to never be concurrent.
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="DxFeed.Graal.Net.Models.TimeSeriesTxModel-1.Builder.html">TimeSeriesTxModel&lt;TE&gt;.Builder</a></dt>
+      <dd><p>A builder class for creating an instance of <a class="xref" href="DxFeed.Graal.Net.Models.TimeSeriesTxModel-1.html">TimeSeriesTxModel&lt;TE&gt;</a>.</p>
+</dd>
+    </dl>
+    <h3 id="delegates">
+Delegates
+</h3>
+    <dl class="jumplist">
+      <dt><a class="xref" href="DxFeed.Graal.Net.Models.MarketDepthModelListener-1.html">MarketDepthModelListener&lt;TE&gt;</a></dt>
+      <dd><p>Invoked when the order book is changed.</p>
+<p>The <a class="xref" href="DxFeed.Graal.Net.Models.MarketDepthModelListener-1.html">MarketDepthModelListener&lt;TE&gt;</a> delegate is used to handle notifications
+of changes to the market depth, including updates to the buy and sell orders.
+Implement this delegate to process or react to changes in the market order book.</p>
+</dd>
+    </dl>
+    <dl class="jumplist">
+      <dt><a class="xref" href="DxFeed.Graal.Net.Models.TxModelListener-1.html">TxModelListener&lt;TE&gt;</a></dt>
+      <dd><p>Invoked when a complete transaction (one or more) is received. This behavior can be changed when building
+the model; see <a class="xref" href="DxFeed.Graal.Net.Models.AbstractTxModel-1.Builder-2.html#DxFeed_Graal_Net_Models_AbstractTxModel_1_Builder_2_WithBatchProcessing_System_Boolean_">WithBatchProcessing(bool)</a>.</p>
+<p>Only events that have the same <a class="xref" href="DxFeed.Graal.Net.Events.IndexedEventSource.html">IndexedEventSource</a> and <a class="xref" href="DxFeed.Graal.Net.Events.IEventType.html#DxFeed_Graal_Net_Events_IEventType_EventSymbol">EventSymbol</a>
+can be in the same listener call and cannot be mixed within a single call. If there are multiple sources,
+listener notifications will happen separately for each source.</p><p>A transaction can also be a snapshot. In such cases, the <code class="paramref">isSnapshot</code> flag is set to <code>true</code>,
+indicating that all state based on previously received events for the corresponding
+<a class="xref" href="DxFeed.Graal.Net.Events.IndexedEventSource.html">IndexedEventSource</a> should be cleared. A snapshot can also be post-processed or raw;
+see <a class="xref" href="DxFeed.Graal.Net.Models.AbstractTxModel-1.Builder-2.html#DxFeed_Graal_Net_Models_AbstractTxModel_1_Builder_2_WithSnapshotProcessing_System_Boolean_">WithSnapshotProcessing(bool)</a>.
+If <a class="xref" href="DxFeed.Graal.Net.Models.AbstractTxModel-1.Builder-2.html#DxFeed_Graal_Net_Models_AbstractTxModel_1_Builder_2_WithSnapshotProcessing_System_Boolean_">WithSnapshotProcessing(bool)</a> is <code>true</code>,
+the transaction containing the snapshot can be empty (<code>events.Count == 0</code>),
+meaning that an empty snapshot was received.</p>
+</dd>
+    </dl>
+
+
+</article>
+
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Copyright © 2022 Devexperts LLC</span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
