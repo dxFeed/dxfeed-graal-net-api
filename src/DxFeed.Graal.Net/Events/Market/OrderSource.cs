@@ -257,6 +257,34 @@ public class OrderSource : IndexedEventSource
     public static readonly OrderSource pink = new("pink", PubOrder | PubOtcMarketdOrder);
 
     /// <summary>
+    /// NYSE Arca traded securities.
+    /// <see cref="Order"/> events are <see cref="IsPublishable"/> on this
+    /// source and the corresponding subscription can be observed via <see cref="DXPublisher"/>.
+    /// </summary>
+    public static readonly OrderSource ARCA = new OrderSource("ARCA", PubOrder);
+
+    /// <summary>
+    /// NYSE Arca traded securities. Record for price level book.
+    /// <see cref="Order"/> events are  <see cref="IsPublishable"/> on this
+    /// source and the corresponding subscription can be observed via <see cref="DXPublisher"/>.
+    /// </summary>
+    public static readonly OrderSource arca = new OrderSource("arca", PubOrder);
+
+    /// <summary>
+    /// Cboe European Derivatives.
+    /// <see cref="Order"/> events are  <see cref="IsPublishable"/> on this
+    /// source and the corresponding subscription can be observed via <see cref="DXPublisher"/>.
+    /// </summary>
+    public static readonly OrderSource CEDX = new OrderSource("CEDX", PubOrder);
+
+    ///
+    /// Cboe European Derivatives. Record for price level book.
+    /// <see cref="Order"/> events are  <see cref="IsPublishable"/> on this
+    /// source and the corresponding subscription can be observed via <see cref="DXPublisher"/>.
+    ///
+    public static readonly OrderSource cedx = new OrderSource("cedx", PubOrder);
+
+    /// <summary>
     /// The binary flags representing <see cref="Order"/>.
     /// </summary>
     private const int PubOrder = 0x0001;
@@ -369,7 +397,7 @@ public class OrderSource : IndexedEventSource
     /// </summary>
     /// <param name="name">The name of the source.</param>
     /// <returns>Return <see cref="OrderSource"/>.</returns>
-    /// <exception cref="ArgumentException">If name is malformed..</exception>
+    /// <exception cref="ArgumentException">If name is malformed.</exception>
     public static OrderSource ValueOf(string name) =>
         GetOrCreateAndCacheOrderSource(name, () => new OrderSource(ComposeId(name), name));
 

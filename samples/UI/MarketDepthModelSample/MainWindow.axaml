@@ -1,0 +1,96 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:market="clr-namespace:DxFeed.Graal.Net.Events.Market;assembly=DxFeed.Graal.Net"
+        WindowStartupLocation="CenterScreen"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="MarketDepthModelSample.MainWindow"
+        Title="MarketDepthModelSample"
+        x:DataType="market:Order"
+        x:CompileBindings="True"
+        x:Name="Main">
+
+    <Grid>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <Grid Grid.Row="0" HorizontalAlignment="Left" Margin="10" Grid.ColumnSpan="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Text="Symbol" Margin="5" FontSize="12" VerticalAlignment="Center" Grid.Column="0" />
+            <TextBox x:Name="SymbolTextBox" Text="AAPL" FontSize="12" Width="180" KeyDown="OnKeyDown" LostFocus="OnLostFocus"
+                     Grid.Column="1" Margin="5" />
+
+            <TextBlock Text="Sources" Margin="5" FontSize="12" VerticalAlignment="Center" Grid.Column="2" />
+            <TextBox x:Name="SourcesTextBox" Text="ntv" FontSize="12" Width="180" KeyDown="OnKeyDown" LostFocus="OnLostFocus"
+                     Grid.Column="3" Margin="5" />
+
+            <TextBlock Text="Depth Limit" Margin="5" FontSize="12" VerticalAlignment="Center" Grid.Column="4" />
+            <TextBox x:Name="DepthLimitTextBox" Text="10" FontSize="12" Width="20" KeyDown="OnKeyDown" LostFocus="OnLostFocus"
+                     Grid.Column="5" Margin="5" />
+
+            <TextBlock Text="Period" Margin="5" FontSize="12" VerticalAlignment="Center" Grid.Column="6" />
+            <TextBox x:Name="PeriodTextBox" Text="30" FontSize="12" Width="5" KeyDown="OnKeyDown"
+                     LostFocus="OnLostFocus" Grid.Column="7" Margin="5" />
+            <TextBlock Text="ms" Margin="5" FontSize="12" VerticalAlignment="Center" Grid.Column="8" />
+
+        </Grid>
+
+        <Grid Grid.Row="1" Grid.Column="0">
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <TextBlock Text="Buy" FontSize="12" FontWeight="Bold" Margin="5" Grid.Row="0" />
+            <TreeDataGrid x:Name="BuyTable" Margin="1"
+                          FontSize="12"
+                          BorderThickness="1" BorderBrush="Gray"
+                          CanUserSortColumns="False"
+                          ClipToBounds="True"
+                          VerticalAlignment="Stretch"
+                          Grid.Row="1" />
+        </Grid>
+
+        <Grid Grid.Row="1" Grid.Column="1">
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <TextBlock Text="Sell" FontSize="12" FontWeight="Bold" Margin="5" Grid.Row="0" />
+            <TreeDataGrid x:Name="SellTable" Margin="1"
+                          FontSize="12"
+                          BorderThickness="1" BorderBrush="Gray"
+                          CanUserSortColumns="False"
+                          ClipToBounds="True"
+                          VerticalAlignment="Stretch"
+                          Grid.Row="1" />
+
+        </Grid>
+
+    </Grid>
+
+</Window>
