@@ -1,3 +1,5 @@
+## Version 2.3.0
+
 * [MDAPI-115] [.NET] Add IncOrderSnapshot sample
 * [MDAPI-81] [.NET] Add MultipleMarketDepth sample
 * [MDAPI-93] [.NET] Add DxFeedMarketDepth sample
