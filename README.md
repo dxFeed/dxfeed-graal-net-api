@@ -408,6 +408,9 @@ sudo /usr/bin/xattr -r -d com.apple.quarantine <directory_with_tools>
   is a simple demonstration of how to use the `MarketDepthModel` to manage and display order books for multiple symbols.
 - [x] [DXFeedOptionChain](https://github.com/dxFeed/dxfeed-graal-net-api/tree/main/samples/DXFeedOptionChain)
   how to build option chains, and prints quotes for nearby option strikes.
+- [x] [LastEventConsoleSample](https://github.com/dxFeed/dxfeed-graal-net-api/tree/main/samples/LastEventConsoleSample)
+  is a simple demonstration how to subscribe to various market events with the dxFeed API, cache them in memory, and
+  take snapshots of these events based on user input.
 
 ## Current State
 
