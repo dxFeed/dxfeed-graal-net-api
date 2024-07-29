@@ -1,3 +1,5 @@
+* [MDAPI-42] [.NET] Implement OptionChain
+
 ## Version 2.3.0
 
 * [MDAPI-115] [.NET] Add IncOrderSnapshot sample
