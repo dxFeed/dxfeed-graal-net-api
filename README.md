@@ -406,6 +406,8 @@ sudo /usr/bin/xattr -r -d com.apple.quarantine <directory_with_tools>
   is a simple demonstration of how to subscribe to the Order event and handle snapshots and updates.
 - [x] [MultipleMarketDepthSample](https://github.com/dxFeed/dxfeed-graal-net-api/tree/main/samples/MultipleMarketDepthSample)
   is a simple demonstration of how to use the `MarketDepthModel` to manage and display order books for multiple symbols.
+- [x] [DXFeedOptionChain](https://github.com/dxFeed/dxfeed-graal-net-api/tree/main/samples/DXFeedOptionChain)
+  how to build option chains, and prints quotes for nearby option strikes.
 
 ## Current State
 
