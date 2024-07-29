@@ -1,3 +1,4 @@
+* [MDAPI-112] [.NET] Add LastEventsConsole API sample
 * [MDAPI-42] [.NET] Implement OptionChain
 
 ## Version 2.3.0
