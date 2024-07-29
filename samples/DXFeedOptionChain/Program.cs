@@ -23,7 +23,7 @@ internal abstract class Program
         if (args.Length != 5)
         {
             Console.WriteLine("usage: DXFeedOptionChain <address> <ipf-file> <symbol> <nStrikes> <nMonths>");
-            Console.WriteLine("       <ipf-file> is endpoint address");
+            Console.WriteLine("       <address>  is endpoint address");
             Console.WriteLine("       <ipf-file> is name of instrument profiles file");
             Console.WriteLine("       <symbol>   is the product or underlying symbol");
             Console.WriteLine("       <nStrikes> number of strikes to print for each series");
@@ -81,7 +81,8 @@ internal abstract class Program
             }
         }
 
-        await Task.WhenAll(quotes.Values);
+        // Ignore timeout and continue to print retrieved quotes even on timeout.
+        await Task.WhenAny(Task.WhenAll(quotes.Values), Task.Delay(TimeSpan.FromSeconds(1)));
 
         Console.WriteLine("Printing option series ...");
         foreach (var series in seriesList)
@@ -93,12 +94,16 @@ internal abstract class Program
             {
                 series.Calls.TryGetValue(strike, out var call);
                 series.Puts.TryGetValue(strike, out var put);
-                var callQuote = call != null && quotes.TryGetValue(call, out var callTask)
-                    ? callTask.Result
-                    : new Quote();
-                var putQuote = put != null && quotes.TryGetValue(put, out var putTask)
-                    ? putTask.Result
-                    : new Quote();
+                var callQuote = new Quote();
+                if (call != null && quotes.TryGetValue(call, out var callTask) && callTask.IsCompleted)
+                {
+                    callQuote = callTask.Result;
+                }
+                var putQuote = new Quote();
+                if (put != null && quotes.TryGetValue(put, out var putTask) && putTask.IsCompleted)
+                {
+                    putQuote = putTask.Result;
+                }
                 Console.WriteLine(
                     $"{callQuote.BidPrice,10:F3} {callQuote.AskPrice,10:F3} {strike,10:F3} {putQuote.BidPrice,10:F3} {putQuote.AskPrice,10:F3}");
             }

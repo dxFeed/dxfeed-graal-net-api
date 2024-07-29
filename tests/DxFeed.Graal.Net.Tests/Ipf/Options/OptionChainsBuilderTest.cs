@@ -17,40 +17,8 @@ public class OptionChainsBuilderTests
     {
         var profiles = new List<InstrumentProfile>
         {
-            new()
-            {
-                Type = "OPTION",
-                Product = "AAPL",
-                Underlying = "",
-                Expiration = 20240101,
-                LastTrade = 20231231,
-                Multiplier = 100,
-                SPC = 1,
-                AdditionalUnderlyings = "US$ 50",
-                MMY = "202401",
-                OptionType = "STAN",
-                ExpirationStyle = "Weeklys",
-                SettlementStyle = "Close",
-                CFI = "OCXXXX",
-                Strike = 100
-            },
-            new()
-            {
-                Type = "OPTION",
-                Product = "",
-                Underlying = "AAPL",
-                Expiration = 20240101,
-                LastTrade = 20231231,
-                Multiplier = 100,
-                SPC = 1,
-                AdditionalUnderlyings = "US$ 50",
-                MMY = "202401",
-                OptionType = "STAN",
-                ExpirationStyle = "Weeklys",
-                SettlementStyle = "Close",
-                CFI = "OPXXXX",
-                Strike = 105
-            }
+            CreateInstrumentProfile("AAPL", "", 100, "OCXXXX"),
+            CreateInstrumentProfile("", "AAPL", 105, "OPXXXX")
         };
 
         var builder = OptionChainsBuilder<InstrumentProfile>.Build(profiles);
@@ -89,23 +57,7 @@ public class OptionChainsBuilderTests
             Strike = 100
         };
 
-        var option = new InstrumentProfile
-        {
-            Type = "OPTION",
-            Product = "AAPL",
-            Underlying = "AAPL",
-            Expiration = 20240101,
-            LastTrade = 20231231,
-            Multiplier = 100,
-            SPC = 1,
-            AdditionalUnderlyings = "US$ 50",
-            MMY = "202401",
-            OptionType = "STAN",
-            ExpirationStyle = "Weeklys",
-            SettlementStyle = "Close",
-            CFI = "OCXXXX",
-            Strike = 100
-        };
+        var option = CreateInstrumentProfile("AAPL", "AAPL", 100, "OCXXXX");
 
         builder.AddOption(option);
         var chains = builder.Chains;
@@ -118,4 +70,23 @@ public class OptionChainsBuilderTests
         var series = seriesSet.Min;
         Assert.That(series?.Calls.ContainsKey(100), Is.True);
     }
+
+    private static InstrumentProfile CreateInstrumentProfile(string product, string underlying, int strike, string cfi) =>
+        new()
+        {
+            Type = "OPTION",
+            Product = product,
+            Underlying = underlying,
+            Expiration = 20240101,
+            LastTrade = 20231231,
+            Multiplier = 100,
+            SPC = 1,
+            AdditionalUnderlyings = "US$ 50",
+            MMY = "202401",
+            OptionType = "STAN",
+            ExpirationStyle = "Weeklys",
+            SettlementStyle = "Close",
+            CFI = cfi,
+            Strike = strike
+        };
 }
