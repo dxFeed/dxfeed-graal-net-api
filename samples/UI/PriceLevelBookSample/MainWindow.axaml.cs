@@ -15,22 +15,21 @@ using DxFeed.Graal.Net;
 using DxFeed.Graal.Net.Api;
 using DxFeed.Graal.Net.Events;
 using DxFeed.Graal.Net.Events.Market;
-using DxFeed.Graal.Net.Models;
 
-namespace MarketDepthModelSample;
+namespace PriceLevelBookSample;
 
 /// <summary>
-/// The MainWindow class represents the main window of the MarketDepthModelSample application.
+/// The MainWindow class represents the main window of the PriceLevelBookSample application.
 /// This window is responsible for setting up the market depth model, handling user input,
 /// and updating the UI with market depth data.
 /// </summary>
 public partial class MainWindow : Window
 {
-    private readonly Orders orders = new();
-    private readonly MarketDepthModel<Order>.Builder builder;
+    private readonly PriceLevels _priceLevels = new();
+    private readonly PriceLevelBook<Order>.Builder builder;
     private string symbol = string.Empty;
     private string sources = string.Empty;
-    private MarketDepthModel<Order>? model;
+    private PriceLevelBook<Order>? model;
 
     /// <summary>
     /// Initializes a new instance of the MainWindow class.
@@ -42,20 +41,20 @@ public partial class MainWindow : Window
         SystemProperty.SetProperty("dxfeed.address", "mddqa.in.devexperts.com:7400");
 
         InitializeComponent();
-        BuyTable.Source = orders.BuyOrders;
-        SellTable.Source = orders.SellOrders;
+        BuyTable.Source = _priceLevels.BuyPriceLevels;
+        SellTable.Source = _priceLevels.SellPriceLevels;
 
-        builder = MarketDepthModel<Order>.NewBuilder()
+        builder = PriceLevelBook<Order>.NewBuilder()
             .WithFeed(DXFeed.GetInstance())
             .WithListener((buy, sell) =>
             {
                 Dispatcher.UIThread.Post(() =>
                 {
                     // Update UI.
-                    orders.UpdateBuy(buy);
-                    orders.UpdateSell(sell);
+                    _priceLevels.UpdateBuy(buy);
+                    _priceLevels.UpdateSell(sell);
                 }, DispatcherPriority.Normal);
-            });
+            }, null);
 
         HandleTextChanged(SymbolTextBox);
     }
