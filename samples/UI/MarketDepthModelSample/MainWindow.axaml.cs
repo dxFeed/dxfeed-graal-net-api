@@ -133,12 +133,19 @@ public partial class MainWindow : Window
         sources = SourcesTextBox.Text ?? string.Empty;
 
         model?.Dispose();
-        model = builder
-            .WithSymbol(GetSymbol())
-            .WithSources(GetSources())
-            .WithDepthLimit(GetDepthLimit())
-            .WithAggregationPeriod(GetAggregationPeriod())
-            .Build();
+        try
+        {
+            model = builder
+                .WithSymbol(GetSymbol())
+                .WithSources(GetSources())
+                .WithDepthLimit(GetDepthLimit())
+                .WithAggregationPeriod(GetAggregationPeriod())
+                .Build();
+        }
+        catch
+        {
+            // ignored
+        }
     }
 
     /// <summary>
