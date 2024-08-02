@@ -822,6 +822,46 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "docs/api/DxFeed.Graal.Net.Ipf.Options.OptionChain-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/api/DxFeed.Graal.Net.Ipf.Options.OptionChain-1.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/DxFeed.Graal.Net.Ipf.Options.OptionChainsBuilder-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/api/DxFeed.Graal.Net.Ipf.Options.OptionChainsBuilder-1.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/DxFeed.Graal.Net.Ipf.Options.OptionSeries-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/api/DxFeed.Graal.Net.Ipf.Options.OptionSeries-1.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/DxFeed.Graal.Net.Ipf.Options.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/api/DxFeed.Graal.Net.Ipf.Options.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "docs/api/DxFeed.Graal.Net.Ipf.yml",
       "output": {
         ".html": {

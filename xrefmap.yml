@@ -9254,6 +9254,803 @@ references:
   commentId: T:DxFeed.Graal.Net.Ipf.Live.InstrumentProfileUpdateListener
   fullName: DxFeed.Graal.Net.Ipf.Live.InstrumentProfileUpdateListener
   nameWithType: InstrumentProfileUpdateListener
+- uid: DxFeed.Graal.Net.Ipf.Options
+  name: DxFeed.Graal.Net.Ipf.Options
+  href: docs/api/DxFeed.Graal.Net.Ipf.Options.html
+  commentId: N:DxFeed.Graal.Net.Ipf.Options
+  fullName: DxFeed.Graal.Net.Ipf.Options
+  nameWithType: DxFeed.Graal.Net.Ipf.Options
+- uid: DxFeed.Graal.Net.Ipf.Options.OptionChain`1
+  name: OptionChain<T>
+  href: docs/api/DxFeed.Graal.Net.Ipf.Options.OptionChain-1.html
+  commentId: T:DxFeed.Graal.Net.Ipf.Options.OptionChain`1
+  name.vb: OptionChain(Of T)
+  fullName: DxFeed.Graal.Net.Ipf.Options.OptionChain<T>
+  fullName.vb: DxFeed.Graal.Net.Ipf.Options.OptionChain(Of T)
+  nameWithType: OptionChain<T>
+  nameWithType.vb: OptionChain(Of T)
+- uid: DxFeed.Graal.Net.Ipf.Options.OptionChain`1.Clone
+  name: Clone()
+  href: docs/api/DxFeed.Graal.Net.Ipf.Options.OptionChain-1.html#DxFeed_Graal_Net_Ipf_Options_OptionChain_1_Clone
+  commentId: M:DxFeed.Graal.Net.Ipf.Options.OptionChain`1.Clone
+  fullName: DxFeed.Graal.Net.Ipf.Options.OptionChain<T>.Clone()
+  fullName.vb: DxFeed.Graal.Net.Ipf.Options.OptionChain(Of T).Clone()
+  nameWithType: OptionChain<T>.Clone()
+  nameWithType.vb: OptionChain(Of T).Clone()
+- uid: DxFeed.Graal.Net.Ipf.Options.OptionChain`1.Clone*
+  name: Clone
+  href: docs/api/DxFeed.Graal.Net.Ipf.Options.OptionChain-1.html#DxFeed_Graal_Net_Ipf_Options_OptionChain_1_Clone_
+  commentId: Overload:DxFeed.Graal.Net.Ipf.Options.OptionChain`1.Clone
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Ipf.Options.OptionChain<T>.Clone
+  fullName.vb: DxFeed.Graal.Net.Ipf.Options.OptionChain(Of T).Clone
+  nameWithType: OptionChain<T>.Clone
+  nameWithType.vb: OptionChain(Of T).Clone
+- uid: DxFeed.Graal.Net.Ipf.Options.OptionChain`1.GetSeries
+  name: GetSeries()
+  href: docs/api/DxFeed.Graal.Net.Ipf.Options.OptionChain-1.html#DxFeed_Graal_Net_Ipf_Options_OptionChain_1_GetSeries
+  commentId: M:DxFeed.Graal.Net.Ipf.Options.OptionChain`1.GetSeries
+  fullName: DxFeed.Graal.Net.Ipf.Options.OptionChain<T>.GetSeries()
+  fullName.vb: DxFeed.Graal.Net.Ipf.Options.OptionChain(Of T).GetSeries()
+  nameWithType: OptionChain<T>.GetSeries()
+  nameWithType.vb: OptionChain(Of T).GetSeries()
+- uid: DxFeed.Graal.Net.Ipf.Options.OptionChain`1.GetSeries*
+  name: GetSeries
+  href: docs/api/DxFeed.Graal.Net.Ipf.Options.OptionChain-1.html#DxFeed_Graal_Net_Ipf_Options_OptionChain_1_GetSeries_
+  commentId: Overload:DxFeed.Graal.Net.Ipf.Options.OptionChain`1.GetSeries
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Ipf.Options.OptionChain<T>.GetSeries
+  fullName.vb: DxFeed.Graal.Net.Ipf.Options.OptionChain(Of T).GetSeries
+  nameWithType: OptionChain<T>.GetSeries
+  nameWithType.vb: OptionChain(Of T).GetSeries
+- uid: DxFeed.Graal.Net.Ipf.Options.OptionChain`1.Symbol
+  name: Symbol
+  href: docs/api/DxFeed.Graal.Net.Ipf.Options.OptionChain-1.html#DxFeed_Graal_Net_Ipf_Options_OptionChain_1_Symbol
+  commentId: P:DxFeed.Graal.Net.Ipf.Options.OptionChain`1.Symbol
+  fullName: DxFeed.Graal.Net.Ipf.Options.OptionChain<T>.Symbol
+  fullName.vb: DxFeed.Graal.Net.Ipf.Options.OptionChain(Of T).Symbol
+  nameWithType: OptionChain<T>.Symbol
+  nameWithType.vb: OptionChain(Of T).Symbol
+- uid: DxFeed.Graal.Net.Ipf.Options.OptionChain`1.Symbol*
+  name: Symbol
+  href: docs/api/DxFeed.Graal.Net.Ipf.Options.OptionChain-1.html#DxFeed_Graal_Net_Ipf_Options_OptionChain_1_Symbol_
+  commentId: Overload:DxFeed.Graal.Net.Ipf.Options.OptionChain`1.Symbol
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Ipf.Options.OptionChain<T>.Symbol
+  fullName.vb: DxFeed.Graal.Net.Ipf.Options.OptionChain(Of T).Symbol
+  nameWithType: OptionChain<T>.Symbol
+  nameWithType.vb: OptionChain(Of T).Symbol
+- uid: DxFeed.Graal.Net.Ipf.Options.OptionChainsBuilder`1
+  name: OptionChainsBuilder<T>
+  href: docs/api/DxFeed.Graal.Net.Ipf.Options.OptionChainsBuilder-1.html
+  commentId: T:DxFeed.Graal.Net.Ipf.Options.OptionChainsBuilder`1
+  name.vb: OptionChainsBuilder(Of T)
+  fullName: DxFeed.Graal.Net.Ipf.Options.OptionChainsBuilder<T>
+  fullName.vb: DxFeed.Graal.Net.Ipf.Options.OptionChainsBuilder(Of T)
+  nameWithType: OptionChainsBuilder<T>
+  nameWithType.vb: OptionChainsBuilder(Of T)
+- uid: DxFeed.Graal.Net.Ipf.Options.OptionChainsBuilder`1.AddOption(`0)
+  name: AddOption(T)
+  href: docs/api/DxFeed.Graal.Net.Ipf.Options.OptionChainsBuilder-1.html#DxFeed_Graal_Net_Ipf_Options_OptionChainsBuilder_1_AddOption__0_
+  commentId: M:DxFeed.Graal.Net.Ipf.Options.OptionChainsBuilder`1.AddOption(`0)
+  fullName: DxFeed.Graal.Net.Ipf.Options.OptionChainsBuilder<T>.AddOption(T)
+  fullName.vb: DxFeed.Graal.Net.Ipf.Options.OptionChainsBuilder(Of T).AddOption(T)
+  nameWithType: OptionChainsBuilder<T>.AddOption(T)
+  nameWithType.vb: OptionChainsBuilder(Of T).AddOption(T)
+- uid: DxFeed.Graal.Net.Ipf.Options.OptionChainsBuilder`1.AddOption*
+  name: AddOption
+  href: docs/api/DxFeed.Graal.Net.Ipf.Options.OptionChainsBuilder-1.html#DxFeed_Graal_Net_Ipf_Options_OptionChainsBuilder_1_AddOption_
+  commentId: Overload:DxFeed.Graal.Net.Ipf.Options.OptionChainsBuilder`1.AddOption
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Ipf.Options.OptionChainsBuilder<T>.AddOption
+  fullName.vb: DxFeed.Graal.Net.Ipf.Options.OptionChainsBuilder(Of T).AddOption
+  nameWithType: OptionChainsBuilder<T>.AddOption
+  nameWithType.vb: OptionChainsBuilder(Of T).AddOption
+- uid: DxFeed.Graal.Net.Ipf.Options.OptionChainsBuilder`1.AdditionalUnderlyings
+  name: AdditionalUnderlyings
+  href: docs/api/DxFeed.Graal.Net.Ipf.Options.OptionChainsBuilder-1.html#DxFeed_Graal_Net_Ipf_Options_OptionChainsBuilder_1_AdditionalUnderlyings
+  commentId: P:DxFeed.Graal.Net.Ipf.Options.OptionChainsBuilder`1.AdditionalUnderlyings
+  fullName: DxFeed.Graal.Net.Ipf.Options.OptionChainsBuilder<T>.AdditionalUnderlyings
+  fullName.vb: DxFeed.Graal.Net.Ipf.Options.OptionChainsBuilder(Of T).AdditionalUnderlyings
+  nameWithType: OptionChainsBuilder<T>.AdditionalUnderlyings
+  nameWithType.vb: OptionChainsBuilder(Of T).AdditionalUnderlyings
+- uid: DxFeed.Graal.Net.Ipf.Options.OptionChainsBuilder`1.AdditionalUnderlyings*
+  name: AdditionalUnderlyings
+  href: docs/api/DxFeed.Graal.Net.Ipf.Options.OptionChainsBuilder-1.html#DxFeed_Graal_Net_Ipf_Options_OptionChainsBuilder_1_AdditionalUnderlyings_
+  commentId: Overload:DxFeed.Graal.Net.Ipf.Options.OptionChainsBuilder`1.AdditionalUnderlyings
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Ipf.Options.OptionChainsBuilder<T>.AdditionalUnderlyings
+  fullName.vb: DxFeed.Graal.Net.Ipf.Options.OptionChainsBuilder(Of T).AdditionalUnderlyings
+  nameWithType: OptionChainsBuilder<T>.AdditionalUnderlyings
+  nameWithType.vb: OptionChainsBuilder(Of T).AdditionalUnderlyings
+- uid: DxFeed.Graal.Net.Ipf.Options.OptionChainsBuilder`1.Build(System.Collections.Generic.IEnumerable{DxFeed.Graal.Net.Ipf.InstrumentProfile})
+  name: Build(IEnumerable<InstrumentProfile>)
+  href: docs/api/DxFeed.Graal.Net.Ipf.Options.OptionChainsBuilder-1.html#DxFeed_Graal_Net_Ipf_Options_OptionChainsBuilder_1_Build_System_Collections_Generic_IEnumerable_DxFeed_Graal_Net_Ipf_InstrumentProfile__
+  commentId: M:DxFeed.Graal.Net.Ipf.Options.OptionChainsBuilder`1.Build(System.Collections.Generic.IEnumerable{DxFeed.Graal.Net.Ipf.InstrumentProfile})
+  name.vb: Build(IEnumerable(Of InstrumentProfile))
+  fullName: DxFeed.Graal.Net.Ipf.Options.OptionChainsBuilder<T>.Build(System.Collections.Generic.IEnumerable<DxFeed.Graal.Net.Ipf.InstrumentProfile>)
+  fullName.vb: DxFeed.Graal.Net.Ipf.Options.OptionChainsBuilder(Of T).Build(System.Collections.Generic.IEnumerable(Of DxFeed.Graal.Net.Ipf.InstrumentProfile))
+  nameWithType: OptionChainsBuilder<T>.Build(IEnumerable<InstrumentProfile>)
+  nameWithType.vb: OptionChainsBuilder(Of T).Build(IEnumerable(Of InstrumentProfile))
+- uid: DxFeed.Graal.Net.Ipf.Options.OptionChainsBuilder`1.Build*
+  name: Build
+  href: docs/api/DxFeed.Graal.Net.Ipf.Options.OptionChainsBuilder-1.html#DxFeed_Graal_Net_Ipf_Options_OptionChainsBuilder_1_Build_
+  commentId: Overload:DxFeed.Graal.Net.Ipf.Options.OptionChainsBuilder`1.Build
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Ipf.Options.OptionChainsBuilder<T>.Build
+  fullName.vb: DxFeed.Graal.Net.Ipf.Options.OptionChainsBuilder(Of T).Build
+  nameWithType: OptionChainsBuilder<T>.Build
+  nameWithType.vb: OptionChainsBuilder(Of T).Build
+- uid: DxFeed.Graal.Net.Ipf.Options.OptionChainsBuilder`1.CFI
+  name: CFI
+  href: docs/api/DxFeed.Graal.Net.Ipf.Options.OptionChainsBuilder-1.html#DxFeed_Graal_Net_Ipf_Options_OptionChainsBuilder_1_CFI
+  commentId: P:DxFeed.Graal.Net.Ipf.Options.OptionChainsBuilder`1.CFI
+  fullName: DxFeed.Graal.Net.Ipf.Options.OptionChainsBuilder<T>.CFI
+  fullName.vb: DxFeed.Graal.Net.Ipf.Options.OptionChainsBuilder(Of T).CFI
+  nameWithType: OptionChainsBuilder<T>.CFI
+  nameWithType.vb: OptionChainsBuilder(Of T).CFI
+- uid: DxFeed.Graal.Net.Ipf.Options.OptionChainsBuilder`1.CFI*
+  name: CFI
+  href: docs/api/DxFeed.Graal.Net.Ipf.Options.OptionChainsBuilder-1.html#DxFeed_Graal_Net_Ipf_Options_OptionChainsBuilder_1_CFI_
+  commentId: Overload:DxFeed.Graal.Net.Ipf.Options.OptionChainsBuilder`1.CFI
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Ipf.Options.OptionChainsBuilder<T>.CFI
+  fullName.vb: DxFeed.Graal.Net.Ipf.Options.OptionChainsBuilder(Of T).CFI
+  nameWithType: OptionChainsBuilder<T>.CFI
+  nameWithType.vb: OptionChainsBuilder(Of T).CFI
+- uid: DxFeed.Graal.Net.Ipf.Options.OptionChainsBuilder`1.Chains
+  name: Chains
+  href: docs/api/DxFeed.Graal.Net.Ipf.Options.OptionChainsBuilder-1.html#DxFeed_Graal_Net_Ipf_Options_OptionChainsBuilder_1_Chains
+  commentId: P:DxFeed.Graal.Net.Ipf.Options.OptionChainsBuilder`1.Chains
+  fullName: DxFeed.Graal.Net.Ipf.Options.OptionChainsBuilder<T>.Chains
+  fullName.vb: DxFeed.Graal.Net.Ipf.Options.OptionChainsBuilder(Of T).Chains
+  nameWithType: OptionChainsBuilder<T>.Chains
+  nameWithType.vb: OptionChainsBuilder(Of T).Chains
+- uid: DxFeed.Graal.Net.Ipf.Options.OptionChainsBuilder`1.Chains*
+  name: Chains
+  href: docs/api/DxFeed.Graal.Net.Ipf.Options.OptionChainsBuilder-1.html#DxFeed_Graal_Net_Ipf_Options_OptionChainsBuilder_1_Chains_
+  commentId: Overload:DxFeed.Graal.Net.Ipf.Options.OptionChainsBuilder`1.Chains
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Ipf.Options.OptionChainsBuilder<T>.Chains
+  fullName.vb: DxFeed.Graal.Net.Ipf.Options.OptionChainsBuilder(Of T).Chains
+  nameWithType: OptionChainsBuilder<T>.Chains
+  nameWithType.vb: OptionChainsBuilder(Of T).Chains
+- uid: DxFeed.Graal.Net.Ipf.Options.OptionChainsBuilder`1.Expiration
+  name: Expiration
+  href: docs/api/DxFeed.Graal.Net.Ipf.Options.OptionChainsBuilder-1.html#DxFeed_Graal_Net_Ipf_Options_OptionChainsBuilder_1_Expiration
+  commentId: P:DxFeed.Graal.Net.Ipf.Options.OptionChainsBuilder`1.Expiration
+  fullName: DxFeed.Graal.Net.Ipf.Options.OptionChainsBuilder<T>.Expiration
+  fullName.vb: DxFeed.Graal.Net.Ipf.Options.OptionChainsBuilder(Of T).Expiration
+  nameWithType: OptionChainsBuilder<T>.Expiration
+  nameWithType.vb: OptionChainsBuilder(Of T).Expiration
+- uid: DxFeed.Graal.Net.Ipf.Options.OptionChainsBuilder`1.Expiration*
+  name: Expiration
+  href: docs/api/DxFeed.Graal.Net.Ipf.Options.OptionChainsBuilder-1.html#DxFeed_Graal_Net_Ipf_Options_OptionChainsBuilder_1_Expiration_
+  commentId: Overload:DxFeed.Graal.Net.Ipf.Options.OptionChainsBuilder`1.Expiration
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Ipf.Options.OptionChainsBuilder<T>.Expiration
+  fullName.vb: DxFeed.Graal.Net.Ipf.Options.OptionChainsBuilder(Of T).Expiration
+  nameWithType: OptionChainsBuilder<T>.Expiration
+  nameWithType.vb: OptionChainsBuilder(Of T).Expiration
+- uid: DxFeed.Graal.Net.Ipf.Options.OptionChainsBuilder`1.ExpirationStyle
+  name: ExpirationStyle
+  href: docs/api/DxFeed.Graal.Net.Ipf.Options.OptionChainsBuilder-1.html#DxFeed_Graal_Net_Ipf_Options_OptionChainsBuilder_1_ExpirationStyle
+  commentId: P:DxFeed.Graal.Net.Ipf.Options.OptionChainsBuilder`1.ExpirationStyle
+  fullName: DxFeed.Graal.Net.Ipf.Options.OptionChainsBuilder<T>.ExpirationStyle
+  fullName.vb: DxFeed.Graal.Net.Ipf.Options.OptionChainsBuilder(Of T).ExpirationStyle
+  nameWithType: OptionChainsBuilder<T>.ExpirationStyle
+  nameWithType.vb: OptionChainsBuilder(Of T).ExpirationStyle
+- uid: DxFeed.Graal.Net.Ipf.Options.OptionChainsBuilder`1.ExpirationStyle*
+  name: ExpirationStyle
+  href: docs/api/DxFeed.Graal.Net.Ipf.Options.OptionChainsBuilder-1.html#DxFeed_Graal_Net_Ipf_Options_OptionChainsBuilder_1_ExpirationStyle_
+  commentId: Overload:DxFeed.Graal.Net.Ipf.Options.OptionChainsBuilder`1.ExpirationStyle
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Ipf.Options.OptionChainsBuilder<T>.ExpirationStyle
+  fullName.vb: DxFeed.Graal.Net.Ipf.Options.OptionChainsBuilder(Of T).ExpirationStyle
+  nameWithType: OptionChainsBuilder<T>.ExpirationStyle
+  nameWithType.vb: OptionChainsBuilder(Of T).ExpirationStyle
+- uid: DxFeed.Graal.Net.Ipf.Options.OptionChainsBuilder`1.LastTrade
+  name: LastTrade
+  href: docs/api/DxFeed.Graal.Net.Ipf.Options.OptionChainsBuilder-1.html#DxFeed_Graal_Net_Ipf_Options_OptionChainsBuilder_1_LastTrade
+  commentId: P:DxFeed.Graal.Net.Ipf.Options.OptionChainsBuilder`1.LastTrade
+  fullName: DxFeed.Graal.Net.Ipf.Options.OptionChainsBuilder<T>.LastTrade
+  fullName.vb: DxFeed.Graal.Net.Ipf.Options.OptionChainsBuilder(Of T).LastTrade
+  nameWithType: OptionChainsBuilder<T>.LastTrade
+  nameWithType.vb: OptionChainsBuilder(Of T).LastTrade
+- uid: DxFeed.Graal.Net.Ipf.Options.OptionChainsBuilder`1.LastTrade*
+  name: LastTrade
+  href: docs/api/DxFeed.Graal.Net.Ipf.Options.OptionChainsBuilder-1.html#DxFeed_Graal_Net_Ipf_Options_OptionChainsBuilder_1_LastTrade_
+  commentId: Overload:DxFeed.Graal.Net.Ipf.Options.OptionChainsBuilder`1.LastTrade
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Ipf.Options.OptionChainsBuilder<T>.LastTrade
+  fullName.vb: DxFeed.Graal.Net.Ipf.Options.OptionChainsBuilder(Of T).LastTrade
+  nameWithType: OptionChainsBuilder<T>.LastTrade
+  nameWithType.vb: OptionChainsBuilder(Of T).LastTrade
+- uid: DxFeed.Graal.Net.Ipf.Options.OptionChainsBuilder`1.MMY
+  name: MMY
+  href: docs/api/DxFeed.Graal.Net.Ipf.Options.OptionChainsBuilder-1.html#DxFeed_Graal_Net_Ipf_Options_OptionChainsBuilder_1_MMY
+  commentId: P:DxFeed.Graal.Net.Ipf.Options.OptionChainsBuilder`1.MMY
+  fullName: DxFeed.Graal.Net.Ipf.Options.OptionChainsBuilder<T>.MMY
+  fullName.vb: DxFeed.Graal.Net.Ipf.Options.OptionChainsBuilder(Of T).MMY
+  nameWithType: OptionChainsBuilder<T>.MMY
+  nameWithType.vb: OptionChainsBuilder(Of T).MMY
+- uid: DxFeed.Graal.Net.Ipf.Options.OptionChainsBuilder`1.MMY*
+  name: MMY
+  href: docs/api/DxFeed.Graal.Net.Ipf.Options.OptionChainsBuilder-1.html#DxFeed_Graal_Net_Ipf_Options_OptionChainsBuilder_1_MMY_
+  commentId: Overload:DxFeed.Graal.Net.Ipf.Options.OptionChainsBuilder`1.MMY
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Ipf.Options.OptionChainsBuilder<T>.MMY
+  fullName.vb: DxFeed.Graal.Net.Ipf.Options.OptionChainsBuilder(Of T).MMY
+  nameWithType: OptionChainsBuilder<T>.MMY
+  nameWithType.vb: OptionChainsBuilder(Of T).MMY
+- uid: DxFeed.Graal.Net.Ipf.Options.OptionChainsBuilder`1.Multiplier
+  name: Multiplier
+  href: docs/api/DxFeed.Graal.Net.Ipf.Options.OptionChainsBuilder-1.html#DxFeed_Graal_Net_Ipf_Options_OptionChainsBuilder_1_Multiplier
+  commentId: P:DxFeed.Graal.Net.Ipf.Options.OptionChainsBuilder`1.Multiplier
+  fullName: DxFeed.Graal.Net.Ipf.Options.OptionChainsBuilder<T>.Multiplier
+  fullName.vb: DxFeed.Graal.Net.Ipf.Options.OptionChainsBuilder(Of T).Multiplier
+  nameWithType: OptionChainsBuilder<T>.Multiplier
+  nameWithType.vb: OptionChainsBuilder(Of T).Multiplier
+- uid: DxFeed.Graal.Net.Ipf.Options.OptionChainsBuilder`1.Multiplier*
+  name: Multiplier
+  href: docs/api/DxFeed.Graal.Net.Ipf.Options.OptionChainsBuilder-1.html#DxFeed_Graal_Net_Ipf_Options_OptionChainsBuilder_1_Multiplier_
+  commentId: Overload:DxFeed.Graal.Net.Ipf.Options.OptionChainsBuilder`1.Multiplier
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Ipf.Options.OptionChainsBuilder<T>.Multiplier
+  fullName.vb: DxFeed.Graal.Net.Ipf.Options.OptionChainsBuilder(Of T).Multiplier
+  nameWithType: OptionChainsBuilder<T>.Multiplier
+  nameWithType.vb: OptionChainsBuilder(Of T).Multiplier
+- uid: DxFeed.Graal.Net.Ipf.Options.OptionChainsBuilder`1.OptionType
+  name: OptionType
+  href: docs/api/DxFeed.Graal.Net.Ipf.Options.OptionChainsBuilder-1.html#DxFeed_Graal_Net_Ipf_Options_OptionChainsBuilder_1_OptionType
+  commentId: P:DxFeed.Graal.Net.Ipf.Options.OptionChainsBuilder`1.OptionType
+  fullName: DxFeed.Graal.Net.Ipf.Options.OptionChainsBuilder<T>.OptionType
+  fullName.vb: DxFeed.Graal.Net.Ipf.Options.OptionChainsBuilder(Of T).OptionType
+  nameWithType: OptionChainsBuilder<T>.OptionType
+  nameWithType.vb: OptionChainsBuilder(Of T).OptionType
+- uid: DxFeed.Graal.Net.Ipf.Options.OptionChainsBuilder`1.OptionType*
+  name: OptionType
+  href: docs/api/DxFeed.Graal.Net.Ipf.Options.OptionChainsBuilder-1.html#DxFeed_Graal_Net_Ipf_Options_OptionChainsBuilder_1_OptionType_
+  commentId: Overload:DxFeed.Graal.Net.Ipf.Options.OptionChainsBuilder`1.OptionType
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Ipf.Options.OptionChainsBuilder<T>.OptionType
+  fullName.vb: DxFeed.Graal.Net.Ipf.Options.OptionChainsBuilder(Of T).OptionType
+  nameWithType: OptionChainsBuilder<T>.OptionType
+  nameWithType.vb: OptionChainsBuilder(Of T).OptionType
+- uid: DxFeed.Graal.Net.Ipf.Options.OptionChainsBuilder`1.Product
+  name: Product
+  href: docs/api/DxFeed.Graal.Net.Ipf.Options.OptionChainsBuilder-1.html#DxFeed_Graal_Net_Ipf_Options_OptionChainsBuilder_1_Product
+  commentId: P:DxFeed.Graal.Net.Ipf.Options.OptionChainsBuilder`1.Product
+  fullName: DxFeed.Graal.Net.Ipf.Options.OptionChainsBuilder<T>.Product
+  fullName.vb: DxFeed.Graal.Net.Ipf.Options.OptionChainsBuilder(Of T).Product
+  nameWithType: OptionChainsBuilder<T>.Product
+  nameWithType.vb: OptionChainsBuilder(Of T).Product
+- uid: DxFeed.Graal.Net.Ipf.Options.OptionChainsBuilder`1.Product*
+  name: Product
+  href: docs/api/DxFeed.Graal.Net.Ipf.Options.OptionChainsBuilder-1.html#DxFeed_Graal_Net_Ipf_Options_OptionChainsBuilder_1_Product_
+  commentId: Overload:DxFeed.Graal.Net.Ipf.Options.OptionChainsBuilder`1.Product
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Ipf.Options.OptionChainsBuilder<T>.Product
+  fullName.vb: DxFeed.Graal.Net.Ipf.Options.OptionChainsBuilder(Of T).Product
+  nameWithType: OptionChainsBuilder<T>.Product
+  nameWithType.vb: OptionChainsBuilder(Of T).Product
+- uid: DxFeed.Graal.Net.Ipf.Options.OptionChainsBuilder`1.SPC
+  name: SPC
+  href: docs/api/DxFeed.Graal.Net.Ipf.Options.OptionChainsBuilder-1.html#DxFeed_Graal_Net_Ipf_Options_OptionChainsBuilder_1_SPC
+  commentId: P:DxFeed.Graal.Net.Ipf.Options.OptionChainsBuilder`1.SPC
+  fullName: DxFeed.Graal.Net.Ipf.Options.OptionChainsBuilder<T>.SPC
+  fullName.vb: DxFeed.Graal.Net.Ipf.Options.OptionChainsBuilder(Of T).SPC
+  nameWithType: OptionChainsBuilder<T>.SPC
+  nameWithType.vb: OptionChainsBuilder(Of T).SPC
+- uid: DxFeed.Graal.Net.Ipf.Options.OptionChainsBuilder`1.SPC*
+  name: SPC
+  href: docs/api/DxFeed.Graal.Net.Ipf.Options.OptionChainsBuilder-1.html#DxFeed_Graal_Net_Ipf_Options_OptionChainsBuilder_1_SPC_
+  commentId: Overload:DxFeed.Graal.Net.Ipf.Options.OptionChainsBuilder`1.SPC
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Ipf.Options.OptionChainsBuilder<T>.SPC
+  fullName.vb: DxFeed.Graal.Net.Ipf.Options.OptionChainsBuilder(Of T).SPC
+  nameWithType: OptionChainsBuilder<T>.SPC
+  nameWithType.vb: OptionChainsBuilder(Of T).SPC
+- uid: DxFeed.Graal.Net.Ipf.Options.OptionChainsBuilder`1.SettlementStyle
+  name: SettlementStyle
+  href: docs/api/DxFeed.Graal.Net.Ipf.Options.OptionChainsBuilder-1.html#DxFeed_Graal_Net_Ipf_Options_OptionChainsBuilder_1_SettlementStyle
+  commentId: P:DxFeed.Graal.Net.Ipf.Options.OptionChainsBuilder`1.SettlementStyle
+  fullName: DxFeed.Graal.Net.Ipf.Options.OptionChainsBuilder<T>.SettlementStyle
+  fullName.vb: DxFeed.Graal.Net.Ipf.Options.OptionChainsBuilder(Of T).SettlementStyle
+  nameWithType: OptionChainsBuilder<T>.SettlementStyle
+  nameWithType.vb: OptionChainsBuilder(Of T).SettlementStyle
+- uid: DxFeed.Graal.Net.Ipf.Options.OptionChainsBuilder`1.SettlementStyle*
+  name: SettlementStyle
+  href: docs/api/DxFeed.Graal.Net.Ipf.Options.OptionChainsBuilder-1.html#DxFeed_Graal_Net_Ipf_Options_OptionChainsBuilder_1_SettlementStyle_
+  commentId: Overload:DxFeed.Graal.Net.Ipf.Options.OptionChainsBuilder`1.SettlementStyle
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Ipf.Options.OptionChainsBuilder<T>.SettlementStyle
+  fullName.vb: DxFeed.Graal.Net.Ipf.Options.OptionChainsBuilder(Of T).SettlementStyle
+  nameWithType: OptionChainsBuilder<T>.SettlementStyle
+  nameWithType.vb: OptionChainsBuilder(Of T).SettlementStyle
+- uid: DxFeed.Graal.Net.Ipf.Options.OptionChainsBuilder`1.Strike
+  name: Strike
+  href: docs/api/DxFeed.Graal.Net.Ipf.Options.OptionChainsBuilder-1.html#DxFeed_Graal_Net_Ipf_Options_OptionChainsBuilder_1_Strike
+  commentId: P:DxFeed.Graal.Net.Ipf.Options.OptionChainsBuilder`1.Strike
+  fullName: DxFeed.Graal.Net.Ipf.Options.OptionChainsBuilder<T>.Strike
+  fullName.vb: DxFeed.Graal.Net.Ipf.Options.OptionChainsBuilder(Of T).Strike
+  nameWithType: OptionChainsBuilder<T>.Strike
+  nameWithType.vb: OptionChainsBuilder(Of T).Strike
+- uid: DxFeed.Graal.Net.Ipf.Options.OptionChainsBuilder`1.Strike*
+  name: Strike
+  href: docs/api/DxFeed.Graal.Net.Ipf.Options.OptionChainsBuilder-1.html#DxFeed_Graal_Net_Ipf_Options_OptionChainsBuilder_1_Strike_
+  commentId: Overload:DxFeed.Graal.Net.Ipf.Options.OptionChainsBuilder`1.Strike
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Ipf.Options.OptionChainsBuilder<T>.Strike
+  fullName.vb: DxFeed.Graal.Net.Ipf.Options.OptionChainsBuilder(Of T).Strike
+  nameWithType: OptionChainsBuilder<T>.Strike
+  nameWithType.vb: OptionChainsBuilder(Of T).Strike
+- uid: DxFeed.Graal.Net.Ipf.Options.OptionChainsBuilder`1.Underlying
+  name: Underlying
+  href: docs/api/DxFeed.Graal.Net.Ipf.Options.OptionChainsBuilder-1.html#DxFeed_Graal_Net_Ipf_Options_OptionChainsBuilder_1_Underlying
+  commentId: P:DxFeed.Graal.Net.Ipf.Options.OptionChainsBuilder`1.Underlying
+  fullName: DxFeed.Graal.Net.Ipf.Options.OptionChainsBuilder<T>.Underlying
+  fullName.vb: DxFeed.Graal.Net.Ipf.Options.OptionChainsBuilder(Of T).Underlying
+  nameWithType: OptionChainsBuilder<T>.Underlying
+  nameWithType.vb: OptionChainsBuilder(Of T).Underlying
+- uid: DxFeed.Graal.Net.Ipf.Options.OptionChainsBuilder`1.Underlying*
+  name: Underlying
+  href: docs/api/DxFeed.Graal.Net.Ipf.Options.OptionChainsBuilder-1.html#DxFeed_Graal_Net_Ipf_Options_OptionChainsBuilder_1_Underlying_
+  commentId: Overload:DxFeed.Graal.Net.Ipf.Options.OptionChainsBuilder`1.Underlying
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Ipf.Options.OptionChainsBuilder<T>.Underlying
+  fullName.vb: DxFeed.Graal.Net.Ipf.Options.OptionChainsBuilder(Of T).Underlying
+  nameWithType: OptionChainsBuilder<T>.Underlying
+  nameWithType.vb: OptionChainsBuilder(Of T).Underlying
+- uid: DxFeed.Graal.Net.Ipf.Options.OptionSeries`1
+  name: OptionSeries<T>
+  href: docs/api/DxFeed.Graal.Net.Ipf.Options.OptionSeries-1.html
+  commentId: T:DxFeed.Graal.Net.Ipf.Options.OptionSeries`1
+  name.vb: OptionSeries(Of T)
+  fullName: DxFeed.Graal.Net.Ipf.Options.OptionSeries<T>
+  fullName.vb: DxFeed.Graal.Net.Ipf.Options.OptionSeries(Of T)
+  nameWithType: OptionSeries<T>
+  nameWithType.vb: OptionSeries(Of T)
+- uid: DxFeed.Graal.Net.Ipf.Options.OptionSeries`1.AdditionalUnderlyings
+  name: AdditionalUnderlyings
+  href: docs/api/DxFeed.Graal.Net.Ipf.Options.OptionSeries-1.html#DxFeed_Graal_Net_Ipf_Options_OptionSeries_1_AdditionalUnderlyings
+  commentId: P:DxFeed.Graal.Net.Ipf.Options.OptionSeries`1.AdditionalUnderlyings
+  fullName: DxFeed.Graal.Net.Ipf.Options.OptionSeries<T>.AdditionalUnderlyings
+  fullName.vb: DxFeed.Graal.Net.Ipf.Options.OptionSeries(Of T).AdditionalUnderlyings
+  nameWithType: OptionSeries<T>.AdditionalUnderlyings
+  nameWithType.vb: OptionSeries(Of T).AdditionalUnderlyings
+- uid: DxFeed.Graal.Net.Ipf.Options.OptionSeries`1.AdditionalUnderlyings*
+  name: AdditionalUnderlyings
+  href: docs/api/DxFeed.Graal.Net.Ipf.Options.OptionSeries-1.html#DxFeed_Graal_Net_Ipf_Options_OptionSeries_1_AdditionalUnderlyings_
+  commentId: Overload:DxFeed.Graal.Net.Ipf.Options.OptionSeries`1.AdditionalUnderlyings
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Ipf.Options.OptionSeries<T>.AdditionalUnderlyings
+  fullName.vb: DxFeed.Graal.Net.Ipf.Options.OptionSeries(Of T).AdditionalUnderlyings
+  nameWithType: OptionSeries<T>.AdditionalUnderlyings
+  nameWithType.vb: OptionSeries(Of T).AdditionalUnderlyings
+- uid: DxFeed.Graal.Net.Ipf.Options.OptionSeries`1.CFI
+  name: CFI
+  href: docs/api/DxFeed.Graal.Net.Ipf.Options.OptionSeries-1.html#DxFeed_Graal_Net_Ipf_Options_OptionSeries_1_CFI
+  commentId: P:DxFeed.Graal.Net.Ipf.Options.OptionSeries`1.CFI
+  fullName: DxFeed.Graal.Net.Ipf.Options.OptionSeries<T>.CFI
+  fullName.vb: DxFeed.Graal.Net.Ipf.Options.OptionSeries(Of T).CFI
+  nameWithType: OptionSeries<T>.CFI
+  nameWithType.vb: OptionSeries(Of T).CFI
+- uid: DxFeed.Graal.Net.Ipf.Options.OptionSeries`1.CFI*
+  name: CFI
+  href: docs/api/DxFeed.Graal.Net.Ipf.Options.OptionSeries-1.html#DxFeed_Graal_Net_Ipf_Options_OptionSeries_1_CFI_
+  commentId: Overload:DxFeed.Graal.Net.Ipf.Options.OptionSeries`1.CFI
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Ipf.Options.OptionSeries<T>.CFI
+  fullName.vb: DxFeed.Graal.Net.Ipf.Options.OptionSeries(Of T).CFI
+  nameWithType: OptionSeries<T>.CFI
+  nameWithType.vb: OptionSeries(Of T).CFI
+- uid: DxFeed.Graal.Net.Ipf.Options.OptionSeries`1.Calls
+  name: Calls
+  href: docs/api/DxFeed.Graal.Net.Ipf.Options.OptionSeries-1.html#DxFeed_Graal_Net_Ipf_Options_OptionSeries_1_Calls
+  commentId: P:DxFeed.Graal.Net.Ipf.Options.OptionSeries`1.Calls
+  fullName: DxFeed.Graal.Net.Ipf.Options.OptionSeries<T>.Calls
+  fullName.vb: DxFeed.Graal.Net.Ipf.Options.OptionSeries(Of T).Calls
+  nameWithType: OptionSeries<T>.Calls
+  nameWithType.vb: OptionSeries(Of T).Calls
+- uid: DxFeed.Graal.Net.Ipf.Options.OptionSeries`1.Calls*
+  name: Calls
+  href: docs/api/DxFeed.Graal.Net.Ipf.Options.OptionSeries-1.html#DxFeed_Graal_Net_Ipf_Options_OptionSeries_1_Calls_
+  commentId: Overload:DxFeed.Graal.Net.Ipf.Options.OptionSeries`1.Calls
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Ipf.Options.OptionSeries<T>.Calls
+  fullName.vb: DxFeed.Graal.Net.Ipf.Options.OptionSeries(Of T).Calls
+  nameWithType: OptionSeries<T>.Calls
+  nameWithType.vb: OptionSeries(Of T).Calls
+- uid: DxFeed.Graal.Net.Ipf.Options.OptionSeries`1.Clone
+  name: Clone()
+  href: docs/api/DxFeed.Graal.Net.Ipf.Options.OptionSeries-1.html#DxFeed_Graal_Net_Ipf_Options_OptionSeries_1_Clone
+  commentId: M:DxFeed.Graal.Net.Ipf.Options.OptionSeries`1.Clone
+  fullName: DxFeed.Graal.Net.Ipf.Options.OptionSeries<T>.Clone()
+  fullName.vb: DxFeed.Graal.Net.Ipf.Options.OptionSeries(Of T).Clone()
+  nameWithType: OptionSeries<T>.Clone()
+  nameWithType.vb: OptionSeries(Of T).Clone()
+- uid: DxFeed.Graal.Net.Ipf.Options.OptionSeries`1.Clone*
+  name: Clone
+  href: docs/api/DxFeed.Graal.Net.Ipf.Options.OptionSeries-1.html#DxFeed_Graal_Net_Ipf_Options_OptionSeries_1_Clone_
+  commentId: Overload:DxFeed.Graal.Net.Ipf.Options.OptionSeries`1.Clone
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Ipf.Options.OptionSeries<T>.Clone
+  fullName.vb: DxFeed.Graal.Net.Ipf.Options.OptionSeries(Of T).Clone
+  nameWithType: OptionSeries<T>.Clone
+  nameWithType.vb: OptionSeries(Of T).Clone
+- uid: DxFeed.Graal.Net.Ipf.Options.OptionSeries`1.CompareTo(DxFeed.Graal.Net.Ipf.Options.OptionSeries{`0})
+  name: CompareTo(OptionSeries<T>?)
+  href: docs/api/DxFeed.Graal.Net.Ipf.Options.OptionSeries-1.html#DxFeed_Graal_Net_Ipf_Options_OptionSeries_1_CompareTo_DxFeed_Graal_Net_Ipf_Options_OptionSeries__0__
+  commentId: M:DxFeed.Graal.Net.Ipf.Options.OptionSeries`1.CompareTo(DxFeed.Graal.Net.Ipf.Options.OptionSeries{`0})
+  name.vb: CompareTo(OptionSeries(Of T))
+  fullName: DxFeed.Graal.Net.Ipf.Options.OptionSeries<T>.CompareTo(DxFeed.Graal.Net.Ipf.Options.OptionSeries<T>?)
+  fullName.vb: DxFeed.Graal.Net.Ipf.Options.OptionSeries(Of T).CompareTo(DxFeed.Graal.Net.Ipf.Options.OptionSeries(Of T))
+  nameWithType: OptionSeries<T>.CompareTo(OptionSeries<T>?)
+  nameWithType.vb: OptionSeries(Of T).CompareTo(OptionSeries(Of T))
+- uid: DxFeed.Graal.Net.Ipf.Options.OptionSeries`1.CompareTo*
+  name: CompareTo
+  href: docs/api/DxFeed.Graal.Net.Ipf.Options.OptionSeries-1.html#DxFeed_Graal_Net_Ipf_Options_OptionSeries_1_CompareTo_
+  commentId: Overload:DxFeed.Graal.Net.Ipf.Options.OptionSeries`1.CompareTo
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Ipf.Options.OptionSeries<T>.CompareTo
+  fullName.vb: DxFeed.Graal.Net.Ipf.Options.OptionSeries(Of T).CompareTo
+  nameWithType: OptionSeries<T>.CompareTo
+  nameWithType.vb: OptionSeries(Of T).CompareTo
+- uid: DxFeed.Graal.Net.Ipf.Options.OptionSeries`1.Equals(System.Object)
+  name: Equals(object?)
+  href: docs/api/DxFeed.Graal.Net.Ipf.Options.OptionSeries-1.html#DxFeed_Graal_Net_Ipf_Options_OptionSeries_1_Equals_System_Object_
+  commentId: M:DxFeed.Graal.Net.Ipf.Options.OptionSeries`1.Equals(System.Object)
+  name.vb: Equals(Object)
+  fullName: DxFeed.Graal.Net.Ipf.Options.OptionSeries<T>.Equals(object?)
+  fullName.vb: DxFeed.Graal.Net.Ipf.Options.OptionSeries(Of T).Equals(Object)
+  nameWithType: OptionSeries<T>.Equals(object?)
+  nameWithType.vb: OptionSeries(Of T).Equals(Object)
+- uid: DxFeed.Graal.Net.Ipf.Options.OptionSeries`1.Equals*
+  name: Equals
+  href: docs/api/DxFeed.Graal.Net.Ipf.Options.OptionSeries-1.html#DxFeed_Graal_Net_Ipf_Options_OptionSeries_1_Equals_
+  commentId: Overload:DxFeed.Graal.Net.Ipf.Options.OptionSeries`1.Equals
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Ipf.Options.OptionSeries<T>.Equals
+  fullName.vb: DxFeed.Graal.Net.Ipf.Options.OptionSeries(Of T).Equals
+  nameWithType: OptionSeries<T>.Equals
+  nameWithType.vb: OptionSeries(Of T).Equals
+- uid: DxFeed.Graal.Net.Ipf.Options.OptionSeries`1.Expiration
+  name: Expiration
+  href: docs/api/DxFeed.Graal.Net.Ipf.Options.OptionSeries-1.html#DxFeed_Graal_Net_Ipf_Options_OptionSeries_1_Expiration
+  commentId: P:DxFeed.Graal.Net.Ipf.Options.OptionSeries`1.Expiration
+  fullName: DxFeed.Graal.Net.Ipf.Options.OptionSeries<T>.Expiration
+  fullName.vb: DxFeed.Graal.Net.Ipf.Options.OptionSeries(Of T).Expiration
+  nameWithType: OptionSeries<T>.Expiration
+  nameWithType.vb: OptionSeries(Of T).Expiration
+- uid: DxFeed.Graal.Net.Ipf.Options.OptionSeries`1.Expiration*
+  name: Expiration
+  href: docs/api/DxFeed.Graal.Net.Ipf.Options.OptionSeries-1.html#DxFeed_Graal_Net_Ipf_Options_OptionSeries_1_Expiration_
+  commentId: Overload:DxFeed.Graal.Net.Ipf.Options.OptionSeries`1.Expiration
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Ipf.Options.OptionSeries<T>.Expiration
+  fullName.vb: DxFeed.Graal.Net.Ipf.Options.OptionSeries(Of T).Expiration
+  nameWithType: OptionSeries<T>.Expiration
+  nameWithType.vb: OptionSeries(Of T).Expiration
+- uid: DxFeed.Graal.Net.Ipf.Options.OptionSeries`1.ExpirationStyle
+  name: ExpirationStyle
+  href: docs/api/DxFeed.Graal.Net.Ipf.Options.OptionSeries-1.html#DxFeed_Graal_Net_Ipf_Options_OptionSeries_1_ExpirationStyle
+  commentId: P:DxFeed.Graal.Net.Ipf.Options.OptionSeries`1.ExpirationStyle
+  fullName: DxFeed.Graal.Net.Ipf.Options.OptionSeries<T>.ExpirationStyle
+  fullName.vb: DxFeed.Graal.Net.Ipf.Options.OptionSeries(Of T).ExpirationStyle
+  nameWithType: OptionSeries<T>.ExpirationStyle
+  nameWithType.vb: OptionSeries(Of T).ExpirationStyle
+- uid: DxFeed.Graal.Net.Ipf.Options.OptionSeries`1.ExpirationStyle*
+  name: ExpirationStyle
+  href: docs/api/DxFeed.Graal.Net.Ipf.Options.OptionSeries-1.html#DxFeed_Graal_Net_Ipf_Options_OptionSeries_1_ExpirationStyle_
+  commentId: Overload:DxFeed.Graal.Net.Ipf.Options.OptionSeries`1.ExpirationStyle
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Ipf.Options.OptionSeries<T>.ExpirationStyle
+  fullName.vb: DxFeed.Graal.Net.Ipf.Options.OptionSeries(Of T).ExpirationStyle
+  nameWithType: OptionSeries<T>.ExpirationStyle
+  nameWithType.vb: OptionSeries(Of T).ExpirationStyle
+- uid: DxFeed.Graal.Net.Ipf.Options.OptionSeries`1.GetHashCode
+  name: GetHashCode()
+  href: docs/api/DxFeed.Graal.Net.Ipf.Options.OptionSeries-1.html#DxFeed_Graal_Net_Ipf_Options_OptionSeries_1_GetHashCode
+  commentId: M:DxFeed.Graal.Net.Ipf.Options.OptionSeries`1.GetHashCode
+  fullName: DxFeed.Graal.Net.Ipf.Options.OptionSeries<T>.GetHashCode()
+  fullName.vb: DxFeed.Graal.Net.Ipf.Options.OptionSeries(Of T).GetHashCode()
+  nameWithType: OptionSeries<T>.GetHashCode()
+  nameWithType.vb: OptionSeries(Of T).GetHashCode()
+- uid: DxFeed.Graal.Net.Ipf.Options.OptionSeries`1.GetHashCode*
+  name: GetHashCode
+  href: docs/api/DxFeed.Graal.Net.Ipf.Options.OptionSeries-1.html#DxFeed_Graal_Net_Ipf_Options_OptionSeries_1_GetHashCode_
+  commentId: Overload:DxFeed.Graal.Net.Ipf.Options.OptionSeries`1.GetHashCode
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Ipf.Options.OptionSeries<T>.GetHashCode
+  fullName.vb: DxFeed.Graal.Net.Ipf.Options.OptionSeries(Of T).GetHashCode
+  nameWithType: OptionSeries<T>.GetHashCode
+  nameWithType.vb: OptionSeries(Of T).GetHashCode
+- uid: DxFeed.Graal.Net.Ipf.Options.OptionSeries`1.GetNStrikesAround(System.Int32,System.Double)
+  name: GetNStrikesAround(int, double)
+  href: docs/api/DxFeed.Graal.Net.Ipf.Options.OptionSeries-1.html#DxFeed_Graal_Net_Ipf_Options_OptionSeries_1_GetNStrikesAround_System_Int32_System_Double_
+  commentId: M:DxFeed.Graal.Net.Ipf.Options.OptionSeries`1.GetNStrikesAround(System.Int32,System.Double)
+  name.vb: GetNStrikesAround(Integer, Double)
+  fullName: DxFeed.Graal.Net.Ipf.Options.OptionSeries<T>.GetNStrikesAround(int, double)
+  fullName.vb: DxFeed.Graal.Net.Ipf.Options.OptionSeries(Of T).GetNStrikesAround(Integer, Double)
+  nameWithType: OptionSeries<T>.GetNStrikesAround(int, double)
+  nameWithType.vb: OptionSeries(Of T).GetNStrikesAround(Integer, Double)
+- uid: DxFeed.Graal.Net.Ipf.Options.OptionSeries`1.GetNStrikesAround*
+  name: GetNStrikesAround
+  href: docs/api/DxFeed.Graal.Net.Ipf.Options.OptionSeries-1.html#DxFeed_Graal_Net_Ipf_Options_OptionSeries_1_GetNStrikesAround_
+  commentId: Overload:DxFeed.Graal.Net.Ipf.Options.OptionSeries`1.GetNStrikesAround
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Ipf.Options.OptionSeries<T>.GetNStrikesAround
+  fullName.vb: DxFeed.Graal.Net.Ipf.Options.OptionSeries(Of T).GetNStrikesAround
+  nameWithType: OptionSeries<T>.GetNStrikesAround
+  nameWithType.vb: OptionSeries(Of T).GetNStrikesAround
+- uid: DxFeed.Graal.Net.Ipf.Options.OptionSeries`1.LastTrade
+  name: LastTrade
+  href: docs/api/DxFeed.Graal.Net.Ipf.Options.OptionSeries-1.html#DxFeed_Graal_Net_Ipf_Options_OptionSeries_1_LastTrade
+  commentId: P:DxFeed.Graal.Net.Ipf.Options.OptionSeries`1.LastTrade
+  fullName: DxFeed.Graal.Net.Ipf.Options.OptionSeries<T>.LastTrade
+  fullName.vb: DxFeed.Graal.Net.Ipf.Options.OptionSeries(Of T).LastTrade
+  nameWithType: OptionSeries<T>.LastTrade
+  nameWithType.vb: OptionSeries(Of T).LastTrade
+- uid: DxFeed.Graal.Net.Ipf.Options.OptionSeries`1.LastTrade*
+  name: LastTrade
+  href: docs/api/DxFeed.Graal.Net.Ipf.Options.OptionSeries-1.html#DxFeed_Graal_Net_Ipf_Options_OptionSeries_1_LastTrade_
+  commentId: Overload:DxFeed.Graal.Net.Ipf.Options.OptionSeries`1.LastTrade
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Ipf.Options.OptionSeries<T>.LastTrade
+  fullName.vb: DxFeed.Graal.Net.Ipf.Options.OptionSeries(Of T).LastTrade
+  nameWithType: OptionSeries<T>.LastTrade
+  nameWithType.vb: OptionSeries(Of T).LastTrade
+- uid: DxFeed.Graal.Net.Ipf.Options.OptionSeries`1.MMY
+  name: MMY
+  href: docs/api/DxFeed.Graal.Net.Ipf.Options.OptionSeries-1.html#DxFeed_Graal_Net_Ipf_Options_OptionSeries_1_MMY
+  commentId: P:DxFeed.Graal.Net.Ipf.Options.OptionSeries`1.MMY
+  fullName: DxFeed.Graal.Net.Ipf.Options.OptionSeries<T>.MMY
+  fullName.vb: DxFeed.Graal.Net.Ipf.Options.OptionSeries(Of T).MMY
+  nameWithType: OptionSeries<T>.MMY
+  nameWithType.vb: OptionSeries(Of T).MMY
+- uid: DxFeed.Graal.Net.Ipf.Options.OptionSeries`1.MMY*
+  name: MMY
+  href: docs/api/DxFeed.Graal.Net.Ipf.Options.OptionSeries-1.html#DxFeed_Graal_Net_Ipf_Options_OptionSeries_1_MMY_
+  commentId: Overload:DxFeed.Graal.Net.Ipf.Options.OptionSeries`1.MMY
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Ipf.Options.OptionSeries<T>.MMY
+  fullName.vb: DxFeed.Graal.Net.Ipf.Options.OptionSeries(Of T).MMY
+  nameWithType: OptionSeries<T>.MMY
+  nameWithType.vb: OptionSeries(Of T).MMY
+- uid: DxFeed.Graal.Net.Ipf.Options.OptionSeries`1.Multiplier
+  name: Multiplier
+  href: docs/api/DxFeed.Graal.Net.Ipf.Options.OptionSeries-1.html#DxFeed_Graal_Net_Ipf_Options_OptionSeries_1_Multiplier
+  commentId: P:DxFeed.Graal.Net.Ipf.Options.OptionSeries`1.Multiplier
+  fullName: DxFeed.Graal.Net.Ipf.Options.OptionSeries<T>.Multiplier
+  fullName.vb: DxFeed.Graal.Net.Ipf.Options.OptionSeries(Of T).Multiplier
+  nameWithType: OptionSeries<T>.Multiplier
+  nameWithType.vb: OptionSeries(Of T).Multiplier
+- uid: DxFeed.Graal.Net.Ipf.Options.OptionSeries`1.Multiplier*
+  name: Multiplier
+  href: docs/api/DxFeed.Graal.Net.Ipf.Options.OptionSeries-1.html#DxFeed_Graal_Net_Ipf_Options_OptionSeries_1_Multiplier_
+  commentId: Overload:DxFeed.Graal.Net.Ipf.Options.OptionSeries`1.Multiplier
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Ipf.Options.OptionSeries<T>.Multiplier
+  fullName.vb: DxFeed.Graal.Net.Ipf.Options.OptionSeries(Of T).Multiplier
+  nameWithType: OptionSeries<T>.Multiplier
+  nameWithType.vb: OptionSeries(Of T).Multiplier
+- uid: DxFeed.Graal.Net.Ipf.Options.OptionSeries`1.OptionType
+  name: OptionType
+  href: docs/api/DxFeed.Graal.Net.Ipf.Options.OptionSeries-1.html#DxFeed_Graal_Net_Ipf_Options_OptionSeries_1_OptionType
+  commentId: P:DxFeed.Graal.Net.Ipf.Options.OptionSeries`1.OptionType
+  fullName: DxFeed.Graal.Net.Ipf.Options.OptionSeries<T>.OptionType
+  fullName.vb: DxFeed.Graal.Net.Ipf.Options.OptionSeries(Of T).OptionType
+  nameWithType: OptionSeries<T>.OptionType
+  nameWithType.vb: OptionSeries(Of T).OptionType
+- uid: DxFeed.Graal.Net.Ipf.Options.OptionSeries`1.OptionType*
+  name: OptionType
+  href: docs/api/DxFeed.Graal.Net.Ipf.Options.OptionSeries-1.html#DxFeed_Graal_Net_Ipf_Options_OptionSeries_1_OptionType_
+  commentId: Overload:DxFeed.Graal.Net.Ipf.Options.OptionSeries`1.OptionType
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Ipf.Options.OptionSeries<T>.OptionType
+  fullName.vb: DxFeed.Graal.Net.Ipf.Options.OptionSeries(Of T).OptionType
+  nameWithType: OptionSeries<T>.OptionType
+  nameWithType.vb: OptionSeries(Of T).OptionType
+- uid: DxFeed.Graal.Net.Ipf.Options.OptionSeries`1.Puts
+  name: Puts
+  href: docs/api/DxFeed.Graal.Net.Ipf.Options.OptionSeries-1.html#DxFeed_Graal_Net_Ipf_Options_OptionSeries_1_Puts
+  commentId: P:DxFeed.Graal.Net.Ipf.Options.OptionSeries`1.Puts
+  fullName: DxFeed.Graal.Net.Ipf.Options.OptionSeries<T>.Puts
+  fullName.vb: DxFeed.Graal.Net.Ipf.Options.OptionSeries(Of T).Puts
+  nameWithType: OptionSeries<T>.Puts
+  nameWithType.vb: OptionSeries(Of T).Puts
+- uid: DxFeed.Graal.Net.Ipf.Options.OptionSeries`1.Puts*
+  name: Puts
+  href: docs/api/DxFeed.Graal.Net.Ipf.Options.OptionSeries-1.html#DxFeed_Graal_Net_Ipf_Options_OptionSeries_1_Puts_
+  commentId: Overload:DxFeed.Graal.Net.Ipf.Options.OptionSeries`1.Puts
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Ipf.Options.OptionSeries<T>.Puts
+  fullName.vb: DxFeed.Graal.Net.Ipf.Options.OptionSeries(Of T).Puts
+  nameWithType: OptionSeries<T>.Puts
+  nameWithType.vb: OptionSeries(Of T).Puts
+- uid: DxFeed.Graal.Net.Ipf.Options.OptionSeries`1.SPC
+  name: SPC
+  href: docs/api/DxFeed.Graal.Net.Ipf.Options.OptionSeries-1.html#DxFeed_Graal_Net_Ipf_Options_OptionSeries_1_SPC
+  commentId: P:DxFeed.Graal.Net.Ipf.Options.OptionSeries`1.SPC
+  fullName: DxFeed.Graal.Net.Ipf.Options.OptionSeries<T>.SPC
+  fullName.vb: DxFeed.Graal.Net.Ipf.Options.OptionSeries(Of T).SPC
+  nameWithType: OptionSeries<T>.SPC
+  nameWithType.vb: OptionSeries(Of T).SPC
+- uid: DxFeed.Graal.Net.Ipf.Options.OptionSeries`1.SPC*
+  name: SPC
+  href: docs/api/DxFeed.Graal.Net.Ipf.Options.OptionSeries-1.html#DxFeed_Graal_Net_Ipf_Options_OptionSeries_1_SPC_
+  commentId: Overload:DxFeed.Graal.Net.Ipf.Options.OptionSeries`1.SPC
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Ipf.Options.OptionSeries<T>.SPC
+  fullName.vb: DxFeed.Graal.Net.Ipf.Options.OptionSeries(Of T).SPC
+  nameWithType: OptionSeries<T>.SPC
+  nameWithType.vb: OptionSeries(Of T).SPC
+- uid: DxFeed.Graal.Net.Ipf.Options.OptionSeries`1.SettlementStyle
+  name: SettlementStyle
+  href: docs/api/DxFeed.Graal.Net.Ipf.Options.OptionSeries-1.html#DxFeed_Graal_Net_Ipf_Options_OptionSeries_1_SettlementStyle
+  commentId: P:DxFeed.Graal.Net.Ipf.Options.OptionSeries`1.SettlementStyle
+  fullName: DxFeed.Graal.Net.Ipf.Options.OptionSeries<T>.SettlementStyle
+  fullName.vb: DxFeed.Graal.Net.Ipf.Options.OptionSeries(Of T).SettlementStyle
+  nameWithType: OptionSeries<T>.SettlementStyle
+  nameWithType.vb: OptionSeries(Of T).SettlementStyle
+- uid: DxFeed.Graal.Net.Ipf.Options.OptionSeries`1.SettlementStyle*
+  name: SettlementStyle
+  href: docs/api/DxFeed.Graal.Net.Ipf.Options.OptionSeries-1.html#DxFeed_Graal_Net_Ipf_Options_OptionSeries_1_SettlementStyle_
+  commentId: Overload:DxFeed.Graal.Net.Ipf.Options.OptionSeries`1.SettlementStyle
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Ipf.Options.OptionSeries<T>.SettlementStyle
+  fullName.vb: DxFeed.Graal.Net.Ipf.Options.OptionSeries(Of T).SettlementStyle
+  nameWithType: OptionSeries<T>.SettlementStyle
+  nameWithType.vb: OptionSeries(Of T).SettlementStyle
+- uid: DxFeed.Graal.Net.Ipf.Options.OptionSeries`1.Strikes
+  name: Strikes
+  href: docs/api/DxFeed.Graal.Net.Ipf.Options.OptionSeries-1.html#DxFeed_Graal_Net_Ipf_Options_OptionSeries_1_Strikes
+  commentId: P:DxFeed.Graal.Net.Ipf.Options.OptionSeries`1.Strikes
+  fullName: DxFeed.Graal.Net.Ipf.Options.OptionSeries<T>.Strikes
+  fullName.vb: DxFeed.Graal.Net.Ipf.Options.OptionSeries(Of T).Strikes
+  nameWithType: OptionSeries<T>.Strikes
+  nameWithType.vb: OptionSeries(Of T).Strikes
+- uid: DxFeed.Graal.Net.Ipf.Options.OptionSeries`1.Strikes*
+  name: Strikes
+  href: docs/api/DxFeed.Graal.Net.Ipf.Options.OptionSeries-1.html#DxFeed_Graal_Net_Ipf_Options_OptionSeries_1_Strikes_
+  commentId: Overload:DxFeed.Graal.Net.Ipf.Options.OptionSeries`1.Strikes
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Ipf.Options.OptionSeries<T>.Strikes
+  fullName.vb: DxFeed.Graal.Net.Ipf.Options.OptionSeries(Of T).Strikes
+  nameWithType: OptionSeries<T>.Strikes
+  nameWithType.vb: OptionSeries(Of T).Strikes
+- uid: DxFeed.Graal.Net.Ipf.Options.OptionSeries`1.ToString
+  name: ToString()
+  href: docs/api/DxFeed.Graal.Net.Ipf.Options.OptionSeries-1.html#DxFeed_Graal_Net_Ipf_Options_OptionSeries_1_ToString
+  commentId: M:DxFeed.Graal.Net.Ipf.Options.OptionSeries`1.ToString
+  fullName: DxFeed.Graal.Net.Ipf.Options.OptionSeries<T>.ToString()
+  fullName.vb: DxFeed.Graal.Net.Ipf.Options.OptionSeries(Of T).ToString()
+  nameWithType: OptionSeries<T>.ToString()
+  nameWithType.vb: OptionSeries(Of T).ToString()
+- uid: DxFeed.Graal.Net.Ipf.Options.OptionSeries`1.ToString*
+  name: ToString
+  href: docs/api/DxFeed.Graal.Net.Ipf.Options.OptionSeries-1.html#DxFeed_Graal_Net_Ipf_Options_OptionSeries_1_ToString_
+  commentId: Overload:DxFeed.Graal.Net.Ipf.Options.OptionSeries`1.ToString
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Ipf.Options.OptionSeries<T>.ToString
+  fullName.vb: DxFeed.Graal.Net.Ipf.Options.OptionSeries(Of T).ToString
+  nameWithType: OptionSeries<T>.ToString
+  nameWithType.vb: OptionSeries(Of T).ToString
+- uid: DxFeed.Graal.Net.Ipf.Options.OptionSeries`1.op_Equality(DxFeed.Graal.Net.Ipf.Options.OptionSeries{`0},DxFeed.Graal.Net.Ipf.Options.OptionSeries{`0})
+  name: operator ==(OptionSeries<T>, OptionSeries<T>)
+  href: docs/api/DxFeed.Graal.Net.Ipf.Options.OptionSeries-1.html#DxFeed_Graal_Net_Ipf_Options_OptionSeries_1_op_Equality_DxFeed_Graal_Net_Ipf_Options_OptionSeries__0__DxFeed_Graal_Net_Ipf_Options_OptionSeries__0__
+  commentId: M:DxFeed.Graal.Net.Ipf.Options.OptionSeries`1.op_Equality(DxFeed.Graal.Net.Ipf.Options.OptionSeries{`0},DxFeed.Graal.Net.Ipf.Options.OptionSeries{`0})
+  name.vb: =(OptionSeries(Of T), OptionSeries(Of T))
+  fullName: DxFeed.Graal.Net.Ipf.Options.OptionSeries<T>.operator ==(DxFeed.Graal.Net.Ipf.Options.OptionSeries<T>, DxFeed.Graal.Net.Ipf.Options.OptionSeries<T>)
+  fullName.vb: DxFeed.Graal.Net.Ipf.Options.OptionSeries(Of T).=(DxFeed.Graal.Net.Ipf.Options.OptionSeries(Of T), DxFeed.Graal.Net.Ipf.Options.OptionSeries(Of T))
+  nameWithType: OptionSeries<T>.operator ==(OptionSeries<T>, OptionSeries<T>)
+  nameWithType.vb: OptionSeries(Of T).=(OptionSeries(Of T), OptionSeries(Of T))
+- uid: DxFeed.Graal.Net.Ipf.Options.OptionSeries`1.op_Equality*
+  name: operator ==
+  href: docs/api/DxFeed.Graal.Net.Ipf.Options.OptionSeries-1.html#DxFeed_Graal_Net_Ipf_Options_OptionSeries_1_op_Equality_
+  commentId: Overload:DxFeed.Graal.Net.Ipf.Options.OptionSeries`1.op_Equality
+  isSpec: "True"
+  name.vb: =
+  fullName: DxFeed.Graal.Net.Ipf.Options.OptionSeries<T>.operator ==
+  fullName.vb: DxFeed.Graal.Net.Ipf.Options.OptionSeries(Of T).=
+  nameWithType: OptionSeries<T>.operator ==
+  nameWithType.vb: OptionSeries(Of T).=
+- uid: DxFeed.Graal.Net.Ipf.Options.OptionSeries`1.op_GreaterThan(DxFeed.Graal.Net.Ipf.Options.OptionSeries{`0},DxFeed.Graal.Net.Ipf.Options.OptionSeries{`0})
+  name: operator >(OptionSeries<T>, OptionSeries<T>)
+  href: docs/api/DxFeed.Graal.Net.Ipf.Options.OptionSeries-1.html#DxFeed_Graal_Net_Ipf_Options_OptionSeries_1_op_GreaterThan_DxFeed_Graal_Net_Ipf_Options_OptionSeries__0__DxFeed_Graal_Net_Ipf_Options_OptionSeries__0__
+  commentId: M:DxFeed.Graal.Net.Ipf.Options.OptionSeries`1.op_GreaterThan(DxFeed.Graal.Net.Ipf.Options.OptionSeries{`0},DxFeed.Graal.Net.Ipf.Options.OptionSeries{`0})
+  name.vb: '>(OptionSeries(Of T), OptionSeries(Of T))'
+  fullName: DxFeed.Graal.Net.Ipf.Options.OptionSeries<T>.operator >(DxFeed.Graal.Net.Ipf.Options.OptionSeries<T>, DxFeed.Graal.Net.Ipf.Options.OptionSeries<T>)
+  fullName.vb: DxFeed.Graal.Net.Ipf.Options.OptionSeries(Of T).>(DxFeed.Graal.Net.Ipf.Options.OptionSeries(Of T), DxFeed.Graal.Net.Ipf.Options.OptionSeries(Of T))
+  nameWithType: OptionSeries<T>.operator >(OptionSeries<T>, OptionSeries<T>)
+  nameWithType.vb: OptionSeries(Of T).>(OptionSeries(Of T), OptionSeries(Of T))
+- uid: DxFeed.Graal.Net.Ipf.Options.OptionSeries`1.op_GreaterThan*
+  name: operator >
+  href: docs/api/DxFeed.Graal.Net.Ipf.Options.OptionSeries-1.html#DxFeed_Graal_Net_Ipf_Options_OptionSeries_1_op_GreaterThan_
+  commentId: Overload:DxFeed.Graal.Net.Ipf.Options.OptionSeries`1.op_GreaterThan
+  isSpec: "True"
+  name.vb: '>'
+  fullName: DxFeed.Graal.Net.Ipf.Options.OptionSeries<T>.operator >
+  fullName.vb: DxFeed.Graal.Net.Ipf.Options.OptionSeries(Of T).>
+  nameWithType: OptionSeries<T>.operator >
+  nameWithType.vb: OptionSeries(Of T).>
+- uid: DxFeed.Graal.Net.Ipf.Options.OptionSeries`1.op_GreaterThanOrEqual(DxFeed.Graal.Net.Ipf.Options.OptionSeries{`0},DxFeed.Graal.Net.Ipf.Options.OptionSeries{`0})
+  name: operator >=(OptionSeries<T>, OptionSeries<T>)
+  href: docs/api/DxFeed.Graal.Net.Ipf.Options.OptionSeries-1.html#DxFeed_Graal_Net_Ipf_Options_OptionSeries_1_op_GreaterThanOrEqual_DxFeed_Graal_Net_Ipf_Options_OptionSeries__0__DxFeed_Graal_Net_Ipf_Options_OptionSeries__0__
+  commentId: M:DxFeed.Graal.Net.Ipf.Options.OptionSeries`1.op_GreaterThanOrEqual(DxFeed.Graal.Net.Ipf.Options.OptionSeries{`0},DxFeed.Graal.Net.Ipf.Options.OptionSeries{`0})
+  name.vb: '>=(OptionSeries(Of T), OptionSeries(Of T))'
+  fullName: DxFeed.Graal.Net.Ipf.Options.OptionSeries<T>.operator >=(DxFeed.Graal.Net.Ipf.Options.OptionSeries<T>, DxFeed.Graal.Net.Ipf.Options.OptionSeries<T>)
+  fullName.vb: DxFeed.Graal.Net.Ipf.Options.OptionSeries(Of T).>=(DxFeed.Graal.Net.Ipf.Options.OptionSeries(Of T), DxFeed.Graal.Net.Ipf.Options.OptionSeries(Of T))
+  nameWithType: OptionSeries<T>.operator >=(OptionSeries<T>, OptionSeries<T>)
+  nameWithType.vb: OptionSeries(Of T).>=(OptionSeries(Of T), OptionSeries(Of T))
+- uid: DxFeed.Graal.Net.Ipf.Options.OptionSeries`1.op_GreaterThanOrEqual*
+  name: operator >=
+  href: docs/api/DxFeed.Graal.Net.Ipf.Options.OptionSeries-1.html#DxFeed_Graal_Net_Ipf_Options_OptionSeries_1_op_GreaterThanOrEqual_
+  commentId: Overload:DxFeed.Graal.Net.Ipf.Options.OptionSeries`1.op_GreaterThanOrEqual
+  isSpec: "True"
+  name.vb: '>='
+  fullName: DxFeed.Graal.Net.Ipf.Options.OptionSeries<T>.operator >=
+  fullName.vb: DxFeed.Graal.Net.Ipf.Options.OptionSeries(Of T).>=
+  nameWithType: OptionSeries<T>.operator >=
+  nameWithType.vb: OptionSeries(Of T).>=
+- uid: DxFeed.Graal.Net.Ipf.Options.OptionSeries`1.op_Inequality(DxFeed.Graal.Net.Ipf.Options.OptionSeries{`0},DxFeed.Graal.Net.Ipf.Options.OptionSeries{`0})
+  name: operator !=(OptionSeries<T>, OptionSeries<T>)
+  href: docs/api/DxFeed.Graal.Net.Ipf.Options.OptionSeries-1.html#DxFeed_Graal_Net_Ipf_Options_OptionSeries_1_op_Inequality_DxFeed_Graal_Net_Ipf_Options_OptionSeries__0__DxFeed_Graal_Net_Ipf_Options_OptionSeries__0__
+  commentId: M:DxFeed.Graal.Net.Ipf.Options.OptionSeries`1.op_Inequality(DxFeed.Graal.Net.Ipf.Options.OptionSeries{`0},DxFeed.Graal.Net.Ipf.Options.OptionSeries{`0})
+  name.vb: <>(OptionSeries(Of T), OptionSeries(Of T))
+  fullName: DxFeed.Graal.Net.Ipf.Options.OptionSeries<T>.operator !=(DxFeed.Graal.Net.Ipf.Options.OptionSeries<T>, DxFeed.Graal.Net.Ipf.Options.OptionSeries<T>)
+  fullName.vb: DxFeed.Graal.Net.Ipf.Options.OptionSeries(Of T).<>(DxFeed.Graal.Net.Ipf.Options.OptionSeries(Of T), DxFeed.Graal.Net.Ipf.Options.OptionSeries(Of T))
+  nameWithType: OptionSeries<T>.operator !=(OptionSeries<T>, OptionSeries<T>)
+  nameWithType.vb: OptionSeries(Of T).<>(OptionSeries(Of T), OptionSeries(Of T))
+- uid: DxFeed.Graal.Net.Ipf.Options.OptionSeries`1.op_Inequality*
+  name: operator !=
+  href: docs/api/DxFeed.Graal.Net.Ipf.Options.OptionSeries-1.html#DxFeed_Graal_Net_Ipf_Options_OptionSeries_1_op_Inequality_
+  commentId: Overload:DxFeed.Graal.Net.Ipf.Options.OptionSeries`1.op_Inequality
+  isSpec: "True"
+  name.vb: <>
+  fullName: DxFeed.Graal.Net.Ipf.Options.OptionSeries<T>.operator !=
+  fullName.vb: DxFeed.Graal.Net.Ipf.Options.OptionSeries(Of T).<>
+  nameWithType: OptionSeries<T>.operator !=
+  nameWithType.vb: OptionSeries(Of T).<>
+- uid: DxFeed.Graal.Net.Ipf.Options.OptionSeries`1.op_LessThan(DxFeed.Graal.Net.Ipf.Options.OptionSeries{`0},DxFeed.Graal.Net.Ipf.Options.OptionSeries{`0})
+  name: operator <(OptionSeries<T>, OptionSeries<T>)
+  href: docs/api/DxFeed.Graal.Net.Ipf.Options.OptionSeries-1.html#DxFeed_Graal_Net_Ipf_Options_OptionSeries_1_op_LessThan_DxFeed_Graal_Net_Ipf_Options_OptionSeries__0__DxFeed_Graal_Net_Ipf_Options_OptionSeries__0__
+  commentId: M:DxFeed.Graal.Net.Ipf.Options.OptionSeries`1.op_LessThan(DxFeed.Graal.Net.Ipf.Options.OptionSeries{`0},DxFeed.Graal.Net.Ipf.Options.OptionSeries{`0})
+  name.vb: <(OptionSeries(Of T), OptionSeries(Of T))
+  fullName: DxFeed.Graal.Net.Ipf.Options.OptionSeries<T>.operator <(DxFeed.Graal.Net.Ipf.Options.OptionSeries<T>, DxFeed.Graal.Net.Ipf.Options.OptionSeries<T>)
+  fullName.vb: DxFeed.Graal.Net.Ipf.Options.OptionSeries(Of T).<(DxFeed.Graal.Net.Ipf.Options.OptionSeries(Of T), DxFeed.Graal.Net.Ipf.Options.OptionSeries(Of T))
+  nameWithType: OptionSeries<T>.operator <(OptionSeries<T>, OptionSeries<T>)
+  nameWithType.vb: OptionSeries(Of T).<(OptionSeries(Of T), OptionSeries(Of T))
+- uid: DxFeed.Graal.Net.Ipf.Options.OptionSeries`1.op_LessThan*
+  name: operator <
+  href: docs/api/DxFeed.Graal.Net.Ipf.Options.OptionSeries-1.html#DxFeed_Graal_Net_Ipf_Options_OptionSeries_1_op_LessThan_
+  commentId: Overload:DxFeed.Graal.Net.Ipf.Options.OptionSeries`1.op_LessThan
+  isSpec: "True"
+  name.vb: <
+  fullName: DxFeed.Graal.Net.Ipf.Options.OptionSeries<T>.operator <
+  fullName.vb: DxFeed.Graal.Net.Ipf.Options.OptionSeries(Of T).<
+  nameWithType: OptionSeries<T>.operator <
+  nameWithType.vb: OptionSeries(Of T).<
+- uid: DxFeed.Graal.Net.Ipf.Options.OptionSeries`1.op_LessThanOrEqual(DxFeed.Graal.Net.Ipf.Options.OptionSeries{`0},DxFeed.Graal.Net.Ipf.Options.OptionSeries{`0})
+  name: operator <=(OptionSeries<T>, OptionSeries<T>)
+  href: docs/api/DxFeed.Graal.Net.Ipf.Options.OptionSeries-1.html#DxFeed_Graal_Net_Ipf_Options_OptionSeries_1_op_LessThanOrEqual_DxFeed_Graal_Net_Ipf_Options_OptionSeries__0__DxFeed_Graal_Net_Ipf_Options_OptionSeries__0__
+  commentId: M:DxFeed.Graal.Net.Ipf.Options.OptionSeries`1.op_LessThanOrEqual(DxFeed.Graal.Net.Ipf.Options.OptionSeries{`0},DxFeed.Graal.Net.Ipf.Options.OptionSeries{`0})
+  name.vb: <=(OptionSeries(Of T), OptionSeries(Of T))
+  fullName: DxFeed.Graal.Net.Ipf.Options.OptionSeries<T>.operator <=(DxFeed.Graal.Net.Ipf.Options.OptionSeries<T>, DxFeed.Graal.Net.Ipf.Options.OptionSeries<T>)
+  fullName.vb: DxFeed.Graal.Net.Ipf.Options.OptionSeries(Of T).<=(DxFeed.Graal.Net.Ipf.Options.OptionSeries(Of T), DxFeed.Graal.Net.Ipf.Options.OptionSeries(Of T))
+  nameWithType: OptionSeries<T>.operator <=(OptionSeries<T>, OptionSeries<T>)
+  nameWithType.vb: OptionSeries(Of T).<=(OptionSeries(Of T), OptionSeries(Of T))
+- uid: DxFeed.Graal.Net.Ipf.Options.OptionSeries`1.op_LessThanOrEqual*
+  name: operator <=
+  href: docs/api/DxFeed.Graal.Net.Ipf.Options.OptionSeries-1.html#DxFeed_Graal_Net_Ipf_Options_OptionSeries_1_op_LessThanOrEqual_
+  commentId: Overload:DxFeed.Graal.Net.Ipf.Options.OptionSeries`1.op_LessThanOrEqual
+  isSpec: "True"
+  name.vb: <=
+  fullName: DxFeed.Graal.Net.Ipf.Options.OptionSeries<T>.operator <=
+  fullName.vb: DxFeed.Graal.Net.Ipf.Options.OptionSeries(Of T).<=
+  nameWithType: OptionSeries<T>.operator <=
+  nameWithType.vb: OptionSeries(Of T).<=
 - uid: DxFeed.Graal.Net.Models
   name: DxFeed.Graal.Net.Models
   href: docs/api/DxFeed.Graal.Net.Models.html
