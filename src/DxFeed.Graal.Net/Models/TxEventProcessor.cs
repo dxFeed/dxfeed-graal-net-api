@@ -18,7 +18,6 @@ internal class TxEventProcessor<TE>
     private readonly List<TE> _pendingEvents = new();
     private readonly ITransactionProcessor<TE> _transactionProcessor;
     private readonly ISnapshotProcessor<TE> _snapshotProcessor;
-    private bool _isSnapshotBeginSeen;
     private bool _isPartialSnapshot;
     private bool _isCompleteSnapshot;
 
@@ -50,17 +49,11 @@ internal class TxEventProcessor<TE>
     {
         if (EventFlags.IsSnapshotBegin(e))
         {
-            _isSnapshotBeginSeen = true;
             _isPartialSnapshot = true;
             _isCompleteSnapshot = false;
 
             // Remove any unprocessed leftovers on new snapshot.
             _pendingEvents.Clear();
-        }
-        else if (!_isSnapshotBeginSeen)
-        {
-            // Ignore all events until at least one SNAPSHOT_BEGIN is received.
-            return false;
         }
 
         if (_isPartialSnapshot && EventFlags.IsSnapshotEndOrSnip(e))

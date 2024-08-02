@@ -295,7 +295,13 @@ public abstract class AbstractTxModelTest<TE, TM, TB>
         AddToPublish(1, 4); // same index as the previous one
         AddToPublish(0, 5);
         PublishDeferred(false);
-        AssertIsChanged(false); // events prior to the snapshot are ignored
+        AssertIsChanged(true); // bypass all events without snapshot
+        AssertReceivedEventCount(5);
+        AssertEvent(2, 1, 0);
+        AssertEvent(3, 2, 0);
+        AssertEvent(1, 3, 0);
+        AssertEvent(1, 4, 0);
+        AssertEvent(0, 5, 0);
 
         AddToPublish(0, 1, SnapshotBegin | SnapshotEnd);
         AddToPublish(1, 2);

@@ -11,11 +11,11 @@
   </PropertyGroup>
 
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
-    <OutputPath>../../artifacts/Debug/Samples/</OutputPath>
+    <OutputPath>../../../artifacts/Debug/Samples/</OutputPath>
   </PropertyGroup>
 
   <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
-    <OutputPath>../../artifacts/Release/Samples/</OutputPath>
+    <OutputPath>../../../artifacts/Release/Samples/</OutputPath>
   </PropertyGroup>
 
   <ItemGroup>

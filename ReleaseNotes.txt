@@ -1,3 +1,4 @@
+* [MDAPI-118] [.NET] IndexedTxModel does not work with Regional and Composite sources
 * [MDAPI-112] [.NET] Add LastEventsConsole API sample
 * [MDAPI-42] [.NET] Implement OptionChain
 
