@@ -1,3 +1,5 @@
+## Version 2.4.1
+
 * [MDAPI-120] [.NET] Current target does not support the CPU features that are required by the image
 
 ## Version 2.4.0
