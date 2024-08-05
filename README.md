@@ -250,6 +250,42 @@ Then add the `DxFeed.Graal.Net` package to your project using the NuGet package 
 > If you are using .NET Framework and building for platform target `AnyCPU`, be sure to uncheck `Prefer 32-bit` in
 > `Properties->Build `for the project. We only support 64-bit builds.
 
+#### Using VSCode:
+
+1. Create a new project: `dotnet new console --framework net6.0 --use-program-main`
+2. Add the DxFeed.Graal.Net package to your project: `dotnet add package DxFeed.Graal.Net`
+3. Copy and paste the following code into the `Program.cs` file:
+
+```csharp
+using DxFeed.Graal.Net.Api;
+using DxFeed.Graal.Net.Events.Market;
+
+namespace sandbox;
+
+internal abstract class Program
+{
+    public static async Task Main(string[] args)
+    {
+        var address = "demo.dxfeed.com:7300";
+        var symbol = "AAPL";
+        var sub = DXEndpoint.GetInstance().Connect(address).GetFeed().CreateSubscription(typeof(Quote));
+        sub.AddEventListener(events =>
+        {
+            foreach (var quote in events)
+            {
+                Console.WriteLine(quote);
+            }
+        });
+        sub.AddSymbols(symbol);
+        await Task.Delay(Timeout.Infinite);
+    }
+}
+```
+
+4. Run project: `dotnet run`
+5. Add C# support to VSCode by following the instructions [here](https://code.visualstudio.com/docs/languages/dotnet)
+6. You can now open this directory in VSCode
+
 ## Usage
 
 ### How to connect to QD endpoint
