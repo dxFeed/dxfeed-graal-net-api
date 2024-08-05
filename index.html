@@ -16,7 +16,7 @@
       <meta name="docfx:rel" content="">
       
       
-      <meta name="docfx:docurl" content="https://github.com/dxFeed/dxfeed-graal-net-api/blob/2.4.0/index.md/#L1">
+      <meta name="docfx:docurl" content="https://github.com/dxFeed/dxfeed-graal-net-api/blob/2.4.1/index.md/#L1">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -88,7 +88,7 @@ the <a href="#overview">Overview</a> section.<br></p>
 <img src="https://img.shields.io/badge/platform-win--x64%20%7C%20linux--x64%20%7C%20osx--x64%20%7C%20osx--arm64-lightgrey" alt="Platform">
 <a href="https://dotnet.microsoft.com/en-us/"><img src="https://img.shields.io/badge/.NET_version-netstandard2.0%20%7C%20net6.0%20%7C%20net7.0%20%7C%20net8.0-blueviolet" alt="NET"></a>
 <a href="https://github.com/dxFeed/dxfeed-graal-net-api/releases/latest"><img src="https://img.shields.io/github/v/release/dxFeed/dxfeed-graal-net-api" alt="Release"></a>
-<a href="https://dxfeed.jfrog.io/artifactory/nuget-open/com/dxfeed/graal-net/"><img src="https://img.shields.io/badge/nuget-2.4.0-blue" alt="Nuget"></a>
+<a href="https://dxfeed.jfrog.io/artifactory/nuget-open/com/dxfeed/graal-net/"><img src="https://img.shields.io/badge/nuget-2.4.1-blue" alt="Nuget"></a>
 <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/master/LICENSE"><img src="https://img.shields.io/badge/license-MPL--2.0-orange" alt="License"></a></p>
 <h2 id="table-of-contents">Table of Contents</h2>
 <ul>
@@ -433,6 +433,41 @@ to your <code>NuGet.Config</code> file.</p>
 <p>If you are using .NET Framework and building for platform target <code>AnyCPU</code>, be sure to uncheck <code>Prefer 32-bit</code> in
 <code>Properties-&gt;Build </code>for the project. We only support 64-bit builds.</p>
 </blockquote>
+<h4 id="using-vscode">Using VSCode:</h4>
+<ol>
+<li>Create a new project: <code>dotnet new console --framework net6.0 --use-program-main</code></li>
+<li>Add the DxFeed.Graal.Net package to your project: <code>dotnet add package DxFeed.Graal.Net</code></li>
+<li>Copy and paste the following code into the <code>Program.cs</code> file:</li>
+</ol>
+<pre><code class="lang-csharp">using DxFeed.Graal.Net.Api;
+using DxFeed.Graal.Net.Events.Market;
+
+namespace sandbox;
+
+internal abstract class Program
+{
+    public static async Task Main(string[] args)
+    {
+        var address = &quot;demo.dxfeed.com:7300&quot;;
+        var symbol = &quot;AAPL&quot;;
+        var sub = DXEndpoint.GetInstance().Connect(address).GetFeed().CreateSubscription(typeof(Quote));
+        sub.AddEventListener(events =&gt;
+        {
+            foreach (var quote in events)
+            {
+                Console.WriteLine(quote);
+            }
+        });
+        sub.AddSymbols(symbol);
+        await Task.Delay(Timeout.Infinite);
+    }
+}
+</code></pre>
+<ol start="4">
+<li>Run project: <code>dotnet run</code></li>
+<li>Add C# support to VSCode by following the instructions <a href="https://code.visualstudio.com/docs/languages/dotnet">here</a></li>
+<li>You can now open this directory in VSCode</li>
+</ol>
 <h2 id="usage">Usage</h2>
 <h3 id="how-to-connect-to-qd-endpoint">How to connect to QD endpoint</h3>
 <pre><code class="lang-csharp">using System;
