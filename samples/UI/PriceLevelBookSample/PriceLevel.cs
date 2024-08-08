@@ -6,11 +6,19 @@
 
 using DxFeed.Graal.Net.Events;
 using DxFeed.Graal.Net.Events.Market;
+using DxFeed.Graal.Net.Utils;
 
-namespace DxFeed.Graal.Net.Samples;
+namespace PriceLevelBookSample;
 
+/// <summary>
+/// Represents a price level in a price level book.
+/// </summary>
 public class PriceLevel
 {
+    /// <summary>
+    /// Initializes a new instance of the <see cref="PriceLevel"/> class using an order.
+    /// </summary>
+    /// <param name="order">The order to initialize the price level from.</param>
     public PriceLevel(OrderBase order)
     {
         EventSymbol = order.EventSymbol;
@@ -20,6 +28,10 @@ public class PriceLevel
         Size = order.Size;
     }
 
+    /// <summary>
+    /// Initializes a new instance of the <see cref="PriceLevel"/> class by copying an existing price level.
+    /// </summary>
+    /// <param name="priceLevel">The price level to copy.</param>
     public PriceLevel(PriceLevel priceLevel)
     {
         EventSymbol = priceLevel.EventSymbol;
@@ -29,16 +41,40 @@ public class PriceLevel
         Size = priceLevel.Size;
     }
 
+    /// <summary>
+    /// Gets or sets the event symbol.
+    /// </summary>
     public string? EventSymbol { get; set; }
 
+    /// <summary>
+    /// Gets or sets the event source.
+    /// </summary>
     public IndexedEventSource EventSource { get; set; }
 
+    /// <summary>
+    /// Gets or sets the side (buy or sell) of the price level.
+    /// </summary>
     public Side Side { get; set; }
 
+    /// <summary>
+    /// Gets or sets the price of the price level.
+    /// </summary>
     public double Price { get; set; }
 
+    /// <summary>
+    /// Gets or sets the size of the price level.
+    /// </summary>
     public double Size { get; set; }
 
+    /// <summary>
+    /// Returns a string that represents the current object.
+    /// </summary>
+    /// <returns>A string that represents the current object.</returns>
     public override string ToString() =>
-        $"Side:{Side}, Price:{Price}, Size:{Size}";
+        "PriceLevel{" + StringUtil.EncodeNullableString(EventSymbol) +
+        ", source=" + StringUtil.EncodeNullableString(EventSource.ToString()) +
+        ", side=" + Side +
+        ", price=" + Price +
+        ", size=" + Size +
+        "}";
 }

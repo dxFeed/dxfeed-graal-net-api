@@ -9,7 +9,6 @@ using System.Collections.ObjectModel;
 using Avalonia.Controls;
 using Avalonia.Controls.Models.TreeDataGrid;
 using DxFeed.Graal.Net.Events;
-using DxFeed.Graal.Net.Samples;
 
 namespace PriceLevelBookSample;
 

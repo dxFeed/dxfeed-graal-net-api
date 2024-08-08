@@ -13,10 +13,14 @@ using DxFeed.Graal.Net.Api;
 using DxFeed.Graal.Net.Events;
 using DxFeed.Graal.Net.Events.Market;
 using DxFeed.Graal.Net.Models;
-using DxFeed.Graal.Net.Samples;
 
 namespace PriceLevelBookSample;
 
+/// <summary>
+/// Represents a price level book (market by price) that aggregates individual orders (market by order).
+/// For this model, use market by order sources such as <see cref="OrderSource.NTV"/>, <see cref="OrderSource.GLBX"/>, etc.
+/// </summary>
+/// <typeparam name="TE">The type of the order.</typeparam>
 public sealed class PriceLevelBook<TE> : IDisposable
     where TE : OrderBase
 {
@@ -52,11 +56,10 @@ public sealed class PriceLevelBook<TE> : IDisposable
 
     private readonly object _syncRoot = new();
     private readonly Dictionary<long, TE> _ordersByIndex = new();
-    private readonly PriceLevelSet _buyOrders = new(BuyComparator);
-    private readonly PriceLevelSet _sellOrders = new(SellComparator);
+    private readonly SortedPriceLevelSet _buyPriceLevels = new(BuyComparator);
+    private readonly SortedPriceLevelSet _sellPriceLevels = new(SellComparator);
     private readonly IndexedTxModel<TE> _txModel;
-    private readonly OnUpdate? _onUpdate;
-    private readonly OnIncChange? _onIncChange;
+    private readonly Listener? _listener;
     private CancellationTokenSource? _cts;
     private volatile bool _taskScheduled;
     private Task? _task;
@@ -66,27 +69,24 @@ public sealed class PriceLevelBook<TE> : IDisposable
     private PriceLevelBook(Builder builder)
     {
         _depthLimit = builder.DepthLimit;
-        _buyOrders.DepthLimit = _depthLimit;
-        _sellOrders.DepthLimit = _depthLimit;
-        _onUpdate = builder.OnUpdate;
-        _onIncChange = builder.OnIncChange;
+        _buyPriceLevels.DepthLimit = _depthLimit;
+        _sellPriceLevels.DepthLimit = _depthLimit;
+        _listener = builder.Listener;
         _aggregationPeriodMillis = builder.AggregationPeriodMillis;
         _txModel = builder.TxModelBuilder.WithListener(EventReceived).Build();
     }
 
-    public delegate void OnUpdate(List<PriceLevel> buy, List<PriceLevel> sell);
-
-    public delegate void OnIncChange(List<PriceLevel> add, List<PriceLevel> remove, List<PriceLevel> update);
+    public delegate void Listener(List<PriceLevel> buy, List<PriceLevel> sell);
 
     /// <summary>
-    /// Creates a new builder instance for constructing a MarketDepthModel.
+    /// Creates a new builder instance for constructing a PriceLevelBook.
     /// </summary>
     /// <returns>A new instance of the builder.</returns>
     public static Builder NewBuilder() =>
         new();
 
     /// <summary>
-    /// Gets the depth limit of the order book.
+    /// Gets the depth limit of the price level book.
     /// </summary>
     /// <returns>The current depth limit.</returns>
     public int GetDepthLimit()
@@ -98,7 +98,7 @@ public sealed class PriceLevelBook<TE> : IDisposable
     }
 
     /// <summary>
-    /// Sets the depth limit of the order book.
+    /// Sets the depth limit of the price level book.
     /// </summary>
     /// <param name="value">The new depth limit value.</param>
     public void SetDepthLimit(int value)
@@ -116,8 +116,8 @@ public sealed class PriceLevelBook<TE> : IDisposable
             }
 
             _depthLimit = value;
-            _buyOrders.DepthLimit = value;
-            _sellOrders.DepthLimit = value;
+            _buyPriceLevels.DepthLimit = value;
+            _sellPriceLevels.DepthLimit = value;
             TryCancelTask();
             NotifyListeners();
         }
@@ -194,25 +194,10 @@ public sealed class PriceLevelBook<TE> : IDisposable
         {
             try
             {
-                _buyOrders.ApplyChanges();
-                _sellOrders.ApplyChanges();
-                var add = _buyOrders.GetAddedLevels();
-                add.AddRange(_sellOrders.GetAddedLevels());
-                var remove = _buyOrders.GetRemovedLevels();
-                remove.AddRange(_sellOrders.GetRemovedLevels());
-                var update = _buyOrders.GetUpdatedLevels();
-                update.AddRange(_sellOrders.GetUpdatedLevels());
-
-                if (add.Any() || remove.Any() || update.Any())
-                {
-                    _onIncChange?.Invoke(add, remove, update);
-                    _onUpdate?.Invoke(_buyOrders.GetBook(), _sellOrders.GetBook());
-                }
+                _listener?.Invoke(_buyPriceLevels.ToList(), _sellPriceLevels.ToList());
             }
             finally
             {
-                _buyOrders.ClearChanges();
-                _sellOrders.ClearChanges();
                 _taskScheduled = false;
             }
         }
@@ -271,17 +256,17 @@ public sealed class PriceLevelBook<TE> : IDisposable
             if (_ordersByIndex.TryGetValue(order.Index, out var removed))
             {
                 _ordersByIndex.Remove(order.Index);
-                GetOrderSetForOrder(removed).Decrease(new PriceLevel(removed));
+                GetPriceLevelSetForOrder(removed).Decrease(new PriceLevel(removed));
             }
 
             if (ShallAdd(order))
             {
                 _ordersByIndex.Add(order.Index, order);
-                GetOrderSetForOrder(order).Increase(new PriceLevel(order));
+                GetPriceLevelSetForOrder(order).Increase(new PriceLevel(order));
             }
         }
 
-        return _buyOrders.IsChanged || _sellOrders.IsChanged;
+        return _buyPriceLevels.IsChanged || _sellPriceLevels.IsChanged;
     }
 
     private void ClearBySource(IndexedEventSource source)
@@ -290,23 +275,21 @@ public sealed class PriceLevelBook<TE> : IDisposable
             .Where(p => p.Value.EventSource.Equals(source))
             .ToList()
             .ForEach(p => _ordersByIndex.Remove(p.Key));
-        _buyOrders.ClearBySource(source);
-        _sellOrders.ClearBySource(source);
+        _buyPriceLevels.ClearBySource(source);
+        _sellPriceLevels.ClearBySource(source);
     }
 
-    private PriceLevelSet GetOrderSetForOrder(TE order) =>
-        order.OrderSide == Side.Buy ? _buyOrders : _sellOrders;
+    private SortedPriceLevelSet GetPriceLevelSetForOrder(TE order) =>
+        order.OrderSide == Side.Buy ? _buyPriceLevels : _sellPriceLevels;
 
     /// <summary>
-    /// Builder class for constructing instances of MarketDepthModel.
+    /// Builder class for constructing instances of PriceLevelBook.
     /// </summary>
     public class Builder
     {
         internal IndexedTxModel<TE>.Builder TxModelBuilder { get; } = IndexedTxModel<TE>.NewBuilder();
 
-        internal OnUpdate? OnUpdate { get; private set; }
-
-        internal OnIncChange? OnIncChange { get; private set; }
+        internal Listener? Listener { get; private set; }
 
         internal long AggregationPeriodMillis { get; private set; }
 
@@ -340,12 +323,11 @@ public sealed class PriceLevelBook<TE> : IDisposable
         /// Sets the listener for transaction notifications.
         /// The listener cannot be changed or added once the model has been built.
         /// </summary>
-        /// <param name="onUpdate">The transaction listener.</param>
+        /// <param name="listener">The transaction listener.</param>
         /// <returns>The builder instance.</returns>
-        public Builder WithListener(OnUpdate? onUpdate, OnIncChange? onIncChange)
+        public Builder WithListener(Listener? listener)
         {
-            OnUpdate = onUpdate;
-            OnIncChange = onIncChange;
+            Listener = listener;
             return this;
         }
 
@@ -414,32 +396,41 @@ public sealed class PriceLevelBook<TE> : IDisposable
         }
 
         /// <summary>
-        /// Builds an instance of <see cref="MarketDepthModel{TE}"/> based on the provided parameters.
+        /// Builds an instance of <see cref="PriceLevelBook{TE}"/> based on the provided parameters.
         /// </summary>
-        /// <returns>The created <see cref="MarketDepthModel{TE}"/>.</returns>
+        /// <returns>The created <see cref="PriceLevelBook{TE}"/>.</returns>
         public PriceLevelBook<TE> Build() =>
             new(this);
     }
 
-    private sealed class PriceLevelSet
+    /// <summary>
+    /// Represents a set of orders, sorted by a comparator.
+    /// </summary>
+    private sealed class SortedPriceLevelSet
     {
+        private readonly List<PriceLevel> _snapshot = new();
         private readonly IComparer<PriceLevel> _comparator;
         private readonly SortedSet<PriceLevel> _priceLevels;
-        private readonly List<PriceLevel> _addedLevels = new();
-        private readonly List<PriceLevel> _removedLevels = new();
-        private readonly List<PriceLevel> _updatedLevels = new();
-        private SortedSet<PriceLevel> _snapshot;
         private int _depthLimit;
 
-        public PriceLevelSet(IComparer<PriceLevel> comparator)
+        /// <summary>
+        /// Initializes a new instance of the <see cref="SortedPriceLevelSet"/> class with specified comparator.
+        /// </summary>
+        /// <param name="comparator">The comparator to use for sorting orders.</param>
+        public SortedPriceLevelSet(IComparer<PriceLevel> comparator)
         {
             _comparator = comparator;
             _priceLevels = new SortedSet<PriceLevel>(comparator);
-            _snapshot = new SortedSet<PriceLevel>(comparator);
         }
 
+        /// <summary>
+        /// Gets a value indicating whether this set has changed.
+        /// </summary>
         public bool IsChanged { get; private set; }
 
+        /// <summary>
+        /// Gets or sets depth limit.
+        /// </summary>
         public int DepthLimit
         {
             get => _depthLimit;
@@ -455,6 +446,10 @@ public sealed class PriceLevelBook<TE> : IDisposable
             }
         }
 
+        /// <summary>
+        /// Increase price level size or add new price level.
+        /// </summary>
+        /// <param name="level">The price level.</param>
         public void Increase(PriceLevel level)
         {
             if (_priceLevels.TryGetValue(level, out var existLevel))
@@ -471,6 +466,10 @@ public sealed class PriceLevelBook<TE> : IDisposable
             }
         }
 
+        /// <summary>
+        /// Decrease price level size or remove exist price level.
+        /// </summary>
+        /// <param name="level">The price level.</param>
         public void Decrease(PriceLevel level)
         {
             if (_priceLevels.TryGetValue(level, out var existLevel))
@@ -491,74 +490,37 @@ public sealed class PriceLevelBook<TE> : IDisposable
             }
         }
 
-        public void ClearBySource(IndexedEventSource source)
+        /// <summary>
+        /// Clears price levels from the set by source.
+        /// </summary>
+        /// <param name="source">The source to clear price levels by.</param>
+        public void ClearBySource(IndexedEventSource source) =>
+            IsChanged = _priceLevels.RemoveWhere(pl => pl.EventSource.Equals(source)) > 0;
+
+        /// <summary>
+        /// Converts the set to a list.
+        /// </summary>
+        /// <returns>The list of price levels.</returns>
+        public List<PriceLevel> ToList()
         {
-            var removedLevels = _priceLevels.Where(priceLevel => priceLevel.EventSource.Equals(source)).ToList();
-            foreach (var level in removedLevels)
+            if (IsChanged)
             {
-                _priceLevels.Remove(level);
-                MarkAsChangedIfNeeded(level);
+                UpdateSnapshot();
             }
 
-            IsChanged = removedLevels.Count > 0;
+            return new List<PriceLevel>(_snapshot);
         }
 
-        public List<PriceLevel> GetBook() => _snapshot.ToList();
-
-        public List<PriceLevel> GetAddedLevels() => new(_addedLevels);
-
-        public List<PriceLevel> GetRemovedLevels() => new(_removedLevels);
-
-        public List<PriceLevel> GetUpdatedLevels() => new(_updatedLevels);
-
-        public void ApplyChanges()
+        private void UpdateSnapshot()
         {
-            var newSnapshot = new SortedSet<PriceLevel>(_comparator);
-            var limit = IsDepthLimitUnbounded() ? int.MaxValue : DepthLimit;
-            var it = _priceLevels.GetEnumerator();
-            var i = 0;
-
-            _addedLevels.Clear();
-            _removedLevels.Clear();
-            _updatedLevels.Clear();
-
-            while (i < limit && it.MoveNext())
-            {
-                var current = new PriceLevel(it.Current);
-                newSnapshot.Add(current);
-
-                if (_snapshot.TryGetValue(current, out var oldLevel))
-                {
-                    if (!oldLevel.Size.Equals(current.Size))
-                    {
-                        _updatedLevels.Add(current);
-                    }
-                }
-                else
-                {
-                    _addedLevels.Add(current);
-                }
-
-                i++;
-            }
-
-            foreach (var oldLevel in _snapshot)
-            {
-                if (!newSnapshot.Contains(oldLevel))
-                {
-                    _removedLevels.Add(oldLevel);
-                }
-            }
-
-            _snapshot = newSnapshot;
-        }
-
-        public void ClearChanges()
-        {
-            _addedLevels.Clear();
-            _removedLevels.Clear();
-            _updatedLevels.Clear();
             IsChanged = false;
+            _snapshot.Clear();
+            var limit = IsDepthLimitUnbounded() ? int.MaxValue : _depthLimit;
+            var it = _priceLevels.GetEnumerator();
+            for (var i = 0; i < limit && it.MoveNext(); ++i)
+            {
+                _snapshot.Add(it.Current);
+            }
         }
 
         private void MarkAsChangedIfNeeded(PriceLevel level)

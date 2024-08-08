@@ -20,8 +20,8 @@ namespace PriceLevelBookSample;
 
 /// <summary>
 /// The MainWindow class represents the main window of the PriceLevelBookSample application.
-/// This window is responsible for setting up the market depth model, handling user input,
-/// and updating the UI with market depth data.
+/// This window is responsible for setting up the price level book, handling user input,
+/// and updating the UI with price level data.
 /// </summary>
 public partial class MainWindow : Window
 {
@@ -34,11 +34,11 @@ public partial class MainWindow : Window
     /// <summary>
     /// Initializes a new instance of the MainWindow class.
     /// Sets up the market feed address, initializes components,
-    /// and configures the market depth model builder.
+    /// and configures the price level book builder.
     /// </summary>
     public MainWindow()
     {
-        SystemProperty.SetProperty("dxfeed.address", "mddqa.in.devexperts.com:7400");
+        SystemProperty.SetProperty("dxfeed.address", "demo.dxfeed.com:7300");
 
         InitializeComponent();
         BuyTable.Source = _priceLevels.BuyPriceLevels;
@@ -54,13 +54,13 @@ public partial class MainWindow : Window
                     _priceLevels.UpdateBuy(buy);
                     _priceLevels.UpdateSell(sell);
                 }, DispatcherPriority.Normal);
-            }, null);
+            });
 
         HandleTextChanged(SymbolTextBox);
     }
 
     /// <summary>
-    /// Disposes the current market depth model when the window is closed.
+    /// Disposes the current price level book when the window is closed.
     /// </summary>
     /// <param name="e">Event arguments.</param>
     protected override void OnClosed(EventArgs e) =>
@@ -68,7 +68,7 @@ public partial class MainWindow : Window
 
     /// <summary>
     /// Handles the KeyDown event for the TextBox controls.
-    /// Updates the market depth model when the Enter key is pressed.
+    /// Updates the price level book when the Enter key is pressed.
     /// </summary>
     /// <param name="sender">The source of the event.</param>
     /// <param name="e">Event arguments.</param>
@@ -82,7 +82,7 @@ public partial class MainWindow : Window
 
     /// <summary>
     /// Handles the LostFocus event for the TextBox controls.
-    /// Updates the market depth model when the focus is lost.
+    /// Updates the price level book when the focus is lost.
     /// </summary>
     /// <param name="sender">The source of the event.</param>
     /// <param name="e">Event arguments.</param>
@@ -117,7 +117,7 @@ public partial class MainWindow : Window
     }
 
     /// <summary>
-    /// Updates the market depth model when the symbol or sources text changes.
+    /// Updates the price level book when the symbol or sources text changes.
     /// Disposes the old model and creates a new one with the updated parameters.
     /// </summary>
     private void OnSymbolTextChanged()
@@ -148,13 +148,13 @@ public partial class MainWindow : Window
     }
 
     /// <summary>
-    /// Updates the depth limit of the market depth model when the depth limit text changes.
+    /// Updates the depth limit of the price level book when the depth limit text changes.
     /// </summary>
     private void OnDepthLimitTextChanged() =>
         model?.SetDepthLimit(GetDepthLimit());
 
     /// <summary>
-    /// Updates the aggregation period of the market depth model when the period text changes.
+    /// Updates the aggregation period of the price level book when the period text changes.
     /// </summary>
     private void OnAggregationPeriodTextChanged() =>
         model?.SetAggregationPeriod(GetAggregationPeriod());
