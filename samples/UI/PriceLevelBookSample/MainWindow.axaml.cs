@@ -38,8 +38,6 @@ public partial class MainWindow : Window
     /// </summary>
     public MainWindow()
     {
-        SystemProperty.SetProperty("dxfeed.address", "demo.dxfeed.com:7300");
-
         InitializeComponent();
         BuyTable.Source = _priceLevels.BuyPriceLevels;
         SellTable.Source = _priceLevels.SellPriceLevels;
