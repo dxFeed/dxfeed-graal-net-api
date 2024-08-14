@@ -7,6 +7,7 @@
 using System;
 using System.Runtime.InteropServices;
 using DxFeed.Graal.Net.Native.ErrorHandling;
+using Microsoft.Extensions.Configuration;
 
 namespace DxFeed.Graal.Net.Native.Graal;
 
@@ -32,6 +33,20 @@ namespace DxFeed.Graal.Net.Native.Graal;
 /// </summary>
 internal sealed class Isolate
 {
+    /// <summary>
+    /// Prefix used to search for properties in environment variables.
+    /// </summary>
+    private static readonly string ENV_PREFIX = "DXFEED_";
+
+    /// <summary>
+    /// Defines path to a file with system properties.
+    /// When the path to this properties file not provided,
+    /// the file "dxfeed.system.properties" loaded from current runtime directory.
+    /// It means that the corresponding file can be placed into the current directory with any need
+    /// to specify additional properties.
+    /// </summary>
+    private static readonly string DXFEED_SYSTEM_PROPERTIES = "dxfeed.system.properties";
+
     /// <summary>
     /// A singleton lazy-initialization instance of <see cref="Isolate"/>.
     /// </summary>
@@ -80,13 +95,24 @@ internal sealed class Isolate
         value._isolateHandle;
 
     /// <summary>
-    /// Creates a new <see cref="Isolate"/> without parameters.
-    /// The attached isolated thread is ignored.
+    /// Creates a new <see cref="Isolate"/> and sets specified system properties.
+    /// System properties will be retrieved either from the corresponding file or from environment variables.
     /// </summary>
     /// <returns>Returns <see cref="Isolate"/>.</returns>
     private static Isolate CreateIsolate()
     {
-        ErrorCheck.SafeCall(GraalCreateIsolate(0, out var isolate, out _));
+        ErrorCheck.SafeCall(GraalCreateIsolate(0, out var isolate, out var thread));
+        var propsFile = Environment.GetEnvironmentVariable($"{ENV_PREFIX}{DXFEED_SYSTEM_PROPERTIES}")
+                        ?? $"{DXFEED_SYSTEM_PROPERTIES}";
+        var props = new ConfigurationBuilder()
+            .AddIniFile(propsFile, true)
+            .AddEnvironmentVariables(ENV_PREFIX) // overrides ini-file properties
+            .Build();
+        foreach (var kvp in props.AsEnumerable())
+        {
+            SystemProperty.SetProperty(thread, kvp.Key, kvp.Value ?? string.Empty);
+        }
+
         return new Isolate(isolate);
     }
 

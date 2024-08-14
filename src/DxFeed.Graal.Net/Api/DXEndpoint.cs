@@ -75,11 +75,11 @@ public sealed class DXEndpoint : IDisposable
     /// <br/>
     /// This file must be in the <a href="https://en.wikipedia.org/wiki/.properties">Java properties file format</a>.
     /// <br/>
-    /// This property can also be set using <see cref="SystemProperty.SetProperty"/>,
+    /// This property can also be set using <see cref="SystemProperty.SetProperty(string,string)"/>,
     /// as the default property for all instances <see cref="DXEndpoint"/> with <see cref="Role.Feed"/> or
     /// or <see cref="Role.OnDemandFeed"/> role.
     /// <br/>
-    /// When the path to this properties file not provided (<see cref="SystemProperty.SetProperty"/>
+    /// When the path to this properties file not provided (<see cref="SystemProperty.SetProperty(string,string)"/>
     /// and <see cref="Builder.WithProperty(string,string)"/>),
     /// the file "dxfeed.properties" loaded from current runtime directory.
     /// It means that the corresponding file can be placed into the current directory with any need
@@ -143,10 +143,10 @@ public sealed class DXEndpoint : IDisposable
     /// <br/>
     /// This file must be in the <a href="https://en.wikipedia.org/wiki/.properties">Java properties file format</a>.
     /// <br/>
-    /// This property can also be set using <see cref="SystemProperty.SetProperty"/>,
+    /// This property can also be set using <see cref="SystemProperty.SetProperty(string,string)"/>,
     /// as the default property for all instances <see cref="DXEndpoint"/> with <see cref="Role.Publisher"/> role.
     /// <br/>
-    /// When the path to this properties file not provided (<see cref="SystemProperty.SetProperty"/>
+    /// When the path to this properties file not provided (<see cref="SystemProperty.SetProperty(string,string)"/>
     /// and <see cref="Builder.WithProperty(string,string)"/>),
     /// the file "dxpublisher.properties" loaded from current runtime directory.
     /// It means that the corresponding file can be placed into the current directory with any need
