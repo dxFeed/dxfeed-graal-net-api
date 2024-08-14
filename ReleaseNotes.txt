@@ -1,3 +1,29 @@
+* [MDAPI-123] [.NET] Add the ability to set Java System Properties
+  - Now any Java Properties can be set either through setting environment variables
+    or using the dxfeed.system.properties file
+  - All properties that are set via environment variables must be prefixed with DXFEED_
+  - By default, the dxfeed.system.properties file is looked for in the runtime directory,
+    but the path to it can also be set by setting the environment variable
+    DXFEED_dxfeed.system.properties=/path/to/file
+  - For separate configuration of endpoints with the role of feed, ondemand, publisher,
+    dxfeed.properties and dxpublisher.properties files are also used respectively,
+    properties set in these files have higher priority than dxfeed.system.properties,
+    but only properties related to the endpoint can be set there
+  - Example of setting environment variables for Linux and macOS:
+    env DXFEED_dxfeed.address=demo.dxfeed.com:7300 ./app
+  - Example of setting environment variables for Windows:
+    cmd /v/c "set DXFEED_dxfeed.address=demo.dxfeed.com:7300&& app.exe"
+  - The configuration sources are applied in the following order, with each successive source
+    overwriting values from the previous one:
+     1) dxfeed.system.properties
+     2) Environment Variables
+     3) Direct calls to System.setProperty in source code, in the order in which they were called.
+  - The configuration dxfeed.properties and dxpublisher.properties files will be applied exactly as it was before.
+    The order is as follows:
+    1) System Property Provider (environment var or dxfeed.system.properties file or call System.setProperty)
+    2) dxfeed.properties and dxpublisher.properties
+    3) Direct call from the endpoint builder (DXEdnpoint.Builder.WithProperty)
+
 * [MDAPI-116] [.NET] Add PriceLevelBookSample
 
 ## Version 2.4.1

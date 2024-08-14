@@ -52,6 +52,16 @@ public static class SystemProperty
     public static string? GetProperty(string key) =>
         Import.SystemGetProperty(Isolate.CurrentThread, key);
 
+    /// <summary>
+    /// Sets the system property for the specified key within the provided thread context.
+    /// This method is intended for internal use where a specific thread context is required.
+    /// </summary>
+    /// <param name="thread">The thread context in which to set the system property.</param>
+    /// <param name="key">The name of the system property.</param>
+    /// <param name="value">The value of the system property.</param>
+    internal static void SetProperty(nint thread, string key, string value) =>
+        SafeCall(Import.SystemSetProperty(thread, key, value));
+
     private static class Import
     {
         [DllImport(
