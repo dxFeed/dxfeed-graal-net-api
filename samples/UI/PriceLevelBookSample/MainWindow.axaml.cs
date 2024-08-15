@@ -7,11 +7,11 @@
 using System;
 using System.Collections.Generic;
 using System.Globalization;
+using System.Linq;
 using Avalonia.Controls;
 using Avalonia.Input;
 using Avalonia.Interactivity;
 using Avalonia.Threading;
-using DxFeed.Graal.Net;
 using DxFeed.Graal.Net.Api;
 using DxFeed.Graal.Net.Events;
 using DxFeed.Graal.Net.Events.Market;
@@ -26,10 +26,10 @@ namespace PriceLevelBookSample;
 public partial class MainWindow : Window
 {
     private readonly PriceLevels _priceLevels = new();
-    private readonly PriceLevelBook<Order>.Builder builder;
-    private string symbol = string.Empty;
-    private string sources = string.Empty;
-    private PriceLevelBook<Order>? model;
+    private readonly PriceLevelBook<Order>.Builder _builder;
+    private string _symbol = string.Empty;
+    private string _source = string.Empty;
+    private PriceLevelBook<Order>? _model;
 
     /// <summary>
     /// Initializes a new instance of the MainWindow class.
@@ -42,7 +42,7 @@ public partial class MainWindow : Window
         BuyTable.Source = _priceLevels.BuyPriceLevels;
         SellTable.Source = _priceLevels.SellPriceLevels;
 
-        builder = PriceLevelBook<Order>.NewBuilder()
+        _builder = PriceLevelBook<Order>.NewBuilder()
             .WithFeed(DXFeed.GetInstance())
             .WithListener((buy, sell) =>
             {
@@ -62,7 +62,7 @@ public partial class MainWindow : Window
     /// </summary>
     /// <param name="e">Event arguments.</param>
     protected override void OnClosed(EventArgs e) =>
-        model?.Dispose();
+        _model?.Dispose();
 
     /// <summary>
     /// Handles the KeyDown event for the TextBox controls.
@@ -102,7 +102,7 @@ public partial class MainWindow : Window
         switch (textBox.Name)
         {
             case nameof(SymbolTextBox):
-            case nameof(SourcesTextBox):
+            case nameof(SourceTextBox):
                 OnSymbolTextChanged();
                 break;
             case nameof(DepthLimitTextBox):
@@ -120,28 +120,28 @@ public partial class MainWindow : Window
     /// </summary>
     private void OnSymbolTextChanged()
     {
-        if (symbol.Equals(SymbolTextBox.Text, StringComparison.Ordinal) &&
-            sources.Equals(SourcesTextBox.Text, StringComparison.Ordinal))
+        if (_symbol.Equals(SymbolTextBox.Text, StringComparison.Ordinal) &&
+            _source.Equals(SourceTextBox.Text, StringComparison.Ordinal))
         {
             return;
         }
 
-        symbol = SymbolTextBox.Text ?? string.Empty;
-        sources = SourcesTextBox.Text ?? string.Empty;
+        _symbol = SymbolTextBox.Text ?? string.Empty;
+        _source = SourceTextBox.Text ?? string.Empty;
 
-        model?.Dispose();
+        _model?.Dispose();
         try
         {
-            model = builder
+            _model = _builder
                 .WithSymbol(GetSymbol())
-                .WithSources(GetSources())
+                .WithSource(GetSource()!)
                 .WithDepthLimit(GetDepthLimit())
                 .WithAggregationPeriod(GetAggregationPeriod())
                 .Build();
         }
-        catch
+        catch(Exception e)
         {
-            // ignored
+            Console.WriteLine(e);
         }
     }
 
@@ -149,13 +149,13 @@ public partial class MainWindow : Window
     /// Updates the depth limit of the price level book when the depth limit text changes.
     /// </summary>
     private void OnDepthLimitTextChanged() =>
-        model?.SetDepthLimit(GetDepthLimit());
+        _model?.SetDepthLimit(GetDepthLimit());
 
     /// <summary>
     /// Updates the aggregation period of the price level book when the period text changes.
     /// </summary>
     private void OnAggregationPeriodTextChanged() =>
-        model?.SetAggregationPeriod(GetAggregationPeriod());
+        _model?.SetAggregationPeriod(GetAggregationPeriod());
 
     /// <summary>
     /// Gets the current symbol from the SymbolTextBox.
@@ -168,18 +168,18 @@ public partial class MainWindow : Window
     /// Gets the list of sources from the SourcesTextBox.
     /// </summary>
     /// <returns>A list of order sources.</returns>
-    private List<IndexedEventSource> GetSources()
+    private IndexedEventSource? GetSource()
     {
         var sourceList = new List<IndexedEventSource>();
-        if (!string.IsNullOrWhiteSpace(SourcesTextBox.Text))
+        if (!string.IsNullOrWhiteSpace(SourceTextBox.Text))
         {
-            foreach (var source in SourcesTextBox.Text.Split(","))
+            foreach (var source in SourceTextBox.Text.Split(","))
             {
                 sourceList.Add(OrderSource.ValueOf(source));
             }
         }
 
-        return sourceList;
+        return sourceList.FirstOrDefault();
     }
 
     /// <summary>

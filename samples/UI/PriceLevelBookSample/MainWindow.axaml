@@ -41,8 +41,8 @@
             <TextBox x:Name="SymbolTextBox" Text="AAPL" FontSize="12" Width="180" KeyDown="OnKeyDown" LostFocus="OnLostFocus"
                      Grid.Column="1" Margin="5" />
 
-            <TextBlock Text="Sources" Margin="5" FontSize="12" VerticalAlignment="Center" Grid.Column="2" />
-            <TextBox x:Name="SourcesTextBox" Text="NTV" FontSize="12" Width="180" KeyDown="OnKeyDown" LostFocus="OnLostFocus"
+            <TextBlock Text="Source" Margin="5" FontSize="12" VerticalAlignment="Center" Grid.Column="2" />
+            <TextBox x:Name="SourceTextBox" Text="NTV" FontSize="12" Width="180" KeyDown="OnKeyDown" LostFocus="OnLostFocus"
                      Grid.Column="3" Margin="5" />
 
             <TextBlock Text="Depth Limit" Margin="5" FontSize="12" VerticalAlignment="Center" Grid.Column="4" />
