@@ -410,45 +410,75 @@ sudo /usr/bin/xattr -r -d com.apple.quarantine <directory_with_tools>
 
 ## Samples
 
-- [x] [ConvertTapeFileSample](samples/File/ConvertTapeFileSample)
-  demonstrates how to convert one tape file to another tape file with optional intermediate processing or filtering
-- [x] [FileParserSample](samples/File/FileParserSample)
-  is a simple demonstration of how events are read form a tape file
-- [x] [QuoteAndTradeSample](samples/API/QuoteAndTradeSample)
-  is a simple demonstration of how to create multiple event listeners and subscribe to `Quote` and `Trade` events
+### API
+
+- [x] [AuthSample](samples/API/AuthSample)
+  demonstrates how to connect to an endpoint that requires an authentication token,
+  subscribe to market data events, and handle periodic token updates.
+- [x] [ConnectSample](samples/API/ConnectSample)
+  demonstrates how to connect to the endpoint and subscribe to various market events.
 - [x] [PrintQuoteEventsSample](samples/API/PrintQuoteEventsSample)
-  is a simple demonstration of how to subscribe to the `Quote` event, using a `DxFeed` instance singleton
-  and `dxfeed.system.properties` file
-- [x] [WriteTapeFileSample](samples/File/WriteTapeFileSample)
-  is a simple demonstration of how to write events to a tape file
-- [x] [IpfSample](samples/IPF/IpfSample) is a simple
-  demonstration of how to get Instrument Profiles
-- [x] [IpfLiveSample](samples/IPF/IpfLiveSample) is a
-  simple demonstration of how to get live updates for Instrument Profiles
-- [x] [ScheduleSample](samples/Schedule/ScheduleSample) is a simple
-  demonstration of how to get various scheduling information for instruments
-- [x] [FetchDailyCandlesSample](samples/Candle/FetchDailyCandlesSample)
-  is a simple demonstration of how to fetch last N-days of candles for a specified symbol
+  demonstrates how to subscribe to the `Quote` event, using a `DxFeed` instance singleton
+  and `dxfeed.system.properties` file.
+- [x] [QuoteAndTradeSample](samples/API/QuoteAndTradeSample)
+  demonstrates how to create multiple event listeners and subscribe to `Quote` and `Trade` events.
 - [x] [ReconnectSample](samples/API/ReconnectSample)
-  is a simple demonstration of how to connect to an endpoint, subscribe to market data events, handle reconnections
+  demonstrates how to connect to an endpoint, subscribe to market data events, handle reconnections
   and re-subscribing.
+
+### Candle
+
+- [x] [CandleSample](samples/Candle/CandleSample)
+  demonstrates how to subscribe to `Candle` events.
 - [x] [CandleDataSample](samples/Candle/CandleDataSample)
-  is a simple demonstration of how to parse response from CandleData service.
-- [x] [MarketDepthModelSample](samples/UI/MarketDepthModelSample)
-  is a simple demonstration of how to draw a Market Depth using Avalonia UI.
-- [x] [CandleChartSample](samples/UI/CandleChartSample)
-  is a simple demonstration of how to draw a Candlestick Chart using Avalonia UI.
-- [x] [IncOrderSnapshotSample](samples/Model/IncOrderSnapshotSample)
-  is a simple demonstration of how to subscribe to the Order event and handle snapshots and updates.
-- [x] [MultipleMarketDepthSample](samples/Model/MultipleMarketDepthSample)
-  is a simple demonstration of how to use the `MarketDepthModel` to manage and display order books for multiple symbols.
-- [x] [OptionChainSample](samples/IPF/OptionChainSample)
-  how to build option chains, and prints quotes for nearby option strikes.
+  demonstrates how to parse response from CandleData service.
+- [x] [FetchDailyCandlesSample](samples/Candle/FetchDailyCandlesSample)
+  demonstrates how to fetch last N-days of candles for a specified symbol.
+
+### Console
+
 - [x] [LastEventConsoleSample](samples/Console/LastEventConsoleSample)
-  is a simple demonstration how to subscribe to various market events with the dxFeed API, cache them in memory, and
+  demonstrates how to subscribe to various market events with the dxFeed API, cache them in memory, and
   take snapshots of these events based on user input.
+
+### File
+
+- [x] [ConvertTapeFileSample](samples/File/ConvertTapeFileSample)
+  demonstrates how to convert one tape file to another tape file with optional intermediate processing or filtering.
+- [x] [FileParserSample](samples/File/FileParserSample)
+  demonstrates how to read events from a tape file.
+- [x] [WriteTapeFileSample](samples/File/WriteTapeFileSample)
+  demonstrates how to write events to a tape file.
+
+### IPF
+
+- [x] [IpfSample](samples/IPF/IpfSample)
+  demonstrates how to get Instrument Profiles.
+- [x] [IpfLiveSample](samples/IPF/IpfLiveSample)
+  demonstrates how to get live updates for Instrument Profiles.
+- [x] [OptionChainSample](samples/IPF/OptionChainSample)
+  demonstrates how to build option chains, and prints quotes for nearby option strikes.
+
+### Model
+
+- [x] [IncOrderSnapshotSample](samples/Model/IncOrderSnapshotSample)
+  demonstrates how to subscribe to the Order event and handle snapshots and updates.
+- [x] [MultipleMarketDepthSample](samples/Model/MultipleMarketDepthSample)
+  demonstrates how to use the `MarketDepthModel` to manage and display order books for multiple symbols.
+
+### Schedule
+
+- [x] [ScheduleSample](samples/Schedule/ScheduleSample)
+  demonstrates how to get various scheduling information for instruments.
+
+### UI
+
+- [x] [MarketDepthModelSample](samples/UI/MarketDepthModelSample)
+  demonstrates how to draw a Market Depth using Avalonia UI.
+- [x] [CandleChartSample](samples/UI/CandleChartSample)
+  demonstrates how to draw a Candlestick Chart using Avalonia UI.
 - [x] [PriceLevelBookSample](samples/UI/PriceLevelBookSample)
-  is a simple demonstration of how to represent a price level book (market by price) that aggregates individual orders
+  demonstrates how to compile a price level book (market by price) that aggregates individual orders
   (market by order).
 
 ## Current State
