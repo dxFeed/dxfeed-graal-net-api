@@ -16,7 +16,7 @@
       <meta name="docfx:rel" content="">
       
       
-      <meta name="docfx:docurl" content="https://github.com/dxFeed/dxfeed-graal-net-api/blob/2.4.1/index.md/#L1">
+      <meta name="docfx:docurl" content="https://github.com/dxFeed/dxfeed-graal-net-api/blob/2.5.0/index.md/#L1">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -88,7 +88,7 @@ the <a href="#overview">Overview</a> section.<br></p>
 <img src="https://img.shields.io/badge/platform-win--x64%20%7C%20linux--x64%20%7C%20osx--x64%20%7C%20osx--arm64-lightgrey" alt="Platform">
 <a href="https://dotnet.microsoft.com/en-us/"><img src="https://img.shields.io/badge/.NET_version-netstandard2.0%20%7C%20net6.0%20%7C%20net7.0%20%7C%20net8.0-blueviolet" alt="NET"></a>
 <a href="https://github.com/dxFeed/dxfeed-graal-net-api/releases/latest"><img src="https://img.shields.io/github/v/release/dxFeed/dxfeed-graal-net-api" alt="Release"></a>
-<a href="https://dxfeed.jfrog.io/artifactory/nuget-open/com/dxfeed/graal-net/"><img src="https://img.shields.io/badge/nuget-2.4.1-blue" alt="Nuget"></a>
+<a href="https://dxfeed.jfrog.io/artifactory/nuget-open/com/dxfeed/graal-net/"><img src="https://img.shields.io/badge/nuget-2.5.0-blue" alt="Nuget"></a>
 <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/master/LICENSE"><img src="https://img.shields.io/badge/license-MPL--2.0-orange" alt="License"></a></p>
 <h2 id="table-of-contents">Table of Contents</h2>
 <ul>
@@ -158,56 +158,56 @@ ready to answer any questions and help with the transition.</p>
 <td style="text-align: center;">1</td>
 <td style="text-align: left;">How to get Instrument Profiles</td>
 <td style="text-align: left;"><a href="https://github.com/dxFeed/dxfeed-net-api/tree/master/samples/dxf_ipf_connect_sample">dxf_ipf_connect_sample</a></td>
-<td style="text-align: left;"><a href="https://github.com/dxFeed/dxfeed-graal-net-api/tree/main/samples/DxFeedIpfConnect">DxFeedIpfConnect</a></td>
+<td style="text-align: left;"><a href="samples/IPF/IpfSample">IpfSample</a></td>
 <td></td>
 </tr>
 <tr>
 <td style="text-align: center;">2</td>
 <td style="text-align: left;">How to get live updates for Instrument Profiles</td>
 <td style="text-align: left;"><a href="https://github.com/dxFeed/dxfeed-net-api/tree/master/samples/dxf_instrument_profile_live_sample">dxf_instrument_profile_live_sample</a></td>
-<td style="text-align: left;"><a href="https://github.com/dxFeed/dxfeed-graal-net-api/tree/main/samples/DxFeedLiveIpfSample">DxFeedLiveIpfSample</a></td>
+<td style="text-align: left;"><a href="samples/IPF/IpfLiveSample">IpfLiveSample</a></td>
 <td></td>
 </tr>
 <tr>
 <td style="text-align: center;">3</td>
 <td style="text-align: left;">How to subscribe to <code>Order</code>, <code>SpreadOrder</code>, <code>Candle</code>, <code>TimeAndSale</code>, <code>Greeks</code>, <code>Series</code> snapshots</td>
 <td style="text-align: left;"><a href="https://github.com/dxFeed/dxfeed-net-api/tree/master/samples/dxf_snapshot_sample">dxf_snapshot_sample</a></td>
-<td style="text-align: left;"><em>Q2’2024</em>, please see <a href="#future-development">TBD</a> section</td>
+<td style="text-align: left;"><em>Q4’2024</em>, please see <a href="#future-development">TBD</a> section</td>
 <td></td>
 </tr>
 <tr>
 <td style="text-align: center;">4</td>
 <td style="text-align: left;">How to subscribe to depth of market</td>
 <td style="text-align: left;"><a href="https://github.com/dxFeed/dxfeed-net-api/tree/master/samples/dxf_price_level_book_sample">dxf_price_level_book_sample</a></td>
-<td style="text-align: left;"><em>Q2’2024</em>, please see <a href="#future-development">TBD</a> section</td>
+<td style="text-align: left;"><a href="samples/UI/PriceLevelBookSample">PriceLevelBookSample</a></td>
 <td></td>
 </tr>
 <tr>
 <td style="text-align: center;">5</td>
 <td style="text-align: left;">How to receive snapshots of <code>TimeAndSale</code>, <code>Candle</code>, <code>Series</code>, <code>Greeks</code> events on a given time interval without live subscription</td>
 <td style="text-align: left;"><a href="https://github.com/dxFeed/dxfeed-net-api/tree/master/samples/dxf_simple_data_retrieving_sample">dxf_simple_data_retrieving_sample</a></td>
-<td style="text-align: left;"><a href="https://github.com/dxFeed/dxfeed-graal-net-api/tree/main/samples/FetchDailyCandles">FetchDailyCandles</a></td>
+<td style="text-align: left;"><a href="samples/Candle/FetchDailyCandlesSample">FetchDailyCandlesSample</a></td>
 <td></td>
 </tr>
 <tr>
 <td style="text-align: center;">6</td>
 <td style="text-align: left;">How to subscribe to order snapshot with incremental updates</td>
 <td style="text-align: left;"><a href="https://github.com/dxFeed/dxfeed-net-api/tree/master/samples/dxf_inc_order_snapshot_sample">dxf_inc_order_snapshot_sample</a></td>
-<td style="text-align: left;"><a href="https://github.com/dxFeed/dxfeed-graal-net-api/tree/main/samples/IncOrderSnapshotSample">IncOrderSnapshotSample</a></td>
+<td style="text-align: left;"><a href="samples/Model/IncOrderSnapshotSample">IncOrderSnapshotSample</a></td>
 <td></td>
 </tr>
 <tr>
 <td style="text-align: center;">7</td>
 <td style="text-align: left;">How to retrieve <code>Candle</code> data from the candle web service</td>
 <td style="text-align: left;"><a href="https://github.com/dxFeed/dxfeed-net-api/tree/master/samples/dxf_candle_data_retrieving_sample">dxf_candle_data_retrieving_sample</a></td>
-<td style="text-align: left;"><a href="https://github.com/dxFeed/dxfeed-graal-net-api/tree/main/samples/CandleDataResponseReader">CandleDataResponseReader</a></td>
+<td style="text-align: left;"><a href="samples/Candle/CandleDataSample">CandleDataSample</a></td>
 <td></td>
 </tr>
 <tr>
 <td style="text-align: center;">8</td>
 <td style="text-align: left;">How to retrieve <code>TimeAndSale</code> data from the candle web service</td>
 <td style="text-align: left;"><a href="https://github.com/dxFeed/dxfeed-net-api/tree/master/samples/dxf_tns_data_retrieving_sample">dxf_tns_data_retrieving_sample</a></td>
-<td style="text-align: left;"><a href="https://github.com/dxFeed/dxfeed-graal-net-api/tree/main/samples/CandleDataResponseReader">CandleDataResponseReader</a></td>
+<td style="text-align: left;"><a href="samples/Candle/CandleDataSample">CandleDataSample</a></td>
 <td></td>
 </tr>
 </tbody>
@@ -571,44 +571,76 @@ collection of tools ported from the Java qds-tools</li>
 <pre><code>sudo /usr/bin/xattr -r -d com.apple.quarantine &lt;directory_with_tools&gt;
 </code></pre>
 <h2 id="samples">Samples</h2>
+<h3 id="api">API</h3>
 <ul class="contains-task-list">
-<li class="task-list-item"><input disabled="disabled" type="checkbox" checked="checked"> <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/main/samples/ConvertTapeFile/Program.cs">ConvertTapeFile</a>
-demonstrates how to convert one tape file to another tape file with optional intermediate processing or filtering</li>
-<li class="task-list-item"><input disabled="disabled" type="checkbox" checked="checked"> <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/main/samples/DxFeedFileParser/Program.cs">DxFeedFileParser</a>
-is a simple demonstration of how events are read form a tape file</li>
-<li class="task-list-item"><input disabled="disabled" type="checkbox" checked="checked"> <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/main/samples/DxFeedSample/Program.cs">DxFeedSample</a>
-is a simple demonstration of how to create multiple event listeners and subscribe to <code>Quote</code> and <code>Trade</code> events</li>
-<li class="task-list-item"><input disabled="disabled" type="checkbox" checked="checked"> <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/main/samples/PrintQuoteEvents/Program.cs">PrintQuoteEvents</a>
-is a simple demonstration of how to subscribe to the <code>Quote</code> event, using a <code>DxFeed</code> instance singleton
-and <code>dxfeed.properties</code> file</li>
-<li class="task-list-item"><input disabled="disabled" type="checkbox" checked="checked"> <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/main/samples/WriteTapeFile/Program.cs">WriteTapeFile</a>
-is a simple demonstration of how to write events to a tape file</li>
-<li class="task-list-item"><input disabled="disabled" type="checkbox" checked="checked"> <a href="https://github.com/dxFeed/dxfeed-graal-net-api/tree/main/samples/DxFeedIpfConnect">DxFeedIpfConnect</a> is a simple
-demonstration of how to get Instrument Profiles</li>
-<li class="task-list-item"><input disabled="disabled" type="checkbox" checked="checked"> <a href="https://github.com/dxFeed/dxfeed-graal-net-api/tree/main/samples/DxFeedLiveIpfSample">DxFeedLiveIpfSample</a> is a
-simple demonstration of how to get live updates for Instrument Profiles</li>
-<li class="task-list-item"><input disabled="disabled" type="checkbox" checked="checked"> <a href="https://github.com/dxFeed/dxfeed-graal-net-api/tree/main/samples/ScheduleSample">ScheduleSample</a> is a simple
-demonstration of how to get various scheduling information for instruments</li>
-<li class="task-list-item"><input disabled="disabled" type="checkbox" checked="checked"> <a href="https://github.com/dxFeed/dxfeed-graal-net-api/tree/main/samples/FetchDailyCandles">FetchDailyCandles</a>
-is a simple demonstration of how to fetch last N-days of candles for a specified symbol</li>
-<li class="task-list-item"><input disabled="disabled" type="checkbox" checked="checked"> <a href="https://github.com/dxFeed/dxfeed-graal-net-api/tree/main/samples/DxFeedReconnectSample">DxFeedReconnectSample</a>
-is a simple demonstration of how to connect to an endpoint, subscribe to market data events, handle reconnections
+<li class="task-list-item"><input disabled="disabled" type="checkbox" checked="checked"> <a href="samples/API/AuthSample">AuthSample</a>
+demonstrates how to connect to an endpoint that requires an authentication token,
+subscribe to market data events, and handle periodic token updates.</li>
+<li class="task-list-item"><input disabled="disabled" type="checkbox" checked="checked"> <a href="samples/API/ConnectSample">ConnectSample</a>
+demonstrates how to connect to the endpoint and subscribe to various market events.</li>
+<li class="task-list-item"><input disabled="disabled" type="checkbox" checked="checked"> <a href="samples/API/PrintQuoteEventsSample">PrintQuoteEventsSample</a>
+demonstrates how to subscribe to the <code>Quote</code> event, using a <code>DxFeed</code> instance singleton
+and <code>dxfeed.system.properties</code> file.</li>
+<li class="task-list-item"><input disabled="disabled" type="checkbox" checked="checked"> <a href="samples/API/QuoteAndTradeSample">QuoteAndTradeSample</a>
+demonstrates how to create multiple event listeners and subscribe to <code>Quote</code> and <code>Trade</code> events.</li>
+<li class="task-list-item"><input disabled="disabled" type="checkbox" checked="checked"> <a href="samples/API/ReconnectSample">ReconnectSample</a>
+demonstrates how to connect to an endpoint, subscribe to market data events, handle reconnections
 and re-subscribing.</li>
-<li class="task-list-item"><input disabled="disabled" type="checkbox" checked="checked"> <a href="https://github.com/dxFeed/dxfeed-graal-net-api/tree/main/samples/CandleDataResponseReader">CandleDataResponseReader</a>
-is a simple demonstration of how to parse response from CandleData service.</li>
-<li class="task-list-item"><input disabled="disabled" type="checkbox" checked="checked"> <a href="https://github.com/dxFeed/dxfeed-graal-net-api/tree/main/samples/UI/MarketDepthModelSample">MarketDepthModelSample</a>
-is a simple demonstration of how to draw a Market Depth using Avalonia UI.</li>
-<li class="task-list-item"><input disabled="disabled" type="checkbox" checked="checked"> <a href="https://github.com/dxFeed/dxfeed-graal-net-api/tree/main/samples/UI/CandleChartSample">CandleChartSample</a>
-is a simple demonstration of how to draw a Candlestick Chart using Avalonia UI.</li>
-<li class="task-list-item"><input disabled="disabled" type="checkbox" checked="checked"> <a href="https://github.com/dxFeed/dxfeed-graal-net-api/tree/main/samples/IncOrderSnapshotSample">IncOrderSnapshotSample</a>
-is a simple demonstration of how to subscribe to the Order event and handle snapshots and updates.</li>
-<li class="task-list-item"><input disabled="disabled" type="checkbox" checked="checked"> <a href="https://github.com/dxFeed/dxfeed-graal-net-api/tree/main/samples/MultipleMarketDepthSample">MultipleMarketDepthSample</a>
-is a simple demonstration of how to use the <code>MarketDepthModel</code> to manage and display order books for multiple symbols.</li>
-<li class="task-list-item"><input disabled="disabled" type="checkbox" checked="checked"> <a href="https://github.com/dxFeed/dxfeed-graal-net-api/tree/main/samples/DXFeedOptionChain">DXFeedOptionChain</a>
-how to build option chains, and prints quotes for nearby option strikes.</li>
-<li class="task-list-item"><input disabled="disabled" type="checkbox" checked="checked"> <a href="https://github.com/dxFeed/dxfeed-graal-net-api/tree/main/samples/LastEventConsoleSample">LastEventConsoleSample</a>
-is a simple demonstration how to subscribe to various market events with the dxFeed API, cache them in memory, and
+</ul>
+<h3 id="candle">Candle</h3>
+<ul class="contains-task-list">
+<li class="task-list-item"><input disabled="disabled" type="checkbox" checked="checked"> <a href="samples/Candle/CandleSample">CandleSample</a>
+demonstrates how to subscribe to <code>Candle</code> events.</li>
+<li class="task-list-item"><input disabled="disabled" type="checkbox" checked="checked"> <a href="samples/Candle/CandleDataSample">CandleDataSample</a>
+demonstrates how to parse response from CandleData service.</li>
+<li class="task-list-item"><input disabled="disabled" type="checkbox" checked="checked"> <a href="samples/Candle/FetchDailyCandlesSample">FetchDailyCandlesSample</a>
+demonstrates how to fetch last N-days of candles for a specified symbol.</li>
+</ul>
+<h3 id="console">Console</h3>
+<ul class="contains-task-list">
+<li class="task-list-item"><input disabled="disabled" type="checkbox" checked="checked"> <a href="samples/Console/LastEventConsoleSample">LastEventConsoleSample</a>
+demonstrates how to subscribe to various market events with the dxFeed API, cache them in memory, and
 take snapshots of these events based on user input.</li>
+</ul>
+<h3 id="file">File</h3>
+<ul class="contains-task-list">
+<li class="task-list-item"><input disabled="disabled" type="checkbox" checked="checked"> <a href="samples/File/ConvertTapeFileSample">ConvertTapeFileSample</a>
+demonstrates how to convert one tape file to another tape file with optional intermediate processing or filtering.</li>
+<li class="task-list-item"><input disabled="disabled" type="checkbox" checked="checked"> <a href="samples/File/FileParserSample">FileParserSample</a>
+demonstrates how to read events from a tape file.</li>
+<li class="task-list-item"><input disabled="disabled" type="checkbox" checked="checked"> <a href="samples/File/WriteTapeFileSample">WriteTapeFileSample</a>
+demonstrates how to write events to a tape file.</li>
+</ul>
+<h3 id="ipf">IPF</h3>
+<ul class="contains-task-list">
+<li class="task-list-item"><input disabled="disabled" type="checkbox" checked="checked"> <a href="samples/IPF/IpfSample">IpfSample</a>
+demonstrates how to get Instrument Profiles.</li>
+<li class="task-list-item"><input disabled="disabled" type="checkbox" checked="checked"> <a href="samples/IPF/IpfLiveSample">IpfLiveSample</a>
+demonstrates how to get live updates for Instrument Profiles.</li>
+<li class="task-list-item"><input disabled="disabled" type="checkbox" checked="checked"> <a href="samples/IPF/OptionChainSample">OptionChainSample</a>
+demonstrates how to build option chains, and prints quotes for nearby option strikes.</li>
+</ul>
+<h3 id="model">Model</h3>
+<ul class="contains-task-list">
+<li class="task-list-item"><input disabled="disabled" type="checkbox" checked="checked"> <a href="samples/Model/IncOrderSnapshotSample">IncOrderSnapshotSample</a>
+demonstrates how to subscribe to the Order event and handle snapshots and updates.</li>
+<li class="task-list-item"><input disabled="disabled" type="checkbox" checked="checked"> <a href="samples/Model/MultipleMarketDepthSample">MultipleMarketDepthSample</a>
+demonstrates how to use the <code>MarketDepthModel</code> to manage and display order books for multiple symbols.</li>
+</ul>
+<h3 id="schedule">Schedule</h3>
+<ul class="contains-task-list">
+<li class="task-list-item"><input disabled="disabled" type="checkbox" checked="checked"> <a href="samples/Schedule/ScheduleSample">ScheduleSample</a>
+demonstrates how to get various scheduling information for instruments.</li>
+</ul>
+<h3 id="ui">UI</h3>
+<ul class="contains-task-list">
+<li class="task-list-item"><input disabled="disabled" type="checkbox" checked="checked"> <a href="samples/UI/MarketDepthModelSample">MarketDepthModelSample</a>
+demonstrates how to draw a Market Depth using Avalonia UI.</li>
+<li class="task-list-item"><input disabled="disabled" type="checkbox" checked="checked"> <a href="samples/UI/CandleChartSample">CandleChartSample</a>
+demonstrates how to draw a Candlestick Chart using Avalonia UI.</li>
+<li class="task-list-item"><input disabled="disabled" type="checkbox" checked="checked"> <a href="samples/UI/PriceLevelBookSample">PriceLevelBookSample</a>
+demonstrates how to compile a price level book (market by price) that aggregates individual orders
+(market by order).</li>
 </ul>
 <h2 id="current-state">Current State</h2>
 <h3 id="endpoint-roles">Endpoint Roles</h3>
@@ -719,8 +751,7 @@ events</p>
 is a subscription for a set of symbols and event types</p>
 </li>
 <li class="task-list-item"><p><input disabled="disabled" type="checkbox" checked="checked"> <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/api/DXFeed.html#getLastEvent-E-">GetLastEvent</a>
-returns the last event for the specified event instance
-(<a href="https://github.com/dxFeed/dxfeed-graal-net-api/tree/main/samples/DxFeedSample">DxFeedSample</a>)</p>
+returns the last event for the specified event instance</p>
 </li>
 <li class="task-list-item"><p><input disabled="disabled" type="checkbox" checked="checked"> <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/api/DXFeed.html#getTimeSeriesPromise-java.lang.Class-java.lang.Object-long-long-">GetTimeSeriesPromise</a>
 requests time series events for the specified event type, symbol, and time range</p>
@@ -729,24 +760,21 @@ requests time series events for the specified event type, symbol, and time range
 <h3 id="ipf--schedule">IPF &amp; Schedule</h3>
 <ul class="contains-task-list">
 <li class="task-list-item"><p><input disabled="disabled" type="checkbox" checked="checked"> <a href="https://dxfeed.github.io/dxfeed-graal-net-api/docs/api/DxFeed.Graal.Net.Ipf.InstrumentProfile.html">InstrumentProfile</a>
-represents basic profile information about a market instrument
-(<a href="https://github.com/dxFeed/dxfeed-graal-net-api/tree/main/samples/DxFeedIpfConnect">DxFeedIpfConnect</a>)</p>
+represents basic profile information about a market instrument</p>
 </li>
 <li class="task-list-item"><p><input disabled="disabled" type="checkbox" checked="checked"> <a href="https://dxfeed.github.io/dxfeed-graal-net-api/docs/api/DxFeed.Graal.Net.Ipf.InstrumentProfileReader.html">InstrumentProfileReader</a>
 reads
 instrument profiles from the stream using Instrument Profile Format (IPF)</p>
 </li>
 <li class="task-list-item"><p><input disabled="disabled" type="checkbox" checked="checked"> <a href="https://dxfeed.github.io/dxfeed-graal-net-api/docs/api/DxFeed.Graal.Net.Ipf.Live.InstrumentProfileCollector.html">InstrumentProfileCollector</a>
-collects instrument profile updates and provides the live instrument profiles list
-(<a href="https://github.com/dxFeed/dxfeed-graal-net-api/tree/main/samples/DxFeedLiveIpfSample">DxFeedLiveIpfSample</a>)</p>
+collects instrument profile updates and provides the live instrument profiles list</p>
 </li>
 <li class="task-list-item"><p><input disabled="disabled" type="checkbox" checked="checked"> <a href="https://dxfeed.github.io/dxfeed-graal-net-api/docs/api/DxFeed.Graal.Net.Ipf.Live.InstrumentProfileConnection.html">InstrumentProfileConnection</a>
 connects to an instrument profile URL and reads instrument profiles with support of streaming live updates</p>
 </li>
 <li class="task-list-item"><p><input disabled="disabled" type="checkbox" checked="checked"> <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/schedule/Schedule.html">Schedule</a>
 provides an API to retrieving and exploring the trading schedules of various exchanges and different financial
-instrument classes
-(<a href="https://github.com/dxFeed/dxfeed-graal-net-api/tree/main/samples/ScheduleSample">ScheduleSample</a>)</p>
+instrument classes</p>
 </li>
 </ul>
 
