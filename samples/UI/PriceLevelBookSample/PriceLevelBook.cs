@@ -68,6 +68,10 @@ public sealed class PriceLevelBook<TE> : IDisposable
 
     private PriceLevelBook(Builder builder)
     {
+        if (builder.Source == null)
+        {
+            throw new InvalidOperationException("The 'source' must not be null.");
+        }
         _depthLimit = builder.DepthLimit;
         _buyPriceLevels.DepthLimit = _depthLimit;
         _sellPriceLevels.DepthLimit = _depthLimit;
@@ -289,6 +293,8 @@ public sealed class PriceLevelBook<TE> : IDisposable
     {
         internal IndexedTxModel<TE>.Builder TxModelBuilder { get; } = IndexedTxModel<TE>.NewBuilder();
 
+        internal IndexedEventSource? Source  { get; private set; }
+
         internal Listener? Listener { get; private set; }
 
         internal long AggregationPeriodMillis { get; private set; }
@@ -332,34 +338,14 @@ public sealed class PriceLevelBook<TE> : IDisposable
         }
 
         /// <summary>
-        /// Sets the sources from which to subscribe for indexed events.
-        /// If no sources have been set, subscriptions will default to all possible sources.
+        /// Sets the source from which to subscribe for indexed events.
         /// </summary>
-        /// <remarks>
-        /// The default value for this source is an empty set,
-        /// which means that this model subscribes to all available sources.
-        /// </remarks>
-        /// <param name="sources">The specified sources.</param>
+        /// <param name="source">The specified source.</param>
         /// <returns><c>this</c> builder.</returns>
-        public Builder WithSources(params IndexedEventSource[] sources)
+        public Builder WithSource(IndexedEventSource source)
         {
-            TxModelBuilder.WithSources(sources);
-            return this;
-        }
-
-        /// <summary>
-        /// Sets the sources from which to subscribe for indexed events.
-        /// If no sources have been set, subscriptions will default to all possible sources.
-        /// </summary>
-        /// <remarks>
-        /// The default value for this source is an empty set,
-        /// which means that this model subscribes to all available sources.
-        /// </remarks>
-        /// <param name="sources">The specified sources.</param>
-        /// <returns><c>this</c> builder.</returns>
-        public Builder WithSources(ICollection<IndexedEventSource> sources)
-        {
-            TxModelBuilder.WithSources(sources);
+            Source = source;
+            TxModelBuilder.WithSources(source);
             return this;
         }
 
