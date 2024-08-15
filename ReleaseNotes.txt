@@ -1,3 +1,4 @@
+* [MDAPI-121] [.NET] Publish samples with the release
 * [MDAPI-123] [.NET] Add the ability to set Java System Properties
   - Now any Java Properties can be set either through setting environment variables
     or using the dxfeed.system.properties file
