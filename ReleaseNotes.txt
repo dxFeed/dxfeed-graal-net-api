@@ -1,5 +1,8 @@
 ## Version 2.5.1
 
+* [MDAPI-124] [.NET] Remove the ability to pass multiple sources for PriceLeveBookSample
+  - To work with multiple sources, the MarketDepthModel should be used.
+
 ## Version 2.5.0
 
 * [MDAPI-121] [.NET] Publish samples with the release
