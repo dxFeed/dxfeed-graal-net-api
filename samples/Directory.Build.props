@@ -1,0 +1,26 @@
+﻿<Project>
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <Nullable>enable</Nullable>
+    <RootNamespace>DxFeed.Graal.Net.Samples</RootNamespace>
+    <SatelliteResourceLanguages>en-US;en</SatelliteResourceLanguages>
+    <CodeAnalysisRuleSet>$(SolutionDir)/StyleCop.xml</CodeAnalysisRuleSet>
+    <OutputPath>$(SolutionDir)/artifacts/$(Configuration)/Samples/</OutputPath>
+    <OutDir>$(OutputPath)</OutDir>
+    <TargetFrameworks>net6.0</TargetFrameworks>
+    <BuildPassReferences>false</BuildPassReferences>
+    <AllowParallelCompileInReferencedProjects>false</AllowParallelCompileInReferencedProjects>
+    <UseCommonOutputDir>true</UseCommonOutputDir>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="$(SolutionDir)/src/DxFeed.Graal.Net/DxFeed.Graal.Net.csproj"/>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="$(SolutionDir)/samples/dxfeed.system.properties">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+</Project>
