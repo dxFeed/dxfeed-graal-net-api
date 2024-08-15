@@ -77,16 +77,16 @@ ready to answer any questions and help with the transition.
 
 #### Sample Mapping
 
-| # | Sample                                                                                                                            | Old Version                                                                                                                           | New Version                                                                                                           |
-|:-:|:----------------------------------------------------------------------------------------------------------------------------------|:--------------------------------------------------------------------------------------------------------------------------------------|:----------------------------------------------------------------------------------------------------------------------|
-| 1 | How to get Instrument Profiles                                                                                                    | [dxf_ipf_connect_sample](https://github.com/dxFeed/dxfeed-net-api/tree/master/samples/dxf_ipf_connect_sample)                         | [DxFeedIpfConnect](https://github.com/dxFeed/dxfeed-graal-net-api/tree/main/samples/DxFeedIpfConnect)                 |
-| 2 | How to get live updates for Instrument Profiles                                                                                   | [dxf_instrument_profile_live_sample](https://github.com/dxFeed/dxfeed-net-api/tree/master/samples/dxf_instrument_profile_live_sample) | [DxFeedLiveIpfSample](https://github.com/dxFeed/dxfeed-graal-net-api/tree/main/samples/DxFeedLiveIpfSample)           |
-| 3 | How to subscribe to `Order`, `SpreadOrder`, `Candle`, `TimeAndSale`, `Greeks`, `Series` snapshots                                 | [dxf_snapshot_sample](https://github.com/dxFeed/dxfeed-net-api/tree/master/samples/dxf_snapshot_sample)                               | *Q4’2024*, please see [TBD](#future-development) section                                                              |
-| 4 | How to subscribe to depth of market                                                                                               | [dxf_price_level_book_sample](https://github.com/dxFeed/dxfeed-net-api/tree/master/samples/dxf_price_level_book_sample)               | [PriceLevelBookSample](https://github.com/dxFeed/dxfeed-graal-net-api/tree/main/samples/UI/PriceLevelBookSample)      |
-| 5 | How to receive snapshots of `TimeAndSale`, `Candle`, `Series`, `Greeks` events on a given time interval without live subscription | [dxf_simple_data_retrieving_sample](https://github.com/dxFeed/dxfeed-net-api/tree/master/samples/dxf_simple_data_retrieving_sample)   | [FetchDailyCandles](https://github.com/dxFeed/dxfeed-graal-net-api/tree/main/samples/FetchDailyCandles)               |
-| 6 | How to subscribe to order snapshot with incremental updates                                                                       | [dxf_inc_order_snapshot_sample](https://github.com/dxFeed/dxfeed-net-api/tree/master/samples/dxf_inc_order_snapshot_sample)           | [IncOrderSnapshotSample](https://github.com/dxFeed/dxfeed-graal-net-api/tree/main/samples/IncOrderSnapshotSample)     |
-| 7 | How to retrieve `Candle` data from the candle web service                                                                         | [dxf_candle_data_retrieving_sample](https://github.com/dxFeed/dxfeed-net-api/tree/master/samples/dxf_candle_data_retrieving_sample)   | [CandleDataResponseReader](https://github.com/dxFeed/dxfeed-graal-net-api/tree/main/samples/CandleDataResponseReader) |                                                                                         |
-| 8 | How to retrieve `TimeAndSale` data from the candle web service                                                                    | [dxf_tns_data_retrieving_sample](https://github.com/dxFeed/dxfeed-net-api/tree/master/samples/dxf_tns_data_retrieving_sample)         | [CandleDataResponseReader](https://github.com/dxFeed/dxfeed-graal-net-api/tree/main/samples/CandleDataResponseReader) |                                                                                         |
+| # | Sample                                                                                                                            | Old Version                                                                                                                           | New Version                                                       |
+|:-:|:----------------------------------------------------------------------------------------------------------------------------------|:--------------------------------------------------------------------------------------------------------------------------------------|:------------------------------------------------------------------|
+| 1 | How to get Instrument Profiles                                                                                                    | [dxf_ipf_connect_sample](https://github.com/dxFeed/dxfeed-net-api/tree/master/samples/dxf_ipf_connect_sample)                         | [IpfSample](samples/IPF/IpfSample)                                |
+| 2 | How to get live updates for Instrument Profiles                                                                                   | [dxf_instrument_profile_live_sample](https://github.com/dxFeed/dxfeed-net-api/tree/master/samples/dxf_instrument_profile_live_sample) | [IpfLiveSample](samples/IPF/IpfLiveSample)                        |
+| 3 | How to subscribe to `Order`, `SpreadOrder`, `Candle`, `TimeAndSale`, `Greeks`, `Series` snapshots                                 | [dxf_snapshot_sample](https://github.com/dxFeed/dxfeed-net-api/tree/master/samples/dxf_snapshot_sample)                               | *Q4’2024*, please see [TBD](#future-development) section          |
+| 4 | How to subscribe to depth of market                                                                                               | [dxf_price_level_book_sample](https://github.com/dxFeed/dxfeed-net-api/tree/master/samples/dxf_price_level_book_sample)               | [PriceLevelBookSample](samples/UI/PriceLevelBookSample)           |
+| 5 | How to receive snapshots of `TimeAndSale`, `Candle`, `Series`, `Greeks` events on a given time interval without live subscription | [dxf_simple_data_retrieving_sample](https://github.com/dxFeed/dxfeed-net-api/tree/master/samples/dxf_simple_data_retrieving_sample)   | [FetchDailyCandlesSample](samples/Candle/FetchDailyCandlesSample) |
+| 6 | How to subscribe to order snapshot with incremental updates                                                                       | [dxf_inc_order_snapshot_sample](https://github.com/dxFeed/dxfeed-net-api/tree/master/samples/dxf_inc_order_snapshot_sample)           | [IncOrderSnapshotSample](samples/Model/IncOrderSnapshotSample)    |
+| 7 | How to retrieve `Candle` data from the candle web service                                                                         | [dxf_candle_data_retrieving_sample](https://github.com/dxFeed/dxfeed-net-api/tree/master/samples/dxf_candle_data_retrieving_sample)   | [CandleDataSample](samples/Candle/CandleDataSample)               |                                                                                         |
+| 8 | How to retrieve `TimeAndSale` data from the candle web service                                                                    | [dxf_tns_data_retrieving_sample](https://github.com/dxFeed/dxfeed-net-api/tree/master/samples/dxf_tns_data_retrieving_sample)         | [CandleDataSample](samples/Candle/CandleDataSample)               |                                                                                         |
 
 ### Implementation Details
 
@@ -410,44 +410,44 @@ sudo /usr/bin/xattr -r -d com.apple.quarantine <directory_with_tools>
 
 ## Samples
 
-- [x] [ConvertTapeFile](https://github.com/dxFeed/dxfeed-graal-net-api/blob/main/samples/ConvertTapeFile/Program.cs)
+- [x] [ConvertTapeFileSample](samples/File/ConvertTapeFileSample)
   demonstrates how to convert one tape file to another tape file with optional intermediate processing or filtering
-- [x] [DxFeedFileParser](https://github.com/dxFeed/dxfeed-graal-net-api/blob/main/samples/DxFeedFileParser/Program.cs)
+- [x] [FileParserSample](samples/File/FileParserSample)
   is a simple demonstration of how events are read form a tape file
-- [x] [DxFeedSample](https://github.com/dxFeed/dxfeed-graal-net-api/blob/main/samples/DxFeedSample/Program.cs)
+- [x] [QuoteAndTradeSample](samples/API/QuoteAndTradeSample)
   is a simple demonstration of how to create multiple event listeners and subscribe to `Quote` and `Trade` events
-- [x] [PrintQuoteEvents](https://github.com/dxFeed/dxfeed-graal-net-api/blob/main/samples/PrintQuoteEvents/Program.cs)
+- [x] [PrintQuoteEventsSample](samples/API/PrintQuoteEventsSample)
   is a simple demonstration of how to subscribe to the `Quote` event, using a `DxFeed` instance singleton
-  and `dxfeed.properties` file
-- [x] [WriteTapeFile](https://github.com/dxFeed/dxfeed-graal-net-api/blob/main/samples/WriteTapeFile/Program.cs)
+  and `dxfeed.system.properties` file
+- [x] [WriteTapeFileSample](samples/File/WriteTapeFileSample)
   is a simple demonstration of how to write events to a tape file
-- [x] [DxFeedIpfConnect](https://github.com/dxFeed/dxfeed-graal-net-api/tree/main/samples/DxFeedIpfConnect) is a simple
+- [x] [IpfSample](samples/IPF/IpfSample) is a simple
   demonstration of how to get Instrument Profiles
-- [x] [DxFeedLiveIpfSample](https://github.com/dxFeed/dxfeed-graal-net-api/tree/main/samples/DxFeedLiveIpfSample) is a
+- [x] [IpfLiveSample](samples/IPF/IpfLiveSample) is a
   simple demonstration of how to get live updates for Instrument Profiles
-- [x] [ScheduleSample](https://github.com/dxFeed/dxfeed-graal-net-api/tree/main/samples/ScheduleSample) is a simple
+- [x] [ScheduleSample](samples/Schedule/ScheduleSample) is a simple
   demonstration of how to get various scheduling information for instruments
-- [x] [FetchDailyCandles](https://github.com/dxFeed/dxfeed-graal-net-api/tree/main/samples/FetchDailyCandles)
+- [x] [FetchDailyCandlesSample](samples/Candle/FetchDailyCandlesSample)
   is a simple demonstration of how to fetch last N-days of candles for a specified symbol
-- [x] [DxFeedReconnectSample](https://github.com/dxFeed/dxfeed-graal-net-api/tree/main/samples/DxFeedReconnectSample)
+- [x] [ReconnectSample](samples/API/ReconnectSample)
   is a simple demonstration of how to connect to an endpoint, subscribe to market data events, handle reconnections
   and re-subscribing.
-- [x] [CandleDataResponseReader](https://github.com/dxFeed/dxfeed-graal-net-api/tree/main/samples/CandleDataResponseReader)
+- [x] [CandleDataSample](samples/Candle/CandleDataSample)
   is a simple demonstration of how to parse response from CandleData service.
-- [x] [MarketDepthModelSample](https://github.com/dxFeed/dxfeed-graal-net-api/tree/main/samples/UI/MarketDepthModelSample)
+- [x] [MarketDepthModelSample](samples/UI/MarketDepthModelSample)
   is a simple demonstration of how to draw a Market Depth using Avalonia UI.
-- [x] [CandleChartSample](https://github.com/dxFeed/dxfeed-graal-net-api/tree/main/samples/UI/CandleChartSample)
+- [x] [CandleChartSample](samples/UI/CandleChartSample)
   is a simple demonstration of how to draw a Candlestick Chart using Avalonia UI.
-- [x] [IncOrderSnapshotSample](https://github.com/dxFeed/dxfeed-graal-net-api/tree/main/samples/IncOrderSnapshotSample)
+- [x] [IncOrderSnapshotSample](samples/Model/IncOrderSnapshotSample)
   is a simple demonstration of how to subscribe to the Order event and handle snapshots and updates.
-- [x] [MultipleMarketDepthSample](https://github.com/dxFeed/dxfeed-graal-net-api/tree/main/samples/MultipleMarketDepthSample)
+- [x] [MultipleMarketDepthSample](samples/Model/MultipleMarketDepthSample)
   is a simple demonstration of how to use the `MarketDepthModel` to manage and display order books for multiple symbols.
-- [x] [DXFeedOptionChain](https://github.com/dxFeed/dxfeed-graal-net-api/tree/main/samples/DXFeedOptionChain)
+- [x] [OptionChainSample](samples/IPF/OptionChainSample)
   how to build option chains, and prints quotes for nearby option strikes.
-- [x] [LastEventConsoleSample](https://github.com/dxFeed/dxfeed-graal-net-api/tree/main/samples/LastEventConsoleSample)
+- [x] [LastEventConsoleSample](samples/Console/LastEventConsoleSample)
   is a simple demonstration how to subscribe to various market events with the dxFeed API, cache them in memory, and
   take snapshots of these events based on user input.
-- [x] [PriceLevelBookSample](https://github.com/dxFeed/dxfeed-graal-net-api/tree/main/samples/UI/PriceLevelBookSample)
+- [x] [PriceLevelBookSample](samples/UI/PriceLevelBookSample)
   is a simple demonstration of how to represent a price level book (market by price) that aggregates individual orders
   (market by order).
 
@@ -559,8 +559,6 @@ sudo /usr/bin/xattr -r -d com.apple.quarantine <directory_with_tools>
 
 - [x] [GetLastEvent](https://docs.dxfeed.com/dxfeed/api/com/dxfeed/api/DXFeed.html#getLastEvent-E-)
   returns the last event for the specified event instance
-  ([DxFeedSample](https://github.com/dxFeed/dxfeed-graal-net-api/tree/main/samples/DxFeedSample))
-
 - [x] [GetTimeSeriesPromise](https://docs.dxfeed.com/dxfeed/api/com/dxfeed/api/DXFeed.html#getTimeSeriesPromise-java.lang.Class-java.lang.Object-long-long-)
   requests time series events for the specified event type, symbol, and time range
 
@@ -568,7 +566,6 @@ sudo /usr/bin/xattr -r -d com.apple.quarantine <directory_with_tools>
 
 - [x] [InstrumentProfile](https://dxfeed.github.io/dxfeed-graal-net-api/docs/api/DxFeed.Graal.Net.Ipf.InstrumentProfile.html)
   represents basic profile information about a market instrument
-  ([DxFeedIpfConnect](https://github.com/dxFeed/dxfeed-graal-net-api/tree/main/samples/DxFeedIpfConnect))
 
 - [x] [InstrumentProfileReader](https://dxfeed.github.io/dxfeed-graal-net-api/docs/api/DxFeed.Graal.Net.Ipf.InstrumentProfileReader.html)
   reads
@@ -576,7 +573,6 @@ sudo /usr/bin/xattr -r -d com.apple.quarantine <directory_with_tools>
 
 - [x] [InstrumentProfileCollector](https://dxfeed.github.io/dxfeed-graal-net-api/docs/api/DxFeed.Graal.Net.Ipf.Live.InstrumentProfileCollector.html)
   collects instrument profile updates and provides the live instrument profiles list
-  ([DxFeedLiveIpfSample](https://github.com/dxFeed/dxfeed-graal-net-api/tree/main/samples/DxFeedLiveIpfSample))
 
 - [x] [InstrumentProfileConnection](https://dxfeed.github.io/dxfeed-graal-net-api/docs/api/DxFeed.Graal.Net.Ipf.Live.InstrumentProfileConnection.html)
   connects to an instrument profile URL and reads instrument profiles with support of streaming live updates
@@ -584,4 +580,3 @@ sudo /usr/bin/xattr -r -d com.apple.quarantine <directory_with_tools>
 - [x] [Schedule](https://docs.dxfeed.com/dxfeed/api/com/dxfeed/schedule/Schedule.html)
   provides an API to retrieving and exploring the trading schedules of various exchanges and different financial
   instrument classes
-  ([ScheduleSample](https://github.com/dxFeed/dxfeed-graal-net-api/tree/main/samples/ScheduleSample))

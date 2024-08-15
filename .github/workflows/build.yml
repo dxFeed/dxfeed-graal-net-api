@@ -61,24 +61,19 @@ jobs:
             7.0.x
             8.0.x
 
-      - name: Publish Tools
+      - name: Publish
         run: |
-          platforms="win-x64 linux-x64 osx-x64 osx-arm64"
-          echo "$platforms" | tr ' ' '\n' | while read -r platform; do
-            ./publish.sh DxFeed.Graal.Net.Tools net8.0 "$platform"
-          done
-
-          (cd artifacts/Publish/DxFeed.Graal.Net.Tools && for dir in */; do
-            (cd "$dir" && zip "../DxFeed.Graal.Net.Tools-${dir%/}-${{ github.ref_name }}.zip" . -r -D)
-          done)
+          dotnet tool install -g dotnet-script
+          dotnet script publish.csx
         shell: bash
 
-      - name: Upload Tools
+      - name: Upload
         uses: softprops/action-gh-release@v1
         with:
           generate_release_notes: true
           files: |
             artifacts/Publish/DxFeed.Graal.Net.Tools/*.zip
+            artifacts/Publish/Samples/*.zip
           token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Pack NuGet
@@ -135,20 +130,3 @@ jobs:
           tag_name: ${{ steps.prepare_tag.outputs.DEPLOY_TAG_NAME }}
           commit_message: 'deploy: ${{ github.ref_name }}'
           allow_empty_commit: true
-
-# ToDo Create a reusable workflow and extract uploading artifacts to a separate flow.
-#      - name: Upload DxFeed.Graal.Net.Tools
-#        if: github.event_name == 'workflow_dispatch'
-#        uses: actions/upload-artifact@v3
-#        with:
-#          name: DxFeed.Graal.Net.Tools-self-contained-${{ matrix.OS_NAME }}
-#          path: |
-#            artifacts/Publish/${{ matrix.OS_NAME }}/
-#
-#      - name: Upload DxFeed.Graal.Net.Tools for macOS Apple Silicon
-#        if: github.event_name == 'workflow_dispatch' && matrix.os == 'macOS-latest'
-#        uses: actions/upload-artifact@v3
-#        with:
-#          name: DxFeed.Graal.Net.Tools-self-contained-osx-arm64
-#          path: |
-#            artifacts/Publish/osx-arm64
