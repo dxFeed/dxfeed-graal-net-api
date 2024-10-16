@@ -178,8 +178,8 @@ public class Day
     public bool TryGetFirstSession(SessionFilter filter, out Session session)
     {
         session = null!;
-        var first = this.handle.FindFirstSession(filter.Handle);
-        if (first == null)
+        var first = handle.FindFirstSession(filter.Handle);
+        if (first == null || first.IsInvalid)
         {
             return false;
         }
@@ -216,13 +216,13 @@ public class Day
     public bool TryGetLastSession(SessionFilter filter, out Session session)
     {
         session = null!;
-        var first = this.handle.FindLastSession(filter.Handle);
-        if (first == null)
+        var last = handle.FindLastSession(filter.Handle);
+        if (last == null || last.IsInvalid)
         {
             return false;
         }
 
-        session = new Session(Schedule, first);
+        session = new Session(Schedule, last);
         return true;
     }
 
@@ -248,8 +248,8 @@ public class Day
     public bool TryGetPrevDay(DayFilter filter, out Day day)
     {
         day = null!;
-        var prev = this.handle.FindPrevDay(filter.Handle);
-        if (prev == null)
+        var prev = handle.FindPrevDay(filter.Handle);
+        if (prev == null || prev.IsInvalid)
         {
             return false;
         }
@@ -284,8 +284,8 @@ public class Day
     public bool TryGetNextDay(DayFilter filter, out Day day)
     {
         day = null!;
-        var next = this.handle.FindNextDay(filter.Handle);
-        if (next == null)
+        var next = handle.FindNextDay(filter.Handle);
+        if (next == null || next.IsInvalid)
         {
             return false;
         }
