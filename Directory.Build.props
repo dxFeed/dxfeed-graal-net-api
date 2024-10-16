@@ -25,11 +25,11 @@
 
     <!-- Versioning -->
     <!-- Assembly version (System.Reflection.Assembly.GetExecutingAssembly()) -->
-    <AssemblyVersion>2.5.1</AssemblyVersion>
+    <AssemblyVersion>2.5.2</AssemblyVersion>
     <!-- File (dll) version -->
-    <FileVersion>2.5.1.0</FileVersion>
+    <FileVersion>2.5.2.0</FileVersion>
     <!-- NuGet (product) version -->
-    <Version>2.5.1</Version>
+    <Version>2.5.2</Version>
   </PropertyGroup>
 
   <ItemGroup Label="PackageIcon">

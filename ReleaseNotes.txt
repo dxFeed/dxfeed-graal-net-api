@@ -1,3 +1,5 @@
+## Version 2.5.2
+
 * [MDAPI-165] [.NET] DxFeed.Graal.Net.Schedules.GetNextSession does not return null if no session exists
 
 ## Version 2.5.1
