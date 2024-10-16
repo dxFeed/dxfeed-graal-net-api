@@ -105,7 +105,7 @@ public class Session
     {
         session = null!;
         var prev = handle.FindPrevSession(filter.Handle);
-        if (prev == null)
+        if (prev == null || prev.IsInvalid)
         {
             return false;
         }
@@ -144,13 +144,13 @@ public class Session
     public bool TryGetNextSession(SessionFilter filter, out Session session)
     {
         session = null!;
-        var prev = handle.FindNextSession(filter.Handle);
-        if (prev == null)
+        var next = handle.FindNextSession(filter.Handle);
+        if (next == null || next.IsInvalid)
         {
             return false;
         }
 
-        session = new Session(schedule, prev);
+        session = new Session(schedule, next);
         return true;
     }
 

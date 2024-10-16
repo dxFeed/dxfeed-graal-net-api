@@ -1,3 +1,5 @@
+* [MDAPI-165] [.NET] DxFeed.Graal.Net.Schedules.GetNextSession does not return null if no session exists
+
 ## Version 2.5.1
 
 * [MDAPI-124] [.NET] Remove the ability to pass multiple sources for PriceLeveBookSample

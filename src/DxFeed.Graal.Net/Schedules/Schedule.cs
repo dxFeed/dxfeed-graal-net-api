@@ -147,13 +147,13 @@ public class Schedule
     public bool TryGetNearestSessionByTime(long time, SessionFilter filter, out Session session)
     {
         session = null!;
-        var prev = handle.FindNearestSessionByTime(time, filter.Handle);
-        if (prev == null)
+        var nearest = handle.FindNearestSessionByTime(time, filter.Handle);
+        if (nearest == null || nearest.IsInvalid)
         {
             return false;
         }
 
-        session = new Session(this, prev);
+        session = new Session(this, nearest);
         return true;
     }
 
