@@ -1,11 +1,12 @@
 // <copyright file="FeedNative.cs" company="Devexperts LLC">
-// Copyright © 2022 Devexperts LLC. All rights reserved.
+// Copyright © 2024 Devexperts LLC. All rights reserved.
 // This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 // If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
 // </copyright>
 
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
+using DxFeed.Graal.Net.Events;
 using DxFeed.Graal.Net.Native.ErrorHandling;
 using DxFeed.Graal.Net.Native.Events;
 using DxFeed.Graal.Net.Native.Graal;
@@ -42,6 +43,21 @@ internal sealed unsafe class FeedNative
 
     public void DetachSubscriptionAndClear(SubscriptionNative subscriptionNative) =>
         FeedImport.DetachSubscriptionAndClear(GetCurrentThread(), _feedHandle, subscriptionNative.GetHandle());
+
+    public T GetLastEvent<T>(T eventType)
+        where T : ILastingEvent
+    {
+        var handle = EventMapper.ToNative(eventType);
+        try
+        {
+            ErrorCheck.SafeCall(FeedImport.GetLastEvent(GetCurrentThread(), _feedHandle, handle));
+            return (T)EventMapper.FillFromNative(handle, eventType);
+        }
+        finally
+        {
+            EventMapper.Release(handle);
+        }
+    }
 
     public PromiseNative GetLastEventPromise(EventCodeNative eventCode, object symbol) =>
         FeedImport.GetLastEventPromise(GetCurrentThread(), _feedHandle, eventCode, symbol);
@@ -99,6 +115,16 @@ internal sealed unsafe class FeedNative
             FeedHandle* feedHandle,
             SubscriptionHandle* subHandle) =>
             ErrorCheck.SafeCall(NativeDetachSubscriptionAndClear(thread, feedHandle, subHandle));
+
+        [DllImport(
+            ImportInfo.DllName,
+            CallingConvention = CallingConvention.Cdecl,
+            CharSet = CharSet.Ansi,
+            EntryPoint = "dxfg_DXFeed_getLastEvent")]
+        public static extern int GetLastEvent(
+            nint thread,
+            FeedHandle* feedHandle,
+            EventTypeNative* eventTypeNative);
 
         [DllImport(
             ImportInfo.DllName,
