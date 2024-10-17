@@ -9,6 +9,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
+using DxFeed.Graal.Net.Api.Osub;
 using DxFeed.Graal.Net.Events;
 using DxFeed.Graal.Net.Native.Feed;
 using DxFeed.Graal.Net.Utils;
@@ -79,9 +80,88 @@ public class DXFeed
         CreateSubscription(eventTypes.ToArray());
 
     /// <summary>
+    /// Returns the last event for the specified event instance.
+    /// This method works only for event types that implement <see cref="ILastingEvent"/> marker interface.
+    /// This method <b>does not</b> make any remote calls to the uplink data provider.
+    /// It just retrieves last received event from the local cache of this feed.
+    /// The events are stored in the cache only if there is some
+    /// attached <see cref="DXFeedSubscription"/> that is subscribed to the corresponding symbol and event type.
+    /// <see cref="WildcardSymbol.All"/> subscription does not count for that purpose.
+    ///
+    /// <p>Use <see cref="GetLastEventAsync{T}"/> method
+    /// if an event needs to be requested in the absence of subscription.</p>
+    ///
+    /// <p>This method fills in the values for the last event into the <c>event</c> argument.
+    /// If the last event is not available for any reason (no subscription, no connection to uplink, etc).
+    /// then the event object is not changed.
+    /// This method always returns the same <c>event</c> instance that is passed to it as an argument.</p>
+    ///
+    /// <p>This method provides no way to distinguish a case when there is no subscription from the case when
+    /// there is a subscription, but the event data have not arrived yet. It is recommended to use
+    /// <see cref="GetLasEventIfSubscribed{TE}"/> method
+    /// instead of this <c>GetLastEvent</c> method to fail-fast in case when the subscription was supposed to be
+    /// set by the logic of the code, since <see cref="GetLasEventIfSubscribed{TE}"/>
+    /// method returns null when there is no subscription.</p>
+    ///
+    /// <p>Note, that this method does not work when <see cref="DXEndpoint"/> was created with
+    /// <see cref="DXEndpoint.Role.StreamFeed"/> role (never fills in the event).</p>
+    ///
+    /// </summary>
+    /// <param name="e">The event.</param>
+    /// <typeparam name="TE">The type of event.</typeparam>
+    /// <returns>The same event.</returns>
+    public TE GetLastEvent<TE>(TE e)
+        where TE : ILastingEvent =>
+        _feedNative.GetLastEvent(e);
+
+    /// <summary>
+    /// Returns the last events for the specified list of event instances.
+    /// This is a bulk version of <see cref="GetLastEvent{TE}"/> method.
+    ///
+    /// <p>Note, that this method does not work when <see cref="DXEndpoint"/> was created with
+    /// <see cref="DXEndpoint.Role.StreamFeed"/> role (never fills in the event).</p>
+    ///
+    /// </summary>
+    /// <param name="events">The collection of events.</param>
+    /// <typeparam name="TE">The type of event.</typeparam>
+    /// <returns>The same collection of events.</returns>
+    public IList<TE> GetLastEvents<TE>(IList<TE> events)
+        where TE : ILastingEvent =>
+        _feedNative.GetLastEvents(events);
+
+    /// <summary>
+    /// Returns the last event for the specified event type and symbol if there is a subscription for it.
+    /// This method works only for event types that implement <see cref="ILastingEvent"/> marker interface.
+    /// This method <b>does not</b> make any remote calls to the uplink data provider.
+    /// It just retrieves last received event from the local cache of this feed.
+    /// The events are stored in the cache only if there is some
+    /// attached <see cref="DXFeedSubscription"/> that is subscribed to the corresponding event type and symbol.
+    /// The subscription can also be permanently defined using <see cref="DXEndpoint"/> properties.
+    /// <see cref="WildcardSymbol.All"/> subscription does not count for that purpose.
+    /// If there is no subscription, then this method returns null.
+    ///
+    /// <p>If there is a subscription, but the event has not arrived from the uplink data provider,
+    /// this method returns an non-initialized event object: its <see cref="GetLastEvent{TE}"/>
+    /// property is set to the requested symbol, but all the other properties have their default values.</p>
+    ///
+    /// <p>Use <see cref="GetLastEventAsync{T}"/> method
+    /// if an event needs to be requested in the absence of subscription.</p>
+    ///
+    /// <p>Note, that this method does not work when <see cref="DXEndpoint"/> was created with
+    /// <see cref="DXEndpoint.Role.StreamFeed"/> role (never fills in the event).</p>
+    ///
+    /// </summary>
+    /// <param name="symbol">The symbol.</param>
+    /// <typeparam name="TE">The event type.</typeparam>
+    /// <returns>The event or null if there is no subscription for the specified event type and symbol.</returns>
+    public TE? GetLasEventIfSubscribed<TE>(object symbol)
+        where TE : ILastingEvent =>
+        _feedNative.GetLastEventIfSubscribed<TE>(symbol);
+
+    /// <summary>
     /// Requests the last event for the specified event type and symbol.
     /// This method works only for event types that implement  <see cref="ILastingEvent"/>  marker interface.
-    /// This method requests the data from the the uplink data provider,
+    /// This method requests the data from the uplink data provider,
     /// creates new event of the specified event type,
     /// and <see cref="Task{TResult}.Result"/> the resulting task with this event.
     /// </summary>

@@ -1,5 +1,5 @@
 // <copyright file="SpreadOrderMapper.cs" company="Devexperts LLC">
-// Copyright © 2022 Devexperts LLC. All rights reserved.
+// Copyright © 2024 Devexperts LLC. All rights reserved.
 // This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 // If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
 // </copyright>
@@ -17,6 +17,9 @@ internal sealed class SpreadOrderMapper : OrderBaseMapper<SpreadOrder, SpreadOrd
     public override unsafe EventTypeNative* ToNative(IEventType eventType) =>
         (EventTypeNative*)Convert((SpreadOrder)eventType);
 
+    public override unsafe IEventType FillFromNative(EventTypeNative* nativeEventType, IEventType eventType) =>
+        Fill((SpreadOrderNative*)nativeEventType, (SpreadOrder)eventType);
+
     public override unsafe void Release(EventTypeNative* eventType)
     {
         if (eventType == (EventTypeNative*)0)
@@ -31,8 +34,8 @@ internal sealed class SpreadOrderMapper : OrderBaseMapper<SpreadOrder, SpreadOrd
 
     protected override unsafe SpreadOrder Convert(SpreadOrderNative* eventType)
     {
-        var spreadOrder = CreateOrderBase((OrderBaseNative*)eventType);
-        spreadOrder.SpreadSymbol = eventType->SpreadSymbol;
+        var spreadOrder = new SpreadOrder();
+        Fill(eventType, spreadOrder);
         return spreadOrder;
     }
 
@@ -41,5 +44,12 @@ internal sealed class SpreadOrderMapper : OrderBaseMapper<SpreadOrder, SpreadOrd
         var ptr = AllocEventType();
         *ptr = new() { OrderBase = CreateOrderBase(eventType), SpreadSymbol = eventType.SpreadSymbol, };
         return ptr;
+    }
+
+    private static unsafe SpreadOrder Fill(SpreadOrderNative* eventType, SpreadOrder spreadOrder)
+    {
+        AssignOrderBase((OrderBaseNative*)eventType, spreadOrder);
+        spreadOrder.SpreadSymbol = eventType->SpreadSymbol;
+        return spreadOrder;
     }
 }
