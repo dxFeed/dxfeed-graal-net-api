@@ -1,5 +1,5 @@
 // <copyright file="OptionSaleMapper.cs" company="Devexperts LLC">
-// Copyright © 2022 Devexperts LLC. All rights reserved.
+// Copyright © 2024 Devexperts LLC. All rights reserved.
 // This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 // If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
 // </copyright>
@@ -17,6 +17,9 @@ internal sealed class OptionSaleMapper : EventTypeMapper<OptionSale, OptionSaleN
     public override unsafe EventTypeNative* ToNative(IEventType eventType) =>
         (EventTypeNative*)Convert((OptionSale)eventType);
 
+    public override unsafe IEventType FillFromNative(EventTypeNative* nativeEventType, IEventType eventType) =>
+        Fill((OptionSaleNative*)nativeEventType, (OptionSale)eventType);
+
     public override unsafe void Release(EventTypeNative* eventType)
     {
         if (eventType == (EventTypeNative*)0)
@@ -32,22 +35,8 @@ internal sealed class OptionSaleMapper : EventTypeMapper<OptionSale, OptionSaleN
 
     protected override unsafe OptionSale Convert(OptionSaleNative* eventType)
     {
-        var optionSale = CreateEventType(eventType);
-        optionSale.EventFlags = eventType->EventFlags;
-        optionSale.Index = eventType->Index;
-        optionSale.TimeSequence = eventType->TimeSequence;
-        optionSale.TimeNanoPart = eventType->TimeNanoPart;
-        optionSale.ExchangeCode = eventType->ExchangeCode;
-        optionSale.Price = eventType->Price;
-        optionSale.Size = eventType->Size;
-        optionSale.BidPrice = eventType->BidPrice;
-        optionSale.AskPrice = eventType->AskPrice;
-        optionSale.ExchangeSaleConditions = eventType->ExchangeSaleConditions;
-        optionSale.Flags = eventType->Flags;
-        optionSale.UnderlyingPrice = eventType->UnderlyingPrice;
-        optionSale.Volatility = eventType->Volatility;
-        optionSale.Delta = eventType->Delta;
-        optionSale.OptionSymbol = eventType->OptionSymbol;
+        var optionSale = new OptionSale();
+        Fill(eventType, optionSale);
         return optionSale;
     }
 
@@ -74,5 +63,26 @@ internal sealed class OptionSaleMapper : EventTypeMapper<OptionSale, OptionSaleN
             OptionSymbol = eventType.OptionSymbol,
         };
         return ptr;
+    }
+
+    private static unsafe OptionSale Fill(OptionSaleNative* eventType, OptionSale optionSale)
+    {
+        AssignEventType((EventTypeNative*)eventType, optionSale);
+        optionSale.EventFlags = eventType->EventFlags;
+        optionSale.Index = eventType->Index;
+        optionSale.TimeSequence = eventType->TimeSequence;
+        optionSale.TimeNanoPart = eventType->TimeNanoPart;
+        optionSale.ExchangeCode = eventType->ExchangeCode;
+        optionSale.Price = eventType->Price;
+        optionSale.Size = eventType->Size;
+        optionSale.BidPrice = eventType->BidPrice;
+        optionSale.AskPrice = eventType->AskPrice;
+        optionSale.ExchangeSaleConditions = eventType->ExchangeSaleConditions;
+        optionSale.Flags = eventType->Flags;
+        optionSale.UnderlyingPrice = eventType->UnderlyingPrice;
+        optionSale.Volatility = eventType->Volatility;
+        optionSale.Delta = eventType->Delta;
+        optionSale.OptionSymbol = eventType->OptionSymbol;
+        return optionSale;
     }
 }

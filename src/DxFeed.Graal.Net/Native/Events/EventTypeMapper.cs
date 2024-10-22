@@ -1,5 +1,5 @@
 // <copyright file="EventTypeMapper.cs" company="Devexperts LLC">
-// Copyright © 2022 Devexperts LLC. All rights reserved.
+// Copyright © 2024 Devexperts LLC. All rights reserved.
 // This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 // If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
 // </copyright>
@@ -29,6 +29,9 @@ internal abstract class EventTypeMapper<TEventType, TEventTypeNative> : IEventMa
     public abstract unsafe EventTypeNative* ToNative(IEventType eventType);
 
     /// <inheritdoc/>
+    public abstract unsafe IEventType FillFromNative(EventTypeNative* nativeEventType, IEventType eventType);
+
+    /// <inheritdoc/>
     public abstract unsafe void Release(EventTypeNative* eventType);
 
     /// <summary>
@@ -50,18 +53,12 @@ internal abstract class EventTypeMapper<TEventType, TEventTypeNative> : IEventMa
     protected static EventTypeNative CreateEventType(EventCodeNative eventCode, TEventType eventType) =>
         new() { EventCode = eventCode, EventSymbol = eventType.EventSymbol, EventTime = eventType.EventTime, };
 
-    /// <inheritdoc cref="CreateEventType(EventTypeNative*)"/>
-    protected static unsafe TEventType CreateEventType(TEventTypeNative* eventType) =>
-        CreateEventType((EventTypeNative*)eventType);
-
-    /// <summary>
-    /// Creates the specified TEventType from <see cref="EventTypeNative"/>.
-    /// Populates only the fields contained in <see cref="IEventType"/>.
-    /// </summary>
-    /// <param name="eventType">The <see cref="EventTypeNative"/>.</param>
-    /// <returns>The created TEventType.</returns>
-    protected static unsafe TEventType CreateEventType(EventTypeNative* eventType) =>
-        new() { EventSymbol = eventType->EventSymbol, EventTime = eventType->EventTime, };
+    protected static unsafe TEventType AssignEventType(EventTypeNative* eventTypeNative, TEventType eventType)
+    {
+        eventType.EventSymbol = eventTypeNative->EventSymbol;
+        eventType.EventTime = eventTypeNative->EventTime;
+        return eventType;
+    }
 
     /// <summary>
     /// Allocates an unmanaged pointer with type and size TEventTypeNative.

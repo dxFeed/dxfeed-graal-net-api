@@ -1,5 +1,5 @@
 // <copyright file="ProfileMapper.cs" company="Devexperts LLC">
-// Copyright © 2022 Devexperts LLC. All rights reserved.
+// Copyright © 2024 Devexperts LLC. All rights reserved.
 // This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 // If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
 // </copyright>
@@ -17,6 +17,9 @@ internal sealed class ProfileMapper : EventTypeMapper<Profile, ProfileNative>
     public override unsafe EventTypeNative* ToNative(IEventType eventType) =>
         (EventTypeNative*)Convert((Profile)eventType);
 
+    public override unsafe IEventType FillFromNative(EventTypeNative* nativeEventType, IEventType eventType) =>
+        Fill((ProfileNative*)nativeEventType, (Profile)eventType);
+
     public override unsafe void Release(EventTypeNative* eventType)
     {
         if (eventType == (EventTypeNative*)0)
@@ -32,23 +35,8 @@ internal sealed class ProfileMapper : EventTypeMapper<Profile, ProfileNative>
 
     protected override unsafe Profile Convert(ProfileNative* eventType)
     {
-        var profile = CreateEventType(eventType);
-        profile.Description = eventType->Description;
-        profile.StatusReason = eventType->StatusReason;
-        profile.HaltStartTime = eventType->HaltStartTime;
-        profile.HaltEndTime = eventType->HaltEndTime;
-        profile.HighLimitPrice = eventType->HighLimitPrice;
-        profile.LowLimitPrice = eventType->LowLimitPrice;
-        profile.High52WeekPrice = eventType->High52WeekPrice;
-        profile.Low52WeekPrice = eventType->Low52WeekPrice;
-        profile.Beta = eventType->Beta;
-        profile.EarningsPerShare = eventType->EarningsPerShare;
-        profile.DividendFrequency = eventType->DividendFrequency;
-        profile.ExDividendAmount = eventType->ExDividendAmount;
-        profile.ExDividendDayId = eventType->ExDividendDayId;
-        profile.Shares = eventType->Shares;
-        profile.FreeFloat = eventType->FreeFloat;
-        profile.Flags = eventType->Flags;
+        var profile = new Profile();
+        Fill(eventType, profile);
         return profile;
     }
 
@@ -76,5 +64,27 @@ internal sealed class ProfileMapper : EventTypeMapper<Profile, ProfileNative>
             Flags = eventType.Flags,
         };
         return ptr;
+    }
+
+    private static unsafe Profile Fill(ProfileNative* eventType, Profile profile)
+    {
+        AssignEventType((EventTypeNative*)eventType, profile);
+        profile.Description = eventType->Description;
+        profile.StatusReason = eventType->StatusReason;
+        profile.HaltStartTime = eventType->HaltStartTime;
+        profile.HaltEndTime = eventType->HaltEndTime;
+        profile.HighLimitPrice = eventType->HighLimitPrice;
+        profile.LowLimitPrice = eventType->LowLimitPrice;
+        profile.High52WeekPrice = eventType->High52WeekPrice;
+        profile.Low52WeekPrice = eventType->Low52WeekPrice;
+        profile.Beta = eventType->Beta;
+        profile.EarningsPerShare = eventType->EarningsPerShare;
+        profile.DividendFrequency = eventType->DividendFrequency;
+        profile.ExDividendAmount = eventType->ExDividendAmount;
+        profile.ExDividendDayId = eventType->ExDividendDayId;
+        profile.Shares = eventType->Shares;
+        profile.FreeFloat = eventType->FreeFloat;
+        profile.Flags = eventType->Flags;
+        return profile;
     }
 }

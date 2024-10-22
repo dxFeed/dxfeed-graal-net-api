@@ -1,5 +1,5 @@
 // <copyright file="CandleMapper.cs" company="Devexperts LLC">
-// Copyright © 2022 Devexperts LLC. All rights reserved.
+// Copyright © 2024 Devexperts LLC. All rights reserved.
 // This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 // If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
 // </copyright>
@@ -17,25 +17,16 @@ internal sealed class CandleMapper : EventTypeMapper<Candle, CandleNative>
     public override unsafe EventTypeNative* ToNative(IEventType eventType) =>
         (EventTypeNative*)Convert((Candle)eventType);
 
+    public override unsafe IEventType FillFromNative(EventTypeNative* nativeEventType, IEventType eventType) =>
+        Fill((CandleNative*)nativeEventType, (Candle)eventType);
+
     public override unsafe void Release(EventTypeNative* eventType) =>
         ReleaseEventType(eventType);
 
     protected override unsafe Candle Convert(CandleNative* eventType)
     {
-        var candle = CreateEventType(eventType);
-        candle.EventFlags = eventType->EventFlags;
-        candle.Index = eventType->Index;
-        candle.Count = eventType->Count;
-        candle.Open = eventType->Open;
-        candle.High = eventType->High;
-        candle.Low = eventType->Low;
-        candle.Close = eventType->Close;
-        candle.Volume = eventType->Volume;
-        candle.VWAP = eventType->VWAP;
-        candle.BidVolume = eventType->BidVolume;
-        candle.AskVolume = eventType->AskVolume;
-        candle.ImpVolatility = eventType->ImpVolatility;
-        candle.OpenInterest = eventType->OpenInterest;
+        var candle = new Candle();
+        Fill(eventType, candle);
         return candle;
     }
 
@@ -60,5 +51,24 @@ internal sealed class CandleMapper : EventTypeMapper<Candle, CandleNative>
             OpenInterest = eventType.OpenInterest,
         };
         return ptr;
+    }
+
+    private static unsafe Candle Fill(CandleNative* eventType, Candle candle)
+    {
+        AssignEventType((EventTypeNative*)eventType, candle);
+        candle.EventFlags = eventType->EventFlags;
+        candle.Index = eventType->Index;
+        candle.Count = eventType->Count;
+        candle.Open = eventType->Open;
+        candle.High = eventType->High;
+        candle.Low = eventType->Low;
+        candle.Close = eventType->Close;
+        candle.Volume = eventType->Volume;
+        candle.VWAP = eventType->VWAP;
+        candle.BidVolume = eventType->BidVolume;
+        candle.AskVolume = eventType->AskVolume;
+        candle.ImpVolatility = eventType->ImpVolatility;
+        candle.OpenInterest = eventType->OpenInterest;
+        return candle;
     }
 }

@@ -1,5 +1,5 @@
 // <copyright file="UnderlyingMapper.cs" company="Devexperts LLC">
-// Copyright © 2022 Devexperts LLC. All rights reserved.
+// Copyright © 2024 Devexperts LLC. All rights reserved.
 // This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 // If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
 // </copyright>
@@ -17,20 +17,16 @@ internal sealed class UnderlyingMapper : EventTypeMapper<Underlying, UnderlyingN
     public override unsafe EventTypeNative* ToNative(IEventType eventType) =>
         (EventTypeNative*)Convert((Underlying)eventType);
 
+    public override unsafe IEventType FillFromNative(EventTypeNative* nativeEventType, IEventType eventType) =>
+        Fill((UnderlyingNative*)nativeEventType, (Underlying)eventType);
+
     public override unsafe void Release(EventTypeNative* eventType) =>
         ReleaseEventType(eventType);
 
     protected override unsafe Underlying Convert(UnderlyingNative* eventType)
     {
-        var underlying = CreateEventType(eventType);
-        underlying.EventFlags = eventType->EventFlags;
-        underlying.Index = eventType->Index;
-        underlying.Volatility = eventType->Volatility;
-        underlying.FrontVolatility = eventType->FrontVolatility;
-        underlying.BackVolatility = eventType->BackVolatility;
-        underlying.CallVolume = eventType->CallVolume;
-        underlying.PutVolume = eventType->PutVolume;
-        underlying.PutCallRatio = eventType->PutCallRatio;
+        var underlying = new Underlying();
+        Fill(eventType, underlying);
         return underlying;
     }
 
@@ -50,5 +46,19 @@ internal sealed class UnderlyingMapper : EventTypeMapper<Underlying, UnderlyingN
             PutCallRatio = eventType.PutCallRatio,
         };
         return ptr;
+    }
+
+    private static unsafe Underlying Fill(UnderlyingNative* eventType, Underlying underlying)
+    {
+        AssignEventType((EventTypeNative*)eventType, underlying);
+        underlying.EventFlags = eventType->EventFlags;
+        underlying.Index = eventType->Index;
+        underlying.Volatility = eventType->Volatility;
+        underlying.FrontVolatility = eventType->FrontVolatility;
+        underlying.BackVolatility = eventType->BackVolatility;
+        underlying.CallVolume = eventType->CallVolume;
+        underlying.PutVolume = eventType->PutVolume;
+        underlying.PutCallRatio = eventType->PutCallRatio;
+        return underlying;
     }
 }

@@ -1,5 +1,5 @@
 // <copyright file="GreeksMapper.cs" company="Devexperts LLC">
-// Copyright © 2022 Devexperts LLC. All rights reserved.
+// Copyright © 2024 Devexperts LLC. All rights reserved.
 // This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 // If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
 // </copyright>
@@ -17,21 +17,16 @@ internal sealed class GreeksMapper : EventTypeMapper<Greeks, GreeksNative>
     public override unsafe EventTypeNative* ToNative(IEventType eventType) =>
         (EventTypeNative*)Convert((Greeks)eventType);
 
+    public override unsafe IEventType FillFromNative(EventTypeNative* nativeEventType, IEventType eventType) =>
+        Fill((GreeksNative*)nativeEventType, (Greeks)eventType);
+
     public override unsafe void Release(EventTypeNative* eventType) =>
         ReleaseEventType(eventType);
 
     protected override unsafe Greeks Convert(GreeksNative* eventType)
     {
-        var greeks = CreateEventType(eventType);
-        greeks.EventFlags = eventType->EventFlags;
-        greeks.Index = eventType->Index;
-        greeks.Price = eventType->Price;
-        greeks.Volatility = eventType->Volatility;
-        greeks.Delta = eventType->Delta;
-        greeks.Gamma = eventType->Gamma;
-        greeks.Theta = eventType->Theta;
-        greeks.Rho = eventType->Rho;
-        greeks.Vega = eventType->Vega;
+        var greeks = new Greeks();
+        Fill(eventType, greeks);
         return greeks;
     }
 
@@ -52,5 +47,20 @@ internal sealed class GreeksMapper : EventTypeMapper<Greeks, GreeksNative>
             Vega = eventType.Vega,
         };
         return ptr;
+    }
+
+    private static unsafe Greeks Fill(GreeksNative* eventType, Greeks greeks)
+    {
+        AssignEventType((EventTypeNative*)eventType, greeks);
+        greeks.EventFlags = eventType->EventFlags;
+        greeks.Index = eventType->Index;
+        greeks.Price = eventType->Price;
+        greeks.Volatility = eventType->Volatility;
+        greeks.Delta = eventType->Delta;
+        greeks.Gamma = eventType->Gamma;
+        greeks.Theta = eventType->Theta;
+        greeks.Rho = eventType->Rho;
+        greeks.Vega = eventType->Vega;
+        return greeks;
     }
 }

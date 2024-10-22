@@ -1,5 +1,5 @@
 // <copyright file="IEventMapper.cs" company="Devexperts LLC">
-// Copyright © 2022 Devexperts LLC. All rights reserved.
+// Copyright © 2024 Devexperts LLC. All rights reserved.
 // This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 // If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
 // </copyright>
@@ -34,6 +34,14 @@ internal interface IEventMapper
     /// Must be released by <see cref="Release"/>.
     /// </returns>
     unsafe EventTypeNative* ToNative(IEventType eventType);
+
+    /// <summary>
+    /// Populates an existing managed event type instance with data from a native event type.
+    /// </summary>
+    /// <param name="nativeEventType">An unsafe pointer to a native <see cref="EventTypeNative"/> instance.</param>
+    /// <param name="eventType">The managed <see cref="IEventType"/> instance to populate.</param>
+    /// <returns>The populated <see cref="IEventType"/> instance.</returns>
+    public unsafe IEventType FillFromNative(EventTypeNative* nativeEventType, IEventType eventType);
 
     /// <summary>
     /// Releases all associated resources.

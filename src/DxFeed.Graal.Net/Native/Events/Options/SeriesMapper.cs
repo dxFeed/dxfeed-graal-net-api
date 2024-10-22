@@ -17,23 +17,16 @@ internal sealed class SeriesMapper : EventTypeMapper<Series, SeriesNative>
     public override unsafe EventTypeNative* ToNative(IEventType eventType) =>
         (EventTypeNative*)Convert((Series)eventType);
 
+    public override unsafe IEventType FillFromNative(EventTypeNative* nativeEventType, IEventType eventType) =>
+        Fill((SeriesNative*)nativeEventType, (Series)eventType);
+
     public override unsafe void Release(EventTypeNative* eventType) =>
         ReleaseEventType(eventType);
 
     protected override unsafe Series Convert(SeriesNative* eventType)
     {
-        var series = CreateEventType(eventType);
-        series.EventFlags = eventType->EventFlags;
-        series.Index = eventType->Index;
-        series.TimeSequence = eventType->TimeSequence;
-        series.Expiration = eventType->Expiration;
-        series.Volatility = eventType->Volatility;
-        series.CallVolume = eventType->CallVolume;
-        series.PutVolume = eventType->PutVolume;
-        series.PutCallRatio = eventType->PutCallRatio;
-        series.ForwardPrice = eventType->ForwardPrice;
-        series.Dividend = eventType->Dividend;
-        series.Interest = eventType->Interest;
+        var series = new Series();
+        Fill(eventType, series);
         return series;
     }
 
@@ -56,5 +49,22 @@ internal sealed class SeriesMapper : EventTypeMapper<Series, SeriesNative>
             Interest = eventType.Interest,
         };
         return ptr;
+    }
+
+    private static unsafe Series Fill(SeriesNative* eventType, Series series)
+    {
+        AssignEventType((EventTypeNative*)eventType, series);
+        series.EventFlags = eventType->EventFlags;
+        series.Index = eventType->Index;
+        series.TimeSequence = eventType->TimeSequence;
+        series.Expiration = eventType->Expiration;
+        series.Volatility = eventType->Volatility;
+        series.CallVolume = eventType->CallVolume;
+        series.PutVolume = eventType->PutVolume;
+        series.PutCallRatio = eventType->PutCallRatio;
+        series.ForwardPrice = eventType->ForwardPrice;
+        series.Dividend = eventType->Dividend;
+        series.Interest = eventType->Interest;
+        return series;
     }
 }

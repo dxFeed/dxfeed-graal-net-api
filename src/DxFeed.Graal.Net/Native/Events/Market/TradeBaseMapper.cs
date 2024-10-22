@@ -1,5 +1,5 @@
 // <copyright file="TradeBaseMapper.cs" company="Devexperts LLC">
-// Copyright © 2022 Devexperts LLC. All rights reserved.
+// Copyright © 2024 Devexperts LLC. All rights reserved.
 // This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 // If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
 // </copyright>
@@ -12,9 +12,10 @@ internal abstract class TradeBaseMapper<TTradeBase, TTradeBaseNative> : EventTyp
     where TTradeBase : TradeBase, new()
     where TTradeBaseNative : unmanaged
 {
-    protected static unsafe TTradeBase CreateTradeBase(TradeBaseNative* eventType)
+    protected static unsafe TTradeBase AssignTradeBase(TradeBaseNative* eventType, TTradeBase tradeBase)
     {
-        var tradeBase = CreateEventType((EventTypeNative*)eventType);
+        tradeBase.EventSymbol = eventType->EventType.EventSymbol;
+        tradeBase.EventTime = eventType->EventType.EventTime;
         tradeBase.TimeSequence = eventType->TimeSequence;
         tradeBase.TimeNanoPart = eventType->TimeNanoPart;
         tradeBase.ExchangeCode = eventType->ExchangeCode;

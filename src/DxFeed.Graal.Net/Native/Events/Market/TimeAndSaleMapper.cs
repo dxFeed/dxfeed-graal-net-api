@@ -1,5 +1,5 @@
 // <copyright file="TimeAndSaleMapper.cs" company="Devexperts LLC">
-// Copyright © 2022 Devexperts LLC. All rights reserved.
+// Copyright © 2024 Devexperts LLC. All rights reserved.
 // This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 // If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
 // </copyright>
@@ -17,6 +17,9 @@ internal sealed class TimeAndSaleMapper : EventTypeMapper<TimeAndSale, TimeAndSa
     public override unsafe EventTypeNative* ToNative(IEventType eventType) =>
         (EventTypeNative*)Convert((TimeAndSale)eventType);
 
+    public override unsafe IEventType FillFromNative(EventTypeNative* nativeEventType, IEventType eventType) =>
+        Fill((TimeAndSaleNative*)nativeEventType, (TimeAndSale)eventType);
+
     public override unsafe void Release(EventTypeNative* eventType)
     {
         if (eventType == (EventTypeNative*)0)
@@ -33,19 +36,8 @@ internal sealed class TimeAndSaleMapper : EventTypeMapper<TimeAndSale, TimeAndSa
 
     protected override unsafe TimeAndSale Convert(TimeAndSaleNative* eventType)
     {
-        var timeAndSale = CreateEventType(eventType);
-        timeAndSale.EventFlags = eventType->EventFlags;
-        timeAndSale.Index = eventType->Index;
-        timeAndSale.TimeNanoPart = eventType->TimeNanoPart;
-        timeAndSale.ExchangeCode = eventType->ExchangeCode;
-        timeAndSale.Price = eventType->Price;
-        timeAndSale.Size = eventType->Size;
-        timeAndSale.BidPrice = eventType->BidPrice;
-        timeAndSale.AskPrice = eventType->AskPrice;
-        timeAndSale.ExchangeSaleConditions = eventType->ExchangeSaleConditions;
-        timeAndSale.Flags = eventType->Flags;
-        timeAndSale.Buyer = eventType->Buyer;
-        timeAndSale.Seller = eventType->Seller;
+        var timeAndSale = new TimeAndSale();
+        Fill(eventType, timeAndSale);
         return timeAndSale;
     }
 
@@ -69,5 +61,23 @@ internal sealed class TimeAndSaleMapper : EventTypeMapper<TimeAndSale, TimeAndSa
             Seller = eventType.Seller,
         };
         return ptr;
+    }
+
+    private static unsafe TimeAndSale Fill(TimeAndSaleNative* eventType, TimeAndSale timeAndSale)
+    {
+        AssignEventType((EventTypeNative*)eventType, timeAndSale);
+        timeAndSale.EventFlags = eventType->EventFlags;
+        timeAndSale.Index = eventType->Index;
+        timeAndSale.TimeNanoPart = eventType->TimeNanoPart;
+        timeAndSale.ExchangeCode = eventType->ExchangeCode;
+        timeAndSale.Price = eventType->Price;
+        timeAndSale.Size = eventType->Size;
+        timeAndSale.BidPrice = eventType->BidPrice;
+        timeAndSale.AskPrice = eventType->AskPrice;
+        timeAndSale.ExchangeSaleConditions = eventType->ExchangeSaleConditions;
+        timeAndSale.Flags = eventType->Flags;
+        timeAndSale.Buyer = eventType->Buyer;
+        timeAndSale.Seller = eventType->Seller;
+        return timeAndSale;
     }
 }

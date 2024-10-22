@@ -19,15 +19,16 @@ internal sealed class OtcMarketsOrderMapper : OrderBaseMapper<OtcMarketsOrder, O
     public override unsafe EventTypeNative* ToNative(IEventType eventType) =>
         (EventTypeNative*)Convert((OtcMarketsOrder)eventType);
 
+    public override unsafe IEventType FillFromNative(EventTypeNative* nativeEventType, IEventType eventType) =>
+        Fill((OtcMarketsOrderNative*)nativeEventType, (OtcMarketsOrder)eventType);
+
     public override unsafe void Release(EventTypeNative* eventType) =>
         OrderMapper.Release(eventType);
 
     protected override unsafe OtcMarketsOrder Convert(OtcMarketsOrderNative* eventType)
     {
-        var order = CreateOrderBase((OrderBaseNative*)eventType);
-        order.MarketMaker = eventType->Order.MarketMaker;
-        order.OtcMarketsFlags = eventType->OtcMarketsFlags;
-        order.QuoteAccessPayment = eventType->QuoteAccessPayment;
+        var order = new OtcMarketsOrder();
+        Fill(eventType, order);
         return order;
     }
 
@@ -41,5 +42,14 @@ internal sealed class OtcMarketsOrderMapper : OrderBaseMapper<OtcMarketsOrder, O
             OtcMarketsFlags = eventType.OtcMarketsFlags,
         };
         return ptr;
+    }
+
+    private static unsafe OtcMarketsOrder Fill(OtcMarketsOrderNative* eventType, OtcMarketsOrder order)
+    {
+        AssignOrderBase((OrderBaseNative*)eventType, order);
+        order.MarketMaker = eventType->Order.MarketMaker;
+        order.OtcMarketsFlags = eventType->OtcMarketsFlags;
+        order.QuoteAccessPayment = eventType->QuoteAccessPayment;
+        return order;
     }
 }

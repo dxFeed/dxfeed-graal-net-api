@@ -1,18 +1,19 @@
 // <copyright file="FeedNative.cs" company="Devexperts LLC">
-// Copyright © 2022 Devexperts LLC. All rights reserved.
+// Copyright © 2024 Devexperts LLC. All rights reserved.
 // This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 // If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
 // </copyright>
 
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
-using DxFeed.Graal.Net.Native.ErrorHandling;
+using DxFeed.Graal.Net.Events;
 using DxFeed.Graal.Net.Native.Events;
 using DxFeed.Graal.Net.Native.Graal;
 using DxFeed.Graal.Net.Native.Interop;
 using DxFeed.Graal.Net.Native.Promise;
 using DxFeed.Graal.Net.Native.Subscription;
 using DxFeed.Graal.Net.Native.SymbolMappers;
+using static DxFeed.Graal.Net.Native.ErrorHandling.ErrorCheck;
 
 namespace DxFeed.Graal.Net.Native.Feed;
 
@@ -43,6 +44,58 @@ internal sealed unsafe class FeedNative
     public void DetachSubscriptionAndClear(SubscriptionNative subscriptionNative) =>
         FeedImport.DetachSubscriptionAndClear(GetCurrentThread(), _feedHandle, subscriptionNative.GetHandle());
 
+    public T GetLastEvent<T>(T e)
+        where T : ILastingEvent
+    {
+        var eventCode = EventCodeAttribute.GetEventCode(typeof(T));
+        var handle = GetLastEventIfSubscribed(eventCode, e.EventSymbol!);
+        if (handle == null)
+        {
+            return e;
+        }
+
+        try
+        {
+            EventMapper.FillFromNative(handle, e);
+            return e;
+        }
+        finally
+        {
+            SafeCall(FeedImport.ReleaseNativeEvent(GetCurrentThread(), handle));
+        }
+    }
+
+    public IList<T> GetLastEvents<T>(IList<T> events)
+        where T : ILastingEvent
+    {
+        foreach (var e in events)
+        {
+            GetLastEvent(e);
+        }
+
+        return events;
+    }
+
+    public T? GetLastEventIfSubscribed<T>(object symbol)
+        where T : ILastingEvent
+    {
+        var eventCode = EventCodeAttribute.GetEventCode(typeof(T));
+        var handle = FeedImport.GetLastEventIfSubscribed(GetCurrentThread(), _feedHandle, eventCode, symbol);
+        if (handle == null)
+        {
+            return default;
+        }
+
+        try
+        {
+            return (T?)EventMapper.FromNative(handle);
+        }
+        finally
+        {
+            SafeCall(FeedImport.ReleaseNativeEvent(GetCurrentThread(), handle));
+        }
+    }
+
     public PromiseNative GetLastEventPromise(EventCodeNative eventCode, object symbol) =>
         FeedImport.GetLastEventPromise(GetCurrentThread(), _feedHandle, eventCode, symbol);
 
@@ -55,6 +108,9 @@ internal sealed unsafe class FeedNative
     private static nint GetCurrentThread() =>
         Isolate.CurrentThread;
 
+    private EventTypeNative* GetLastEventIfSubscribed(EventCodeNative eventCode, object symbol) =>
+        FeedImport.GetLastEventIfSubscribed(GetCurrentThread(), _feedHandle, eventCode, symbol);
+
     /// <summary>
     /// Contains imported functions from native code.
     /// </summary>
@@ -64,7 +120,7 @@ internal sealed unsafe class FeedNative
             nint thread,
             FeedHandle* feedHandle,
             EventCodeNative eventCode) =>
-            ErrorCheck.SafeCall(NativeCreateSubscription(thread, feedHandle, eventCode));
+            SafeCall(NativeCreateSubscription(thread, feedHandle, eventCode));
 
         public static SubscriptionHandle* CreateSubscription(
             nint thread,
@@ -74,7 +130,7 @@ internal sealed unsafe class FeedNative
             var codes = ListNative<EventCodeNative>.Create(eventCodes);
             try
             {
-                return ErrorCheck.SafeCall(NativeCreateSubscription(thread, feedHandle, codes));
+                return SafeCall(NativeCreateSubscription(thread, feedHandle, codes));
             }
             finally
             {
@@ -86,19 +142,31 @@ internal sealed unsafe class FeedNative
             nint thread,
             FeedHandle* feedHandle,
             SubscriptionHandle* subHandle) =>
-            ErrorCheck.SafeCall(NativeAttachSubscription(thread, feedHandle, subHandle));
+            SafeCall(NativeAttachSubscription(thread, feedHandle, subHandle));
 
         public static void DetachSubscription(
             nint thread,
             FeedHandle* feedHandle,
             SubscriptionHandle* subHandle) =>
-            ErrorCheck.SafeCall(NativeDetachSubscription(thread, feedHandle, subHandle));
+            SafeCall(NativeDetachSubscription(thread, feedHandle, subHandle));
 
         public static void DetachSubscriptionAndClear(
             nint thread,
             FeedHandle* feedHandle,
             SubscriptionHandle* subHandle) =>
-            ErrorCheck.SafeCall(NativeDetachSubscriptionAndClear(thread, feedHandle, subHandle));
+            SafeCall(NativeDetachSubscriptionAndClear(thread, feedHandle, subHandle));
+
+        [DllImport(
+            ImportInfo.DllName,
+            CallingConvention = CallingConvention.Cdecl,
+            CharSet = CharSet.Ansi,
+            EntryPoint = "dxfg_DXFeed_getLastEventIfSubscribed")]
+        public static extern EventTypeNative* GetLastEventIfSubscribed(
+            nint thread,
+            FeedHandle* feedHandle,
+            EventCodeNative eventCodes,
+            [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(SymbolMarshaler))]
+            object symbol);
 
         [DllImport(
             ImportInfo.DllName,
@@ -125,6 +193,13 @@ internal sealed unsafe class FeedNative
             EventCodeNative eventCodes,
             [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(SymbolMarshaler))]
             object value);
+
+        [DllImport(
+            ImportInfo.DllName,
+            EntryPoint = "dxfg_EventType_release")]
+        public static extern int ReleaseNativeEvent(
+            nint thread,
+            EventTypeNative* nativeEvent);
 
         [DllImport(
             ImportInfo.DllName,
