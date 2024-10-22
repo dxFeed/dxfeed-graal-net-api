@@ -1,5 +1,5 @@
 // <copyright file="AnalyticOrderMapper.cs" company="Devexperts LLC">
-// Copyright © 2022 Devexperts LLC. All rights reserved.
+// Copyright © 2024 Devexperts LLC. All rights reserved.
 // This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 // If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
 // </copyright>
@@ -19,17 +19,16 @@ internal sealed class AnalyticOrderMapper : OrderBaseMapper<AnalyticOrder, Analy
     public override unsafe EventTypeNative* ToNative(IEventType eventType) =>
         (EventTypeNative*)Convert((AnalyticOrder)eventType);
 
+    public override unsafe IEventType FillFromNative(EventTypeNative* nativeEventType, IEventType eventType) =>
+        Fill((AnalyticOrderNative*)nativeEventType, (AnalyticOrder)eventType);
+
     public override unsafe void Release(EventTypeNative* eventType) =>
         OrderMapper.Release(eventType);
 
     protected override unsafe AnalyticOrder Convert(AnalyticOrderNative* eventType)
     {
-        var analyticOrder = CreateOrderBase((OrderBaseNative*)eventType);
-        analyticOrder.MarketMaker = eventType->Order.MarketMaker;
-        analyticOrder.IcebergPeakSize = eventType->IcebergPeakSize;
-        analyticOrder.IcebergHiddenSize = eventType->IcebergHiddenSize;
-        analyticOrder.IcebergExecutedSize = eventType->IcebergExecutedSize;
-        analyticOrder.IcebergFlags = eventType->IcebergFlags;
+        var analyticOrder = new AnalyticOrder();
+        Fill(eventType, analyticOrder);
         return analyticOrder;
     }
 
@@ -45,5 +44,16 @@ internal sealed class AnalyticOrderMapper : OrderBaseMapper<AnalyticOrder, Analy
             IcebergFlags = eventType.IcebergFlags,
         };
         return ptr;
+    }
+
+    private static unsafe AnalyticOrder Fill(AnalyticOrderNative* eventType, AnalyticOrder analyticOrder)
+    {
+        AssignOrderBase((OrderBaseNative*)eventType, analyticOrder);
+        analyticOrder.MarketMaker = eventType->Order.MarketMaker;
+        analyticOrder.IcebergPeakSize = eventType->IcebergPeakSize;
+        analyticOrder.IcebergHiddenSize = eventType->IcebergHiddenSize;
+        analyticOrder.IcebergExecutedSize = eventType->IcebergExecutedSize;
+        analyticOrder.IcebergFlags = eventType->IcebergFlags;
+        return analyticOrder;
     }
 }

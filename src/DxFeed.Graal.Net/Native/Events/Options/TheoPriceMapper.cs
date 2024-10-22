@@ -1,5 +1,5 @@
 // <copyright file="TheoPriceMapper.cs" company="Devexperts LLC">
-// Copyright © 2022 Devexperts LLC. All rights reserved.
+// Copyright © 2024 Devexperts LLC. All rights reserved.
 // This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 // If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
 // </copyright>
@@ -17,20 +17,16 @@ internal sealed class TheoPriceMapper : EventTypeMapper<TheoPrice, TheoPriceNati
     public override unsafe EventTypeNative* ToNative(IEventType eventType) =>
         (EventTypeNative*)Convert((TheoPrice)eventType);
 
+    public override unsafe IEventType FillFromNative(EventTypeNative* nativeEventType, IEventType eventType) =>
+        Fill((TheoPriceNative*)nativeEventType, (TheoPrice)eventType);
+
     public override unsafe void Release(EventTypeNative* eventType) =>
         ReleaseEventType(eventType);
 
     protected override unsafe TheoPrice Convert(TheoPriceNative* eventType)
     {
-        var theoPrice = CreateEventType(eventType);
-        theoPrice.EventFlags = eventType->EventFlags;
-        theoPrice.Index = eventType->Index;
-        theoPrice.Price = eventType->Price;
-        theoPrice.UnderlyingPrice = eventType->UnderlyingPrice;
-        theoPrice.Delta = eventType->Delta;
-        theoPrice.Gamma = eventType->Gamma;
-        theoPrice.Dividend = eventType->Dividend;
-        theoPrice.Interest = eventType->Interest;
+        var theoPrice = new TheoPrice();
+        Fill(eventType, theoPrice);
         return theoPrice;
     }
 
@@ -50,5 +46,19 @@ internal sealed class TheoPriceMapper : EventTypeMapper<TheoPrice, TheoPriceNati
             Interest = eventType.Interest,
         };
         return ptr;
+    }
+
+    private static unsafe TheoPrice Fill(TheoPriceNative* eventType, TheoPrice theoPrice)
+    {
+        AssignEventType((EventTypeNative*)eventType, theoPrice);
+        theoPrice.EventFlags = eventType->EventFlags;
+        theoPrice.Index = eventType->Index;
+        theoPrice.Price = eventType->Price;
+        theoPrice.UnderlyingPrice = eventType->UnderlyingPrice;
+        theoPrice.Delta = eventType->Delta;
+        theoPrice.Gamma = eventType->Gamma;
+        theoPrice.Dividend = eventType->Dividend;
+        theoPrice.Interest = eventType->Interest;
+        return theoPrice;
     }
 }

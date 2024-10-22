@@ -1,5 +1,5 @@
 // <copyright file="SummaryMapper.cs" company="Devexperts LLC">
-// Copyright © 2022 Devexperts LLC. All rights reserved.
+// Copyright © 2024 Devexperts LLC. All rights reserved.
 // This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 // If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
 // </copyright>
@@ -17,22 +17,16 @@ internal sealed class SummaryMapper : EventTypeMapper<Summary, SummaryNative>
     public override unsafe EventTypeNative* ToNative(IEventType eventType) =>
         (EventTypeNative*)Convert((Summary)eventType);
 
+    public override unsafe IEventType FillFromNative(EventTypeNative* nativeEventType, IEventType eventType) =>
+        Fill((SummaryNative*)nativeEventType, (Summary)eventType);
+
     public override unsafe void Release(EventTypeNative* eventType) =>
         ReleaseEventType(eventType);
 
     protected override unsafe Summary Convert(SummaryNative* eventType)
     {
-        var summary = CreateEventType(eventType);
-        summary.DayId = eventType->DayId;
-        summary.DayOpenPrice = eventType->DayOpenPrice;
-        summary.DayHighPrice = eventType->DayHighPrice;
-        summary.DayLowPrice = eventType->DayLowPrice;
-        summary.DayClosePrice = eventType->DayClosePrice;
-        summary.PrevDayId = eventType->PrevDayId;
-        summary.PrevDayClosePrice = eventType->PrevDayClosePrice;
-        summary.PrevDayVolume = eventType->PrevDayVolume;
-        summary.OpenInterest = eventType->OpenInterest;
-        summary.Flags = eventType->Flags;
+        var summary = new Summary();
+        Fill(eventType, summary);
         return summary;
     }
 
@@ -54,5 +48,21 @@ internal sealed class SummaryMapper : EventTypeMapper<Summary, SummaryNative>
             Flags = eventType.Flags,
         };
         return ptr;
+    }
+
+    private static unsafe Summary Fill(SummaryNative* eventType, Summary summary)
+    {
+        AssignEventType((EventTypeNative*)eventType, summary);
+        summary.DayId = eventType->DayId;
+        summary.DayOpenPrice = eventType->DayOpenPrice;
+        summary.DayHighPrice = eventType->DayHighPrice;
+        summary.DayLowPrice = eventType->DayLowPrice;
+        summary.DayClosePrice = eventType->DayClosePrice;
+        summary.PrevDayId = eventType->PrevDayId;
+        summary.PrevDayClosePrice = eventType->PrevDayClosePrice;
+        summary.PrevDayVolume = eventType->PrevDayVolume;
+        summary.OpenInterest = eventType->OpenInterest;
+        summary.Flags = eventType->Flags;
+        return summary;
     }
 }
