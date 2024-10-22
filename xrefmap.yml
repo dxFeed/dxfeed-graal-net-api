@@ -656,6 +656,29 @@ references:
   isSpec: "True"
   fullName: DxFeed.Graal.Net.Api.DXFeed.GetInstance
   nameWithType: DXFeed.GetInstance
+- uid: DxFeed.Graal.Net.Api.DXFeed.GetLasEventIfSubscribed*
+  name: GetLasEventIfSubscribed
+  href: docs/api/DxFeed.Graal.Net.Api.DXFeed.html#DxFeed_Graal_Net_Api_DXFeed_GetLasEventIfSubscribed_
+  commentId: Overload:DxFeed.Graal.Net.Api.DXFeed.GetLasEventIfSubscribed
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Api.DXFeed.GetLasEventIfSubscribed
+  nameWithType: DXFeed.GetLasEventIfSubscribed
+- uid: DxFeed.Graal.Net.Api.DXFeed.GetLasEventIfSubscribed``1(System.Object)
+  name: GetLasEventIfSubscribed<TE>(object)
+  href: docs/api/DxFeed.Graal.Net.Api.DXFeed.html#DxFeed_Graal_Net_Api_DXFeed_GetLasEventIfSubscribed__1_System_Object_
+  commentId: M:DxFeed.Graal.Net.Api.DXFeed.GetLasEventIfSubscribed``1(System.Object)
+  name.vb: GetLasEventIfSubscribed(Of TE)(Object)
+  fullName: DxFeed.Graal.Net.Api.DXFeed.GetLasEventIfSubscribed<TE>(object)
+  fullName.vb: DxFeed.Graal.Net.Api.DXFeed.GetLasEventIfSubscribed(Of TE)(Object)
+  nameWithType: DXFeed.GetLasEventIfSubscribed<TE>(object)
+  nameWithType.vb: DXFeed.GetLasEventIfSubscribed(Of TE)(Object)
+- uid: DxFeed.Graal.Net.Api.DXFeed.GetLastEvent*
+  name: GetLastEvent
+  href: docs/api/DxFeed.Graal.Net.Api.DXFeed.html#DxFeed_Graal_Net_Api_DXFeed_GetLastEvent_
+  commentId: Overload:DxFeed.Graal.Net.Api.DXFeed.GetLastEvent
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Api.DXFeed.GetLastEvent
+  nameWithType: DXFeed.GetLastEvent
 - uid: DxFeed.Graal.Net.Api.DXFeed.GetLastEventAsync*
   name: GetLastEventAsync
   href: docs/api/DxFeed.Graal.Net.Api.DXFeed.html#DxFeed_Graal_Net_Api_DXFeed_GetLastEventAsync_
@@ -672,6 +695,31 @@ references:
   fullName.vb: DxFeed.Graal.Net.Api.DXFeed.GetLastEventAsync(Of T)(Object, System.Threading.CancellationToken)
   nameWithType: DXFeed.GetLastEventAsync<T>(object, CancellationToken)
   nameWithType.vb: DXFeed.GetLastEventAsync(Of T)(Object, CancellationToken)
+- uid: DxFeed.Graal.Net.Api.DXFeed.GetLastEvent``1(``0)
+  name: GetLastEvent<TE>(TE)
+  href: docs/api/DxFeed.Graal.Net.Api.DXFeed.html#DxFeed_Graal_Net_Api_DXFeed_GetLastEvent__1___0_
+  commentId: M:DxFeed.Graal.Net.Api.DXFeed.GetLastEvent``1(``0)
+  name.vb: GetLastEvent(Of TE)(TE)
+  fullName: DxFeed.Graal.Net.Api.DXFeed.GetLastEvent<TE>(TE)
+  fullName.vb: DxFeed.Graal.Net.Api.DXFeed.GetLastEvent(Of TE)(TE)
+  nameWithType: DXFeed.GetLastEvent<TE>(TE)
+  nameWithType.vb: DXFeed.GetLastEvent(Of TE)(TE)
+- uid: DxFeed.Graal.Net.Api.DXFeed.GetLastEvents*
+  name: GetLastEvents
+  href: docs/api/DxFeed.Graal.Net.Api.DXFeed.html#DxFeed_Graal_Net_Api_DXFeed_GetLastEvents_
+  commentId: Overload:DxFeed.Graal.Net.Api.DXFeed.GetLastEvents
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Api.DXFeed.GetLastEvents
+  nameWithType: DXFeed.GetLastEvents
+- uid: DxFeed.Graal.Net.Api.DXFeed.GetLastEvents``1(System.Collections.Generic.IList{``0})
+  name: GetLastEvents<TE>(IList<TE>)
+  href: docs/api/DxFeed.Graal.Net.Api.DXFeed.html#DxFeed_Graal_Net_Api_DXFeed_GetLastEvents__1_System_Collections_Generic_IList___0__
+  commentId: M:DxFeed.Graal.Net.Api.DXFeed.GetLastEvents``1(System.Collections.Generic.IList{``0})
+  name.vb: GetLastEvents(Of TE)(IList(Of TE))
+  fullName: DxFeed.Graal.Net.Api.DXFeed.GetLastEvents<TE>(System.Collections.Generic.IList<TE>)
+  fullName.vb: DxFeed.Graal.Net.Api.DXFeed.GetLastEvents(Of TE)(System.Collections.Generic.IList(Of TE))
+  nameWithType: DXFeed.GetLastEvents<TE>(IList<TE>)
+  nameWithType.vb: DXFeed.GetLastEvents(Of TE)(IList(Of TE))
 - uid: DxFeed.Graal.Net.Api.DXFeed.GetTimeSeriesAsync*
   name: GetTimeSeriesAsync
   href: docs/api/DxFeed.Graal.Net.Api.DXFeed.html#DxFeed_Graal_Net_Api_DXFeed_GetTimeSeriesAsync_
