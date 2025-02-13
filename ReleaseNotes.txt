@@ -1,3 +1,5 @@
+* [MDAPI-171] [.NET] Optimize OptionChainsBuilder for performance in .NET compared to Java
+
 ## Version 2.6.0
 
 * [MDAPI-96] [.NET] Retrieve latest events from feed

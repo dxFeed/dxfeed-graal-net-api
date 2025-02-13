@@ -1,5 +1,5 @@
 ﻿// <copyright file="ScheduleTest.cs" company="Devexperts LLC">
-// Copyright © 2024 Devexperts LLC. All rights reserved.
+// Copyright © 2025 Devexperts LLC. All rights reserved.
 // This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 // If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
 // </copyright>
@@ -40,7 +40,7 @@ public class ScheduleTest
     {
         var profiles = new InstrumentProfileReader().ReadFromFile(TestIpf);
         foreach (var profile in profiles) {
-            var schedule = Schedule.GetInstance(profile);
+            var schedule = Schedule.GetInstance(profile.TradingHours);
             var day = schedule.GetDayByYearMonthDay(01011950);
             Assert.Multiple(() =>
             {
@@ -52,5 +52,15 @@ public class ScheduleTest
                 Assert.That(prevDay, Is.Null);
             });
         }
+    }
+
+    [Test]
+    public void Schedule_ShouldReturnCorrectVenues()
+    {
+        var profiles = new InstrumentProfileReader().ReadFromFile(TestIpf);
+        var aapl = profiles.Find(profile => profile.Symbol.Equals("AAPL", StringComparison.Ordinal));
+        var venues = Schedule.GetTradingVenues(aapl ?? throw new InvalidOperationException());
+        Assert.That(venues, Has.Count.EqualTo(1));
+        Assert.That(venues[0], Is.EqualTo("NewYorkETH"));
     }
 }

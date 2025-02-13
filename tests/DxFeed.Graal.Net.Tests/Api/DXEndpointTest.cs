@@ -1,10 +1,9 @@
 // <copyright file="DXEndpointTest.cs" company="Devexperts LLC">
-// Copyright © 2022 Devexperts LLC. All rights reserved.
+// Copyright © 2025 Devexperts LLC. All rights reserved.
 // This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 // If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
 // </copyright>
 
-using System.Net.NetworkInformation;
 using DxFeed.Graal.Net.Api;
 using DxFeed.Graal.Net.Api.Osub;
 using DxFeed.Graal.Net.Events;
@@ -18,12 +17,15 @@ namespace DxFeed.Graal.Net.Tests.Api;
 [TestFixture]
 public class DXEndpointTest
 {
+    private static readonly Random rnd = new();
+
     [Test]
     public void ConnectToLocalPublisher()
     {
+        var port = rnd.Next(48658, 49150);
         var countdownEvent = new CountdownEvent(1);
 
-        var pub = Create(Publisher).Connect(":5679");
+        var pub = Create(Publisher).Connect($":{port}");
         var feed = Create(Feed);
         feed.AddStateChangeListener((_, newState) =>
         {
@@ -32,7 +34,7 @@ public class DXEndpointTest
                 countdownEvent.Signal();
             }
         });
-        feed.Connect("localhost:5679");
+        feed.Connect($"localhost:{port}");
         Assert.That(countdownEvent.Wait(new TimeSpan(0, 0, 3)), Is.True);
         pub.Close();
         feed.Close();

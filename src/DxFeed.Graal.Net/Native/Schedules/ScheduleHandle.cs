@@ -1,15 +1,15 @@
 // <copyright file="ScheduleHandle.cs" company="Devexperts LLC">
-// Copyright © 2024 Devexperts LLC. All rights reserved.
+// Copyright © 2025 Devexperts LLC. All rights reserved.
 // This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 // If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
 // </copyright>
 
+using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Runtime.InteropServices;
 using DxFeed.Graal.Net.Ipf;
 using DxFeed.Graal.Net.Native.Interop;
-using DxFeed.Graal.Net.Native.Ipf;
 using static DxFeed.Graal.Net.Native.ErrorHandling.ErrorCheck;
 
 namespace DxFeed.Graal.Net.Native.Schedules;
@@ -17,17 +17,28 @@ namespace DxFeed.Graal.Net.Native.Schedules;
 [SuppressMessage("ReSharper", "ClassNeverInstantiated.Global", Justification = "Created by marshaler")]
 internal sealed class ScheduleHandle : JavaHandle
 {
-    public static ScheduleHandle GetInstance(InstrumentProfile profile) =>
-        SafeCall(Import.GetInstance(CurrentThread, profile.GetHandle()));
+    private static readonly StringMarshaler _marshaler = new();
+
+    public static ScheduleHandle GetInstance(InstrumentProfile profile)
+    {
+        SafeCall(Import.GetInstance(CurrentThread, profile, out var scheduleHandle));
+        return scheduleHandle;
+    }
 
     public static ScheduleHandle GetInstance(string scheduleDefinition) =>
         SafeCall(Import.GetInstance(CurrentThread, scheduleDefinition));
 
-    public static ScheduleHandle GetInstance(InstrumentProfile profile, string venue) =>
-        SafeCall(Import.GetInstance(CurrentThread, profile.GetHandle(), venue));
+    public static ScheduleHandle GetInstance(InstrumentProfile profile, string venue)
+    {
+        SafeCall(Import.GetInstance(CurrentThread, profile, venue, out var scheduleHandle));
+        return scheduleHandle;
+    }
 
-    public static List<string> GetTradingVenues(InstrumentProfile profile) =>
-        SafeCall(Import.GetTradingVenues(CurrentThread, profile.GetHandle()));
+    public static unsafe List<string> GetTradingVenues(InstrumentProfile profile)
+    {
+        SafeCall(Import.GetTradingVenues(CurrentThread, profile, out var venues));
+        return ConvertToStringList(venues);
+    }
 
     public static void DownloadDefaults(string downloadConfig) =>
         SafeCall(Import.DownloadDefaults(CurrentThread, downloadConfig));
@@ -65,6 +76,25 @@ internal sealed class ScheduleHandle : JavaHandle
     public string GetTimeZone() =>
         SafeCall(Import.GetTimeZone(CurrentThread, this));
 
+    private static unsafe List<string> ConvertToStringList(ListNative<IntPtr>* handles)
+    {
+        try
+        {
+            var venues = new List<string>(handles->Size);
+            for (var i = 0; i < handles->Size; i++)
+            {
+                var profile = (string)_marshaler.ConvertNativeToManaged((IntPtr)handles->Elements[i])!;
+                venues.Add(profile);
+            }
+
+            return venues;
+        }
+        finally
+        {
+            SafeCall(Import.ReleaseList(CurrentThread, (IntPtr)handles));
+        }
+    }
+
     private static class Import
     {
         [DllImport(
@@ -74,10 +104,12 @@ internal sealed class ScheduleHandle : JavaHandle
             ExactSpelling = true,
             BestFitMapping = false,
             ThrowOnUnmappableChar = true,
-            EntryPoint = "dxfg_Schedule_getInstance")]
-        public static extern ScheduleHandle GetInstance(
+            EntryPoint = "dxfg_Schedule_getInstance4")]
+        public static extern int GetInstance(
             nint thread,
-            InstrumentProfileHandle profile);
+            [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(InstrumentProfileMarshaler))]
+            InstrumentProfile profile,
+            out ScheduleHandle handle);
 
         [DllImport(
             ImportInfo.DllName,
@@ -99,12 +131,14 @@ internal sealed class ScheduleHandle : JavaHandle
             ExactSpelling = true,
             BestFitMapping = false,
             ThrowOnUnmappableChar = true,
-            EntryPoint = "dxfg_Schedule_getInstance3")]
-        public static extern ScheduleHandle GetInstance(
+            EntryPoint = "dxfg_Schedule_getInstance5")]
+        public static extern int GetInstance(
             nint thread,
-            InstrumentProfileHandle profile,
+            [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(InstrumentProfileMarshaler))]
+            InstrumentProfile profile,
             [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(StringMarshaler))]
-            string venue);
+            string venue,
+            out ScheduleHandle handle);
 
         [DllImport(
             ImportInfo.DllName,
@@ -113,11 +147,12 @@ internal sealed class ScheduleHandle : JavaHandle
             ExactSpelling = true,
             BestFitMapping = false,
             ThrowOnUnmappableChar = true,
-            EntryPoint = "dxfg_Schedule_getTradingVenues")]
-        [return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ListMarshaler<StringMarshaler>))]
-        public static extern List<string> GetTradingVenues(
+            EntryPoint = "dxfg_Schedule_getTradingVenues2")]
+        public static extern unsafe int GetTradingVenues(
             nint thread,
-            InstrumentProfileHandle profile);
+            [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(InstrumentProfileMarshaler))]
+            InstrumentProfile profile,
+            out ListNative<IntPtr>* handle);
 
         [DllImport(
             ImportInfo.DllName,
@@ -232,5 +267,12 @@ internal sealed class ScheduleHandle : JavaHandle
             EntryPoint = "dxfg_Schedule_getTimeZone")]
         [return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(StringMarshaler))]
         public static extern string GetTimeZone(nint thread, ScheduleHandle schedule);
+
+        [DllImport(
+            ImportInfo.DllName,
+            CallingConvention = CallingConvention.Cdecl,
+            CharSet = CharSet.Ansi,
+            EntryPoint = "dxfg_CList_String_release")]
+        public static extern int ReleaseList(nint thread, nint handle);
     }
 }
