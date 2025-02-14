@@ -1,12 +1,17 @@
 // <copyright file="InstrumentProfile.cs" company="Devexperts LLC">
-// Copyright © 2022 Devexperts LLC. All rights reserved.
+// Copyright © 2025 Devexperts LLC. All rights reserved.
 // This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 // If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
 // </copyright>
 
+using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using DxFeed.Graal.Net.Native.Ipf;
 using DxFeed.Graal.Net.Utils;
+
+// Disable auto-property
+#pragma warning disable S2292
 
 namespace DxFeed.Graal.Net.Ipf;
 
@@ -17,13 +22,46 @@ namespace DxFeed.Graal.Net.Ipf;
 /// </summary>
 public class InstrumentProfile
 {
-    private readonly InstrumentProfileHandle handle;
+    private InstrumentProfileCustomFieldHandle customFieldHandle = InstrumentProfileCustomFieldHandle.Create();
+
+    private string type = string.Empty;
+    private string symbol = string.Empty;
+    private string description = string.Empty;
+    private string localSymbol = string.Empty;
+    private string localDescription = string.Empty;
+    private string country = string.Empty;
+    private string opol = string.Empty;
+    private string exchangeData = string.Empty;
+    private string exchanges = string.Empty;
+    private string currency = string.Empty;
+    private string baseCurrency = string.Empty;
+    private string cfi = string.Empty;
+    private string isin = string.Empty;
+    private string sedol = string.Empty;
+    private string cusip = string.Empty;
+    private int icb;
+    private int sic;
+    private double multiplier;
+    private string product = string.Empty;
+    private string underlying = string.Empty;
+    private double spc;
+    private string additionalUnderlyings = string.Empty;
+    private string mmy = string.Empty;
+    private int expiration;
+    private int lastTrade;
+    private double strike;
+    private string optionType = string.Empty;
+    private string expirationStyle = string.Empty;
+    private string settlementStyle = string.Empty;
+    private string priceIncrements = string.Empty;
+    private string tradingHours = string.Empty;
 
     /// <summary>
     /// Initializes a new instance of the <see cref="InstrumentProfile"/> class.
     /// </summary>
-    public InstrumentProfile() =>
-        handle = InstrumentProfileHandle.Create();
+    public InstrumentProfile()
+    {
+    }
 
     /// <summary>
     /// Initializes a new instance of the <see cref="InstrumentProfile"/> class,
@@ -36,11 +74,41 @@ public class InstrumentProfile
     /// It performs a deep copy, ensuring that the new instance does not share references with the original,
     /// making it safe from modifications to the original instance.
     /// </remarks>
-    public InstrumentProfile(InstrumentProfile ip) =>
-        handle = InstrumentProfileHandle.Create(ip.GetHandle());
-
-    internal InstrumentProfile(InstrumentProfileHandle handle) =>
-        this.handle = handle;
+    public InstrumentProfile(InstrumentProfile ip)
+    {
+        type = ip.type;
+        symbol = ip.symbol;
+        description = ip.description;
+        localSymbol = ip.localSymbol;
+        localDescription = ip.localDescription;
+        country = ip.country;
+        opol = ip.opol;
+        exchangeData = ip.exchangeData;
+        exchanges = ip.exchanges;
+        currency = ip.currency;
+        baseCurrency = ip.baseCurrency;
+        cfi = ip.cfi;
+        isin = ip.isin;
+        sedol = ip.sedol;
+        cusip = ip.cusip;
+        icb = ip.icb;
+        sic = ip.sic;
+        multiplier = ip.multiplier;
+        product = ip.product;
+        underlying = ip.underlying;
+        spc = ip.spc;
+        additionalUnderlyings = ip.additionalUnderlyings;
+        mmy = ip.mmy;
+        expiration = ip.expiration;
+        lastTrade = ip.lastTrade;
+        strike = ip.strike;
+        optionType = ip.optionType;
+        expirationStyle = ip.expirationStyle;
+        settlementStyle = ip.settlementStyle;
+        priceIncrements = ip.priceIncrements;
+        tradingHours = ip.tradingHours;
+        customFieldHandle = InstrumentProfileCustomFieldHandle.Create(ip.customFieldHandle);
+    }
 
     /// <summary>
     /// Gets or sets type of instrument.
@@ -50,8 +118,8 @@ public class InstrumentProfile
     /// <example>"STOCK", "FUTURE", "OPTION".</example>
     public string Type
     {
-        get => handle.Type;
-        set => handle.Type = value;
+        get => type;
+        set => type = string.IsNullOrEmpty(value) ? string.Empty : value;
     }
 
     /// <summary>
@@ -62,8 +130,8 @@ public class InstrumentProfile
     /// <example>"GOOG", "/YGM9", ".ZYEAD".</example>
     public string Symbol
     {
-        get => handle.Symbol;
-        set => handle.Symbol = value;
+        get => symbol;
+        set => symbol = string.IsNullOrEmpty(value) ? string.Empty : value;
     }
 
     /// <summary>
@@ -73,8 +141,8 @@ public class InstrumentProfile
     /// <example>"Google Inc.", "Mini Gold Futures,Jun-2009,ETH".</example>
     public string Description
     {
-        get => handle.Description;
-        set => handle.Description = value;
+        get => description;
+        set => description = string.IsNullOrEmpty(value) ? string.Empty : value;
     }
 
     /// <summary>
@@ -83,8 +151,8 @@ public class InstrumentProfile
     /// </summary>
     public string LocalSymbol
     {
-        get => handle.LocalSymbol;
-        set => handle.LocalSymbol = value;
+        get => localSymbol;
+        set => localSymbol = string.IsNullOrEmpty(value) ? string.Empty : value;
     }
 
     /// <summary>
@@ -93,8 +161,8 @@ public class InstrumentProfile
     /// </summary>
     public string LocalDescription
     {
-        get => handle.LocalDescription;
-        set => handle.LocalDescription = value;
+        get => localDescription;
+        set => localDescription = string.IsNullOrEmpty(value) ? string.Empty : value;
     }
 
     /// <summary>
@@ -105,8 +173,8 @@ public class InstrumentProfile
     /// <example>"US", "RU".</example>
     public string Country
     {
-        get => handle.Country;
-        set => handle.Country = value;
+        get => country;
+        set => country = string.IsNullOrEmpty(value) ? string.Empty : value;
     }
 
     /// <summary>
@@ -119,8 +187,8 @@ public class InstrumentProfile
     /// <example>"XNAS", "RTSX".</example>
     public string OPOL
     {
-        get => handle.OPOL;
-        set => handle.OPOL = value;
+        get => opol;
+        set => opol = string.IsNullOrEmpty(value) ? string.Empty : value;
     }
 
     /// <summary>
@@ -129,8 +197,8 @@ public class InstrumentProfile
     /// </summary>
     public string ExchangeData
     {
-        get => handle.ExchangeData;
-        set => handle.ExchangeData = value;
+        get => exchangeData;
+        set => exchangeData = string.IsNullOrEmpty(value) ? string.Empty : value;
     }
 
     /// <summary>
@@ -145,8 +213,8 @@ public class InstrumentProfile
     /// <example>"ARCX;CBSX;XNAS;XNYS".</example>
     public string Exchanges
     {
-        get => handle.Exchanges;
-        set => handle.Exchanges = value;
+        get => exchanges;
+        set => exchanges = string.IsNullOrEmpty(value) ? string.Empty : value;
     }
 
     /// <summary>
@@ -157,8 +225,8 @@ public class InstrumentProfile
     /// <example>"USD", "RUB".</example>
     public string Currency
     {
-        get => handle.Currency;
-        set => handle.Currency = value;
+        get => currency;
+        set => currency = string.IsNullOrEmpty(value) ? string.Empty : value;
     }
 
     /// <summary>
@@ -167,8 +235,8 @@ public class InstrumentProfile
     /// </summary>
     public string BaseCurrency
     {
-        get => handle.BaseCurrency;
-        set => handle.BaseCurrency = value;
+        get => baseCurrency;
+        set => baseCurrency = string.IsNullOrEmpty(value) ? string.Empty : value;
     }
 
     /// <summary>
@@ -182,8 +250,8 @@ public class InstrumentProfile
     /// <example>"ESNTPB", "ESXXXX", "ES", "OPASPS".</example>
     public string CFI
     {
-        get => handle.CFI;
-        set => handle.CFI = value;
+        get => cfi;
+        set => cfi = string.IsNullOrEmpty(value) ? string.Empty : value;
     }
 
     /// <summary>
@@ -195,8 +263,8 @@ public class InstrumentProfile
     /// <example>"DE0007100000", "US38259P5089".</example>
     public string ISIN
     {
-        get => handle.ISIN;
-        set => handle.ISIN = value;
+        get => isin;
+        set => isin = string.IsNullOrEmpty(value) ? string.Empty : value;
     }
 
     /// <summary>
@@ -208,8 +276,8 @@ public class InstrumentProfile
     /// <example>"2310967", "5766857".</example>
     public string SEDOL
     {
-        get => handle.SEDOL;
-        set => handle.SEDOL = value;
+        get => sedol;
+        set => sedol = string.IsNullOrEmpty(value) ? string.Empty : value;
     }
 
     /// <summary>
@@ -220,8 +288,8 @@ public class InstrumentProfile
     /// <example>"38259P508".</example>
     public string CUSIP
     {
-        get => handle.CUSIP;
-        set => handle.CUSIP = value;
+        get => cusip;
+        set => cusip = string.IsNullOrEmpty(value) ? string.Empty : value;
     }
 
     /// <summary>
@@ -233,8 +301,8 @@ public class InstrumentProfile
     /// <example>"9535".</example>
     public int ICB
     {
-        get => handle.ICB;
-        set => handle.ICB = value;
+        get => icb;
+        set => icb = value;
     }
 
     /// <summary>
@@ -246,8 +314,8 @@ public class InstrumentProfile
     /// <example>"7371".</example>
     public int SIC
     {
-        get => handle.SIC;
-        set => handle.SIC = value;
+        get => sic;
+        set => sic = value;
     }
 
     /// <summary>
@@ -256,8 +324,8 @@ public class InstrumentProfile
     /// <example>"100", "33.2".</example>
     public double Multiplier
     {
-        get => handle.Multiplier;
-        set => handle.Multiplier = value;
+        get => multiplier;
+        set => multiplier = value;
     }
 
     /// <summary>
@@ -266,8 +334,8 @@ public class InstrumentProfile
     /// <example>"/YG".</example>
     public string Product
     {
-        get => handle.Product;
-        set => handle.Product = value;
+        get => product;
+        set => product = string.IsNullOrEmpty(value) ? string.Empty : value;
     }
 
     /// <summary>
@@ -276,8 +344,8 @@ public class InstrumentProfile
     /// <example>"C", "/YGM9".</example>
     public string Underlying
     {
-        get => handle.Underlying;
-        set => handle.Underlying = value;
+        get => underlying;
+        set => underlying = string.IsNullOrEmpty(value) ? string.Empty : value;
     }
 
     /// <summary>
@@ -286,8 +354,8 @@ public class InstrumentProfile
     /// <example>"1", "100".</example>
     public double SPC
     {
-        get => handle.SPC;
-        set => handle.SPC = value;
+        get => spc;
+        set => spc = value;
     }
 
     /// <summary>
@@ -303,8 +371,8 @@ public class InstrumentProfile
     /// <example>"SE 50", "FIS 53; US$ 45.46".</example>
     public string AdditionalUnderlyings
     {
-        get => handle.AdditionalUnderlyings;
-        set => handle.AdditionalUnderlyings = value;
+        get => additionalUnderlyings;
+        set => additionalUnderlyings = string.IsNullOrEmpty(value) ? string.Empty : value;
     }
 
     /// <summary>
@@ -318,8 +386,8 @@ public class InstrumentProfile
     /// </summary>
     public string MMY
     {
-        get => handle.MMY;
-        set => handle.MMY = value;
+        get => mmy;
+        set => mmy = string.IsNullOrEmpty(value) ? string.Empty : value;
     }
 
     /// <summary>
@@ -328,8 +396,8 @@ public class InstrumentProfile
     /// <example><see cref="DayUtil.GetYearMonthDayByDayId">DayUtil.GetYearMonthDayByDayId(20090117)</see>.</example>
     public int Expiration
     {
-        get => handle.Expiration;
-        set => handle.Expiration = value;
+        get => expiration;
+        set => expiration = value;
     }
 
     /// <summary>
@@ -338,8 +406,8 @@ public class InstrumentProfile
     /// <example><see cref="DayUtil.GetYearMonthDayByDayId">DayUtil.GetYearMonthDayByDayId(20090117)</see>.</example>
     public int LastTrade
     {
-        get => handle.LastTrade;
-        set => handle.LastTrade = value;
+        get => lastTrade;
+        set => lastTrade = value;
     }
 
     /// <summary>
@@ -348,8 +416,8 @@ public class InstrumentProfile
     /// <example>"80", "22.5".</example>
     public double Strike
     {
-        get => handle.Strike;
-        set => handle.Strike = value;
+        get => strike;
+        set => strike = value;
     }
 
     /// <summary>
@@ -367,8 +435,8 @@ public class InstrumentProfile
     /// </summary>
     public string OptionType
     {
-        get => handle.OptionType;
-        set => handle.OptionType = value;
+        get => optionType;
+        set => optionType = string.IsNullOrEmpty(value) ? string.Empty : value;
     }
 
     /// <summary>
@@ -376,8 +444,8 @@ public class InstrumentProfile
     /// </summary>
     public string ExpirationStyle
     {
-        get => handle.ExpirationStyle;
-        set => handle.ExpirationStyle = value;
+        get => expirationStyle;
+        set => expirationStyle = string.IsNullOrEmpty(value) ? string.Empty : value;
     }
 
     /// <summary>
@@ -385,8 +453,8 @@ public class InstrumentProfile
     /// </summary>
     public string SettlementStyle
     {
-        get => handle.SettlementStyle;
-        set => handle.SettlementStyle = value;
+        get => settlementStyle;
+        set => settlementStyle = string.IsNullOrEmpty(value) ? string.Empty : value;
     }
 
     /// <summary>
@@ -402,8 +470,8 @@ public class InstrumentProfile
     /// <example>"0.25", "0.01 3; 0.05".</example>
     public string PriceIncrements
     {
-        get => handle.PriceIncrements;
-        set => handle.PriceIncrements = value;
+        get => priceIncrements;
+        set => priceIncrements = string.IsNullOrEmpty(value) ? string.Empty : value;
     }
 
     /// <summary>
@@ -412,8 +480,14 @@ public class InstrumentProfile
     /// </summary>
     public string TradingHours
     {
-        get => handle.TradingHours;
-        set => handle.TradingHours = value;
+        get => tradingHours;
+        set => tradingHours = string.IsNullOrEmpty(value) ? string.Empty : value;
+    }
+
+    internal InstrumentProfileCustomFieldHandle CustomFields
+    {
+        get => customFieldHandle;
+        set => customFieldHandle = value;
     }
 
     /// <summary>
@@ -422,7 +496,7 @@ public class InstrumentProfile
     /// <param name="name">The name of the field.</param>
     /// <returns>The field value, or an empty string if the field does not exist.</returns>
     public string GetField(string name) =>
-        handle.GetField(name);
+        customFieldHandle.GetField(name);
 
     /// <summary>
     /// Sets the value of the field with the specified name.
@@ -430,7 +504,7 @@ public class InstrumentProfile
     /// <param name="name">The name of the field.</param>
     /// <param name="value">The value to set for the field.</param>
     public void SetField(string name, string value) =>
-        handle.SetField(name, value);
+        customFieldHandle.SetField(name, value);
 
     /// <summary>
     /// Gets the numeric value of the field with the specified name.
@@ -438,7 +512,7 @@ public class InstrumentProfile
     /// <param name="name">The name of the field.</param>
     /// <returns>The numeric field value.</returns>
     public double GetNumericField(string name) =>
-        handle.GetNumericField(name);
+        customFieldHandle.GetNumericField(name);
 
     /// <summary>
     /// Sets the numeric value of the field with the specified name.
@@ -446,7 +520,7 @@ public class InstrumentProfile
     /// <param name="name">The name of the field.</param>
     /// <param name="value">The numeric value to set for the field.</param>
     public void SetNumericField(string name, double value) =>
-        handle.SetNumericField(name, value);
+        customFieldHandle.SetNumericField(name, value);
 
     /// <summary>
     /// Gets the day id value of the date field with the specified name.
@@ -455,7 +529,7 @@ public class InstrumentProfile
     /// <param name="name">The name of the date field.</param>
     /// <returns>The day id field value.</returns>
     public int GetDateField(string name) =>
-        handle.GetDateField(name);
+        customFieldHandle.GetDateField(name);
 
     /// <summary>
     /// Sets the day id value of the date field with the specified name.
@@ -464,7 +538,7 @@ public class InstrumentProfile
     /// <param name="name">The name of the date field.</param>
     /// <param name="value">The day id value to set for the date field.</param>
     public void SetDateField(string name, int value) =>
-        handle.SetDateField(name, value);
+        customFieldHandle.SetDateField(name, value);
 
     /// <summary>
     /// Adds names of non-empty custom fields to the specified collection.
@@ -476,30 +550,232 @@ public class InstrumentProfile
     /// <c>true</c> if <paramref name="targetFieldNames"/> changed as a result of the call; otherwise, <c>false</c>.
     /// </returns>
     public bool AddNonEmptyCustomFieldNames(ICollection<string> targetFieldNames) =>
-        handle.AddNonEmptyCustomFieldNames(targetFieldNames);
+        customFieldHandle.AddNonEmptyCustomFieldNames(targetFieldNames);
 
     /// <summary>
     /// Determines whether the specified object is equal to the current object.
     /// </summary>
     /// <param name="obj">The object to compare with the current object.</param>
     /// <returns><c>true</c> if the specified object is equal to the current object; otherwise, <c>false</c>.</returns>
-    public override bool Equals(object? obj) =>
-        obj is InstrumentProfile ip && handle.Equals(ip.GetHandle());
+    public override bool Equals(object? obj)
+    {
+        if (ReferenceEquals(this, obj))
+        {
+            return true;
+        }
+
+        if (obj is not InstrumentProfile that)
+        {
+            return false;
+        }
+
+        if (!type.Equals(that.type, StringComparison.Ordinal))
+        {
+            return false;
+        }
+
+        if (!symbol.Equals(that.symbol, StringComparison.Ordinal))
+        {
+            return false;
+        }
+
+        if (!description.Equals(that.description, StringComparison.Ordinal))
+        {
+            return false;
+        }
+
+        if (!localSymbol.Equals(that.localSymbol, StringComparison.Ordinal))
+        {
+            return false;
+        }
+
+        if (!localDescription.Equals(that.localDescription, StringComparison.Ordinal))
+        {
+            return false;
+        }
+
+        if (!country.Equals(that.country, StringComparison.Ordinal))
+        {
+            return false;
+        }
+
+        if (!opol.Equals(that.opol, StringComparison.Ordinal))
+        {
+            return false;
+        }
+
+        if (!exchangeData.Equals(that.exchangeData, StringComparison.Ordinal))
+        {
+            return false;
+        }
+
+        if (!exchanges.Equals(that.exchanges, StringComparison.Ordinal))
+        {
+            return false;
+        }
+
+        if (!currency.Equals(that.currency, StringComparison.Ordinal))
+        {
+            return false;
+        }
+
+        if (!baseCurrency.Equals(that.baseCurrency, StringComparison.Ordinal))
+        {
+            return false;
+        }
+
+        if (!cfi.Equals(that.cfi, StringComparison.Ordinal))
+        {
+            return false;
+        }
+
+        if (!isin.Equals(that.isin, StringComparison.Ordinal))
+        {
+            return false;
+        }
+
+        if (!sedol.Equals(that.sedol, StringComparison.Ordinal))
+        {
+            return false;
+        }
+
+        if (!cusip.Equals(that.cusip, StringComparison.Ordinal))
+        {
+            return false;
+        }
+
+        if (icb != that.icb)
+        {
+            return false;
+        }
+
+        if (sic != that.sic)
+        {
+            return false;
+        }
+
+        if (!multiplier.Equals(that.multiplier))
+        {
+            return false;
+        }
+
+        if (!product.Equals(that.product, StringComparison.Ordinal))
+        {
+            return false;
+        }
+
+        if (!underlying.Equals(that.underlying, StringComparison.Ordinal))
+        {
+            return false;
+        }
+
+        if (!spc.Equals(that.spc))
+        {
+            return false;
+        }
+
+        if (!additionalUnderlyings.Equals(that.additionalUnderlyings, StringComparison.Ordinal))
+        {
+            return false;
+        }
+
+        if (!mmy.Equals(that.mmy, StringComparison.Ordinal))
+        {
+            return false;
+        }
+
+        if (expiration != that.expiration)
+        {
+            return false;
+        }
+
+        if (lastTrade != that.lastTrade)
+        {
+            return false;
+        }
+
+        if (!strike.Equals(that.Strike))
+        {
+            return false;
+        }
+
+        if (!optionType.Equals(that.optionType, StringComparison.Ordinal))
+        {
+            return false;
+        }
+
+        if (!expirationStyle.Equals(that.expirationStyle, StringComparison.Ordinal))
+        {
+            return false;
+        }
+
+        if (!settlementStyle.Equals(that.settlementStyle, StringComparison.Ordinal))
+        {
+            return false;
+        }
+
+        if (!priceIncrements.Equals(that.priceIncrements, StringComparison.Ordinal))
+        {
+            return false;
+        }
+
+        if (!tradingHours.Equals(that.tradingHours, StringComparison.Ordinal))
+        {
+            return false;
+        }
+
+        return customFieldHandle.Equals(that.customFieldHandle);
+    }
 
     /// <summary>
     /// Returns a hash code value for this object.
     /// </summary>
     /// <returns>A hash code value for this object.</returns>
-    public override int GetHashCode() =>
-        handle.GetHashCode();
+    [SuppressMessage("ReSharper", "NonReadonlyMemberInGetHashCode", Justification = "Not immutable")]
+    public override int GetHashCode()
+    {
+        var result = type.GetHashCode();
+        result = (31 * result) + symbol.GetHashCode();
+        result = (31 * result) + description.GetHashCode();
+        result = (31 * result) + localSymbol.GetHashCode();
+        result = (31 * result) + localDescription.GetHashCode();
+        result = (31 * result) + country.GetHashCode();
+        result = (31 * result) + opol.GetHashCode();
+        result = (31 * result) + exchangeData.GetHashCode();
+        result = (31 * result) + exchanges.GetHashCode();
+        result = (31 * result) + currency.GetHashCode();
+        result = (31 * result) + baseCurrency.GetHashCode();
+        result = (31 * result) + cfi.GetHashCode();
+        result = (31 * result) + isin.GetHashCode();
+        result = (31 * result) + sedol.GetHashCode();
+        result = (31 * result) + cusip.GetHashCode();
+        result = (31 * result) + icb;
+        result = (31 * result) + sic;
+        var temp = BitConverter.DoubleToInt64Bits(multiplier);
+        result = (31 * result) + (int)(temp ^ (long)((ulong)temp >> 32));
+        result = (31 * result) + product.GetHashCode();
+        result = (31 * result) + underlying.GetHashCode();
+        temp = BitConverter.DoubleToInt64Bits(spc);
+        result = (31 * result) + (int)(temp ^ (long)((ulong)temp >> 32));
+        result = (31 * result) + additionalUnderlyings.GetHashCode();
+        result = (31 * result) + mmy.GetHashCode();
+        result = (31 * result) + expiration;
+        result = (31 * result) + lastTrade;
+        temp = BitConverter.DoubleToInt64Bits(strike);
+        result = (31 * result) + (int)(temp ^ (long)((ulong)temp >> 32));
+        result = (31 * result) + optionType.GetHashCode();
+        result = (31 * result) + expirationStyle.GetHashCode();
+        result = (31 * result) + settlementStyle.GetHashCode();
+        result = (31 * result) + priceIncrements.GetHashCode();
+        result = (31 * result) + tradingHours.GetHashCode();
+        result = (31 * result) + customFieldHandle.GetHashCode();
+        return result;
+    }
 
     /// <summary>
     /// Returns a string representation of the instrument profile.
     /// </summary>
     /// <returns>The string representation.</returns>
     public override string ToString() =>
-       handle.ToString();
-
-    internal InstrumentProfileHandle GetHandle() =>
-        handle;
+        $"{Type} {Symbol}";
 }

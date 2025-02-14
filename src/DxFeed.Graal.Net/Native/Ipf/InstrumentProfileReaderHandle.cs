@@ -1,5 +1,5 @@
 // <copyright file="InstrumentProfileReaderHandle.cs" company="Devexperts LLC">
-// Copyright © 2024 Devexperts LLC. All rights reserved.
+// Copyright © 2025 Devexperts LLC. All rights reserved.
 // This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 // If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
 // </copyright>
@@ -19,6 +19,8 @@ namespace DxFeed.Graal.Net.Native.Ipf;
 [SuppressMessage("ReSharper", "ClassNeverInstantiated.Global", Justification = "Created by marshaler")]
 internal sealed class InstrumentProfileReaderHandle : JavaHandle
 {
+    private static readonly InstrumentProfileMarshaler _marshaler = new();
+
     public static string? ResolveSourceUrl(string address) =>
         SafeCall(Import.ResolveSourceUrl(CurrentThread, address));
 
@@ -33,14 +35,14 @@ internal sealed class InstrumentProfileReaderHandle : JavaHandle
 
     public unsafe List<InstrumentProfile> ReadFromFile(string address, string? user, string? password)
     {
-        var ptr = SafeCall(Import.ReadFromFile(CurrentThread, this, address, user, password));
+        SafeCall(Import.ReadFromFile(CurrentThread, this, address, user, password, out var ptr));
         return ConvertToProfiles(ptr);
     }
 
     public unsafe List<InstrumentProfile> ReadFromFile(string address, AuthToken? authToken)
     {
         var tokenHandle = authToken == null ? new AuthTokenHandle() : authToken.Handle;
-        var ptr = SafeCall(Import.ReadFromFile(CurrentThread, this, address, tokenHandle));
+        SafeCall(Import.ReadFromFile(CurrentThread, this, address, tokenHandle, out var ptr));
         return ConvertToProfiles(ptr);
     }
 
@@ -48,10 +50,11 @@ internal sealed class InstrumentProfileReaderHandle : JavaHandle
     {
         try
         {
-            var profiles = new List<InstrumentProfile>();
+            var profiles = new List<InstrumentProfile>(handles->Size);
             for (var i = 0; i < handles->Size; i++)
             {
-                profiles.Add(new InstrumentProfile(new InstrumentProfileHandle((IntPtr)handles->Elements[i])));
+                var profile = (InstrumentProfile)_marshaler.ConvertNativeToManaged((IntPtr)handles->Elements[i])!;
+                profiles.Add(profile);
             }
 
             return profiles;
@@ -110,8 +113,8 @@ internal sealed class InstrumentProfileReaderHandle : JavaHandle
             ExactSpelling = true,
             BestFitMapping = false,
             ThrowOnUnmappableChar = true,
-            EntryPoint = "dxfg_InstrumentProfileReader_readFromFile2")]
-        public static extern unsafe ListNative<IntPtr>* ReadFromFile(
+            EntryPoint = "dxfg_InstrumentProfileReader_readFromFile8")]
+        public static extern unsafe int ReadFromFile(
             nint thread,
             InstrumentProfileReaderHandle reader,
             [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(StringMarshaler))]
@@ -119,7 +122,8 @@ internal sealed class InstrumentProfileReaderHandle : JavaHandle
             [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(StringMarshaler))]
             string? user,
             [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(StringMarshaler))]
-            string? password);
+            string? password,
+            out ListNative<IntPtr>* profiles);
 
         [DllImport(
             ImportInfo.DllName,
@@ -128,13 +132,14 @@ internal sealed class InstrumentProfileReaderHandle : JavaHandle
             ExactSpelling = true,
             BestFitMapping = false,
             ThrowOnUnmappableChar = true,
-            EntryPoint = "dxfg_InstrumentProfileReader_readFromFile3")]
-        public static extern unsafe ListNative<IntPtr>* ReadFromFile(
+            EntryPoint = "dxfg_InstrumentProfileReader_readFromFile9")]
+        public static extern unsafe int ReadFromFile(
             nint thread,
             InstrumentProfileReaderHandle reader,
             [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(StringMarshaler))]
             string address,
-            AuthTokenHandle authToken);
+            AuthTokenHandle authToken,
+            out ListNative<IntPtr>* profiles);
 
         [DllImport(
             ImportInfo.DllName,
@@ -143,8 +148,8 @@ internal sealed class InstrumentProfileReaderHandle : JavaHandle
             ExactSpelling = true,
             BestFitMapping = false,
             ThrowOnUnmappableChar = true,
-            EntryPoint = "dxfg_CList_InstrumentProfile_wrapper_release")]
-        public static extern unsafe ListNative<IntPtr>* ReleaseListWrapper(
+            EntryPoint = "dxfg_instrument_profile2_list_free")]
+        public static extern unsafe int ReleaseListWrapper(
             nint thread,
             ListNative<IntPtr>* list);
     }

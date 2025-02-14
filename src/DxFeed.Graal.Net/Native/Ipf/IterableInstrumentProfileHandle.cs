@@ -1,5 +1,5 @@
 // <copyright file="IterableInstrumentProfileHandle.cs" company="Devexperts LLC">
-// Copyright © 2022 Devexperts LLC. All rights reserved.
+// Copyright © 2025 Devexperts LLC. All rights reserved.
 // This Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.
 // If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
 // </copyright>
@@ -15,6 +15,8 @@ namespace DxFeed.Graal.Net.Native.Ipf;
 
 internal sealed class IterableInstrumentProfileHandle : JavaHandle
 {
+    private static readonly InstrumentProfileMarshaler _marshaler = new();
+
     public IterableInstrumentProfileHandle()
     {
     }
@@ -40,8 +42,16 @@ internal sealed class IterableInstrumentProfileHandle : JavaHandle
 
     public InstrumentProfile? Next()
     {
-        var i = NativeNext(CurrentThread, this);
-        return i != null ? new InstrumentProfile(i) : null;
+        var ptr = IntPtr.Zero;
+        try
+        {
+            ErrorCheck.SafeCall(NativeNext(CurrentThread, this, out ptr));
+            return (InstrumentProfile?)_marshaler.ConvertNativeToManaged(ptr);
+        }
+        finally
+        {
+            _marshaler.CleanUpFromNative(ptr);
+        }
     }
 
     [DllImport(
@@ -63,8 +73,9 @@ internal sealed class IterableInstrumentProfileHandle : JavaHandle
         ExactSpelling = true,
         BestFitMapping = false,
         ThrowOnUnmappableChar = true,
-        EntryPoint = "dxfg_Iterable_InstrumentProfile_next")]
-    private static extern InstrumentProfileHandle? NativeNext(
+        EntryPoint = "dxfg_Iterable_InstrumentProfile_next2")]
+    private static extern int NativeNext(
         nint thread,
-        IterableInstrumentProfileHandle iterable);
+        IterableInstrumentProfileHandle handle,
+        out IntPtr profile);
 }
