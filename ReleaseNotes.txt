@@ -1,3 +1,5 @@
+## Version 2.7.0
+
 * [MDAPI-171] [.NET] Optimize OptionChainsBuilder for performance in .NET compared to Java
 
 ## Version 2.6.0
