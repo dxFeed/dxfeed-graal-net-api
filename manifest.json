@@ -18,7 +18,11 @@
           "relative_path": "docs/api/DxFeed.Graal.Net.Api.DXEndpoint.Builder.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DxFeed.Graal.Net.Api.DXEndpoint.Builder",
+      "Summary": "<p sourcefile=\"docs/api/DxFeed.Graal.Net.Api.DXEndpoint.Builder.yml\" sourcestartlinenumber=\"1\">Builder class for <xref href=\"DxFeed.Graal.Net.Api.DXEndpoint\" data-throw-if-not-resolved=\"false\"></xref> that supports additional configuration properties.\n<br>\nPorting a Java class <code>com.dxfeed.api.DXEndpoint.Builder</code>.\n<br>\nFor more details see <a href=\"https://docs.dxfeed.com/dxfeed/api/com/dxfeed/api/DXEndpoint.Builder.html\">Javadoc</a>.</p>\n<h3>Default properties file</h3>\n<p sourcefile=\"docs/api/DxFeed.Graal.Net.Api.DXEndpoint.Builder.yml\" sourcestartlinenumber=\"9\">The <xref href=\"DxFeed.Graal.Net.Api.DXEndpoint.Builder.Build\" data-throw-if-not-resolved=\"false\"></xref> method tries to load the default property file for the <xref href=\"DxFeed.Graal.Net.Api.DXEndpoint.Role.Feed\" data-throw-if-not-resolved=\"false\"></xref>,\n<xref href=\"DxFeed.Graal.Net.Api.DXEndpoint.Role.OnDemandFeed\" data-throw-if-not-resolved=\"false\"></xref> and <xref href=\"DxFeed.Graal.Net.Api.DXEndpoint.Role.Publisher\" data-throw-if-not-resolved=\"false\"></xref> role.\nThe default properties file is loaded only if there are no system properties (<xref href=\"DxFeed.Graal.Net.SystemProperty\" data-throw-if-not-resolved=\"false\"></xref>)\nor user properties (<xref href=\"DxFeed.Graal.Net.Api.DXEndpoint.Builder.WithProperty(System.String%2cSystem.String)\" data-throw-if-not-resolved=\"false\"></xref>) set with the same key\n(<xref href=\"DxFeed.Graal.Net.Api.DXEndpoint.DXFeedPropertiesProperty\" data-throw-if-not-resolved=\"false\"></xref>, <xref href=\"DxFeed.Graal.Net.Api.DXEndpoint.DXPublisherPropertiesProperty\" data-throw-if-not-resolved=\"false\"></xref>)\nand the file exists and is readable.\n<br>\nThis file must be in the <a href=\"https://en.wikipedia.org/wiki/.properties\">Java properties file format</a>.</p>\n<h3>Endpoint name</h3>\n<p sourcefile=\"docs/api/DxFeed.Graal.Net.Api.DXEndpoint.Builder.yml\" sourcestartlinenumber=\"20\">If no endpoint name has been specified (<xref href=\"DxFeed.Graal.Net.Api.DXEndpoint.Builder.WithName(System.String)\" data-throw-if-not-resolved=\"false\"></xref>), the default name will be used.\nThe default name includes a counter that increments each time an endpoint is created (&quot;qdnet&quot;, &quot;qdnet-1&quot;, etc.).\nTo get the name of the created endpoint, call the <xref href=\"DxFeed.Graal.Net.Api.DXEndpoint.GetName\" data-throw-if-not-resolved=\"false\"></xref> method.</p>\n<h3>Threads and locks</h3>\n<p sourcefile=\"docs/api/DxFeed.Graal.Net.Api.DXEndpoint.Builder.yml\" sourcestartlinenumber=\"26\">This class is thread-safe and can be used concurrently from multiple threads without external synchronization.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -28,7 +32,11 @@
           "relative_path": "docs/api/DxFeed.Graal.Net.Api.DXEndpoint.Role.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DxFeed.Graal.Net.Api.DXEndpoint.Role",
+      "Summary": "<p sourcefile=\"docs/api/DxFeed.Graal.Net.Api.DXEndpoint.Role.yml\" sourcestartlinenumber=\"1\">A list of endpoint roles.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -38,7 +46,11 @@
           "relative_path": "docs/api/DxFeed.Graal.Net.Api.DXEndpoint.State.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DxFeed.Graal.Net.Api.DXEndpoint.State",
+      "Summary": "<p sourcefile=\"docs/api/DxFeed.Graal.Net.Api.DXEndpoint.State.yml\" sourcestartlinenumber=\"1\">A list of endpoint states.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -48,7 +60,11 @@
           "relative_path": "docs/api/DxFeed.Graal.Net.Api.DXEndpoint.StateChangeListener.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DxFeed.Graal.Net.Api.DXEndpoint.StateChangeListener",
+      "Summary": "<p sourcefile=\"docs/api/DxFeed.Graal.Net.Api.DXEndpoint.StateChangeListener.yml\" sourcestartlinenumber=\"1\">Notifies a change in the state of this endpoint.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -58,7 +74,11 @@
           "relative_path": "docs/api/DxFeed.Graal.Net.Api.DXEndpoint.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DxFeed.Graal.Net.Api.DXEndpoint",
+      "Summary": "<p sourcefile=\"docs/api/DxFeed.Graal.Net.Api.DXEndpoint.yml\" sourcestartlinenumber=\"1\">Manages network connections to <xref href=\"DxFeed.Graal.Net.Api.DXFeed\" data-throw-if-not-resolved=\"false\"></xref> or <xref href=\"DxFeed.Graal.Net.Api.DXPublisher\" data-throw-if-not-resolved=\"false\"></xref>.\n<br>\nPorting a Java class <code>com.dxfeed.api.DXEndpoint</code>.\n<br>\nFor more details see <a href=\"https://docs.dxfeed.com/dxfeed/api/com/dxfeed/api/DXEndpoint.html\">Javadoc</a>.\n<br>\nThere are ready-to-use singleton instances that are available with\n<xref href=\"DxFeed.Graal.Net.Api.DXEndpoint.GetInstance\" data-throw-if-not-resolved=\"false\"></xref> and <xref href=\"DxFeed.Graal.Net.Api.DXEndpoint.GetInstance(DxFeed.Graal.Net.Api.DXEndpoint.Role)\" data-throw-if-not-resolved=\"false\"></xref> methods as wel as\nfactory methods <xref href=\"DxFeed.Graal.Net.Api.DXEndpoint.Create\" data-throw-if-not-resolved=\"false\"></xref> and <xref href=\"DxFeed.Graal.Net.Api.DXEndpoint.Create(DxFeed.Graal.Net.Api.DXEndpoint.Role)\" data-throw-if-not-resolved=\"false\"></xref>, and a number of configuration methods.\n<br>\nAdvanced properties can be configured with <xref href=\"DxFeed.Graal.Net.Api.DXEndpoint.Builder\" data-throw-if-not-resolved=\"false\"></xref> (creates with <xref href=\"DxFeed.Graal.Net.Api.DXEndpoint.NewBuilder\" data-throw-if-not-resolved=\"false\"></xref>).</p>\n<h3>Threads and locks</h3>\n<p sourcefile=\"docs/api/DxFeed.Graal.Net.Api.DXEndpoint.yml\" sourcestartlinenumber=\"15\">This class is thread-safe and can be used concurrently from multiple threads without external synchronization.</p>\n<h3>Lifetimes</h3>\n<p sourcefile=\"docs/api/DxFeed.Graal.Net.Api.DXEndpoint.yml\" sourcestartlinenumber=\"19\">This class will not be garbage-collected and its resources will not be freed until <xref href=\"DxFeed.Graal.Net.Api.DXEndpoint.Dispose\" data-throw-if-not-resolved=\"false\"></xref>,\n<xref href=\"DxFeed.Graal.Net.Api.DXEndpoint.Close\" data-throw-if-not-resolved=\"false\"></xref> or <xref href=\"DxFeed.Graal.Net.Api.DXEndpoint.CloseAndAwaitTermination\" data-throw-if-not-resolved=\"false\"></xref> methods are called. Calling these methods\nensures that instance can be safely garbage-collected when all outside references to it are lost.\nIf a reference to an instance of this class is lost before calling the above methods,\nit causes a memory/resource leak.\nThis behavior was implemented intentionally.\nInner instances of <xref href=\"DxFeed.Graal.Net.Api.DXFeed\" data-throw-if-not-resolved=\"false\"></xref> and <xref href=\"DxFeed.Graal.Net.Api.DXPublisher\" data-throw-if-not-resolved=\"false\"></xref> have the same lifetime\nas <xref href=\"DxFeed.Graal.Net.Api.DXEndpoint\" data-throw-if-not-resolved=\"false\"></xref>.\n<xref href=\"DxFeed.Graal.Net.Api.DXFeed\" data-throw-if-not-resolved=\"false\"></xref> and <xref href=\"DxFeed.Graal.Net.Api.DXPublisher\" data-throw-if-not-resolved=\"false\"></xref> have no public resource release methods,\nand exist as long as <xref href=\"DxFeed.Graal.Net.Api.DXEndpoint\" data-throw-if-not-resolved=\"false\"></xref> exists.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -68,7 +88,11 @@
           "relative_path": "docs/api/DxFeed.Graal.Net.Api.DXFeed.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DxFeed.Graal.Net.Api.DXFeed",
+      "Summary": "<p sourcefile=\"docs/api/DxFeed.Graal.Net.Api.DXFeed.yml\" sourcestartlinenumber=\"1\">Main entry class for dxFeed API.\nThis class is a wrapper for <xref href=\"DxFeed.Graal.Net.Native.Feed.FeedNative\" data-throw-if-not-resolved=\"false\"></xref>.\n<br>\n<a href=\"https://docs.dxfeed.com/dxfeed/api/com/dxfeed/api/DXFeed.html\"><b>Read it first Javadoc.</b></a></p>\n"
     },
     {
       "type": "ManagedReference",
@@ -78,7 +102,11 @@
           "relative_path": "docs/api/DxFeed.Graal.Net.Api.DXFeedEventListener.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DxFeed.Graal.Net.Api.DXFeedEventListener",
+      "Summary": "<p sourcefile=\"docs/api/DxFeed.Graal.Net.Api.DXFeedEventListener.yml\" sourcestartlinenumber=\"1\">The listener delegate for receiving events.\nInvoked when events of type are received.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -88,7 +116,11 @@
           "relative_path": "docs/api/DxFeed.Graal.Net.Api.DXFeedSubscription.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DxFeed.Graal.Net.Api.DXFeedSubscription",
+      "Summary": "<p sourcefile=\"docs/api/DxFeed.Graal.Net.Api.DXFeedSubscription.yml\" sourcestartlinenumber=\"1\">Subscription for a set of symbols and event types.\nThis class is a wrapper for <xref href=\"DxFeed.Graal.Net.Native.Subscription.SubscriptionNative\" data-throw-if-not-resolved=\"false\"></xref>.\nFor more details see <a href=\"https://docs.dxfeed.com/dxfeed/api/com/dxfeed/api/DXFeedSubscription.html\">Javadoc</a>.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -98,7 +130,11 @@
           "relative_path": "docs/api/DxFeed.Graal.Net.Api.DXPublisher.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DxFeed.Graal.Net.Api.DXPublisher",
+      "Summary": "<p sourcefile=\"docs/api/DxFeed.Graal.Net.Api.DXPublisher.yml\" sourcestartlinenumber=\"1\">Provides API for publishing of events to local or remote <xref href=\"DxFeed.Graal.Net.Api.DXFeed\" data-throw-if-not-resolved=\"false\"></xref>.\nThis class is a wrapper for <xref href=\"DxFeed.Graal.Net.Native.Publisher.DXPublisherHandle\" data-throw-if-not-resolved=\"false\"></xref>.\n<br>\nFor more details see <a href=\"https://docs.dxfeed.com/dxfeed/api/com/dxfeed/api/DXPublisher.html\">Javadoc</a>.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -108,7 +144,11 @@
           "relative_path": "docs/api/DxFeed.Graal.Net.Api.Osub.IObservableSubscription.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DxFeed.Graal.Net.Api.Osub.IObservableSubscription",
+      "Summary": "<p sourcefile=\"docs/api/DxFeed.Graal.Net.Api.Osub.IObservableSubscription.yml\" sourcestartlinenumber=\"1\">Observable set of subscription symbols for the specific event type.\n<br>\nFor more details see <a href=\"https://docs.dxfeed.com/dxfeed/api/com/dxfeed/api/osub/ObservableSubscription.html\">Javadoc</a>.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -118,7 +158,11 @@
           "relative_path": "docs/api/DxFeed.Graal.Net.Api.Osub.IndexedEventSubscriptionSymbol-1.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DxFeed.Graal.Net.Api.Osub.IndexedEventSubscriptionSymbol<T>",
+      "Summary": "<p sourcefile=\"docs/api/DxFeed.Graal.Net.Api.Osub.IndexedEventSubscriptionSymbol-1.yml\" sourcestartlinenumber=\"1\">Represents subscription to a specific source of indexed events.\nInstances of this class can be used with <xref href=\"DxFeed.Graal.Net.Api.DXFeedSubscription\" data-throw-if-not-resolved=\"false\"></xref>\nto specify subscription to a particular source of indexed events.\nBy default, when subscribing to indexed events by their event symbol object,\nthe subscription is performed to all supported sources.\n<br>\nFor more details see <a href=\"https://docs.dxfeed.com/dxfeed/api/com/dxfeed/api/osub/IndexedEventSubscriptionSymbol.html\">Javadoc</a>.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -128,7 +172,11 @@
           "relative_path": "docs/api/DxFeed.Graal.Net.Api.Osub.IndexedEventSubscriptionSymbol.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DxFeed.Graal.Net.Api.Osub.IndexedEventSubscriptionSymbol",
+      "Summary": "<p sourcefile=\"docs/api/DxFeed.Graal.Net.Api.Osub.IndexedEventSubscriptionSymbol.yml\" sourcestartlinenumber=\"1\">Represents subscription to a specific source of indexed events.\nInstances of this class can be used with <xref href=\"DxFeed.Graal.Net.Api.DXFeedSubscription\" data-throw-if-not-resolved=\"false\"></xref>\nto specify subscription to a particular source of indexed events.\nBy default, when subscribing to indexed events by their event symbol object,\nthe subscription is performed to all supported sources.\n<br>\nFor more details see <a href=\"https://docs.dxfeed.com/dxfeed/api/com/dxfeed/api/osub/IndexedEventSubscriptionSymbol.html\">Javadoc</a>.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -138,7 +186,11 @@
           "relative_path": "docs/api/DxFeed.Graal.Net.Api.Osub.TimeSeriesSubscriptionSymbol-1.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DxFeed.Graal.Net.Api.Osub.TimeSeriesSubscriptionSymbol<T>",
+      "Summary": "<p sourcefile=\"docs/api/DxFeed.Graal.Net.Api.Osub.TimeSeriesSubscriptionSymbol-1.yml\" sourcestartlinenumber=\"1\">Represents subscription to time-series of events.\nInstances of this class can be used with <xref href=\"DxFeed.Graal.Net.Api.DXFeedSubscription\" data-throw-if-not-resolved=\"false\"></xref> to specify subscription\nfor time series events from a specific time. By default, subscribing to time-series events by\ntheir event symbol object, the subscription is performed to a stream of new events as they happen only.\n<br>\nFor more details see <a href=\"https://docs.dxfeed.com/dxfeed/api/com/dxfeed/api/osub/TimeSeriesSubscriptionSymbol.html\">Javadoc</a>.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -148,7 +200,11 @@
           "relative_path": "docs/api/DxFeed.Graal.Net.Api.Osub.TimeSeriesSubscriptionSymbol.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DxFeed.Graal.Net.Api.Osub.TimeSeriesSubscriptionSymbol",
+      "Summary": "<p sourcefile=\"docs/api/DxFeed.Graal.Net.Api.Osub.TimeSeriesSubscriptionSymbol.yml\" sourcestartlinenumber=\"1\">Represents subscription to time-series of events.\nInstances of this class can be used with <xref href=\"DxFeed.Graal.Net.Api.DXFeedSubscription\" data-throw-if-not-resolved=\"false\"></xref> to specify subscription\nfor time series events from a specific time. By default, subscribing to time-series events by\ntheir event symbol object, the subscription is performed to a stream of new events as they happen only.\n<br>\nFor more details see <a href=\"https://docs.dxfeed.com/dxfeed/api/com/dxfeed/api/osub/TimeSeriesSubscriptionSymbol.html\">Javadoc</a>.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -158,7 +214,11 @@
           "relative_path": "docs/api/DxFeed.Graal.Net.Api.Osub.WildcardSymbol.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DxFeed.Graal.Net.Api.Osub.WildcardSymbol",
+      "Summary": "<p sourcefile=\"docs/api/DxFeed.Graal.Net.Api.Osub.WildcardSymbol.yml\" sourcestartlinenumber=\"1\">Represents [wildcard] subscription to all events of the specific event type.\nThe <xref href=\"DxFeed.Graal.Net.Api.Osub.WildcardSymbol.All\" data-throw-if-not-resolved=\"false\"></xref> constant can be added to any\n<xref href=\"DxFeed.Graal.Net.Api.DXFeedSubscription\" data-throw-if-not-resolved=\"false\"></xref> instance with <xref href=\"DxFeed.Graal.Net.Api.DXFeedSubscription.AddSymbols(System.Object%5b%5d)\" data-throw-if-not-resolved=\"false\"></xref> method\nto the effect of subscribing to all possible event symbols. The corresponding subscription will start\nreceiving all published events of the corresponding types.\n<br>\nFor more details see <a href=\"https://docs.dxfeed.com/dxfeed/api/com/dxfeed/api/osub/WildcardSymbol.html\">Javadoc</a>.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -168,7 +228,11 @@
           "relative_path": "docs/api/DxFeed.Graal.Net.Api.Osub.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DxFeed.Graal.Net.Api.Osub",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -178,7 +242,11 @@
           "relative_path": "docs/api/DxFeed.Graal.Net.Api.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DxFeed.Graal.Net.Api",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -188,7 +256,11 @@
           "relative_path": "docs/api/DxFeed.Graal.Net.Auth.AuthToken.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DxFeed.Graal.Net.Auth.AuthToken",
+      "Summary": "<p sourcefile=\"docs/api/DxFeed.Graal.Net.Auth.AuthToken.yml\" sourcestartlinenumber=\"1\">The <code>AuthToken</code> class represents an authorization token and encapsulates information\nabout the authorization scheme and its associated value.</p>\n<p></p>An AuthToken consists of the following components:\n<ul>\n  <li>Scheme - The authorization scheme (e.g., \"Basic\" or \"Bearer\").</li>\n  <li>\n    Value - The encoded value, which is scheme-dependent (e.g., an access token per RFC6750\n    or Base64-encoded \"user:password\" per RFC2617).\n  </li>\n  <li>\n    String representation - A string that combines the scheme and value in the format: [scheme + \" \" + value].\n  </li>\n</ul>\n"
     },
     {
       "type": "ManagedReference",
@@ -198,7 +270,11 @@
           "relative_path": "docs/api/DxFeed.Graal.Net.Auth.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DxFeed.Graal.Net.Auth",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -208,7 +284,11 @@
           "relative_path": "docs/api/DxFeed.Graal.Net.Events.Candles.Candle.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DxFeed.Graal.Net.Events.Candles.Candle",
+      "Summary": "<p sourcefile=\"docs/api/DxFeed.Graal.Net.Events.Candles.Candle.yml\" sourcestartlinenumber=\"1\">Candle event with open, high, low, close prices and other information for a specific period.\nCandles are build with a specified <xref href=\"DxFeed.Graal.Net.Events.Candles.CandlePeriod\" data-throw-if-not-resolved=\"false\"></xref> using a specified <xref href=\"DxFeed.Graal.Net.Events.Candles.CandlePrice\" data-throw-if-not-resolved=\"false\"></xref> type\nwith a data taken from the specified <xref href=\"DxFeed.Graal.Net.Events.Candles.CandleExchange\" data-throw-if-not-resolved=\"false\"></xref> from the specified <xref href=\"DxFeed.Graal.Net.Events.Candles.CandleSession\" data-throw-if-not-resolved=\"false\"></xref>\nwith further details of aggregation provided by <xref href=\"DxFeed.Graal.Net.Events.Candles.CandleAlignment\" data-throw-if-not-resolved=\"false\"></xref>.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -218,7 +298,11 @@
           "relative_path": "docs/api/DxFeed.Graal.Net.Events.Candles.CandleAlignment.CandleAlignmentId.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DxFeed.Graal.Net.Events.Candles.CandleAlignment.CandleAlignmentId",
+      "Summary": "<p sourcefile=\"docs/api/DxFeed.Graal.Net.Events.Candles.CandleAlignment.CandleAlignmentId.yml\" sourcestartlinenumber=\"1\">List of ids <xref href=\"DxFeed.Graal.Net.Events.Candles.CandleAlignment\" data-throw-if-not-resolved=\"false\"></xref>.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -228,7 +312,11 @@
           "relative_path": "docs/api/DxFeed.Graal.Net.Events.Candles.CandleAlignment.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DxFeed.Graal.Net.Events.Candles.CandleAlignment",
+      "Summary": "<p sourcefile=\"docs/api/DxFeed.Graal.Net.Events.Candles.CandleAlignment.yml\" sourcestartlinenumber=\"1\">Candle alignment attribute of <xref href=\"DxFeed.Graal.Net.Events.Candles.CandleSymbol\" data-throw-if-not-resolved=\"false\"></xref> defines how candle are aligned with respect to time.\n<br>\nFor more details see <a href=\"https://docs.dxfeed.com/dxfeed/api/com/dxfeed/event/candle/CandleAlignment.html\">Javadoc</a>.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -238,7 +326,11 @@
           "relative_path": "docs/api/DxFeed.Graal.Net.Events.Candles.CandleExchange.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DxFeed.Graal.Net.Events.Candles.CandleExchange",
+      "Summary": "<p sourcefile=\"docs/api/DxFeed.Graal.Net.Events.Candles.CandleExchange.yml\" sourcestartlinenumber=\"1\">Exchange attribute of <xref href=\"DxFeed.Graal.Net.Events.Candles.CandleSymbol\" data-throw-if-not-resolved=\"false\"></xref> defines exchange identifier where data is\ntaken from to build the candles.\n<br>\nFor more details see <a href=\"https://docs.dxfeed.com/dxfeed/api/com/dxfeed/event/candle/CandleExchange.html\">Javadoc</a>.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -248,7 +340,11 @@
           "relative_path": "docs/api/DxFeed.Graal.Net.Events.Candles.CandlePeriod.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DxFeed.Graal.Net.Events.Candles.CandlePeriod",
+      "Summary": "<p sourcefile=\"docs/api/DxFeed.Graal.Net.Events.Candles.CandlePeriod.yml\" sourcestartlinenumber=\"1\">Period attribute of <xref href=\"DxFeed.Graal.Net.Events.Candles.CandleSymbol\" data-throw-if-not-resolved=\"false\"></xref> defines aggregation period of the candles.\nAggregation period is defined as pair of a <xref href=\"DxFeed.Graal.Net.Events.Candles.CandlePeriod.Value\" data-throw-if-not-resolved=\"false\"></xref> and <xref href=\"DxFeed.Graal.Net.Events.Candles.CandlePeriod.Type\" data-throw-if-not-resolved=\"false\"></xref>.\n<br>\nFor more details see <a href=\"https://docs.dxfeed.com/dxfeed/api/com/dxfeed/event/candle/CandlePeriod.html\">Javadoc</a>.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -258,7 +354,11 @@
           "relative_path": "docs/api/DxFeed.Graal.Net.Events.Candles.CandlePrice.CandlePriceId.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DxFeed.Graal.Net.Events.Candles.CandlePrice.CandlePriceId",
+      "Summary": "<p sourcefile=\"docs/api/DxFeed.Graal.Net.Events.Candles.CandlePrice.CandlePriceId.yml\" sourcestartlinenumber=\"1\">List of ids <xref href=\"DxFeed.Graal.Net.Events.Candles.CandlePrice.CandlePriceId\" data-throw-if-not-resolved=\"false\"></xref>.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -268,7 +368,11 @@
           "relative_path": "docs/api/DxFeed.Graal.Net.Events.Candles.CandlePrice.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DxFeed.Graal.Net.Events.Candles.CandlePrice",
+      "Summary": "<p sourcefile=\"docs/api/DxFeed.Graal.Net.Events.Candles.CandlePrice.yml\" sourcestartlinenumber=\"1\">Price type attribute of <xref href=\"DxFeed.Graal.Net.Events.Candles.CandleSymbol\" data-throw-if-not-resolved=\"false\"></xref> defines price that is used to build the candles.\n<br>\nFor more details see <a href=\"https://docs.dxfeed.com/dxfeed/api/com/dxfeed/event/candle/CandlePrice.html\">Javadoc</a>.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -278,7 +382,11 @@
           "relative_path": "docs/api/DxFeed.Graal.Net.Events.Candles.CandlePriceLevel.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DxFeed.Graal.Net.Events.Candles.CandlePriceLevel",
+      "Summary": "<p sourcefile=\"docs/api/DxFeed.Graal.Net.Events.Candles.CandlePriceLevel.yml\" sourcestartlinenumber=\"1\">Candle price level attribute of <xref href=\"DxFeed.Graal.Net.Events.Candles.CandleSymbol\" data-throw-if-not-resolved=\"false\"></xref> defines how candles shall be aggregated in respect to\nprice interval. The negative or infinite values of price interval are treated as exceptional.</p>\n<ul>\n<li>Price interval may be equal to zero. It means every unique price creates a particular candle\nto aggregate all events with this price for the chosen <xref href=\"DxFeed.Graal.Net.Events.Candles.CandlePeriod\" data-throw-if-not-resolved=\"false\"></xref>.</li>\n<li>Non-zero price level creates sequence of intervals starting from 0:\n...,[-pl;0),[0;pl),[pl;2*pl),...,[n*pl,n*pl+pl).\nEvents aggregated by chosen <xref href=\"DxFeed.Graal.Net.Events.Candles.CandlePeriod\" data-throw-if-not-resolved=\"false\"></xref> and price intervals.</li>\n</ul>\n<br>\nFor more details see <a href=\"https://docs.dxfeed.com/dxfeed/api/com/dxfeed/event/candle/CandlePriceLevel.html\">Javadoc</a>.\n"
     },
     {
       "type": "ManagedReference",
@@ -288,7 +396,11 @@
           "relative_path": "docs/api/DxFeed.Graal.Net.Events.Candles.CandleSession.CandleSessionId.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DxFeed.Graal.Net.Events.Candles.CandleSession.CandleSessionId",
+      "Summary": "<p sourcefile=\"docs/api/DxFeed.Graal.Net.Events.Candles.CandleSession.CandleSessionId.yml\" sourcestartlinenumber=\"1\">List of ids <xref href=\"DxFeed.Graal.Net.Events.Candles.CandleSession\" data-throw-if-not-resolved=\"false\"></xref>.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -298,7 +410,11 @@
           "relative_path": "docs/api/DxFeed.Graal.Net.Events.Candles.CandleSession.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DxFeed.Graal.Net.Events.Candles.CandleSession",
+      "Summary": "<p sourcefile=\"docs/api/DxFeed.Graal.Net.Events.Candles.CandleSession.yml\" sourcestartlinenumber=\"1\">Session attribute of <xref href=\"DxFeed.Graal.Net.Events.Candles.CandleSymbol\" data-throw-if-not-resolved=\"false\"></xref> defines trading that is used to build the candles.\n<br>\nFor more details see <a href=\"https://docs.dxfeed.com/dxfeed/api/com/dxfeed/event/candle/CandleSession.html\">Javadoc</a>.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -308,7 +424,11 @@
           "relative_path": "docs/api/DxFeed.Graal.Net.Events.Candles.CandleSymbol.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DxFeed.Graal.Net.Events.Candles.CandleSymbol",
+      "Summary": "<p sourcefile=\"docs/api/DxFeed.Graal.Net.Events.Candles.CandleSymbol.yml\" sourcestartlinenumber=\"1\">Symbol that should be used with <xref href=\"DxFeed.Graal.Net.Api.DXFeedSubscription\" data-throw-if-not-resolved=\"false\"></xref> class\nto subscribe for <xref href=\"DxFeed.Graal.Net.Events.Candles.Candle\" data-throw-if-not-resolved=\"false\"></xref> events. <xref href=\"DxFeed.Graal.Net.Api.DXFeedSubscription\" data-throw-if-not-resolved=\"false\"></xref> also accepts a string\nrepresentation of the candle symbol for subscription.\n<br>\nFor more details see <a href=\"https://docs.dxfeed.com/dxfeed/api/com/dxfeed/event/candle/CandleSymbol.html\">Javadoc</a>.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -318,7 +438,11 @@
           "relative_path": "docs/api/DxFeed.Graal.Net.Events.Candles.CandleType.CandleTypeId.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DxFeed.Graal.Net.Events.Candles.CandleType.CandleTypeId",
+      "Summary": "<p sourcefile=\"docs/api/DxFeed.Graal.Net.Events.Candles.CandleType.CandleTypeId.yml\" sourcestartlinenumber=\"1\">List of ids <xref href=\"DxFeed.Graal.Net.Events.Candles.CandleType\" data-throw-if-not-resolved=\"false\"></xref>.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -328,7 +452,11 @@
           "relative_path": "docs/api/DxFeed.Graal.Net.Events.Candles.CandleType.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DxFeed.Graal.Net.Events.Candles.CandleType",
+      "Summary": "<p sourcefile=\"docs/api/DxFeed.Graal.Net.Events.Candles.CandleType.yml\" sourcestartlinenumber=\"1\">Type of the candle aggregation period constitutes <xref href=\"DxFeed.Graal.Net.Events.Candles.CandlePeriod\" data-throw-if-not-resolved=\"false\"></xref> type together\nits actual <xref href=\"DxFeed.Graal.Net.Events.Candles.CandlePeriod.Value\" data-throw-if-not-resolved=\"false\"></xref>.\nFor more details see <a href=\"https://docs.dxfeed.com/dxfeed/api/com/dxfeed/event/candle/CandleType.html\">Javadoc</a>.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -338,7 +466,11 @@
           "relative_path": "docs/api/DxFeed.Graal.Net.Events.Candles.ICandleSymbolProperty.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DxFeed.Graal.Net.Events.Candles.ICandleSymbolProperty",
+      "Summary": "<p sourcefile=\"docs/api/DxFeed.Graal.Net.Events.Candles.ICandleSymbolProperty.yml\" sourcestartlinenumber=\"1\">Property of the <xref href=\"DxFeed.Graal.Net.Events.Candles.CandleSymbol\" data-throw-if-not-resolved=\"false\"></xref>.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -348,7 +480,11 @@
           "relative_path": "docs/api/DxFeed.Graal.Net.Events.Candles.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DxFeed.Graal.Net.Events.Candles",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -358,7 +494,11 @@
           "relative_path": "docs/api/DxFeed.Graal.Net.Events.EventCodeAttribute.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DxFeed.Graal.Net.Events.EventCodeAttribute",
+      "Summary": "<p sourcefile=\"docs/api/DxFeed.Graal.Net.Events.EventCodeAttribute.yml\" sourcestartlinenumber=\"1\">Indicates that the attributed class contains event code native.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -368,7 +508,11 @@
           "relative_path": "docs/api/DxFeed.Graal.Net.Events.EventFlags.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DxFeed.Graal.Net.Events.EventFlags",
+      "Summary": "<p sourcefile=\"docs/api/DxFeed.Graal.Net.Events.EventFlags.yml\" sourcestartlinenumber=\"1\">Provides constants and utility methods for handling event flags.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -378,7 +522,11 @@
           "relative_path": "docs/api/DxFeed.Graal.Net.Events.IEventType.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DxFeed.Graal.Net.Events.IEventType",
+      "Summary": "<p sourcefile=\"docs/api/DxFeed.Graal.Net.Events.IEventType.yml\" sourcestartlinenumber=\"1\">Marks all event types that can be received via dxFeed API.\nEvents are considered instantaneous, non-persistent, and unconflateable\n(each event is individually delivered) unless they implement one of interfaces\ndefined in this package to further refine their meaning.\n<br>\nFor more details see <a href=\"https://docs.dxfeed.com/dxfeed/api/com/dxfeed/event/EventType.html\">Javadoc</a>.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -388,7 +536,11 @@
           "relative_path": "docs/api/DxFeed.Graal.Net.Events.IIndexedEvent.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DxFeed.Graal.Net.Events.IIndexedEvent",
+      "Summary": "<p sourcefile=\"docs/api/DxFeed.Graal.Net.Events.IIndexedEvent.yml\" sourcestartlinenumber=\"1\">Represents an indexed collection of up-to-date information about some\ncondition or state of an external entity that updates in real-time. For example,\n<xref href=\"DxFeed.Graal.Net.Events.Market.Order\" data-throw-if-not-resolved=\"false\"></xref> represents an order to buy or to sell some market instrument\nthat is currently active on a market exchange and multiple\norders are active for each symbol at any given moment in time.\n<br>\nFor more details see <a href=\"https://docs.dxfeed.com/dxfeed/api/com/dxfeed/event/IndexedEvent.html\">Javadoc</a>.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -398,7 +550,11 @@
           "relative_path": "docs/api/DxFeed.Graal.Net.Events.ILastingEvent.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DxFeed.Graal.Net.Events.ILastingEvent",
+      "Summary": "<p sourcefile=\"docs/api/DxFeed.Graal.Net.Events.ILastingEvent.yml\" sourcestartlinenumber=\"1\">Represents up-to-date information about some\ncondition or state of an external entity that updates in real-time.\nFor example, a <xref href=\"DxFeed.Graal.Net.Events.Market.Quote\" data-throw-if-not-resolved=\"false\"></xref> is an up-to-date information about best bid and best offer for a specific symbol.\n<br>\nFor more details see <a href=\"https://docs.dxfeed.com/dxfeed/api/com/dxfeed/event/LastingEvent.html\">Javadoc</a>.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -408,7 +564,11 @@
           "relative_path": "docs/api/DxFeed.Graal.Net.Events.ITimeSeriesEvent.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DxFeed.Graal.Net.Events.ITimeSeriesEvent",
+      "Summary": "<p sourcefile=\"docs/api/DxFeed.Graal.Net.Events.ITimeSeriesEvent.yml\" sourcestartlinenumber=\"1\">Represents time-series snapshots of some\nprocess that is evolving in time or actual events in some external system\nthat have an associated time stamp and can be uniquely identified.\nFor example, <xref href=\"DxFeed.Graal.Net.Events.Market.TimeAndSale\" data-throw-if-not-resolved=\"false\"></xref> events represent the actual sales that happen\non a market exchange at specific time moments, while Candle events represent snapshots\nof aggregate information about trading over a specific time period.\n<br>\nFor more details see <a href=\"https://docs.dxfeed.com/dxfeed/api/com/dxfeed/event/TimeSeriesEvent.html\">Javadoc</a>.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -418,7 +578,11 @@
           "relative_path": "docs/api/DxFeed.Graal.Net.Events.IndexedEventSource.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DxFeed.Graal.Net.Events.IndexedEventSource",
+      "Summary": "<p sourcefile=\"docs/api/DxFeed.Graal.Net.Events.IndexedEventSource.yml\" sourcestartlinenumber=\"1\">Source identifier for <xref href=\"DxFeed.Graal.Net.Events.IIndexedEvent\" data-throw-if-not-resolved=\"false\"></xref>.\n<br>\nFor more details see <a href=\"https://docs.dxfeed.com/dxfeed/api/com/dxfeed/event/IndexedEventSource.html\">Javadoc</a>.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -428,7 +592,11 @@
           "relative_path": "docs/api/DxFeed.Graal.Net.Events.Market.AnalyticOrder.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DxFeed.Graal.Net.Events.Market.AnalyticOrder",
+      "Summary": "<p sourcefile=\"docs/api/DxFeed.Graal.Net.Events.Market.AnalyticOrder.yml\" sourcestartlinenumber=\"1\">Represents an extension of <xref href=\"DxFeed.Graal.Net.Events.Market.Order\" data-throw-if-not-resolved=\"false\"></xref> introducing analytics information,\ne.g. adding to this order iceberg related information\n(<xref href=\"DxFeed.Graal.Net.Events.Market.AnalyticOrder.IcebergPeakSize\" data-throw-if-not-resolved=\"false\"></xref>, <xref href=\"DxFeed.Graal.Net.Events.Market.AnalyticOrder.IcebergHiddenSize\" data-throw-if-not-resolved=\"false\"></xref>, <xref href=\"DxFeed.Graal.Net.Events.Market.AnalyticOrder.IcebergExecutedSize\" data-throw-if-not-resolved=\"false\"></xref>).\nThe collection of analytic order events of a symbol represents the most recent analytic information\nthat is available about orders on the market at any given moment of time.\n<br>\nFor more details see <a href=\"https://docs.dxfeed.com/dxfeed/api/com/dxfeed/event/market/AnalyticOrder.html\">Javadoc</a>.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -438,7 +606,11 @@
           "relative_path": "docs/api/DxFeed.Graal.Net.Events.Market.Direction.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DxFeed.Graal.Net.Events.Market.Direction",
+      "Summary": "<p sourcefile=\"docs/api/DxFeed.Graal.Net.Events.Market.Direction.yml\" sourcestartlinenumber=\"1\">Direction of the price movement. For example tick direction for last trade price.\n<br>\nFor more details see <a href=\"https://docs.dxfeed.com/dxfeed/api/com/dxfeed/event/market/Direction.html\">Javadoc</a>.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -448,7 +620,11 @@
           "relative_path": "docs/api/DxFeed.Graal.Net.Events.Market.IcebergType.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DxFeed.Graal.Net.Events.Market.IcebergType",
+      "Summary": "<p sourcefile=\"docs/api/DxFeed.Graal.Net.Events.Market.IcebergType.yml\" sourcestartlinenumber=\"1\">Type of an iceberg order.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -458,7 +634,11 @@
           "relative_path": "docs/api/DxFeed.Graal.Net.Events.Market.MarketEvent.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DxFeed.Graal.Net.Events.Market.MarketEvent",
+      "Summary": "<p sourcefile=\"docs/api/DxFeed.Graal.Net.Events.Market.MarketEvent.yml\" sourcestartlinenumber=\"1\">Abstract base class for all market events. All market events are objects that\nextend this class. Market event classes are simple beans with setter and getter methods for their\nproperties and minimal business logic. All market events have <xref href=\"DxFeed.Graal.Net.Events.Market.MarketEvent.EventSymbol\" data-throw-if-not-resolved=\"false\"></xref>\nproperty that is defined by this class.\n<br>\nFor more details see <a href=\"https://docs.dxfeed.com/dxfeed/api/com/dxfeed/event/market/MarketEvent.html\">Javadoc</a>.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -468,7 +648,11 @@
           "relative_path": "docs/api/DxFeed.Graal.Net.Events.Market.MarketEventSymbols.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DxFeed.Graal.Net.Events.Market.MarketEventSymbols",
+      "Summary": "<p sourcefile=\"docs/api/DxFeed.Graal.Net.Events.Market.MarketEventSymbols.yml\" sourcestartlinenumber=\"1\">Helper class to compose and parse symbols for market events.</p>\n<h3>Regional symbols</h3>\n<p sourcefile=\"docs/api/DxFeed.Graal.Net.Events.Market.MarketEventSymbols.yml\" sourcestartlinenumber=\"5\">Regional symbol subscription receives events only from a designated exchange, marketplace, or venue\ninstead of receiving composite events from all venues (by default). Regional symbol is composed from a\n<i>base symbol</i>, ampersand character ('&amp;'), and an exchange code character. For example,</p>\n<ul>\n<li>\"SPY\" is the symbol for composite events for SPDR S&amp;P 500 ETF from all exchanges,</li>\n<li>\"SPY&amp;N\" is the symbol for event for SPDR S&amp;P 500 ETF that originate only from NYSE marketplace.</li>\n</ul>\n<h3>Symbol attributes</h3>\n<p sourcefile=\"docs/api/DxFeed.Graal.Net.Events.Market.MarketEventSymbols.yml\" sourcestartlinenumber=\"15\">Market event symbols can have a number of attributes attached to then in curly braces\nwith &quot;&lt;key&gt;=&lt;value&gt;&quot; paris separated by commas. For example,</p>\n<ul>\n<li>\"SPY{price=bid}\" is the market symbol \"SPY\" with an attribute key \"price\" set to value \"bid\".</li>\n<li>\"SPY(=5m,tho=true}\" is the market symbol \"SPY\" with two attributes. One has an empty key and\nvalue \"5m\", while the other has key \"tho\" and value \"true\".</li>\n</ul>\nThe methods in this class always maintain attribute keys in alphabetic order.\n<br>\nFor more details see <a href=\"https://docs.dxfeed.com/dxfeed/api/com/dxfeed/event/market/MarketEventSymbols.html\">Javadoc</a>.\n"
     },
     {
       "type": "ManagedReference",
@@ -478,7 +662,11 @@
           "relative_path": "docs/api/DxFeed.Graal.Net.Events.Market.OptionSale.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DxFeed.Graal.Net.Events.Market.OptionSale",
+      "Summary": "<p sourcefile=\"docs/api/DxFeed.Graal.Net.Events.Market.OptionSale.yml\" sourcestartlinenumber=\"1\">Option Sale event represents a trade or another market event with the price\n(for example, market open/close price, etc.) for each option symbol listed under the specified Underlying.\nOption Sales are intended to provide information about option trades <b>in a continuous time slice</b> with\nthe additional metrics, like Option Volatility, Option Delta, and Underlying Price.\n<br> Option Sale events have unique <xref href=\"DxFeed.Graal.Net.Events.Market.OptionSale.Index\" data-throw-if-not-resolved=\"false\"></xref>\nwhich can be used for later correction/cancellation processing.\n<br>\nFor more details see <a href=\"https://docs.dxfeed.com/dxfeed/api/com/dxfeed/event/market/OptionSale.html\">Javadoc</a>.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -488,7 +676,11 @@
           "relative_path": "docs/api/DxFeed.Graal.Net.Events.Market.Order.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DxFeed.Graal.Net.Events.Market.Order",
+      "Summary": "<p sourcefile=\"docs/api/DxFeed.Graal.Net.Events.Market.Order.yml\" sourcestartlinenumber=\"1\">Order event is a snapshot for a full available market depth for a symbol.\nThe collection of order events of a symbol represents the most recent information\nthat is available about orders on the market at any given moment of time.\nOrder events give information on several levels of details, called scopes - see <xref href=\"DxFeed.Graal.Net.Events.Market.Scope\" data-throw-if-not-resolved=\"false\"></xref>.\nScope of an order is available via <xref href=\"DxFeed.Graal.Net.Events.Market.OrderBase.Scope\" data-throw-if-not-resolved=\"false\"></xref>property.\n<br>\nFor more details see <a href=\"https://docs.dxfeed.com/dxfeed/api/com/dxfeed/event/market/Order.html\">Javadoc</a>.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -498,7 +690,11 @@
           "relative_path": "docs/api/DxFeed.Graal.Net.Events.Market.OrderAction.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DxFeed.Graal.Net.Events.Market.OrderAction",
+      "Summary": "<p sourcefile=\"docs/api/DxFeed.Graal.Net.Events.Market.OrderAction.yml\" sourcestartlinenumber=\"1\">Action enum for the Full Order Book (FOB) Orders. Action describes business meaning of the\n<xref href=\"DxFeed.Graal.Net.Events.Market.Order\" data-throw-if-not-resolved=\"false\"></xref> event: whether order was added or replaced, partially or fully executed, etc.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -508,7 +704,11 @@
           "relative_path": "docs/api/DxFeed.Graal.Net.Events.Market.OrderBase.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DxFeed.Graal.Net.Events.Market.OrderBase",
+      "Summary": "<p sourcefile=\"docs/api/DxFeed.Graal.Net.Events.Market.OrderBase.yml\" sourcestartlinenumber=\"1\">Base class for common fields of <xref href=\"DxFeed.Graal.Net.Events.Market.Order\" data-throw-if-not-resolved=\"false\"></xref>, <xref href=\"DxFeed.Graal.Net.Events.Market.AnalyticOrder\" data-throw-if-not-resolved=\"false\"></xref>\nand <xref href=\"DxFeed.Graal.Net.Events.Market.SpreadOrder\" data-throw-if-not-resolved=\"false\"></xref> events.\nOrder events represent a snapshot for a full available market depth for a symbol.\nThe collection of order events of a symbol represents the most recent information that is\navailable about orders on the market at any given moment of time.\n<br>\n<xref href=\"DxFeed.Graal.Net.Events.Market.Order\" data-throw-if-not-resolved=\"false\"></xref> event represents market depth for a <b>specific symbol</b>.\n<br>\n<xref href=\"DxFeed.Graal.Net.Events.Market.AnalyticOrder\" data-throw-if-not-resolved=\"false\"></xref> event represents market depth for a <b>specific symbol</b>\nextended with an analytic information, for example, whether particular order represent an iceberg or not.\n<br>\n<xref href=\"DxFeed.Graal.Net.Events.Market.SpreadOrder\" data-throw-if-not-resolved=\"false\"></xref> event represents market depth for <b>all spreads on a given underlying symbol</b>.\n<br>\nFor more details see <a href=\"https://docs.dxfeed.com/dxfeed/api/com/dxfeed/event/market/OrderBase.html\">Javadoc</a>.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -518,7 +718,11 @@
           "relative_path": "docs/api/DxFeed.Graal.Net.Events.Market.OrderSource.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DxFeed.Graal.Net.Events.Market.OrderSource",
+      "Summary": "<p sourcefile=\"docs/api/DxFeed.Graal.Net.Events.Market.OrderSource.yml\" sourcestartlinenumber=\"1\">Identifies source of <xref href=\"DxFeed.Graal.Net.Events.Market.Order\" data-throw-if-not-resolved=\"false\"></xref>, <xref href=\"DxFeed.Graal.Net.Events.Market.AnalyticOrder\" data-throw-if-not-resolved=\"false\"></xref> and <xref href=\"DxFeed.Graal.Net.Events.Market.SpreadOrder\" data-throw-if-not-resolved=\"false\"></xref> events.</p>\n<ul>\n<li>\n<em>Synthetic</em> sources <xref href=\"DxFeed.Graal.Net.Events.Market.OrderSource.COMPOSITE_BID\" data-throw-if-not-resolved=\"false\"></xref>, <xref href=\"DxFeed.Graal.Net.Events.Market.OrderSource.COMPOSITE_ASK\" data-throw-if-not-resolved=\"false\"></xref>,\n    <xref href=\"DxFeed.Graal.Net.Events.Market.OrderSource.REGIONAL_BID\" data-throw-if-not-resolved=\"false\"></xref> and <xref href=\"DxFeed.Graal.Net.Events.Market.OrderSource.REGIONAL_ASK\" data-throw-if-not-resolved=\"false\"></xref> are provided for convenience of a consolidated\n    order book and are automatically generated based on the corresponding <xref href=\"DxFeed.Graal.Net.Events.Market.Quote\" data-throw-if-not-resolved=\"false\"></xref> events.\n</li>\n<li>\n<em>Aggregate</em> sources <xref href=\"DxFeed.Graal.Net.Events.Market.OrderSource.AGGREGATE_BID\" data-throw-if-not-resolved=\"false\"></xref>  and <xref href=\"DxFeed.Graal.Net.Events.Market.OrderSource.AGGREGATE_ASK\" data-throw-if-not-resolved=\"false\"></xref>  provide\n    futures depth (aggregated by price level) and NASDAQ Level II (top of book for each market maker).\n    These source cannot be directly published to via dxFeed API.\n</li>\n<li>\n<xref href=\"DxFeed.Graal.Net.Events.Market.OrderSource.IsPublishable(System.Type)\" data-throw-if-not-resolved=\"false\"></xref> sources <xref href=\"DxFeed.Graal.Net.Events.Market.OrderSource.DEFAULT\" data-throw-if-not-resolved=\"false\"></xref>, <xref href=\"DxFeed.Graal.Net.Events.Market.OrderSource.NTV\" data-throw-if-not-resolved=\"false\"></xref> and <xref href=\"DxFeed.Graal.Net.Events.Market.OrderSource.ISE\" data-throw-if-not-resolved=\"false\"></xref>\n    support full range of dxFeed API features.\n</li>\n</ul>\nFor more details see <a href=\"https://docs.dxfeed.com/dxfeed/api/com/dxfeed/event/market/OrderSource.html\">Javadoc</a>.\n"
     },
     {
       "type": "ManagedReference",
@@ -528,7 +732,11 @@
           "relative_path": "docs/api/DxFeed.Graal.Net.Events.Market.OtcMarketsOrder.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DxFeed.Graal.Net.Events.Market.OtcMarketsOrder",
+      "Summary": "<p sourcefile=\"docs/api/DxFeed.Graal.Net.Events.Market.OtcMarketsOrder.yml\" sourcestartlinenumber=\"1\">Represents an extension of <xref href=\"DxFeed.Graal.Net.Events.Market.Order\" data-throw-if-not-resolved=\"false\"></xref> for the symbols traded on the OTC Markets. It includes the OTC Markets specific quote data.\nFor more information about original fields, QAP, Quote Flags and Extended Quote Flags,\nsee <a href=\"https://downloads.dxfeed.com/specifications/OTC_Markets_Multicast_Data_Feeds.pdf\">OTC Markets Multicast Data Feed</a>.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -538,7 +746,11 @@
           "relative_path": "docs/api/DxFeed.Graal.Net.Events.Market.OtcMarketsPriceType.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DxFeed.Graal.Net.Events.Market.OtcMarketsPriceType",
+      "Summary": "<p sourcefile=\"docs/api/DxFeed.Graal.Net.Events.Market.OtcMarketsPriceType.yml\" sourcestartlinenumber=\"1\">Type of prices on the OTC Markets.</p>\n<p sourcefile=\"docs/api/DxFeed.Graal.Net.Events.Market.OtcMarketsPriceType.yml\" sourcestartlinenumber=\"3\">Please see <a href=\"https://downloads.dxfeed.com/specifications/OTC_Markets_Data_Display_Requirements.pdf\">OTC Markets Data Display Requirements</a></p>\n"
     },
     {
       "type": "ManagedReference",
@@ -548,7 +760,11 @@
           "relative_path": "docs/api/DxFeed.Graal.Net.Events.Market.PriceType.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DxFeed.Graal.Net.Events.Market.PriceType",
+      "Summary": "<p sourcefile=\"docs/api/DxFeed.Graal.Net.Events.Market.PriceType.yml\" sourcestartlinenumber=\"1\">Type of the price value.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -558,7 +774,11 @@
           "relative_path": "docs/api/DxFeed.Graal.Net.Events.Market.Profile.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DxFeed.Graal.Net.Events.Market.Profile",
+      "Summary": "<p sourcefile=\"docs/api/DxFeed.Graal.Net.Events.Market.Profile.yml\" sourcestartlinenumber=\"1\">Profile information snapshot that contains security instrument description.\nIt represents the most recent information that is available about the traded security\non the market at any given moment of time.\n<br>\nFor more details see <a href=\"https://docs.dxfeed.com/dxfeed/api/com/dxfeed/event/market/Profile.html\">Javadoc</a>.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -568,7 +788,11 @@
           "relative_path": "docs/api/DxFeed.Graal.Net.Events.Market.Quote.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DxFeed.Graal.Net.Events.Market.Quote",
+      "Summary": "<p sourcefile=\"docs/api/DxFeed.Graal.Net.Events.Market.Quote.yml\" sourcestartlinenumber=\"1\">Quote event is a snapshot of the best bid and ask prices, and other fields that change with each quote.\nIt represents the most recent information that is available about the best quote on the market\nat any given moment of time.\n<br>\nFor more details see <a href=\"https://docs.dxfeed.com/dxfeed/api/com/dxfeed/event/market/Quote.html\">Javadoc</a>.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -578,7 +802,11 @@
           "relative_path": "docs/api/DxFeed.Graal.Net.Events.Market.Scope.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DxFeed.Graal.Net.Events.Market.Scope",
+      "Summary": "<p sourcefile=\"docs/api/DxFeed.Graal.Net.Events.Market.Scope.yml\" sourcestartlinenumber=\"1\">Scope of an order.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -588,7 +816,11 @@
           "relative_path": "docs/api/DxFeed.Graal.Net.Events.Market.ShortSaleRestriction.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DxFeed.Graal.Net.Events.Market.ShortSaleRestriction",
+      "Summary": "<p sourcefile=\"docs/api/DxFeed.Graal.Net.Events.Market.ShortSaleRestriction.yml\" sourcestartlinenumber=\"1\">Short sale restriction on an instrument.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -598,7 +830,11 @@
           "relative_path": "docs/api/DxFeed.Graal.Net.Events.Market.Side.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DxFeed.Graal.Net.Events.Market.Side",
+      "Summary": "<p sourcefile=\"docs/api/DxFeed.Graal.Net.Events.Market.Side.yml\" sourcestartlinenumber=\"1\">Side of an order or a trade.\n<br>\nFor more details see <a href=\"https://docs.dxfeed.com/dxfeed/api/com/dxfeed/event/market/Side.html\">Javadoc</a>.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -608,7 +844,11 @@
           "relative_path": "docs/api/DxFeed.Graal.Net.Events.Market.SpreadOrder.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DxFeed.Graal.Net.Events.Market.SpreadOrder",
+      "Summary": "<p sourcefile=\"docs/api/DxFeed.Graal.Net.Events.Market.SpreadOrder.yml\" sourcestartlinenumber=\"1\">Spread order event is a snapshot for a full available market depth for all spreads\non a given underlying symbol. The collection of spread order events of a symbol\nrepresents the most recent information that is available about spread orders on\nthe market at any given moment of time.</p>\n<p> Spread order is similar to a regular <xref href=\"DxFeed.Graal.Net.Events.Market.Order\" data-throw-if-not-resolved=\"false\"></xref>, but it has a\n<xref href=\"DxFeed.Graal.Net.Events.Market.SpreadOrder.SpreadSymbol\" data-throw-if-not-resolved=\"false\"></xref> property that contains the symbol\nof the actual spread that is being represented by spread order object.\n<xref href=\"DxFeed.Graal.Net.Events.Market.MarketEvent.EventSymbol\" data-throw-if-not-resolved=\"false\"></xref> property contains the underlying symbol\nthat was used in subscription.\n</p>\nFor more details see <a href=\"https://docs.dxfeed.com/dxfeed/api/com/dxfeed/event/market/SpreadOrder.html\">Javadoc</a>.\n"
     },
     {
       "type": "ManagedReference",
@@ -618,7 +858,11 @@
           "relative_path": "docs/api/DxFeed.Graal.Net.Events.Market.Summary.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DxFeed.Graal.Net.Events.Market.Summary",
+      "Summary": "<p sourcefile=\"docs/api/DxFeed.Graal.Net.Events.Market.Summary.yml\" sourcestartlinenumber=\"1\">Summary information snapshot about the trading session including session highs, lows, etc.\nIt represents the most recent information that is available about the trading session in\nthe market at any given moment of time.\n<br>\nFor more details see <a href=\"https://docs.dxfeed.com/dxfeed/api/com/dxfeed/event/market/Summary.html\">Javadoc</a>.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -628,7 +872,11 @@
           "relative_path": "docs/api/DxFeed.Graal.Net.Events.Market.TimeAndSale.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DxFeed.Graal.Net.Events.Market.TimeAndSale",
+      "Summary": "<p sourcefile=\"docs/api/DxFeed.Graal.Net.Events.Market.TimeAndSale.yml\" sourcestartlinenumber=\"1\">Time and Sale represents a trade or other market event with price, like market open/close price, etc.\nTime and Sales are intended to provide information about trades <b>in a continuous time slice</b>\n(unlike <xref href=\"DxFeed.Graal.Net.Events.Market.Trade\" data-throw-if-not-resolved=\"false\"></xref> events which are supposed to provide snapshot about the <b>current last</b> trade).\n<br> Time and Sale events have unique <xref href=\"DxFeed.Graal.Net.Events.Market.TimeAndSale.Index\" data-throw-if-not-resolved=\"false\"></xref>\nwhich can be used for later correction/cancellation processing.\n<br>\nFor more details see <a href=\"https://docs.dxfeed.com/dxfeed/api/com/dxfeed/event/market/TimeAndSale.html\">Javadoc</a>.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -638,7 +886,11 @@
           "relative_path": "docs/api/DxFeed.Graal.Net.Events.Market.TimeAndSaleType.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DxFeed.Graal.Net.Events.Market.TimeAndSaleType",
+      "Summary": "<p sourcefile=\"docs/api/DxFeed.Graal.Net.Events.Market.TimeAndSaleType.yml\" sourcestartlinenumber=\"1\">Type of a time and sale event.\n<br>\nFor more details see <a href=\"https://docs.dxfeed.com/dxfeed/api/com/dxfeed/event/market/TimeAndSaleType.html\">Javadoc</a>.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -648,7 +900,11 @@
           "relative_path": "docs/api/DxFeed.Graal.Net.Events.Market.Trade.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DxFeed.Graal.Net.Events.Market.Trade",
+      "Summary": "<p sourcefile=\"docs/api/DxFeed.Graal.Net.Events.Market.Trade.yml\" sourcestartlinenumber=\"1\">Trade event is a snapshot of the price and size of the last trade during regular trading hours\nand an overall day volume and day turnover.\nIt represents the most recent information that is available about the regular last trade on the market\nat any given moment of time.\n<br>\nFor more details see <a href=\"https://docs.dxfeed.com/dxfeed/api/com/dxfeed/event/market/Trade.html\">Javadoc</a>.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -658,7 +914,11 @@
           "relative_path": "docs/api/DxFeed.Graal.Net.Events.Market.TradeBase.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DxFeed.Graal.Net.Events.Market.TradeBase",
+      "Summary": "<p sourcefile=\"docs/api/DxFeed.Graal.Net.Events.Market.TradeBase.yml\" sourcestartlinenumber=\"1\">Base class for common fields of <xref href=\"DxFeed.Graal.Net.Events.Market.Trade\" data-throw-if-not-resolved=\"false\"></xref> and <xref href=\"DxFeed.Graal.Net.Events.Market.TradeETH\" data-throw-if-not-resolved=\"false\"></xref> events.\nTrade events represent the most recent information that is available about the last trade on the market\nat any given moment of time.\n<br>\nFor more details see <a href=\"https://docs.dxfeed.com/dxfeed/api/com/dxfeed/event/market/TradeBase.html\">Javadoc</a>.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -668,7 +928,11 @@
           "relative_path": "docs/api/DxFeed.Graal.Net.Events.Market.TradeETH.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DxFeed.Graal.Net.Events.Market.TradeETH",
+      "Summary": "<p sourcefile=\"docs/api/DxFeed.Graal.Net.Events.Market.TradeETH.yml\" sourcestartlinenumber=\"1\">TradeETH event is a snapshot of the price and size of the last trade during\nextended trading hours and the extended trading hours day volume and day turnover.\nThis event is defined only for symbols (typically stocks and ETFs) with a designated\n<b>extended trading hours</b> (ETH, pre market and post market trading sessions).\nIt represents the most recent information that is available about\nETH last trade on the market at any given moment of time.\n<br>\nFor more details see <a href=\"https://docs.dxfeed.com/dxfeed/api/com/dxfeed/event/market/TradeETH.html\">Javadoc</a>.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -678,7 +942,11 @@
           "relative_path": "docs/api/DxFeed.Graal.Net.Events.Market.TradingStatus.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DxFeed.Graal.Net.Events.Market.TradingStatus",
+      "Summary": "<p sourcefile=\"docs/api/DxFeed.Graal.Net.Events.Market.TradingStatus.yml\" sourcestartlinenumber=\"1\">Trading status of an instrument.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -688,7 +956,11 @@
           "relative_path": "docs/api/DxFeed.Graal.Net.Events.Market.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DxFeed.Graal.Net.Events.Market",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -698,7 +970,11 @@
           "relative_path": "docs/api/DxFeed.Graal.Net.Events.Options.Greeks.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DxFeed.Graal.Net.Events.Options.Greeks",
+      "Summary": "<p sourcefile=\"docs/api/DxFeed.Graal.Net.Events.Options.Greeks.yml\" sourcestartlinenumber=\"1\">Greeks event is a snapshot of the option price, Black-Scholes volatility and greeks.\nIt represents the most recent information that is available about the corresponding values on\nthe market at any given moment of time.\n<br>\nFor more details see <a href=\"https://docs.dxfeed.com/dxfeed/api/com/dxfeed/event/option/Greeks.html\">Javadoc</a>.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -708,7 +984,11 @@
           "relative_path": "docs/api/DxFeed.Graal.Net.Events.Options.Series.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DxFeed.Graal.Net.Events.Options.Series",
+      "Summary": "<p sourcefile=\"docs/api/DxFeed.Graal.Net.Events.Options.Series.yml\" sourcestartlinenumber=\"1\">Series event is a snapshot of computed values that are available for all option series for\na given underlying symbol based on the option prices on the market.\nIt represents the most recent information that is available about the corresponding values on\nthe market at any given moment of time.\n<br>\nFor more details see <a href=\"https://docs.dxfeed.com/dxfeed/api/com/dxfeed/event/option/Series.html\">Javadoc</a>.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -718,7 +998,11 @@
           "relative_path": "docs/api/DxFeed.Graal.Net.Events.Options.TheoPrice.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DxFeed.Graal.Net.Events.Options.TheoPrice",
+      "Summary": "<p sourcefile=\"docs/api/DxFeed.Graal.Net.Events.Options.TheoPrice.yml\" sourcestartlinenumber=\"1\">Theo price is a snapshot of the theoretical option price computation that is\nperiodically performed by <a href=\"http://www.devexperts.com/en/products/price.html\">dxPrice</a>\nmodel-free computation.\nIt represents the most recent information that is available about the corresponding\nvalues at any given moment of time.\nThe values include first and second order derivative of the price curve by price, so that\nthe real-time theoretical option price can be estimated on real-time changes of the underlying\nprice in the vicinity.\n<br>\nFor more details see <a href=\"https://docs.dxfeed.com/dxfeed/api/com/dxfeed/event/option/TheoPrice.html\">Javadoc</a>.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -728,7 +1012,11 @@
           "relative_path": "docs/api/DxFeed.Graal.Net.Events.Options.Underlying.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DxFeed.Graal.Net.Events.Options.Underlying",
+      "Summary": "<p sourcefile=\"docs/api/DxFeed.Graal.Net.Events.Options.Underlying.yml\" sourcestartlinenumber=\"1\">Underlying event is a snapshot of computed values that are available for an option underlying\nsymbol based on the option prices on the market.\nIt represents the most recent information that is available about the corresponding values on\nthe market at any given moment of time.\n<br>\nFor more details see <a href=\"https://docs.dxfeed.com/dxfeed/api/com/dxfeed/event/option/Underlying.html\">Javadoc</a>.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -738,7 +1026,11 @@
           "relative_path": "docs/api/DxFeed.Graal.Net.Events.Options.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DxFeed.Graal.Net.Events.Options",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -748,7 +1040,11 @@
           "relative_path": "docs/api/DxFeed.Graal.Net.Events.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DxFeed.Graal.Net.Events",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -758,7 +1054,11 @@
           "relative_path": "docs/api/DxFeed.Graal.Net.Ipf.InstrumentProfile.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DxFeed.Graal.Net.Ipf.InstrumentProfile",
+      "Summary": "<p sourcefile=\"docs/api/DxFeed.Graal.Net.Ipf.InstrumentProfile.yml\" sourcestartlinenumber=\"1\">Represents basic profile information about market instrument.\nPlease see <a href=\"http://www.dxfeed.com/downloads/documentation/dxFeed_Instrument_Profile_Format.pdf\">Instrument Profile Format documentation</a>\nfor complete description.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -768,7 +1068,11 @@
           "relative_path": "docs/api/DxFeed.Graal.Net.Ipf.InstrumentProfileReader.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DxFeed.Graal.Net.Ipf.InstrumentProfileReader",
+      "Summary": "<p sourcefile=\"docs/api/DxFeed.Graal.Net.Ipf.InstrumentProfileReader.yml\" sourcestartlinenumber=\"1\">Reads instrument profiles from the stream using Instrument Profile Format (IPF).\nPlease see <b>Instrument Profile Format</b> documentation for complete description.\nThis reader automatically uses data formats as specified in the stream.</p>\n<p></p>This reader is intended for \"one time only\" usage: create new instances for new IPF reads.\n<p></p>Use <xref href=\"DxFeed.Graal.Net.Ipf.Live.InstrumentProfileConnection\" data-throw-if-not-resolved=\"false\"></xref> if support for streaming updates of instrument profiles is needed.\n<p></p>For backward compatibility reader can be configured with system property \"com.dxfeed.ipf.complete\" to control\nthe strategy for missing \"##COMPLETE\" tag when reading IPF, possible values are:\n<ul>\n    <li><code>warn</code> - show warning in the log (default)</li>\n    <li><code>error</code> - throw exception (future default)</li>\n    <li><code>ignore</code> - do nothing (for backward compatibility)</li>\n</ul>\n"
     },
     {
       "type": "ManagedReference",
@@ -778,7 +1082,11 @@
           "relative_path": "docs/api/DxFeed.Graal.Net.Ipf.InstrumentProfileType.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DxFeed.Graal.Net.Ipf.InstrumentProfileType",
+      "Summary": "<p sourcefile=\"docs/api/DxFeed.Graal.Net.Ipf.InstrumentProfileType.yml\" sourcestartlinenumber=\"1\">Defines standard types of <xref href=\"DxFeed.Graal.Net.Ipf.InstrumentProfile\" data-throw-if-not-resolved=\"false\"></xref>. Note that other (unknown) types\ncan be used without listing in this class - use it for convenience only.\nPlease see <b>Instrument Profile Format</b> documentation for complete description.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -788,7 +1096,11 @@
           "relative_path": "docs/api/DxFeed.Graal.Net.Ipf.Live.InstrumentProfileCollector.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DxFeed.Graal.Net.Ipf.Live.InstrumentProfileCollector",
+      "Summary": "<p sourcefile=\"docs/api/DxFeed.Graal.Net.Ipf.Live.InstrumentProfileCollector.yml\" sourcestartlinenumber=\"1\">Collects instrument profile updates and provides the live list of instrument profiles.\nThis class contains a map that keeps a unique instrument profile per symbol.\nThis class is intended to be used with <xref href=\"DxFeed.Graal.Net.Ipf.Live.InstrumentProfileConnection\" data-throw-if-not-resolved=\"false\"></xref> as a repository\nthat keeps profiles of all known instruments.</p>\n<p sourcefile=\"docs/api/DxFeed.Graal.Net.Ipf.Live.InstrumentProfileCollector.yml\" sourcestartlinenumber=\"6\"><br>As set of instrument profiles stored in this collector can be accessed with <xref href=\"DxFeed.Graal.Net.Ipf.Live.InstrumentProfileCollector.View\" data-throw-if-not-resolved=\"false\"></xref> method.\nA snapshot plus a live stream of updates can be accessed with <xref href=\"DxFeed.Graal.Net.Ipf.Live.InstrumentProfileCollector.AddUpdateListener(DxFeed.Graal.Net.Ipf.Live.InstrumentProfileUpdateListener)\" data-throw-if-not-resolved=\"false\"></xref> method.</p>\n<p sourcefile=\"docs/api/DxFeed.Graal.Net.Ipf.Live.InstrumentProfileCollector.yml\" sourcestartlinenumber=\"9\"><br>Removal of instrument profile is represented by an <xref href=\"DxFeed.Graal.Net.Ipf.InstrumentProfile\" data-throw-if-not-resolved=\"false\"></xref> instance\nwith a type equal to  <xref href=\"DxFeed.Graal.Net.Ipf.InstrumentProfileType.REMOVED\" data-throw-if-not-resolved=\"false\"></xref>.</p>\n<p sourcefile=\"docs/api/DxFeed.Graal.Net.Ipf.Live.InstrumentProfileCollector.yml\" sourcestartlinenumber=\"12\"><br><b>This class is thread-safe.</b></p>\n"
     },
     {
       "type": "ManagedReference",
@@ -798,7 +1110,11 @@
           "relative_path": "docs/api/DxFeed.Graal.Net.Ipf.Live.InstrumentProfileConnection.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DxFeed.Graal.Net.Ipf.Live.InstrumentProfileConnection",
+      "Summary": "<p sourcefile=\"docs/api/DxFeed.Graal.Net.Ipf.Live.InstrumentProfileConnection.yml\" sourcestartlinenumber=\"1\">Connects to an instrument profile URL and reads instrument profiles with support of\nstreaming live updates.\nPlease see <b>Instrument Profile Format</b> documentation for complete description.</p>\n<p></p>The key different between this class and InstrumentProfileReader is that the later just reads\na snapshot of a set of instrument profiles, while this classes allows to track live updates, e.g.\naddition and removal of instruments.\n<p></p>To use this class you need an address of the data source from you data provider. The name of the IPF file can\nalso serve as an address for debugging purposes.\n<p></p>The recommended usage of this class to receive a live stream of instrument profile updates is:\n"
     },
     {
       "type": "ManagedReference",
@@ -808,7 +1124,11 @@
           "relative_path": "docs/api/DxFeed.Graal.Net.Ipf.Live.InstrumentProfileUpdateListener.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DxFeed.Graal.Net.Ipf.Live.InstrumentProfileUpdateListener",
+      "Summary": "<p sourcefile=\"docs/api/DxFeed.Graal.Net.Ipf.Live.InstrumentProfileUpdateListener.yml\" sourcestartlinenumber=\"1\">Notifies about instrument profile changes.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -818,7 +1138,11 @@
           "relative_path": "docs/api/DxFeed.Graal.Net.Ipf.Live.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DxFeed.Graal.Net.Ipf.Live",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -828,7 +1152,11 @@
           "relative_path": "docs/api/DxFeed.Graal.Net.Ipf.Options.OptionChain-1.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DxFeed.Graal.Net.Ipf.Options.OptionChain<T>",
+      "Summary": "<p sourcefile=\"docs/api/DxFeed.Graal.Net.Ipf.Options.OptionChain-1.yml\" sourcestartlinenumber=\"1\">Represents a set of option series for a single product or underlying symbol.</p>\n<h3>Threads and locks</h3>\n<p sourcefile=\"docs/api/DxFeed.Graal.Net.Ipf.Options.OptionChain-1.yml\" sourcestartlinenumber=\"5\">This class is <b>NOT</b> thread-safe and cannot be used from multiple threads without external synchronization.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -838,7 +1166,11 @@
           "relative_path": "docs/api/DxFeed.Graal.Net.Ipf.Options.OptionChainsBuilder-1.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DxFeed.Graal.Net.Ipf.Options.OptionChainsBuilder<T>",
+      "Summary": "<p sourcefile=\"docs/api/DxFeed.Graal.Net.Ipf.Options.OptionChainsBuilder-1.yml\" sourcestartlinenumber=\"1\">Builder class for a set of option chains grouped by product or underlying symbol.</p>\n<h3>Threads and clocks</h3>\n<p sourcefile=\"docs/api/DxFeed.Graal.Net.Ipf.Options.OptionChainsBuilder-1.yml\" sourcestartlinenumber=\"5\">This class is <b>NOT</b> thread-safe and cannot be used from multiple threads without external synchronization.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -848,7 +1180,11 @@
           "relative_path": "docs/api/DxFeed.Graal.Net.Ipf.Options.OptionSeries-1.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DxFeed.Graal.Net.Ipf.Options.OptionSeries<T>",
+      "Summary": "<p sourcefile=\"docs/api/DxFeed.Graal.Net.Ipf.Options.OptionSeries-1.yml\" sourcestartlinenumber=\"1\">Represents a series of call and put options with different strike sharing the same attributes\nsuch as expiration, last trading day, SPC, multiplier, etc.</p>\n<h3>Threads and locks</h3>\n<p sourcefile=\"docs/api/DxFeed.Graal.Net.Ipf.Options.OptionSeries-1.yml\" sourcestartlinenumber=\"6\">This class is <b>NOT</b> thread-safe and cannot be used from multiple threads without external synchronization.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -858,7 +1194,11 @@
           "relative_path": "docs/api/DxFeed.Graal.Net.Ipf.Options.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DxFeed.Graal.Net.Ipf.Options",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -868,7 +1208,11 @@
           "relative_path": "docs/api/DxFeed.Graal.Net.Ipf.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DxFeed.Graal.Net.Ipf",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -878,7 +1222,11 @@
           "relative_path": "docs/api/DxFeed.Graal.Net.Models.AbstractTxModel-1.Builder-2.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DxFeed.Graal.Net.Models.AbstractTxModel<TE>.Builder<TB, TM>",
+      "Summary": "<p sourcefile=\"docs/api/DxFeed.Graal.Net.Models.AbstractTxModel-1.Builder-2.yml\" sourcestartlinenumber=\"1\">Abstract builder for building models inherited from <xref href=\"DxFeed.Graal.Net.Models.AbstractTxModel%601\" data-throw-if-not-resolved=\"false\"></xref>.\nSpecific implementations can add additional configuration options to this builder.</p>\n<p>Inheritors of this class must override the abstract method <xref href=\"DxFeed.Graal.Net.Models.AbstractTxModel%601.Builder%602.Build\" data-throw-if-not-resolved=\"false\"></xref> to build a specific model.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -888,7 +1236,11 @@
           "relative_path": "docs/api/DxFeed.Graal.Net.Models.AbstractTxModel-1.Builder.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DxFeed.Graal.Net.Models.AbstractTxModel<TE>.Builder",
+      "Summary": "<p sourcefile=\"docs/api/DxFeed.Graal.Net.Models.AbstractTxModel-1.Builder.yml\" sourcestartlinenumber=\"1\">Non-generic version, for erasing a generic type.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -898,7 +1250,11 @@
           "relative_path": "docs/api/DxFeed.Graal.Net.Models.AbstractTxModel-1.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DxFeed.Graal.Net.Models.AbstractTxModel<TE>",
+      "Summary": "<p sourcefile=\"docs/api/DxFeed.Graal.Net.Models.AbstractTxModel-1.yml\" sourcestartlinenumber=\"1\">Abstract base class for models that handle transactions of <xref href=\"DxFeed.Graal.Net.Events.IIndexedEvent\" data-throw-if-not-resolved=\"false\"></xref>.\nThis model manages all snapshot and transaction logic, subscription handling, and listener notifications.</p>\n<p>This model is designed to handle incremental transactions. Users of this model only see the list\nof events in a consistent state. This model delays incoming events that are part of an incomplete snapshot\nor ongoing transaction until the snapshot is complete or the transaction has ended.</p>\n<h3>Configuration</h3>\n<p>This model must be configured using the <xref href=\"DxFeed.Graal.Net.Models.AbstractTxModel%601.Builder\" data-throw-if-not-resolved=\"false\"></xref>. Specific implementations can add additional\nconfiguration options as needed. This model requires a call to the <xref href=\"DxFeed.Graal.Net.Models.AbstractTxModel%601.SetSymbols(System.Collections.Generic.HashSet%7bSystem.Object%7d)\" data-throw-if-not-resolved=\"false\"></xref> method\n(all inheritors must call this method) for subscription.</p>\n<p>This model only supports single symbol subscriptions; multiple symbols cannot be configured.</p>\n<h3>Resource management and closed models</h3>\n<p>Attached model is a potential memory leak. If the pointer to attached model is lost, then there is no way\nto detach this model from the feed and the model will not be reclaimed by the garbage collector as long as the\ncorresponding feed is still used. Detached model can be reclaimed by the garbage collector, but detaching model\nrequires knowing the pointer to the feed at the place of the call, which is not always convenient.</p>\n<p>The convenient way to detach model from the feed is to call its\n<xref href=\"DxFeed.Graal.Net.Models.AbstractTxModel%601.Dispose\" data-throw-if-not-resolved=\"false\"></xref> method.\nClosed model becomes permanently detached from all feeds, removes all its listeners and is guaranteed\nto be reclaimable by the garbage collector as soon as all external references to it are cleared.</p>\n<h3>Threads and locks</h3>\n<p>This class is thread-safe and can be used concurrently from multiple threads without external synchronization.</p>\nThe corresponding <xref href=\"DxFeed.Graal.Net.Models.TxModelListener%601\" data-throw-if-not-resolved=\"false\"></xref> to never be concurrent\n"
     },
     {
       "type": "ManagedReference",
@@ -908,7 +1264,11 @@
           "relative_path": "docs/api/DxFeed.Graal.Net.Models.IndexedTxModel-1.Builder.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DxFeed.Graal.Net.Models.IndexedTxModel<TE>.Builder",
+      "Summary": "<p sourcefile=\"docs/api/DxFeed.Graal.Net.Models.IndexedTxModel-1.Builder.yml\" sourcestartlinenumber=\"1\">A builder class for creating an instance of <xref href=\"DxFeed.Graal.Net.Models.IndexedTxModel%601\" data-throw-if-not-resolved=\"false\"></xref>.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -918,7 +1278,11 @@
           "relative_path": "docs/api/DxFeed.Graal.Net.Models.IndexedTxModel-1.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DxFeed.Graal.Net.Models.IndexedTxModel<TE>",
+      "Summary": "<p sourcefile=\"docs/api/DxFeed.Graal.Net.Models.IndexedTxModel-1.yml\" sourcestartlinenumber=\"1\">An incremental model for indexed events.\nThis model manages all snapshot and transaction logic, subscription handling, and listener notifications.</p>\n<p>This model is designed to handle incremental transactions. Users of this model only see the list\nof events in a consistent state. This model delays incoming events that are part of an incomplete snapshot\nor ongoing transaction until the snapshot is complete or the transaction has ended. This model notifies\nthe user of received transactions through an installed <xref href=\"DxFeed.Graal.Net.Models.TxModelListener%601\" data-throw-if-not-resolved=\"false\"></xref>.</p>\n<h3>Configuration</h3>\n<p>This model must be configured using the <xref href=\"DxFeed.Graal.Net.Models.IndexedTxModel%601.Builder\" data-throw-if-not-resolved=\"false\"></xref> class, as most configuration\nsettings cannot be changed once the model is built. This model requires configuration\n<xref href=\"DxFeed.Graal.Net.Models.AbstractTxModel%601.Builder%602.WithSymbol(System.Object)\" data-throw-if-not-resolved=\"false\"></xref> and\n<xref href=\"DxFeed.Graal.Net.Models.IndexedTxModel%601.Builder.WithSources(DxFeed.Graal.Net.Events.IndexedEventSource%5b%5d)\" data-throw-if-not-resolved=\"false\"></xref> for subscription,\nand it must be <xref href=\"DxFeed.Graal.Net.Models.AbstractTxModel%601.Builder%602.WithFeed(DxFeed.Graal.Net.Api.DXFeed)\" data-throw-if-not-resolved=\"false\"></xref> attached to a <xref href=\"DxFeed.Graal.Net.Api.DXFeed\" data-throw-if-not-resolved=\"false\"></xref>\ninstance to begin operation.\nFor ease of use, some of these configurations can be changed after the model is built,\nsee <xref href=\"DxFeed.Graal.Net.Models.IndexedTxModel%601.SetSources(DxFeed.Graal.Net.Events.IndexedEventSource%5b%5d)\" data-throw-if-not-resolved=\"false\"></xref>.</p>\n<p>This model only supports single symbol subscriptions; multiple symbols cannot be configured.</p>\n<h3>Resource management and closed models</h3>\n<p>Attached model is a potential memory leak. If the pointer to attached model is lost, then there is no way\nto detach this model from the feed and the model will not be reclaimed by the garbage collector as long as the\ncorresponding feed is still used. Detached model can be reclaimed by the garbage collector, but detaching model\nrequires knowing the pointer to the feed at the place of the call, which is not always convenient.</p>\n<p>The convenient way to detach model from the feed is to call its\n<xref href=\"DxFeed.Graal.Net.Models.AbstractTxModel%601.Dispose\" data-throw-if-not-resolved=\"false\"></xref> method.\nClosed model becomes permanently detached from all feeds, removes all its listeners and is guaranteed\nto be reclaimable by the garbage collector as soon as all external references to it are cleared.</p>\n<h3>Threads and locks</h3>\n<p>This class is thread-safe and can be used concurrently from multiple threads without external synchronization.</p>\nThe corresponding <xref href=\"DxFeed.Graal.Net.Models.TxModelListener%601\" data-throw-if-not-resolved=\"false\"></xref> to never be concurrent.\n"
     },
     {
       "type": "ManagedReference",
@@ -928,7 +1292,11 @@
           "relative_path": "docs/api/DxFeed.Graal.Net.Models.MarketDepthModel-1.Builder.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DxFeed.Graal.Net.Models.MarketDepthModel<TE>.Builder",
+      "Summary": "<p sourcefile=\"docs/api/DxFeed.Graal.Net.Models.MarketDepthModel-1.Builder.yml\" sourcestartlinenumber=\"1\">Builder class for constructing instances of MarketDepthModel.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -938,7 +1306,11 @@
           "relative_path": "docs/api/DxFeed.Graal.Net.Models.MarketDepthModel-1.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DxFeed.Graal.Net.Models.MarketDepthModel<TE>",
+      "Summary": "<p sourcefile=\"docs/api/DxFeed.Graal.Net.Models.MarketDepthModel-1.yml\" sourcestartlinenumber=\"1\">Represents a model for market depth, tracking buy and sell orders and notifies listener\nof changes in the order book.</p>\n<p>This model can set depth limit and aggregation period. This model notifies\nthe user of received transactions through an installed <xref href=\"DxFeed.Graal.Net.Models.MarketDepthModelListener%601\" data-throw-if-not-resolved=\"false\"></xref>.</p>\n<p>The depth limit specifies the maximum number of buy or sell orders to maintain in the order book.\nFor example, if the depth limit is set to 10, the model will only keep track of the top 10 buy orders\nand the top 10 sell orders. This helps in managing the size of the order book.</p>\n<p>The aggregation period, specified in milliseconds, determines the frequency at which the model aggregates\nand notifies changes in the order book to the listeners. For instance, if the aggregation period is\nset to 1000 milliseconds the model will aggregate changes and notify listeners every second.\nA value of 0 means that changes are notified immediately.</p>\n<h3>Configuration</h3>\n<p>This model must be configured using the <xref href=\"DxFeed.Graal.Net.Models.MarketDepthModel%601.Builder\" data-throw-if-not-resolved=\"false\"></xref> class, as most configuration\nsettings cannot be changed once the model is built. This model requires configuration\n<xref href=\"DxFeed.Graal.Net.Models.MarketDepthModel%601.Builder.WithSymbol(System.Object)\" data-throw-if-not-resolved=\"false\"></xref> and it must be <xref href=\"DxFeed.Graal.Net.Models.MarketDepthModel%601.Builder.WithFeed(DxFeed.Graal.Net.Api.DXFeed)\" data-throw-if-not-resolved=\"false\"></xref> attached to a <xref href=\"DxFeed.Graal.Net.Api.DXFeed\" data-throw-if-not-resolved=\"false\"></xref>\ninstance to begin operation.</p>\n<p>This model only supports single symbol subscriptions; multiple symbols cannot be configured.</p>\n<h3>Resource management and closed models</h3>\n<p>Attached model is a potential memory leak. If the pointer to attached model is lost, then there is no way\nto detach this model from the feed and the model will not be reclaimed by the garbage collector as long as the\ncorresponding feed is still used. Detached model can be reclaimed by the garbage collector, but detaching model\nrequires knowing the pointer to the feed at the place of the call, which is not always convenient.</p>\n<p>The convenient way to detach model from the feed is to call its\n<xref href=\"DxFeed.Graal.Net.Models.MarketDepthModel%601.Dispose\" data-throw-if-not-resolved=\"false\"></xref> method.\nClosed model becomes permanently detached from all feeds, removes all its listeners and is guaranteed\nto be reclaimable by the garbage collector as soon as all external references to it are cleared.</p>\n<h3>Threads and locks</h3>\n<p>This class is thread-safe and can be used concurrently from multiple threads without external synchronization.</p>\nThe corresponding <xref href=\"DxFeed.Graal.Net.Models.MarketDepthModelListener%601\" data-throw-if-not-resolved=\"false\"></xref> to never be concurrent.\n"
     },
     {
       "type": "ManagedReference",
@@ -948,7 +1320,11 @@
           "relative_path": "docs/api/DxFeed.Graal.Net.Models.MarketDepthModelListener-1.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DxFeed.Graal.Net.Models.MarketDepthModelListener<TE>",
+      "Summary": "<p sourcefile=\"docs/api/DxFeed.Graal.Net.Models.MarketDepthModelListener-1.yml\" sourcestartlinenumber=\"1\">Invoked when the order book is changed.</p>\n<p>The <xref href=\"DxFeed.Graal.Net.Models.MarketDepthModelListener%601\" data-throw-if-not-resolved=\"false\"></xref> delegate is used to handle notifications\nof changes to the market depth, including updates to the buy and sell orders.\nImplement this delegate to process or react to changes in the market order book.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -958,7 +1334,11 @@
           "relative_path": "docs/api/DxFeed.Graal.Net.Models.TimeSeriesTxModel-1.Builder.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DxFeed.Graal.Net.Models.TimeSeriesTxModel<TE>.Builder",
+      "Summary": "<p sourcefile=\"docs/api/DxFeed.Graal.Net.Models.TimeSeriesTxModel-1.Builder.yml\" sourcestartlinenumber=\"1\">A builder class for creating an instance of <xref href=\"DxFeed.Graal.Net.Models.TimeSeriesTxModel%601\" data-throw-if-not-resolved=\"false\"></xref>.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -968,7 +1348,11 @@
           "relative_path": "docs/api/DxFeed.Graal.Net.Models.TimeSeriesTxModel-1.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DxFeed.Graal.Net.Models.TimeSeriesTxModel<TE>",
+      "Summary": "<p sourcefile=\"docs/api/DxFeed.Graal.Net.Models.TimeSeriesTxModel-1.yml\" sourcestartlinenumber=\"1\">An incremental model for time-series events.\nThis model manages all snapshot and transaction logic, subscription handling, and listener notifications.</p>\n<p>This model is designed to handle incremental transactions. Users of this model only see the list\nof events in a consistent state. This model delays incoming events that are part of an incomplete snapshot\nor ongoing transaction until the snapshot is complete or the transaction has ended. This model notifies\nthe user of received transactions through an installed <xref href=\"DxFeed.Graal.Net.Models.TxModelListener%601\" data-throw-if-not-resolved=\"false\"></xref>.</p>\n<h3>Configuration</h3>\n<p>This model must be configured using the <xref href=\"DxFeed.Graal.Net.Models.TimeSeriesTxModel%601.Builder\" data-throw-if-not-resolved=\"false\"></xref> class, as most configuration\nsettings cannot be changed once the model is built. This model requires configuration\n<xref href=\"DxFeed.Graal.Net.Models.AbstractTxModel%601.Builder%602.WithSymbol(System.Object)\" data-throw-if-not-resolved=\"false\"></xref> and <xref href=\"DxFeed.Graal.Net.Models.TimeSeriesTxModel%601.Builder.WithFromTime(System.Int64)\" data-throw-if-not-resolved=\"false\"></xref>\nfor subscription, and it must be <xref href=\"DxFeed.Graal.Net.Models.AbstractTxModel%601.Builder%602.WithFeed(DxFeed.Graal.Net.Api.DXFeed)\" data-throw-if-not-resolved=\"false\"></xref> attached\nto a <xref href=\"DxFeed.Graal.Net.Api.DXFeed\" data-throw-if-not-resolved=\"false\"></xref> instance to begin operation.\nFor ease of use, some of these configurations can be changed after the model is built,\nsee <xref href=\"DxFeed.Graal.Net.Models.TimeSeriesTxModel%601.SetFromTime(System.Int64)\" data-throw-if-not-resolved=\"false\"></xref>.</p>\n<p>This model only supports single symbol subscriptions; multiple symbols cannot be configured.</p>\n<h3>Resource management and closed models</h3>\n<p>Attached model is a potential memory leak. If the pointer to attached model is lost, then there is no way\nto detach this model from the feed and the model will not be reclaimed by the garbage collector as long as the\ncorresponding feed is still used. Detached model can be reclaimed by the garbage collector, but detaching model\nrequires knowing the pointer to the feed at the place of the call, which is not always convenient.</p>\n<p>The convenient way to detach model from the feed is to call its\n<xref href=\"DxFeed.Graal.Net.Models.AbstractTxModel%601.Dispose\" data-throw-if-not-resolved=\"false\"></xref> method.\nClosed model becomes permanently detached from all feeds, removes all its listeners and is guaranteed\nto be reclaimable by the garbage collector as soon as all external references to it are cleared.</p>\n<h3>Threads and locks</h3>\n<p>This class is thread-safe and can be used concurrently from multiple threads without external synchronization.</p>\nThe corresponding <xref href=\"DxFeed.Graal.Net.Models.TxModelListener%601\" data-throw-if-not-resolved=\"false\"></xref> to never be concurrent.\n"
     },
     {
       "type": "ManagedReference",
@@ -978,7 +1362,11 @@
           "relative_path": "docs/api/DxFeed.Graal.Net.Models.TxModelListener-1.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DxFeed.Graal.Net.Models.TxModelListener<TE>",
+      "Summary": "<p sourcefile=\"docs/api/DxFeed.Graal.Net.Models.TxModelListener-1.yml\" sourcestartlinenumber=\"1\">Invoked when a complete transaction (one or more) is received. This behavior can be changed when building\nthe model; see <xref href=\"DxFeed.Graal.Net.Models.AbstractTxModel%601.Builder%602.WithBatchProcessing(System.Boolean)\" data-throw-if-not-resolved=\"false\"></xref>.</p>\n<p>Only events that have the same <xref href=\"DxFeed.Graal.Net.Events.IndexedEventSource\" data-throw-if-not-resolved=\"false\"></xref> and <xref href=\"DxFeed.Graal.Net.Events.IEventType.EventSymbol\" data-throw-if-not-resolved=\"false\"></xref>\ncan be in the same listener call and cannot be mixed within a single call. If there are multiple sources,\nlistener notifications will happen separately for each source.</p>\n<p>A transaction can also be a snapshot. In such cases, the <code class=\"paramref\">isSnapshot</code> flag is set to <code>true</code>,\nindicating that all state based on previously received events for the corresponding\n<xref href=\"DxFeed.Graal.Net.Events.IndexedEventSource\" data-throw-if-not-resolved=\"false\"></xref> should be cleared. A snapshot can also be post-processed or raw;\nsee <xref href=\"DxFeed.Graal.Net.Models.AbstractTxModel%601.Builder%602.WithSnapshotProcessing(System.Boolean)\" data-throw-if-not-resolved=\"false\"></xref>.\nIf <xref href=\"DxFeed.Graal.Net.Models.AbstractTxModel%601.Builder%602.WithSnapshotProcessing(System.Boolean)\" data-throw-if-not-resolved=\"false\"></xref> is <code>true</code>,\nthe transaction containing the snapshot can be empty (<code>events.Count == 0</code>),\nmeaning that an empty snapshot was received.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -988,7 +1376,11 @@
           "relative_path": "docs/api/DxFeed.Graal.Net.Models.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DxFeed.Graal.Net.Models",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -998,7 +1390,11 @@
           "relative_path": "docs/api/DxFeed.Graal.Net.Native.ErrorHandling.GraalErrorCode.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DxFeed.Graal.Net.Native.ErrorHandling.GraalErrorCode",
+      "Summary": "<p sourcefile=\"docs/api/DxFeed.Graal.Net.Native.ErrorHandling.GraalErrorCode.yml\" sourcestartlinenumber=\"1\">Errors returned when calling GraalVM functions.\nThe error description was obtained from <a href=\"https://github.com/oracle/graal/blob/jdk-21.0.1/substratevm/src/com.oracle.svm.core/src/com/oracle/svm/core/c/function/CEntryPointErrors.java#L43\">GraalVM GitHub.</a></p>\n"
     },
     {
       "type": "ManagedReference",
@@ -1008,7 +1404,11 @@
           "relative_path": "docs/api/DxFeed.Graal.Net.Native.ErrorHandling.GraalException.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DxFeed.Graal.Net.Native.ErrorHandling.GraalException",
+      "Summary": "<p sourcefile=\"docs/api/DxFeed.Graal.Net.Native.ErrorHandling.GraalException.yml\" sourcestartlinenumber=\"1\">An exception class representing errors that occur during calls to GraalVM functions in interop scenarios.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -1018,7 +1418,11 @@
           "relative_path": "docs/api/DxFeed.Graal.Net.Native.ErrorHandling.JavaException.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DxFeed.Graal.Net.Native.ErrorHandling.JavaException",
+      "Summary": "<p sourcefile=\"docs/api/DxFeed.Graal.Net.Native.ErrorHandling.JavaException.yml\" sourcestartlinenumber=\"1\">An exception class representing errors that occur within Java code during interop scenarios.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -1028,7 +1432,11 @@
           "relative_path": "docs/api/DxFeed.Graal.Net.Native.ErrorHandling.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DxFeed.Graal.Net.Native.ErrorHandling",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -1038,7 +1446,11 @@
           "relative_path": "docs/api/DxFeed.Graal.Net.Native.Events.EventCodeNative.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DxFeed.Graal.Net.Native.Events.EventCodeNative",
+      "Summary": "<p sourcefile=\"docs/api/DxFeed.Graal.Net.Native.Events.EventCodeNative.yml\" sourcestartlinenumber=\"1\">A list of all events, that can be passed to/from native code, represented as a numeric code.\nIn a particular case, these are implementations <xref href=\"DxFeed.Graal.Net.Events.IEventType\" data-throw-if-not-resolved=\"false\"></xref>.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -1048,7 +1460,11 @@
           "relative_path": "docs/api/DxFeed.Graal.Net.Native.Events.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DxFeed.Graal.Net.Native.Events",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -1058,7 +1474,11 @@
           "relative_path": "docs/api/DxFeed.Graal.Net.Native.Interop.Utf8StringMarshaler.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DxFeed.Graal.Net.Native.Interop.Utf8StringMarshaler",
+      "Summary": "<p sourcefile=\"docs/api/DxFeed.Graal.Net.Native.Interop.Utf8StringMarshaler.yml\" sourcestartlinenumber=\"1\">Provides methods for marshaling strings to and from unmanaged UTF-8 null-terminated strings.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -1068,7 +1488,11 @@
           "relative_path": "docs/api/DxFeed.Graal.Net.Native.Interop.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DxFeed.Graal.Net.Native.Interop",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -1078,7 +1502,11 @@
           "relative_path": "docs/api/DxFeed.Graal.Net.Schedules.Day.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DxFeed.Graal.Net.Schedules.Day",
+      "Summary": "<p sourcefile=\"docs/api/DxFeed.Graal.Net.Schedules.Day.yml\" sourcestartlinenumber=\"1\"><b>Day</b> represents a continuous period of time approximately 24 hours long. The day is aligned\nto the start and the end of business activities of a certain business entity or business process.\nFor example, the day may be aligned to a trading schedule of a particular instrument on an exchange.\nThus, different days may start and end at various local times depending on the related trading schedules.</p>\n<p></p>\nThe length of the day depends on the trading schedule and other circumstances. For example, it is possible\nthat day for Monday is longer than 24 hours because it includes part of Sunday; consequently, the day for\nSunday will be shorter than 24 hours to avoid overlapping with Monday.\n<p></p>\nDays do not overlap with each other - rather they form consecutive chain of adjacent periods of time that\ncover entire time scale. The point on a border line is considered to belong to following day that starts there.\n<p></p>\nEach day consists of sessions that cover entire duration of the day. If day contains at least one trading\nsession (i.e. session within which trading activity is allowed), then the day is considered trading day.\nOtherwise the day is considered non-trading day (e.g. weekend or holiday).\n<p></p>\nDay may contain sessions with zero duration - e.g. indices that post value once a day.\nSuch sessions can be of any appropriate type, trading or non-trading.\nDay may have zero duration as well - e.g. when all time within it is transferred to other days.\n"
     },
     {
       "type": "ManagedReference",
@@ -1088,7 +1516,11 @@
           "relative_path": "docs/api/DxFeed.Graal.Net.Schedules.DayFilter.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DxFeed.Graal.Net.Schedules.DayFilter",
+      "Summary": "<p sourcefile=\"docs/api/DxFeed.Graal.Net.Schedules.DayFilter.yml\" sourcestartlinenumber=\"1\">A filter for days used by various search methods.\nThis class provides predefined filters for certain Day attributes,\nalthough users can create their own filters to suit their needs.</p>\n<p></p>\nPlease note that days can be either trading or non-trading, and this distinction can be\neither based on rules (e.g. weekends) or dictated by special occasions (e.g. holidays).\nDifferent filters treat this distinction differently - some accept only trading days,\nsome only non-trading, and some ignore type of day altogether.\n"
     },
     {
       "type": "ManagedReference",
@@ -1098,7 +1530,11 @@
           "relative_path": "docs/api/DxFeed.Graal.Net.Schedules.Schedule.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DxFeed.Graal.Net.Schedules.Schedule",
+      "Summary": "<p sourcefile=\"docs/api/DxFeed.Graal.Net.Schedules.Schedule.yml\" sourcestartlinenumber=\"1\"><b>Schedule</b> class provides API to retrieve and explore trading schedules of different exchanges\nand different classes of financial instruments. Each instance of schedule covers separate trading schedule\nof some class of instruments, i.e. NYSE stock trading schedule or CME corn futures trading schedule.\nEach schedule splits entire time scale into separate <xref href=\"DxFeed.Graal.Net.Schedules.Day\" data-throw-if-not-resolved=\"false\"></xref> that are aligned to the specific\ntrading hours of covered trading schedule.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -1108,7 +1544,11 @@
           "relative_path": "docs/api/DxFeed.Graal.Net.Schedules.Session.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DxFeed.Graal.Net.Schedules.Session",
+      "Summary": "<p sourcefile=\"docs/api/DxFeed.Graal.Net.Schedules.Session.yml\" sourcestartlinenumber=\"1\"><b>Session</b> represents a continuous period of time during which apply same rules regarding trading activity.\nFor example, <pre><code class=\"lang-csharp\">regular trading session</code></pre> is a period of time consisting of one day of business activities\nin a financial market, from the opening bell to the closing bell, when regular trading occurs.\n<p></p>\nSessions can be either <b>trading</b> or <b>non-trading</b>, with different sets of rules and reasons to exist.\nSessions do not overlap with each other - rather they form consecutive chain of adjacent periods of time that\ncover entire time scale. The point on a border line is considered to belong to following session that starts there.\nEach session completely fits inside a certain day. Day may contain sessions with zero duration - e.g. indices\nthat post value once a day. Such sessions can be of any appropriate type, trading or non-trading.\n"
     },
     {
       "type": "ManagedReference",
@@ -1118,7 +1558,11 @@
           "relative_path": "docs/api/DxFeed.Graal.Net.Schedules.SessionFilter.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DxFeed.Graal.Net.Schedules.SessionFilter",
+      "Summary": "<p sourcefile=\"docs/api/DxFeed.Graal.Net.Schedules.SessionFilter.yml\" sourcestartlinenumber=\"1\">A filter for sessions used by various search methods.\nThis class provides predefined filters for certain Session attributes,\nalthough users can create their own filters to suit their needs.</p>\n<p></p>\nPlease note that sessions can be either trading or non-trading, and this distinction can be\neither based on rules (e.g. weekends) or dictated by special occasions (e.g. holidays).\nDifferent filters treat this distinction differently - some accept only trading sessions,\nsome only non-trading, and some ignore type of session altogether.\n"
     },
     {
       "type": "ManagedReference",
@@ -1128,7 +1572,11 @@
           "relative_path": "docs/api/DxFeed.Graal.Net.Schedules.SessionType.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DxFeed.Graal.Net.Schedules.SessionType",
+      "Summary": "<p sourcefile=\"docs/api/DxFeed.Graal.Net.Schedules.SessionType.yml\" sourcestartlinenumber=\"1\">Defines type of a session - what kind of trading activity is allowed (if any),\nwhat rules are used, what impact on daily trading statistics it has, etc.\nThe <xref href=\"DxFeed.Graal.Net.Schedules.SessionType.NO_TRADING\" data-throw-if-not-resolved=\"false\"></xref> session type is used for non-trading sessions.</p>\n<p></p>\nSome exchanges support all session types defined here, others do not.\n<p></p>\nSome sessions may have zero duration - e.g. indices that post value once a day.\nSuch sessions can be of any appropriate type, trading or non-trading.\n"
     },
     {
       "type": "ManagedReference",
@@ -1138,7 +1586,11 @@
           "relative_path": "docs/api/DxFeed.Graal.Net.Schedules.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DxFeed.Graal.Net.Schedules",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -1148,7 +1600,11 @@
           "relative_path": "docs/api/DxFeed.Graal.Net.SystemProperty.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DxFeed.Graal.Net.SystemProperty",
+      "Summary": "<p sourcefile=\"docs/api/DxFeed.Graal.Net.SystemProperty.yml\" sourcestartlinenumber=\"1\">Native wrapper over the Java <code>java.lang.System</code> class, contains work with property getter/setter methods.\nIn Java world, these properties can be set by passing the <code>&quot;-Dprop=value&quot;</code> argument in command line\nor calls <code>java.lang.System.setProperty(String key, String value)</code>.\nThe location of the imported functions is in the header files <code>&quot;dxfg_system.h&quot;</code>.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -1158,7 +1614,11 @@
           "relative_path": "docs/api/DxFeed.Graal.Net.Utils.AttributeUtil.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DxFeed.Graal.Net.Utils.AttributeUtil",
+      "Summary": "<p sourcefile=\"docs/api/DxFeed.Graal.Net.Utils.AttributeUtil.yml\" sourcestartlinenumber=\"1\">Provides utility methods for retrieving custom <xref href=\"System.Attribute\" data-throw-if-not-resolved=\"false\"></xref>.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -1168,7 +1628,11 @@
           "relative_path": "docs/api/DxFeed.Graal.Net.Utils.BitUtil.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DxFeed.Graal.Net.Utils.BitUtil",
+      "Summary": "<p sourcefile=\"docs/api/DxFeed.Graal.Net.Utils.BitUtil.yml\" sourcestartlinenumber=\"1\">A collection of utility methods for bitwise operations.\n<br>\nPorts the Java class <code>com.dxfeed.event.market.Util</code>.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -1178,7 +1642,11 @@
           "relative_path": "docs/api/DxFeed.Graal.Net.Utils.CmdArgsUtil.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DxFeed.Graal.Net.Utils.CmdArgsUtil",
+      "Summary": "<p sourcefile=\"docs/api/DxFeed.Graal.Net.Utils.CmdArgsUtil.yml\" sourcestartlinenumber=\"1\">A collection of static helper methods for parses command-line arguments.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -1188,7 +1656,11 @@
           "relative_path": "docs/api/DxFeed.Graal.Net.Utils.ConcurrentSet-1.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DxFeed.Graal.Net.Utils.ConcurrentSet<T>",
+      "Summary": "<p sourcefile=\"docs/api/DxFeed.Graal.Net.Utils.ConcurrentSet-1.yml\" sourcestartlinenumber=\"1\">This is a simple wrapper over <xref href=\"System.Collections.Concurrent.ConcurrentDictionary%602\" data-throw-if-not-resolved=\"false\"></xref>,\nto provide an interface as a <code>Set</code> (.NET does not provide a built-in concurrent hashset type)\nfor more consistent.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -1198,7 +1670,11 @@
           "relative_path": "docs/api/DxFeed.Graal.Net.Utils.DayUtil.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DxFeed.Graal.Net.Utils.DayUtil",
+      "Summary": "<p sourcefile=\"docs/api/DxFeed.Graal.Net.Utils.DayUtil.yml\" sourcestartlinenumber=\"1\">A collection of static utility methods for manipulation of <xref href=\"System.Int32\" data-throw-if-not-resolved=\"false\"></xref> day id,\nthat is the number of days since Unix epoch of January 1, 1970.\n<br>\nPorts the Java class <code>com.devexperts.util.DayUtil</code>.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -1208,7 +1684,11 @@
           "relative_path": "docs/api/DxFeed.Graal.Net.Utils.EnumUtil.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DxFeed.Graal.Net.Utils.EnumUtil",
+      "Summary": "<p sourcefile=\"docs/api/DxFeed.Graal.Net.Utils.EnumUtil.yml\" sourcestartlinenumber=\"1\">Provides utility methods for manipulating enumerations.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -1218,7 +1698,11 @@
           "relative_path": "docs/api/DxFeed.Graal.Net.Utils.MathUtil.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DxFeed.Graal.Net.Utils.MathUtil",
+      "Summary": "<p sourcefile=\"docs/api/DxFeed.Graal.Net.Utils.MathUtil.yml\" sourcestartlinenumber=\"1\">A collection of static utility methods for mathematics.\n<br>\nPorting Java class <code>java.lang.Math</code> and <code>com.devexperts.util.MathUtil</code>.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -1228,7 +1712,11 @@
           "relative_path": "docs/api/DxFeed.Graal.Net.Utils.PlatformUtils.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DxFeed.Graal.Net.Utils.PlatformUtils",
+      "Summary": "<p sourcefile=\"docs/api/DxFeed.Graal.Net.Utils.PlatformUtils.yml\" sourcestartlinenumber=\"1\">Provides information to identify the current platform.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -1238,7 +1726,11 @@
           "relative_path": "docs/api/DxFeed.Graal.Net.Utils.QdsTools.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DxFeed.Graal.Net.Utils.QdsTools",
+      "Summary": "<p sourcefile=\"docs/api/DxFeed.Graal.Net.Utils.QdsTools.yml\" sourcestartlinenumber=\"1\">Provides utility methods for running qds-tools using the DxFeed Graal.NET infrastructure.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -1248,7 +1740,11 @@
           "relative_path": "docs/api/DxFeed.Graal.Net.Utils.ReflectionUtil.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DxFeed.Graal.Net.Utils.ReflectionUtil",
+      "Summary": "<p sourcefile=\"docs/api/DxFeed.Graal.Net.Utils.ReflectionUtil.yml\" sourcestartlinenumber=\"1\">Simple utility class for working with the reflection API.\nUsed to manipulate types.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -1258,7 +1754,11 @@
           "relative_path": "docs/api/DxFeed.Graal.Net.Utils.StringUtil.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DxFeed.Graal.Net.Utils.StringUtil",
+      "Summary": "<p sourcefile=\"docs/api/DxFeed.Graal.Net.Utils.StringUtil.yml\" sourcestartlinenumber=\"1\">Provides utility methods for working with strings.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -1268,7 +1768,11 @@
           "relative_path": "docs/api/DxFeed.Graal.Net.Utils.SymbolParser.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DxFeed.Graal.Net.Utils.SymbolParser",
+      "Summary": "<p sourcefile=\"docs/api/DxFeed.Graal.Net.Utils.SymbolParser.yml\" sourcestartlinenumber=\"1\">Utility class for parsing symbols.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -1278,7 +1782,11 @@
           "relative_path": "docs/api/DxFeed.Graal.Net.Utils.TimeFormat.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DxFeed.Graal.Net.Utils.TimeFormat",
+      "Summary": "<p sourcefile=\"docs/api/DxFeed.Graal.Net.Utils.TimeFormat.yml\" sourcestartlinenumber=\"1\">Utility class for parsing and formatting dates and times in ISO-compatible format.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -1288,7 +1796,11 @@
           "relative_path": "docs/api/DxFeed.Graal.Net.Utils.TimeNanosUtil.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DxFeed.Graal.Net.Utils.TimeNanosUtil",
+      "Summary": "<p sourcefile=\"docs/api/DxFeed.Graal.Net.Utils.TimeNanosUtil.yml\" sourcestartlinenumber=\"1\">A collection of static utility methods for manipulation of time measured in nanoseconds since Unix epoch.\n<br>\nPorting Java class <code>com.dxfeed.event.impl.TimeNanosUtil</code>.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -1298,7 +1810,11 @@
           "relative_path": "docs/api/DxFeed.Graal.Net.Utils.TimePeriod.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DxFeed.Graal.Net.Utils.TimePeriod",
+      "Summary": "<p sourcefile=\"docs/api/DxFeed.Graal.Net.Utils.TimePeriod.yml\" sourcestartlinenumber=\"1\">A collection of utility methods for creation Timespan with support for ISO8601 duration format.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -1308,7 +1824,11 @@
           "relative_path": "docs/api/DxFeed.Graal.Net.Utils.TimeUtil.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DxFeed.Graal.Net.Utils.TimeUtil",
+      "Summary": "<p sourcefile=\"docs/api/DxFeed.Graal.Net.Utils.TimeUtil.yml\" sourcestartlinenumber=\"1\">A collection of static utility methods for manipulation of time measured in milliseconds since Unix epoch.\n<br>\nPorting a Java class <code>com.devexperts.util.TimeUtil</code>.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -1318,7 +1838,11 @@
           "relative_path": "docs/api/DxFeed.Graal.Net.Utils.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DxFeed.Graal.Net.Utils",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -1328,7 +1852,11 @@
           "relative_path": "docs/api/DxFeed.Graal.Net.html"
         }
       },
-      "version": ""
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DxFeed.Graal.Net",
+      "Summary": null
     },
     {
       "type": "Conceptual",

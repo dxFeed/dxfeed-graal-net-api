@@ -16,7 +16,7 @@
       <meta name="docfx:rel" content="../../">
       
       
-      <meta name="docfx:docurl" content="https://github.com/dxFeed/dxfeed-graal-net-api/new/2.7.0/apiSpec/new?filename=DxFeed_Graal_Net_Events_Market_Direction.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Market.Direction%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="docfx:docurl" content="https://github.com/dxFeed/dxfeed-graal-net-api/new/2.7.1/apiSpec/new?filename=DxFeed_Graal_Net_Events_Market_Direction.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Events.Market.Direction%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -90,7 +90,7 @@
 
 
   <h1 id="DxFeed_Graal_Net_Events_Market_Direction" data-uid="DxFeed.Graal.Net.Events.Market.Direction" class="text-break">
-Enum Direction  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/2.7.0/src/DxFeed.Graal.Net/Events/Market/Direction.cs/#L17"><i class="bi bi-code-slash"></i></a>
+Enum Direction  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/2.7.1/src/DxFeed.Graal.Net/Events/Market/Direction.cs/#L17"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -120,26 +120,32 @@ For more details see <a href="https://docs.dxfeed.com/dxfeed/api/com/dxfeed/even
 </h2>
   <dl class="parameters">
     <dt id="DxFeed_Graal_Net_Events_Market_Direction_Down"><code>Down = 1</code></dt>
-    <dd><p>Current price is lower than previous price.</p>
+  
+  <dd><p>Current price is lower than previous price.</p>
 </dd>
     <dt id="DxFeed_Graal_Net_Events_Market_Direction_Undefined"><code>Undefined = 0</code></dt>
-    <dd><p>Direction is undefined, unknown or inapplicable.
+  
+  <dd><p>Direction is undefined, unknown or inapplicable.
 It includes cases with undefined price value or when direction computation was not performed.</p>
 </dd>
     <dt id="DxFeed_Graal_Net_Events_Market_Direction_Up"><code>Up = 5</code></dt>
-    <dd><p>Current price is higher than previous price.</p>
+  
+  <dd><p>Current price is higher than previous price.</p>
 </dd>
     <dt id="DxFeed_Graal_Net_Events_Market_Direction_Zero"><code>Zero = 3</code></dt>
-    <dd><p>Current price is equal to the only known price value suitable for price direction computation.
+  
+  <dd><p>Current price is equal to the only known price value suitable for price direction computation.
 Unlike <a class="xref" href="DxFeed.Graal.Net.Events.Market.Direction.html#DxFeed_Graal_Net_Events_Market_Direction_Undefined">Undefined</a> the <a class="xref" href="DxFeed.Graal.Net.Events.Market.Direction.html#DxFeed_Graal_Net_Events_Market_Direction_Zero">Zero</a> direction implies that current price is defined and
 direction computation was duly performed but has failed to detect any upward or downward price movement.
 It is also reported for cases when price sequence was broken and direction computation was restarted anew.</p>
 </dd>
     <dt id="DxFeed_Graal_Net_Events_Market_Direction_ZeroDown"><code>ZeroDown = 2</code></dt>
-    <dd><p>Current price is the same as previous price and is lower than the last known price of different value.</p>
+  
+  <dd><p>Current price is the same as previous price and is lower than the last known price of different value.</p>
 </dd>
     <dt id="DxFeed_Graal_Net_Events_Market_Direction_ZeroUp"><code>ZeroUp = 4</code></dt>
-    <dd><p>Current price is the same as previous price and is higher than the last known price of different value.</p>
+  
+  <dd><p>Current price is the same as previous price and is higher than the last known price of different value.</p>
 </dd>
   </dl>
 

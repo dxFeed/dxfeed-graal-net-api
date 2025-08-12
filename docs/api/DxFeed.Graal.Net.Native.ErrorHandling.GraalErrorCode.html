@@ -16,7 +16,7 @@
       <meta name="docfx:rel" content="../../">
       
       
-      <meta name="docfx:docurl" content="https://github.com/dxFeed/dxfeed-graal-net-api/new/2.7.0/apiSpec/new?filename=DxFeed_Graal_Net_Native_ErrorHandling_GraalErrorCode.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Native.ErrorHandling.GraalErrorCode%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="docfx:docurl" content="https://github.com/dxFeed/dxfeed-graal-net-api/new/2.7.1/apiSpec/new?filename=DxFeed_Graal_Net_Native_ErrorHandling_GraalErrorCode.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Native.ErrorHandling.GraalErrorCode%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -90,7 +90,7 @@
 
 
   <h1 id="DxFeed_Graal_Net_Native_ErrorHandling_GraalErrorCode" data-uid="DxFeed.Graal.Net.Native.ErrorHandling.GraalErrorCode" class="text-break">
-Enum GraalErrorCode  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/2.7.0/src/DxFeed.Graal.Net/Native/ErrorHandling/GraalErrorCode.cs/#L15"><i class="bi bi-code-slash"></i></a>
+Enum GraalErrorCode  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/2.7.1/src/DxFeed.Graal.Net/Native/ErrorHandling/GraalErrorCode.cs/#L15"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -119,110 +119,145 @@ The error description was obtained from <a href="https://github.com/oracle/graal
 </h2>
   <dl class="parameters">
     <dt id="DxFeed_Graal_Net_Native_ErrorHandling_GraalErrorCode_AllocationFailed"><code>AllocationFailed = 3</code></dt>
-    <dd><p>Memory allocation failed, the OS is probably out of memory.</p>
+  
+  <dd><p>Memory allocation failed, the OS is probably out of memory.</p>
 </dd>
     <dt id="DxFeed_Graal_Net_Native_ErrorHandling_GraalErrorCode_ArgumentParsingFailed"><code>ArgumentParsingFailed = 22</code></dt>
-    <dd><p>The isolate arguments could not be parsed.</p>
+  
+  <dd><p>The isolate arguments could not be parsed.</p>
 </dd>
     <dt id="DxFeed_Graal_Net_Native_ErrorHandling_GraalErrorCode_AuxImagePrimaryImageMismatch"><code>AuxImagePrimaryImageMismatch = 21</code></dt>
-    <dd><p>The auxiliary image was built from a different primary image.</p>
+  
+  <dd><p>The auxiliary image was built from a different primary image.</p>
 </dd>
     <dt id="DxFeed_Graal_Net_Native_ErrorHandling_GraalErrorCode_AuxImageUnsupported"><code>AuxImageUnsupported = 18</code></dt>
-    <dd><p>Auxiliary images are not supported on this platform or edition.</p>
+  
+  <dd><p>Auxiliary images are not supported on this platform or edition.</p>
 </dd>
     <dt id="DxFeed_Graal_Net_Native_ErrorHandling_GraalErrorCode_CpuFeatureCheckFailed"><code>CpuFeatureCheckFailed = 23</code></dt>
-    <dd><p>Current target does not support the CPU features that are required by the image.</p>
+  
+  <dd><p>Current target does not support the CPU features that are required by the image.</p>
 </dd>
     <dt id="DxFeed_Graal_Net_Native_ErrorHandling_GraalErrorCode_DynamicMethodAddressResolutionGotFdCreateFailed"><code>DynamicMethodAddressResolutionGotFdCreateFailed = 25</code></dt>
-    <dd><p>Creating an in-memory file for the GOT failed.</p>
+  
+  <dd><p>Creating an in-memory file for the GOT failed.</p>
 </dd>
     <dt id="DxFeed_Graal_Net_Native_ErrorHandling_GraalErrorCode_DynamicMethodAddressResolutionGotFdInvalid"><code>DynamicMethodAddressResolutionGotFdInvalid = 30</code></dt>
-    <dd><p>Mapping the GOT before an isolate's heap failed (invalid file).</p>
+  
+  <dd><p>Mapping the GOT before an isolate's heap failed (invalid file).</p>
 </dd>
     <dt id="DxFeed_Graal_Net_Native_ErrorHandling_GraalErrorCode_DynamicMethodAddressResolutionGotFdMapFailed"><code>DynamicMethodAddressResolutionGotFdMapFailed = 27</code></dt>
-    <dd><p>Mapping and populating the in-memory file for the GOT failed.</p>
+  
+  <dd><p>Mapping and populating the in-memory file for the GOT failed.</p>
 </dd>
     <dt id="DxFeed_Graal_Net_Native_ErrorHandling_GraalErrorCode_DynamicMethodAddressResolutionGotFdResizeFailed"><code>DynamicMethodAddressResolutionGotFdResizeFailed = 26</code></dt>
-    <dd><p>Resizing the in-memory file for the GOT failed.</p>
+  
+  <dd><p>Resizing the in-memory file for the GOT failed.</p>
 </dd>
     <dt id="DxFeed_Graal_Net_Native_ErrorHandling_GraalErrorCode_DynamicMethodAddressResolutionGotMmapFailed"><code>DynamicMethodAddressResolutionGotMmapFailed = 28</code></dt>
-    <dd><p>Mapping the GOT before an isolate's heap failed (no mapping).</p>
+  
+  <dd><p>Mapping the GOT before an isolate's heap failed (no mapping).</p>
 </dd>
     <dt id="DxFeed_Graal_Net_Native_ErrorHandling_GraalErrorCode_DynamicMethodAddressResolutionGotUniqueFileCreateFailed"><code>DynamicMethodAddressResolutionGotUniqueFileCreateFailed = 31</code></dt>
-    <dd><p>Could not create unique GOT file even after retrying.</p>
+  
+  <dd><p>Could not create unique GOT file even after retrying.</p>
 </dd>
     <dt id="DxFeed_Graal_Net_Native_ErrorHandling_GraalErrorCode_DynamicMethodAddressResolutionGotWrongMmap"><code>DynamicMethodAddressResolutionGotWrongMmap = 29</code></dt>
-    <dd><p>Mapping the GOT before an isolate's heap failed (wrong mapping).</p>
+  
+  <dd><p>Mapping the GOT before an isolate's heap failed (wrong mapping).</p>
 </dd>
     <dt id="DxFeed_Graal_Net_Native_ErrorHandling_GraalErrorCode_FreeAddressSpaceFailed"><code>FreeAddressSpaceFailed = 19</code></dt>
-    <dd><p>Releasing the isolate's address space failed.</p>
+  
+  <dd><p>Releasing the isolate's address space failed.</p>
 </dd>
     <dt id="DxFeed_Graal_Net_Native_ErrorHandling_GraalErrorCode_FreeImageHeapFailed"><code>FreeImageHeapFailed = 20</code></dt>
-    <dd><p>Releasing the isolate's image heap memory failed.</p>
+  
+  <dd><p>Releasing the isolate's image heap memory failed.</p>
 </dd>
     <dt id="DxFeed_Graal_Net_Native_ErrorHandling_GraalErrorCode_InsufficientAddressSpace"><code>InsufficientAddressSpace = 802</code></dt>
-    <dd><p>The image heap does not fit in the available address space.</p>
+  
+  <dd><p>The image heap does not fit in the available address space.</p>
 </dd>
     <dt id="DxFeed_Graal_Net_Native_ErrorHandling_GraalErrorCode_InsufficientAuxImageMemory"><code>InsufficientAuxImageMemory = 17</code></dt>
-    <dd><p>Insufficient memory for the auxiliary image.</p>
+  
+  <dd><p>Insufficient memory for the auxiliary image.</p>
 </dd>
     <dt id="DxFeed_Graal_Net_Native_ErrorHandling_GraalErrorCode_IsolateInitializationFailed"><code>IsolateInitializationFailed = 13</code></dt>
-    <dd><p>Initialization the isolate failed.</p>
+  
+  <dd><p>Initialization the isolate failed.</p>
 </dd>
     <dt id="DxFeed_Graal_Net_Native_ErrorHandling_GraalErrorCode_LocateImageFailed"><code>LocateImageFailed = 6</code></dt>
-    <dd><p>Locating the image file failed.</p>
+  
+  <dd><p>Locating the image file failed.</p>
 </dd>
     <dt id="DxFeed_Graal_Net_Native_ErrorHandling_GraalErrorCode_MapAuxImageFailed"><code>MapAuxImageFailed = 16</code></dt>
-    <dd><p>Mapping the auxiliary image file into memory failed.</p>
+  
+  <dd><p>Mapping the auxiliary image file into memory failed.</p>
 </dd>
     <dt id="DxFeed_Graal_Net_Native_ErrorHandling_GraalErrorCode_MapHeapFailed"><code>MapHeapFailed = 8</code></dt>
-    <dd><p>Mapping the heap from the image file into memory failed.</p>
+  
+  <dd><p>Mapping the heap from the image file into memory failed.</p>
 </dd>
     <dt id="DxFeed_Graal_Net_Native_ErrorHandling_GraalErrorCode_NoError"><code>NoError = 0</code></dt>
-    <dd><p>No error occurred.</p>
+  
+  <dd><p>No error occurred.</p>
 </dd>
     <dt id="DxFeed_Graal_Net_Native_ErrorHandling_GraalErrorCode_NullArgument"><code>NullArgument = 2</code></dt>
-    <dd><p>An argument was NULL.</p>
+  
+  <dd><p>An argument was NULL.</p>
 </dd>
     <dt id="DxFeed_Graal_Net_Native_ErrorHandling_GraalErrorCode_OpenAuxImageFailed"><code>OpenAuxImageFailed = 14</code></dt>
-    <dd><p>Opening the located auxiliary image file failed.</p>
+  
+  <dd><p>Opening the located auxiliary image file failed.</p>
 </dd>
     <dt id="DxFeed_Graal_Net_Native_ErrorHandling_GraalErrorCode_OpenImageFailed"><code>OpenImageFailed = 7</code></dt>
-    <dd><p>Opening the located image file failed.</p>
+  
+  <dd><p>Opening the located image file failed.</p>
 </dd>
     <dt id="DxFeed_Graal_Net_Native_ErrorHandling_GraalErrorCode_PageSizeCheckFailed"><code>PageSizeCheckFailed = 24</code></dt>
-    <dd><p>Image page size is incompatible with run-time page size.
+  
+  <dd><p>Image page size is incompatible with run-time page size.
 Rebuild image with -H:PageSize=[pagesize] to set appropriately.</p>
 </dd>
     <dt id="DxFeed_Graal_Net_Native_ErrorHandling_GraalErrorCode_ProtectHeapFailed"><code>ProtectHeapFailed = 9</code></dt>
-    <dd><p>Setting the protection of the heap memory failed.</p>
+  
+  <dd><p>Setting the protection of the heap memory failed.</p>
 </dd>
     <dt id="DxFeed_Graal_Net_Native_ErrorHandling_GraalErrorCode_ReadAuxImageMetaFailed"><code>ReadAuxImageMetaFailed = 15</code></dt>
-    <dd><p>Reading the opened auxiliary image file failed.</p>
+  
+  <dd><p>Reading the opened auxiliary image file failed.</p>
 </dd>
     <dt id="DxFeed_Graal_Net_Native_ErrorHandling_GraalErrorCode_ReserveAddressSpaceFailed"><code>ReserveAddressSpaceFailed = 801</code></dt>
-    <dd><p>Reserving address space for the new isolate failed.</p>
+  
+  <dd><p>Reserving address space for the new isolate failed.</p>
 </dd>
     <dt id="DxFeed_Graal_Net_Native_ErrorHandling_GraalErrorCode_ThreadingInitializationFailed"><code>ThreadingInitializationFailed = 11</code></dt>
-    <dd><p>Initialization of threading in the isolate failed.</p>
+  
+  <dd><p>Initialization of threading in the isolate failed.</p>
 </dd>
     <dt id="DxFeed_Graal_Net_Native_ErrorHandling_GraalErrorCode_UnattachedThread"><code>UnattachedThread = 4</code></dt>
-    <dd><p>The specified thread is not attached to the isolate.</p>
+  
+  <dd><p>The specified thread is not attached to the isolate.</p>
 </dd>
     <dt id="DxFeed_Graal_Net_Native_ErrorHandling_GraalErrorCode_UncaughtException"><code>UncaughtException = 12</code></dt>
-    <dd><p>Some exception is not caught.</p>
+  
+  <dd><p>Some exception is not caught.</p>
 </dd>
     <dt id="DxFeed_Graal_Net_Native_ErrorHandling_GraalErrorCode_UninitializedIsolate"><code>UninitializedIsolate = 5</code></dt>
-    <dd><p>The specified isolate is unknown.</p>
+  
+  <dd><p>The specified isolate is unknown.</p>
 </dd>
     <dt id="DxFeed_Graal_Net_Native_ErrorHandling_GraalErrorCode_UnknownStackBoundaries"><code>UnknownStackBoundaries = 32</code></dt>
-    <dd><p>Could not determine the stack boundaries.</p>
+  
+  <dd><p>Could not determine the stack boundaries.</p>
 </dd>
     <dt id="DxFeed_Graal_Net_Native_ErrorHandling_GraalErrorCode_Unspecified"><code>Unspecified = 1</code></dt>
-    <dd><p>An unspecified error occurred.</p>
+  
+  <dd><p>An unspecified error occurred.</p>
 </dd>
     <dt id="DxFeed_Graal_Net_Native_ErrorHandling_GraalErrorCode_UnsupportedIsolateParametersVersion"><code>UnsupportedIsolateParametersVersion = 10</code></dt>
-    <dd><p>The version of the specified isolate parameters is unsupported.</p>
+  
+  <dd><p>The version of the specified isolate parameters is unsupported.</p>
 </dd>
   </dl>
 

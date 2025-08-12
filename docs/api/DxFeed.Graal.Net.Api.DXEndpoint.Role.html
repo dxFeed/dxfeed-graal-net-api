@@ -16,7 +16,7 @@
       <meta name="docfx:rel" content="../../">
       
       
-      <meta name="docfx:docurl" content="https://github.com/dxFeed/dxfeed-graal-net-api/new/2.7.0/apiSpec/new?filename=DxFeed_Graal_Net_Api_DXEndpoint_Role.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Api.DXEndpoint.Role%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="docfx:docurl" content="https://github.com/dxFeed/dxfeed-graal-net-api/new/2.7.1/apiSpec/new?filename=DxFeed_Graal_Net_Api_DXEndpoint_Role.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Api.DXEndpoint.Role%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -90,7 +90,7 @@
 
 
   <h1 id="DxFeed_Graal_Net_Api_DXEndpoint_Role" data-uid="DxFeed.Graal.Net.Api.DXEndpoint.Role" class="text-break">
-Enum DXEndpoint.Role  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/2.7.0/src/DxFeed.Graal.Net/Api/DXEndpoint.cs/#L291"><i class="bi bi-code-slash"></i></a>
+Enum DXEndpoint.Role  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/2.7.1/src/DxFeed.Graal.Net/Api/DXEndpoint.cs/#L291"><i class="bi bi-code-slash"></i></a>
   </h1>
 
   <div class="facts text-secondary">
@@ -118,7 +118,8 @@ Enum DXEndpoint.Role  <a class="header-action link-secondary" title="View source
 </h2>
   <dl class="parameters">
     <dt id="DxFeed_Graal_Net_Api_DXEndpoint_Role_Feed"><code>Feed = 0</code></dt>
-    <dd><p><code>Feed</code> endpoint connects to the remote data feed provider
+  
+  <dd><p><code>Feed</code> endpoint connects to the remote data feed provider
 and is optimized for real-time or delayed data processing (<b>this is a default role</b>).
 <a class="xref" href="DxFeed.Graal.Net.Api.DXEndpoint.html#DxFeed_Graal_Net_Api_DXEndpoint_GetFeed">GetFeed()</a> method returns feed object that subscribes
 to the remote data feed provider and receives events from it.
@@ -126,29 +127,34 @@ When event processing threads cannot keep up (don't have enough CPU time), data 
 to minimize latency between received events and their processing time.</p>
 </dd>
     <dt id="DxFeed_Graal_Net_Api_DXEndpoint_Role_LocalHub"><code>LocalHub = 5</code></dt>
-    <dd><p><code>LocalHub</code> endpoint is a local hub without ability to establish network connections.
+  
+  <dd><p><code>LocalHub</code> endpoint is a local hub without ability to establish network connections.
 Events that are published via <a class="xref" href="DxFeed.Graal.Net.Api.DXEndpoint.html#DxFeed_Graal_Net_Api_DXEndpoint_GetPublisher">GetPublisher()</a> are delivered to local
 <a class="xref" href="DxFeed.Graal.Net.Api.DXEndpoint.html#DxFeed_Graal_Net_Api_DXEndpoint_GetFeed">GetFeed()</a> only.</p>
 </dd>
     <dt id="DxFeed_Graal_Net_Api_DXEndpoint_Role_OnDemandFeed"><code>OnDemandFeed = 1</code></dt>
-    <dd><p><code>OnDemandFeed</code> endpoint is similar to <a class="xref" href="DxFeed.Graal.Net.Api.DXEndpoint.Role.html#DxFeed_Graal_Net_Api_DXEndpoint_Role_Feed">Feed</a>, but it is designed to be used with
+  
+  <dd><p><code>OnDemandFeed</code> endpoint is similar to <a class="xref" href="DxFeed.Graal.Net.Api.DXEndpoint.Role.html#DxFeed_Graal_Net_Api_DXEndpoint_Role_Feed">Feed</a>, but it is designed to be used with
 <code>OnDemandService</code> for historical data replay only.</p>
 </dd>
     <dt id="DxFeed_Graal_Net_Api_DXEndpoint_Role_Publisher"><code>Publisher = 3</code></dt>
-    <dd><p><code>Publisher</code> endpoint connects to the remote publisher hub (also known as multiplexor) or
+  
+  <dd><p><code>Publisher</code> endpoint connects to the remote publisher hub (also known as multiplexor) or
 creates a publisher on the local host.
 <a class="xref" href="DxFeed.Graal.Net.Api.DXEndpoint.html#DxFeed_Graal_Net_Api_DXEndpoint_GetPublisher">GetPublisher()</a> method returns a publisher object
 that publishes events to all connected feeds.</p>
 </dd>
     <dt id="DxFeed_Graal_Net_Api_DXEndpoint_Role_StreamFeed"><code>StreamFeed = 2</code></dt>
-    <dd><p><code>StreamFeed</code> endpoint is similar to <a class="xref" href="DxFeed.Graal.Net.Api.DXEndpoint.Role.html#DxFeed_Graal_Net_Api_DXEndpoint_Role_Feed">Feed</a>
+  
+  <dd><p><code>StreamFeed</code> endpoint is similar to <a class="xref" href="DxFeed.Graal.Net.Api.DXEndpoint.Role.html#DxFeed_Graal_Net_Api_DXEndpoint_Role_Feed">Feed</a>
 and also connects to the remote data feed provider, is designed for bulk parsing of data from files.
 <a class="xref" href="DxFeed.Graal.Net.Api.DXEndpoint.html#DxFeed_Graal_Net_Api_DXEndpoint_GetFeed">GetFeed()</a> method returns feed object that subscribes
 to the data from the opened files and receives events from them.
 Events from the files are not conflated, are not skipped, and are processed as fast as possible.</p>
 </dd>
     <dt id="DxFeed_Graal_Net_Api_DXEndpoint_Role_StreamPublisher"><code>StreamPublisher = 4</code></dt>
-    <dd><p><code>StreamPublisher</code> endpoint is similar to <a class="xref" href="DxFeed.Graal.Net.Api.DXEndpoint.Role.html#DxFeed_Graal_Net_Api_DXEndpoint_Role_Publisher">Publisher</a>
+  
+  <dd><p><code>StreamPublisher</code> endpoint is similar to <a class="xref" href="DxFeed.Graal.Net.Api.DXEndpoint.Role.html#DxFeed_Graal_Net_Api_DXEndpoint_Role_Publisher">Publisher</a>
 and also connects to the remote publisher hub, but is designed for bulk publishing of data.
 <a class="xref" href="DxFeed.Graal.Net.Api.DXEndpoint.html#DxFeed_Graal_Net_Api_DXEndpoint_GetPublisher">GetPublisher()</a> method returns a publisher object that publishes events
 to all connected feeds.

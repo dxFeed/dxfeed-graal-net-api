@@ -99,12 +99,16 @@ Classes
       <dd><p>The <code>AuthToken</code> class represents an authorization token and encapsulates information
 about the authorization scheme and its associated value.</p>
 <p></p>An AuthToken consists of the following components:
-<ul><li>Scheme - The authorization scheme (e.g., "Basic" or "Bearer").</li><li>
+<ul>
+  <li>Scheme - The authorization scheme (e.g., "Basic" or "Bearer").</li>
+  <li>
     Value - The encoded value, which is scheme-dependent (e.g., an access token per RFC6750
     or Base64-encoded "user:password" per RFC2617).
-  </li><li>
+  </li>
+  <li>
     String representation - A string that combines the scheme and value in the format: [scheme + " " + value].
-  </li></ul>
+  </li>
+</ul>
 </dd>
     </dl>
 
