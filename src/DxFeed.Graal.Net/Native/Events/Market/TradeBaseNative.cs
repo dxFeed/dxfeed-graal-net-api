@@ -26,4 +26,5 @@ internal record struct TradeBaseNative(
     int DayId,
     double DayVolume,
     double DayTurnover,
-    int Flags);
+    int Flags,
+    long TradeId);

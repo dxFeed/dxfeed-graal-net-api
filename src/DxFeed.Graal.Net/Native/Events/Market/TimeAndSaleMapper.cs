@@ -59,6 +59,7 @@ internal sealed class TimeAndSaleMapper : EventTypeMapper<TimeAndSale, TimeAndSa
             Flags = eventType.Flags,
             Buyer = eventType.Buyer,
             Seller = eventType.Seller,
+            TradeId = eventType.TradeId,
         };
         return ptr;
     }
@@ -78,6 +79,8 @@ internal sealed class TimeAndSaleMapper : EventTypeMapper<TimeAndSale, TimeAndSa
         timeAndSale.Flags = eventType->Flags;
         timeAndSale.Buyer = eventType->Buyer;
         timeAndSale.Seller = eventType->Seller;
+        timeAndSale.TradeId = eventType->TradeId;
+
         return timeAndSale;
     }
 }
