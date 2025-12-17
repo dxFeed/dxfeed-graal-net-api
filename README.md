@@ -52,10 +52,10 @@ that prevent us from providing a state-of-the-art technological solution.
 
 ### Benefits of the New Version
 
-- :rocket: Increased performance
-- :milky_way: Wider functionality
-- :gemini: Identical programming interfaces to our best API
-- :thumbsup: Higher quality of support and service
+- :rocket: Increased performance.
+- :milky_way: Wider functionality.
+- :gemini: Identical programming interfaces to our best API.
+- :thumbsup: Higher quality of support and service.
 
 ### Milestones
 
