@@ -28,4 +28,5 @@ internal record struct TimeAndSaleNative(
     StringNative ExchangeSaleConditions,
     int Flags,
     StringNative Buyer,
-    StringNative Seller);
+    StringNative Seller,
+    long TradeId);

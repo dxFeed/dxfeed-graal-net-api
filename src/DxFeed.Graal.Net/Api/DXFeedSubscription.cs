@@ -9,6 +9,7 @@ using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Linq;
 using DxFeed.Graal.Net.Api.Osub;
+using DxFeed.Graal.Net.Native.ErrorHandling;
 using DxFeed.Graal.Net.Native.Events;
 using DxFeed.Graal.Net.Native.Interop;
 using DxFeed.Graal.Net.Native.Subscription;
@@ -23,6 +24,16 @@ namespace DxFeed.Graal.Net.Api;
 // ToDO Add a state change notification.
 public sealed class DXFeedSubscription : IObservableSubscription, IDisposable
 {
+    /// <summary>
+    /// The optimal events' batch limit for single notification in <see cref="DXFeedEventListener"/>.
+    /// </summary>
+    public const int OptimalBatchLimit = 0;
+
+    /// <summary>
+    /// The maximum events' batch limit for single notification in <see cref="DXFeedEventListener"/>.
+    /// </summary>
+    public const int MaxBatchLimit = int.MaxValue;
+
     /// <summary>
     /// Subscription native wrapper.
     /// </summary>
@@ -60,6 +71,21 @@ public sealed class DXFeedSubscription : IObservableSubscription, IDisposable
         _eventTypeSet = eventTypesSet;
         _eventListenerFunc = EventListenerFuncWrapper;
     }
+
+    /// <summary>
+    /// Gets or sets the aggregation period for data for this subscription instance.
+    /// <br/>
+    /// Setting a new aggregation period for data will only take effect on the next iteration of data notification.
+    /// For example, if the current aggregation period is 5 seconds, and it is changed to 1 second, the next call to
+    /// the next call to the retrieve method may take up to 5 seconds, after which the new aggregation period will
+    /// take effect.
+    /// </summary>
+    public TimeSpan AggregationPeriod { get => GetAggregationPeriod(); set => SetAggregationPeriod(value); }
+
+    /// <summary>
+    /// Gets or sets the maximum number of events in the single notification of <see cref="DXFeedEventListener"/>.
+    /// </summary>
+    public int EventsBatchLimit { get => GetEventsBatchLimit(); set => SetEventsBatchLimit(value); }
 
     /// <inheritdoc/>
     public bool IsClosed =>
@@ -170,6 +196,24 @@ public sealed class DXFeedSubscription : IObservableSubscription, IDisposable
         _subscriptionNative.SetSymbols(symbols);
 
     /// <summary>
+    /// Returns the aggregation period for data for this subscription instance.
+    /// </summary>
+    /// <returns>The aggregation period for data.</returns>
+    public TimeSpan GetAggregationPeriod() =>
+        _subscriptionNative.GetAggregationPeriod();
+
+    /// <summary>
+    /// Sets the aggregation period for data.
+    /// This method sets a new aggregation period for data, which will only take effect on the next iteration of
+    /// data notification. For example, if the current aggregation period is 5 seconds, and it is changed
+    /// to 1 second, the next call to the next call to the retrieve method may take up to 5 seconds, after which
+    /// the new aggregation period will take effect.
+    /// </summary>
+    /// <param name="aggregationPeriod">The new aggregation period for data.</param>
+    public void SetAggregationPeriod(TimeSpan aggregationPeriod) =>
+        _subscriptionNative.SetAggregationPeriod(aggregationPeriod);
+
+    /// <summary>
     /// Clears the set of subscribed symbols.
     /// </summary>
     public void Clear() =>
@@ -181,6 +225,24 @@ public sealed class DXFeedSubscription : IObservableSubscription, IDisposable
     // ToDo Should notify the close. If it is attached to the feed, the feed should detach it.
     public void Close() =>
         _subscriptionNative.Close();
+
+    /// <summary>
+    /// Returns maximum number of events in the single notification of <see cref="DXFeedEventListener"/>.
+    /// Special cases are supported for constants <see cref="OptimalBatchLimit"/> and <see cref="MaxBatchLimit"/>.
+    /// </summary>
+    /// <returns>The maximum number of events in the single notification.</returns>
+    public int GetEventsBatchLimit() =>
+        _subscriptionNative.GetEventsBatchLimit();
+
+    /// <summary>
+    /// Sets maximum number of events in the single notification of <see cref="DXFeedEventListener"/>.
+    /// Special cases are supported for constants <see cref="OptimalBatchLimit"/> and <see cref="MaxBatchLimit"/>.
+    /// </summary>
+    /// <param name="eventsBatchLimit">The notification events limit.</param>
+    /// <exception cref="JavaException">if eventsBatchLimit &lt; 0 (see <see cref="OptimalBatchLimit"/> or <see cref="MaxBatchLimit"/>).</exception>
+    public void SetEventsBatchLimit(int eventsBatchLimit) =>
+        _subscriptionNative.SetEventsBatchLimit(eventsBatchLimit);
+
 
     /// <summary>
     /// Releases all resources used by the current instance of the <see cref="DXFeedSubscription"/> class.
