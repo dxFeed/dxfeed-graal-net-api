@@ -20,7 +20,7 @@ internal sealed class SymbolMarshaler : AbstractMarshaler
 {
     private static readonly Lazy<SymbolMarshaler> Instance = new();
 
-    private enum IndexedSourceTypeNative
+    public enum IndexedSourceTypeNative
     {
         /// <summary>
         /// Represent <see cref="Net.Events.IndexedEventSource"/> type.
@@ -232,7 +232,7 @@ internal sealed class SymbolMarshaler : AbstractMarshaler
     }
 
     [StructLayout(LayoutKind.Sequential)]
-    private struct IndexedEventSourceNative
+    public struct IndexedEventSourceNative
     {
         public IndexedSourceTypeNative Type;
         public int Id;
