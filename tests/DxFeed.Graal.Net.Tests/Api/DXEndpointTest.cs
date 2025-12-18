@@ -118,7 +118,7 @@ public class DXEndpointTest
     }
 
     [Test]
-    public void CheckAddSymbols()
+    public void CheckAddSymbolsAndSetAggregationPeriod()
     {
         using var endpoint = Create(Feed);
 
@@ -144,7 +144,8 @@ public class DXEndpointTest
         subscription.AddSymbols(symbols);
         resultSymbols = subscription.GetSymbols();
         Assert.That(new HashSet<object>(symbols).SetEquals(resultSymbols));
-
+        subscription.SetAggregationPeriod(TimeSpan.FromMilliseconds(1234));
+        Assert.That(subscription.GetAggregationPeriod().TotalMilliseconds, Is.EqualTo(1234));
         subscription.Clear();
         var tempList = new List<object>();
         foreach (var symbol in symbols)

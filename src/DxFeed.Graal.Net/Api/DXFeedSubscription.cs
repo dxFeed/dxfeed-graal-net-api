@@ -170,6 +170,24 @@ public sealed class DXFeedSubscription : IObservableSubscription, IDisposable
         _subscriptionNative.SetSymbols(symbols);
 
     /// <summary>
+    /// Returns the aggregation period for data for this subscription instance.
+    /// </summary>
+    /// <returns>The aggregation period for data.</returns>
+    public TimeSpan GetAggregationPeriod() =>
+        _subscriptionNative.GetAggregationPeriod();
+
+    /// <summary>
+    /// Sets the aggregation period for data.
+    /// This method sets a new aggregation period for data, which will only take effect on the next iteration of
+    /// data notification. For example, if the current aggregation period is 5 seconds, and it is changed
+    /// to 1 second, the next call to the next call to the retrieve method may take up to 5 seconds, after which
+    /// the new aggregation period will take effect.
+    /// </summary>
+    /// <param name="aggregationPeriod">The new aggregation period for data.</param>
+    public void SetAggregationPeriod(TimeSpan aggregationPeriod) =>
+        _subscriptionNative.SetAggregationPeriod(aggregationPeriod);
+
+    /// <summary>
     /// Clears the set of subscribed symbols.
     /// </summary>
     public void Clear() =>
