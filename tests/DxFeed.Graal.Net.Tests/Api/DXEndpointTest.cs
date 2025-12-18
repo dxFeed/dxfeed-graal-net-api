@@ -118,7 +118,7 @@ public class DXEndpointTest
     }
 
     [Test]
-    public void CheckAddSymbolsAndSetAggregationPeriod()
+    public void CheckAddSymbolsAndSetAggregationPeriodAndSetBatchLimit()
     {
         using var endpoint = Create(Feed);
 
@@ -145,7 +145,17 @@ public class DXEndpointTest
         resultSymbols = subscription.GetSymbols();
         Assert.That(new HashSet<object>(symbols).SetEquals(resultSymbols));
         subscription.SetAggregationPeriod(TimeSpan.FromMilliseconds(1234));
-        Assert.That(subscription.GetAggregationPeriod().TotalMilliseconds, Is.EqualTo(1234));
+        Assert.Multiple(() =>
+        {
+            Assert.That(subscription.GetAggregationPeriod().TotalMilliseconds, Is.EqualTo(1234));
+            Assert.That(subscription.AggregationPeriod.TotalMilliseconds, Is.EqualTo(1234));
+        });
+        subscription.SetEventsBatchLimit(5);
+        Assert.Multiple(() =>
+        {
+            Assert.That(subscription.GetEventsBatchLimit(), Is.EqualTo(5));
+            Assert.That(subscription.EventsBatchLimit, Is.EqualTo(5));
+        });
         subscription.Clear();
         var tempList = new List<object>();
         foreach (var symbol in symbols)

@@ -126,6 +126,12 @@ internal sealed unsafe class SubscriptionNative : IDisposable
     public void Close() =>
         SubscriptionImport.Close(GetCurrentThread(), _subHandle);
 
+    public int GetEventsBatchLimit() =>
+        SubscriptionImport.GetEventsBatchLimit(GetCurrentThread(), _subHandle);
+
+    public void SetEventsBatchLimit(int eventsBatchLimit) =>
+        SubscriptionImport.SetEventsBatchLimit(GetCurrentThread(), _subHandle, eventsBatchLimit);
+
     public void Dispose()
     {
         if (_disposed)
@@ -239,7 +245,8 @@ internal sealed unsafe class SubscriptionNative : IDisposable
             nint thread,
             SubscriptionHandle* subHandle,
             TimeSpan aggregationPeriod) =>
-            ErrorCheck.SafeCall(NativeSetAggregationPeriod(thread, subHandle, (long)aggregationPeriod.TotalMilliseconds));
+            ErrorCheck.SafeCall(
+                NativeSetAggregationPeriod(thread, subHandle, (long)aggregationPeriod.TotalMilliseconds));
 
         public static void Clear(nint thread, SubscriptionHandle* subHandle) =>
             ErrorCheck.SafeCall(NativeClear(thread, subHandle));
@@ -252,6 +259,12 @@ internal sealed unsafe class SubscriptionNative : IDisposable
 
         public static bool IsClosed(nint thread, SubscriptionHandle* subHandle) =>
             ErrorCheck.SafeCall(NativeIsClosed(thread, subHandle)) != 0;
+
+        public static int GetEventsBatchLimit(nint thread, SubscriptionHandle* subHandle) =>
+            ErrorCheck.SafeCall(NativeGetEventsBatchLimit(thread, subHandle));
+
+        public static void SetEventsBatchLimit(nint thread, SubscriptionHandle* subHandle, int eventsBatchLimit) =>
+            ErrorCheck.SafeCall(NativeSetEventsBatchLimit(thread, subHandle, eventsBatchLimit));
 
         [DllImport(
             ImportInfo.DllName,
@@ -450,5 +463,24 @@ internal sealed unsafe class SubscriptionNative : IDisposable
         private static extern int NativeIsClosed(
             nint thread,
             SubscriptionHandle* subHandle);
+
+        [DllImport(
+            ImportInfo.DllName,
+            CallingConvention = CallingConvention.Cdecl,
+            CharSet = CharSet.Ansi,
+            EntryPoint = "dxfg_DXFeedSubscription_getEventsBatchLimit")]
+        private static extern int NativeGetEventsBatchLimit(
+            nint thread,
+            SubscriptionHandle* subHandle);
+
+        [DllImport(
+            ImportInfo.DllName,
+            CallingConvention = CallingConvention.Cdecl,
+            CharSet = CharSet.Ansi,
+            EntryPoint = "dxfg_DXFeedSubscription_setEventsBatchLimit")]
+        private static extern int NativeSetEventsBatchLimit(
+            nint thread,
+            SubscriptionHandle* subHandle,
+            int eventsBatchLimit);
     }
 }
