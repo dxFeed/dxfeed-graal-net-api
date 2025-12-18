@@ -103,7 +103,13 @@ internal sealed unsafe class SubscriptionNative : IDisposable
         new HashSet<object>(SubscriptionImport.GetSymbols(GetCurrentThread(), _subHandle));
 
     public void SetSymbols(IEnumerable<object> symbols) =>
-       SubscriptionImport.SetSymbols(GetCurrentThread(), _subHandle, symbols);
+        SubscriptionImport.SetSymbols(GetCurrentThread(), _subHandle, symbols);
+
+    public TimeSpan GetAggregationPeriod() =>
+        SubscriptionImport.GetAggregationPeriod(GetCurrentThread(), _subHandle);
+
+    public void SetAggregationPeriod(TimeSpan aggregationPeriod) =>
+        SubscriptionImport.SetAggregationPeriod(GetCurrentThread(), _subHandle, aggregationPeriod);
 
     public void Clear() =>
         SubscriptionImport.Clear(GetCurrentThread(), _subHandle);
@@ -119,6 +125,12 @@ internal sealed unsafe class SubscriptionNative : IDisposable
 
     public void Close() =>
         SubscriptionImport.Close(GetCurrentThread(), _subHandle);
+
+    public int GetEventsBatchLimit() =>
+        SubscriptionImport.GetEventsBatchLimit(GetCurrentThread(), _subHandle);
+
+    public void SetEventsBatchLimit(int eventsBatchLimit) =>
+        SubscriptionImport.SetEventsBatchLimit(GetCurrentThread(), _subHandle, eventsBatchLimit);
 
     public void Dispose()
     {
@@ -222,6 +234,20 @@ internal sealed unsafe class SubscriptionNative : IDisposable
         public static void SetSymbols(nint thread, SubscriptionHandle* subHandle, IEnumerable<object> symbols) =>
             ErrorCheck.SafeCall(NativeSetSymbols(thread, subHandle, symbols));
 
+        public static TimeSpan GetAggregationPeriod(nint thread, SubscriptionHandle* subHandle)
+        {
+            ErrorCheck.SafeCall(NativeGetAggregationPeriod(thread, subHandle, out var aggregationPeriod));
+
+            return TimeSpan.FromMilliseconds(aggregationPeriod);
+        }
+
+        public static void SetAggregationPeriod(
+            nint thread,
+            SubscriptionHandle* subHandle,
+            TimeSpan aggregationPeriod) =>
+            ErrorCheck.SafeCall(
+                NativeSetAggregationPeriod(thread, subHandle, (long)aggregationPeriod.TotalMilliseconds));
+
         public static void Clear(nint thread, SubscriptionHandle* subHandle) =>
             ErrorCheck.SafeCall(NativeClear(thread, subHandle));
 
@@ -233,6 +259,12 @@ internal sealed unsafe class SubscriptionNative : IDisposable
 
         public static bool IsClosed(nint thread, SubscriptionHandle* subHandle) =>
             ErrorCheck.SafeCall(NativeIsClosed(thread, subHandle)) != 0;
+
+        public static int GetEventsBatchLimit(nint thread, SubscriptionHandle* subHandle) =>
+            ErrorCheck.SafeCall(NativeGetEventsBatchLimit(thread, subHandle));
+
+        public static void SetEventsBatchLimit(nint thread, SubscriptionHandle* subHandle, int eventsBatchLimit) =>
+            ErrorCheck.SafeCall(NativeSetEventsBatchLimit(thread, subHandle, eventsBatchLimit));
 
         [DllImport(
             ImportInfo.DllName,
@@ -357,6 +389,26 @@ internal sealed unsafe class SubscriptionNative : IDisposable
             ImportInfo.DllName,
             CallingConvention = CallingConvention.Cdecl,
             CharSet = CharSet.Ansi,
+            EntryPoint = "dxfg_DXFeedSubscription_getAggregationPeriodMillis")]
+        private static extern int NativeGetAggregationPeriod(
+            nint thread,
+            SubscriptionHandle* subHandle,
+            out long aggregationPeriod);
+
+        [DllImport(
+            ImportInfo.DllName,
+            CallingConvention = CallingConvention.Cdecl,
+            CharSet = CharSet.Ansi,
+            EntryPoint = "dxfg_DXFeedSubscription_setAggregationPeriodMillis")]
+        private static extern int NativeSetAggregationPeriod(
+            nint thread,
+            SubscriptionHandle* subHandle,
+            long aggregationPeriod);
+
+        [DllImport(
+            ImportInfo.DllName,
+            CallingConvention = CallingConvention.Cdecl,
+            CharSet = CharSet.Ansi,
             EntryPoint = "dxfg_DXFeedSubscription_getSymbols")]
         [return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(ListMarshaler<SymbolMarshaler>))]
         private static extern IEnumerable<object> NativeGetSymbols(
@@ -411,5 +463,24 @@ internal sealed unsafe class SubscriptionNative : IDisposable
         private static extern int NativeIsClosed(
             nint thread,
             SubscriptionHandle* subHandle);
+
+        [DllImport(
+            ImportInfo.DllName,
+            CallingConvention = CallingConvention.Cdecl,
+            CharSet = CharSet.Ansi,
+            EntryPoint = "dxfg_DXFeedSubscription_getEventsBatchLimit")]
+        private static extern int NativeGetEventsBatchLimit(
+            nint thread,
+            SubscriptionHandle* subHandle);
+
+        [DllImport(
+            ImportInfo.DllName,
+            CallingConvention = CallingConvention.Cdecl,
+            CharSet = CharSet.Ansi,
+            EntryPoint = "dxfg_DXFeedSubscription_setEventsBatchLimit")]
+        private static extern int NativeSetEventsBatchLimit(
+            nint thread,
+            SubscriptionHandle* subHandle,
+            int eventsBatchLimit);
     }
 }

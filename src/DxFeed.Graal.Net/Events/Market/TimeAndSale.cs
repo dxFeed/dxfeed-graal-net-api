@@ -274,6 +274,11 @@ public class TimeAndSale : MarketEvent, ITimeSeriesEvent
     public int Flags { get; set; }
 
     /// <summary>
+    /// Gets or sets trade ID for events containing trade-related action (executions, corrections, or cancellations).
+    /// </summary>
+    public long TradeId { get; set; }
+
+    /// <summary>
     /// Returns string representation of this time and sale event.
     /// </summary>
     /// <returns>The string representation.</returns>
@@ -287,6 +292,7 @@ public class TimeAndSale : MarketEvent, ITimeSeriesEvent
         ", exchange=" + StringUtil.EncodeChar(ExchangeCode) +
         ", price=" + Price +
         ", size=" + Size +
+        ", tradeId=" + TradeId +
         ", bid=" + BidPrice +
         ", ask=" + AskPrice +
         ", ESC='" + StringUtil.EncodeNullableString(ExchangeSaleConditions) + "'" +

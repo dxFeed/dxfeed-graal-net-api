@@ -26,6 +26,8 @@ internal abstract class TradeBaseMapper<TTradeBase, TTradeBaseNative> : EventTyp
         tradeBase.DayVolume = eventType->DayVolume;
         tradeBase.DayTurnover = eventType->DayTurnover;
         tradeBase.Flags = eventType->Flags;
+        tradeBase.TradeId = eventType->TradeId;
+
         return tradeBase;
     }
 
@@ -43,6 +45,7 @@ internal abstract class TradeBaseMapper<TTradeBase, TTradeBaseNative> : EventTyp
             DayVolume = eventType.DayVolume,
             DayTurnover = eventType.DayTurnover,
             Flags = eventType.Flags,
+            TradeId = eventType.TradeId,
         };
 
     protected unsafe void ReleaseTradeBase(EventTypeNative* native) =>

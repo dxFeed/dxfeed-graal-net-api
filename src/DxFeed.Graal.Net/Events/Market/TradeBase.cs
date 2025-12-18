@@ -168,6 +168,11 @@ public abstract class TradeBase : MarketEvent, ILastingEvent
     public double Change { get; set; } = double.NaN;
 
     /// <summary>
+    /// Gets or sets trade ID for events containing trade-related action (executions, corrections, or cancellations).
+    /// </summary>
+    public long TradeId { get; set; }
+
+    /// <summary>
     /// Gets or sets implementation-specific flags.
     /// <b>Do not use this method directly.</b>
     /// </summary>
@@ -194,6 +199,7 @@ public abstract class TradeBase : MarketEvent, ILastingEvent
         ", price=" + Price +
         ", change=" + Change +
         ", size=" + Size +
+        ", tradeId=" + TradeId +
         ", day=" + DayUtil.GetYearMonthDayByDayId(DayId) +
         ", dayVolume=" + DayVolume +
         ", dayTurnover=" + DayTurnover +
