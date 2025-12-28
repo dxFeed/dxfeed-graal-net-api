@@ -9,7 +9,6 @@ using System.Runtime.InteropServices;
 using DxFeed.Graal.Net.Api.Osub;
 using DxFeed.Graal.Net.Events;
 using DxFeed.Graal.Net.Events.Candles;
-using DxFeed.Graal.Net.Events.Market;
 using DxFeed.Graal.Net.Native.ErrorHandling;
 using DxFeed.Graal.Net.Native.Graal;
 using DxFeed.Graal.Net.Native.Interop;
@@ -19,19 +18,6 @@ namespace DxFeed.Graal.Net.Native.SymbolMappers;
 internal sealed class SymbolMarshaler : AbstractMarshaler
 {
     private static readonly Lazy<SymbolMarshaler> Instance = new();
-
-    public enum IndexedSourceTypeNative
-    {
-        /// <summary>
-        /// Represent <see cref="Net.Events.IndexedEventSource"/> type.
-        /// </summary>
-        IndexedEventSource,
-
-        /// <summary>
-        /// Represent <see cref="OrderSource"/> type.
-        /// </summary>
-        OrderEventSource,
-    }
 
     private enum SymbolCodeNative
     {
@@ -109,9 +95,7 @@ internal sealed class SymbolMarshaler : AbstractMarshaler
                 var indexedSymbol = CreateAndFillManaged((IntPtr)indexedNative->Symbol);
                 return new IndexedEventSubscriptionSymbol(
                     indexedSymbol,
-                    new IndexedEventSource(
-                        indexedNative->Source->Id,
-                        indexedNative->Source->Name.ToString() ?? string.Empty));
+                    (IndexedEventSource)IndexedEventSourceMarshaller.CreateAndFillManaged((IntPtr)indexedNative->Source));
             case SymbolCodeNative.TimeSeriesSubscriptionSymbol:
                 var timeSeriesNative = (TimeSeriesSubscriptionSymbolNative*)symbolNative;
                 var timeSeriesSymbol = CreateAndFillManaged((IntPtr)timeSeriesNative->Symbol);
@@ -140,7 +124,7 @@ internal sealed class SymbolMarshaler : AbstractMarshaler
                 break;
             case SymbolCodeNative.IndexedEventSubscriptionSymbol:
                 var iss = (IndexedEventSubscriptionSymbolNative*)nativeSymbol;
-                ReleaseNativeIndexedEventSource(iss->Source);
+                IndexedEventSourceMarshaller.ReleaseNative(iss->Source);
                 ReleaseNative(iss->Symbol);
                 break;
             case SymbolCodeNative.TimeSeriesSubscriptionSymbol:
@@ -176,7 +160,7 @@ internal sealed class SymbolMarshaler : AbstractMarshaler
                         sizeof(IndexedEventSubscriptionSymbolNative));
                 indexedSymbol->SymbolNative.SymbolCode = SymbolCodeNative.IndexedEventSubscriptionSymbol;
                 indexedSymbol->Symbol = CreateAndFillNative(value.EventSymbol);
-                indexedSymbol->Source = CreateNativeIndexedEventSource(value.Source);
+                indexedSymbol->Source = IndexedEventSourceMarshaller.CreateAndFillNative(value.Source);
                 return (SymbolNative*)indexedSymbol;
             case TimeSeriesSubscriptionSymbol value:
                 var timesSeriesNative = (TimeSeriesSubscriptionSymbolNative*)Marshal.AllocHGlobal(
@@ -200,45 +184,6 @@ internal sealed class SymbolMarshaler : AbstractMarshaler
         }
     }
 
-    private static unsafe IndexedEventSourceNative* CreateNativeIndexedEventSource(IndexedEventSource source)
-    {
-        var sourceNative =
-            (IndexedEventSourceNative*)Marshal.AllocHGlobal(sizeof(IndexedEventSourceNative));
-        sourceNative->Type = IndexedSourceTypeNative.IndexedEventSource;
-        if (source is OrderSource)
-        {
-            sourceNative->Type = IndexedSourceTypeNative.OrderEventSource;
-        }
-
-        sourceNative->Id = source.Id;
-        sourceNative->Name = source.Name;
-
-        return sourceNative;
-    }
-
-    /// <summary>
-    /// Release unsafe <see cref="SymbolMarshaler.IndexedEventSourceNative"/> pointer.
-    /// </summary>
-    /// <param name="sourceNative">The source unsafe pointer.</param>
-    private static unsafe void ReleaseNativeIndexedEventSource(IndexedEventSourceNative* sourceNative)
-    {
-        if ((nint)sourceNative == 0)
-        {
-            return;
-        }
-
-        sourceNative->Name.Release();
-        Marshal.FreeHGlobal((nint)sourceNative);
-    }
-
-    [StructLayout(LayoutKind.Sequential)]
-    public struct IndexedEventSourceNative
-    {
-        public IndexedSourceTypeNative Type;
-        public int Id;
-        public StringNative Name;
-    }
-
     [StructLayout(LayoutKind.Sequential)]
     private struct SymbolNative
     {
@@ -250,7 +195,7 @@ internal sealed class SymbolMarshaler : AbstractMarshaler
     {
         public SymbolNative SymbolNative;
         public SymbolNative* Symbol; // Can be any allowed symbol (String, Wildcard, etc.).
-        public IndexedEventSourceNative* Source;
+        public IndexedEventSourceMarshaller.IndexedEventSourceNative* Source;
     }
 
     [StructLayout(LayoutKind.Sequential)]

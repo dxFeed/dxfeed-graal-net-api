@@ -6,6 +6,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using DxFeed.Graal.Net.Events;
 using DxFeed.Graal.Net.Native.ErrorHandling;
 using DxFeed.Graal.Net.Native.Interop;
 using DxFeed.Graal.Net.Native.SymbolMappers;
@@ -43,12 +44,13 @@ internal sealed class PriceLevelServiceHandle : JavaHandle
         BestFitMapping = false,
         ThrowOnUnmappableChar = true,
         EntryPoint = "dxfg_PriceLevelService_getOrders")]
-    private static extern unsafe int NativeGetOrders(
+    private static extern int NativeGetOrders(
         nint thread,
         PriceLevelServiceHandle service,
         [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(SymbolMarshaler))]
         object candleSymbol,
-        SymbolMarshaler.IndexedEventSourceNative* orderSource,
+        [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(IndexedEventSourceMarshaller))]
+        IndexedEventSource orderSource,
         long from,
         long to,
         [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(StringMarshaler))]
@@ -63,12 +65,13 @@ internal sealed class PriceLevelServiceHandle : JavaHandle
         BestFitMapping = false,
         ThrowOnUnmappableChar = true,
         EntryPoint = "dxfg_PriceLevelService_getOrders2")]
-    private static extern unsafe int NativeGetOrders(
+    private static extern int NativeGetOrders(
         nint thread,
         PriceLevelServiceHandle service,
         [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(SymbolMarshaler))]
         object candleSymbol,
-        SymbolMarshaler.IndexedEventSourceNative* orderSource,
+        [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(IndexedEventSourceMarshaller))]
+        IndexedEventSource orderSource,
         long from,
         long to,
         out IntPtr /* ListNative<EventTypeNative>* */ orders);
