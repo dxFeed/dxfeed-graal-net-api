@@ -25,21 +25,35 @@ internal sealed class PriceLevelServiceHandle : JavaHandle
         return service;
     }
 
-    public List<Order> getOrders(CandleSymbol candleSymbol, OrderSource orderSource, TimeSpan from, TimeSpan to, string caller)
+    public List<Order> GetOrders(CandleSymbol candleSymbol, OrderSource orderSource, TimeSpan from, TimeSpan to, string caller)
     {
         // ToDo: implement
 
         return new List<Order>();
     }
 
-    public List<Order> getOrders(CandleSymbol candleSymbol, OrderSource orderSource, TimeSpan from, TimeSpan to)
+    public List<Order> GetOrders(CandleSymbol candleSymbol, OrderSource orderSource, TimeSpan from, TimeSpan to)
     {
         // ToDo: implement
 
         return new List<Order>();
     }
 
-    public void Close() => ErrorCheck.SafeCall(NativeClose(CurrentThread, this));
+    public List<Quote> GetQuotes(CandleSymbol candleSymbol, TimeSpan from, TimeSpan to, string caller)
+    {
+        // ToDo: implement
+
+        return new List<Quote>();
+    }
+
+    public List<Quote> GetQuotes(CandleSymbol candleSymbol, TimeSpan from, TimeSpan to)
+    {
+        // ToDo: implement
+
+        return new List<Quote>();
+    }
+
+    public new void Close() => ErrorCheck.SafeCall(NativeClose(CurrentThread, this));
 
     [DllImport(
         ImportInfo.DllName,
