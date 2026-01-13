@@ -32,14 +32,14 @@ public class PriceLevelService : IDisposable
     public PriceLevelService(string address) => handle = PriceLevelServiceHandle.Create(address);
 
     /// <summary>
-    ///
+    /// Returns list of price levels for the specified <see cref="CandleSymbol"/> within passed <c>from</c> and <c>to</c> times.
     /// </summary>
-    /// <param name="candleSymbol"></param>
-    /// <param name="orderSource"></param>
-    /// <param name="from"></param>
-    /// <param name="to"></param>
-    /// <param name="caller"></param>
-    /// <returns></returns>
+    /// <param name="candleSymbol"><see cref="CandleSymbol"/> to request.</param>
+    /// <param name="orderSource"><see cref="OrderSource"/> to request.</param>
+    /// <param name="from">From time in UTC</param>
+    /// <param name="to">To time in UTC</param>
+    /// <param name="caller">The caller identifier.</param>
+    /// <returns>A list of <see cref="Order"/> events sorted in ascending order by time.</returns>
     public List<Order> GetOrders(
         CandleSymbol candleSymbol,
         OrderSource orderSource,
@@ -58,6 +58,14 @@ public class PriceLevelService : IDisposable
     /// <returns></returns>
     public List<Order> GetOrders(CandleSymbol candleSymbol, OrderSource orderSource, TimeSpan from, TimeSpan to) =>
         handle.GetOrders(candleSymbol, orderSource, from, to);
+
+    /// <summary>
+    /// Returns available to the client order sources and symbols for each <see cref="OrderSource"/>. Order source and symbols
+    /// are filtered according to the client permissions. Symbols and order sources view is built as of now, e.g.
+    /// the response contains only existing data (for example, no symbols that were delisted)
+    /// </summary>
+    /// <returns>The AuthOrderSource instance.</returns>
+    public AuthOrderSource GetAuthOrderSource() => new(handle.GetAuthOrderSource());
 
     /// <summary>
     ///

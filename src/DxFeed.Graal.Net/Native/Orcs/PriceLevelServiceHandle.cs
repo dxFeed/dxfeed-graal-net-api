@@ -25,7 +25,8 @@ internal sealed class PriceLevelServiceHandle : JavaHandle
         return service;
     }
 
-    public List<Order> GetOrders(CandleSymbol candleSymbol, OrderSource orderSource, TimeSpan from, TimeSpan to, string caller)
+    public List<Order> GetOrders(CandleSymbol candleSymbol, OrderSource orderSource, TimeSpan from, TimeSpan to,
+        string caller)
     {
         // ToDo: implement
 
@@ -37,6 +38,13 @@ internal sealed class PriceLevelServiceHandle : JavaHandle
         // ToDo: implement
 
         return new List<Order>();
+    }
+
+    public AuthOrderSourceHandle GetAuthOrderSource()
+    {
+        ErrorCheck.SafeCall(NativeGetAuthOrderSource(CurrentThread, this, out var authOrderSource));
+
+        return authOrderSource;
     }
 
     public List<Quote> GetQuotes(CandleSymbol candleSymbol, TimeSpan from, TimeSpan to, string caller)
@@ -109,7 +117,17 @@ internal sealed class PriceLevelServiceHandle : JavaHandle
         long to,
         out IntPtr /* ListNative<EventTypeNative>* */ orders);
 
-    // ToDo: add dxfg_PriceLevelService_getAuthOrderSource
+    [DllImport(
+        ImportInfo.DllName,
+        CallingConvention = CallingConvention.Cdecl,
+        ExactSpelling = true,
+        BestFitMapping = false,
+        ThrowOnUnmappableChar = true,
+        EntryPoint = "dxfg_PriceLevelService_getAuthOrderSource")]
+    private static extern int NativeGetAuthOrderSource(
+        nint thread,
+        PriceLevelServiceHandle service,
+        out AuthOrderSourceHandle authOrderSource);
 
     [DllImport(
         ImportInfo.DllName,

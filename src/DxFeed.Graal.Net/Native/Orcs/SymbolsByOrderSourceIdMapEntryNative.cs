@@ -10,6 +10,8 @@ using DxFeed.Graal.Net.Native.Interop;
 namespace DxFeed.Graal.Net.Native.Orcs;
 
 [StructLayout(LayoutKind.Sequential)]
-internal record struct SymbolsByOrderSourceIdMapEntryNative(
-    int OrderSourceId,
-    ListNative<StringNative> Symbols);
+internal unsafe struct SymbolsByOrderSourceIdMapEntryNative
+{
+    public int OrderSourceId;
+    public ListNative<StringNative>* Symbols;
+}
