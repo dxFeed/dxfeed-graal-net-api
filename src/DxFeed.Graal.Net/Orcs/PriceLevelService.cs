@@ -33,7 +33,7 @@ public class PriceLevelService : IDisposable
 
     /// <summary>
     /// Returns list of price levels for the specified <see cref="CandleSymbol"/> within passed <c>from</c> and <c>to</c> times.
-    /// The events are ordered by <see cref="Order.Time">time</see> in the collection.
+    /// The events are ordered by <see cref="DxFeed.Graal.Net.Events.Market.OrderBase.Time">time</see> in the collection.
     /// <p/>
     /// Passed candle symbol shall contain supported <see cref="CandlePeriod"/> and custom attribute
     /// called granularity with the key <c>GranularityAttributeKey</c>. Granularity value shall be represented by
@@ -66,7 +66,7 @@ public class PriceLevelService : IDisposable
 
     /// <summary>
     /// Returns list of quotes for the specified <see cref="CandleSymbol"/> within passed <c>from</c> and <c>to</c> times.
-    /// The quotes are ordered by <see cref="Quote.Time">time</see> in the collection.
+    /// The quotes are ordered by <see cref="DxFeed.Graal.Net.Events.Market.Quote.Time">time</see> in the collection.
     /// </summary>
     /// <param name="candleSymbol">The <see cref="CandleSymbol"/> to request.</param>
     /// <param name="from">From time in UTC</param>
