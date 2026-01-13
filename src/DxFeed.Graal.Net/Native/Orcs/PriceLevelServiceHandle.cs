@@ -6,11 +6,13 @@
 
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Runtime.InteropServices;
 using DxFeed.Graal.Net.Events;
 using DxFeed.Graal.Net.Events.Candles;
 using DxFeed.Graal.Net.Events.Market;
 using DxFeed.Graal.Net.Native.ErrorHandling;
+using DxFeed.Graal.Net.Native.Events;
 using DxFeed.Graal.Net.Native.Interop;
 using DxFeed.Graal.Net.Native.SymbolMappers;
 
@@ -25,19 +27,39 @@ internal sealed class PriceLevelServiceHandle : JavaHandle
         return service;
     }
 
-    public List<Order> GetOrders(CandleSymbol candleSymbol, OrderSource orderSource, TimeSpan from, TimeSpan to,
+    public List<Order> GetOrders(
+        CandleSymbol candleSymbol,
+        OrderSource orderSource,
+        DateTimeOffset from,
+        DateTimeOffset to,
         string caller)
     {
-        // ToDo: implement
+        unsafe
+        {
+            ListNative<IntPtr>* orders = null;
 
-        return new List<Order>();
-    }
+            try
+            {
+                ErrorCheck.SafeCall(NativeGetOrders(
+                    CurrentThread,
+                    this,
+                    candleSymbol,
+                    orderSource,
+                    from.ToUnixTimeMilliseconds(),
+                    to.ToUnixTimeMilliseconds(),
+                    caller,
+                    out orders));
 
-    public List<Order> GetOrders(CandleSymbol candleSymbol, OrderSource orderSource, TimeSpan from, TimeSpan to)
-    {
-        // ToDo: implement
-
-        return new List<Order>();
+                return EventMapper.FromNative((ListNative<EventTypeNative>*)orders).Select(e => (Order)e).ToList();
+            }
+            finally
+            {
+                if (orders != null)
+                {
+                    EventTypeNative.ReleaseList((IntPtr)orders);
+                }
+            }
+        }
     }
 
     public AuthOrderSourceHandle GetAuthOrderSource()
@@ -47,18 +69,33 @@ internal sealed class PriceLevelServiceHandle : JavaHandle
         return authOrderSource;
     }
 
-    public List<Quote> GetQuotes(CandleSymbol candleSymbol, TimeSpan from, TimeSpan to, string caller)
+    public List<Quote> GetQuotes(CandleSymbol candleSymbol, DateTimeOffset from, DateTimeOffset to, string caller)
     {
-        // ToDo: implement
+        unsafe
+        {
+            ListNative<IntPtr>* quotes = null;
 
-        return new List<Quote>();
-    }
+            try
+            {
+                ErrorCheck.SafeCall(NativeGetQuotes(
+                    CurrentThread,
+                    this,
+                    candleSymbol,
+                    from.ToUnixTimeMilliseconds(),
+                    to.ToUnixTimeMilliseconds(),
+                    caller,
+                    out quotes));
 
-    public List<Quote> GetQuotes(CandleSymbol candleSymbol, TimeSpan from, TimeSpan to)
-    {
-        // ToDo: implement
-
-        return new List<Quote>();
+                return EventMapper.FromNative((ListNative<EventTypeNative>*)quotes).Select(e => (Quote)e).ToList();
+            }
+            finally
+            {
+                if (quotes != null)
+                {
+                    EventTypeNative.ReleaseList((IntPtr)quotes);
+                }
+            }
+        }
     }
 
     public new void Close() => ErrorCheck.SafeCall(NativeClose(CurrentThread, this));
@@ -85,7 +122,7 @@ internal sealed class PriceLevelServiceHandle : JavaHandle
         BestFitMapping = false,
         ThrowOnUnmappableChar = true,
         EntryPoint = "dxfg_PriceLevelService_getOrders")]
-    private static extern int NativeGetOrders(
+    private static extern unsafe int NativeGetOrders(
         nint thread,
         PriceLevelServiceHandle service,
         [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(SymbolMarshaler))]
@@ -96,26 +133,7 @@ internal sealed class PriceLevelServiceHandle : JavaHandle
         long to,
         [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(StringMarshaler))]
         string caller,
-        out IntPtr /* ListNative<EventTypeNative>* */ orders);
-
-    [DllImport(
-        ImportInfo.DllName,
-        CallingConvention = CallingConvention.Cdecl,
-        CharSet = CharSet.Ansi,
-        ExactSpelling = true,
-        BestFitMapping = false,
-        ThrowOnUnmappableChar = true,
-        EntryPoint = "dxfg_PriceLevelService_getOrders2")]
-    private static extern int NativeGetOrders(
-        nint thread,
-        PriceLevelServiceHandle service,
-        [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(SymbolMarshaler))]
-        object candleSymbol,
-        [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(IndexedEventSourceMarshaller))]
-        IndexedEventSource orderSource,
-        long from,
-        long to,
-        out IntPtr /* ListNative<EventTypeNative>* */ orders);
+        out ListNative<IntPtr>* orders);
 
     [DllImport(
         ImportInfo.DllName,
@@ -137,7 +155,7 @@ internal sealed class PriceLevelServiceHandle : JavaHandle
         BestFitMapping = false,
         ThrowOnUnmappableChar = true,
         EntryPoint = "dxfg_PriceLevelService_getQuotes")]
-    private static extern int NativeGetQuotes(
+    private static extern unsafe int NativeGetQuotes(
         nint thread,
         PriceLevelServiceHandle service,
         [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(SymbolMarshaler))]
@@ -146,24 +164,7 @@ internal sealed class PriceLevelServiceHandle : JavaHandle
         long to,
         [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(StringMarshaler))]
         string caller,
-        out IntPtr /* ListNative<EventTypeNative>* */ quotes);
-
-    [DllImport(
-        ImportInfo.DllName,
-        CallingConvention = CallingConvention.Cdecl,
-        CharSet = CharSet.Ansi,
-        ExactSpelling = true,
-        BestFitMapping = false,
-        ThrowOnUnmappableChar = true,
-        EntryPoint = "dxfg_PriceLevelService_getQuotes2")]
-    private static extern int NativeGetQuotes(
-        nint thread,
-        PriceLevelServiceHandle service,
-        [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(SymbolMarshaler))]
-        object candleSymbol,
-        long from,
-        long to,
-        out IntPtr /* ListNative<EventTypeNative>* */ quotes);
+        out ListNative<IntPtr>* quotes);
 
     [DllImport(
         ImportInfo.DllName,

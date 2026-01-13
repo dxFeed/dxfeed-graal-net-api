@@ -25,9 +25,10 @@ public class AuthOrderSource
     internal AuthOrderSource(AuthOrderSourceHandle handle) => this.handle = handle;
 
     /// <summary>
-    ///
+    /// Returns the available symbols by order source id.
     /// </summary>
-    /// <returns></returns>
+    /// <returns>The available symbols by order source id.</returns>
+    // ReSharper disable once MemberCanBePrivate.Global
     public Dictionary<int, ISet<string>> GetByIds()
     {
         if (symbolsByOrderSourceId == null)
@@ -42,9 +43,9 @@ public class AuthOrderSource
     }
 
     /// <summary>
-    ///
+    /// Returns the available symbols by order source.
     /// </summary>
-    /// <returns></returns>
+    /// <returns>The available symbols by order source.</returns>
     public Dictionary<OrderSource, ISet<string>> GetByOrderSources() =>
         GetByIds().ToDictionary(pair => OrderSource.ValueOf(pair.Key), pair => pair.Value);
 }
