@@ -31,6 +31,15 @@ public class PriceLevelService : IDisposable
     /// <param name="address">The RMI endpoint's address</param>
     public PriceLevelService(string address) => handle = PriceLevelServiceHandle.Create(address);
 
+    /// <summary>
+    ///
+    /// </summary>
+    /// <param name="candleSymbol"></param>
+    /// <param name="orderSource"></param>
+    /// <param name="from"></param>
+    /// <param name="to"></param>
+    /// <param name="caller"></param>
+    /// <returns></returns>
     public List<Order> GetOrders(
         CandleSymbol candleSymbol,
         OrderSource orderSource,
@@ -39,12 +48,35 @@ public class PriceLevelService : IDisposable
         string caller) =>
         handle.GetOrders(candleSymbol, orderSource, from, to, caller);
 
+    /// <summary>
+    ///
+    /// </summary>
+    /// <param name="candleSymbol"></param>
+    /// <param name="orderSource"></param>
+    /// <param name="from"></param>
+    /// <param name="to"></param>
+    /// <returns></returns>
     public List<Order> GetOrders(CandleSymbol candleSymbol, OrderSource orderSource, TimeSpan from, TimeSpan to) =>
         handle.GetOrders(candleSymbol, orderSource, from, to);
 
+    /// <summary>
+    ///
+    /// </summary>
+    /// <param name="candleSymbol"></param>
+    /// <param name="from"></param>
+    /// <param name="to"></param>
+    /// <param name="caller"></param>
+    /// <returns></returns>
     public List<Quote> GetQuotes(CandleSymbol candleSymbol, TimeSpan from, TimeSpan to, string caller) =>
         handle.GetQuotes(candleSymbol, from, to, caller);
 
+    /// <summary>
+    ///
+    /// </summary>
+    /// <param name="candleSymbol"></param>
+    /// <param name="from"></param>
+    /// <param name="to"></param>
+    /// <returns></returns>
     public List<Quote> GetQuotes(CandleSymbol candleSymbol, TimeSpan from, TimeSpan to) =>
         handle.GetQuotes(candleSymbol, from, to);
 

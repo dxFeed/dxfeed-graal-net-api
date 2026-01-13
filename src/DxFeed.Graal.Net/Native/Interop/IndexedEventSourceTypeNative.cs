@@ -8,6 +8,9 @@ using DxFeed.Graal.Net.Events.Market;
 
 namespace DxFeed.Graal.Net.Native.Interop;
 
+/// <summary>
+/// A wrapper enum for the dxfg_indexed_event_source_type_t Graal Native SDK enum.
+/// </summary>
 public enum IndexedEventSourceTypeNative
 {
     /// <summary>

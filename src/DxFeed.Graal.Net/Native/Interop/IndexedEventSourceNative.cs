@@ -8,10 +8,24 @@ using System.Runtime.InteropServices;
 
 namespace DxFeed.Graal.Net.Native.Interop;
 
+/// <summary>
+/// A wrapper structure for the dxfg_indexed_event_source_t Graal Native SDK struct.
+/// </summary>
 [StructLayout(LayoutKind.Sequential)]
 public struct IndexedEventSourceNative
 {
+    /// <summary>
+    /// The source's type (dxfg_indexed_event_source_type_t).
+    /// </summary>
     public IndexedEventSourceTypeNative Type;
+
+    /// <summary>
+    /// The source id.
+    /// </summary>
     public int Id;
+
+    /// <summary>
+    /// The source name.
+    /// </summary>
     public StringNative Name;
 }

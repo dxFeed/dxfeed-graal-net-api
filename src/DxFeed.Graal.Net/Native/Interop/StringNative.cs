@@ -16,9 +16,19 @@ namespace DxFeed.Graal.Net.Native.Interop;
 [StructLayout(LayoutKind.Sequential)]
 public record struct StringNative(nint NativeStringPtr)
 {
+    /// <summary>
+    /// An implicit type converter (string? -> StringNative)
+    /// </summary>
+    /// <param name="value">The source string.</param>
+    /// <returns>The resulting StringNative.</returns>
     public static implicit operator StringNative(string? value) =>
         ValueOf(value);
 
+    /// <summary>
+    /// An implicit type converter (StringNative -> string?)
+    /// </summary>
+    /// <param name="value">The source StringNative.</param>
+    /// <returns>The resulting string.</returns>
     public static implicit operator string?(StringNative value) =>
         value.ToString();
 

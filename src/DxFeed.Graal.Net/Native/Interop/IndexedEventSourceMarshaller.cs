@@ -13,7 +13,7 @@ using DxFeed.Graal.Net.Native.Graal;
 
 namespace DxFeed.Graal.Net.Native.Interop;
 
-internal sealed partial class IndexedEventSourceMarshaller : AbstractMarshaler
+internal sealed class IndexedEventSourceMarshaller : AbstractMarshaler
 {
     private static readonly Lazy<IndexedEventSourceMarshaller> Instance = new();
 
