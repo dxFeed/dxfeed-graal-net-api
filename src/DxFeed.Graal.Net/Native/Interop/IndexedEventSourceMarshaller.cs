@@ -13,22 +13,9 @@ using DxFeed.Graal.Net.Native.Graal;
 
 namespace DxFeed.Graal.Net.Native.Interop;
 
-internal sealed class IndexedEventSourceMarshaller : AbstractMarshaler
+internal sealed partial class IndexedEventSourceMarshaller : AbstractMarshaler
 {
     private static readonly Lazy<IndexedEventSourceMarshaller> Instance = new();
-
-    public enum IndexedEventSourceTypeNative
-    {
-        /// <summary>
-        /// Represent <see cref="Net.Events.IndexedEventSource"/> type.
-        /// </summary>
-        IndexedEventSource,
-
-        /// <summary>
-        /// Represent <see cref="OrderSource"/> type.
-        /// </summary>
-        OrderEventSource,
-    }
 
     public static ICustomMarshaler GetInstance(string cookie) => Instance.Value;
 
@@ -122,14 +109,6 @@ internal sealed class IndexedEventSourceMarshaller : AbstractMarshaler
     // ToDo: waiting for the MDAPI-315
     public override void CleanUpListFromNative(IntPtr ptr) =>
         throw new NotImplementedException(); // ErrorCheck.SafeCall(Import.ReleaseList(Isolate.CurrentThread, ptr));
-
-    [StructLayout(LayoutKind.Sequential)]
-    public struct IndexedEventSourceNative
-    {
-        public IndexedEventSourceTypeNative Type;
-        public int Id;
-        public StringNative Name;
-    }
 
     private static class Import
     {

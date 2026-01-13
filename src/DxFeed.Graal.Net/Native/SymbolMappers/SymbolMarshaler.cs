@@ -195,7 +195,7 @@ internal sealed class SymbolMarshaler : AbstractMarshaler
     {
         public SymbolNative SymbolNative;
         public SymbolNative* Symbol; // Can be any allowed symbol (String, Wildcard, etc.).
-        public IndexedEventSourceMarshaller.IndexedEventSourceNative* Source;
+        public IndexedEventSourceNative* Source;
     }
 
     [StructLayout(LayoutKind.Sequential)]

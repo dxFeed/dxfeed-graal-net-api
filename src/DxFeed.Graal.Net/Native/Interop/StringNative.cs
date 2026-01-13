@@ -14,7 +14,7 @@ namespace DxFeed.Graal.Net.Native.Interop;
 /// </summary>
 /// <param name="NativeStringPtr">The unsafe pointer to null-terminated UTF-8 string.</param>
 [StructLayout(LayoutKind.Sequential)]
-internal record struct StringNative(nint NativeStringPtr)
+public record struct StringNative(nint NativeStringPtr)
 {
     public static implicit operator StringNative(string? value) =>
         ValueOf(value);
