@@ -84,8 +84,8 @@ jobs:
       - name: Upload NuGet
         run: |
           dotnet nuget push artifacts/Packages/DxFeed.Graal.Net.${{ github.ref_name }}.nupkg \
-          -Source ${{ secrets.JFROG_PATH }}/${{ github.ref_name }} \
-          -ApiKey ${{ secrets.JFROG_API_KEY }}
+          --source ${{ secrets.JFROG_PATH }}/${{ github.ref_name }} \
+          --api-key ${{ secrets.JFROG_API_KEY }}
         shell: bash
 
   build_and_upload_docs:
