@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class PriceLevelService | dxFeed Graal .NET API </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class PriceLevelService | dxFeed Graal .NET API ">
+      
+      <meta name="description" content="A service that allows to subscribe to orders and quotes at a specified granularity.">
+      <link rel="icon" href="../../docs/images/favicon.png">
+      <link rel="stylesheet" href="../../public/docfx.min.css">
+      <link rel="stylesheet" href="../../public/main.css">
+      <meta name="docfx:navrel" content="../../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/dxFeed/dxfeed-graal-net-api/new/2.8.0/apiSpec/new?filename=DxFeed_Graal_Net_Orcs_PriceLevelService.md&amp;value=---%0Auid%3A%20DxFeed.Graal.Net.Orcs.PriceLevelService%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../../index.html">
+            <img id="logo" class="svg" src="../../docs/images/logo.svg" alt="">
+            
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="DxFeed.Graal.Net.Orcs.PriceLevelService">
+
+
+
+  <h1 id="DxFeed_Graal_Net_Orcs_PriceLevelService" data-uid="DxFeed.Graal.Net.Orcs.PriceLevelService" class="text-break">
+Class PriceLevelService  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/2.8.0/src/DxFeed.Graal.Net/Orcs/PriceLevelService.cs/#L18"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="DxFeed.html">DxFeed</a>.<a class="xref" href="DxFeed.Graal.html">Graal</a>.<a class="xref" href="DxFeed.Graal.Net.html">Net</a>.<a class="xref" href="DxFeed.Graal.Net.Orcs.html">Orcs</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>DxFeed.Graal.Net.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>A service that allows to subscribe to orders and quotes at a specified granularity.</p>
+</div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class PriceLevelService : IDisposable</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><span class="xref">PriceLevelService</span></div>
+    </dd>
+  </dl>
+
+  <dl class="typelist implements">
+    <dt>Implements</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.idisposable">IDisposable</a></div>
+    </dd>
+  </dl>
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </dd></dl>
+
+
+
+
+
+
+  <h2 class="section" id="constructors">Constructors
+</h2>
+
+
+  <a id="DxFeed_Graal_Net_Orcs_PriceLevelService__ctor_" data-uid="DxFeed.Graal.Net.Orcs.PriceLevelService.#ctor*"></a>
+
+  <h3 id="DxFeed_Graal_Net_Orcs_PriceLevelService__ctor_System_String_" data-uid="DxFeed.Graal.Net.Orcs.PriceLevelService.#ctor(System.String)">
+  PriceLevelService(string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/2.8.0/src/DxFeed.Graal.Net/Orcs/PriceLevelService.cs/#L32"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Initializes a new instance of the <a class="xref" href="DxFeed.Graal.Net.Orcs.PriceLevelService.html">PriceLevelService</a> class.
+Also connects it to RMI endpoint.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public PriceLevelService(string address)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>address</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>The RMI endpoint's address</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="fields">Fields
+</h2>
+
+
+
+  <h3 id="DxFeed_Graal_Net_Orcs_PriceLevelService_GranularityAttributeKey" data-uid="DxFeed.Graal.Net.Orcs.PriceLevelService.GranularityAttributeKey">
+  GranularityAttributeKey
+  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/2.8.0/src/DxFeed.Graal.Net/Orcs/PriceLevelService.cs/#L23"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Custom <a class="xref" href="DxFeed.Graal.Net.Events.Candles.CandleSymbol.html">CandleSymbol</a> attribute specifying granularity of price level updates in response.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const string GranularityAttributeKey = &quot;gr&quot;</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="DxFeed_Graal_Net_Orcs_PriceLevelService_Close_" data-uid="DxFeed.Graal.Net.Orcs.PriceLevelService.Close*"></a>
+
+  <h3 id="DxFeed_Graal_Net_Orcs_PriceLevelService_Close" data-uid="DxFeed.Graal.Net.Orcs.PriceLevelService.Close">
+  Close()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/2.8.0/src/DxFeed.Graal.Net/Orcs/PriceLevelService.cs/#L82"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Closes (disconnects) this service.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Close()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DxFeed_Graal_Net_Orcs_PriceLevelService_Dispose_" data-uid="DxFeed.Graal.Net.Orcs.PriceLevelService.Dispose*"></a>
+
+  <h3 id="DxFeed_Graal_Net_Orcs_PriceLevelService_Dispose" data-uid="DxFeed.Graal.Net.Orcs.PriceLevelService.Dispose">
+  Dispose()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/2.8.0/src/DxFeed.Graal.Net/Orcs/PriceLevelService.cs/#L85"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Dispose()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DxFeed_Graal_Net_Orcs_PriceLevelService_GetAuthOrderSource_" data-uid="DxFeed.Graal.Net.Orcs.PriceLevelService.GetAuthOrderSource*"></a>
+
+  <h3 id="DxFeed_Graal_Net_Orcs_PriceLevelService_GetAuthOrderSource" data-uid="DxFeed.Graal.Net.Orcs.PriceLevelService.GetAuthOrderSource">
+  GetAuthOrderSource()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/2.8.0/src/DxFeed.Graal.Net/Orcs/PriceLevelService.cs/#L65"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns available to the client order sources and symbols for each <a class="xref" href="DxFeed.Graal.Net.Events.Market.OrderSource.html">OrderSource</a>. Order source and symbols
+are filtered according to the client permissions. Symbols and order sources view is built as of now, e.g.
+the response contains only existing data (for example, no symbols that were delisted)</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public AuthOrderSource GetAuthOrderSource()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="DxFeed.Graal.Net.Orcs.AuthOrderSource.html">AuthOrderSource</a></dt>
+    <dd><p>The AuthOrderSource instance.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DxFeed_Graal_Net_Orcs_PriceLevelService_GetOrders_" data-uid="DxFeed.Graal.Net.Orcs.PriceLevelService.GetOrders*"></a>
+
+  <h3 id="DxFeed_Graal_Net_Orcs_PriceLevelService_GetOrders_DxFeed_Graal_Net_Events_Candles_CandleSymbol_DxFeed_Graal_Net_Events_Market_OrderSource_System_DateTimeOffset_System_DateTimeOffset_System_String_" data-uid="DxFeed.Graal.Net.Orcs.PriceLevelService.GetOrders(DxFeed.Graal.Net.Events.Candles.CandleSymbol,DxFeed.Graal.Net.Events.Market.OrderSource,System.DateTimeOffset,System.DateTimeOffset,System.String)">
+  GetOrders(CandleSymbol, OrderSource, DateTimeOffset, DateTimeOffset, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/2.8.0/src/DxFeed.Graal.Net/Orcs/PriceLevelService.cs/#L51"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns list of price levels for the specified <a class="xref" href="DxFeed.Graal.Net.Events.Candles.CandleSymbol.html">CandleSymbol</a> within passed <code>from</code> and <code>to</code> times.
+The events are ordered by <a class="xref" href="DxFeed.Graal.Net.Events.Market.OrderBase.html#DxFeed_Graal_Net_Events_Market_OrderBase_Time">time</a> in the collection.</p>
+<p></p>
+Passed candle symbol shall contain supported <a class="xref" href="DxFeed.Graal.Net.Events.Candles.CandlePeriod.html">CandlePeriod</a> and custom attribute
+called granularity with the key <code>GranularityAttributeKey</code>. Granularity value shall be represented by
+integer value in seconds. Minimal value for granularity is 1 second.
+<p></p>
+If passed <a class="xref" href="DxFeed.Graal.Net.Events.Candles.CandlePeriod.html">CandlePeriod</a> or granularity value are not supported by the service
+the empty list will be returned.
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public List&lt;Order&gt; GetOrders(CandleSymbol candleSymbol, OrderSource orderSource, DateTimeOffset from, DateTimeOffset to, string caller = &quot;qdnet&quot;)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>candleSymbol</code> <a class="xref" href="DxFeed.Graal.Net.Events.Candles.CandleSymbol.html">CandleSymbol</a></dt>
+    <dd><p>The <a class="xref" href="DxFeed.Graal.Net.Events.Candles.CandleSymbol.html">CandleSymbol</a> to request.</p>
+</dd>
+    <dt><code>orderSource</code> <a class="xref" href="DxFeed.Graal.Net.Events.Market.OrderSource.html">OrderSource</a></dt>
+    <dd><p>The <a class="xref" href="DxFeed.Graal.Net.Events.Market.OrderSource.html">OrderSource</a> to request.</p>
+</dd>
+    <dt><code>from</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.datetimeoffset">DateTimeOffset</a></dt>
+    <dd><p>From time in UTC</p>
+</dd>
+    <dt><code>to</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.datetimeoffset">DateTimeOffset</a></dt>
+    <dd><p>To time in UTC</p>
+</dd>
+    <dt><code>caller</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>The caller identifier.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="DxFeed.Graal.Net.Events.Market.Order.html">Order</a>&gt;</dt>
+    <dd><p>A list of <a class="xref" href="DxFeed.Graal.Net.Events.Market.Order.html">Order</a> events sorted in ascending order by time.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="DxFeed_Graal_Net_Orcs_PriceLevelService_GetQuotes_" data-uid="DxFeed.Graal.Net.Orcs.PriceLevelService.GetQuotes*"></a>
+
+  <h3 id="DxFeed_Graal_Net_Orcs_PriceLevelService_GetQuotes_DxFeed_Graal_Net_Events_Candles_CandleSymbol_System_DateTimeOffset_System_DateTimeOffset_System_String_" data-uid="DxFeed.Graal.Net.Orcs.PriceLevelService.GetQuotes(DxFeed.Graal.Net.Events.Candles.CandleSymbol,System.DateTimeOffset,System.DateTimeOffset,System.String)">
+  GetQuotes(CandleSymbol, DateTimeOffset, DateTimeOffset, string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/2.8.0/src/DxFeed.Graal.Net/Orcs/PriceLevelService.cs/#L76"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Returns list of quotes for the specified <a class="xref" href="DxFeed.Graal.Net.Events.Candles.CandleSymbol.html">CandleSymbol</a> within passed <code>from</code> and <code>to</code> times.
+The quotes are ordered by <a class="xref" href="DxFeed.Graal.Net.Events.Market.Quote.html#DxFeed_Graal_Net_Events_Market_Quote_Time">time</a> in the collection.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public List&lt;Quote&gt; GetQuotes(CandleSymbol candleSymbol, DateTimeOffset from, DateTimeOffset to, string caller = &quot;qdnet&quot;)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>candleSymbol</code> <a class="xref" href="DxFeed.Graal.Net.Events.Candles.CandleSymbol.html">CandleSymbol</a></dt>
+    <dd><p>The <a class="xref" href="DxFeed.Graal.Net.Events.Candles.CandleSymbol.html">CandleSymbol</a> to request.</p>
+</dd>
+    <dt><code>from</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.datetimeoffset">DateTimeOffset</a></dt>
+    <dd><p>From time in UTC</p>
+</dd>
+    <dt><code>to</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.datetimeoffset">DateTimeOffset</a></dt>
+    <dd><p>To time in UTC</p>
+</dd>
+    <dt><code>caller</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>The caller identifier.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="DxFeed.Graal.Net.Events.Market.Quote.html">Quote</a>&gt;</dt>
+    <dd><p>A list of <a class="xref" href="DxFeed.Graal.Net.Events.Market.Quote.html">Quote</a> events sorted in ascending order by time.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Copyright © 2022 Devexperts LLC</span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

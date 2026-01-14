@@ -1468,6 +1468,48 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "docs/api/DxFeed.Graal.Net.Native.Interop.IndexedEventSourceNative.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/api/DxFeed.Graal.Net.Native.Interop.IndexedEventSourceNative.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DxFeed.Graal.Net.Native.Interop.IndexedEventSourceNative",
+      "Summary": "<p sourcefile=\"docs/api/DxFeed.Graal.Net.Native.Interop.IndexedEventSourceNative.yml\" sourcestartlinenumber=\"1\">A wrapper structure for the dxfg_indexed_event_source_t Graal Native SDK struct.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/DxFeed.Graal.Net.Native.Interop.IndexedEventSourceTypeNative.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/api/DxFeed.Graal.Net.Native.Interop.IndexedEventSourceTypeNative.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DxFeed.Graal.Net.Native.Interop.IndexedEventSourceTypeNative",
+      "Summary": "<p sourcefile=\"docs/api/DxFeed.Graal.Net.Native.Interop.IndexedEventSourceTypeNative.yml\" sourcestartlinenumber=\"1\">A wrapper enum for the dxfg_indexed_event_source_type_t Graal Native SDK enum.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/DxFeed.Graal.Net.Native.Interop.StringNative.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/api/DxFeed.Graal.Net.Native.Interop.StringNative.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DxFeed.Graal.Net.Native.Interop.StringNative",
+      "Summary": "<p sourcefile=\"docs/api/DxFeed.Graal.Net.Native.Interop.StringNative.yml\" sourcestartlinenumber=\"1\">A structure that encapsulates an unsafe pointer to a string.\nString always converted to/from null-terminated UTF-8 string.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "docs/api/DxFeed.Graal.Net.Native.Interop.Utf8StringMarshaler.yml",
       "output": {
         ".html": {
@@ -1492,6 +1534,62 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "DxFeed.Graal.Net.Native.Interop",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/DxFeed.Graal.Net.Orcs.AuthOrderSource.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/api/DxFeed.Graal.Net.Orcs.AuthOrderSource.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DxFeed.Graal.Net.Orcs.AuthOrderSource",
+      "Summary": "<p sourcefile=\"docs/api/DxFeed.Graal.Net.Orcs.AuthOrderSource.yml\" sourcestartlinenumber=\"1\">Represents information about available symbols to the client for the entitled collection of <xref href=\"DxFeed.Graal.Net.Events.Market.OrderSource\" data-throw-if-not-resolved=\"false\"></xref>.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/DxFeed.Graal.Net.Orcs.PriceLevelChecker.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/api/DxFeed.Graal.Net.Orcs.PriceLevelChecker.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DxFeed.Graal.Net.Orcs.PriceLevelChecker",
+      "Summary": "<p sourcefile=\"docs/api/DxFeed.Graal.Net.Orcs.PriceLevelChecker.yml\" sourcestartlinenumber=\"1\">Utility class to check consistency of <xref href=\"DxFeed.Graal.Net.Events.Market.Order\" data-throw-if-not-resolved=\"false\"></xref> list in terms that in each time bid price is less than ask price.\nThere is additional information may be gathered during the check:</p>\n<ul>\n    <li>Gap detection for subsequent events. In other words if there was a pause between orders greater than <code>timeGapBound</code></li>\n    <li>Last bid and ask change with the minimal period of 1 second</li>\n    <li>Spike in quotes</li>\n</ul>\n<p></p>\nImportant to mention that sometimes it's a valid situation when bid greater or equal to ask.\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/DxFeed.Graal.Net.Orcs.PriceLevelService.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/api/DxFeed.Graal.Net.Orcs.PriceLevelService.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DxFeed.Graal.Net.Orcs.PriceLevelService",
+      "Summary": "<p sourcefile=\"docs/api/DxFeed.Graal.Net.Orcs.PriceLevelService.yml\" sourcestartlinenumber=\"1\">A service that allows to subscribe to orders and quotes at a specified granularity.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/DxFeed.Graal.Net.Orcs.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/api/DxFeed.Graal.Net.Orcs.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DxFeed.Graal.Net.Orcs",
       "Summary": null
     },
     {
