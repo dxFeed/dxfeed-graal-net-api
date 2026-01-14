@@ -481,6 +481,10 @@ sudo /usr/bin/xattr -r -d com.apple.quarantine <directory_with_tools>
   demonstrates how to compile a price level book (market by price) that aggregates individual orders
   (market by order)
 
+### ORCS API (PriceLevelService)
+- [x] [PriceLevelServiceClientSample](samples/PriceLevelService/PriceLevelServiceClientSample)
+  shows how to use ORCS API by PriceLevelService.
+
 ## Current State
 
 ### Endpoint Roles

@@ -24,6 +24,7 @@ internal sealed class ListMarshaler<T> : AbstractMarshaler
     {
         var list = (ListNative*)native;
         var result = new List<object?>(list->Size);
+
         for (var i = 0; i < list->Size; ++i)
         {
             result.Add(ElementMarshaler.ConvertNativeToManaged((IntPtr)list->Elements[i]));

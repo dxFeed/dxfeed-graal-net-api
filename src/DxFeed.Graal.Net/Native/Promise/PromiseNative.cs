@@ -4,6 +4,7 @@
 // If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
 // </copyright>
 
+using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Runtime.InteropServices;
@@ -43,7 +44,7 @@ internal sealed unsafe class PromiseNative : JavaHandle
         }
         finally
         {
-            SafeCall(Import.ReleaseResult(CurrentThread, nativeResult));
+            EventTypeNative.Release((IntPtr)nativeResult);
         }
     }
 
@@ -57,7 +58,7 @@ internal sealed unsafe class PromiseNative : JavaHandle
         }
         finally
         {
-            SafeCall(Import.ReleaseResults(CurrentThread, nativeResult));
+            EventTypeNative.ReleaseList((IntPtr)nativeResult);
         }
     }
 
@@ -104,20 +105,6 @@ internal sealed unsafe class PromiseNative : JavaHandle
         public static extern ListNative<EventTypeNative>* GetResults(
             nint thread,
             PromiseNative promiseHandle);
-
-        [DllImport(
-            ImportInfo.DllName,
-            EntryPoint = "dxfg_CList_EventType_release")]
-        public static extern int ReleaseResults(
-            nint thread,
-            ListNative<EventTypeNative>* eventList);
-
-        [DllImport(
-            ImportInfo.DllName,
-            EntryPoint = "dxfg_EventType_release")]
-        public static extern int ReleaseResult(
-            nint thread,
-            EventTypeNative* nativeEvent);
 
         [DllImport(
             ImportInfo.DllName,

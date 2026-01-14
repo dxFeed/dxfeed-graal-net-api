@@ -243,7 +243,6 @@ public sealed class DXFeedSubscription : IObservableSubscription, IDisposable
     public void SetEventsBatchLimit(int eventsBatchLimit) =>
         _subscriptionNative.SetEventsBatchLimit(eventsBatchLimit);
 
-
     /// <summary>
     /// Releases all resources used by the current instance of the <see cref="DXFeedSubscription"/> class.
     /// </summary>
