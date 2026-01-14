@@ -123,7 +123,7 @@ dotnet_style_prefer_is_null_check_over_reference_equality_method = true:warning
 dotnet_diagnostic.SA1636.severity = none
 dotnet_diagnostic.IDE0073.severity = warning
 # Unable to use multiline
-file_header_template = <copyright file="{fileName}" company="Devexperts LLC">\nCopyright © 2024 Devexperts LLC. All rights reserved.\nThis Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.\nIf a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.\n</copyright>
+file_header_template = <copyright file="{fileName}" company="Devexperts LLC">\nCopyright © 2026 Devexperts LLC. All rights reserved.\nThis Source Code Form is subject to the terms of the Mozilla Public License, v. 2.0.\nIf a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.\n</copyright>
 # Undocumented
 dotnet_style_operator_placement_when_wrapping = end_of_line:warning
 csharp_style_prefer_null_check_over_type_check = true:warning

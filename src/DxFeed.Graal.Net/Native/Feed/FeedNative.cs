@@ -4,6 +4,7 @@
 // If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
 // </copyright>
 
+using System;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using DxFeed.Graal.Net.Events;
@@ -61,7 +62,7 @@ internal sealed unsafe class FeedNative
         }
         finally
         {
-            SafeCall(FeedImport.ReleaseNativeEvent(GetCurrentThread(), handle));
+            EventTypeNative.Release((IntPtr)handle);
         }
     }
 
@@ -92,7 +93,7 @@ internal sealed unsafe class FeedNative
         }
         finally
         {
-            SafeCall(FeedImport.ReleaseNativeEvent(GetCurrentThread(), handle));
+            EventTypeNative.Release((IntPtr)handle);
         }
     }
 
@@ -193,13 +194,6 @@ internal sealed unsafe class FeedNative
             EventCodeNative eventCodes,
             [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(SymbolMarshaler))]
             object value);
-
-        [DllImport(
-            ImportInfo.DllName,
-            EntryPoint = "dxfg_EventType_release")]
-        public static extern int ReleaseNativeEvent(
-            nint thread,
-            EventTypeNative* nativeEvent);
 
         [DllImport(
             ImportInfo.DllName,
