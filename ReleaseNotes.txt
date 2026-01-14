@@ -3,7 +3,7 @@
 * [MDAPI-313] [.NET] Implement ORCS API.
 * [MDAPI-312] [.NET] Implement DXFeedSubscription::get|setAggregationPeriod, get|setEventsBatchLimit methods
 * Added `TradeId` field for events: `Trade`, `TradeETH` and `TimeAndSale`.
-* Graal Native SDK version has been updated to 3.1.0.
+* Graal Native SDK version has been updated to 3.2.0.
 
 ## Version 2.7.1
 

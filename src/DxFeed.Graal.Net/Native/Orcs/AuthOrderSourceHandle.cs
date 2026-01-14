@@ -6,6 +6,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Runtime.InteropServices;
 using DxFeed.Graal.Net.Native.ErrorHandling;
 using DxFeed.Graal.Net.Native.Interop;
@@ -42,9 +43,10 @@ internal sealed class AuthOrderSourceHandle : JavaHandle
                 }
 
                 var entry = (SymbolsByOrderSourceIdMapEntryNative*)native;
-                var stringList = (List<string>)StringListMarshaller.ConvertNativeToManaged((IntPtr)entry->Symbols);
+                var strings = ((List<object>)StringListMarshaller.ConvertNativeToManaged((IntPtr)entry->Symbols))
+                    .Cast<string>();
 
-                result.Add(entry->OrderSourceId, new HashSet<string>(stringList));
+                result.Add(entry->OrderSourceId, new HashSet<string>(strings));
             }
 
             return result;

@@ -21,15 +21,15 @@ internal abstract class Program
     {
         const string usageString = $@"
 Usage:
-<address> <symbol> <source> <from> <to>
+<address> <symbol> <source> <from> <to> [--validate] [--verbose]
 
 Where:
-    address - The server RMI address. To pass an authorization token, add to the address: ""[login=entitle:<token>]"":,
-              e.g.: <address>[login=entitle:<token>]
-    symbol  - Is symbol to retrieve, for example 'AAPL{{=d,gr=s}}'
-    source  - Is source to retrieve, for example 'NTV'
-    from    - Is from-time for history subscription in standard formats.
-              Same examples of valid from-time:
+    address    - The server RMI address. To pass an authorization token, add to the address: ""[login=entitle:<token>]"":,
+                 e.g.: <address>[login=entitle:<token>]
+    symbol     - Is symbol to retrieve, for example 'AAPL{{=d,gr=s}}'
+    source     - Is source to retrieve, for example 'NTV'
+    from       - Is from-time for history subscription in standard formats.
+                 Same examples of valid from-time:
                   20070101-123456
                   20070101-123456.123
                   2005-12-31 21:00:00
@@ -37,10 +37,12 @@ Where:
                   2005-12-31 21:00:00.123+0400
                   2007-11-02Z
                   123456789 - value-in-milliseconds
-    to      - Is to-time.
+    to         - Is to-time.
+    --validate
 
 Examples:
-    orcs.dxfeed.com:7777 AAPL{{=d,gr=s}} NTV 20260110-100000 20260110-230000
+    orcs.dxfeed.com:7777 AAPL{{=d,gr=s}} NTV 20260110-100000 20260110-230000 --validate --verbose
+    ""orcs.dxfeed.com:7777[login=entitle:<token>]"" AAPL{{=d,gr=s}} NTV 20260110-100000 20260110-230000 --validate --verbose
 ";
         Console.WriteLine(usageString);
     }
@@ -62,10 +64,33 @@ Examples:
         var timeGapBound = TimeSpan.FromMinutes(1);
         var printQuotes = true;
 
+        var argsSet = args.ToHashSet();
+        var validate = false;
+        var verbose = false;
+
+        if (argsSet.Contains("--validate"))
+        {
+            validate = true;
+        }
+
+        if (argsSet.Contains("--verbose"))
+        {
+            verbose = true;
+        }
+
         using var service = new PriceLevelService(address);
         var authOrderSource = service.GetAuthOrderSource();
+        var symbolsBySource = authOrderSource.GetByOrderSources();
 
-        Console.WriteLine($"Authorized sources: {authOrderSource.GetByOrderSources().Keys}");
+        Console.WriteLine($"Authorized sources: [{string.Join(", ", symbolsBySource.Keys)}]");
+
+        if (verbose)
+        {
+            foreach (var sourceAndSymbols in symbolsBySource)
+            {
+                Console.WriteLine($"{sourceAndSymbols.Key}: [{string.Join(", ", sourceAndSymbols.Value)}]");
+            }
+        }
 
         var stopwatch = Stopwatch.StartNew();
         var orders = service.GetOrders(symbol, source, fromTime, toTime, "sample");
@@ -73,7 +98,7 @@ Examples:
         stopwatch.Stop();
         Console.WriteLine($"Received {orders.Count} orders in {stopwatch.ElapsedMilliseconds} ms");
 
-        if (SystemProperty.GetProperty("validate") != null)
+        if (validate)
         {
             PriceLevelChecker.Validate(orders, timeGapBound, printQuotes);
         }
