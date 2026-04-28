@@ -9,8 +9,9 @@
     <RepositoryUrl>https://github.com/dxfeed/dxfeed-graal-net-api/</RepositoryUrl>
     <PackageReleaseNotes>https://github.com/dxfeed/dxfeed-graal-net-api/releases</PackageReleaseNotes>
     <PackageIcon>favicon.png</PackageIcon>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
     <PackageTags>api, market data, dxfeed</PackageTags>
-    <PackageDescription>This package provides access to dxFeed(https://www.dxfeed.com/) market data.</PackageDescription>
+    <PackageDescription>This package provides access to dxFeed (https://www.dxfeed.com/) market data.</PackageDescription>
     <Description>
       For .NET developers, this library offers easy access to dxFeed market data. Built upon the GraalVM Native Image
       and our flagship dxFeed Java API, it provides a seamless experience for .NET-based applications.
@@ -34,5 +35,8 @@
 
   <ItemGroup Label="PackageIcon">
     <None Include="$(MSBuildThisFileDirectory)/docs/images/favicon.png" Pack="true" Visible="false" PackagePath=""/>
+  </ItemGroup>
+  <ItemGroup Label="PackageReadme">
+    <None Include="$(MSBuildThisFileDirectory)/README-nuget.md" Pack="true" Visible="false" PackagePath="README.md"/>
   </ItemGroup>
 </Project>

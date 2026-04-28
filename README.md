@@ -17,7 +17,7 @@ the [Overview](#overview) section.<br>
 ![Platform](https://img.shields.io/badge/platform-win--x64%20%7C%20linux--x64%20%7C%20osx--x64%20%7C%20osx--arm64-lightgrey)
 [![NET](https://img.shields.io/badge/.NET_version-netstandard2.0%20%7C%20net6.0%20%7C%20net7.0%20%7C%20net8.0%20%7C%20net9.0-blueviolet)](https://dotnet.microsoft.com/en-us/)
 [![Release](https://img.shields.io/github/v/release/dxFeed/dxfeed-graal-net-api)](https://github.com/dxFeed/dxfeed-graal-net-api/releases/latest)
-[![Nuget](https://img.shields.io/badge/nuget-2.8.0-blue)](https://dxfeed.jfrog.io/artifactory/nuget-open/com/dxfeed/graal-net/)
+[![Nuget](https://img.shields.io/badge/nuget-2.8.0-blue)](https://www.nuget.org/packages/DxFeed.Graal.Net/)
 [![License](https://img.shields.io/badge/license-MPL--2.0-orange)](https://github.com/dxFeed/dxfeed-graal-net-api/blob/master/LICENSE)
 
 ## Table of Contents
@@ -208,30 +208,7 @@ Is supported in the Rosetta 2 x64 emulator.
 
 ## Installation
 
-Add the following [package source](https://dxfeed.jfrog.io/artifactory/api/nuget/v3/nuget-open)
-to your `NuGet.Config` file.
-
-#### For Linux and macOS:
-
-The `NuGet.Config` file is usually located at `~/.config/NuGet/NuGet.Config`.
-
-#### For Windows:
-
-The `NuGet.Config` file is usually located at `%appdata%\NuGet\NuGet.Config`.
-
-An example of what this file might look like:
-
-```xml
-<?xml version="1.0" encoding="utf-8"?>
-<configuration>
-    <packageSources>
-        <add key="nuget.org" value="https://api.nuget.org/v3/index.json" protocolVersion="3"/>
-        <add key="dxFeed" value="https://dxfeed.jfrog.io/artifactory/api/nuget/v3/nuget-open" protocolVersion="3"/>
-    </packageSources>
-</configuration>
-```
-
-Then add the `DxFeed.Graal.Net` package to your project using the NuGet package manager.
+Add the `DxFeed.Graal.Net` package to your project using the NuGet package manager.
 
 #### Using Visual Studio:
 
