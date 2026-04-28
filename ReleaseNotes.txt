@@ -1,3 +1,7 @@
+## Version 2.8.1
+
+[MDAPI-383] Migration of NuGet packages from JFrog to NuGet.org
+
 ## Version 2.8.0
 
 * [MDAPI-313] [.NET] Implement ORCS API.
