@@ -101,20 +101,20 @@ to the start and the end of business activities of a certain business entity or 
 For example, the day may be aligned to a trading schedule of a particular instrument on an exchange.
 Thus, different days may start and end at various local times depending on the related trading schedules.</p>
 <p></p>
-The length of the day depends on the trading schedule and other circumstances. For example, it is possible
+<p>The length of the day depends on the trading schedule and other circumstances. For example, it is possible
 that day for Monday is longer than 24 hours because it includes part of Sunday; consequently, the day for
-Sunday will be shorter than 24 hours to avoid overlapping with Monday.
+Sunday will be shorter than 24 hours to avoid overlapping with Monday.</p>
 <p></p>
-Days do not overlap with each other - rather they form consecutive chain of adjacent periods of time that
-cover entire time scale. The point on a border line is considered to belong to following day that starts there.
+<p>Days do not overlap with each other - rather they form consecutive chain of adjacent periods of time that
+cover entire time scale. The point on a border line is considered to belong to following day that starts there.</p>
 <p></p>
-Each day consists of sessions that cover entire duration of the day. If day contains at least one trading
+<p>Each day consists of sessions that cover entire duration of the day. If day contains at least one trading
 session (i.e. session within which trading activity is allowed), then the day is considered trading day.
-Otherwise the day is considered non-trading day (e.g. weekend or holiday).
+Otherwise the day is considered non-trading day (e.g. weekend or holiday).</p>
 <p></p>
-Day may contain sessions with zero duration - e.g. indices that post value once a day.
+<p>Day may contain sessions with zero duration - e.g. indices that post value once a day.
 Such sessions can be of any appropriate type, trading or non-trading.
-Day may have zero duration as well - e.g. when all time within it is transferred to other days.
+Day may have zero duration as well - e.g. when all time within it is transferred to other days.</p>
 </dd>
     </dl>
     <dl class="jumplist">
@@ -123,10 +123,10 @@ Day may have zero duration as well - e.g. when all time within it is transferred
 This class provides predefined filters for certain Day attributes,
 although users can create their own filters to suit their needs.</p>
 <p></p>
-Please note that days can be either trading or non-trading, and this distinction can be
+<p>Please note that days can be either trading or non-trading, and this distinction can be
 either based on rules (e.g. weekends) or dictated by special occasions (e.g. holidays).
 Different filters treat this distinction differently - some accept only trading days,
-some only non-trading, and some ignore type of day altogether.
+some only non-trading, and some ignore type of day altogether.</p>
 </dd>
     </dl>
     <dl class="jumplist">
@@ -141,14 +141,18 @@ trading hours of covered trading schedule.</p>
     <dl class="jumplist">
       <dt><a class="xref" href="DxFeed.Graal.Net.Schedules.Session.html">Session</a></dt>
       <dd><p><b>Session</b> represents a continuous period of time during which apply same rules regarding trading activity.
-For example, <pre><code class="lang-csharp">regular trading session</code></pre> is a period of time consisting of one day of business activities
-in a financial market, from the opening bell to the closing bell, when regular trading occurs.
-<p></p>
-Sessions can be either <b>trading</b> or <b>non-trading</b>, with different sets of rules and reasons to exist.
+For example,</p>
+<pre><code class="lang-csharp">regular trading session</code></pre>
+<p>is a period of time consisting of one day of business activities
+in a financial market, from the opening bell to the closing bell, when regular trading occurs.</p>
+<pre><code>&lt;p&gt;&lt;/p&gt;
+
+Sessions can be either &lt;b&gt;trading&lt;/b&gt; or &lt;b&gt;non-trading&lt;/b&gt;, with different sets of rules and reasons to exist.
 Sessions do not overlap with each other - rather they form consecutive chain of adjacent periods of time that
 cover entire time scale. The point on a border line is considered to belong to following session that starts there.
 Each session completely fits inside a certain day. Day may contain sessions with zero duration - e.g. indices
 that post value once a day. Such sessions can be of any appropriate type, trading or non-trading.
+</code></pre>
 </dd>
     </dl>
     <dl class="jumplist">
@@ -157,10 +161,10 @@ that post value once a day. Such sessions can be of any appropriate type, tradin
 This class provides predefined filters for certain Session attributes,
 although users can create their own filters to suit their needs.</p>
 <p></p>
-Please note that sessions can be either trading or non-trading, and this distinction can be
+<p>Please note that sessions can be either trading or non-trading, and this distinction can be
 either based on rules (e.g. weekends) or dictated by special occasions (e.g. holidays).
 Different filters treat this distinction differently - some accept only trading sessions,
-some only non-trading, and some ignore type of session altogether.
+some only non-trading, and some ignore type of session altogether.</p>
 </dd>
     </dl>
     <h3 id="enums">
@@ -172,10 +176,10 @@ Enums
 what rules are used, what impact on daily trading statistics it has, etc.
 The <a class="xref" href="DxFeed.Graal.Net.Schedules.SessionType.html#DxFeed_Graal_Net_Schedules_SessionType_NO_TRADING">NO_TRADING</a> session type is used for non-trading sessions.</p>
 <p></p>
-Some exchanges support all session types defined here, others do not.
+<p>Some exchanges support all session types defined here, others do not.</p>
 <p></p>
-Some sessions may have zero duration - e.g. indices that post value once a day.
-Such sessions can be of any appropriate type, trading or non-trading.
+<p>Some sessions may have zero duration - e.g. indices that post value once a day.
+Such sessions can be of any appropriate type, trading or non-trading.</p>
 </dd>
     </dl>
 

@@ -16,7 +16,7 @@
       <meta name="docfx:rel" content="">
       
       
-      <meta name="docfx:docurl" content="https://github.com/dxFeed/dxfeed-graal-net-api/blob/2.8.0/index.md/#L1">
+      <meta name="docfx:docurl" content="https://github.com/dxFeed/dxfeed-graal-net-api/blob/2.8.1/index.md/#L1">
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -88,7 +88,7 @@ the <a href="#overview">Overview</a> section.<br></p>
 <img src="https://img.shields.io/badge/platform-win--x64%20%7C%20linux--x64%20%7C%20osx--x64%20%7C%20osx--arm64-lightgrey" alt="Platform">
 <a href="https://dotnet.microsoft.com/en-us/"><img src="https://img.shields.io/badge/.NET_version-netstandard2.0%20%7C%20net6.0%20%7C%20net7.0%20%7C%20net8.0%20%7C%20net9.0-blueviolet" alt="NET"></a>
 <a href="https://github.com/dxFeed/dxfeed-graal-net-api/releases/latest"><img src="https://img.shields.io/github/v/release/dxFeed/dxfeed-graal-net-api" alt="Release"></a>
-<a href="https://dxfeed.jfrog.io/artifactory/nuget-open/com/dxfeed/graal-net/"><img src="https://img.shields.io/badge/nuget-2.8.0-blue" alt="Nuget"></a>
+<a href="https://www.nuget.org/packages/DxFeed.Graal.Net/"><img src="https://img.shields.io/badge/nuget-2.8.1-blue" alt="Nuget"></a>
 <a href="https://github.com/dxFeed/dxfeed-graal-net-api/blob/master/LICENSE"><img src="https://img.shields.io/badge/license-MPL--2.0-orange" alt="License"></a></p>
 <h2 id="table-of-contents">Table of Contents</h2>
 <ul>
@@ -399,22 +399,7 @@ linux <code>apk update &amp;&amp; apk add gcompat libstdc++</code></li>
 <li>.NET compatible with .NET Standard 2.0 (not required for self-contained assemblies)</li>
 </ul>
 <h2 id="installation">Installation</h2>
-<p>Add the following <a href="https://dxfeed.jfrog.io/artifactory/api/nuget/v3/nuget-open">package source</a>
-to your <code>NuGet.Config</code> file.</p>
-<h4 id="for-linux-and-macos">For Linux and macOS:</h4>
-<p>The <code>NuGet.Config</code> file is usually located at <code>~/.config/NuGet/NuGet.Config</code>.</p>
-<h4 id="for-windows">For Windows:</h4>
-<p>The <code>NuGet.Config</code> file is usually located at <code>%appdata%\NuGet\NuGet.Config</code>.</p>
-<p>An example of what this file might look like:</p>
-<pre><code class="lang-xml">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
-&lt;configuration&gt;
-    &lt;packageSources&gt;
-        &lt;add key=&quot;nuget.org&quot; value=&quot;https://api.nuget.org/v3/index.json&quot; protocolVersion=&quot;3&quot;/&gt;
-        &lt;add key=&quot;dxFeed&quot; value=&quot;https://dxfeed.jfrog.io/artifactory/api/nuget/v3/nuget-open&quot; protocolVersion=&quot;3&quot;/&gt;
-    &lt;/packageSources&gt;
-&lt;/configuration&gt;
-</code></pre>
-<p>Then add the <code>DxFeed.Graal.Net</code> package to your project using the NuGet package manager.</p>
+<p>Add the <code>DxFeed.Graal.Net</code> package to your project using the NuGet package manager.</p>
 <h4 id="using-visual-studio">Using Visual Studio:</h4>
 <ol>
 <li>Open your solution in Visual Studio.</li>
