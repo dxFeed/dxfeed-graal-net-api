@@ -1,6 +1,8 @@
+* [MDAPI-396] Strong-Named Build for DxFeed.Graal.Net
+
 ## Version 2.8.1
 
-[MDAPI-383] Migration of NuGet packages from JFrog to NuGet.org
+* [MDAPI-383] Migration of NuGet packages from JFrog to NuGet.org
 
 ## Version 2.8.0
 

@@ -413,6 +413,9 @@ FodyWeavers.xsd
 **/.idea/**/sqlDataSources.xml
 **/.idea/**/dynamic.xml
 
+# Secrets
+*.snk
+
 # Docs
 /index.md
 

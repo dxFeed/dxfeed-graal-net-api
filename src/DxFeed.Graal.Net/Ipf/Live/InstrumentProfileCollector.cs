@@ -62,7 +62,11 @@ public class InstrumentProfileCollector
     public void RemoveUpdateListener(InstrumentProfileUpdateListener listener) =>
         handle.RemoveUpdateListener(listener);
 
-    internal void UpdateInstrumentProfile(InstrumentProfile ip) =>
+    /// <summary>
+    /// Applies a single instrument profile update to the collector (add, change, or logical remove).
+    /// </summary>
+    /// <param name="ip">The instrument profile update.</param>
+    public void UpdateInstrumentProfile(InstrumentProfile ip) =>
         handle.UpdateInstrumentProfile(ip);
 
     internal InstrumentProfileCollectorHandle GetHandle() =>
