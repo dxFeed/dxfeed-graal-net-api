@@ -31,6 +31,11 @@
     <FileVersion>2.8.1.0</FileVersion>
     <!-- NuGet (product) version -->
     <Version>2.8.1</Version>
+
+    <!-- Strong name signing -->
+    <SignAssemblyKeyPath>$(MSBuildThisFileDirectory)/DxFeed.snk</SignAssemblyKeyPath>
+    <SignAssembly Condition="Exists('$(SignAssemblyKeyPath)')">true</SignAssembly>
+    <AssemblyOriginatorKeyFile Condition="Exists('$(SignAssemblyKeyPath)')">$(SignAssemblyKeyPath)</AssemblyOriginatorKeyFile>
   </PropertyGroup>
 
   <ItemGroup Label="PackageIcon">

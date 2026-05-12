@@ -96,9 +96,10 @@ public abstract class AbstractTxModel<TE> : IDisposable
 
     /// <summary>
     /// Processes a list of events, updating the relevant processors and handling batch processing.
+    /// Intended for unit tests and in-process simulation; normal use is subscription-driven through the feed.
     /// </summary>
     /// <param name="events">The list of events to process.</param>
-    internal void ProcessEvents(IEnumerable<IEventType> events)
+    public void ProcessEvents(IEnumerable<IEventType> events)
     {
         try
         {

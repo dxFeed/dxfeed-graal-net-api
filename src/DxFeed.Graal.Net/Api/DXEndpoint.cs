@@ -661,10 +661,12 @@ public sealed class DXEndpoint : IDisposable
         Close();
 
     /// <summary>
-    /// For testing only.
+    /// Assigns an in-process executor (for example from <see cref="InPlaceExecutor.Create"/>)
+    /// so pending native work can be flushed deterministically, typically in unit tests with
+    /// <see cref="Role.LocalHub"/>.
     /// </summary>
     /// <param name="executor">The executor.</param>
-    internal void Executor(InPlaceExecutor executor) =>
+    public void Executor(InPlaceExecutor executor) =>
         _endpointNative.Executor(executor);
 
     /// <summary>

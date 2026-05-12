@@ -54,6 +54,17 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Write signing key
+        shell: bash
+        env:
+          SNK_BASE64: ${{ secrets.DXFEED_SNK_BASE64 }}
+        run: |
+          if [ -z "$SNK_BASE64" ]; then
+            echo "DXFEED_SNK_BASE64 is not set; skip writing DxFeed.snk (unsigned build)."
+            exit 0
+          fi
+          printf '%s' "$SNK_BASE64" | base64 -d > "${GITHUB_WORKSPACE}/DxFeed.snk"
+
       - name: Setup .NET
         uses: actions/setup-dotnet@v4
         with:
