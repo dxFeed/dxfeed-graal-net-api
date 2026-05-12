@@ -1468,6 +1468,34 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "docs/api/DxFeed.Graal.Net.Native.Executors.InPlaceExecutor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/api/DxFeed.Graal.Net.Native.Executors.InPlaceExecutor.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DxFeed.Graal.Net.Native.Executors.InPlaceExecutor",
+      "Summary": "<p sourcefile=\"docs/api/DxFeed.Graal.Net.Native.Executors.InPlaceExecutor.yml\" sourcestartlinenumber=\"1\">In-process executor that drains pending native tasks on the current Graal isolate thread.\nUsed with <xref href=\"DxFeed.Graal.Net.Api.DXEndpoint\" data-throw-if-not-resolved=\"false\"></xref> (for example in the <xref href=\"DxFeed.Graal.Net.Api.DXEndpoint.Role.LocalHub\" data-throw-if-not-resolved=\"false\"></xref> role)\nfor deterministic unit tests and advanced hosting scenarios.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "docs/api/DxFeed.Graal.Net.Native.Executors.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/api/DxFeed.Graal.Net.Native.Executors.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "DxFeed.Graal.Net.Native.Executors",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "docs/api/DxFeed.Graal.Net.Native.Interop.IndexedEventSourceNative.yml",
       "output": {
         ".html": {

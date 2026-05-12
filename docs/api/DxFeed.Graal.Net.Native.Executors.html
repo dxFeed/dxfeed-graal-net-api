@@ -2,9 +2,9 @@
 <html>
   <head>
     <meta charset="utf-8">
-      <title>API Documentation | dxFeed Graal .NET API </title>
+      <title>Namespace DxFeed.Graal.Net.Native.Executors | dxFeed Graal .NET API </title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <meta name="title" content="API Documentation | dxFeed Graal .NET API ">
+      <meta name="title" content="Namespace DxFeed.Graal.Net.Native.Executors | dxFeed Graal .NET API ">
       
       
       <link rel="icon" href="../../docs/images/favicon.png">
@@ -16,7 +16,7 @@
       <meta name="docfx:rel" content="../../">
       
       
-      <meta name="docfx:docurl" content="https://github.com/dxFeed/dxfeed-graal-net-api/blob/3.0.0/docs/api/index.md/#L1">
+      
       <meta name="loc:inThisArticle" content="In this article">
       <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
       <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
@@ -39,7 +39,7 @@
 
   </head>
 
-  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
     <header class="bg-body border-bottom">
       <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
         <div class="container-xxl flex-nowrap">
@@ -84,30 +84,28 @@
           <nav id="breadcrumb"></nav>
         </div>
 
-        <article data-uid="">
-<h1 id="api-documentation">API Documentation</h1>
+        <article data-uid="DxFeed.Graal.Net.Native.Executors">
 
-<p>With dxFeed .NET API you can start receiving your market events writing only several lines of code:</p>
-<pre><code class="lang-csharp">using DxFeed.Graal.Net.Api;
-using DxFeed.Graal.Net.Events.Market;
+  <h1 id="DxFeed_Graal_Net_Native_Executors" data-uid="DxFeed.Graal.Net.Native.Executors" class="text-break">Namespace DxFeed.Graal.Net.Native.Executors</h1>
+  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="markdown level0 remarks"></div>
 
-using var endpoint = DXEndpoint.Create().Connect(&quot;demo.dxfeed.com:7300&quot;);
-using var subscription = endpoint.GetFeed().CreateSubscription(typeof(Quote));
-subscription.AddEventListener(events =&gt;
-{
-    foreach (var e in events)
-    {
-        Console.WriteLine(e);
-    }
-});
-subscription.AddSymbols(&quot;AAPL&quot;);
-Console.ReadKey();
-</code></pre>
+    <h3 id="classes">
+Classes
+</h3>
+    <dl class="jumplist">
+      <dt><a class="xref" href="DxFeed.Graal.Net.Native.Executors.InPlaceExecutor.html">InPlaceExecutor</a></dt>
+      <dd><p>In-process executor that drains pending native tasks on the current Graal isolate thread.
+Used with <a class="xref" href="DxFeed.Graal.Net.Api.DXEndpoint.html">DXEndpoint</a> (for example in the <a class="xref" href="DxFeed.Graal.Net.Api.DXEndpoint.Role.html#DxFeed_Graal_Net_Api_DXEndpoint_Role_LocalHub">LocalHub</a> role)
+for deterministic unit tests and advanced hosting scenarios.</p>
+</dd>
+    </dl>
+
 
 </article>
 
 
-        <div class="next-article d-print-none border-top" id="nextArticle"></div>
 
       </div>
 

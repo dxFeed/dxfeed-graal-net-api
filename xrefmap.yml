@@ -347,6 +347,19 @@ references:
   isSpec: "True"
   fullName: DxFeed.Graal.Net.Api.DXEndpoint.Dispose
   nameWithType: DXEndpoint.Dispose
+- uid: DxFeed.Graal.Net.Api.DXEndpoint.Executor(DxFeed.Graal.Net.Native.Executors.InPlaceExecutor)
+  name: Executor(InPlaceExecutor)
+  href: docs/api/DxFeed.Graal.Net.Api.DXEndpoint.html#DxFeed_Graal_Net_Api_DXEndpoint_Executor_DxFeed_Graal_Net_Native_Executors_InPlaceExecutor_
+  commentId: M:DxFeed.Graal.Net.Api.DXEndpoint.Executor(DxFeed.Graal.Net.Native.Executors.InPlaceExecutor)
+  fullName: DxFeed.Graal.Net.Api.DXEndpoint.Executor(DxFeed.Graal.Net.Native.Executors.InPlaceExecutor)
+  nameWithType: DXEndpoint.Executor(InPlaceExecutor)
+- uid: DxFeed.Graal.Net.Api.DXEndpoint.Executor*
+  name: Executor
+  href: docs/api/DxFeed.Graal.Net.Api.DXEndpoint.html#DxFeed_Graal_Net_Api_DXEndpoint_Executor_
+  commentId: Overload:DxFeed.Graal.Net.Api.DXEndpoint.Executor
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Api.DXEndpoint.Executor
+  nameWithType: DXEndpoint.Executor
 - uid: DxFeed.Graal.Net.Api.DXEndpoint.GetEventTypes
   name: GetEventTypes()
   href: docs/api/DxFeed.Graal.Net.Api.DXEndpoint.html#DxFeed_Graal_Net_Api_DXEndpoint_GetEventTypes
@@ -9299,6 +9312,19 @@ references:
   isSpec: "True"
   fullName: DxFeed.Graal.Net.Ipf.Live.InstrumentProfileCollector.RemoveUpdateListener
   nameWithType: InstrumentProfileCollector.RemoveUpdateListener
+- uid: DxFeed.Graal.Net.Ipf.Live.InstrumentProfileCollector.UpdateInstrumentProfile(DxFeed.Graal.Net.Ipf.InstrumentProfile)
+  name: UpdateInstrumentProfile(InstrumentProfile)
+  href: docs/api/DxFeed.Graal.Net.Ipf.Live.InstrumentProfileCollector.html#DxFeed_Graal_Net_Ipf_Live_InstrumentProfileCollector_UpdateInstrumentProfile_DxFeed_Graal_Net_Ipf_InstrumentProfile_
+  commentId: M:DxFeed.Graal.Net.Ipf.Live.InstrumentProfileCollector.UpdateInstrumentProfile(DxFeed.Graal.Net.Ipf.InstrumentProfile)
+  fullName: DxFeed.Graal.Net.Ipf.Live.InstrumentProfileCollector.UpdateInstrumentProfile(DxFeed.Graal.Net.Ipf.InstrumentProfile)
+  nameWithType: InstrumentProfileCollector.UpdateInstrumentProfile(InstrumentProfile)
+- uid: DxFeed.Graal.Net.Ipf.Live.InstrumentProfileCollector.UpdateInstrumentProfile*
+  name: UpdateInstrumentProfile
+  href: docs/api/DxFeed.Graal.Net.Ipf.Live.InstrumentProfileCollector.html#DxFeed_Graal_Net_Ipf_Live_InstrumentProfileCollector_UpdateInstrumentProfile_
+  commentId: Overload:DxFeed.Graal.Net.Ipf.Live.InstrumentProfileCollector.UpdateInstrumentProfile
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Ipf.Live.InstrumentProfileCollector.UpdateInstrumentProfile
+  nameWithType: InstrumentProfileCollector.UpdateInstrumentProfile
 - uid: DxFeed.Graal.Net.Ipf.Live.InstrumentProfileCollector.View
   name: View()
   href: docs/api/DxFeed.Graal.Net.Ipf.Live.InstrumentProfileCollector.html#DxFeed_Graal_Net_Ipf_Live_InstrumentProfileCollector_View
@@ -10434,6 +10460,24 @@ references:
   fullName.vb: DxFeed.Graal.Net.Models.AbstractTxModel(Of TE).IsSnapshotProcessing
   nameWithType: AbstractTxModel<TE>.IsSnapshotProcessing
   nameWithType.vb: AbstractTxModel(Of TE).IsSnapshotProcessing
+- uid: DxFeed.Graal.Net.Models.AbstractTxModel`1.ProcessEvents(System.Collections.Generic.IEnumerable{DxFeed.Graal.Net.Events.IEventType})
+  name: ProcessEvents(IEnumerable<IEventType>)
+  href: docs/api/DxFeed.Graal.Net.Models.AbstractTxModel-1.html#DxFeed_Graal_Net_Models_AbstractTxModel_1_ProcessEvents_System_Collections_Generic_IEnumerable_DxFeed_Graal_Net_Events_IEventType__
+  commentId: M:DxFeed.Graal.Net.Models.AbstractTxModel`1.ProcessEvents(System.Collections.Generic.IEnumerable{DxFeed.Graal.Net.Events.IEventType})
+  name.vb: ProcessEvents(IEnumerable(Of IEventType))
+  fullName: DxFeed.Graal.Net.Models.AbstractTxModel<TE>.ProcessEvents(System.Collections.Generic.IEnumerable<DxFeed.Graal.Net.Events.IEventType>)
+  fullName.vb: DxFeed.Graal.Net.Models.AbstractTxModel(Of TE).ProcessEvents(System.Collections.Generic.IEnumerable(Of DxFeed.Graal.Net.Events.IEventType))
+  nameWithType: AbstractTxModel<TE>.ProcessEvents(IEnumerable<IEventType>)
+  nameWithType.vb: AbstractTxModel(Of TE).ProcessEvents(IEnumerable(Of IEventType))
+- uid: DxFeed.Graal.Net.Models.AbstractTxModel`1.ProcessEvents*
+  name: ProcessEvents
+  href: docs/api/DxFeed.Graal.Net.Models.AbstractTxModel-1.html#DxFeed_Graal_Net_Models_AbstractTxModel_1_ProcessEvents_
+  commentId: Overload:DxFeed.Graal.Net.Models.AbstractTxModel`1.ProcessEvents
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Models.AbstractTxModel<TE>.ProcessEvents
+  fullName.vb: DxFeed.Graal.Net.Models.AbstractTxModel(Of TE).ProcessEvents
+  nameWithType: AbstractTxModel<TE>.ProcessEvents
+  nameWithType.vb: AbstractTxModel(Of TE).ProcessEvents
 - uid: DxFeed.Graal.Net.Models.AbstractTxModel`1.SetSymbols(System.Collections.Generic.HashSet{System.Object})
   name: SetSymbols(HashSet<object>)
   href: docs/api/DxFeed.Graal.Net.Models.AbstractTxModel-1.html#DxFeed_Graal_Net_Models_AbstractTxModel_1_SetSymbols_System_Collections_Generic_HashSet_System_Object__
@@ -11435,6 +11479,70 @@ references:
   commentId: F:DxFeed.Graal.Net.Native.Events.EventCodeNative.Underlying
   fullName: DxFeed.Graal.Net.Native.Events.EventCodeNative.Underlying
   nameWithType: EventCodeNative.Underlying
+- uid: DxFeed.Graal.Net.Native.Executors
+  name: DxFeed.Graal.Net.Native.Executors
+  href: docs/api/DxFeed.Graal.Net.Native.Executors.html
+  commentId: N:DxFeed.Graal.Net.Native.Executors
+  fullName: DxFeed.Graal.Net.Native.Executors
+  nameWithType: DxFeed.Graal.Net.Native.Executors
+- uid: DxFeed.Graal.Net.Native.Executors.InPlaceExecutor
+  name: InPlaceExecutor
+  href: docs/api/DxFeed.Graal.Net.Native.Executors.InPlaceExecutor.html
+  commentId: T:DxFeed.Graal.Net.Native.Executors.InPlaceExecutor
+  fullName: DxFeed.Graal.Net.Native.Executors.InPlaceExecutor
+  nameWithType: InPlaceExecutor
+- uid: DxFeed.Graal.Net.Native.Executors.InPlaceExecutor.Create
+  name: Create()
+  href: docs/api/DxFeed.Graal.Net.Native.Executors.InPlaceExecutor.html#DxFeed_Graal_Net_Native_Executors_InPlaceExecutor_Create
+  commentId: M:DxFeed.Graal.Net.Native.Executors.InPlaceExecutor.Create
+  fullName: DxFeed.Graal.Net.Native.Executors.InPlaceExecutor.Create()
+  nameWithType: InPlaceExecutor.Create()
+- uid: DxFeed.Graal.Net.Native.Executors.InPlaceExecutor.Create*
+  name: Create
+  href: docs/api/DxFeed.Graal.Net.Native.Executors.InPlaceExecutor.html#DxFeed_Graal_Net_Native_Executors_InPlaceExecutor_Create_
+  commentId: Overload:DxFeed.Graal.Net.Native.Executors.InPlaceExecutor.Create
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Native.Executors.InPlaceExecutor.Create
+  nameWithType: InPlaceExecutor.Create
+- uid: DxFeed.Graal.Net.Native.Executors.InPlaceExecutor.IsInvalid
+  name: IsInvalid
+  href: docs/api/DxFeed.Graal.Net.Native.Executors.InPlaceExecutor.html#DxFeed_Graal_Net_Native_Executors_InPlaceExecutor_IsInvalid
+  commentId: P:DxFeed.Graal.Net.Native.Executors.InPlaceExecutor.IsInvalid
+  fullName: DxFeed.Graal.Net.Native.Executors.InPlaceExecutor.IsInvalid
+  nameWithType: InPlaceExecutor.IsInvalid
+- uid: DxFeed.Graal.Net.Native.Executors.InPlaceExecutor.IsInvalid*
+  name: IsInvalid
+  href: docs/api/DxFeed.Graal.Net.Native.Executors.InPlaceExecutor.html#DxFeed_Graal_Net_Native_Executors_InPlaceExecutor_IsInvalid_
+  commentId: Overload:DxFeed.Graal.Net.Native.Executors.InPlaceExecutor.IsInvalid
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Native.Executors.InPlaceExecutor.IsInvalid
+  nameWithType: InPlaceExecutor.IsInvalid
+- uid: DxFeed.Graal.Net.Native.Executors.InPlaceExecutor.ProcessAllPendingTasks
+  name: ProcessAllPendingTasks()
+  href: docs/api/DxFeed.Graal.Net.Native.Executors.InPlaceExecutor.html#DxFeed_Graal_Net_Native_Executors_InPlaceExecutor_ProcessAllPendingTasks
+  commentId: M:DxFeed.Graal.Net.Native.Executors.InPlaceExecutor.ProcessAllPendingTasks
+  fullName: DxFeed.Graal.Net.Native.Executors.InPlaceExecutor.ProcessAllPendingTasks()
+  nameWithType: InPlaceExecutor.ProcessAllPendingTasks()
+- uid: DxFeed.Graal.Net.Native.Executors.InPlaceExecutor.ProcessAllPendingTasks*
+  name: ProcessAllPendingTasks
+  href: docs/api/DxFeed.Graal.Net.Native.Executors.InPlaceExecutor.html#DxFeed_Graal_Net_Native_Executors_InPlaceExecutor_ProcessAllPendingTasks_
+  commentId: Overload:DxFeed.Graal.Net.Native.Executors.InPlaceExecutor.ProcessAllPendingTasks
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Native.Executors.InPlaceExecutor.ProcessAllPendingTasks
+  nameWithType: InPlaceExecutor.ProcessAllPendingTasks
+- uid: DxFeed.Graal.Net.Native.Executors.InPlaceExecutor.ReleaseHandle
+  name: ReleaseHandle()
+  href: docs/api/DxFeed.Graal.Net.Native.Executors.InPlaceExecutor.html#DxFeed_Graal_Net_Native_Executors_InPlaceExecutor_ReleaseHandle
+  commentId: M:DxFeed.Graal.Net.Native.Executors.InPlaceExecutor.ReleaseHandle
+  fullName: DxFeed.Graal.Net.Native.Executors.InPlaceExecutor.ReleaseHandle()
+  nameWithType: InPlaceExecutor.ReleaseHandle()
+- uid: DxFeed.Graal.Net.Native.Executors.InPlaceExecutor.ReleaseHandle*
+  name: ReleaseHandle
+  href: docs/api/DxFeed.Graal.Net.Native.Executors.InPlaceExecutor.html#DxFeed_Graal_Net_Native_Executors_InPlaceExecutor_ReleaseHandle_
+  commentId: Overload:DxFeed.Graal.Net.Native.Executors.InPlaceExecutor.ReleaseHandle
+  isSpec: "True"
+  fullName: DxFeed.Graal.Net.Native.Executors.InPlaceExecutor.ReleaseHandle
+  nameWithType: InPlaceExecutor.ReleaseHandle
 - uid: DxFeed.Graal.Net.Native.Interop
   name: DxFeed.Graal.Net.Native.Interop
   href: docs/api/DxFeed.Graal.Net.Native.Interop.html
