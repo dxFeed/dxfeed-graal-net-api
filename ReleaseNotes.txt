@@ -1,4 +1,6 @@
-* [MDAPI-396] Strong-Named Build for DxFeed.Graal.Net
+## Version 3.0.0
+
+* ./[MDAPI-396] Strong-Named Build for DxFeed.Graal.Net
 
 ## Version 2.8.1
 
