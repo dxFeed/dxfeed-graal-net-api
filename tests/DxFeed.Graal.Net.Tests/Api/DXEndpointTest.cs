@@ -4,6 +4,8 @@
 // If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
 // </copyright>
 
+using System.Net;
+using System.Net.Sockets;
 using DxFeed.Graal.Net.Api;
 using DxFeed.Graal.Net.Api.Osub;
 using DxFeed.Graal.Net.Events;
@@ -17,27 +19,45 @@ namespace DxFeed.Graal.Net.Tests.Api;
 [TestFixture]
 public class DXEndpointTest
 {
-    private static readonly Random rnd = new();
-
     [Test]
     public void ConnectToLocalPublisher()
     {
-        var port = rnd.Next(48658, 49150);
+        var port = GetFreePort();
         var countdownEvent = new CountdownEvent(1);
 
         var pub = Create(Publisher).Connect($":{port}");
         var feed = Create(Feed);
-        feed.AddStateChangeListener((_, newState) =>
+        try
         {
-            if (newState == State.Connected)
+            feed.AddStateChangeListener((_, newState) =>
             {
-                countdownEvent.Signal();
-            }
-        });
-        feed.Connect($"localhost:{port}");
-        Assert.That(countdownEvent.Wait(new TimeSpan(0, 0, 3)), Is.True);
-        pub.Close();
-        feed.Close();
+                if (newState == State.Connected)
+                {
+                    countdownEvent.Signal();
+                }
+            });
+            feed.Connect($"localhost:{port}");
+            Assert.That(countdownEvent.Wait(new TimeSpan(0, 0, 10)), Is.True);
+        }
+        finally
+        {
+            pub.Close();
+            feed.Close();
+        }
+    }
+
+    private static int GetFreePort()
+    {
+        var listener = new TcpListener(IPAddress.Loopback, 0);
+        listener.Start();
+        try
+        {
+            return ((IPEndPoint)listener.LocalEndpoint).Port;
+        }
+        finally
+        {
+            listener.Stop();
+        }
     }
 
     [Test]
@@ -222,7 +242,7 @@ public class DXEndpointTest
         publisher.PublishEvents(order1);
         publisher.PublishEvents(order2);
 
-        cde.Wait(3000);
+        Assert.That(cde.Wait(TimeSpan.FromSeconds(10)), Is.True, "Expected both published orders to be received");
 
         foreach (var eventType in resultList)
         {
