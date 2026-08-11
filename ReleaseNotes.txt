@@ -1,6 +1,10 @@
+## Version 3.0.1
+
+* Fix fob prop for dxlink scheme
+
 ## Version 3.0.0
 
-* ./[MDAPI-396] Strong-Named Build for DxFeed.Graal.Net
+* [MDAPI-396] Strong-Named Build for DxFeed.Graal.Net
 
 ## Version 2.8.1
 

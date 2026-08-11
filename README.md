@@ -5,7 +5,7 @@
 
 This package provides access to [dxFeed market data](https://dxfeed.com/market-data/).
 The library is built as a language-specific wrapper over
-the [dxFeed Graal Native](https://dxfeed.jfrog.io/artifactory/maven-open/com/dxfeed/graal-native-api/) library,
+the [dxFeed Graal Native](https://github.com/dxFeed/dxfeed-graal-native-sdk) library,
 which was compiled with [GraalVM Native Image](https://www.graalvm.org/latest/reference-manual/native-image/)
 and [dxFeed Java API](https://docs.dxfeed.com/dxfeed/api/overview-summary.html) (our flagman API).
 
@@ -17,8 +17,8 @@ the [Overview](#overview) section.<br>
 ![Platform](https://img.shields.io/badge/platform-win--x64%20%7C%20linux--x64%20%7C%20osx--x64%20%7C%20osx--arm64-lightgrey)
 [![NET](https://img.shields.io/badge/.NET_version-netstandard2.0%20%7C%20net6.0%20%7C%20net7.0%20%7C%20net8.0%20%7C%20net9.0-blueviolet)](https://dotnet.microsoft.com/en-us/)
 [![Release](https://img.shields.io/github/v/release/dxFeed/dxfeed-graal-net-api)](https://github.com/dxFeed/dxfeed-graal-net-api/releases/latest)
-[![Nuget](https://img.shields.io/badge/nuget-3.0.0-blue)](https://www.nuget.org/packages/DxFeed.Graal.Net/)
-[![License](https://img.shields.io/badge/license-MPL--2.0-orange)](https://github.com/dxFeed/dxfeed-graal-net-api/blob/master/LICENSE)
+[![Nuget](https://img.shields.io/badge/nuget-3.0.1-blue)](https://www.nuget.org/packages/DxFeed.Graal.Net/)
+[![License](https://img.shields.io/badge/license-MPL--2.0-orange)](https://github.com/dxFeed/dxfeed-graal-net-api/blob/main/LICENSE)
 
 ## Table of Contents
 
@@ -93,7 +93,7 @@ ready to answer any questions and help with the transition.
 We use [GraalVM Native Image](https://www.graalvm.org/latest/reference-manual/native-image/) technology and specially
 written code that *wraps* Java methods into native ones
 to get dynamically linked libraries for different platforms (Linux, macOS, and Windows) based on
-the [latest Java API package](https://dxfeed.jfrog.io/artifactory/maven-open/com/devexperts/qd/dxfeed-api/).
+the [latest Java API package](https://repo.devexperts.com/service/rest/repository/browse/qd-maven/com/devexperts/qd/dxfeed-api/).
 
 Then, the resulting dynamic link library (dxFeed Graal-native) is used through
 C [ABI](https://en.wikipedia.org/wiki/Application_binary_interface) (application binary interface),
