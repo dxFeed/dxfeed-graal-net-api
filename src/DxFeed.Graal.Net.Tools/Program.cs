@@ -14,7 +14,7 @@ internal abstract class Program
     {
         SystemProperty.SetProperty(DXEndpoint.DXFeedWildcardEnableProperty, "true");
         SystemProperty.SetProperty("dxfeed.experimental.dxlink.enable", "true");
-        SystemProperty.SetProperty("scheme", "ext:opt:sysprops,resource:dxlink.xml");
+        SystemProperty.SetProperty("scheme", "ext:opt:sysprops,opt:dxprops,resource:dxlink.xml");
         Tools.Run(args);
     }
 }
