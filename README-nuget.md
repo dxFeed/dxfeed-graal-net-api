@@ -1,7 +1,7 @@
 # dxFeed Graal .NET API
 
 .NET API for accessing [dxFeed market data](https://dxfeed.com/market-data/), built as a wrapper over
-the [dxFeed Graal Native](https://www.nuget.org/packages/DxFeed.Graal.Native/) library
+the [dxFeed Graal Native](https://github.com/dxFeed/dxfeed-graal-native-sdk) library
 (compiled with [GraalVM Native Image](https://www.graalvm.org/latest/reference-manual/native-image/) from
 the [dxFeed Java API](https://docs.dxfeed.com/dxfeed/api/overview-summary.html)).
 
@@ -56,4 +56,4 @@ the [dxLink example](https://github.com/dxFeed/dxfeed-graal-net-api#how-to-conne
 
 ## License
 
-[MPL-2.0](https://github.com/dxFeed/dxfeed-graal-net-api/blob/master/LICENSE)
+[MPL-2.0](https://github.com/dxFeed/dxfeed-graal-net-api/blob/main/LICENSE)
