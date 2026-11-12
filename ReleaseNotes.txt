@@ -1,10 +1,14 @@
-* [MDAPI-523] Graal Native SDK version has been updated to 3.16.0
-  (changes since 3.2.10: https://github.com/dxFeed/dxfeed-graal-native-sdk/blob/main/ReleaseNotes.md).
-* [MDAPI-523] Minimum macOS versions: 11 on x64 and 14 on Arm64 (required by the Graal Native SDK since 3.7.0).
-* [MDAPI-523] Added `DXEndpoint.Builder.WithExecutor`. `DXEndpoint.Executor` is obsolete
-  and will be removed in the next major version.
-* [MDAPI-523] The native library can be replaced with the Oracle GraalVM builds `DxFeed.Graal.Native.Oracle`
-  and `DxFeed.Graal.Native.Oracle.G1` of the same version, see README.
+* [MDAPI-523] [.NET] Migrate to Graal Native SDK 3.16.0
+  - Graal Native SDK version has been updated to 3.16.0
+    (changes since 3.2.10: https://github.com/dxFeed/dxfeed-graal-native-sdk/blob/main/ReleaseNotes.md).
+  - TLS certificates: the native library now trusts the root CAs of JDK 25.0.5 instead of those of JDK 22
+    (unless the application sets `javax.net.ssl.trustStore`), so it no longer trusts the roots that the JDK has removed
+    or distrusted since then (CVE-2026-91403, CVE-2026-114820; see v3.15.0 in the Graal Native SDK release notes).
+  - Minimum macOS versions: 11 on x64 and 14 on Arm64 (required by the Graal Native SDK since 3.7.0).
+  - Added `DXEndpoint.Builder.WithExecutor`. `DXEndpoint.Executor` is obsolete
+    and will be removed in the next major version.
+  - The native library can be replaced with the Oracle GraalVM builds `DxFeed.Graal.Native.Oracle`
+    and `DxFeed.Graal.Native.Oracle.G1` of the same version, see README.
 
 ## Version 3.0.1
 
