@@ -35,8 +35,7 @@ public class MarketDepthModelTest
     [SetUp]
     public void SetUp()
     {
-        _endpoint = DXEndpoint.Create(DXEndpoint.Role.LocalHub);
-        _endpoint.Executor(_executor);
+        _endpoint = DXEndpoint.NewBuilder().WithRole(DXEndpoint.Role.LocalHub).WithExecutor(_executor).Build();
         _feed = _endpoint.GetFeed();
         _publisher = _endpoint.GetPublisher();
         _model = CreateBuilder().Build();

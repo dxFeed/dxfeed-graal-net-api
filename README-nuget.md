@@ -12,7 +12,11 @@ the [dxFeed Java API](https://docs.dxfeed.com/dxfeed/api/overview-summary.html))
 
 - **Windows** x64 (Windows 8+, Server 2012+)
 - **Linux** x64 (glibc 2.17+, or musl with `gcompat`)
-- **macOS** x64 (10.15+) and Arm64 (11+)
+- **macOS** x64 (11+) and Arm64 (14+)
+
+The native library can be replaced with an Oracle GraalVM build (`DxFeed.Graal.Native.Oracle` or
+`DxFeed.Graal.Native.Oracle.G1`), see
+the [native library build variants](https://github.com/dxFeed/dxfeed-graal-net-api#native-library-build-variants).
 
 ## Frameworks
 

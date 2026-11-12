@@ -32,6 +32,7 @@ the [Overview](#overview) section.<br>
 - [Documentation](#documentation)
 - [Requirements](#requirements)
 - [Installation](#installation)
+    * [Native library build variants](#native-library-build-variants)
 - [Usage](#usage)
     * [How to connect to QD endpoint](#how-to-connect-to-qd-endpoint)
     * [How to connect to dxLink](#how-to-connect-to-dxlink)
@@ -195,8 +196,8 @@ A symlink on libpthread.so, libpthread.so.0, or libcoreclr.so must exist.
 
 | OS             | Version | Architectures |
 |----------------|---------|---------------|
-| [macOS][macOS] | 10.15+  | x64           |
-| [macOS][macOS] | 11+     | Arm64         |
+| [macOS][macOS] | 11+     | x64           |
+| [macOS][macOS] | 14+     | Arm64         |
 
 Is supported in the Rosetta 2 x64 emulator.
 
@@ -262,6 +263,15 @@ internal abstract class Program
 4. Run project: `dotnet run`
 5. Add C# support to VSCode by following the instructions [here](https://code.visualstudio.com/docs/languages/dotnet)
 6. You can now open this directory in VSCode
+
+### Native library build variants
+
+`DxFeed.Graal.Net` depends on [DxFeed.Graal.Native](https://www.nuget.org/packages/DxFeed.Graal.Native/), the native
+library built with GraalVM Community Edition, and needs nothing else. Two optional packages of the same version replace
+it with a library built with Oracle GraalVM at `-O3`:
+[DxFeed.Graal.Native.Oracle](https://www.nuget.org/packages/DxFeed.Graal.Native.Oracle/) and
+[DxFeed.Graal.Native.Oracle.G1](https://www.nuget.org/packages/DxFeed.Graal.Native.Oracle.G1/) (the G1 GC). Their pages
+on nuget.org show how to use them with `DxFeed.Graal.Net`.
 
 ## Usage
 

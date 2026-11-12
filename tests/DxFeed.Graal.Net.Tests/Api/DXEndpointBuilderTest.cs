@@ -4,6 +4,9 @@
 // If a copy of the MPL was not distributed with this file, You can obtain one at http://mozilla.org/MPL/2.0/.
 // </copyright>
 
+using DxFeed.Graal.Net.Api;
+using DxFeed.Graal.Net.Events.Market;
+using DxFeed.Graal.Net.Native.Executors;
 using static DxFeed.Graal.Net.Api.DXEndpoint;
 using static DxFeed.Graal.Net.Api.DXEndpoint.Role;
 
@@ -109,4 +112,40 @@ public class DXEndpointBuilderTest
     [Test]
     public void WithRoleMethodOverrideOldRole() =>
         Assert.That(NewBuilder().WithRole(Feed).WithRole(Publisher).Build().GetRole(), Is.EqualTo(Publisher));
+
+    [Test]
+    public void WithExecutorNullThrowException() =>
+        Assert.Throws<ArgumentNullException>(() => NewBuilder().WithExecutor(null!));
+
+    [Test]
+    public void WithExecutorRunsNotificationsOnlyWhenTasksAreProcessed()
+    {
+        var executor = InPlaceExecutor.Create();
+        using var endpoint = NewBuilder().WithRole(LocalHub).WithExecutor(executor).Build();
+        AssertNotificationsWaitForExecutor(endpoint, executor);
+    }
+
+    [Test]
+    public void DeprecatedExecutorMethodStillWorks()
+    {
+        var executor = InPlaceExecutor.Create();
+        using var endpoint = NewBuilder().WithRole(LocalHub).Build();
+#pragma warning disable CS0618 // The deprecated method is kept until the next major version.
+        endpoint.Executor(executor);
+#pragma warning restore CS0618
+        AssertNotificationsWaitForExecutor(endpoint, executor);
+    }
+
+    private static void AssertNotificationsWaitForExecutor(DXEndpoint endpoint, InPlaceExecutor executor)
+    {
+        var received = new List<string?>();
+        var sub = endpoint.GetFeed().CreateSubscription(typeof(Quote));
+        sub.AddEventListener(events => received.AddRange(events.Select(e => e.EventSymbol)));
+        sub.AddSymbols("A");
+        endpoint.GetPublisher().PublishEvents(new Quote("A"));
+
+        Assert.That(received, Is.Empty, "The listener must not run before the pending tasks are processed");
+        executor.ProcessAllPendingTasks();
+        Assert.That(received, Is.EqualTo(new[] { "A" }));
+    }
 }

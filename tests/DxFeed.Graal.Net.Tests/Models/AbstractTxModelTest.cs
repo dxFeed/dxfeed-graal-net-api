@@ -43,8 +43,7 @@ public abstract class AbstractTxModelTest<TE, TM, TB>
     [SetUp]
     public void SetUp()
     {
-        Endpoint = DXEndpoint.Create(DXEndpoint.Role.LocalHub);
-        Endpoint.Executor(Executor);
+        Endpoint = DXEndpoint.NewBuilder().WithRole(DXEndpoint.Role.LocalHub).WithExecutor(Executor).Build();
         Feed = Endpoint.GetFeed();
         Publisher = Endpoint.GetPublisher();
     }
