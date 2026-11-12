@@ -7,8 +7,8 @@
   - Minimum macOS versions: 11 on x64 and 14 on Arm64 (required by the Graal Native SDK since 3.7.0).
   - Added `DXEndpoint.Builder.WithExecutor`. `DXEndpoint.Executor` is obsolete
     and will be removed in the next major version.
-  - The native library can be replaced with the Oracle GraalVM builds `DxFeed.Graal.Native.Oracle`
-    and `DxFeed.Graal.Native.Oracle.G1` of the same version, see README.
+  - The native library can optionally be replaced with the Oracle GraalVM builds `DxFeed.Graal.Native.Oracle`
+    and `DxFeed.Graal.Native.Oracle.G1` of the same version; their pages on nuget.org show how.
 
 ## Version 3.0.1
 

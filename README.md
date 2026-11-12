@@ -266,37 +266,12 @@ internal abstract class Program
 
 ### Native library build variants
 
-`DxFeed.Graal.Net` depends on [DxFeed.Graal.Native](https://www.nuget.org/packages/DxFeed.Graal.Native/), the
-native library built with GraalVM Community Edition. Two packages of the same version replace it with a library built
-with Oracle GraalVM at `-O3`. The C API, the library name and the layout are the same, so `DxFeed.Graal.Net` works with
-each of them:
-
-| Package                                                                                     | GraalVM        | Optimization | GC     | Default maximum heap | Runtime identifiers                                         |
-|---------------------------------------------------------------------------------------------|----------------|--------------|--------|----------------------|-------------------------------------------------------------|
-| `DxFeed.Graal.Native`                                                                       | GraalVM CE     | `-O2`        | Serial | 80 % of RAM          | `win-x64`, `linux-x64`, `linux-arm64`, `osx-x64`, `osx-arm64` |
-| [DxFeed.Graal.Native.Oracle](https://www.nuget.org/packages/DxFeed.Graal.Native.Oracle/)    | Oracle GraalVM | `-O3`        | Serial | 80 % of RAM          | `win-x64`, `linux-x64`, `linux-arm64`, `osx-arm64`          |
-| [DxFeed.Graal.Native.Oracle.G1](https://www.nuget.org/packages/DxFeed.Graal.Native.Oracle.G1/) | Oracle GraalVM | `-O3`        | G1     | 25 % of RAM          | `linux-x64`, `linux-arm64`, `osx-arm64`                     |
-
-To use a variant, exclude the assets of `DxFeed.Graal.Native` and reference the variant with the version of
-`DxFeed.Graal.Native` that `DxFeed.Graal.Net` depends on (see the dependencies of the package on nuget.org):
-
-```xml
-<ItemGroup>
-  <PackageReference Include="DxFeed.Graal.Net" Version="..." />
-  <PackageReference Include="DxFeed.Graal.Native" Version="X.Y.Z" ExcludeAssets="all" />
-  <PackageReference Include="DxFeed.Graal.Native.Oracle" Version="X.Y.Z" />
-</ItemGroup>
-```
-
-* Use one native package per project: a project that gets the assets of two native packages fails the build with an
-  error that names them.
-* The variants have no `osx-x64` library (Oracle GraalVM has no macOS x64 build), and `DxFeed.Graal.Native.Oracle.G1`
-  has no Windows library.
-* `DxFeed.Graal.Native.Oracle.G1` allows one GraalVM isolate per process. `DxFeed.Graal.Net` creates one isolate and
-  keeps it for the lifetime of the process, so do not load another component that creates its own isolate of the
-  native library into the same process.
-* The libraries of the variants contain the Oracle GraalVM runtime, which is distributed under the
-  [GraalVM Free Terms and Conditions](https://www.oracle.com/downloads/licenses/graal-free-license.html).
+`DxFeed.Graal.Net` depends on [DxFeed.Graal.Native](https://www.nuget.org/packages/DxFeed.Graal.Native/), the native
+library built with GraalVM Community Edition, and needs nothing else. Two optional packages of the same version replace
+it with a library built with Oracle GraalVM at `-O3`:
+[DxFeed.Graal.Native.Oracle](https://www.nuget.org/packages/DxFeed.Graal.Native.Oracle/) and
+[DxFeed.Graal.Native.Oracle.G1](https://www.nuget.org/packages/DxFeed.Graal.Native.Oracle.G1/) (the G1 GC). Their pages
+on nuget.org show how to use them with `DxFeed.Graal.Net`.
 
 ## Usage
 
