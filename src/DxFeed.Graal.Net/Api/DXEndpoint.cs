@@ -664,8 +664,13 @@ public sealed class DXEndpoint : IDisposable
     /// Assigns an in-process executor (for example from <see cref="InPlaceExecutor.Create"/>)
     /// so pending native work can be flushed deterministically, typically in unit tests with
     /// <see cref="Role.LocalHub"/>.
+    /// <br/>
+    /// Deprecated: set the executor before the endpoint is built with <see cref="Builder.WithExecutor"/>.
+    /// The native library logs a deprecation warning on the first call.
+    /// This method will be removed in the next major version.
     /// </summary>
     /// <param name="executor">The executor.</param>
+    [Obsolete("Use DXEndpoint.Builder.WithExecutor instead. This method will be removed in the next major version.")]
     public void Executor(InPlaceExecutor executor) =>
         _endpointNative.Executor(executor);
 
@@ -737,6 +742,11 @@ public sealed class DXEndpoint : IDisposable
         private volatile Role _role = Role.Feed;
 
         /// <summary>
+        /// The executor for the created <see cref="DXEndpoint"/>, or <c>null</c> for the default thread pool.
+        /// </summary>
+        private volatile InPlaceExecutor? _executor;
+
+        /// <summary>
         /// Changes name that is used to distinguish multiple <see cref="DXEndpoint"/>
         /// in the same in logs and in other diagnostic means.
         /// This is a shortcut for
@@ -759,6 +769,29 @@ public sealed class DXEndpoint : IDisposable
         {
             // Verifiable assignment.
             _role = EnumUtil.ValueOf(role);
+
+            return this;
+        }
+
+        /// <summary>
+        /// Sets the executor of the notifications of the created <see cref="DXEndpoint"/>:
+        /// event listeners, state change listeners, models, etc.
+        /// By default, the endpoint uses its own thread pool
+        /// (see <see cref="DXFeedThreadPoolSizeProperty"/> and <see cref="DXPublisherThreadPoolSizeProperty"/>).
+        /// <br/>
+        /// With an <see cref="InPlaceExecutor"/> the notifications run only when
+        /// <see cref="InPlaceExecutor.ProcessAllPendingTasks"/> is called, on the calling thread.
+        /// This makes the processing deterministic, typically in unit tests with <see cref="Role.LocalHub"/>.
+        /// <br/>
+        /// Keep a reference to the executor while the endpoint is used.
+        /// This method replaces the deprecated <see cref="DXEndpoint.Executor"/>.
+        /// </summary>
+        /// <param name="executor">The executor.</param>
+        /// <returns>Returns this <see cref="Builder"/>.</returns>
+        /// <exception cref="ArgumentNullException">If the executor is null.</exception>
+        public Builder WithExecutor(InPlaceExecutor executor)
+        {
+            _executor = executor ?? throw new ArgumentNullException(nameof(executor));
 
             return this;
         }
@@ -840,6 +873,12 @@ public sealed class DXEndpoint : IDisposable
             using var builder = new BuilderWrapper();
             var role = _role;
             builder.WithRole(role);
+
+            var executor = _executor;
+            if (executor != null)
+            {
+                builder.WithExecutor(executor);
+            }
 
             // Create properties snapshot.
             // This ensures that the properties will not be changed from another thread.

@@ -6,6 +6,7 @@
 
 using System.Diagnostics.CodeAnalysis;
 using System.Runtime.InteropServices;
+using DxFeed.Graal.Net.Native.Executors;
 using DxFeed.Graal.Net.Native.Interop;
 using static DxFeed.Graal.Net.Api.DXEndpoint;
 using static DxFeed.Graal.Net.Native.ErrorHandling.ErrorCheck;
@@ -26,6 +27,9 @@ internal sealed class BuilderHandle : JavaHandle
 
     public bool SupportsProperty(string key) =>
         SafeCall(Import.SupportsProperty(CurrentThread, this, key)) != 0;
+
+    public void WithExecutor(InPlaceExecutor executor) =>
+        SafeCall(Import.WithExecutor(CurrentThread, this, executor));
 
     public DXEndpointHandle Build() =>
         SafeCall(Import.Build(CurrentThread, this));
@@ -75,6 +79,18 @@ internal sealed class BuilderHandle : JavaHandle
             nint thread,
             BuilderHandle builder,
             [MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(StringMarshaler))] string key);
+
+        // The v4 function replaces the deprecated dxfg_DXEndpoint_Builder_withExecutor: it takes the same builder and
+        // executor handles and reports an error the same way (the pending exception of the thread), so SafeCall works.
+        [DllImport(
+            ImportInfo.DllName,
+            CallingConvention = CallingConvention.Cdecl,
+            CharSet = CharSet.Ansi,
+            EntryPoint = "dxfg_v4_DXEndpoint_Builder_withExecutor")]
+        public static extern int WithExecutor(
+            nint thread,
+            BuilderHandle builder,
+            InPlaceExecutor executor);
 
         [DllImport(
             ImportInfo.DllName,

@@ -21,9 +21,10 @@ internal sealed unsafe class DXEndpointWrapper : IDisposable
     private readonly HandleMap<StateChangeListener, StateChangeListenerHandle> listeners;
     private InPlaceExecutor? _executor;
 
-    private DXEndpointWrapper(DXEndpointHandle endpoint)
+    private DXEndpointWrapper(DXEndpointHandle endpoint, InPlaceExecutor? executor)
     {
         this.endpoint = endpoint;
+        _executor = executor;
         feed = new(() => new FeedNative(endpoint.GetFeed()));
         publisher = new(endpoint.GetPublisher);
         listeners = new(StateChangeListenerHandle.Create);
@@ -94,9 +95,16 @@ internal sealed unsafe class DXEndpointWrapper : IDisposable
     public sealed class BuilderWrapper : IDisposable
     {
         private readonly BuilderHandle builder = BuilderHandle.Create();
+        private InPlaceExecutor? _executor;
 
         public void WithRole(Role role) =>
             builder.WithRole(role);
+
+        public void WithExecutor(InPlaceExecutor executor)
+        {
+            _executor = executor;
+            builder.WithExecutor(executor);
+        }
 
         public void WithProperty(string key, string value) =>
             builder.WithProperty(key, value);
@@ -105,7 +113,7 @@ internal sealed unsafe class DXEndpointWrapper : IDisposable
             builder.SupportsProperty(key);
 
         public DXEndpointWrapper Build() =>
-            new(builder.Build());
+            new(builder.Build(), _executor);
 
         public void Dispose() =>
             builder.Dispose();
